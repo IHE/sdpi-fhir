@@ -1,0 +1,7 @@
+sdc_sc -> sdc_sp: GetMdib()
+sdc_sc <-- sdc_sp: GetMdibResponse(MdDescription, MdState [incl. ContextStates])
+
+opt conditional if context states were empty in GetMdibResponse
+    sdc_sc -> sdc_sp: GetContextStates()
+    sdc_sc <-- sdc_sp: GetContextStatesResponse(ContextStates)
+end

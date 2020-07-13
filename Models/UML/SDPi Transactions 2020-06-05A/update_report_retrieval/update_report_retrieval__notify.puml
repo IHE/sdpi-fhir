@@ -1,0 +1,3 @@
+loop while subscription is running and reports ensue
+    sdc_sc <- sdc_sp: Notification(Payload)
+end

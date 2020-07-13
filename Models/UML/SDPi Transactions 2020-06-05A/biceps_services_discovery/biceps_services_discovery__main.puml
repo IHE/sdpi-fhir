@@ -1,0 +1,13 @@
+sdc_sc -> sdc_sp: TransferGet()
+sdc_sc <-- sdc_sp: TransferGetResponse(HostingService, ThisDevice, ThisModel, HostedServices)
+
+opt conditional if BICEPS interfaces are processed dynamically
+    loop on EndpointReference in HostedServices
+        sdc_sc -> sdc_sp: MetadataGet()
+        sdc_sc <-- sdc_sp: MetadataGetResponse([WsdlDescription], [WsdlUrl])
+        opt conditional if WSDL description was not enclosed in MetadataGetResponse
+            sdc_sc -> sdc_sp: HTTP_GET(WsdlUrl)
+            sdc_sc <-- sdc_sp: HTTP_GET_RESPONSE(WsdlDescription)
+        end 
+    end
+end

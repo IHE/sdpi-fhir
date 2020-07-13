@@ -1,0 +1,7 @@
+@startuml
+
+!include ../_sequence_config.incl
+
+!include localization_information_retrieval__main.puml
+
+@enduml

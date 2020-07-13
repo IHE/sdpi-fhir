@@ -1,0 +1,30 @@
+@startuml
+
+!include ../_sequence_config.incl
+
+' !include reporting__main.puml
+
+== Do topology discovery & BICEPS service discovery beforehand ==
+
+sdc_sc -> sdc_sp: Subscribe({DescriptionModificationReport, EpisodicAlertReport\n   OperationalStateReport, OperationInvokedReport})
+sdc_sc <-- sdc_sp: SubscribeResponse(SubscriptionManager, ExpirationTime)
+
+sdc_sc -> sdc_sp: SetAlertState(DelegableAlertSignalState, On)
+sdc_sc <-- sdc_sp: SetAlertStateResponse(TransactionId, Finished)
+
+sdc_sc <- sdc_sp: OperationInvokedReport(TransactionId, Finished)
+sdc_sc <- sdc_sp: EpisodicAlertReport(DelegableAlertSignalState, On)
+sdc_sc <- sdc_sp: EpisodicAlertReport(AlertSignalState, Off)
+    
+sdc_sp -> sdc_sp: suppress alert signal
+sdc_sc <- sdc_sc: annunciate alert signal
+sdc_sc <- sdc_sc: sleep more than maximum confirmation time
+
+sdc_sp -> sdc_sp: detect timeout
+
+sdc_sc <- sdc_sp: EpisodicAlertReport(DelegableAlertSignalState, Off)
+sdc_sc <- sdc_sp: EpisodicAlertReport(AlertSignalState, On)
+
+!include ../update_report_retrieval/update_report_retrieval__unsubscribe.puml
+
+@enduml
