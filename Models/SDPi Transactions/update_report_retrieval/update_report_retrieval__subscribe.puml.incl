@@ -1,0 +1,4 @@
+sdc_sc -> sdc_sp: Subscribe(Filter)
+note left: Filter is a list of topics to subscribe for,\ni.e. metrics, alerts, components,\ncontext states or waveforms 
+sdc_sc <-- sdc_sp: SubscribeResponse(SubscriptionManager, ExpirationTime)
+note right: Subscription manager is an endpoint to\nrequest subscription removal, renewal\nor status retrieval

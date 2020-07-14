@@ -1,0 +1,7 @@
+@startuml
+
+!include ../_sequence_config.puml.incl
+
+!include update_report_retrieval__main.puml.incl
+
+@enduml

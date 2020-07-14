@@ -1,0 +1,11 @@
+alt
+    sdc_sc <<- sdc_sp: Hello(EndpointReference, Types, Scopes, [XAddrs])
+else
+    sdc_sc ->> sdc_sp: Probe(Types, Scopes)
+    sdc_sc <- sdc_sp: ProbeMatches(EndpointReference, [XAddrs])
+end
+    
+opt if XAddrs were missing from ProbeMatches or Hello
+    sdc_sc ->> sdc_sp: Resolve(EndpointReference)
+    sdc_sc <- sdc_sp: ResolveMatches(XAddrs)
+end

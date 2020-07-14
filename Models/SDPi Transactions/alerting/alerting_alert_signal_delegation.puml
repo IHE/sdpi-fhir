@@ -1,0 +1,33 @@
+@startuml
+
+!include ../_sequence_config.puml.incl
+
+sdc_sc -> sdc_sp: Subscribe({DescriptionModificationReport, EpisodicAlertReport\n   OperationalStateReport, OperationInvokedReport})
+sdc_sc <-- sdc_sp: SubscribeResponse(SubscriptionManager, ExpirationTime)
+
+loop while subscription is running and a signal is ready to be generated remotely
+
+    sdc_sc -> sdc_sp: SetAlertState(DelegableAlertSignalState, On)
+    sdc_sc <-- sdc_sp: SetAlertStateResponse(TransactionId, Finished)
+
+    sdc_sc <- sdc_sp: OperationInvokedReport(TransactionId, Finished)
+    sdc_sc <- sdc_sp: EpisodicAlertReport(DelegableAlertSignalState, On)
+    sdc_sc <- sdc_sp: EpisodicAlertReport(AlertSignalState, Off)
+    
+    sdc_sp -> sdc_sp: suppress alert signal
+    sdc_sc <- sdc_sc: annunciate alert signal
+    sdc_sc <- sdc_sc: sleep less than maximum confirmation time
+
+end
+
+    sdc_sc -> sdc_sp: SetAlertState(DelegableAlertSignalState, Off)
+    sdc_sc <-- sdc_sp: SetAlertStateResponse(TransactionId, Finished)
+
+    sdc_sc <- sdc_sp: OperationInvokedReport(TransactionId, Finished)
+
+    sdc_sc <- sdc_sp: EpisodicAlertReport(DelegableAlertSignalState, Off)
+    sdc_sc <- sdc_sp: EpisodicAlertReport(AlertSignalState, On)
+
+!include ../update_report_retrieval/update_report_retrieval__unsubscribe.puml.incl
+
+@enduml

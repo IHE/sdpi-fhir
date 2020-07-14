@@ -1,0 +1,7 @@
+@startuml
+
+!include ../_sequence_config.puml.incl
+
+!include biceps_services_discovery__main.puml.incl
+
+@enduml
