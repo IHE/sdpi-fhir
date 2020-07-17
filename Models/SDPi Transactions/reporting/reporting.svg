@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="570px" preserveAspectRatio="none" style="width:677px;height:570px;" version="1.1" viewBox="0 0 677 570" width="677px" zoomAndPan="magnify"><defs><filter height="300%" id="fpiqfnf4i5dk5" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#fpiqfnf4i5dk5)" height="230.8125" style="stroke: #000000; stroke-width: 2.0;" width="646.5" x="12" y="133.6641"/><rect fill="#FFFFFF" filter="url(#fpiqfnf4i5dk5)" height="75.0547" style="stroke: #000000; stroke-width: 2.0;" width="626.5" x="22" y="159.0156"/><rect fill="#FFFFFF" filter="url(#fpiqfnf4i5dk5)" height="109.4063" style="stroke: #000000; stroke-width: 2.0;" width="469.5" x="179" y="248.0703"/><rect fill="#FFFFFF" filter="url(#fpiqfnf4i5dk5)" height="125.2422" style="stroke: #000000; stroke-width: 2.0;" width="469.5" x="179" y="378.4766"/><rect fill="#FFFFFF" height="46.1875" style="stroke: none; stroke-width: 1.0;" width="469.5" x="179" y="457.5313"/><line style="stroke: #383838; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="207" x2="207" y1="39.6094" y2="520.7188"/><line style="stroke: #383838; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="620.5" x2="620.5" y1="39.6094" y2="520.7188"/><rect fill="#F8F8F8" filter="url(#fpiqfnf4i5dk5)" height="31.6094" style="stroke: #383838; stroke-width: 1.5;" width="33" x="189" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="19" x="196" y="24.5332">SC</text><rect fill="#F8F8F8" filter="url(#fpiqfnf4i5dk5)" height="31.6094" style="stroke: #383838; stroke-width: 1.5;" width="33" x="189" y="519.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="19" x="196" y="541.252">SC</text><rect fill="#F8F8F8" filter="url(#fpiqfnf4i5dk5)" height="31.6094" style="stroke: #383838; stroke-width: 1.5;" width="32" x="602.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="18" x="609.5" y="24.5332">SP</text><rect fill="#F8F8F8" filter="url(#fpiqfnf4i5dk5)" height="31.6094" style="stroke: #383838; stroke-width: 1.5;" width="32" x="602.5" y="519.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="18" x="609.5" y="541.252">SP</text><polygon fill="#383838" points="608.5,84.3125,618.5,88.3125,608.5,92.3125,612.5,88.3125" style="stroke: #383838; stroke-width: 1.0;"/><line style="stroke: #383838; stroke-width: 1.0;" x1="207.5" x2="614.5" y1="88.3125" y2="88.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="214.5" y="75.2803">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="374" x="225.5" y="67.1045">Subscribe({DescriptionModificationReport, EpisodicMetricReport,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="303" x="241.5" y="83.4561">EpisodicContextReport, EpisodicComponentReport})</text><polygon fill="#383838" points="218.5,114.6641,208.5,118.6641,218.5,122.6641,214.5,118.6641" style="stroke: #383838; stroke-width: 1.0;"/><line style="stroke: #383838; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="212.5" x2="619.5" y1="118.6641" y2="118.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="224.5" y="113.8076">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="340" x="235.5" y="113.8076">SubscribeResponse(SubscriptionManager, ExpirationTime)</text><path d="M12,133.6641 L85,133.6641 L85,141.6641 L75,151.6641 L12,151.6641 L12,133.6641 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="230.8125" style="stroke: #000000; stroke-width: 2.0;" width="646.5" x="12" y="133.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="28" x="27" y="148.1592">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="276" x="100" y="147.083">[while subscription is running and reports ensue]</text><path d="M22,159.0156 L87,159.0156 L87,167.0156 L77,177.0156 L22,177.0156 L22,159.0156 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="75.0547" style="stroke: #000000; stroke-width: 2.0;" width="626.5" x="22" y="159.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="20" x="37" y="173.5107">opt</text><polygon fill="#383838" points="218.5,208.8945,208.5,212.8945,218.5,216.8945,214.5,212.8945" style="stroke: #383838; stroke-width: 1.0;"/><line style="stroke: #383838; stroke-width: 1.0;" x1="212.5" x2="619.5" y1="212.8945" y2="212.8945"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="224.5" y="208.0381">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="244" x="235.5" y="208.0381">Notification(DescriptionModificationReport)</text><path d="M32,182.3672 L32,224.3672 L198,224.3672 L198,192.3672 L188,182.3672 L32,182.3672 " fill="#ECECEC" filter="url(#fpiqfnf4i5dk5)" style="stroke: #383838; stroke-width: 1.0;"/><path d="M188,182.3672 L188,192.3672 L198,192.3672 L188,182.3672 " fill="#ECECEC" style="stroke: #383838; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="145" x="38" y="200.8623">Description modifications</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="38" y="217.2139">always first</text><path d="M179,248.0703 L318,248.0703 L318,256.0703 L308,266.0703 L179,266.0703 L179,248.0703 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="109.4063" style="stroke: #000000; stroke-width: 2.0;" width="469.5" x="179" y="248.0703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="94" x="194" y="262.5654">one or more of</text><polygon fill="#383838" points="218.5,284.7734,208.5,288.7734,218.5,292.7734,214.5,288.7734" style="stroke: #383838; stroke-width: 1.0;"/><line style="stroke: #383838; stroke-width: 1.0;" x1="212.5" x2="619.5" y1="288.7734" y2="288.7734"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="224.5" y="283.917">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="196" x="235.5" y="283.917">Notification(EpisodicMetricReport)</text><polygon fill="#383838" points="218.5,315.125,208.5,319.125,218.5,323.125,214.5,319.125" style="stroke: #383838; stroke-width: 1.0;"/><line style="stroke: #383838; stroke-width: 1.0;" x1="212.5" x2="619.5" y1="319.125" y2="319.125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="224.5" y="314.2686">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="205" x="235.5" y="314.2686">Notification(EpisodicContextReport)</text><polygon fill="#383838" points="218.5,345.4766,208.5,349.4766,218.5,353.4766,214.5,349.4766" style="stroke: #383838; stroke-width: 1.0;"/><line style="stroke: #383838; stroke-width: 1.0;" x1="212.5" x2="619.5" y1="349.4766" y2="349.4766"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="224.5" y="344.6201">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="226" x="235.5" y="344.6201">Notification(EpisodicComponentReport)</text><path d="M179,378.4766 L240,378.4766 L240,386.4766 L230,396.4766 L179,396.4766 L179,378.4766 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="125.2422" style="stroke: #000000; stroke-width: 2.0;" width="469.5" x="179" y="378.4766"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="16" x="194" y="392.9717">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="181" x="255" y="391.8955">[SC decides to quit subscription]</text><polygon fill="#383838" points="608.5,415.1797,618.5,419.1797,608.5,423.1797,612.5,419.1797" style="stroke: #383838; stroke-width: 1.0;"/><line style="stroke: #383838; stroke-width: 1.0;" x1="207.5" x2="614.5" y1="419.1797" y2="419.1797"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="214.5" y="414.3232">7</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="202" x="225.5" y="414.3232">Unsubscribe(SubscriptionManager)</text><polygon fill="#383838" points="218.5,445.5313,208.5,449.5313,218.5,453.5313,214.5,449.5313" style="stroke: #383838; stroke-width: 1.0;"/><line style="stroke: #383838; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="212.5" x2="619.5" y1="449.5313" y2="449.5313"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="224.5" y="444.6748">8</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="138" x="235.5" y="444.6748">UnsubscribeResponse()</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="179" x2="648.5" y1="458.5313" y2="458.5313"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="180" x="184" y="469.9502">[SP decides to quit subscription]</text><polygon fill="#383838" points="218.5,491.7188,208.5,495.7188,218.5,499.7188,214.5,495.7188" style="stroke: #383838; stroke-width: 1.0;"/><line style="stroke: #383838; stroke-width: 1.0;" x1="212.5" x2="619.5" y1="495.7188" y2="495.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="7" x="224.5" y="490.8623">9</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="225" x="235.5" y="490.8623">SubscriptionEnd(SubscriptionManager)</text><!--MD5=[6829239ebdc665b2690c7b152ce36365]
+@startuml
+
+!include ../_sequence_config.puml.incl
+
+sdc_sc -> sdc_sp: Subscribe({DescriptionModificationReport, EpisodicMetricReport, \n    EpisodicContextReport, EpisodicComponentReport})
+sdc_sc <- - sdc_sp: SubscribeResponse(SubscriptionManager, ExpirationTime)
+
+loop while subscription is running and reports ensue
+    opt
+        sdc_sc <- sdc_sp: Notification(DescriptionModificationReport)
+        note left: Description modifications\nalways first
+    end
+    
+    group one or more of
+        sdc_sc <- sdc_sp: Notification(EpisodicMetricReport)
+        sdc_sc <- sdc_sp: Notification(EpisodicContextReport)
+        sdc_sc <- sdc_sp: Notification(EpisodicComponentReport)
+    end
+end
+
+!include ../update_report_retrieval/update_report_retrieval__unsubscribe.puml.incl
+
+@enduml
+
+@startuml
+
+skinparam monochrome true
+autonumber
+
+
+participant "SC" as sdc_sc
+participant "SP" as sdc_sp
+
+sdc_sc -> sdc_sp: Subscribe({DescriptionModificationReport, EpisodicMetricReport, \n    EpisodicContextReport, EpisodicComponentReport})
+sdc_sc <- - sdc_sp: SubscribeResponse(SubscriptionManager, ExpirationTime)
+
+loop while subscription is running and reports ensue
+    opt
+        sdc_sc <- sdc_sp: Notification(DescriptionModificationReport)
+        note left: Description modifications\nalways first
+    end
+    
+    group one or more of
+        sdc_sc <- sdc_sp: Notification(EpisodicMetricReport)
+        sdc_sc <- sdc_sp: Notification(EpisodicContextReport)
+        sdc_sc <- sdc_sp: Notification(EpisodicComponentReport)
+    end
+end
+
+alt SC decides to quit subscription
+    sdc_sc -> sdc_sp: Unsubscribe(SubscriptionManager)
+    sdc_sc <- - sdc_sp: UnsubscribeResponse()
+else SP decides to quit subscription
+    sdc_sc <- sdc_sp: SubscriptionEnd(SubscriptionManager)
+end
+
+@enduml
+
+PlantUML version 1.2020.15(Sun Jun 28 13:39:45 CEST 2020)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: de
+Country: DE
+--></g></svg>

@@ -1,0 +1,6 @@
+!include update_report_retrieval__subscribe.puml.incl
+par
+    !include update_report_retrieval__auto_renew.puml.incl
+    !include update_report_retrieval__notify.puml.incl
+    !include update_report_retrieval__unsubscribe.puml.incl
+end

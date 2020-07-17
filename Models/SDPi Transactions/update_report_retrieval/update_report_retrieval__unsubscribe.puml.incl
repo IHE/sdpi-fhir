@@ -1,0 +1,6 @@
+alt $str_sdc_sc decides to quit subscription
+    sdc_sc -> sdc_sp: Unsubscribe(SubscriptionManager)
+    sdc_sc <-- sdc_sp: UnsubscribeResponse()
+else $str_sdc_sp decides to quit subscription
+    sdc_sc <- sdc_sp: SubscriptionEnd(SubscriptionManager)
+end

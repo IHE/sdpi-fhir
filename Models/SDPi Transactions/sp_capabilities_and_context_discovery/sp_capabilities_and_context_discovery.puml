@@ -1,0 +1,7 @@
+@startuml
+
+!include ../_sequence_config.puml.incl
+
+!include sp_capabilities_and_context_discovery__main.puml.incl
+
+@enduml

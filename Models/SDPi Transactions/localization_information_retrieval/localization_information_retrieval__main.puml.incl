@@ -1,0 +1,10 @@
+sdc_sc -> sdc_sp: GetSupportedLanguages()
+sdc_sc <-- sdc_sp: GetSupportedLanguagesResponse(SupportedLanguages)
+
+loop SupportedLanguage in SupportedLanguages
+    opt if SupportedLanguage is required
+        sdc_sc -> sdc_sp: GetLocalizedText(SupportedLanguage, [Filter])
+        sdc_sc <-- sdc_sp: GetLocalizedTextResponse(LocalizedTexts)
+        sdc_sc -> sdc_sc: store LocalizedTexts
+    end
+end

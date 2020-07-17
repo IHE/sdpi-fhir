@@ -1,0 +1,58 @@
+@startuml
+
+!include _sequence_config.puml.incl
+
+group unsecured
+
+    == Discover network "topology ==
+    
+    !include network_topology_discovery/network_topology_discovery__start.puml.incl
+
+end 
+
+group secured
+
+    == Discover BICEPS services ==
+    
+    !include biceps_services_discovery/biceps_services_discovery__main.puml.incl
+    
+    == Subscribe to MDIB reports ==
+    
+    !include update_report_retrieval/update_report_retrieval__subscribe.puml.incl
+    
+    par
+        !include update_report_retrieval/update_report_retrieval__auto_renew.puml.incl
+        loop while subscription is running
+            sdc_sc <- sdc_sp: Notification(Payload)
+            sdc_sc <- sdc_sc: Buffer Payload 
+        end
+    end
+
+    == Discovery SP capabilities and context ==
+
+    !include sp_capabilities_and_context_discovery/sp_capabilities_and_context_discovery__main.puml.incl
+
+
+    sdc_sc -> sdc_sc: Establish proxy MDIB from MdDescription, MdState including context states
+    sdc_sc -> sdc_sc: Stop buffering and apply buffered reports on proxy MDIB
+
+    == Retrieve update reports ==
+
+    loop while subscription is running
+        sdc_sc <- sdc_sp: Notification(Payload)
+        sdc_sc <- sdc_sc: Apply Payload on proxy MDIB 
+    end
+
+    == Connection shutdown ==
+
+    !include update_report_retrieval/update_report_retrieval__unsubscribe.puml.incl
+    
+end
+
+group unsecured
+
+    !include network_topology_discovery/network_topology_discovery__stop.puml.incl
+
+end
+
+@enduml
