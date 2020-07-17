@@ -1,0 +1,8 @@
+group secured 
+    sdc_sc <-> sdc_sp: Establish Medical DDevice External Control
+    group (for each invocation) 
+        sdc_sc -> sdc_sp: Retrieve Current Device State
+        sdc_sc -> sdc_sp: Invoke Device Control
+        sdc_sc -> sdc_sp: Verify Invocation
+    end
+end 

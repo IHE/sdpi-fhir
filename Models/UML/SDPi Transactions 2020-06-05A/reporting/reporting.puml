@@ -1,0 +1,27 @@
+@startuml
+
+!include ../_sequence_config.incl
+
+' !include reporting__main.puml
+
+==Do topology discovery & BICEPS service discovery beforehand==
+
+sdc_sc -> sdc_sp: Subscribe({DescriptionModificationReport, EpisodicMetricReport, \n    EpisodicContextReport, EpisodicComponentReport})
+sdc_sc <-- sdc_sp: SubscribeResponse(SubscriptionManager, ExpirationTime)
+
+loop while subscription is running and reports ensue
+    opt
+        sdc_sc <- sdc_sp: Notification(DescriptionModificationReport)
+        note left: Description modifications\nalways first
+    end
+    
+    group one of
+        sdc_sc <- sdc_sp: Notification(EpisodicMetricReport)
+        sdc_sc <- sdc_sp: Notification(EpisodicContextReport)
+        sdc_sc <- sdc_sp: Notification(EpisodicComponentReport)
+    end
+end
+
+!include ../update_report_retrieval/update_report_retrieval__unsubscribe.puml
+
+@enduml

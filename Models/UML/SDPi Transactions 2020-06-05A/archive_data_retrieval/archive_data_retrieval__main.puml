@@ -1,0 +1,5 @@
+sdc_sc -> sdc_sp: GetDescriptorsFromArchive(DescriptorFilter)
+sdc_sc <-- sdc_sp: GetDescriptorsFromArchiveResponse(ArchivedDescriptors)
+
+sdc_sc -> sdc_sp: GetStatesFromArchive(StatesFilter)
+sdc_sc <-- sdc_sp: GetStatesFromArchiveResponse(ArchivedStates)

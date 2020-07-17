@@ -1,0 +1,25 @@
+@startuml
+
+!include ../_sequence_config.incl
+
+' !include reporting__main.puml
+
+==Do topology discovery & BICEPS service discovery beforehand==
+
+sdc_sc -> sdc_sp: Subscribe({OperationalStateReport, OperationInvokedReport, EpisodicMetricReport})
+sdc_sc <-- sdc_sp: SubscribeResponse(SubscriptionManager, ExpirationTime)
+
+sdc_sc -> sdc_sp: SetValue(OperationHandle, NumericValue)
+sdc_sc <-- sdc_sp: SetValueResponse(TransactionId, Finished)
+
+alt metric report delivered first
+    sdc_sc <- sdc_sp: EpisodicMetricReport(NumericValue)
+    sdc_sc <- sdc_sp: OperationInvokedReport(TransactionId, Finished)
+else operation invoked report delivered first
+    sdc_sc <- sdc_sp: OperationInvokedReport(TransactionId, Finished)
+    sdc_sc <- sdc_sp: EpisodicMetricReport(NumericValue)
+end
+
+!include ../update_report_retrieval/update_report_retrieval__unsubscribe.puml
+
+@enduml

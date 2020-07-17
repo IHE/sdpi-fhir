@@ -1,0 +1,8 @@
+skinparam monochrome true
+autonumber
+
+!global $str_sdc_sc = "SC"
+!global $str_sdc_sp = "SP"
+
+participant "$str_sdc_sc" as sdc_sc
+participant "$str_sdc_sp" as sdc_sp

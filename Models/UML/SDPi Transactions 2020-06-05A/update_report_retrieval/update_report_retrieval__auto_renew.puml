@@ -1,0 +1,6 @@
+opt if subscription is supposed to be kept alive
+    loop shortly before ExpirationTime expires
+        sdc_sc -> sdc_sp: Renew(SubscriptionManager)
+        sdc_sc <-- sdc_sp: RenewResponse(ExpirationTime)
+    end
+end
