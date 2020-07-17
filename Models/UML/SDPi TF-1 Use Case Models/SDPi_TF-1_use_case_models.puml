@@ -1,0 +1,77 @@
+@startuml
+
+skinparam Monochrome true
+left to right direction
+
+title SDPi Use Case Feature:  Silent Room (SR) Alert distribution \n \n
+
+actor :Nurse Linda: as sdpi_actor_nurse_linda
+actor :Patient Joe: as sdpi_actor_patient_joe
+
+note "Silent Room -\nBedside is reset" as sdpi_note_1
+
+usecase sdpi_uc_1 as "**UC #1** \nDetect & Communicate Alert at Bedside Device"
+
+usecase sdpi_uc_2 as "**UC #2** \nAudible Alert at Bedside 
+--
+//If no DAS available//"
+
+usecase sdpi_uc_3 as "**UC #3** \nRest and Adjust Alert at Bedside"
+usecase sdpi_uc_4 as "**UC #4** \nAudible Alert at Central (DAS)" 
+usecase sdpi_uc_5 as "**UC #5** \nReset and Adjust Alert at Central" 
+usecase sdpi_uc_6 as "**UC #6** \nAudible Alert at Mobile Device (DAS)" 
+usecase sdpi_uc_7 as "**UC #7** \nReset and Adjust at Mobile Device" 
+
+sdpi_actor_patient_joe -- sdpi_uc_1
+
+sdpi_actor_nurse_linda -- sdpi_uc_2
+
+sdpi_uc_1 .> sdpi_uc_2 : <<extend>>
+sdpi_uc_1 -- sdpi_uc_4
+sdpi_uc_1 -- sdpi_uc_6
+
+sdpi_actor_nurse_linda -- sdpi_uc_3
+sdpi_actor_nurse_linda -- sdpi_uc_4
+sdpi_actor_nurse_linda -- sdpi_uc_5
+sdpi_actor_nurse_linda -- sdpi_uc_6
+sdpi_actor_nurse_linda -- sdpi_uc_7
+
+'NOTE:  The newpage directive resets the scope of what precedes ... !!!
+newpage
+
+
+skinparam Monochrome true
+left to right direction
+
+title SDPi Use Case Feature:  Silent ICU (SI) Alert distribution \n \n
+
+actor :Nurse Linda: as sdpi_actor_nurse_linda
+actor :Patient Joe: as sdpi_actor_patient_joe
+
+note "Silent ICU -\nCS may not audible" as sdpi_note_1
+
+usecase sdpi_uc_1 as "**UC #1** \nDetect & Communicate Alert at Bedside Device"
+
+usecase sdpi_uc_2 as "**UC #2** \nAudible Alert at Bedside 
+--
+//If no DAS available//"
+
+usecase sdpi_uc_3 as "**UC #3** \nRest and Adjust Alert at Bedside"
+usecase sdpi_uc_4 as "**UC #4** \nAudible Alert at Central (DAS)" 
+usecase sdpi_uc_5 as "**UC #5** \nReset and Adjust Alert at Central" 
+usecase sdpi_uc_6 as "**UC #6** \nAudible Alert at Mobile Device (DAS)" 
+usecase sdpi_uc_7 as "**UC #7** \nReset and Adjust at Mobile Device" 
+
+sdpi_uc_1 .> sdpi_uc_2 : <<extend>>
+sdpi_uc_1 .> sdpi_uc_4 : <<extend>>
+sdpi_uc_1 -- sdpi_uc_6
+
+sdpi_actor_patient_joe -- sdpi_uc_1
+sdpi_actor_nurse_linda -- sdpi_uc_2
+sdpi_actor_nurse_linda -- sdpi_uc_3
+sdpi_actor_nurse_linda -- sdpi_uc_4
+sdpi_actor_nurse_linda -- sdpi_uc_5
+sdpi_actor_nurse_linda -- sdpi_uc_6
+sdpi_actor_nurse_linda -- sdpi_uc_7
+
+@enduml

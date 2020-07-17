@@ -1,0 +1,18 @@
+group unsecured
+    sdc_part -> sdc_ip_net: Discover SDC Network Topology
+end
+
+group secured 
+    sdc_part -> sdc_somds: Discover BICEPS Services
+    sdc_sc -> sdc_sp: Discover SystemContext & Capabilties
+
+    sdc_sc -> sdc_sp: Configure Use Context
+    sdc_sp -> sdc_somds: Publish Update Reports
+    sdc_sc -> sdc_sp: Retrieve Update Reports
+    sdc_sc -> sdc_sp: Retrieve Archive Data
+    sdc_sc -> sdc_sp: Retrieve Localization Information
+    sdc_sp -> sdc_sc: Notify Change in SystemContext & Capabilities
+    sdc_sp -> sdc_somds: Notify Change in SystemContext & Capabilities
+
+    sdc_part -> sdc_fhir: <??? Get EHR info ???>
+end 
