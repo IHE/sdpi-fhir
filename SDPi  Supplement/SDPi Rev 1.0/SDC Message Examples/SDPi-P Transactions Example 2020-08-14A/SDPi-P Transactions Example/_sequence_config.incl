@@ -1,0 +1,34 @@
+skinparam monochrome true
+autonumber
+
+!global $str_sdc_part = "SPart"
+!global $str_sdc_ip_net = "IP NET"
+!global $str_sdc_somds = "SOMDS"
+!global $str_sdc_sc = "SC"
+!global $str_sdc_sp = "SP"
+!global $str_sdc_proxy = "SProxy"
+!global $str_sdc_fhir = "SDC-FHIR"
+
+!global $str_sdpi_p_somds_part = "SOMDS Participant" 
+!global $str_sdpi_p_somds_prov = "SOMDS Provider"
+!global $str_sdpi_p_somds_cons = "SOMDS Consumer"
+!global $str_sdpi_p_somds_gate = "SOMDS Gateway"
+!global $str_sdpi_p_somds_gate_fhir = "SOMDS FHIR Gateway"
+!global $str_sdpi_p_somds_gate_v2 = "SOMDS V2 Gateway"
+!global $str_sdpi_p_somds_gate_sens = "SOMDS Sensor Gateway"
+
+participant "$str_sdc_part" as sdc_part
+participant "$str_sdc_ip_net" as sdc_ip_net
+participant "$str_sdc_somds" as sdc_somds
+participant "$str_sdc_sc" as sdc_sc
+participant "$str_sdc_sp" as sdc_sp
+participant "$str_sdc_proxy" as sdc_proxy
+participant "$str_sdc_fhir" as sdc_fhir
+
+participant "$str_sdpi_p_somds_part" as sdpi_somds_participant
+participant "$str_sdpi_p_somds_prov" as sdpi_somds_provider
+participant "$str_sdpi_p_somds_cons" as sdpi_somds_consumer
+participant "$str_sdpi_p_somds_gate" as sdpi_somds_gateway
+participant "$str_sdpi_p_somds_gate_fhir" as sdpi_somds_gateway_fhir
+participant "$str_sdpi_p_somds_gate_v2" as sdpi_somds_gateway_v2
+participant "$str_sdpi_p_somds_gate_sens" as sdpi_somds_gateway_sensors
