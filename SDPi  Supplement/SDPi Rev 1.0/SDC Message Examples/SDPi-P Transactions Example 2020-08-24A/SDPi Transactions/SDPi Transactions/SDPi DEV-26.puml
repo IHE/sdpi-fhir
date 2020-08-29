@@ -1,0 +1,21 @@
+skinparam monochrome true
+autonumber
+
+!global $str_sdpi_p_somds_cons = "SOMDS Consumer"
+!global $str_sdpi_p_somds_prov = "SOMDS Provider"
+
+participant "$str_sdpi_p_somds_cons" as sdpi_somds_consumer
+participant "$str_sdpi_p_somds_prov" as sdpi_somds_provider
+
+== SDPi [DEV-26]  Discover System Context and Capabilities ==
+|||
+group secured
+    sdpi_somds_consumer -> sdpi_somds_provider: SDC: GetMdib()
+    sdpi_somds_consumer <-- sdpi_somds_provider: SDC: GetMdibResponse(MdDescription, MdState [incl. ContextStates])
+    |||
+    sdpi_somds_consumer -> sdpi_somds_consumer: Establish proxy MDIB from MdDescription, MdState including context states
+end
+|||
+
+
+

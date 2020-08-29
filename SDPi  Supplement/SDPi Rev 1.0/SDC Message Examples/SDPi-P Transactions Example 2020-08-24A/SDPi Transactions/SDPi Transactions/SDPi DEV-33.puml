@@ -1,0 +1,27 @@
+skinparam monochrome true
+autonumber
+
+!global $str_sdpi_p_somds_cons = "SOMDS Consumer"
+!global $str_sdpi_p_somds_prov = "SOMDS Provider"
+
+participant "$str_sdpi_p_somds_cons" as sdpi_somds_consumer
+participant "$str_sdpi_p_somds_prov" as sdpi_somds_provider
+
+== SDPi [DEV-33]  Retrieve Localization Information ==
+|||
+group secured
+    sdpi_somds_consumer -> sdpi_somds_provider: SDC: GetSupportedLanguages()
+    sdpi_somds_consumer <-- sdpi_somds_provider: SDC: GetSupportedLanguagesResponse(SupportedLanguages)
+    |||
+    loop SupportedLanguage in SupportedLanguages
+        opt if SupportedLanguage is required
+            sdpi_somds_consumer -> sdpi_somds_provider: SDC: GetLocalizedText(SupportedLanguage, [Filter])
+            sdpi_somds_consumer <-- sdpi_somds_provider: SDC: GetLocalizedTextResponse(LocalizedTexts)
+            sdpi_somds_consumer -> sdpi_somds_consumer: store LocalizedTexts
+        end
+    end
+end
+|||
+
+
+
