@@ -1,7 +1,0 @@
-@startuml
-
-'!include ../_sequence_config.incl
-
-!include SDPi-P__main.puml
-
-@enduml

@@ -1,0 +1,32 @@
+skinparam monochrome true
+autonumber
+
+!global $str_sdpi_p_somds_cons = "SOMDS Consumer"
+!global $str_sdpi_p_somds_prov = "SOMDS Provider"
+
+participant "$str_sdpi_p_somds_cons" as sdpi_somds_consumer
+participant "$str_sdpi_p_somds_prov" as sdpi_somds_provider
+
+== SDPi [DEV-30]  Retrieve BICEPS Content ==
+|||
+group secured
+        note over sdpi_somds_provider, sdpi_somds_consumer
+        Subscription service is the preferred implementation, but
+        some simple $str_sdpi_p_somds_prov actors may only support "polling"
+        end note
+        loop 
+                alt MDIB description version changed
+                        sdpi_somds_consumer -> sdpi_somds_provider:  BICEPS: GetMdib(...)
+                        sdpi_somds_consumer <-- sdpi_somds_provider: BICEPS: GetMdibResponse(MdDescription, MdState [incl. ContextStates])
+
+                else MDIB description version unchanged
+                        sdpi_somds_consumer -> sdpi_somds_provider:  BICEPS: GetMdState(...)
+                        sdpi_somds_consumer <-- sdpi_somds_provider: BICEPS: GetMdStateResponse(...)
+                end
+                sdpi_somds_consumer -> sdpi_somds_consumer: Apply updates to proxy MDIB
+        end
+end
+|||
+
+
+

@@ -1,0 +1,39 @@
+skinparam monochrome true
+autonumber
+
+!global $str_sdpi_p_somds_cons = "SOMDS Consumer"
+!global $str_sdpi_p_somds_prov = "SOMDS Provider"
+
+participant "$str_sdpi_p_somds_cons" as sdpi_somds_consumer
+participant "$str_sdpi_p_somds_prov" as sdpi_somds_provider
+
+== SDPi [DEV-25]  Discover BICEPS Services ==
+|||
+note over sdpi_somds_consumer, sdpi_somds_provider
+UPDATE DIAGRAM WITHOUT "opt" BUT 
+not clear which of the opt will be profiled out in SDPi.  
+Need clarification + include profiled-out content in the 
+DEV-25 transaction's TF-2 specification
+
+RESOLUTION:  
+(1) Move ALL of the "opt" to a note in the transaction but 0.001% of SC's would use ... only TransferGet() is required
+(2) SDC / SOMDA / BICEPS ... rename TransferGet() to more abstract & bind to WS message in Appendix A
+end note
+|||
+group secured
+    sdpi_somds_consumer -> sdpi_somds_provider: SDC: TransferGet()
+    sdpi_somds_consumer <-- sdpi_somds_provider: SDC: TransferGetResponse(HostingService, ThisDevice, ThisModel, HostedServices)
+|||
+    opt conditional if BICEPS interfaces are processed dynamically
+        loop on EndpointReference in HostedServices
+            sdpi_somds_consumer -> sdpi_somds_provider: SDC: MetadataGet()
+            sdpi_somds_consumer <-- sdpi_somds_provider: SDC: MetadataGetResponse([WsdlDescription], [WsdlUrl])
+        |||
+            opt conditional if WSDL description was not enclosed in MetadataGetResponse
+                sdpi_somds_consumer -> sdpi_somds_provider: HTTP_GET(WsdlUrl)
+                sdpi_somds_consumer <-- sdpi_somds_provider: HTTP_GET_RESPONSE(WsdlDescription)
+            end 
+        end
+    end
+end
+|||
