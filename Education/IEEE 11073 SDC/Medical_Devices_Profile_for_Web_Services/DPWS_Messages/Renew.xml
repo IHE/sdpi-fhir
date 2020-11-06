@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s12:Envelope xmlns:dpws="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01" xmlns:s12="http://www.w3.org/2003/05/soap-envelope" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing">
+	<s12:Header>
+		<wsa:Action>http://schemas.xmlsoap.org/ws/2004/08/eventing/Renew</wsa:Action>
+		<wsa:MessageID>urn:uuid:de90efd0-2bf2-11e7-bff2-c173f287d68f</wsa:MessageID>
+		<wsa:To>http://10.52.163.143:6464/3ed9adf9-6b57-4b36-944c-bbcf6d45b7a3/Set/</wsa:To>
+		<wse:Identifier wsa:IsReferenceParameter="true">urn:uuid:a251a04e-3eb8-4dc5-8021-7c03da3fa1ba</wse:Identifier>
+	</s12:Header>
+	<s12:Body>
+		<wse:Renew>
+			<wse:Expires>PT3M20S</wse:Expires>
+		</wse:Renew>
+	</s12:Body>
+</s12:Envelope>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s12:Envelope xmlns:dpws="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01" xmlns:s12="http://www.w3.org/2003/05/soap-envelope" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsd="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01">
+	<s12:Header>
+		<wsa:Action>http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Probe</wsa:Action>
+		<wsa:MessageID>urn:uuid:971f6490-1c5e-11e7-bf09-95a3b9a2113d</wsa:MessageID>
+		<wsa:To>urn:docs-oasis-open-org:ws-dd:ns:discovery:2009:01</wsa:To>
+	</s12:Header>
+	<s12:Body>
+		<wsd:Probe/>
+	</s12:Body>
+</s12:Envelope>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope" xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:chan="http://schemas.microsoft.com/ws/2005/02/duplex" xmlns:wsa5="http://www.w3.org/2005/08/addressing" xmlns:pm="http://p11073-10207/draft6/pm/2016/12/08" xmlns:ext="http://p11073-10207/draft6/ext/2016/12/08" xmlns:dpws="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01" xmlns:si="http://standards.ieee.org/downloads/11073/11073-20702-2016/" xmlns:msg="http://p11073-10207/draft6/msg/2016/12/08" xmlns:wsd11="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01" xmlns:wse4="http://schemas.xmlsoap.org/ws/2004/08/eventing" xmlns:wst4="http://schemas.xmlsoap.org/ws/2004/09/transfer" xmlns:wsx4="http://schemas.xmlsoap.org/ws/2004/09/mex">
+	<SOAP-ENV:Header>
+		<wsa5:MessageID>urn:uuid:c50fce31-20c3-4741-a85f-fa99bb17c4f9</wsa5:MessageID>
+		<wsa5:To SOAP-ENV:mustUnderstand="true">urn:docs-oasis-open-org:ws-dd:ns:discovery:2009:01</wsa5:To>
+		<wsa5:Action SOAP-ENV:mustUnderstand="true">http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/Hello</wsa5:Action>
+		<wsd11:AppSequence InstanceId="1000" SequenceId="ws-discovery-sequence" MessageNumber="0"/>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+		<wsd11:Hello xmlns:_0="http://p11073-20701/2016/12/08">
+			<wsa5:EndpointReference>
+				<wsa5:Address>urn:uuid:426896ea-edb7-425c-a4a3-ef7e892e94f4</wsa5:Address>
+			</wsa5:EndpointReference>
+			<wsd11:Types>dpws:Device _0:MedicalDevice</wsd11:Types>
+			<wsd11:Scopes/>
+			<wsd11:MetadataVersion>1000</wsd11:MetadataVersion>
+		</wsd11:Hello>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

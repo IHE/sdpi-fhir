@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope" xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:chan="http://schemas.microsoft.com/ws/2005/02/duplex" xmlns:wsa5="http://www.w3.org/2005/08/addressing" xmlns:pm="http://p11073-10207/draft6/pm/2016/12/08" xmlns:ext="http://p11073-10207/draft6/ext/2016/12/08" xmlns:dpws="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01" xmlns:si="http://standards.ieee.org/downloads/11073/11073-20702-2016/" xmlns:msg="http://p11073-10207/draft6/msg/2016/12/08" xmlns:wsd11="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01" xmlns:wse4="http://schemas.xmlsoap.org/ws/2004/08/eventing" xmlns:wst4="http://schemas.xmlsoap.org/ws/2004/09/transfer" xmlns:wsx4="http://schemas.xmlsoap.org/ws/2004/09/mex">
+	<SOAP-ENV:Header>
+		<wsa5:MessageID>urn:uuid:db02744e-c47e-4743-84d9-8a11a8e3b448</wsa5:MessageID>
+		<wsa5:To SOAP-ENV:mustUnderstand="true">http://10.52.219.53:55872/d9f6ffe0-2bf3-11e7-bf08-c173f287d68f</wsa5:To>
+		<wsa5:Action SOAP-ENV:mustUnderstand="true">http://p11073-10207/draft6/msg/2016/12/08/Set/OperationInvokedReport</wsa5:Action>
+		<wse:Identifier xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing">urn:uuid:a251a04e-3eb8-4dc5-8021-7c03da3fa1ba</wse:Identifier>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+		<msg:OperationInvokedReport MdibVersion="11149" SequenceId="urn:uuid:2e2aa27d-2e13-4d72-8ba8-22fe2d2bece3">
+			<msg:ReportPart OperationHandleRef="DN_SET">
+				<msg:InvocationInfo>
+					<msg:TransactionId>4</msg:TransactionId>
+					<msg:InvocationState>Start</msg:InvocationState>
+					<msg:InvocationError>Unspec</msg:InvocationError>
+				</msg:InvocationInfo>
+			</msg:ReportPart>
+		</msg:OperationInvokedReport>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

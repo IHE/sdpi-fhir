@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope" xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:chan="http://schemas.microsoft.com/ws/2005/02/duplex" xmlns:wsa5="http://www.w3.org/2005/08/addressing" xmlns:pm="http://p11073-10207/draft6/pm/2016/12/08" xmlns:ext="http://p11073-10207/draft6/ext/2016/12/08" xmlns:dpws="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01" xmlns:si="http://standards.ieee.org/downloads/11073/11073-20702-2016/" xmlns:msg="http://p11073-10207/draft6/msg/2016/12/08" xmlns:wsd11="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01" xmlns:wse4="http://schemas.xmlsoap.org/ws/2004/08/eventing" xmlns:wst4="http://schemas.xmlsoap.org/ws/2004/09/transfer" xmlns:wsx4="http://schemas.xmlsoap.org/ws/2004/09/mex">
+	<SOAP-ENV:Header>
+		<wsa5:MessageID>urn:uuid:c840c2d7-4781-4813-97bf-873e44092d23</wsa5:MessageID>
+		<wsa5:RelatesTo RelationshipType="http://www.w3.org/2005/08/addressing/reply">urn:uuid:de90efd0-2bf2-11e7-bff2-c173f287d68f</wsa5:RelatesTo>
+		<wsa5:To SOAP-ENV:mustUnderstand="true">http://www.w3.org/2005/08/addressing/anonymous</wsa5:To>
+		<wsa5:Action SOAP-ENV:mustUnderstand="true">http://schemas.xmlsoap.org/ws/2004/08/eventing/RenewResponse</wsa5:Action>
+		<wse4:Identifier>urn:uuid:a251a04e-3eb8-4dc5-8021-7c03da3fa1ba</wse4:Identifier>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+		<wse4:RenewResponse>
+			<wse4:Expires>PT00H03M20S</wse4:Expires>
+		</wse4:RenewResponse>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
