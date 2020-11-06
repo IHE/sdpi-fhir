@@ -1,0 +1,1930 @@
+<!--
+Filename: GetService.wsdl
+
+Description: Auto-generated WSDL file of SDC's Get Service
+
+Copyright 2015-2016 Draeger and Licensors. All Rights Reserved. Company Confidential.
+-->
+<wsdl:definitions xmlns:dpws="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01" xmlns:mdpws="http://standards.ieee.org/downloads/11073/11073-20702-2016/" xmlns:msg="http://p11073-10207/draft6/msg/2016/12/08" xmlns:s12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:srv="http://service-model-uri/16/11" xmlns:tns="http://p11073-10207/draft6/msg/2016/12/08" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsstm="http://standardized.namespace.org/ws-streaming" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://p11073-10207/draft6/msg/2016/12/08">
+	<wsdl:types>
+		<xsd:schema xmlns:tns="http://p11073-10207/draft6/ext/2016/12/08" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://p11073-10207/draft6/ext/2016/12/08" elementFormDefault="qualified" attributeFormDefault="unqualified" version="P11073-10207_Draft6-Revision1">
+			<xsd:element name="Extension" type="tns:ExtensionType"/>
+			<xsd:complexType name="ExtensionType">
+				<xsd:sequence>
+					<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:attribute name="MustUnderstand" type="xsd:boolean" default="false"/>
+		</xsd:schema>
+		<xsd:schema xmlns:ext="http://p11073-10207/draft6/ext/2016/12/08" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:npre="http://jaxb2-commons.dev.java.net/namespace-prefix" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:pm="http://p11073-10207/draft6/pm/2016/12/08" targetNamespace="http://p11073-10207/draft6/pm/2016/12/08" elementFormDefault="qualified" attributeFormDefault="unqualified" version="P11073-10207_Draft6-Revision1" xml:lang="en" jaxb:version="2.0">
+			<xsd:import namespace="http://p11073-10207/draft6/ext/2016/12/08"/>
+			<xsd:complexType name="Mdib">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="MdDescription" type="pm:MdDescription" minOccurs="0"/>
+					<xsd:element name="MdState" type="pm:MdState" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:attributeGroup ref="pm:MdibVersionGroup"/>
+			</xsd:complexType>
+			<xsd:complexType name="MdDescription">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="Mds" type="pm:MdsDescriptor" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+				<xsd:attribute name="DescriptionVersion" type="pm:VersionCounter" use="optional"/>
+			</xsd:complexType>
+			<xsd:complexType name="MdState">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="State" type="pm:AbstractState" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+				<xsd:attribute name="StateVersion" type="pm:VersionCounter" use="optional"/>
+			</xsd:complexType>
+			<xsd:simpleType name="Timestamp">
+				<xsd:restriction base="xsd:unsignedLong"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="VersionCounter">
+				<xsd:restriction base="xsd:unsignedLong"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="ReferencedVersion">
+				<xsd:restriction base="pm:VersionCounter"/>
+			</xsd:simpleType>
+			<xsd:attributeGroup name="MdibVersionGroup">
+				<xsd:attribute name="MdibVersion" type="pm:VersionCounter" use="optional"/>
+				<xsd:attribute name="SequenceId" type="xsd:anyURI" use="required"/>
+				<xsd:attribute name="InstanceId" type="xsd:unsignedLong"/>
+			</xsd:attributeGroup>
+			<xsd:simpleType name="CodeIdentifier">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="SymbolicCodeName">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="LocalizedTextRef">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="LocalizedText">
+				<xsd:simpleContent>
+					<xsd:extension base="xsd:string">
+						<xsd:attribute name="Ref" type="pm:LocalizedTextRef"/>
+						<xsd:attribute name="Lang" type="xsd:language"/>
+						<xsd:attribute name="Version" type="pm:ReferencedVersion"/>
+					</xsd:extension>
+				</xsd:simpleContent>
+			</xsd:complexType>
+			<xsd:complexType name="CodedValue">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="CodingSystemName" type="pm:LocalizedText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element name="ConceptDescription" type="pm:LocalizedText" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+				<xsd:attribute name="Code" type="pm:CodeIdentifier" use="required"/>
+				<xsd:attribute name="CodingSystem" type="xsd:anyURI"/>
+				<xsd:attribute name="CodingSystemVersion" type="xsd:string"/>
+				<xsd:attribute name="SymbolicCodeName" type="pm:SymbolicCodeName"/>
+			</xsd:complexType>
+			<xsd:complexType name="CodedWithTranslations">
+				<xsd:complexContent>
+					<xsd:extension base="pm:CodedValue">
+						<xsd:sequence>
+							<xsd:element name="Translation" type="pm:CodedValue" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="InstanceIdentifier">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="Type" type="pm:CodedValue" minOccurs="0"/>
+					<xsd:element name="IdentifierName" type="pm:LocalizedText" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+				<xsd:attribute name="Root" type="xsd:anyURI" use="required"/>
+				<xsd:attribute name="Extension" type="xsd:string" use="optional"/>
+			</xsd:complexType>
+			<xsd:complexType name="Range">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:attribute name="Lower" type="xsd:decimal" use="optional"/>
+				<xsd:attribute name="Upper" type="xsd:decimal" use="optional"/>
+				<xsd:attribute name="StepWidth" type="xsd:decimal" use="optional"/>
+				<xsd:attribute name="RelativeAccuracy" type="xsd:decimal" use="optional"/>
+				<xsd:attribute name="AbsoluteAccuracy" type="xsd:decimal" use="optional"/>
+			</xsd:complexType>
+			<xsd:complexType name="Measurement">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="MeasurementUnit" type="pm:CodedValue"/>
+				</xsd:sequence>
+				<xsd:attribute name="MeasuredValue" type="xsd:decimal" use="required"/>
+			</xsd:complexType>
+			<xsd:simpleType name="SafetyClassification">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Inf"/>
+					<xsd:enumeration value="MedA"/>
+					<xsd:enumeration value="MedB"/>
+					<xsd:enumeration value="MedC"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="ComponentActivation">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="On"/>
+					<xsd:enumeration value="NotRdy"/>
+					<xsd:enumeration value="StndBy"/>
+					<xsd:enumeration value="Off"/>
+					<xsd:enumeration value="Shtdn"/>
+					<xsd:enumeration value="Fail"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="Handle">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="HandleRef">
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="AbstractDescriptor">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="Type" type="pm:CodedValue" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:attribute name="Handle" type="pm:Handle" use="required"/>
+				<xsd:attribute name="DescriptorVersion" type="pm:VersionCounter" use="optional"/>
+				<xsd:attribute name="SafetyClassification" type="pm:SafetyClassification" use="optional"/>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractState">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:attribute name="StateVersion" type="pm:VersionCounter"/>
+				<xsd:attribute name="DescriptorHandle" type="pm:HandleRef" use="required"/>
+				<xsd:attribute name="DescriptorVersion" type="pm:ReferencedVersion"/>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractMultiState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractState">
+						<xsd:sequence>
+							<xsd:element name="Category" type="pm:CodedValue" minOccurs="0"/>
+						</xsd:sequence>
+						<xsd:attribute name="Handle" type="pm:Handle" use="required"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractDeviceComponentDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractDescriptor">
+						<xsd:sequence>
+							<xsd:element name="ProductionSpecification" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="SpecType" type="pm:CodedValue"/>
+										<xsd:element name="ProductionSpec" type="xsd:string"/>
+										<xsd:element name="ComponentId" type="pm:InstanceIdentifier" minOccurs="0"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="AlertSystem" type="pm:AlertSystemDescriptor" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="CalibrationState">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="No"/>
+					<xsd:enumeration value="Req"/>
+					<xsd:enumeration value="Cal"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="CalibrationType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Offset"/>
+					<xsd:enumeration value="Gain"/>
+					<xsd:enumeration value="TP"/>
+					<xsd:enumeration value="Unspec"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="CalibrationInfo">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:attribute name="ComponentCalibrationState" type="pm:CalibrationState"/>
+				<xsd:attribute name="Type" type="pm:CalibrationType" use="optional"/>
+				<xsd:attribute name="Time" type="pm:Timestamp" use="optional"/>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractDeviceComponentState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractState">
+						<xsd:sequence>
+							<xsd:element name="CalibrationInfo" type="pm:CalibrationInfo" minOccurs="0"/>
+							<xsd:element name="NextCalibration" type="pm:CalibrationInfo" minOccurs="0"/>
+						</xsd:sequence>
+						<xsd:attribute name="ActivationState" type="pm:ComponentActivation"/>
+						<xsd:attribute name="OperatingHours" type="xsd:unsignedInt"/>
+						<xsd:attribute name="OperatingCycles" type="xsd:int"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="MdsDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractDeviceComponentDescriptor">
+						<xsd:sequence>
+							<xsd:element name="MetaData" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element ref="ext:Extension" minOccurs="0"/>
+										<xsd:element name="Udi" type="xsd:string" minOccurs="0"/>
+										<xsd:element name="Manufacturer" type="pm:LocalizedText" minOccurs="0" maxOccurs="unbounded"/>
+										<xsd:element name="ModelName" type="pm:LocalizedText" minOccurs="0" maxOccurs="unbounded"/>
+										<xsd:element name="ModelNumber" type="xsd:string" minOccurs="0"/>
+										<xsd:element name="SerialNumber" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="SystemContext" type="pm:SystemContextDescriptor" minOccurs="0"/>
+							<xsd:element name="Clock" type="pm:ClockDescriptor" minOccurs="0"/>
+							<xsd:element name="Sco" type="pm:ScoDescriptor" minOccurs="0"/>
+							<xsd:element name="Vmd" type="pm:VmdDescriptor" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="MdsOperatingMode">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Nml"/>
+					<xsd:enumeration value="Dmo"/>
+					<xsd:enumeration value="Srv"/>
+					<xsd:enumeration value="Mtn"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="MdsState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractDeviceComponentState">
+						<xsd:attribute name="Lang" type="xsd:language"/>
+						<xsd:attribute name="OperatingMode" type="pm:MdsOperatingMode" use="optional"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="VmdDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractDeviceComponentDescriptor">
+						<xsd:sequence>
+							<xsd:element name="Channel" type="pm:ChannelDescriptor" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="VmdState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractDeviceComponentState"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="ChannelDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractDeviceComponentDescriptor">
+						<xsd:sequence>
+							<xsd:element name="Metric" type="pm:AbstractMetricDescriptor" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="ChannelState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractDeviceComponentState"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractAlertDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractDescriptor"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractAlertState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractState">
+						<xsd:attribute name="ActivationState" type="pm:AlertActivation" use="required"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="AlertActivation">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="On"/>
+					<xsd:enumeration value="Off"/>
+					<xsd:enumeration value="Psd"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="AlertSystemDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractAlertDescriptor">
+						<xsd:sequence>
+							<xsd:element name="AlertCondition" type="pm:AlertConditionDescriptor" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:element name="AlertSignal" type="pm:AlertSignalDescriptor" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+						<xsd:attribute name="MaxPhysiologicalParallelAlarms" type="xsd:unsignedInt"/>
+						<xsd:attribute name="MaxTechnicalParallelAlarms" type="xsd:unsignedInt"/>
+						<xsd:attribute name="SelfCheckPeriod" type="xsd:duration"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="AlertSystemState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractAlertState">
+						<xsd:attribute name="LastSelfCheck" type="pm:Timestamp"/>
+						<xsd:attribute name="SelfCheckCount" type="xsd:long"/>
+						<xsd:attribute name="PresentPhysiologicalAlarmConditions" type="pm:AlertConditionReference"/>
+						<xsd:attribute name="PresentTechnicalAlarmConditions" type="pm:AlertConditionReference"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="CauseInfo">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="RemedyInfo" type="pm:RemedyInfo" minOccurs="0"/>
+					<xsd:element name="Description" type="pm:LocalizedText" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="RemedyInfo">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="Description" type="pm:LocalizedText" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="AlertConditionKind">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Phy"/>
+					<xsd:enumeration value="Tec"/>
+					<xsd:enumeration value="Oth"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="AlertConditionPriority">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Lo"/>
+					<xsd:enumeration value="Me"/>
+					<xsd:enumeration value="Hi"/>
+					<xsd:enumeration value="None"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="AlertConditionDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractAlertDescriptor">
+						<xsd:sequence>
+							<xsd:element name="Source" type="pm:HandleRef" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:element name="CauseInfo" type="pm:CauseInfo" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+						<xsd:attribute name="Kind" type="pm:AlertConditionKind" use="required"/>
+						<xsd:attribute name="Priority" type="pm:AlertConditionPriority" use="required"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="AlertConditionReference">
+				<xsd:list itemType="pm:HandleRef"/>
+			</xsd:simpleType>
+			<xsd:complexType name="AlertConditionState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractAlertState">
+						<xsd:attribute name="ActualPriority" type="pm:AlertConditionPriority"/>
+						<xsd:attribute name="Rank" type="xsd:int"/>
+						<xsd:attribute name="Presence" type="xsd:boolean" use="required"/>
+						<xsd:attribute name="DeterminationTime" type="pm:Timestamp"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="LimitAlertConditionDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AlertConditionDescriptor">
+						<xsd:sequence>
+							<xsd:element name="MaxLimits" type="pm:Range"/>
+						</xsd:sequence>
+						<xsd:attribute name="AutoLimitSupported" type="xsd:boolean"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="AlertConditionMonitoredLimits">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="All"/>
+					<xsd:enumeration value="LoOff"/>
+					<xsd:enumeration value="HiOff"/>
+					<xsd:enumeration value="None"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="LimitAlertConditionState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AlertConditionState">
+						<xsd:sequence>
+							<xsd:element name="Limits" type="pm:Range"/>
+						</xsd:sequence>
+						<xsd:attribute name="MonitoredAlertLimits" type="pm:AlertConditionMonitoredLimits" use="required"/>
+						<xsd:attribute name="AutoLimitActivationState" type="pm:AlertActivation" use="optional"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="AlertSignalManifestation">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Aud"/>
+					<xsd:enumeration value="Vis"/>
+					<xsd:enumeration value="Tan"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="AlertSignalDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractAlertDescriptor">
+						<xsd:attribute name="ConditionSignaled" type="pm:HandleRef" use="required"/>
+						<xsd:attribute name="Manifestation" type="pm:AlertSignalManifestation" use="required"/>
+						<xsd:attribute name="Latching" type="xsd:boolean" use="required"/>
+						<xsd:attribute name="DefaultSignalGenerationDelay" type="xsd:duration"/>
+						<xsd:attribute name="SignalDelegationSupported" type="xsd:boolean"/>
+						<xsd:attribute name="AcknowledgementSupported" type="xsd:boolean" use="optional"/>
+						<xsd:attribute name="AcknowledgeTimeout" type="xsd:duration" use="optional"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="AlertSignalPresence">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="On"/>
+					<xsd:enumeration value="Off"/>
+					<xsd:enumeration value="Latch"/>
+					<xsd:enumeration value="Ack"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="AlertSignalPrimaryLocation">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Loc"/>
+					<xsd:enumeration value="Rem"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="AlertSignalState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractAlertState">
+						<xsd:attribute name="Presence" type="pm:AlertSignalPresence" use="optional"/>
+						<xsd:attribute name="Location" type="pm:AlertSignalPrimaryLocation" use="optional"/>
+						<xsd:attribute name="Slot" type="xsd:unsignedInt" use="optional"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="MetricMeasurementValidity">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Vld"/>
+					<xsd:enumeration value="Vldated"/>
+					<xsd:enumeration value="Ong"/>
+					<xsd:enumeration value="Qst"/>
+					<xsd:enumeration value="Calib"/>
+					<xsd:enumeration value="Inv"/>
+					<xsd:enumeration value="Oflw"/>
+					<xsd:enumeration value="Uflw"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="QualityIndicator">
+				<xsd:restriction base="xsd:decimal">
+					<xsd:minInclusive value="0"/>
+					<xsd:maxInclusive value="1"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="GenerationMode">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Real"/>
+					<xsd:enumeration value="Test"/>
+					<xsd:enumeration value="Demo"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="AbstractMetricValue">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="MetricQuality">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="ext:Extension" minOccurs="0"/>
+							</xsd:sequence>
+							<xsd:attribute name="Validity" type="pm:MetricMeasurementValidity" use="required"/>
+							<xsd:attribute name="Mode" type="pm:GenerationMode"/>
+							<xsd:attribute name="Qi" type="pm:QualityIndicator"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="Annotation" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element ref="ext:Extension" minOccurs="0"/>
+								<xsd:element name="Type" type="pm:CodedValue"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:attribute name="StartTime" type="pm:Timestamp" use="optional"/>
+				<xsd:attribute name="StopTime" type="pm:Timestamp" use="optional"/>
+				<xsd:attribute name="DeterminationTime" type="pm:Timestamp" use="optional"/>
+			</xsd:complexType>
+			<xsd:complexType name="NumericMetricValue">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractMetricValue">
+						<xsd:attribute name="Value" type="xsd:decimal" use="optional"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="StringMetricValue">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractMetricValue">
+						<xsd:attribute name="Value" type="xsd:string" use="optional"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="RealTimeValueType">
+				<xsd:list itemType="xsd:decimal"/>
+			</xsd:simpleType>
+			<xsd:complexType name="SampleArrayValue">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractMetricValue">
+						<xsd:sequence>
+							<xsd:element name="ApplyAnnotation" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:attribute name="AnnotationIndex" type="xsd:unsignedInt" use="required"/>
+									<xsd:attribute name="SampleIndex" type="xsd:unsignedInt" use="required"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="Samples" type="pm:RealTimeValueType"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="MetricCategory">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Unspec"/>
+					<xsd:enumeration value="Msrmt"/>
+					<xsd:enumeration value="Clc"/>
+					<xsd:enumeration value="Set"/>
+					<xsd:enumeration value="Preset"/>
+					<xsd:enumeration value="Rcmm"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="MetricAvailability">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Intr"/>
+					<xsd:enumeration value="Cont"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="AbstractMetricDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractDescriptor">
+						<xsd:sequence>
+							<xsd:element name="Unit" type="pm:CodedValue"/>
+							<xsd:element name="BodySite" type="pm:CodedValue" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+						<xsd:attribute name="MetricCategory" type="pm:MetricCategory" use="required"/>
+						<xsd:attribute name="MetricAvailability" type="pm:MetricAvailability" use="required"/>
+						<xsd:attribute name="MaxMeasurementTime" type="xsd:duration" use="optional"/>
+						<xsd:attribute name="MaxDelayTime" type="xsd:duration" use="optional"/>
+						<xsd:attribute name="DeterminationPeriod" type="xsd:duration" use="optional"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractMetricState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractState">
+						<xsd:sequence>
+							<xsd:element name="BodySite" type="pm:CodedValue" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+						<xsd:attribute name="ActivationState" type="pm:ComponentActivation"/>
+						<xsd:attribute name="ActiveDeterminationPeriod" type="xsd:duration"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="NumericMetricDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractMetricDescriptor">
+						<xsd:sequence>
+							<xsd:element name="TechnicalRange" type="pm:Range" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+						<xsd:attribute name="Resolution" type="xsd:decimal"/>
+						<xsd:attribute name="AveragingPeriod" type="xsd:duration"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="NumericMetricState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractMetricState">
+						<xsd:sequence>
+							<xsd:element name="MetricValue" type="pm:NumericMetricValue" minOccurs="0"/>
+							<xsd:element name="PhysiologicalRange" type="pm:Range" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+						<xsd:attribute name="ActiveAveragingPeriod" type="xsd:duration" use="optional"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="StringMetricDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractMetricDescriptor"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="StringMetricState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractMetricState">
+						<xsd:sequence>
+							<xsd:element name="MetricValue" type="pm:StringMetricValue" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="EnumStringMetricDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:StringMetricDescriptor">
+						<xsd:sequence>
+							<xsd:element name="AllowedValue" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="Value" type="xsd:string"/>
+										<xsd:element name="Type" type="pm:CodedValue" minOccurs="0"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="EnumStringMetricState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:StringMetricState"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="RealTimeSampleArrayMetricDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractMetricDescriptor">
+						<xsd:sequence>
+							<xsd:element name="TechnicalRange" type="pm:Range" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+						<xsd:attribute name="Resolution" type="xsd:decimal"/>
+						<xsd:attribute name="SamplePeriod" type="xsd:duration" use="required"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="RealTimeSampleArrayMetricState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractMetricState">
+						<xsd:sequence>
+							<xsd:element name="MetricValue" type="pm:SampleArrayValue" minOccurs="0"/>
+							<xsd:element name="PhysiologicalRange" type="pm:Range" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="DistributionSampleArrayMetricDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractMetricDescriptor">
+						<xsd:sequence>
+							<xsd:element name="TechnicalRange" type="pm:Range" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:element name="DomainUnit" type="pm:CodedValue"/>
+							<xsd:element name="DistributionRange" type="pm:Range"/>
+						</xsd:sequence>
+						<xsd:attribute name="Resolution" type="xsd:decimal"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="DistributionSampleArrayMetricState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractMetricState">
+						<xsd:sequence>
+							<xsd:element name="MetricValue" type="pm:SampleArrayValue" minOccurs="0"/>
+							<xsd:element name="PhysiologicalRange" type="pm:Range" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="ScoDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractDescriptor">
+						<xsd:sequence>
+							<xsd:element name="Operation" type="pm:AbstractOperationDescriptor" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="ScoState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractState"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractOperationDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractDescriptor">
+						<xsd:attribute name="OperationTarget" type="pm:HandleRef" use="required"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractSetStateOperationDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractOperationDescriptor">
+						<xsd:sequence>
+							<xsd:element name="ModifiableElement" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="OperatingMode">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Dis"/>
+					<xsd:enumeration value="En"/>
+					<xsd:enumeration value="NA"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="AbstractOperationState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractState">
+						<xsd:attribute name="OperatingMode" type="pm:OperatingMode" use="required"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="SetValueOperationDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractOperationDescriptor"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="SetValueOperationState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractOperationState">
+						<xsd:sequence>
+							<xsd:element name="allowedRange" type="pm:Range" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="SetStringOperationDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractOperationDescriptor">
+						<xsd:attribute name="MaxLength" type="xsd:unsignedLong" use="optional"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="SetStringOperationState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractOperationState"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="ActivateOperationDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractSetStateOperationDescriptor">
+						<xsd:sequence>
+							<xsd:element name="Argument" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="ArgName" type="pm:CodedValue"/>
+										<xsd:element name="Arg" type="xsd:QName"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="ActivationDuration" type="xsd:duration"/>
+						<xsd:attribute name="Retriggerable" type="xsd:boolean"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="ActivateOperationState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractOperationState"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="SetContextStateOperationDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractSetStateOperationDescriptor"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="SetContextStateOperationState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractOperationState"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="SetMetricStateOperationDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractSetStateOperationDescriptor"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="SetMetricStateOperationState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractOperationState"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="SetComponentStateOperationDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractSetStateOperationDescriptor"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="SetComponentStateOperationState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractOperationState"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="SetAlertStateOperationDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractSetStateOperationDescriptor"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="SetAlertStateOperationState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractOperationState"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="TimeZone">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:complexType name="ClockDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractDeviceComponentDescriptor">
+						<xsd:sequence>
+							<xsd:element name="TimeProtocol" type="pm:CodedValue" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+						<xsd:attribute name="Resolution" type="xsd:duration"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="ClockState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractDeviceComponentState">
+						<xsd:sequence>
+							<xsd:element name="ActiveSyncProtocol" type="pm:CodedValue" minOccurs="0"/>
+						</xsd:sequence>
+						<xsd:attribute name="DateAndTime" type="pm:Timestamp"/>
+						<xsd:attribute name="RemoteSync" type="xsd:boolean" use="required"/>
+						<xsd:attribute name="ReferenceSource" type="xsd:anyURI"/>
+						<xsd:attribute name="Accuracy" type="xsd:decimal" use="optional"/>
+						<xsd:attribute name="LastSet" type="pm:Timestamp"/>
+						<xsd:attribute name="TimeZone" type="pm:TimeZone" use="optional"/>
+						<xsd:attribute name="CriticalUse" type="xsd:boolean" use="optional"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="SystemContextDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractDescriptor">
+						<xsd:sequence>
+							<xsd:element name="PatientContext" type="pm:PatientContextDescriptor" minOccurs="0"/>
+							<xsd:element name="LocationContext" type="pm:LocationContextDescriptor" minOccurs="0"/>
+							<xsd:element name="EnsembleContext" type="pm:EnsembleContextDescriptor" minOccurs="0"/>
+							<xsd:element name="OperatorContext" type="pm:OperatorContextDescriptor" minOccurs="0"/>
+							<xsd:element name="WorkflowContext" type="pm:WorkflowContextDescriptor" minOccurs="0"/>
+							<xsd:element name="MeansContext" type="pm:MeansContextDescriptor" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="SystemContextState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractState"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractContextDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractDescriptor"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:simpleType name="ContextAssociation">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="No"/>
+					<xsd:enumeration value="Pre"/>
+					<xsd:enumeration value="Assoc"/>
+					<xsd:enumeration value="Dis"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="AbstractContextState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractMultiState">
+						<xsd:sequence>
+							<xsd:element name="Validator" type="pm:InstanceIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+							<xsd:element name="Identification" type="pm:InstanceIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+						<xsd:attribute name="ContextAssociation" type="pm:ContextAssociation"/>
+						<xsd:attribute name="BindingMdibVersion" type="pm:ReferencedVersion" use="optional"/>
+						<xsd:attribute name="UnbindingMdibVersion" type="pm:ReferencedVersion"/>
+						<xsd:attribute name="BindingStartTime" type="pm:Timestamp"/>
+						<xsd:attribute name="BindingEndTime" type="pm:Timestamp"/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="PersonReference">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="Identification" type="pm:InstanceIdentifier" maxOccurs="unbounded"/>
+					<xsd:element name="Name" type="pm:BaseDemographics" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="PatientContextDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractContextDescriptor"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="BaseDemographics">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="Givenname" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="Middlename" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element name="Familyname" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="Birthname" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="Title" type="xsd:string" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="Sex">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Unspec"/>
+					<xsd:enumeration value="M"/>
+					<xsd:enumeration value="F"/>
+					<xsd:enumeration value="Unkn"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="PatientType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Unspec"/>
+					<xsd:enumeration value="Ad"/>
+					<xsd:enumeration value="Ped"/>
+					<xsd:enumeration value="Neo"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="PatientDemographicsCoreData">
+				<xsd:complexContent>
+					<xsd:extension base="pm:BaseDemographics">
+						<xsd:sequence>
+							<xsd:element name="Sex" type="pm:Sex" minOccurs="0"/>
+							<xsd:element name="PatientType" type="pm:PatientType" minOccurs="0"/>
+							<xsd:element name="DateOfBirth" minOccurs="0">
+								<xsd:complexType>
+									<xsd:simpleContent>
+										<xsd:extension base="xsd:date">
+											<xsd:attribute name="Timepoint" type="xsd:time" use="optional"/>
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="Height" type="pm:Measurement" minOccurs="0"/>
+							<xsd:element name="Weight" type="pm:Measurement" minOccurs="0"/>
+							<xsd:element name="Race" type="pm:CodedValue" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="NeonatalPatientDemographicsCoreData">
+				<xsd:complexContent>
+					<xsd:extension base="pm:PatientDemographicsCoreData">
+						<xsd:sequence>
+							<xsd:element name="GestationalAge" type="pm:Measurement" minOccurs="0"/>
+							<xsd:element name="BirthLength" type="pm:Measurement" minOccurs="0"/>
+							<xsd:element name="BirthWeight" type="pm:Measurement" minOccurs="0"/>
+							<xsd:element name="HeadCircumference" type="pm:Measurement" minOccurs="0"/>
+							<xsd:element name="Mother" type="pm:PersonReference" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="PatientContextState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractContextState">
+						<xsd:sequence>
+							<xsd:element name="CoreData" type="pm:PatientDemographicsCoreData" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="LocationContextDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractContextDescriptor"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="LocationContextState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractContextState">
+						<xsd:sequence>
+							<xsd:element name="LocationDetail" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element ref="ext:Extension" minOccurs="0"/>
+									</xsd:sequence>
+									<xsd:attribute name="PoC" type="xsd:string" use="optional"/>
+									<xsd:attribute name="Room" type="xsd:string" use="optional"/>
+									<xsd:attribute name="Bed" type="xsd:string" use="optional"/>
+									<xsd:attribute name="Facility" type="xsd:string" use="optional"/>
+									<xsd:attribute name="Building" type="xsd:string" use="optional"/>
+									<xsd:attribute name="Floor" type="xsd:string" use="optional"/>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="WorkflowContextDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractContextDescriptor"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="ClinicalInfo">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="Type" type="pm:CodedValue" minOccurs="0"/>
+					<xsd:element name="Description" type="pm:LocalizedText" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element name="RelatedMeasurement" type="pm:Measurement" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ImagingProcedure">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="AccessionIdentifier" type="pm:InstanceIdentifier"/>
+					<xsd:element name="RequestedProcedureId" type="pm:InstanceIdentifier"/>
+					<xsd:element name="StudyInstanceUid" type="pm:InstanceIdentifier"/>
+					<xsd:element name="ScheduledProcedureStepId" type="pm:InstanceIdentifier"/>
+					<xsd:element name="Modality" type="pm:CodedValue" minOccurs="0"/>
+					<xsd:element name="ProtocolCode" type="pm:CodedValue" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="OrderDetail">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="Start" type="xsd:dateTime" minOccurs="0"/>
+					<xsd:element name="End" type="xsd:dateTime" minOccurs="0"/>
+					<xsd:element name="Performer" type="pm:PersonParticipation" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element name="Service" type="pm:CodedValue" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="PersonParticipation">
+				<xsd:complexContent>
+					<xsd:extension base="pm:PersonReference">
+						<xsd:sequence>
+							<xsd:element name="Role" type="pm:CodedValue" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="WorkflowContextState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractContextState">
+						<xsd:sequence>
+							<xsd:element name="OrderDetail" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element ref="ext:Extension" minOccurs="0"/>
+										<xsd:element name="VisitNumber" type="pm:InstanceIdentifier" minOccurs="0"/>
+										<xsd:element name="PlacerOrderNumber" type="pm:InstanceIdentifier"/>
+										<xsd:element name="FillerOrderNumber" type="pm:InstanceIdentifier" minOccurs="0"/>
+										<xsd:element name="Patient" type="pm:PersonReference"/>
+										<xsd:element name="ReferringPhysician" type="pm:PersonReference" minOccurs="0"/>
+										<xsd:element name="RequestingPhysician" type="pm:PersonReference" minOccurs="0"/>
+										<xsd:element name="Reason" type="pm:ClinicalInfo" minOccurs="0" maxOccurs="unbounded"/>
+										<xsd:element name="DangerCode" type="pm:CodedValue" minOccurs="0" maxOccurs="unbounded"/>
+										<xsd:element name="RelevantClinicalInfo" type="pm:ClinicalInfo" minOccurs="0" maxOccurs="unbounded"/>
+										<xsd:element name="ImagingProcedure" type="pm:ImagingProcedure" minOccurs="0" maxOccurs="unbounded"/>
+										<xsd:element name="RequestedOrderDetail" type="pm:OrderDetail" minOccurs="0"/>
+										<xsd:element name="PerformedOrderDetail" type="pm:OrderDetail" minOccurs="0"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="OperatorContextDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractContextDescriptor"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="OperatorContextState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractContextState"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="MeansContextDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractContextDescriptor"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="MeansContextState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractContextState"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="EnsembleContextDescriptor">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractContextDescriptor"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="EnsembleContextState">
+				<xsd:complexContent>
+					<xsd:extension base="pm:AbstractContextState"/>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:attributeGroup name="ContainmentTreeInfo">
+				<xsd:attribute name="HandleRef" type="pm:HandleRef" use="optional"/>
+				<xsd:attribute name="ParentHandleRef" type="pm:HandleRef" use="optional"/>
+				<xsd:attribute name="EntryType" type="xsd:QName" use="optional"/>
+				<xsd:attribute name="ChildrenCount" type="xsd:int" use="optional"/>
+			</xsd:attributeGroup>
+			<xsd:complexType name="ContainmentTree">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="Entry" type="pm:ContainmentTreeEntry" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+				<xsd:attributeGroup ref="pm:ContainmentTreeInfo"/>
+			</xsd:complexType>
+			<xsd:complexType name="ContainmentTreeEntry">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="Type" type="pm:CodedValue" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:attributeGroup ref="pm:ContainmentTreeInfo"/>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:ext="http://p11073-10207/draft6/ext/2016/12/08" xmlns:msg="http://p11073-10207/draft6/msg/2016/12/08" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:npre="http://jaxb2-commons.dev.java.net/namespace-prefix" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:pm="http://p11073-10207/draft6/pm/2016/12/08" targetNamespace="http://p11073-10207/draft6/msg/2016/12/08" elementFormDefault="qualified" attributeFormDefault="unqualified" version="P11073-10207_Draft6-Revision1" xml:lang="en" jaxb:version="2.0">
+			<xsd:import namespace="http://p11073-10207/draft6/ext/2016/12/08"/>
+			<xsd:import namespace="http://p11073-10207/draft6/pm/2016/12/08"/>
+			<xsd:simpleType name="TransactionId">
+				<xsd:restriction base="xsd:unsignedInt"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="InvocationState">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Wait"/>
+					<xsd:enumeration value="Start"/>
+					<xsd:enumeration value="Cnclld"/>
+					<xsd:enumeration value="CnclldMan"/>
+					<xsd:enumeration value="Fin"/>
+					<xsd:enumeration value="FinMod"/>
+					<xsd:enumeration value="Fail"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="InvocationError">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Unspec"/>
+					<xsd:enumeration value="Unkn"/>
+					<xsd:enumeration value="Inv"/>
+					<xsd:enumeration value="Oth"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="InvocationInfo">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="TransactionId" type="msg:TransactionId"/>
+					<xsd:element name="InvocationState" type="msg:InvocationState"/>
+					<xsd:element name="InvocationError" type="msg:InvocationError" minOccurs="0"/>
+					<xsd:element name="InvocationErrorMessage" type="pm:LocalizedText" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractGet">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractGetResponse">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:attributeGroup ref="pm:MdibVersionGroup"/>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractReportPart">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="SourceMds" type="pm:HandleRef" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractReport">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:attributeGroup ref="pm:MdibVersionGroup"/>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractSet">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="OperationHandleRef" type="pm:HandleRef"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="AbstractSetResponse">
+				<xsd:sequence>
+					<xsd:element ref="ext:Extension" minOccurs="0"/>
+					<xsd:element name="InvocationInfo" type="msg:InvocationInfo"/>
+				</xsd:sequence>
+				<xsd:attributeGroup ref="pm:MdibVersionGroup"/>
+			</xsd:complexType>
+			<xsd:element name="GetMdib">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGet"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetMdibResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGetResponse">
+							<xsd:sequence>
+								<xsd:element name="Mdib" type="pm:Mdib"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetMdDescription">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGet">
+							<xsd:sequence>
+								<xsd:element name="HandleRef" type="pm:HandleRef" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetMdDescriptionResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGetResponse">
+							<xsd:sequence>
+								<xsd:element name="MdDescription" type="pm:MdDescription"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetMdState">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGet">
+							<xsd:sequence>
+								<xsd:element name="HandleRef" type="pm:HandleRef" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetMdStateResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGetResponse">
+							<xsd:sequence>
+								<xsd:element name="MdState" type="pm:MdState"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetContextStates">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGet">
+							<xsd:sequence>
+								<xsd:element name="HandleRef" type="pm:HandleRef" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetContextStatesResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGetResponse">
+							<xsd:sequence>
+								<xsd:element name="ContextState" type="pm:AbstractContextState" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SetContextState">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractSet">
+							<xsd:sequence>
+								<xsd:element name="ProposedContextState" type="pm:AbstractContextState" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SetContextStateResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractSetResponse"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="AbstractContextReport">
+				<xsd:complexContent>
+					<xsd:extension base="msg:AbstractReport">
+						<xsd:sequence>
+							<xsd:element name="ReportPart" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:complexContent>
+										<xsd:extension base="msg:AbstractReportPart">
+											<xsd:sequence>
+												<xsd:element name="ChangedContextState" type="pm:AbstractContextState" minOccurs="0" maxOccurs="unbounded"/>
+											</xsd:sequence>
+										</xsd:extension>
+									</xsd:complexContent>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:element name="PeriodicContextReport">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractContextReport"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="EpisodicContextReport">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractContextReport"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetLocalizedText">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGet">
+							<xsd:sequence>
+								<xsd:element name="Ref" type="pm:LocalizedTextRef"/>
+								<xsd:element name="Version" type="pm:ReferencedVersion" minOccurs="0"/>
+								<xsd:element name="Lang" type="xsd:language" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetLocalizedTextResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGetResponse">
+							<xsd:sequence>
+								<xsd:element name="Text" minOccurs="0" maxOccurs="unbounded">
+									<xsd:complexType>
+										<xsd:simpleContent>
+											<xsd:extension base="xsd:string">
+												<xsd:attribute name="Lang" type="xsd:language"/>
+											</xsd:extension>
+										</xsd:simpleContent>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetSupportedLanguages">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGet">
+							<xsd:sequence/>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetSupportedLanguagesResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGetResponse">
+							<xsd:sequence>
+								<xsd:element name="Lang" type="xsd:language" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="TimeFrame">
+				<xsd:attribute name="Start" type="pm:Timestamp"/>
+				<xsd:attribute name="End" type="pm:Timestamp"/>
+			</xsd:complexType>
+			<xsd:element name="GetDescriptorsFromArchive">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGet">
+							<xsd:sequence>
+								<xsd:element name="DescriptorRevision" type="pm:ReferencedVersion" minOccurs="0"/>
+								<xsd:element name="TimeFrame" type="msg:TimeFrame" minOccurs="0"/>
+								<xsd:element name="Handle" type="pm:HandleRef" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetDescriptorsFromArchiveResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGetResponse">
+							<xsd:sequence>
+								<xsd:element name="Descriptor" type="pm:AbstractDescriptor" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetStatesFromArchive">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGet">
+							<xsd:sequence>
+								<xsd:element name="StateRevision" type="pm:ReferencedVersion" minOccurs="0"/>
+								<xsd:element name="TimeFrame" type="msg:TimeFrame" minOccurs="0"/>
+								<xsd:element name="Handle" type="pm:HandleRef" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetStatesFromArchiveResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGetResponse">
+							<xsd:sequence>
+								<xsd:element name="State" type="pm:AbstractState" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SetValue">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractSet">
+							<xsd:sequence>
+								<xsd:element name="RequestedNumericValue" type="xsd:decimal"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SetValueResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractSetResponse"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SetString">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractSet">
+							<xsd:sequence>
+								<xsd:element name="RequestedStringValue" type="xsd:string"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SetStringResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractSetResponse"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Activate">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractSet">
+							<xsd:sequence>
+								<xsd:element name="Argument" minOccurs="0" maxOccurs="unbounded">
+									<xsd:complexType>
+										<xsd:sequence>
+											<xsd:element ref="ext:Extension" minOccurs="0"/>
+											<xsd:element name="ArgValue" type="xsd:anySimpleType"/>
+										</xsd:sequence>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ActivateResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractSetResponse"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SetAlertState">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractSet">
+							<xsd:sequence>
+								<xsd:element name="ProposedAlertState" type="pm:AbstractAlertState"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SetAlertStateResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractSetResponse"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SetComponentState">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractSet">
+							<xsd:sequence>
+								<xsd:element name="ProposedComponentState" type="pm:AbstractDeviceComponentState" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SetComponentStateResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractSetResponse"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SetMetricState">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractSet">
+							<xsd:sequence>
+								<xsd:element name="ProposedMetricState" type="pm:AbstractMetricState" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SetMetricStateResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractSetResponse"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="OperationInvokedReport">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractReport">
+							<xsd:sequence>
+								<xsd:element name="ReportPart" maxOccurs="unbounded">
+									<xsd:complexType>
+										<xsd:complexContent>
+											<xsd:extension base="msg:AbstractReportPart">
+												<xsd:sequence>
+													<xsd:element name="InvocationInfo" type="msg:InvocationInfo"/>
+												</xsd:sequence>
+												<xsd:attribute name="OperationHandleRef" type="pm:HandleRef" use="required"/>
+												<xsd:attribute name="OperationTarget" type="pm:HandleRef"/>
+											</xsd:extension>
+										</xsd:complexContent>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetContainmentTree">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGet">
+							<xsd:sequence>
+								<xsd:element name="HandleRef" type="pm:HandleRef" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetContainmentTreeResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGetResponse">
+							<xsd:sequence>
+								<xsd:element name="ContainmentTree" type="pm:ContainmentTree"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetDescriptor">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGet">
+							<xsd:sequence>
+								<xsd:element name="HandleRef" type="pm:HandleRef" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetDescriptorResponse">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractGetResponse">
+							<xsd:sequence>
+								<xsd:element name="Descriptor" type="pm:AbstractDescriptor" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="AbstractMetricReport">
+				<xsd:complexContent>
+					<xsd:extension base="msg:AbstractReport">
+						<xsd:sequence>
+							<xsd:element name="ReportPart" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:complexContent>
+										<xsd:extension base="msg:AbstractReportPart">
+											<xsd:sequence>
+												<xsd:element name="MetricState" type="pm:AbstractMetricState" minOccurs="0" maxOccurs="unbounded"/>
+											</xsd:sequence>
+										</xsd:extension>
+									</xsd:complexContent>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:element name="EpisodicMetricReport">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractMetricReport"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PeriodicMetricReport">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractMetricReport"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="AbstractComponentReport">
+				<xsd:complexContent>
+					<xsd:extension base="msg:AbstractReport">
+						<xsd:sequence>
+							<xsd:element name="ReportPart" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:complexContent>
+										<xsd:extension base="msg:AbstractReportPart">
+											<xsd:sequence>
+												<xsd:element name="ComponentState" type="pm:AbstractDeviceComponentState" minOccurs="0" maxOccurs="unbounded"/>
+											</xsd:sequence>
+										</xsd:extension>
+									</xsd:complexContent>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:element name="EpisodicComponentReport">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractComponentReport"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PeriodicComponentReport">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractComponentReport"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="AbstractAlertReport">
+				<xsd:complexContent>
+					<xsd:extension base="msg:AbstractReport">
+						<xsd:sequence>
+							<xsd:element name="ReportPart" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:complexContent>
+										<xsd:extension base="msg:AbstractReportPart">
+											<xsd:sequence>
+												<xsd:element name="AlertState" type="pm:AbstractAlertState" minOccurs="0" maxOccurs="unbounded"/>
+											</xsd:sequence>
+										</xsd:extension>
+									</xsd:complexContent>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:element name="EpisodicAlertReport">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractAlertReport"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PeriodicAlertReport">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractAlertReport"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="AbstractOperationalStateReport">
+				<xsd:complexContent>
+					<xsd:extension base="msg:AbstractReport">
+						<xsd:sequence>
+							<xsd:element name="ReportPart" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:complexContent>
+										<xsd:extension base="msg:AbstractReportPart">
+											<xsd:sequence>
+												<xsd:element name="OperationState" type="pm:AbstractOperationState" minOccurs="0" maxOccurs="unbounded"/>
+											</xsd:sequence>
+										</xsd:extension>
+									</xsd:complexContent>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:element name="EpisodicOperationalStateReport">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractOperationalStateReport"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PeriodicOperationalStateReport">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractOperationalStateReport"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SystemErrorReport">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractReport">
+							<xsd:sequence>
+								<xsd:element name="ReportPart" minOccurs="1" maxOccurs="unbounded">
+									<xsd:complexType>
+										<xsd:complexContent>
+											<xsd:extension base="msg:AbstractReportPart">
+												<xsd:sequence>
+													<xsd:element name="ErrorCode" type="pm:CodedValue"/>
+													<xsd:element name="ErrorInfo" type="pm:LocalizedText" minOccurs="0"/>
+												</xsd:sequence>
+											</xsd:extension>
+										</xsd:complexContent>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:simpleType name="DescriptionModificationType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Crt"/>
+					<xsd:enumeration value="Upt"/>
+					<xsd:enumeration value="Del"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="DescriptionModificationReport">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractReport">
+							<xsd:sequence>
+								<xsd:element name="ReportPart" maxOccurs="unbounded">
+									<xsd:complexType>
+										<xsd:complexContent>
+											<xsd:extension base="msg:AbstractReportPart">
+												<xsd:sequence>
+													<xsd:element name="Descriptor" type="pm:AbstractDescriptor" minOccurs="0" maxOccurs="unbounded"/>
+													<xsd:element name="State" type="pm:AbstractState" minOccurs="0" maxOccurs="unbounded"/>
+												</xsd:sequence>
+												<xsd:attribute name="ParentDescriptor" type="pm:HandleRef" use="optional"/>
+												<xsd:attribute name="ModificationType" type="msg:DescriptionModificationType" use="optional"/>
+											</xsd:extension>
+										</xsd:complexContent>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="WaveformStreamReport">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractReport">
+							<xsd:sequence>
+								<xsd:element name="State" type="pm:RealTimeSampleArrayMetricState" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ObservedValueStreamReport">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="msg:AbstractReport">
+							<xsd:sequence>
+								<xsd:element name="Value" minOccurs="0" maxOccurs="unbounded">
+									<xsd:complexType>
+										<xsd:sequence>
+											<xsd:element name="Value" type="pm:SampleArrayValue" minOccurs="0" maxOccurs="1"/>
+										</xsd:sequence>
+										<xsd:attribute name="Metric" type="pm:HandleRef" use="required"/>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:simpleType name="RetrievabilityMethod">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Get"/>
+					<xsd:enumeration value="Per"/>
+					<xsd:enumeration value="Ep"/>
+					<xsd:enumeration value="Strm"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="RetrievabilityInfo">
+				<xsd:sequence>
+					<xsd:sequence>
+						<xsd:element ref="ext:Extension" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:sequence>
+				<xsd:attribute name="Method" type="msg:RetrievabilityMethod" use="required"/>
+				<xsd:attribute name="UpdatePeriod" type="xsd:duration"/>
+			</xsd:complexType>
+			<xsd:element name="Retrievability">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="By" type="msg:RetrievabilityInfo" minOccurs="0" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="GetMdState">
+		<wsdl:part name="parameters" element="msg:GetMdState"/>
+	</wsdl:message>
+	<wsdl:message name="GetMdStateResponse">
+		<wsdl:part name="parameters" element="msg:GetMdStateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetMdib">
+		<wsdl:part name="parameters" element="msg:GetMdib"/>
+	</wsdl:message>
+	<wsdl:message name="GetMdibResponse">
+		<wsdl:part name="parameters" element="msg:GetMdibResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetMdDescription">
+		<wsdl:part name="parameters" element="msg:GetMdDescription"/>
+	</wsdl:message>
+	<wsdl:message name="GetMdDescriptionResponse">
+		<wsdl:part name="parameters" element="msg:GetMdDescriptionResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="Get" dpws:DiscoveryType="srv:Get">
+		<wsdl:operation name="GetMdState">
+			<wsdl:input message="msg:GetMdState" wsa:Action="http://p11073-10207/draft6/msg/2016/12/08/Get/GetMdState" wsam:Action="http://p11073-10207/draft6/msg/2016/12/08/Get/GetMdState"/>
+			<wsdl:output message="msg:GetMdStateResponse" wsa:Action="http://p11073-10207/draft6/msg/2016/12/08/Get/GetMdStateResponse" wsam:Action="http://p11073-10207/draft6/msg/2016/12/08/Get/GetMdStateResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetMdib">
+			<wsdl:input message="msg:GetMdib" wsa:Action="http://p11073-10207/draft6/msg/2016/12/08/Get/GetMdib" wsam:Action="http://p11073-10207/draft6/msg/2016/12/08/Get/GetMdib"/>
+			<wsdl:output message="msg:GetMdibResponse" wsa:Action="http://p11073-10207/draft6/msg/2016/12/08/Get/GetMdibResponse" wsam:Action="http://p11073-10207/draft6/msg/2016/12/08/Get/GetMdibResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetMdDescription">
+			<wsdl:input message="msg:GetMdDescription" wsa:Action="http://p11073-10207/draft6/msg/2016/12/08/Get/GetMdDescription" wsam:Action="http://p11073-10207/draft6/msg/2016/12/08/Get/GetMdDescription"/>
+			<wsdl:output message="msg:GetMdDescriptionResponse" wsa:Action="http://p11073-10207/draft6/msg/2016/12/08/Get/GetMdDescriptionResponse" wsam:Action="http://p11073-10207/draft6/msg/2016/12/08/Get/GetMdDescriptionResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="GetBinding" type="tns:Get">
+		<s12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsp:Policy>
+			<dpws:Profile wsp:Optional="true"/>
+			<mdpws:Profile wsp:Optional="true"/>
+		</wsp:Policy>
+		<wsdl:operation name="GetMdState">
+			<s12:operation soapAction="http://p11073-10207/draft6/msg/2016/12/08/Get/GetMdState"/>
+			<wsdl:input>
+				<s12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<s12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetMdib">
+			<s12:operation soapAction="http://p11073-10207/draft6/msg/2016/12/08/Get/GetMdib"/>
+			<wsdl:input>
+				<s12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<s12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetMdDescription">
+			<s12:operation soapAction="http://p11073-10207/draft6/msg/2016/12/08/Get/GetMdDescription"/>
+			<wsdl:input>
+				<s12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<s12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+</wsdl:definitions>

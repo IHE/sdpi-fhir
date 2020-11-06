@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope" xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:chan="http://schemas.microsoft.com/ws/2005/02/duplex" xmlns:wsa5="http://www.w3.org/2005/08/addressing" xmlns:pm="http://p11073-10207/draft6/pm/2016/12/08" xmlns:ext="http://p11073-10207/draft6/ext/2016/12/08" xmlns:dpws="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01" xmlns:si="http://standards.ieee.org/downloads/11073/11073-20702-2016/" xmlns:msg="http://p11073-10207/draft6/msg/2016/12/08" xmlns:wsd11="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01" xmlns:wse4="http://schemas.xmlsoap.org/ws/2004/08/eventing" xmlns:wst4="http://schemas.xmlsoap.org/ws/2004/09/transfer" xmlns:wsx4="http://schemas.xmlsoap.org/ws/2004/09/mex">
+	<SOAP-ENV:Header>
+		<wsa5:MessageID>urn:uuid:69ffd5f3-979f-49af-8f72-57bd1a416c5e</wsa5:MessageID>
+		<wsa5:RelatesTo RelationshipType="http://www.w3.org/2005/08/addressing/reply">urn:uuid:a547de00-2bf2-11e7-bfeb-c173f287d68f</wsa5:RelatesTo>
+		<wsa5:To SOAP-ENV:mustUnderstand="true">http://www.w3.org/2005/08/addressing/anonymous</wsa5:To>
+		<wsa5:Action SOAP-ENV:mustUnderstand="true">http://schemas.xmlsoap.org/ws/2004/08/eventing/SubscribeResponse</wsa5:Action>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+		<wse4:SubscribeResponse>
+			<wse4:SubscriptionManager>
+				<wsa5:Address>http://10.52.163.143:6464/3ed9adf9-6b57-4b36-944c-bbcf6d45b7a3/Set/</wsa5:Address>
+				<wsa5:ReferenceParameters>
+					<wse4:Identifier xmlns:dpws="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01" xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope" xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:chan="http://schemas.microsoft.com/ws/2005/02/duplex" xmlns:wsa5="http://www.w3.org/2005/08/addressing" xmlns:pm="http://p11073-10207/draft6/pm/2016/12/08" xmlns:ext="http://p11073-10207/draft6/ext/2016/12/08" xmlns:si="http://standards.ieee.org/downloads/11073/11073-20702-2016/" xmlns:msg="http://p11073-10207/draft6/msg/2016/12/08" xmlns:wsd11="http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01" xmlns:wse4="http://schemas.xmlsoap.org/ws/2004/08/eventing" xmlns:wst4="http://schemas.xmlsoap.org/ws/2004/09/transfer" xmlns:wsx4="http://schemas.xmlsoap.org/ws/2004/09/mex">urn:uuid:a251a04e-3eb8-4dc5-8021-7c03da3fa1ba</wse4:Identifier>
+				</wsa5:ReferenceParameters>
+			</wse4:SubscriptionManager>
+			<wse4:Expires>PT00H03M20S</wse4:Expires>
+		</wse4:SubscribeResponse>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mdpws:StreamSource xmlns:mdpws="http://standards.ieee.org/downloads/11073/ 11073-20702-2016">
+
+	<mdpws:StreamDescriptions targetNamespace="http://message-model-uri/15/04/Waveform">
+
+		<mdpws:Types>
+
+			<!-- ... -->
+
+		</mdpws:Types>
+
+		<mdpws:StreamType Id="WaveformStream" StreamType="http://docs.oasis-open.org/ws-dd/soapoverudp/1.1/os/wsdd-soapoverudp-1.1-spec-os.html" element="msg:WaveformStream" ActionURI="http://message-model-uri/Waveform/WaveformStream" xmlns:msg="http://message-model-uri">
+
+			<mdpws:StreamTransmission>
+
+				<mdpws:StreamAddress>
+soap.udp://239.239.239.235:5555
+</mdpws:StreamAddress>
+
+				<mdpws:StreamPeriod>PT0.02S
+</mdpws:StreamPeriod>
+
+			</mdpws:StreamTransmission>
+
+		</mdpws:StreamType>
+
+	</mdpws:StreamDescriptions>
+
+</mdpws:StreamSource>

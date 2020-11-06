@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s12:Envelope xmlns:dpws="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01" xmlns:s12="http://www.w3.org/2003/05/soap-envelope" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing">
+	<s12:Header>
+		<wsa:Action>http://schemas.xmlsoap.org/ws/2004/08/eventing/Subscribe</wsa:Action>
+		<wsa:MessageID>urn:uuid:a547de00-2bf2-11e7-bfeb-c173f287d68f</wsa:MessageID>
+		<wsa:To>http://10.52.163.143:6464/3ed9adf9-6b57-4b36-944c-bbcf6d45b7a3/Set/</wsa:To>
+	</s12:Header>
+	<s12:Body>
+		<wse:Subscribe>
+			<wse:Delivery Mode="http://schemas.xmlsoap.org/ws/2004/08/eventing/DeliveryModes/Push">
+				<wse:NotifyTo>
+					<wsa:Address>http://10.52.219.53:55809/a5451ee0-2bf2-11e7-bfe7-c173f287d68f</wsa:Address>
+					<wsa:ReferenceParameters>
+						<wse:Identifier>urn:uuid:a547b6f0-2bf2-11e7-bfea-c173f287d68f</wse:Identifier>
+					</wsa:ReferenceParameters>
+				</wse:NotifyTo>
+			</wse:Delivery>
+			<wse:Expires>PT3M20S</wse:Expires>
+			<wse:Filter Dialect="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01/Action">http://p11073-10207/draft6/msg/2016/12/08/Set/OperationInvokedReport</wse:Filter>
+		</wse:Subscribe>
+	</s12:Body>
+</s12:Envelope>
