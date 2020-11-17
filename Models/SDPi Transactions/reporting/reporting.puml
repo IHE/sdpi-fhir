@@ -2,7 +2,7 @@
 
 !include ../_sequence_config.puml.incl
 
-sdc_sc -> sdc_sp: Subscribe({DescriptionModificationReport, EpisodicMetricReport, \n    EpisodicContextReport, EpisodicComponentReport})
+sdc_sc -> sdc_sp: Subscribe({\n    DescriptionModificationReport, \n    EpisodicMetricReport, EpisodicContextReport, EpisodicComponentReport, \n    WaveformStream\n})
 sdc_sc <-- sdc_sp: SubscribeResponse(SubscriptionManager, ExpirationTime)
 
 loop while subscription is running and reports ensue
@@ -10,11 +10,12 @@ loop while subscription is running and reports ensue
         sdc_sc <- sdc_sp: Notification(DescriptionModificationReport)
         note left: Description modifications\nalways first
     end
-    
+
     group one or more of
         sdc_sc <- sdc_sp: Notification(EpisodicMetricReport)
         sdc_sc <- sdc_sp: Notification(EpisodicContextReport)
         sdc_sc <- sdc_sp: Notification(EpisodicComponentReport)
+        sdc_sc <- sdc_sp: Notification(WaveformStream)
     end
 end
 
