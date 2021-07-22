@@ -11,11 +11,16 @@ def runReferenceConsumerTestSuite(endpoint):
     suite.addTest(ReferenceConsumerTests('discoverProvider'))
     suite.addTest(ReferenceConsumerTests('connectToProvider'))
     suite.addTest(ReferenceConsumerTests('readMdibOfProvider'))
+    suite.addTest(ReferenceConsumerTests('testSubscribeToReports'))
     suite.addTest(ReferenceConsumerTests('checkPatientContextExists'))
     suite.addTest(ReferenceConsumerTests('checkLocationContextExists'))
-    # suite.addTest(ReferenceConsumerTests('checkMetricUpdates'))
+    suite.addTest(ReferenceConsumerTests('checkMetricUpdates'))
+    suite.addTest(ReferenceConsumerTests('checkAlertUpdates'))
+    suite.addTest(ReferenceConsumerTests('executeOperation'))
+    suite.addTest(ReferenceConsumerTests('shutdownConnection'))
+
     runner = xmlrunner.XMLTestRunner()
     runner.run(suite)
 
 if __name__ == "__main__":
-    runReferenceConsumerTestSuite("https://127.0.0.1:58591/24639edcc21511ebbd49f8cab80f9344")
+    runReferenceConsumerTestSuite("24639edc-c215-11eb-bd49-f8cab80f9344")

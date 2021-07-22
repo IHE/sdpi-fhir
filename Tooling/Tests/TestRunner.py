@@ -33,6 +33,7 @@ class TestRunnerTool:
         parser = argparse.ArgumentParser(description='Executes tests against provider with specific endpoint reference address.')
         parser.add_argument('endpoint', metavar='endpoint', help=self.ENDPOINT_ARG)
         args = parser.parse_args(sys.argv[2:])
+        logger.info("Executing consumer test for endpoint %s", args.endpoint)
         referenceConsumerTest = ReferenceConsumer.runReferenceConsumerTestSuite(args.endpoint)
         referenceConsumerTest.runTest()
 
