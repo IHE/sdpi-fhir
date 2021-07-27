@@ -16,15 +16,10 @@ from Tooling.Tests.ReferenceConsumer import TestClient
 
 
 class ReferenceConsumerTests(unittest.TestCase):
-    OPERATION_TIMEOUT = 10
-    UPDATE_TEST_TIME = 30
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.updatesQueue = Queue()
         self.resolveQueue = Queue(maxsize=1)
-        self.testMetric = None
-        self.testAlert = None
 
     def discoverProvider(self):
         """
@@ -75,6 +70,20 @@ class ReferenceConsumerTests(unittest.TestCase):
         TestClient.sdcClient.getMetaData()
         TestClient.sdcClient.startAll()
         self.assertIsNotNone(TestClient.sdcClient.metaData)
+
+
+class ReferenceConsumerConnectedTests(unittest.TestCase):
+    OPERATION_TIMEOUT = 10
+    UPDATE_TEST_TIME = 30
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.updatesQueue = Queue()
+        self.testMetric = None
+        self.testAlert = None
+
+    def setUp(self):
+        self.assertIsNotNone(TestClient.sdcClient, msg="Verify client connection is established.")
 
     def readMdibOfProvider(self):
         """
@@ -130,10 +139,10 @@ class ReferenceConsumerTests(unittest.TestCase):
                    if isinstance(m, (NumericMetricDescriptorContainer, EnumStringMetricDescriptorContainer, StringMetricDescriptorContainer))]
         self.testMetric = random.choice(metrics).handle
         with observableproperties.boundContext(TestClient.clientMdib, metricsByHandle=self._onMetricUpdate):
-            updateCount = self._receiveUpdates(self.updatesQueue)
+            updateCount = self._receiveUpdates()
             self.assertTrue(updateCount >= 5)
 
-    def _receiveUpdates(self, queue):
+    def _receiveUpdates(self):
         start = time.time()
         updateCount = 0
         while time.time() - start < self.UPDATE_TEST_TIME:
@@ -166,7 +175,7 @@ class ReferenceConsumerTests(unittest.TestCase):
         alerts = [a for a in TestClient.clientMdib.descriptions.objects if isinstance(a, AlertConditionDescriptorContainer)]
         self.testAlert = random.choice(alerts).handle
         with observableproperties.boundContext(TestClient.clientMdib, alertByHandle=self._onAlertUpdate):
-            updateCount = self._receiveUpdates(self.updatesQueue)
+            updateCount = self._receiveUpdates()
             self.assertTrue(updateCount >= 5)
 
     def executeOperation(self):

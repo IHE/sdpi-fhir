@@ -2,7 +2,7 @@ import unittest
 
 import xmlrunner
 
-from Tooling.Tests.ReferenceConsumer.TestCases import ReferenceConsumerTests
+from Tooling.Tests.ReferenceConsumer.TestCases import ReferenceConsumerTests, ReferenceConsumerConnectedTests
 from Tooling.Tests.ReferenceConsumer import TestClient
 
 def runReferenceConsumerTestSuite(endpoint):
@@ -10,14 +10,14 @@ def runReferenceConsumerTestSuite(endpoint):
     suite = unittest.TestSuite()
     suite.addTest(ReferenceConsumerTests('discoverProvider'))
     suite.addTest(ReferenceConsumerTests('connectToProvider'))
-    suite.addTest(ReferenceConsumerTests('readMdibOfProvider'))
-    suite.addTest(ReferenceConsumerTests('testSubscribeToReports'))
-    suite.addTest(ReferenceConsumerTests('checkPatientContextExists'))
-    suite.addTest(ReferenceConsumerTests('checkLocationContextExists'))
-    suite.addTest(ReferenceConsumerTests('checkMetricUpdates'))
-    suite.addTest(ReferenceConsumerTests('checkAlertUpdates'))
-    suite.addTest(ReferenceConsumerTests('executeOperation'))
-    suite.addTest(ReferenceConsumerTests('shutdownConnection'))
+    suite.addTest(ReferenceConsumerConnectedTests('readMdibOfProvider'))
+    suite.addTest(ReferenceConsumerConnectedTests('testSubscribeToReports'))
+    suite.addTest(ReferenceConsumerConnectedTests('checkPatientContextExists'))
+    suite.addTest(ReferenceConsumerConnectedTests('checkLocationContextExists'))
+    suite.addTest(ReferenceConsumerConnectedTests('checkMetricUpdates'))
+    suite.addTest(ReferenceConsumerConnectedTests('checkAlertUpdates'))
+    suite.addTest(ReferenceConsumerConnectedTests('executeOperation'))
+    suite.addTest(ReferenceConsumerConnectedTests('shutdownConnection'))
 
     runner = xmlrunner.XMLTestRunner()
     runner.run(suite)
