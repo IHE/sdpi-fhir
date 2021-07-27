@@ -21,6 +21,3 @@ def runReferenceConsumerTestSuite(endpoint):
 
     runner = xmlrunner.XMLTestRunner()
     runner.run(suite)
-
-if __name__ == "__main__":
-    runReferenceConsumerTestSuite("24639edc-c215-11eb-bd49-f8cab80f9344")
