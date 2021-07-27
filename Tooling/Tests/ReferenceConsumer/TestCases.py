@@ -1,7 +1,7 @@
 import unittest
 import random
 import time
-from queue import Queue
+from queue import Queue, Full
 from sdc11073 import observableproperties
 from sdc11073 import wsdiscovery
 from sdc11073.mdib import ClientMdibContainer
@@ -22,6 +22,7 @@ class ReferenceConsumerTests(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.updatesQueue = Queue()
+        self.resolveQueue = Queue(maxsize=1)
         self.testMetric = None
         self.testAlert = None
 
@@ -41,11 +42,10 @@ class ReferenceConsumerTests(unittest.TestCase):
         probeAnswered = False
         resolveAnswered = False
 
-        for service in [s for s in services if f"urn:uuid:{TestClient.endpoint}" == s.getEPR()]:
+        for service in [s for s in services if TestClient.endpoint == s.getEPR()]:
             probeAnswered = True
             self.wsdclient._sendResolve(service.getEPR())
             TestClient.service = service
-            self.resolveQueue = Queue(maxsize=1)
             resolveAnswered = self._getItemFromQueue(self.resolveQueue)
 
         self.assertTrue(probeAnswered, msg="Test that probe answered.")
@@ -57,9 +57,13 @@ class ReferenceConsumerTests(unittest.TestCase):
         except:
             return None
 
-    def _onResolve(self, _):
-        logger.info("Received resolve from device.")
-        self.resolveQueue.put_nowait(True)
+    def _onResolve(self, service):
+        if TestClient.endpoint == service.getEPR():
+            logger.info("Received resolve from device with endpoint %s.", TestClient.endpoint)
+            try:
+                self.resolveQueue.put_nowait(True)
+            except Full:
+                logger.warning("Received more than one resolve from device with endpoint %s.", TestClient.endpoint)
 
     def connectToProvider(self):
         """
