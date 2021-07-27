@@ -69,7 +69,7 @@ class ReferenceConsumerTests(unittest.TestCase):
         TestClient.sdcClient = TestClient.SdcClient.fromWsdService(TestClient.service,  allowSSL=True)
         TestClient.sdcClient.getMetaData()
         TestClient.sdcClient.startAll()
-        self.assertIsNotNone(TestClient.sdcClient.metaData)
+        self.assertIsNotNone(TestClient.sdcClient.metaData, msg="Test that metadata is retrieved successfully.")
 
 
 class ReferenceConsumerConnectedTests(unittest.TestCase):
@@ -83,7 +83,7 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
         self.testAlert = None
 
     def setUp(self):
-        self.assertIsNotNone(TestClient.sdcClient, msg="Verify client connection is established.")
+        self.assertIsNotNone(TestClient.sdcClient, msg="Test client connection is established.")
 
     def readMdibOfProvider(self):
         """
@@ -92,7 +92,7 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
         logger.info("Running read Mdib of the provider provider test.")
         TestClient.clientMdib = ClientMdibContainer(TestClient.sdcClient)
         TestClient.clientMdib.initMdib()
-        self.assertIsNotNone(TestClient.clientMdib)
+        self.assertIsNotNone(TestClient.clientMdib, msg="Test that mdib of the provider exists.")
 
     def testSubscribeToReports(self):
         """
@@ -109,14 +109,14 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
         self.assertTrue(TestClient.sdcClient._subscriptionMgr.allSubscriptionsOkay)
         reports = ' '.join([report for report in TestClient.sdcClient._subscriptionMgr.subscriptions.keys()])
         for report in expectedReports:
-            self.assertIn(report, reports)
+            self.assertIn(report, reports, msg="Test that report subscriptions exist.")
 
     def checkPatientContextExists(self):
         """
         Check that at least one patient context exists
         """
         logger.info("Running patient context test.")
-        patientContextStates = TestClient.clientMdib.contextStates.NODETYPE.get(domTag('PatientContextState'))
+        patientContextStates = TestClient.clientMdib.contextStates.NODETYPE.get(domTag('PatientContextState'), [])
         self.assertTrue(len(patientContextStates) >= 1, msg="Test that at least one patient context exists.")
 
     def checkLocationContextExists(self):
@@ -124,8 +124,8 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
         Check that at least one location context exists
         """
         logger.info("Running location context test.")
-        patientContextStates = TestClient.clientMdib.contextStates.NODETYPE.get(domTag('PatientContextState'))
-        self.assertTrue(len(patientContextStates) >= 1, msg="Test that at least one patient context exists.")
+        locationContextStates = TestClient.clientMdib.contextStates.NODETYPE.get(domTag('LocationContextState'), [])
+        self.assertTrue(len(locationContextStates) >= 1, msg="Test that at least one location context exists.")
 
     def checkMetricUpdates(self):
         """
@@ -140,7 +140,7 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
         self.testMetric = random.choice(metrics).handle
         with observableproperties.boundContext(TestClient.clientMdib, metricsByHandle=self._onMetricUpdate):
             updateCount = self._receiveUpdates()
-            self.assertTrue(updateCount >= 5)
+            self.assertTrue(updateCount >= 5, msg="Test that metric updates for one metric arrive at least 5 times in 30 seconds")
 
     def _receiveUpdates(self):
         start = time.time()
@@ -176,7 +176,7 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
         self.testAlert = random.choice(alerts).handle
         with observableproperties.boundContext(TestClient.clientMdib, alertByHandle=self._onAlertUpdate):
             updateCount = self._receiveUpdates()
-            self.assertTrue(updateCount >= 5)
+            self.assertTrue(updateCount >= 5, msg="Test that alert updates of one alert condition arrive at least 5 times in 30 seconds")
 
     def executeOperation(self):
         """
@@ -195,38 +195,42 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
 
     def _executeSetStringOperation(self, setService):
         ops = [o for o in TestClient.clientMdib.descriptions.objects if isinstance(o, SetStringOperationDescriptorContainer)]
-        testOp = random.choice(ops)
+        if ops:
+            testOp = random.choice(ops)
 
-        operationTimeout = self.OPERATION_TIMEOUT
-        if testOp.MaxTimeToFinish:
-            operationTimeout = testOp.MaxTimeToFinish
+            operationTimeout = self.OPERATION_TIMEOUT
+            if testOp.MaxTimeToFinish:
+                operationTimeout = testOp.MaxTimeToFinish
 
-        state = TestClient.clientMdib.states.descriptorHandle.getOne(testOp.handle, allowNone=True)
-        value = "test"
-        if state.AllowedValues:
-            value = random.choice(state.AllowedValues)
+            state = TestClient.clientMdib.states.descriptorHandle.getOne(testOp.handle, allowNone=True)
+            value = "test"
+            if state.AllowedValues:
+                value = random.choice(state.AllowedValues)
 
-        future = setService.setString(operationHandle=testOp.handle, requestedString=value)
-        result = future.result(timeout=operationTimeout)
-        self.assertEqual(InvocationState.FINISHED, result.state)
+            future = setService.setString(operationHandle=testOp.handle, requestedString=value)
+            result = future.result(timeout=operationTimeout)
+            self.assertEqual(InvocationState.FINISHED, result.state,
+                             msg="Test that SetStringOperation execution ends with the transaction result is 'finished'")
 
     def _executeSetValueOperation(self, setService):
         ops = [o for o in TestClient.clientMdib.descriptions.objects if
                isinstance(o, SetValueOperationDescriptorContainer)]
-        testOp = random.choice(ops)
+        if ops:
+            testOp = random.choice(ops)
 
-        operationTimeout = self.OPERATION_TIMEOUT
-        if testOp.MaxTimeToFinish:
-            operationTimeout = testOp.MaxTimeToFinish
+            operationTimeout = self.OPERATION_TIMEOUT
+            if testOp.MaxTimeToFinish:
+                operationTimeout = testOp.MaxTimeToFinish
 
-        state = TestClient.clientMdib.states.descriptorHandle.getOne(testOp.handle, allowNone=True)
-        value = 0
-        if state.AllowedRange:
-            value = self._getValueFromRange(state.AllowedRange)
+            state = TestClient.clientMdib.states.descriptorHandle.getOne(testOp.handle, allowNone=True)
+            value = 0
+            if state.AllowedRange:
+                value = self._getValueFromRange(state.AllowedRange)
 
-        future = setService.setNumericValue(operationHandle=testOp.handle, requestedNumericValue=value)
-        result = future.result(timeout=operationTimeout)
-        self.assertEqual(InvocationState.FINISHED, result.state)
+            future = setService.setNumericValue(operationHandle=testOp.handle, requestedNumericValue=value)
+            result = future.result(timeout=operationTimeout)
+            self.assertEqual(InvocationState.FINISHED, result.state,
+                             msg="Test that SetValueOperation execution ends with the transaction result is 'finished'")
 
     def _getValueFromRange(self, allowedRange):
         anyRange = random.choice(allowedRange)
@@ -239,15 +243,17 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
     def _executeActivateOperation(self, setService):
         ops = [o for o in TestClient.clientMdib.descriptions.objects if
                isinstance(o, ActivateOperationDescriptorContainer)]
-        testOp = random.choice(ops)
+        if ops:
+            testOp = random.choice(ops)
 
-        operationTimeout = self.OPERATION_TIMEOUT
-        if testOp.MaxTimeToFinish:
-            operationTimeout = testOp.MaxTimeToFinish
+            operationTimeout = self.OPERATION_TIMEOUT
+            if testOp.MaxTimeToFinish:
+                operationTimeout = testOp.MaxTimeToFinish
 
-        future = setService.activate(operationHandle=testOp.handle, value=None)
-        result = future.result(timeout=operationTimeout)
-        self.assertEqual(InvocationState.FINISHED, result.state)
+            future = setService.activate(operationHandle=testOp.handle, value=None)
+            result = future.result(timeout=operationTimeout)
+            self.assertEqual(InvocationState.FINISHED, result.state,
+                             msg="Test that ActivateOperation execution ends with the transaction result is 'finished'")
 
     def shutdownConnection(self):
         """
@@ -255,4 +261,4 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
         """
         logger.info("Running shutdown connection test.")
         TestClient.sdcClient.stopAll()
-        self.assertIsNone(TestClient.sdcClient._mdib)
+        self.assertIsNone(TestClient.sdcClient._mdib, msg="Test that connection shutdown is successful.")
