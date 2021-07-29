@@ -2,8 +2,8 @@ import sys
 import argparse
 import xmlrunner
 
-from Tooling.Tests.TestLogger import logger, setUpLogger
-from Tooling.Tests.ReferenceConsumer import ReferenceConsumer
+from Tests.TestLogger import logger, setUpLogger
+from Tests.ReferenceConsumer import ReferenceConsumer
 
 class TestRunnerTool:
 

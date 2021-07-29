@@ -3,7 +3,7 @@ import os
 
 from sdc11073.sdcclient.sdcclientimpl import SdcClient as _SdcClient
 
-from Tooling.Tests import certloader
+from Tests import certloader
 
 
 class SdcClient(_SdcClient):

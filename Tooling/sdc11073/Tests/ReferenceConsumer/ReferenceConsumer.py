@@ -2,8 +2,8 @@ import unittest
 
 import xmlrunner
 
-from Tooling.Tests.ReferenceConsumer.TestCases import ReferenceConsumerTests, ReferenceConsumerConnectedTests
-from Tooling.Tests.ReferenceConsumer import TestClient
+from Tests.ReferenceConsumer.TestCases import ReferenceConsumerTests, ReferenceConsumerConnectedTests
+from Tests.ReferenceConsumer import TestClient
 
 def runReferenceConsumerTestSuite(endpoint):
     TestClient.endpoint = endpoint
@@ -16,7 +16,9 @@ def runReferenceConsumerTestSuite(endpoint):
     suite.addTest(ReferenceConsumerConnectedTests('checkLocationContextExists'))
     suite.addTest(ReferenceConsumerConnectedTests('checkMetricUpdates'))
     suite.addTest(ReferenceConsumerConnectedTests('checkAlertUpdates'))
-    suite.addTest(ReferenceConsumerConnectedTests('executeOperation'))
+    suite.addTest(ReferenceConsumerConnectedTests('executeSetStringOperation'))
+    suite.addTest(ReferenceConsumerConnectedTests('executeActivateOperation'))
+    suite.addTest(ReferenceConsumerConnectedTests('executeSetValueOperation'))
     suite.addTest(ReferenceConsumerConnectedTests('shutdownConnection'))
 
     runner = xmlrunner.XMLTestRunner()
