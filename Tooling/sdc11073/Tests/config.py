@@ -32,6 +32,7 @@ REFERENCE_CONSUMER = {
 }
 
 REFERENCE_PROVIDER = {
+    "network":"Loopback Pseudo-Interface 1",
     "dpwsModel": DPWSThisModel(manufacturer="Manufacturer",
                               manufacturerUrl="ManufacturerUrl",
                               modelName="ModelName",

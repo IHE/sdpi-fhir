@@ -39,13 +39,13 @@ class ReferenceProviderTests(unittest.TestCase):
 
     def consumerConnection(self):
         """
-        Discovery of a provider with a specific endpoint reference address
-        See that Probe is answered
-        See that Resolve is answered
+        Discovery:
+        - send hello
+        - answer to probes
         """
         logger.info("Running discovery of provider test.")
         # self.wsDiscovery = wsdiscovery.WSDiscoveryBlacklist()
-        self.wsDiscovery = wsdiscovery.WSDiscoverySingleAdapter("Loopback Pseudo-Interface 1")
+        self.wsDiscovery = wsdiscovery.WSDiscoverySingleAdapter(REFERENCE_PROVIDER["network"])
         self.setupTestDevice()
         self.wsDiscovery.setOnProbeCallback(self._onProbe)
         self.wsDiscovery.start()
