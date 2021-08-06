@@ -4,6 +4,7 @@ import xmlrunner
 
 from Tests.TestLogger import logger, setUpLogger
 from Tests.ReferenceConsumer import ReferenceConsumer
+from Tests.ReferenceProvider import ReferenceProvider
 
 class TestRunnerTool:
 
@@ -37,6 +38,15 @@ class TestRunnerTool:
         args = parser.parse_args(sys.argv[2:])
         logger.info("Executing consumer test for endpoint %s", args.endpoint)
         ReferenceConsumer.runReferenceConsumerTestSuite(args.endpoint)
+
+    def provider(self):
+        parser = argparse.ArgumentParser(description='Executes tests against consumer with a provider with'
+                                                     ' specific endpoint reference address. \n'
+                                                     'Example: provider 24639edc-c215-11eb-bd49-f8cab80f9344.')
+        parser.add_argument('endpoint', metavar='endpoint', help=self.ENDPOINT_ARG)
+        args = parser.parse_args(sys.argv[2:])
+        logger.info("Executing provider test for endpoint %s", args.endpoint)
+        ReferenceProvider.runReferenceProviderTestSuite(args.endpoint)
 
 if __name__ == '__main__':
     setUpLogger()

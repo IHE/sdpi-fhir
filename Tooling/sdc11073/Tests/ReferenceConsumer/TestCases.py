@@ -11,6 +11,7 @@ from sdc11073.mdib.descriptorcontainers import (NumericMetricDescriptorContainer
 from sdc11073.pmtypes import InvocationState
 from Tests.TestLogger import logger
 from Tests.ReferenceConsumer import TestClient
+from Tests.utils import getItemsByContainmentTree
 from Tests.config import REFERENCE_CONSUMER
 
 
@@ -136,7 +137,7 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
 
         ctp = REFERENCE_CONSUMER["metrics"]["containmentTreePath"]
         if ctp:
-            handles = self._getItemsByContainmentTree(ctp)
+            handles = getItemsByContainmentTree(TestClient.clientMdib, ctp)
             if handles:
                 self.testMetric = handles.pop()  # take any if more than one found
         else:
@@ -152,20 +153,6 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
             updateCount = self._receiveUpdates()
             logger.info("Received %s metric updates", updateCount)
             self.assertTrue(updateCount >= 5, msg="Test that metric updates for one metric arrive at least 5 times in 30 seconds")
-
-    def _getItemsByContainmentTree(self, ctp):
-        try:
-            codes = ctp.split(".")
-            handles = {mds.handle for mds in TestClient.clientMdib.descriptions.codeId.get(codes[0], [])}
-            for code in codes[1:]:
-                children = TestClient.clientMdib.descriptions.codeId.get(code, [])
-                children = [c for c in children if c.parentHandle in handles]
-                handles = {c.handle for c in children}
-            logger.info("Found handles %s for containment tree path %s", handles, ctp)
-            return handles
-        except:
-            logger.error("Failed to find an Mdib item by containment tree path %s", ctp)
-            return None
 
     def _receiveUpdates(self):
         start = time.time()
@@ -200,7 +187,7 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
         code = REFERENCE_CONSUMER["alerts"]["code"]
         sourceCtp = REFERENCE_CONSUMER["alerts"]["sourceContainmentTreePath"]
         if code and sourceCtp:
-            sources = self._getItemsByContainmentTree(sourceCtp)
+            sources = getItemsByContainmentTree(TestClient.clientMdib, sourceCtp)
             alertConditions = TestClient.clientMdib.descriptions.codeId.get(code, [])
             for alertCondition in alertConditions:
                 if not isinstance(alertCondition, AlertConditionDescriptorContainer):
@@ -228,7 +215,7 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
         targetCtp = REFERENCE_CONSUMER["operations"][operationType]["targetContainmentTreePath"]
         logger.info("Searching for %s. Code provided %s with target containment tree path %s.", operationType, code, targetCtp)
         if code and targetCtp:
-            target = self._getItemsByContainmentTree(targetCtp)
+            target = getItemsByContainmentTree(TestClient.clientMdib, targetCtp)
             operations = TestClient.clientMdib.descriptions.codeId.get(code, [])
             for operation in operations:
                 if operationType not in operation.NODETYPE.text:
