@@ -44,8 +44,7 @@ REFERENCE_PROVIDER = {
                                 firmwareVersion="FirmwareVersion",
                                 serialNumber="SerialNumber"),
 
-    "mdibPath": "C:\\Users\\popovasj\\Downloads\\exported_mdib(1).xml",
-    # "mdibPath": "C:\\develop\\mgit_repos\\T2I\\rolebasedtests\\src\\rbtunittests\\TestFiles\\FullTestMdib.xml",
+    "mdibPath": "path to mdib.xml",
 
     "location": SdcLocation(fac="FAC",
                             poc="POC",
