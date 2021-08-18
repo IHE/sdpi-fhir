@@ -1,7 +1,7 @@
 name: build-tools
 on: [push]
 jobs:
-  check-bats-version:
+  build-windows:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,21 +15,13 @@ jobs:
           pip install -r Tooling/sdc11073/ci/requirements.txt
       - name: Build executable
         run: pyinstaller Tooling/sdc11073/ci/sdc11073-tooling.spec --noconfirm --log-level=WARN --onefile --nowindow
+      - name: Copy files
+        run: |
+          copy /y Tooling\sdc11073\Tests\config.json dist\config.json
+          xcopy /I Tooling\sdc11073\ca dist\ca
       - name: Upload executable
         uses: actions/upload-artifact@v2
         with:
-          name: TestRunner.exe
-          path: dist/TestRunner.exe
-          if-no-files-found: error
-      - name: Upload ca
-        uses: actions/upload-artifact@v2
-        with:
-          name: ca
-          path: Tooling/sdc11073/ca/
-          if-no-files-found: error
-      - name: Upload ca
-        uses: actions/upload-artifact@v2
-        with:
-          name: config.json
-          path: Tooling/sdc11073/Tests/config.json
+          name: TestRunner
+          path: dist/
           if-no-files-found: error
