@@ -1,12 +1,22 @@
 import unittest
-
+import json
 import xmlrunner
 
 from Tests.ReferenceConsumer.TestCases import ReferenceConsumerTests, ReferenceConsumerConnectedTests
 from Tests.ReferenceConsumer import TestClient
 
-def runReferenceConsumerTestSuite(endpoint):
+def loadConsumerConfig(config):
+    try:
+        with open(config) as f:
+            fullConfig = json.loads(f.read())
+            TestClient.config = fullConfig["reference_consumer"]
+    except FileNotFoundError:
+        raise Exception("Config file not found. Make sure config.json is in the path specified.")
+
+def runReferenceConsumerTestSuite(endpoint, config, ca_dir):
     TestClient.endpoint = endpoint
+    TestClient.ca_dir = ca_dir
+    loadConsumerConfig(config)
     suite = unittest.TestSuite()
     suite.addTest(ReferenceConsumerTests('discoverProvider'))
     suite.addTest(ReferenceConsumerTests('connectToProvider'))

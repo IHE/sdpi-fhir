@@ -15,7 +15,6 @@ from sdc11073.roles.providerbase import ProviderRole
 
 from Tests.ReferenceProvider import TestDevice
 from Tests.TestLogger import logger
-from Tests.config import REFERENCE_PROVIDER
 from Tests.utils import getItemsByContainmentTree
 
 
@@ -29,11 +28,11 @@ class ReferenceProviderTests(unittest.TestCase):
         self.subscribedQueue = Queue(maxsize=1)
 
     def setupTestDevice(self):
-        TestDevice.deviceMdib = DeviceMdibContainer.fromMdibFile(REFERENCE_PROVIDER["mdibPath"])
+        TestDevice.deviceMdib = DeviceMdibContainer.fromMdibFile(TestDevice.config["mdibPath"])
         TestDevice.publishingDevice = TestDevice.PublishingSdcDevice(ws_discovery=self.wsDiscovery,
                                                                      my_uuid=UUID(TestDevice.endpoint),
-                                                                     model=REFERENCE_PROVIDER["dpwsModel"],
-                                                                     device=REFERENCE_PROVIDER["dpwsDevice"],
+                                                                     model=TestDevice.config["dpwsModel"],
+                                                                     device=TestDevice.config["dpwsDevice"],
                                                                      deviceMdibContainer=TestDevice.deviceMdib,
                                                                      logLevel=logging.INFO)
 
@@ -45,24 +44,24 @@ class ReferenceProviderTests(unittest.TestCase):
         """
         logger.info("Running discovery of provider test.")
         # self.wsDiscovery = wsdiscovery.WSDiscoveryBlacklist()
-        self.wsDiscovery = wsdiscovery.WSDiscoverySingleAdapter(REFERENCE_PROVIDER["network"])
+        self.wsDiscovery = wsdiscovery.WSDiscoverySingleAdapter(TestDevice.config["network"])
         self.setupTestDevice()
         self.wsDiscovery.setOnProbeCallback(self._onProbe)
         self.wsDiscovery.start()
         TestDevice.publishingDevice.startAll()
-        TestDevice.publishingDevice.setLocation(REFERENCE_PROVIDER["location"], [])
+        TestDevice.publishingDevice.setLocation(TestDevice.config["location"], [])
 
-        probeAnswered = self._getItemFromQueue(self.probeQueue, timeout=REFERENCE_PROVIDER["probeTimeout"])
+        probeAnswered = self._getItemFromQueue(self.probeQueue, timeout=TestDevice.config["probeTimeout"])
         self.assertTrue(probeAnswered, msg="Test that probe answered.")
         secs = 0
-        hasSubsciptions = False
-        while secs < REFERENCE_PROVIDER["consumerConnectionTimeout"]:
-            hasSubsciptions = bool(TestDevice.publishingDevice.subscriptionsManager._subscriptions._idxDefs['netloc'])
-            if hasSubsciptions:
+        hasSubscriptions = False
+        while secs < TestDevice.config["consumerConnectionTimeout"]:
+            hasSubscriptions = bool(TestDevice.publishingDevice.subscriptionsManager._subscriptions._idxDefs['netloc'])
+            if hasSubscriptions:
                 break
             secs += 1
             time.sleep(1)
-        self.assertTrue(hasSubsciptions, msg="Client connected.")
+        self.assertTrue(hasSubscriptions, msg="Client connected.")
         self.allowOperationControl()
 
     def allowOperationControl(self):
@@ -96,7 +95,7 @@ class ReferenceProviderTests(unittest.TestCase):
             logger.debug("More than one probe received %s", netloc)
 
     def produceMetricUpdates(self):
-        ctp = REFERENCE_PROVIDER["metrics"]["containmentTreePath"]
+        ctp = TestDevice.config["metrics"]["containmentTreePath"]
         if ctp:
             handles = getItemsByContainmentTree(TestDevice.deviceMdib, ctp)
             if handles:
@@ -112,7 +111,7 @@ class ReferenceProviderTests(unittest.TestCase):
         with self.assertLogs('sdc.device.subscrMgr', level='ERROR') as cm:
             # TODO: this to be replaced with python 3.10 https://bugs.python.org/issue39385
             logging.getLogger('sdc.device.subscrMgr').error("TEST")
-            for x in range(REFERENCE_PROVIDER["stateUpdates"]):
+            for x in range(TestDevice.config["stateUpdates"]):
                 if self.testMetric.TechnicalRange:
                     # if both Upper and Lower available
                     if self.testMetric.TechnicalRange[0].Lower and self.testMetric.TechnicalRange[0].Upper:
@@ -139,12 +138,12 @@ class ReferenceProviderTests(unittest.TestCase):
                     st.metricValue.Value = value
                     logger.debug("Setting metric %s value to %s", self.testMetric.handle, value)
 
-                time.sleep(REFERENCE_PROVIDER["stateUpdateTimeout"])
+                time.sleep(TestDevice.config["stateUpdateTimeout"])
             self.assertEqual(cm.output, ["ERROR:sdc.device.subscrMgr:TEST"])
 
     def produceAlertUpdates(self):
-        code = REFERENCE_PROVIDER["alerts"]["code"]
-        sourceCtp = REFERENCE_PROVIDER["alerts"]["sourceContainmentTreePath"]
+        code = TestDevice.config["alerts"]["code"]
+        sourceCtp = TestDevice.config["alerts"]["sourceContainmentTreePath"]
         if code and sourceCtp:
             sources = getItemsByContainmentTree(TestDevice.deviceMdib, sourceCtp)
             alertConditions = TestDevice.deviceMdib.descriptions.codeId.get(code, [])
@@ -164,17 +163,17 @@ class ReferenceProviderTests(unittest.TestCase):
         with self.assertLogs('sdc.device.subscrMgr', level='ERROR') as cm:
             # TODO: this to be replaced with python 3.10 https://bugs.python.org/issue39385
             logging.getLogger('sdc.device.subscrMgr').error("TEST")
-            for x in range(REFERENCE_PROVIDER["stateUpdates"]):
+            for x in range(TestDevice.config["stateUpdates"]):
                 with TestDevice.deviceMdib.mdibUpdateTransaction(setDeterminationTime=True) as mgr:
                     st = mgr.getAlertState(self.testAlert)
                     st.Presence = True
                     st.ActivationState = pmtypes.AlertActivation.ON
                 logger.debug("State update for %s", self.testAlert)
-                time.sleep(REFERENCE_PROVIDER["stateUpdateTimeout"])
+                time.sleep(TestDevice.config["stateUpdateTimeout"])
             self.assertEqual(cm.output, ["ERROR:sdc.device.subscrMgr:TEST"])
 
     def operationsExecuted(self):
-        opExecutionTimeout = REFERENCE_PROVIDER["operationExecutionTimeout"]
+        opExecutionTimeout = TestDevice.config["operationExecutionTimeout"]
         opExecuted = False
         while opExecutionTimeout > 0:
             try:
