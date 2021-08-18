@@ -21,5 +21,6 @@ jobs:
           name: TestRunner.exe
           path: |
             dist/TestRunner.exe
-            Tooling/sdc11073/ca
+            Tooling/sdc11073/ca/
             Tooling/sdc11073/Tests/config.json
+          if-no-files-found: error
