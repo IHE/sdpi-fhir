@@ -1,2 +1,3 @@
 sdc11073
 pyinstaller
+unittest-xml-reporting
