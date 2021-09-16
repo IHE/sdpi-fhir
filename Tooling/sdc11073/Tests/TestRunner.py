@@ -1,6 +1,5 @@
 import sys
 import argparse
-import xmlrunner
 
 from Tests.TestLogger import logger, setUpLogger
 from Tests.ReferenceConsumer import ReferenceConsumer
@@ -29,7 +28,6 @@ class TestRunnerTool:
             logger.error(f"Command {args.command} not found.\n")
             parser.print_help()
             exit(1)
-        self.runner = xmlrunner.XMLTestRunner()
 
         getattr(self, args.command)()
 

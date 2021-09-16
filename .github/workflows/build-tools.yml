@@ -14,7 +14,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r Tooling/sdc11073/ci/requirements.txt
       - name: Build executable
-        run: pyinstaller Tooling/sdc11073/ci/sdc11073-tooling.spec --noconfirm --log-level=WARN --onefile --nowindow
+        run: |
+          pyinstaller Tooling/sdc11073/ci/sdc11073-tooling.spec --noconfirm --log-level=WARN --onefile --nowindow
+          pyinstaller Tooling/sdc11073/ci/sdc11073-tooling-web.spec --noconfirm --log-level=WARN --nowindow
       - name: Upload executable
         uses: actions/upload-artifact@v2
         with:
@@ -22,6 +24,7 @@ jobs:
           path: |
             dist/TestRunner.exe
             Tooling/sdc11073/ca/
+            dist/TestWebRunner/
             Tooling/sdc11073/Tests/config.json
           if-no-files-found: error
   build-linux:

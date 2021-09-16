@@ -13,9 +13,9 @@ def loadConsumerConfig(config):
     except FileNotFoundError:
         raise Exception("Config file not found. Make sure config.json is in the path specified.")
 
-def runReferenceConsumerTestSuite(endpoint, config, ca_dir):
+def runReferenceConsumerTestSuite(endpoint, config, caDir, testRunner=None):
     TestClient.endpoint = endpoint
-    TestClient.ca_dir = ca_dir
+    TestClient.ca_dir = caDir
     loadConsumerConfig(config)
     suite = unittest.TestSuite()
     suite.addTest(ReferenceConsumerTests('discoverProvider'))
@@ -30,6 +30,8 @@ def runReferenceConsumerTestSuite(endpoint, config, ca_dir):
     suite.addTest(ReferenceConsumerConnectedTests('executeActivateOperation'))
     suite.addTest(ReferenceConsumerConnectedTests('executeSetValueOperation'))
     suite.addTest(ReferenceConsumerConnectedTests('shutdownConnection'))
-
-    runner = xmlrunner.XMLTestRunner()
-    runner.run(suite)
+    if testRunner:
+        runner = testRunner
+    else:
+        runner = xmlrunner.XMLTestRunner()
+    return runner.run(suite)

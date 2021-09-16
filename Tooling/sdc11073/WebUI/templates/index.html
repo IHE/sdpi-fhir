@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Reference Test Runner</title>
+    <style>
+        #datatablesSimple th, td {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>SDC Reference Testing Tool</h1>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+        integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+        crossorigin="anonymous"></script>
+
+<div class="container-fluid">
+    <div class="row justify-content-start">
+        <div class="col">
+            <div class="container-fluid px-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        SDC Discovery information click on device you wish to test.
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <form>
+                          <div class="form-group mb-2">
+                            <label for="config" class="sr-only">Config</label>
+                            <input type="text" class="form-control" id="config" placeholder="path to config file">
+                          </div>
+                          <div class="form-group mb-2">
+                            <label for="ca" class="sr-only">CA</label>
+                            <input type="text" class="form-control" id="ca" placeholder="path to CA file">
+                          </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <button id="discover" type="button" class="btn btn-info">Discover Devices</button>
+                    </div>
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Hospital</th>
+                                <th>Care Unit</th>
+                                <th>Bed</th>
+                                <th>IP</th>
+                                <th>UUID</th>
+                            </tr>
+                            </thead>
+
+                            <tbody id="discoveryTable">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="container-fluid px-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <div style="font-size: 21px;">
+                            Log <span id="loading" style="display: none;" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div id="log" class="card-body" style="max-height: 1000px;">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var socket = io();
+
+    $("#discover").click(function () {
+        socket.emit('discover', {});
+    });
+
+    /* SHOW DISCOVERED DEVICES */
+    socket.on('devices', function (msg) {
+        console.log(msg.data);
+        const discoveryTable = $("#discoveryTable");
+        discoveryTable.empty();
+        const data = msg.data;
+        for (const key in data) {
+            if (data.hasOwnProperty(key)) {
+                const newDevice = `<tr id="${msg.data[key]['uuid']}">
+                                <td>${msg.data[key]['fac']}</td>
+                                <td>${msg.data[key]['poc']}</td>
+                                <td>${msg.data[key]['bed']}</td>
+                                <td>${msg.data[key]['ip']}</td>
+                                <td>${msg.data[key]['uuid']}</td>
+                                <td>
+                                    <button type="button" class="btn btn-warning test-button" onclick="testItem('${msg.data[key]['uuid']}');">Test</button>
+                                </td>
+                            </tr>`;
+
+                discoveryTable.append(newDevice);
+            }
+        }
+    });
+
+    /* DISPLAY LOGS */
+    socket.on('log', function (msg) {
+        const log = $("#log");
+        const newLog = `<p>${msg.msg}</p>`;
+        log.append(newLog);
+    });
+
+    function processReports(item, index, arr) {
+        const log = $("#log");
+        const html = `<p><a href="/reports/${item.name}">${item.name}</a></p>`;
+        log.append(html);
+    };
+
+    /* DISPLAY reports */
+    socket.on('reports', function (msg) {
+      msg.data.forEach(processReports);
+      $("button.test-button").removeClass("disabled");
+      $("#loading").hide();
+    });
+
+    function testItem(uuid) {
+        const config = $("#config").val();
+        const ca = $("#ca").val();
+        const log = $("#log");
+        log.empty();
+
+        if (ca === "") {
+            const error = `<div class="alert alert-danger" role="alert">No CA path provided!</div>`;
+            log.append(error);
+            return;
+        }
+
+        if (config === "") {
+            const error = `<div class="alert alert-danger" role="alert">No Config path provided!</div>`;
+            log.append(error);
+            return;
+        }
+        $("button.test-button").addClass("disabled");
+        $("#loading").show();
+        $.post("test", {uuid: uuid, ca: ca, config: config});
+
+    };
+</script>
+</html>
