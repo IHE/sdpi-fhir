@@ -1,0 +1,8 @@
+sdc11073
+pyinstaller
+unittest-xml-reporting
+flask
+flask-socketio
+html-testRunner
+gevent
+gevent-websocket

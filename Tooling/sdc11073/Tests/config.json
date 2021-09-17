@@ -1,0 +1,62 @@
+{
+  "reference_consumer": {
+    "metrics": {
+      "containmentTreePath": ""
+    },
+    "alerts": {
+      "code": "",
+      "sourceContainmentTreePath": ""
+    },
+    "operations": {
+      "SetStringOperation": {
+        "code": "",
+        "targetContainmentTreePath": ""
+      },
+      "SetValueOperation": {
+        "code": "",
+        "targetContainmentTreePath": ""
+      },
+      "ActivateOperation": {
+        "code": "",
+        "targetContainmentTreePath": ""
+      }
+    }
+  },
+  "reference_provider": {
+    "network": "Loopback Pseudo-Interface 1",
+    "dpwsModel": {
+      "manufacturer": "Manufacturer",
+      "manufacturerUrl": "ManufacturerUrl",
+      "modelName": "ModelName",
+      "modelNumber": "ModelNumber",
+      "modelUrl": "ModelUrl",
+      "presentationUrl": "PresentationUrl"
+    },
+    "dpwsDevice": {
+      "friendlyName": "FriendlyName",
+      "firmwareVersion": "FirmwareVersion",
+      "serialNumber": "SerialNumber"
+    },
+    "mdibPath": "path to mdib.xml",
+    "location": {
+      "fac": "FAC",
+      "poc": "POC",
+      "bed": "BED",
+      "flr": "FLR",
+      "rm": "ROOM",
+      "bld": "BLD"
+    },
+    "probeTimeout": 10,
+    "stateUpdateTimeout": 2,
+    "stateUpdates": 5,
+    "consumerConnectionTimeout": 10,
+    "operationExecutionTimeout": 10,
+    "metrics": {
+      "containmentTreePath": "None"
+    },
+    "alerts": {
+      "code": "",
+      "sourceContainmentTreePath": ""
+    }
+  }
+}

@@ -12,7 +12,6 @@ from sdc11073.pmtypes import InvocationState
 from Tests.TestLogger import logger
 from Tests.ReferenceConsumer import TestClient
 from Tests.utils import getItemsByContainmentTree
-from Tests.config import REFERENCE_CONSUMER
 
 
 class ReferenceConsumerTests(unittest.TestCase):
@@ -135,7 +134,7 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
         with self.updatesQueue.mutex:
             self.updatesQueue.queue.clear()
 
-        ctp = REFERENCE_CONSUMER["metrics"]["containmentTreePath"]
+        ctp = TestClient.config["metrics"]["containmentTreePath"]
         if ctp:
             handles = getItemsByContainmentTree(TestClient.clientMdib, ctp)
             if handles:
@@ -184,8 +183,8 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
         with self.updatesQueue.mutex:
             self.updatesQueue.queue.clear()
 
-        code = REFERENCE_CONSUMER["alerts"]["code"]
-        sourceCtp = REFERENCE_CONSUMER["alerts"]["sourceContainmentTreePath"]
+        code = TestClient.config["alerts"]["code"]
+        sourceCtp = TestClient.config["alerts"]["sourceContainmentTreePath"]
         if code and sourceCtp:
             sources = getItemsByContainmentTree(TestClient.clientMdib, sourceCtp)
             alertConditions = TestClient.clientMdib.descriptions.codeId.get(code, [])
@@ -211,8 +210,8 @@ class ReferenceConsumerConnectedTests(unittest.TestCase):
 
     def _findOperation(self, operationType):
         testOp = None
-        code = REFERENCE_CONSUMER["operations"][operationType]["code"]
-        targetCtp = REFERENCE_CONSUMER["operations"][operationType]["targetContainmentTreePath"]
+        code = TestClient.config["operations"][operationType]["code"]
+        targetCtp = TestClient.config["operations"][operationType]["targetContainmentTreePath"]
         logger.info("Searching for %s. Code provided %s with target containment tree path %s.", operationType, code, targetCtp)
         if code and targetCtp:
             target = getItemsByContainmentTree(TestClient.clientMdib, targetCtp)

@@ -1,0 +1,55 @@
+name: build-tools
+on: [push]
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r Tooling/sdc11073/ci/requirements.txt
+      - name: Build executable
+        run: |
+          pyinstaller Tooling/sdc11073/ci/sdc11073-tooling.spec --noconfirm --log-level=WARN --onefile --nowindow
+          pyinstaller Tooling/sdc11073/ci/sdc11073-tooling-web.spec --noconfirm --log-level=WARN --nowindow
+      - name: Upload executable
+        uses: actions/upload-artifact@v2
+        with:
+          name: TestRunnerWin
+          path: |
+            dist/TestRunner.exe
+            Tooling/sdc11073/ca/
+            dist/TestWebRunner/
+            Tooling/sdc11073/Tests/config.json
+          if-no-files-found: error
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r Tooling/sdc11073/ci/requirements.txt
+      - name: Build executable
+        run: |
+          pyinstaller Tooling/sdc11073/ci/sdc11073-tooling.spec --noconfirm --log-level=WARN --onefile --nowindow
+          pyinstaller Tooling/sdc11073/ci/sdc11073-tooling-web.spec --noconfirm --log-level=WARN --nowindow
+      - name: Upload executable
+        uses: actions/upload-artifact@v2
+        with:
+          name: TestRunnerLinux
+          path: |
+            dist/TestRunner
+            Tooling/sdc11073/ca/
+            dist/TestWebRunner/
+            Tooling/sdc11073/Tests/config.json
+          if-no-files-found: error
