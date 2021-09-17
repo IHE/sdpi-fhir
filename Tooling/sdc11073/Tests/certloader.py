@@ -4,26 +4,19 @@ import os
 
 DEFAULT_SSL_CIPHERS = 'HIGH:!3DES:!DSS:!aNULL@STRENGTH'
 
-def mk_device_ssl_context(ca_folder):
-    return _mk_ssl_context(ca_folder, 'device')
-
-def mk_client_ssl_context(ca_folder):
-    return _mk_ssl_context(ca_folder, 'client')
-
-def _mk_ssl_context(ca_folder, cyphers_key):
+def mk_ssl_context(ca_dir):
     """ Convenience method for easy creation of SSL context.
     Create an ssl context from files 'sdccert.pem', 'userkey.pem', 'cacert.pem' and optional 'cyphers.json'
-    :param ca_folder: folder where to look for files
-    :param cyphers_key: key in cyphers json file (like "device" or "client")
+    :param ca_dir: folder where to look for files
     :return: ssl.SSLContext instance
     """
     _sslContext = ssl.SSLContext(ssl.PROTOCOL_TLS)  # pylint:disable=no-member
     device_cyphers = DEFAULT_SSL_CIPHERS
-    _ssl_certfile = os.path.join(ca_folder, 'sdccert.pem')
-    _ssl_keyfile = os.path.join(ca_folder, 'userkey.pem')
-    _ssl_cacert = os.path.join(ca_folder, 'cacert.pem')
+    _ssl_certfile = os.path.join(ca_dir, 'sdccert.pem')
+    _ssl_keyfile = os.path.join(ca_dir, 'userkey.pem')
+    _ssl_cacert = os.path.join(ca_dir, 'cacert.pem')
     _ssl_passwd = 'dummypass'
-    _ssl_cypherfile = os.path.join(ca_folder, 'cyphers.json')
+    _ssl_cypherfile = os.path.join(ca_dir, 'cyphers.json')
     if os.path.exists(_ssl_cypherfile):
         with open(_ssl_cypherfile)  as f:
             cyphers = json.load(f)
