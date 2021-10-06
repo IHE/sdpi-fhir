@@ -30,7 +30,7 @@ class WebSdcClient:
 
         self.wsdiscovery.start()
         self.wsdiscovery.clearRemoteServices()
-        services = self.wsdiscovery.searchMultipleTypes(timeout=1, typesList=[SDC_v1_Definitions.MedicalDeviceTypesFilter])
+        services = self.wsdiscovery.searchMultipleTypes(timeout=5, typesList=[SDC_v1_Definitions.MedicalDeviceTypesFilter])
         self.deviceList = {}
         self.processDiscoveredServices(services)
 
@@ -96,6 +96,8 @@ def consumerTestTask(endpoint, config, ca, socketio, reportsDir):
     with tempfile.TemporaryDirectory() as dir:
         testRunner = HtmlTestRunner.HTMLTestRunner(output=dir)
         ReferenceConsumer.runReferenceConsumerTestSuite(endpoint, config, ca, testRunner=testRunner)
+        if not os.path.exists(reportsDir):
+            os.mkdir(reportsDir)
         results = _copyReports(dir, reportsDir)
     socketio.emit('reports', {'data': results}, broadcast=True)
 
