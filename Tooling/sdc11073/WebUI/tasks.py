@@ -69,7 +69,7 @@ class WebSdcClient:
 
             except Exception:
                 pass
-        emit('devices', {'data': self.deviceList}, broadcast=True)
+        self._socketio.emit('devices', {'data': self.deviceList}, broadcast=True)
 
 
     def onHello(self, addr, service):
