@@ -51,7 +51,7 @@ def main():
 @socketio.on('discover')
 def handleMessage(_):
     app.logger.info("Received discover event")
-    discoveryTask()
+    discoveryTask(socketio)
 
 
 @app.route('/test', methods = ['POST'])

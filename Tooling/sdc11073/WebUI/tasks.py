@@ -15,9 +15,10 @@ from Tests.ReferenceConsumer import ReferenceConsumer
 
 class WebSdcClient:
 
-    def __init__(self):
+    def __init__(self, socketio):
         self.wsdiscovery = None
         self.deviceList = {}
+        self._socketio = socketio
         self.deviceListLock = Lock()
 
     def startDiscovery(self):
@@ -87,8 +88,8 @@ class WebSdcClient:
                 pass
 
 
-def discoveryTask():
-    sdcClient = WebSdcClient()
+def discoveryTask(socketio):
+    sdcClient = WebSdcClient(socketio)
     sdcClient.startDiscovery()
 
 
