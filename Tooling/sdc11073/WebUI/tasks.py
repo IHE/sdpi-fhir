@@ -15,9 +15,10 @@ from Tests.ReferenceConsumer import ReferenceConsumer
 
 class WebSdcClient:
 
-    def __init__(self):
+    def __init__(self, socketio):
         self.wsdiscovery = None
         self.deviceList = {}
+        self._socketio = socketio
         self.deviceListLock = Lock()
 
     def startDiscovery(self):
@@ -30,7 +31,7 @@ class WebSdcClient:
 
         self.wsdiscovery.start()
         self.wsdiscovery.clearRemoteServices()
-        services = self.wsdiscovery.searchMultipleTypes(timeout=1, typesList=[SDC_v1_Definitions.MedicalDeviceTypesFilter])
+        services = self.wsdiscovery.searchMultipleTypes(timeout=5, typesList=[SDC_v1_Definitions.MedicalDeviceTypesFilter])
         self.deviceList = {}
         self.processDiscoveredServices(services)
 
@@ -68,7 +69,7 @@ class WebSdcClient:
 
             except Exception:
                 pass
-        emit('devices', {'data': self.deviceList}, broadcast=True)
+        self._socketio.emit('devices', {'data': self.deviceList}, broadcast=True)
 
 
     def onHello(self, addr, service):
@@ -87,8 +88,8 @@ class WebSdcClient:
                 pass
 
 
-def discoveryTask():
-    sdcClient = WebSdcClient()
+def discoveryTask(socketio):
+    sdcClient = WebSdcClient(socketio)
     sdcClient.startDiscovery()
 
 
@@ -96,6 +97,8 @@ def consumerTestTask(endpoint, config, ca, socketio, reportsDir):
     with tempfile.TemporaryDirectory() as dir:
         testRunner = HtmlTestRunner.HTMLTestRunner(output=dir)
         ReferenceConsumer.runReferenceConsumerTestSuite(endpoint, config, ca, testRunner=testRunner)
+        if not os.path.exists(reportsDir):
+            os.mkdir(reportsDir)
         results = _copyReports(dir, reportsDir)
     socketio.emit('reports', {'data': results}, broadcast=True)
 
