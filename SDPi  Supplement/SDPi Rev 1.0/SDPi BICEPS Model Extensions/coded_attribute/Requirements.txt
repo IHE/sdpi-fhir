@@ -1,0 +1,7 @@
+# Requirements
+
+Requirements towards the use of the CodedAttribute extension.
+
+## General
+
+R0001: sdpi:Type elements shall only contain codes from the first partition of the IEEE 11073-10101 nomenclature.
