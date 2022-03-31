@@ -26,7 +26,7 @@
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
-		<xsd:anyAttribute namespace="##any"/>
+		<xsd:attribute ref="ext:MustUnderstand" use="optional"/>
 	</xsd:complexType>
 	<!---->
 	<!---->
@@ -52,7 +52,7 @@
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
-		<xsd:anyAttribute namespace="##any"/>
+		<xsd:attribute ref="ext:MustUnderstand" use="optional"/>
 	</xsd:complexType>
 	<!---->
 	<!---->
@@ -78,6 +78,6 @@
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
-		<xsd:anyAttribute namespace="##any"/>
+		<xsd:attribute ref="ext:MustUnderstand" use="optional"/>
 	</xsd:complexType>
 </xsd:schema>
