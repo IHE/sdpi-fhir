@@ -15,14 +15,14 @@
 			<xsd:documentation>Type definition of CodedStringAttribute.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="Type" type="pm:CodedValue">
+			<xsd:element ref="sdpi:MdcAttribute">
 				<xsd:annotation>
-					<xsd:documentation>A coded value that specifies the attribute type.</xsd:documentation>
+					<xsd:documentation>Key of the key value pair. Describes the meaning of Value.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="Value" type="xsd:string">
 				<xsd:annotation>
-					<xsd:documentation>User data.</xsd:documentation>
+					<xsd:documentation>Value (user data) of the key value pair.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
@@ -41,14 +41,14 @@
 			<xsd:documentation>Type definition of CodedDecimalAttribute.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="Key" type="pm:CodedValue">
+			<xsd:element ref="sdpi:MdcAttribute">
 				<xsd:annotation>
-					<xsd:documentation>A coded value that specifies the attribute type.</xsd:documentation>
+					<xsd:documentation>Key of the key value pair. Describes the meaning of Value.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="Value" type="xsd:decimal">
 				<xsd:annotation>
-					<xsd:documentation>User data.</xsd:documentation>
+					<xsd:documentation>Value (user data) of the key value pair.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
@@ -67,17 +67,22 @@
 			<xsd:documentation>Type definition of CodedIntegerAttribute.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="Key" type="pm:CodedValue">
+			<xsd:element ref="sdpi:MdcAttribute">
 				<xsd:annotation>
-					<xsd:documentation>A coded value that specifies the attribute type.</xsd:documentation>
+					<xsd:documentation>Key of the key value pair. Describes the meaning of Value.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="Value" type="xsd:integer">
 				<xsd:annotation>
-					<xsd:documentation>User data.</xsd:documentation>
+					<xsd:documentation>Value (user data) of the key value pair.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
 		<xsd:attribute ref="ext:MustUnderstand" use="optional"/>
 	</xsd:complexType>
+	<xsd:element name="MdcAttribute" type="pm:CodedValue">
+		<xsd:annotation>
+			<xsd:documentation>Specifies the concept of the key in a key value pair as laid out by coded attributes.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
 </xsd:schema>

@@ -4,4 +4,12 @@ Requirements towards the use of the CodedAttribute extension.
 
 ## General
 
-R0001: sdpi:Type elements shall only contain codes from the first partition of the IEEE 11073-10101 nomenclature.
+R0001: An SDC SERVICE PROVIDER shall set sdpi:MdcAttribute/@Code to any code from the first partition of the IEEE 11073-10101 nomenclature in the range of 67841 (1::2305) to 68609 (1::3073).
+
+R0002: An SDC SERVICE PROVIDER shall not add pm:Translation elements to sdpi:MdcAttribute elements.
+
+R0003: An SDC SERVICE PROVIDER shall not add pm:CodingSystemName elements to sdpi:MdcAttribute elements.
+
+R0004: An SDC SERVICE PROVIDER shall not add pm:ConceptDescription elements to sdpi:MdcAttribute elements.
+
+R0005: An SDC SERVICE PROVIDER shall not add ext:Extension elements to sdpi:MdcAttribute elements.
