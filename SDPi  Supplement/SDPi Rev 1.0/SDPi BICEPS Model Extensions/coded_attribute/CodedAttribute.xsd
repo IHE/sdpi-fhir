@@ -5,6 +5,17 @@
 	<!---->
 	<!---->
 	<!--CodedStringAttribute-->
+	<xsd:element name="CodedAttributes" type="sdpi:CodedAttributesType"/>
+	<xsd:complexType name="CodedAttributesType">
+		<xsd:sequence>
+			<xsd:element ref="sdpi:CodedStringAttribute" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="sdpi:CodedIntegerAttribute" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="sdpi:CodedDecimalAttribute" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute ref="ext:MustUnderstand" use="optional"/>
+	</xsd:complexType>
+	<!---->
+	<!---->
 	<xsd:element name="CodedStringAttribute" type="sdpi:CodedStringAttributeType">
 		<xsd:annotation>
 			<xsd:documentation>A key value pair to include string attributes of the IEEE 11073 classic domain information model that are not available from the BICEPS participant model.</xsd:documentation>
@@ -26,33 +37,6 @@
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
-		<xsd:attribute ref="ext:MustUnderstand" use="optional"/>
-	</xsd:complexType>
-	<!---->
-	<!---->
-	<!--CodedDecimalAttribute-->
-	<xsd:element name="CodedDecimalAttribute" type="sdpi:CodedDecimalAttributeType">
-		<xsd:annotation>
-			<xsd:documentation>A key value pair to include decimal attributes of the IEEE 11073 classic domain information model that are not available from the BICEPS participant model.</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
-	<xsd:complexType name="CodedDecimalAttributeType">
-		<xsd:annotation>
-			<xsd:documentation>Type definition of CodedDecimalAttribute.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element ref="sdpi:MdcAttribute">
-				<xsd:annotation>
-					<xsd:documentation>Key of the key value pair. Describes the meaning of Value.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="Value" type="xsd:decimal">
-				<xsd:annotation>
-					<xsd:documentation>Value (user data) of the key value pair.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-		</xsd:sequence>
-		<xsd:attribute ref="ext:MustUnderstand" use="optional"/>
 	</xsd:complexType>
 	<!---->
 	<!---->
@@ -78,11 +62,46 @@
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
-		<xsd:attribute ref="ext:MustUnderstand" use="optional"/>
 	</xsd:complexType>
-	<xsd:element name="MdcAttribute" type="pm:CodedValue">
+	<!---->
+	<!---->
+	<!--CodedDecimalAttribute-->
+	<xsd:element name="CodedDecimalAttribute" type="sdpi:CodedDecimalAttributeType">
+		<xsd:annotation>
+			<xsd:documentation>A key value pair to include decimal attributes of the IEEE 11073 classic domain information model that are not available from the BICEPS participant model.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="CodedDecimalAttributeType">
+		<xsd:annotation>
+			<xsd:documentation>Type definition of CodedDecimalAttribute.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="sdpi:MdcAttribute">
+				<xsd:annotation>
+					<xsd:documentation>Key of the key value pair. Describes the meaning of Value.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Value" type="xsd:decimal">
+				<xsd:annotation>
+					<xsd:documentation>Value (user data) of the key value pair.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!---->
+	<!---->
+	<xsd:element name="MdcAttribute" type="sdpi:MdcAttributeType">
 		<xsd:annotation>
 			<xsd:documentation>Specifies the concept of the key in a key value pair as laid out by coded attributes.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
+	<xsd:complexType name="MdcAttributeType">
+		<xsd:annotation>
+			<xsd:documentation>Type definition of MdcAttribute.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Code" type="pm:CodeIdentifier" use="required"/>
+		<xsd:attribute name="CodingSystem" type="xsd:anyURI" use="optional"/>
+		<xsd:attribute name="CodingSystemVersion" type="xsd:string" use="optional"/>
+		<xsd:attribute name="SymbolicCodeName" type="pm:SymbolicCodeName" use="optional"/>
+	</xsd:complexType>
 </xsd:schema>
