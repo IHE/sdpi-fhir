@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 3 sp1 (x64) (http://www.altova.com) by David Gregorczyk (Drägerwerk AG & Co. KGaA) -->
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ext="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension" xmlns:sdpi="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1" xmlns:pm="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant" targetNamespace="urn:oid:1.3.6.1.4.1.19376.1.6.2.10.1.1.1" elementFormDefault="qualified" attributeFormDefault="unqualified" xml:lang="en">
 	<xsd:import namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/extension" schemaLocation="../ExtensionPoint.xsd"/>
 	<xsd:import namespace="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant" schemaLocation="../BICEPS_ParticipantModel.xsd"/>
@@ -100,8 +101,20 @@
 			<xsd:documentation>Type definition of MdcAttribute.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="Code" type="pm:CodeIdentifier" use="required"/>
-		<xsd:attribute name="CodingSystem" type="xsd:anyURI" use="optional"/>
-		<xsd:attribute name="CodingSystemVersion" type="xsd:string" use="optional"/>
-		<xsd:attribute name="SymbolicCodeName" type="pm:SymbolicCodeName" use="optional"/>
+		<xsd:attribute name="CodingSystem" type="xsd:anyURI" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>The coding system of the this coded attribute. The implied value is "urn:oid:1.3.111.2.11073.10101.1".</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="CodingSystemVersion" type="xsd:string" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>CodingSystemVersion can be used to discriminate between different versions of a coding system. CodingSystemVersion is an optional value and can be omitted in cases where a coding system is backwards compatible or CodingSystem includes versioning information.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="SymbolicCodeName" type="pm:SymbolicCodeName" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>If present, SymbolicCodeName is an alternative representation that can be used to perform a plausibility check against Code.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
 	</xsd:complexType>
 </xsd:schema>
