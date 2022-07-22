@@ -1,0 +1,53 @@
+skinparam monochrome true
+autonumber
+
+!global $str_sdpi_p_somds_cons = "SOMDS Consumer"
+!global $str_sdpi_p_somds_prov = "SOMDS Provider"
+
+participant "$str_sdpi_p_somds_cons" as sdpi_somds_consumer
+participant "$str_sdpi_p_somds_prov" as sdpi_somds_provider
+
+== SDPi-P [DEV-34]  Announce Network Departure ==
+|||
+note over sdpi_somds_consumer, sdpi_somds_provider
+UPDATE DIAGRAM to simplify "opt" section; "any secure transaction" / response or timeout ALG
+end note
+
+|||
+group unsecured
+    sdpi_somds_provider ->> sdpi_somds_consumer: SDC: Bye(EndpointReference)
+    |||
+    note over sdpi_somds_provider, sdpi_somds_consumer
+        Since Bye() is unsecured, the consumer may desire to use a 
+        secured exchange to verify the presence or absence of the 
+        provider system.
+    end note 
+    |||
+    opt
+        group secured
+            note over sdpi_somds_consumer, sdpi_somds_provider
+            WOULDN'T THIS TIME OUT TRYING TO ESTABLISH THE SECURE CONNECTION?  
+            SHOULD THIS SEQUENCE JUST INDICATE SECURE CONNECTION SUCCESS OR NOT?
+            end note 
+            |||
+            alt subscription  active
+                sdpi_somds_consumer -> sdpi_somds_provider: SDC: Renew(SubscriptionManager)
+                alt provider responds - still there!
+                    sdpi_somds_consumer <-- sdpi_somds_provider: SDC: RenewResponse(ExpirationTime)
+                else communication time out 
+                    sdpi_somds_consumer -> sdpi_somds_consumer:  Apply SOMDS Provider disconnect
+                end 
+            else subscription not active
+                sdpi_somds_consumer -> sdpi_somds_provider: SDC: TransferGet()
+                alt provider responds - still present!
+                    sdpi_somds_consumer <-- sdpi_somds_provider: SDC: TransferGetResponse(HostingService, ThisDevice, ThisModel, HostedServices)
+                else communication time out
+                    sdpi_somds_consumer -> sdpi_somds_consumer:  Apply SOMDS Provider disconnect
+
+                end 
+            end
+        end
+    end
+end
+|||
+
