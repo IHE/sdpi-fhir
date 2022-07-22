@@ -1,0 +1,23 @@
+skinparam monochrome true
+autonumber
+
+!global $str_sdpi_p_somds_cons = "SOMDS Consumer"
+!global $str_sdpi_p_somds_prov = "SOMDS Provider"
+
+participant "$str_sdpi_p_somds_cons" as sdpi_somds_consumer
+participant "$str_sdpi_p_somds_prov" as sdpi_somds_provider
+
+== SDPi [DEV-24]  Discover Network Topology ==
+|||
+group unsecured
+    loop (to ensure SDC "Hello" messages are not missed)
+        sdpi_somds_consumer ->> sdpi_somds_provider: BICEPS: DiscoverNetworkProviders( Search Criteria, ...)
+        sdpi_somds_consumer <- sdpi_somds_provider: BICEPS: DiscoverNetworkProvidersResponse(PROVIDER UID, Discovery Type, ...)
+'|||
+'        opt if XAddrs were missing from ProbeMatches or Hello
+'            sdpi_somds_consumer ->> sdpi_somds_provider: SDC: Resolve(EndpointReference)
+'            sdpi_somds_consumer <- sdpi_somds_provider: SDC: ResolveMatches(XAddrs)
+'        end
+    end
+end
+|||

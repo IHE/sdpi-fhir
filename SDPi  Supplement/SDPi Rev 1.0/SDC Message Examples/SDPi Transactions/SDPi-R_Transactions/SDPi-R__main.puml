@@ -1,6 +1,0 @@
-group secured 
-    sdc_sc -> sdc_sp: Establish Medical Data Exchange
-
-    sdc_sp -> sdc_somds: Publish Medical Data Reports
-    sdc_sc -> sdc_sp: Retrieve Medical Data Update Report
-end 

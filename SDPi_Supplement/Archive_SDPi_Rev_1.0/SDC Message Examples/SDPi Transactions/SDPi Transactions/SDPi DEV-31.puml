@@ -1,0 +1,33 @@
+skinparam monochrome true
+autonumber
+
+!global $str_sdpi_p_somds_cons = "SOMDS Consumer"
+!global $str_sdpi_p_somds_prov = "SOMDS Provider"
+
+participant "$str_sdpi_p_somds_cons" as sdpi_somds_consumer
+participant "$str_sdpi_p_somds_prov" as sdpi_somds_provider
+
+== SDPi [DEV-31]  Set Provider State ==
+|||
+note over sdpi_somds_consumer, sdpi_somds_provider
+DISCUSSION:  
+(1) PROFILE REQUIREMENT TO REQUIRE OPERATION INVOKE SUBSCRIPTION
+(2) Update diagram below accordingly
+end note
+|||
+group secured
+        note over sdpi_somds_provider, sdpi_somds_consumer
+        This is a general purpose SDC/BICEPS SET service
+        BUT
+        Need to identify alt with subscription & 
+        with or w/o SCO service operation descriptions.
+        (See SDPi-xC sequence for additional detail - here or only there?)
+        end note
+        |||
+        sdpi_somds_consumer -> sdpi_somds_provider:  BICEPS: SetValue(...)
+        sdpi_somds_consumer <-- sdpi_somds_provider: BICEPS: SetValueResponse(...)
+end
+|||
+
+
+

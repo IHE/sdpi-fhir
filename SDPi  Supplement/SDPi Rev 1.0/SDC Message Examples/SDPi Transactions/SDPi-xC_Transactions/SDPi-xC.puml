@@ -1,7 +1,0 @@
-@startuml
-
-!include ../_sequence_config.incl
-
-!include high-level_transactions_main.puml
-
-@enduml
