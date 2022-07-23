@@ -29,7 +29,7 @@ jobs:
       uses: gradle/gradle-build-action@v2
       with:
         arguments: run --args="--input-file ../sdpi-supplement.adoc --output-folder ../sdpi-supplement --backend pdf"
-        build-root-directory: SDPi_Supplement/asciidoc
+        build-root-directory: SDPi_Supplement/asciidoc-converter
         
     - name: Create HTML with Gradle
       uses: gradle/gradle-build-action@v2
