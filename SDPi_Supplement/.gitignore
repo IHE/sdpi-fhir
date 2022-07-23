@@ -1,1 +1,2 @@
-/sdpi-supplement
+/sdpi-supplement/*
+!/sdpi-supplement/readme.md
