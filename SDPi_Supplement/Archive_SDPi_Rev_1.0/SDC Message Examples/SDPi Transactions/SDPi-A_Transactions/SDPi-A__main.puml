@@ -1,0 +1,9 @@
+group secured 
+    sdc_sc -> sdc_sp: Establish Medical Alert Exchange
+
+    sdc_sp -> sdc_somds: Publish Medical Alert Update Report
+    sdc_sc -> sdc_sp: Retrieve Medical Alert Update Report
+
+    sdc_sp <-> sdc_sc: Establish Medical Alert Delegation 
+    sdc_sp -> sdc_sc:  Delegate Medical Alert
+end 
