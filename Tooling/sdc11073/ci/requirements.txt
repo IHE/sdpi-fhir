@@ -1,5 +1,5 @@
 sdc11073
-pyinstaller==5.0
+pyinstaller
 unittest-xml-reporting
 flask
 flask-socketio
