@@ -41,7 +41,7 @@ jobs:
           pip install -r Tooling/sdc11073/ci/requirements.txt
       - name: Build executable
         run: |
-          pyinstaller Tooling/sdc11073/ci/sdc11073-tooling.spec --noconfirm --log-level=WARN --onefile
+          pyinstaller Tooling/sdc11073/ci/sdc11073-tooling.spec --noconfirm --log-level=WARN
           pyinstaller Tooling/sdc11073/ci/sdc11073-tooling-web.spec --noconfirm --log-level=WARN
       - name: Upload executable
         uses: actions/upload-artifact@v2
