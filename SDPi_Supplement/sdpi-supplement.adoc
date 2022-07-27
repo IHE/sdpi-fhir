@@ -7,7 +7,7 @@ Devices Technical Committee <devices@ihe.net>
 :toc:
 :sectnums:
 :icons: font
-:title-logo-image: image::ihe-logo.png[pdfwidth=4in,align=center]
+:title-logo-image: image::images/ihe-logo.png[pdfwidth=4in,align=center]
 
 This is a supplement to the IHE Devices Technical Framework Revision 10.0. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
 
