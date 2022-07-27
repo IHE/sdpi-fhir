@@ -1,2 +1,7 @@
 /sdpi-supplement/*
 !/sdpi-supplement/readme.md
+/.idea
+/*.png
+/*.pdf
+/*.html
+/.asciidoctor
