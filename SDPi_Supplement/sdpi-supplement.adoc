@@ -93,6 +93,8 @@ This message is sent whenever
 
 ==== Requirements
 
+*TODO*:  Add description of this to wiki article
+
 A requirement follows, see <<r100>>
 
 [sdpi_req#r100]
