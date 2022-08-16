@@ -1,0 +1,3 @@
+[[actor-somds-participant]]SOMDS Participant:: #todo add description#
+[[actor-somds-provider]]SOMDS Provider:: #todo add description#
+[[actor-somds-consumer]]SOMDS Consumer:: #todo add description#
