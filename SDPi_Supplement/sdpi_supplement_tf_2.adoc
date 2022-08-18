@@ -84,6 +84,8 @@ Language (UML) and XML Schema. These conventions are critical to understanding t
 
 === Announce Network Departure [DEV-34]
 
+=== Establish Medical Data Exchange [DEV-35]
+
 === Publish Medical Data [DEV-36]
 
 // todo how does this differ from DEV-29
@@ -186,6 +188,8 @@ Language (UML) and XML Schema. These conventions are critical to understanding t
 === Retrieve Localization Information [DEV-33]
 
 === Announce Network Departure [DEV-34]
+
+=== Establish Medical Data Exchange [DEV-35]
 
 === Publish Medical Data [DEV-36]
 
