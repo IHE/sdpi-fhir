@@ -49,7 +49,7 @@ jobs:
     - run: gem install asciidoctor-diagram
     - run: gem install asciidoctor-multipage
     - run: asciidoctor -V
-    - run: asciidoctor-multipage -D SDPi_Supplement/sdpi-supplement/multipage SDPi_Supplement/sdpi-supplement/sdpi-supplement.adoc
+    - run: asciidoctor-multipage -D SDPi_Supplement/sdpi-supplement/multipage SDPi_Supplement/sdpi-supplement.adoc
     
     - name: Upload artifact
       if: success() && github.ref == 'refs/heads/master'
