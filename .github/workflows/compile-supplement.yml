@@ -44,7 +44,7 @@ jobs:
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     # - run: ci/generate_sdpi_supplement_multipage_html.sh
     - name: Create multi-page HTML
-      run: ci/generate_sdpi_supplement_multipage_html.sh
+      run: ./ci/generate_sdpi_supplement_multipage_html.sh
 #      run: gem install asciidoctor
 #      
 #    - run: gem install asciidoctor-diagram
