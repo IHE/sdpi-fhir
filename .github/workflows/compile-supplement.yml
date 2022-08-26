@@ -37,7 +37,7 @@ jobs:
         ruby-version: '3.0' # Not needed with a .ruby-version file
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Create multi-page HTML
-      run: ./ci/generate_sdpi_supplement_multipage_html.sh
+      run: ./.github/generate_sdpi_supplement_multipage_html.sh
 
     - name: Upload artifact
       # if: success() && github.ref == 'refs/heads/master'
