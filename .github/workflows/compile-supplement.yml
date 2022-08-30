@@ -25,16 +25,16 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
-    - name: Create PDF with Gradle
+    - name: Create TF-2 PDF with Gradle
       uses: gradle/gradle-build-action@v2
       with:
-        arguments: run --args="--input-file ../sdpi-supplement.adoc --output-folder ../sdpi-supplement --backend pdf"
+        arguments: run --args="--input-file ../sdpi_supplement_tf_2.adoc --output-folder ../sdpi-supplement --backend pdf"
         build-root-directory: SDPi_Supplement/asciidoc-converter
         
-    - name: Create HTML with Gradle
+    - name: Create TF-2 HTML with Gradle
       uses: gradle/gradle-build-action@v2
       with:
-        arguments: run --args="--input-file ../sdpi-supplement.adoc --output-folder ../sdpi-supplement --backend html"
+        arguments: run --args="--input-file ../sdpi_supplement_tf_2.adoc --output-folder ../sdpi-supplement --backend html"
         build-root-directory: SDPi_Supplement/asciidoc-converter
         
     - name: Upload artifact
