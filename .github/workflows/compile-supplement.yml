@@ -24,11 +24,11 @@ jobs:
         distribution: 'temurin'
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
-    
+
     - name: Create HTML with Gradle
       uses: gradle/gradle-build-action@v2
       with:
-        arguments: run --args="--input-file ../sdpi-supplement.adoc --output-folder ../sdpi-supplement --backend html"
+        arguments: run --args="--input-file ../sdpi_supplement_tf_2.adoc --output-folder ../sdpi-supplement --backend html"
         build-root-directory: SDPi_Supplement/asciidoc-converter
         
     - name: Set up Ruby
@@ -36,6 +36,7 @@ jobs:
       with:
         ruby-version: '3.0' # Not needed with a .ruby-version file
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    
     - name: Create multi-page HTML
       run: ./.github/generate_sdpi_supplement_multipage_html.sh
 
