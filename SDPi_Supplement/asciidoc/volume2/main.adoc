@@ -10,22 +10,22 @@ This chapter, Volume 2 of the Service-oriented Device Point-of-care Interoperabi
 ==== Plant UML include
 
 .Diagram title
-[[vol2_figure_xyz]]
-[plantuml, target=puml_vol2_figure_xyz, format=svg, reftext='{figure-caption} {counter:refnum}']
+[[vol2-figure-xyz]]
+[plantuml, target=puml-vol2-figure-xyz, format=svg, reftext='{figure-caption} {counter:refnum}']
 ....
-include::../plantuml/vol2_figure_xyz.puml[]
+include::../plantuml/vol2-figure-xyz.puml[]
 ....
 
 ==== Image include
 
-image::ihe_logo.png[align=center]
+image::ihe-logo.png[align=center]
 
 ==== Listing include
 
-See <<vol2_listing_sample>>
+See <<vol2-listing-sample>>
 
 .A text XML
-[source#vol2_listing_sample,xml]
+[source#vol2-listing-sample,xml]
 ----
 include::../listings/sample.xml[]
 ----
@@ -50,13 +50,13 @@ The intended audience of IHE Technical Frameworks Volume 2 is:
 
 Volume 2 comprises several distinct sections:
 
-- <<clause_transactions>> defines Patient Care Device domain transactions in detail, specifying the roles for each actor, the standards employed, the information exchanged, and in some cases, implementation options for the transaction.
-- <<clause_mdpws_constraints_corrigenda_adjuncts>> specifies constraints, corrigenda and adjuncts to the IEEE 11073-20702 standard
-- <<clause_biceps_constraints_corrigenda_adjuncts>> specifies constraints, corrigenda and adjuncts to the IEEE 11073-10207 standard
-- <<clause_sdc_glue_constraints_corrigenda_adjuncts>> specifies constraints, corrigenda and adjuncts to the IEEE 11073-20701 standard
-- <<clause_message_transport_using_mdpws>> specifies example materials to map transactions to MDPWS message exchanges
+- <<clause-transactions>> defines Patient Care Device domain transactions in detail, specifying the roles for each actor, the standards employed, the information exchanged, and in some cases, implementation options for the transaction.
+- <<clause-mdpws-constraints-corrigenda-adjuncts>> specifies constraints, corrigenda and adjuncts to the IEEE 11073-20702 standard
+- <<clause-biceps-constraints-corrigenda-adjuncts>> specifies constraints, corrigenda and adjuncts to the IEEE 11073-10207 standard
+- <<clause-sdc-glue-constraints-corrigenda-adjuncts>> specifies constraints, corrigenda and adjuncts to the IEEE 11073-20701 standard
+- <<clause-message-transport-using-mdpws>> specifies example materials to map transactions to MDPWS message exchanges
 
-[#clause_transactions]
+[#clause-transactions]
 === Transactions
 
 ==== Announce Network Presence [DEV-23]
@@ -107,7 +107,7 @@ Volume 2 comprises several distinct sections:
 
 // todo how does this differ from DEV-30
 
-[appendix#clause_mdpws_constraints_corrigenda_adjuncts]
+[appendix#clause-mdpws-constraints-corrigenda-adjuncts]
 === MDPWS Constraints, Corrigenda & Adjuncts
 
 ==== Handling missed discovery messages
@@ -137,7 +137,7 @@ Volume 2 comprises several distinct sections:
 
 // todo finding from PAT: requirement is should, make it mandatory; see https://confluence.hl7.org/pages/viewpage.action?pageId=131051997
 
-[appendix#clause_biceps_constraints_corrigenda_adjuncts]
+[appendix#clause-biceps-constraints-corrigenda-adjuncts]
 === BICEPS Constraints, Corrigenda & Adjuncts
 
 ==== SystemContext Profiling & Use
@@ -152,7 +152,7 @@ Volume 2 comprises several distinct sections:
 
 // no TOI contents available yet
 
-[appendix#clause_sdc_glue_constraints_corrigenda_adjuncts]
+[appendix#clause-sdc-glue-constraints-corrigenda-adjuncts]
 === SDC Glue Constraints, Corrigenda & Adjuncts
 
 ==== Info exchanged during unsecured discovery
@@ -167,7 +167,8 @@ Volume 2 comprises several distinct sections:
 
 // todo https://confluence.hl7.org/pages/viewpage.action?pageId=104761310
 
-[appendix#clause_message_transport_using_mdpws]
+[appendix#clause-message-transport-using-mdpws]
+
 === Message Transport using MDPWS
 
 ==== Announce Network Presence [DEV-23]

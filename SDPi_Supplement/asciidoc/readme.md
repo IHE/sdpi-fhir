@@ -27,10 +27,10 @@ PlantUML diagram sources are stored in the `plantuml` sub-folder.
 
 ````asciidoc
 .Diagram title
-[[vol2_figure_xyz]]
-[plantuml, target=puml_vol2_figure_xyz, format=svg, reftext='{figure-caption} {counter:refnum}']
+[[vol2-figure-xyz]]
+[plantuml, target=puml-vol2-figure-xyz, format=svg, reftext='{figure-caption} {counter:refnum}']
 ....
-include::../plantuml/vol2_figure_xyz.puml[]
+include::../plantuml/vol2-figure-xyz.puml[]
 ....
 ````
 
@@ -40,20 +40,20 @@ PlantUML diagram target names shall start with `puml` to easily identify any gen
 `images` folder.
 
 ```
-Name ::= /^[a-z0-9_]+$/
-PlantUmlTarget = 'puml_' Name
+Name ::= /^[a-z0-9-]+$/
+PlantUmlTarget = 'puml-' Name
 ```
 
 ### Example
 
-The listing below generates a PlantUML SVG file in the `images` folder named `puml_vol2_figure_xyz.svg`.
+The listing below generates a PlantUML SVG file in the `images` folder named `puml-vol2-figure-xyz.svg`.
 
 ````asciidoc
 .Diagram title
-[[vol2_figure_xyz]]
-[plantuml, target=puml_vol2_figure_xyz, format=svg, reftext='{figure-caption} {counter:refnum}']
+[[vol2-figure-xyz]]
+[plantuml, target=puml-vol2-figure-xyz, format=svg, reftext='{figure-caption} {counter:refnum}']
 ....
-include::../plantuml/vol2_figure_xyz.puml[]
+include::../plantuml/vol2-figure-xyz.puml[]
 ....
 ````
 
@@ -64,14 +64,14 @@ Cross-references within the supplement shall follow the pattern below in order t
 ```
 Volume = 'vol1' | 'vol2' | 'vol3' 
 ReferenceType ::= 'clause' | 'listing' | 'figure' | 'table'
-Name ::= /^[a-z0-9_]+$/
-CrossReference ::= [ Volume ] '_' ReferenceType '_' Name
+Name ::= /^[a-z0-9-]+$/
+CrossReference ::= [ Volume ] '-' ReferenceType '-' Name
 ```
 
 ### Example
 
 ````asciidoc
-[#vol2_clause_transactions]
+[#vol2-clause-transactions]
 == Transactions
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore 

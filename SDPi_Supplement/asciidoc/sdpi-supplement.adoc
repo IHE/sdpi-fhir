@@ -3,7 +3,9 @@
 :preface-title: Preface
 :xrefstyle: short
 :toc-title: Contents
-:toc:
+:toc: left
+:toclevels: 3
+:multipage-level: 3
 :sectnums:
 :icons: font
 :imagesoutdir: images/
@@ -39,7 +41,7 @@ __<Comments may be submitted on IHE Technical Framework templates any time at ht
 
 #TBD#
 
-include::volume_2/main.adoc[]
+include::volume2/main.adoc[]
 
 == Volume 3
 
