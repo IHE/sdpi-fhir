@@ -41,6 +41,6 @@ __<Comments may be submitted on IHE Technical Framework templates any time at ht
 
 include::volume_2/main.adoc[]
 
-== Volume 2
+== Volume 3
 
 #TBD#
