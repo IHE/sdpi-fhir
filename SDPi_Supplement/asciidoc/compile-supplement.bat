@@ -1,6 +1,6 @@
 @ECHO OFF
 
-where /q asciidoctor
+WHERE /q asciidoctor
 IF ERRORLEVEL 1 (
     ECHO The asciidoctor application is missing. Ensure it is installed and placed in your PATH.
     ECHO For installation hints, go visit https://asciidoctor.org/#installation.
@@ -18,13 +18,19 @@ ECHO   -r asciidoctor-multipage
 ECHO   -b multipage_html5
 ECHO   -D sdpi-supplement/multipage
 ECHO   asciidoc/sdpi-supplement.adoc
-call asciidoctor -r asciidoctor-diagram -r asciidoctor-multipage -b multipage_html5 -D ../sdpi-supplement/multipage sdpi-supplement.adoc
+CALL asciidoctor -r asciidoctor-diagram -r asciidoctor-multipage -b multipage_html5 -D ../sdpi-supplement/multipage sdpi-supplement.adoc
 
 ECHO Copy images...
-ECHO xcopy
+ECHO XCOPY
 ECHO   asciidoc\images
 ECHO   sdpi-supplement\multipage\images
 ECHO   /s /e /i /y
-call xcopy images ..\sdpi-supplement\multipage\images /s /e /i /y
+CALL XCOPY images ..\sdpi-supplement\multipage\images /S /E /I /Y
+
+ECHO Delete temporary files...
+ECHO RMDIR
+ECHO   ..\sdpi-supplement\multipage\.asciidoctor
+ECHO   /S /Q
+RMDIR ..\sdpi-supplement\multipage\.asciidoctor /S /Q
 
 @ECHO ON
