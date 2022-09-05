@@ -1,0 +1,48 @@
+= Service-oriented Device Point-of-care Interoperability (SDPi) Technical Framework
+:doctype: book
+:preface-title: Preface
+:xrefstyle: short
+:toc-title: Contents
+:toc: left
+:toclevels: 3
+:multipage-level: 3
+:sectnums:
+:icons: font
+:imagesoutdir: images/
+:imagesdir: images/
+:title-logo-image: image::ihe-logo.png[pdfwidth=4in,align=center]
+
+This is a supplement to the IHE Devices Technical Framework Revision 10.0. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
+
+__<For Public Comment:>__ This supplement is published on <Month XX, 201x> for Public Comment. Comments are invited and can be submitted at http://www.ihe.net/Public_Comment/#domainname. In order to be considered in development of the Trial Implementation version of the supplement, comments must be received by <Month XX, 201X>.
+
+__<For Trial Implementation:>__ This supplement is published on <Month XX, 201X> for Trial Implementation and may be available for testing at subsequent IHE Connectathons. The supplement may be amended based on the results of testing. Following successful testing it will be incorporated into the Devices Technical Framework. Comments are invited and can be submitted at http://www.ihe.net/Public_Comment/#domainname.
+
+This supplement describes changes to the existing technical framework documents.
+
+“Boxed” instructions like the sample below indicate to the Volume Editor how to integrate the relevant section(s) into the relevant Technical Framework volume.
+|===
+|__Amend section W.X by the following:__
+|===
+
+Where the amendment adds text, make the added text bold underline. Where the amendment removes text, make the removed text bold strikethrough. When entire new sections are added, introduce with editor’s instructions to “add new text” or similar, which for readability are not bolded or underlined.
+
+General information about IHE can be found at www.ihe.net.
+
+Information about the IHE Devices domain can be found at ihe.net/IHE_Domains.
+
+Information about the organization of IHE Technical Frameworks and Supplements and the process used to create them can be found at http://ihe.net/IHE_Process and http://ihe.net/Profiles.
+
+The current version of the IHE DevicesTechnical Framework can be found at http://ihe.net/Technical_Frameworks.
+
+__<Comments may be submitted on IHE Technical Framework templates any time at http://ihe.net/Templates_Public_Comments. Please enter comments/issues as soon as they are found. Do not wait until a future review cycle is announced.>__
+
+== Volume 1
+
+#TBD#
+
+include::volume2/main.adoc[]
+
+== Volume 3
+
+#TBD#
