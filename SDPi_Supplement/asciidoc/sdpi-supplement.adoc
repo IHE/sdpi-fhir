@@ -6,7 +6,7 @@
 :toc: left
 :toclevels: 3
 :multipage-level: 3
-:sectnums:
+// :sectnums:
 :icons: font
 :imagesoutdir: images/
 :imagesdir: images/
@@ -37,12 +37,19 @@ The current version of the IHE DevicesTechnical Framework can be found at http:/
 
 __<Comments may be submitted on IHE Technical Framework templates any time at http://ihe.net/Templates_Public_Comments. Please enter comments/issues as soon as they are found. Do not wait until a future review cycle is announced.>__
 
-== Volume 1
+= Volume 1
+
+== Definitions
+
+include::definitions.adoc[]
 
 #TBD#
 
 include::volume2/main.adoc[]
 
-== Volume 3
+= Volume 3
 
-#TBD#
+[bibliography]
+== Bibliography
+
+* [[[ieee-11073-10207-2017,IEEE 11073-10207:2017]]] IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2018-02, available at https://standards.ieee.org/standard/11073-10207-2017.html.
