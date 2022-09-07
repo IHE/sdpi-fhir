@@ -1,0 +1,26 @@
+:var-uri-ws-discovery-hello: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231821
+
+[#vol2-clause-appendix-mdpws-dev-23]
+=== MDPWS: Announce Network Presence [DEV-23]
+
+==== AnnounceNetworkPresence
+
+The {var-label-dev-23-message-announce-network-presence} message is encoded by using {var-uri-ws-discovery-hello}[WS-Discovery Hello].
+
+===== Referenced Standards
+
+* <<ws-discovery-2009>> {var-uri-ws-discovery-hello}[Section 4.1 Hello]
+
+===== Message Outline
+
+.Hello message
+[source#vol2-mdpws-dev-23-hello,xml]
+----
+include::../../listings/vol2-mdpws-dev-23-hello.xml[]
+----
+
+===== Message Semantics
+
+`s12:Envelope/s12:Body/wsd:Hello/wsa:EndpointReference/wsa:Address`:: The <<actor-somds-provider>>'s <<payload-dev-23-provider-uid>> as URI.
+`s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes`:: The <<actor-somds-provider>>'s <<payload-dev-23-discovery-scope>> as a list of URIs.
+
