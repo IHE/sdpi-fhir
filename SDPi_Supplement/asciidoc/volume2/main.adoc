@@ -1,13 +1,3 @@
-//:imagesdir: ../images/
-
-:var-label-message-interaction-diagram: Message Interaction Diagram for
-:var-label-actor-roles: Actor Roles for
-:var-label-trigger-events: Trigger Events
-:var-label-message-semantics: Message Semantics
-:var-label-expected-actions: Expected Actions
-:var-label-actor: Actor
-:var-label-role: Role
-
 = Volume 2
 
 This chapter, Volume 2 of the Service-oriented Device Point-of-care Interoperability (SDPi) defines transactions used in IHE Patient Care Device profiles.
@@ -42,7 +32,8 @@ Volume 2 comprises several distinct sections:
 [#clause-transactions]
 == Transactions
 
-include::tf2-dev-23.adoc[]
+include::dev-23/tf2-dev-23.adoc[]
+
 
 //=== Discover Network Topology [DEV-24]
 //
@@ -150,9 +141,11 @@ include::tf2-dev-23.adoc[]
 //
 // todo https://confluence.hl7.org/pages/viewpage.action?pageId=104761310
 //
-//[appendix#clause-message-transport-using-mdpws]
-//
-//== Message Transport using MDPWS
+[appendix#clause-message-transport-using-mdpws]
+== Message Transport using MDPWS
+
+include::dev-23/apdnx-mdpws-dev-23.adoc[]
+
 //
 //=== Announce Network Presence [DEV-23]
 //
