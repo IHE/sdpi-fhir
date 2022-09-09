@@ -12,6 +12,7 @@ import org.asciidoctor.Asciidoctor
 import org.asciidoctor.Options
 import org.asciidoctor.SafeMode
 import org.sdpi.asciidoc.extension.RequirementsBlockProcessor
+import org.sdpi.asciidoc.extension.NumberingProcessor
 import java.io.File
 
 fun main(args: Array<String>) = ConvertAndVerifySupplement().main(
@@ -24,7 +25,7 @@ fun main(args: Array<String>) = ConvertAndVerifySupplement().main(
 class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
     private companion object : Logging
 
-    // for some reason, github actions do not digest double quotes correctly right now - requires hard coded config
+    // for some reason, GitHub actions do not digest double quotes correctly right now - requires hard coded config
     private val adocInputFile by option("--input-file", help = "path to ascii doc input file")
         .file()
         .required()
@@ -42,9 +43,9 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
             }
         }
 
-    private val backend by option("--backend", help = "'pdf' (default) or 'html' to set output type")
+    private val backend by option("--backend", help = "'html' (default) or 'pdf' to set output type")
         .choice("pdf", "html", ignoreCase = true)
-        .default("pdf")
+        .default("html")
 
     override fun run() {
         runCatching {
@@ -59,11 +60,13 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
             val options = Options.builder()
                 .safe(SafeMode.UNSAFE)
                 .backend(backend.lowercase())
+                .sourcemap(true)
                 .toFile(outFile).build()
 
             val asciidoctor = Asciidoctor.Factory.create()
 
             asciidoctor.javaExtensionRegistry().block(RequirementsBlockProcessor())
+            asciidoctor.javaExtensionRegistry().treeprocessor(NumberingProcessor())
 
             asciidoctor.requireLibrary("asciidoctor-diagram") // enables plantuml
             asciidoctor.convertFile(adocInputFile, options)
