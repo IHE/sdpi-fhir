@@ -1,0 +1,71 @@
+
+:var-transaction-id: DEV-23
+:var-label-transaction-name: Announce Network Presence
+
+:var-label-dev-23-message-announce-network-presence: AnnounceNetworkPresence
+:var-label-dev-23-payload-provider-uid: Provider UID
+:val-label-dev-23-payload-discovery-scope: Discovery Scope
+
+//reset|+1|off
+[#vol2-clause-dev-23]
+=== Announce Network Presence [DEV-23]
+
+==== Scope
+
+[sdpi_transaction#transaction-dev-23,actors='actor-somds-provider actor-somds-consumer',figure=vol2-figure-dev-23-sequence,messages='message-announce-network-presence']
+
+This transaction is used to notify all <<actor-somds-consumer>>s that a <<actor-somds-provider>> is connected to the network and ready to exchange messages with other <<actor-somds-participant>>s.
+
+==== Actor Roles
+
+.Actor Roles DEV-23
+[cols="1,2"]
+|===
+|Actor |Roles
+
+|<<actor-somds-provider>>
+|Announces its presence by broadcasting <<message-announce-network-presence>> messages to all listening systems.
+
+|<<actor-somds-consumer>>
+|Listens for <<message-announce-network-presence>> messages  to identify any provider systems that it may want to establish a connection with and further discover a provider’s service capabilities.
+
+|===
+
+==== Referenced Standards
+
+* <<ieee-11073-10207-2017>> Section 9.2 Implicit Discovery
+
+==== Messages
+
+.Message Interaction Diagram DEV-23
+[plantuml#vol2-figure-dev-23-sequence, target=puml-dev-23-sequence, format=svg, reftext='{figure-caption} {counter:refnum}',width=100%]
+....
+include::../../plantuml/vol2-figure-dev-23-sequence.puml[]
+....
+
+[#message-announce-network-presence]
+===== {var-label-dev-23-message-announce-network-presence}
+
+The {var-label-dev-23-message-announce-network-presence} message is part of the BICEPS _implicit discovery_ protocol for allowing <<actor-somds-consumer>>s to receive a notification when a <<actor-somds-provider>> is ready to exchange messages with other <<actor-somds-consumer>>s.
+
+The {var-label-dev-23-message-announce-network-presence} is a broadcast message that is sent from each <<actor-somds-provider>> to all listening <<actor-somds-consumer>>s (zero to many). Limited but sufficient information is provided with the message to enable <<actor-somds-consumer>>s to determine if they are interested in connecting with the <<actor-somds-provider>> discovering additional information.
+
+[#message-announce-network-presence-trigger-events]
+====== Trigger Events
+
+This message is sent
+
+1. whenever a <<actor-somds-provider>> joins a network,
+2. when it is returning to normal _on-line_ operation after having indicated temporary suspension of message exchanges, or
+3. when any metadata of the <<actor-somds-provider>> changes, e.g. when <<payload-dev-23-discovery-scope>> is updated.
+
+[#message-announce-network-presence-message-semantics,sdpi_depth=+1]
+====== Message Semantics
+
+[[payload-dev-23-provider-uid]]Provider UID:: A globally unique identifier for the <<actor-somds-provider>>.
+[[payload-dev-23-discovery-scope]]Discovery Scope:: A scope for basic filtering.
+
+[#message-announce-network-presence-expected-actions]
+====== Expected Actions
+
+When a <<actor-somds-provider>> sends this message, there is no expected or required responses. This is due to the fact that either there are no <<actor-somds-consumer>>s listening for announcement messages, or the information in the message (e.g., Discovery Type) is not of interest to any receiving <<actor-somds-consumer>>s.
