@@ -1,0 +1,4 @@
+= Use Case Feature: Standalone OR Dashboard (SORD)
+
+NOTE:  This file contains the use case content for SORD.  See the Word document for the baseline.  Gherkin plugin may be utilized.
+

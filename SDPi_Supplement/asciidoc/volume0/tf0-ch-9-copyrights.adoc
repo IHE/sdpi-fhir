@@ -1,0 +1,4 @@
+= TF-0 Chapter 9: Copyrights
+
+ADD:  file contains the IEEE copyright permission language
+

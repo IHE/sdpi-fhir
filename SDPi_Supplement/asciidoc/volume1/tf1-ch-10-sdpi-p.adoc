@@ -1,0 +1,4 @@
+= Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
+
+NOTE:  This file contains the core Volume 1 specification for the SDPi-P profile.
+

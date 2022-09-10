@@ -1,0 +1,5 @@
+= Requirements Management for Plug-and-Trust Interoperability
+
+NOTE:  This file contains general "articles" to help those trying to understand the metadata integtated into the spec to support advances such as "requirements interoperability". +
+{empty} +
+The content for this appendix may be pushed to SDPi 1.x.

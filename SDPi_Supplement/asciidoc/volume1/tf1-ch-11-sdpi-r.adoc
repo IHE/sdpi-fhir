@@ -1,0 +1,5 @@
+= Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
+
+
+NOTE:  This file contains the core Volume 1 specification for the SDPi-R profile.
+

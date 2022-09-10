@@ -1,0 +1,4 @@
+= TF-0 Appendix B:  Transaction Summary Definitions
+
+ADD:  Summary definitions for each transaction from the Word file
+
