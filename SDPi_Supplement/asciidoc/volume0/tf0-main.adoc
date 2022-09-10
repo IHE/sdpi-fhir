@@ -1,0 +1,4 @@
+= IHE Technical Frameworks General Introduction
+
+NOTE:  This document integrates all the content that makes up the supplement volume 0 (IHE General Introduction) document.
+

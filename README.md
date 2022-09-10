@@ -3,6 +3,8 @@ Joint IHE-HL7 Gemini Project "Device Interoperability using SDPi+FHIR" artifacts
 
 The primary focus of the IHE DEV SDPi profiles are device-to-device plug-n-trust interoperability around high-acuity point-of-care contexts (e.g., operating room, ICU, emergency room bed, etc.).  These SDPi profiles leverage the ISO/IEEE 11073 Service-oriented Device Connectivity (SDC) standards.
 
- Project home - including overview background information - is at: [Gemini Project - Device Interoperability](https://confluence.hl7.org/pages/viewpage.action?pageId=66926431) 
+Project documentation is provided on the [repository wiki](https://github.com/IHE/sdpi-fhir/wiki).  
+
+Project HL7 Confluence home - including overview background information - is at: [Gemini Project - Device Interoperability](https://confluence.hl7.org/pages/viewpage.action?pageId=66926431) 
 
 Visit [Gemini SDPi+FHIR Community Engagement](https://confluence.hl7.org/display/GP/Community+Engagement) to see how to connect with the various teams working on the project.

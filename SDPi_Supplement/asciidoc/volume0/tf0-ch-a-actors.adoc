@@ -1,0 +1,4 @@
+= TF-0 Appendix A:  Actor Summary Definitions
+
+ADD: Summary definitions from the Word document.
+

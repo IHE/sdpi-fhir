@@ -1,0 +1,43 @@
+= SDPi Editors AsciiDoc Cheat Sheet
+0.1, 2022.09.08: AsciiDoc article / repo wiki
+:toc: right
+:icons: font
+
+WARNING: This is a straw-man article. Content hackers welcomed!
+
+== 'Sup with this "Cheat Sheet"?
+Though the article https://github.com/IHE/sdpi-fhir/wiki/IHE-TF-SDPi-Content-in-AsciiDoc[_IHE Technical Framework / SDPi Content in AsciiDoc_] covers AsciiDoc application to specific content needs of the SDPi supplement, for those who are just getting started with the language, figuring out where the basics (and advanced) usage is documented is ... challenging.
+
+This quick reference guide helps cover that space between the content conventions and the actual language.
+
+The document links are generally to https://docs.asciidoctor.org/asciidoc/latest/[_Asciidoctor Docs online documentation_].
+
+== Document Stuff
+
+== Blocks Stuff
+
+== Reference Stuff
+
+== STUFF TO ADD
+
+(in no particular #order#)
+
+* admonitions
+
+* indenting
+
+* empty lines
+
+* Table Formatting
+
+* attributes
+
+* references
+
+* anchors
+
+* https://docs.asciidoctor.org/asciidoc/latest/tables/data-format/#data-table-formats[Tables from Files (CSV, TSV, DSV)]
+
+*  ...
+
+

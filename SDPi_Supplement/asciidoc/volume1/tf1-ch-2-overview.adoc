@@ -1,0 +1,4 @@
+= Devices Integration Profiles
+
+NOTE:  This file contains the Volume 1 / Chapter 2 content, including overviews for SES, SDPi (general profile architecture) and for each of the four SDPi profiles.
+

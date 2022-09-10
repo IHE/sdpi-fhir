@@ -1,0 +1,4 @@
+= Service-oriented Device Point-of-care Interoperability – external Control (SDPi-xC) Profile
+
+NOTE:  This file contains the core Volume 1 specification for the SDPi-xC profile.
+

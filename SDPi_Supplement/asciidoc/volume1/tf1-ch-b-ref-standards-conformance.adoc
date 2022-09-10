@@ -1,0 +1,7 @@
+= Referenced Standards Requirements Conformance Support
+
+NOTE:  This file contains the general introduction to how SDPi handles standards conformance + integrates sections for each standard "ICS" statement. +
+{empty} +
+ICS Statements per standard may be in a different subfolder and files - along with this appendix B file.
+
+CAUTION:  This appendix may be deferred to SDPi 1.x

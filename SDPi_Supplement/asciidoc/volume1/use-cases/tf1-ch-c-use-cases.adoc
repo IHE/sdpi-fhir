@@ -1,0 +1,11 @@
+= Appendix C – Device Point-of-care Interoperability (DPI) Use Cases
+
+
+NOTE:  This file integrates the use cases that are linked to the SDPi profiles to provide functional requirements, including any introductory sections for how use cases are managed in SDPi. +
+{empty} +
+Note that each use case is in its own file. +
+{empty} +
+Note that AsciiDoc Gherkin (plugin?) may be used
+
+
+

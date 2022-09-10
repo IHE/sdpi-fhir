@@ -1,0 +1,4 @@
+= TF-0 Appendix D:  Glossary
+
+ADD:  Glossary definitions from the Word document
+

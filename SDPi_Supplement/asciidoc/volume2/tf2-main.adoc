@@ -1,0 +1,8 @@
+= Volume 2 -- Transactions
+
+NOTE:  This document integrates all the content that makes up the supplement volume 2 document.
+
+IMPORTANT:  Migrate the content below from main.adoc into this document OR rename main.adoc to this ... though the content is different.  +
+{empty} +
+*_See the Word document for what this is supposed to look like_*.
+
