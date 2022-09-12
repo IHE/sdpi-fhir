@@ -1,7 +1,10 @@
 package org.sdpi.asciidoc
 
 import org.apache.logging.log4j.kotlin.loggerOf
+import org.asciidoctor.ast.Section
 import org.asciidoctor.ast.StructuralNode
+import org.sdpi.asciidoc.model.StructuralNodeWrapper
+import org.sdpi.asciidoc.model.toSealed
 
 /**
  * Resolves the block id attribute from an attributes map.
@@ -42,4 +45,11 @@ fun validate(value: Boolean, node: StructuralNode, msg: () -> String) {
     checkNotNull(node.sourceLocation) { "Fatal error: map source disabled" }
     loggerOf(Any::class.java).error { msgWithLocation }
     throw Exception(msgWithLocation)
+}
+
+fun StructuralNode.isAppendix() = when (val section = this.toSealed()) {
+    is StructuralNodeWrapper.Section -> section.wrapped.numeral?.let {
+        it.length == 1 && it.uppercase().first() in 'A'..'Z'
+    } ?: false
+    else -> false
 }
