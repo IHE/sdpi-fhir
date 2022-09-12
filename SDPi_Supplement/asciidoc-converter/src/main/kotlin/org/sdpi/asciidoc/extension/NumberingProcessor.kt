@@ -53,7 +53,6 @@ class NumberingProcessor : Treeprocessor() {
         block.toSealed().let { node ->
             when (node) {
                 is StructuralNodeWrapper.Document -> {
-
                     node.wrapped.blocks.forEach {
                         validate(!it.isAppendix(), it) {
                             "Part is not allowed to be appendix"
