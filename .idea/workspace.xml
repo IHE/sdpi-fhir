@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d391f13-49b0-47e5-8c4b-4d9a65081c37" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDPi_Supplement/articles/sdpi-article-asciidoc-cheat-sheet.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/SDPi_Supplement/articles/sdpi-article-asciidoc-cheat-sheet.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDPi_Supplement/articles/sdpi-article-ihe-tf-asciidoc-cookbook.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/SDPi_Supplement/articles/sdpi-article-ihe-tf-asciidoc-cookbook.adoc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +88,7 @@
       <workItem from="1662155224370" duration="9910000" />
       <workItem from="1662750676029" duration="2858000" />
       <workItem from="1662767194748" duration="6188000" />
-      <workItem from="1662997764680" duration="9683000" />
+      <workItem from="1662997764680" duration="10363000" />
     </task>
     <servers />
   </component>
