@@ -5,12 +5,12 @@
 :toc-title: Contents
 :toc: left
 :toclevels: 2
-:sectnums:
+:!sectnums:
 :icons: font
 :imagesoutdir: images/
 :imagesdir: images/
 
-WARNING: This is a straw-man article. Content hackers welcomed!  Add content requests to section <<Topics Parking Lot>> below.
+WARNING: This is a straw-man article. Content hackers welcomed!  Add content requests to section <<Topics Parking Lot>>.
 
 == Cookbook Overview
 This article provides a *_handy_* reference place for the conventions and templates that editors will apply in creating content for the SDPi specification.  It is organized so as to help with specific editorial tasks (e.g., references, images, tables, metadata, etc.).
@@ -20,7 +20,16 @@ Related articles that support the information below include:
 * https://github.com/IHE/sdpi-fhir/blob/50ace3692b9299cdfcea434501df87b192f5220c/SDPi_Supplement/articles/sdpi-article-asciidoc-cheat-sheet.adoc[AsciiDoc Cheat Sheet]
 * https://github.com/IHE/sdpi-fhir/wiki/SDPi-File-Organization-Scheme[SDPi File Organization Scheme]
 
-== Asciidoc Source Conventions
+== Document Conventions
+ADD:  Copy and past document header
+ADD:  Unique attributes or other directives used
+ADD:  Multi-File / Multi-Doc Support conventions
+
+== IHE TF Elements Conventions
+
+==
+
+== #FROM ORIGINAL ASCIIDOC/README.MD#
 
 The following subsections specify conventions for the writing of Asciidoc markup.
 It makes use of [Backus-Naur forms](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form), which may include
