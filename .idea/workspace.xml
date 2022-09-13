@@ -5,40 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d391f13-49b0-47e5-8c4b-4d9a65081c37" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/sdpi-supplement-intro.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/sdpi-supplement-issues.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume0/tf0-ch-9-copyrights.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume0/tf0-ch-a-actors.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume0/tf0-ch-b-transactions.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume0/tf0-ch-d-glossary.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume0/tf0-main.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume1/tf1-ch-10-sdpi-p.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume1/tf1-ch-11-sdpi-r.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume1/tf1-ch-12-sdpi-a.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume1/tf1-ch-13-sdpi-xc.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume1/tf1-ch-2-overview.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume1/tf1-ch-a-requirements-interoperability.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume1/tf1-ch-b-ref-standards-conformance.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume1/tf1-main.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume1/use-cases/tf1-ch-c-use-case-sord.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume1/use-cases/tf1-ch-c-use-cases.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume2/gateways/tf2-ch-b-gateway-acm.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume2/gateways/tf2-ch-b-gateway-dec.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume2/gateways/tf2-ch-b-gateway-v2.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume2/mdpws/tf2-ch-a-mdpws.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume2/tf2-main.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume3/tf3-ch-8.2.8-biceps-content.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume3/tf3-ch-8.3.1-infusion-pump.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume3/tf3-ch-8.3.2-ventilator.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume3/tf3-ch-8.3.3-physiologic-monitor.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume3/tf3-ch-8.3.4-surgical.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/volume3/tf3-main.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/referenced-artifacts/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/sdpi-article-asciidoc-cheat-sheet.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/sdpi-article-ihe-tf-asciidoc-cookbook.adoc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDPi_Supplement/sources/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDPi_Supplement/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/SDPi_Supplement/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDPi_Supplement/asciidoc/readme.md" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDPi_Supplement/articles/sdpi-article-asciidoc-cheat-sheet.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/SDPi_Supplement/articles/sdpi-article-asciidoc-cheat-sheet.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDPi_Supplement/articles/sdpi-article-ihe-tf-asciidoc-cookbook.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/SDPi_Supplement/articles/sdpi-article-ihe-tf-asciidoc-cookbook.adoc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +45,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Docs/macStuff/Trusted Solutions/SDC/SDPi-FHIR/Repositories/sdpi-fhir/SDPi_Supplement/asciidoc/volume1/use-cases",
+    "last_opened_file_path": "C:/Docs/macStuff/Trusted Solutions/SDC/SDPi-FHIR/Repositories/sdpi-fhir",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -84,10 +55,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Docs\macStuff\Trusted Solutions\SDC\SDPi-FHIR\Repositories\sdpi-fhir" />
       <recent name="C:\Docs\macStuff\Trusted Solutions\SDC\SDPi-FHIR\Repositories\sdpi-fhir\SDPi_Supplement\referenced-artifacts" />
       <recent name="C:\Docs\macStuff\Trusted Solutions\SDC\SDPi-FHIR\Repositories\sdpi-fhir\SDPi_Supplement\sources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Docs\macStuff\Trusted Solutions\SDC\SDPi-FHIR\Repositories\sdpi-fhir\SDPi_Supplement\articles" />
       <recent name="C:\Docs\macStuff\Trusted Solutions\SDC\SDPi-FHIR\Repositories\sdpi-fhir\SDPi_Supplement\asciidoc\volume1\use-cases" />
       <recent name="C:\Docs\macStuff\Trusted Solutions\SDC\SDPi-FHIR\Repositories\sdpi-fhir\SDPi_Supplement" />
     </key>
@@ -119,6 +92,7 @@
       <workItem from="1662155224370" duration="9910000" />
       <workItem from="1662750676029" duration="2858000" />
       <workItem from="1662767194748" duration="6188000" />
+      <workItem from="1662997764680" duration="9683000" />
     </task>
     <servers />
   </component>
