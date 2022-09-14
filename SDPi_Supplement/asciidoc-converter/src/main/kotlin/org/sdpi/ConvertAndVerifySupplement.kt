@@ -11,6 +11,7 @@ import org.apache.logging.log4j.kotlin.Logging
 import org.asciidoctor.Asciidoctor
 import org.asciidoctor.Options
 import org.asciidoctor.SafeMode
+import org.sdpi.asciidoc.extension.DisableSectNumsProcessor
 import org.sdpi.asciidoc.extension.RequirementsBlockProcessor
 import org.sdpi.asciidoc.extension.NumberingProcessor
 import java.io.File
@@ -67,6 +68,7 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
 
             asciidoctor.javaExtensionRegistry().block(RequirementsBlockProcessor())
             asciidoctor.javaExtensionRegistry().treeprocessor(NumberingProcessor())
+            asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
 
             asciidoctor.requireLibrary("asciidoctor-diagram") // enables plantuml
             asciidoctor.convertFile(adocInputFile, options)
