@@ -6,7 +6,7 @@
 :toc: left
 :toclevels: 3
 :multipage-level: 2
-// :sectnums:
+:sectnums:
 :icons: font
 :imagesoutdir: images/
 :imagesdir: images/
@@ -45,7 +45,7 @@ include::definitions.adoc[]
 
 #TBD#
 
-include::volume2/main.adoc[]
+include::volume2/tf2-main.adoc[]
 
 = Volume 3
 

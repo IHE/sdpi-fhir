@@ -26,6 +26,7 @@ import org.sdpi.asciidoc.validate
 class NumberingProcessor : Treeprocessor() {
     private var numbering = mutableListOf<Number>()
     private var currentAdditionalLevel = 0
+    private val startFromLevel = 1
 
     override fun process(document: Document): Document {
         processBlock(document as StructuralNode)
@@ -33,7 +34,11 @@ class NumberingProcessor : Treeprocessor() {
     }
 
     private fun createSectionId(numbers: List<Number>, level: Int): String {
-        val cutFrom = numbers.indexOfFirst { it.appendix != null }
+        var cutFrom = numbers.indexOfFirst { it.appendix != null }
+        if (cutFrom == -1) {
+            cutFrom = startFromLevel
+        }
+
         if (cutFrom == level) {
             return ""
         }
@@ -53,6 +58,7 @@ class NumberingProcessor : Treeprocessor() {
         block.toSealed().let { node ->
             when (node) {
                 is StructuralNodeWrapper.Document -> {
+                    node.wrapped.attributes
                     node.wrapped.blocks.forEach {
                         validate(!it.isAppendix(), it) {
                             "Part is not allowed to be appendix"
