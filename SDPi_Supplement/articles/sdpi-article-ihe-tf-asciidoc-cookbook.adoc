@@ -36,7 +36,14 @@ ROUGH NOTES FROM DEMO SESSION 2022.09.14 ...
 . (Optional) set up SDPi_Supplement + asciidoc-conerter as IntelliJ Projects - to make work in those directories easier
 ... <select directory ... File::New::Project From Existing Sources ..
 . Ensure Gradle is installed!
-.
+.. IntelliJ should discover the build.gradle.kts script file in the converter project root director; this file contains instructions for how to build the application
+.. Gradel should be automatically installed and configured for the asciidoc-converter project
+.Open asciidoc converter project
+. ...
+. From Gradle window (on right side)
+... Navigate to  Tasks::applcation::run
+... Execute (double click on) "run"
+)
 
 ==== Publishing the SDPi Supplement to HTML
 ADD:  How to run the converter to see the actual published supplement
