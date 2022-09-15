@@ -4,13 +4,13 @@
 :xrefstyle: short
 :toc-title: Contents
 :toc: left
-:toclevels: 2
+:toclevels: 3
 :!sectnums:
 :icons: font
 :imagesoutdir: images/
 :imagesdir: images/
 
-WARNING: This is a straw-man article. Content hackers welcomed!  Add content requests to section <<Topics Parking Lot>>.
+WARNING: This is a straw-man article - actively under development!  Add content requests to section <<Topics Parking Lot>>.
 
 == Cookbook Overview
 This article provides a *_handy_* reference place for the conventions and templates that editors will apply in creating content for the SDPi specification.  It is organized so as to help with specific editorial tasks (e.g., references, images, tables, metadata, etc.).
@@ -21,19 +21,40 @@ Related articles that support the information below include:
 * https://github.com/IHE/sdpi-fhir/wiki/SDPi-File-Organization-Scheme[SDPi File Organization Scheme]
 
 == Document Conventions
-ADD:  Copy and past document header
-ADD:  Unique attributes or other directives used
-ADD:  Multi-File / Multi-Doc Support conventions
+The items in this section apply to either the document overall or to entire files.
 
-== IHE TF Elements Conventions
+=== HTML -- Continuous Build
+In order to support a "continuous build" process -- namely, being able to frequently render to HTML and ensure that the process is working -- the steps below should be followed.
 
-==
+NOTE:  This See the general tooling configuration article on the wiki for more information:  https://github.com/IHE/sdpi-fhir/wiki/Crafting-AsciiDoc-based-SDPi-Supplement-Content#authoring-using-intellij-platform[Authoring Using IntelliJ Platform]
 
-== #FROM ORIGINAL ASCIIDOC/README.MD#
+==== IntelliJ Configuration & Processes
+
+ROUGH NOTES FROM DEMO SESSION 2022.09.14 ...
+
+. (Optional) set up SDPi_Supplement + asciidoc-conerter as IntelliJ Projects - to make work in those directories easier
+... <select directory ... File::New::Project From Existing Sources ..
+. Ensure Gradle is installed!
+.
+
+==== Publishing the SDPi Supplement to HTML
+ADD:  How to run the converter to see the actual published supplement
+
+=== Multi-File / Multi-Doc Support
+ADD:  General discussion and conventions and support for the AsciiDoc multi-file approach
+ADD:  Tooling used + configuration
+
+=== Document Header
+ADD:  Template for what should be at the top of each of the .adoc files
+
+=== Attributes (Document Level) for SDPi
+ADD:  Specific attributes (document level) that should be included / considered for each .adoc file
+
+== AsciiDoc Content Conventions
 
 The following subsections specify conventions for the writing of Asciidoc markup.
-It makes use of [Backus-Naur forms](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form), which may include
-[Regular expressions](https://en.wikipedia.org/wiki/Regular_expression) (signified by enclosing slashes) to describe
+It makes use of https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form[Backus-Naur forms], which may include
+https://en.wikipedia.org/wiki/Regular_expression[Regular expressions] (signified by enclosing slashes) to describe
 grammars for acceptable characters of symbols.
 
 === Identifier naming
@@ -143,6 +164,30 @@ include::../plantuml/vol2-figure-xyz.puml[]
 ....
 ----
 ====
+
+== IHE TF Elements Conventions
+The SDPi supplement conforms to the IHE Technical Framework (TF) elements and template.  A general UML model of the TF is provided in the sections below, along with how that model, including element metadata and relationships, is capured in AsciiDoc content.
+
+===  IHE TF General Model
+ADD: Basic UML model of IHE TF elements that will then be reflected (sooner or later) in the supplement
+
+== Requirements Interoperability Support
+In order to achieve "requirements Interoperability" -- where each requirement is matched with the one or more capabilities for its fulfilment -- each requirement should be marked with appropriate metadata + linkages to one or more capabilities.  The following sections provide AsciiDoc
+
+=== RI General Model
+ADD:  UML Requirements Interoperability Model
+ADD:  Example of how the metadata is recorded
+
+=== Requirement Definition
+ADD: specification and examples for requirements - including, requirement types and metadata
+ADD: specification of URI for requirements ... naming conventions
+
+=== Requirement-to-Capability Linkage
+ADD:  specification of how to link a requirement to one or more capabilities (that fulfil the requirement)
+
+=== Requirement Traceability & Coverage
+ADD:  Description on how RI might be used to determine coverage (including percentage?) and traceability
+
 
 == Topics Parking Lot
 
