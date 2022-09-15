@@ -8,17 +8,13 @@
 :toclevels: 3
 =======
 :toclevels: 2
->>>>>>> 696f5c10d3bfea5018f9c64464d27e9f148580b5
 :!sectnums:
 :icons: font
 :imagesoutdir: images/
 :imagesdir: images/
 
-<<<<<<< HEAD
 WARNING: This is a straw-man article - actively under development!  Add content requests to section <<Topics Parking Lot>>.
-=======
-WARNING: This is a straw-man article. Content hackers welcomed!  Add content requests to section <<Topics Parking Lot>>.
->>>>>>> 696f5c10d3bfea5018f9c64464d27e9f148580b5
+
 
 == Cookbook Overview
 This article provides a *_handy_* reference place for the conventions and templates that editors will apply in creating content for the SDPi specification.  It is organized so as to help with specific editorial tasks (e.g., references, images, tables, metadata, etc.).
@@ -29,19 +25,7 @@ Related articles that support the information below include:
 * https://github.com/IHE/sdpi-fhir/wiki/SDPi-File-Organization-Scheme[SDPi File Organization Scheme]
 
 == Document Conventions
-<<<<<<< HEAD
 The items in this section apply to either the document overall or to entire files.
-=======
-ADD:  Copy and past document header
-ADD:  Unique attributes or other directives used
-ADD:  Multi-File / Multi-Doc Support conventions
-
-== IHE TF Elements Conventions
-
-==
-
-== #FROM ORIGINAL ASCIIDOC/README.MD#
->>>>>>> 696f5c10d3bfea5018f9c64464d27e9f148580b5
 
 === HTML -- Continuous Build
 In order to support a "continuous build" process -- namely, being able to frequently render to HTML and ensure that the process is working -- the steps below should be followed.
@@ -186,7 +170,7 @@ include::../plantuml/vol2-figure-xyz.puml[]
 ====
 
 == IHE TF Elements Conventions
-The SDPi supplement conforms to the IHE Technical Framework (TF) elements and template.  A general UML model of the TF is provided in the sections below, along with how that model, including element metadata and relationships, is capured in AsciiDoc content.
+The SDPi supplement conforms to the IHE Technical Framework (TF) elements and template.  A general UML model of the TF is provided in the sections below, along with how that model, including element metadata and relationships, is captured in AsciiDoc content.
 
 ===  IHE TF General Model
 ADD: Basic UML model of IHE TF elements that will then be reflected (sooner or later) in the supplement
