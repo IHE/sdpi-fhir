@@ -1,9 +1,24 @@
 = IHE TF AsciiDoc Cookbook
 0.1, 2022.09.06: AsciiDoc article / repo wiki
-:toc: right
+:doctype: book
+:xrefstyle: short
+:toc-title: Contents
+:toc: left
+:toclevels: 2
+:sectnums:
 :icons: font
+:imagesoutdir: images/
+:imagesdir: images/
 
-WARNING: This is a straw-man article. Content hackers welcomed!
+WARNING: This is a straw-man article. Content hackers welcomed!  Add content requests to section <<Topics Parking Lot>> below.
+
+== Cookbook Overview
+This article provides a *_handy_* reference place for the conventions and templates that editors will apply in creating content for the SDPi specification.  It is organized so as to help with specific editorial tasks (e.g., references, images, tables, metadata, etc.).
+
+Related articles that support the information below include:
+
+* https://github.com/IHE/sdpi-fhir/blob/50ace3692b9299cdfcea434501df87b192f5220c/SDPi_Supplement/articles/sdpi-article-asciidoc-cheat-sheet.adoc[AsciiDoc Cheat Sheet]
+* https://github.com/IHE/sdpi-fhir/wiki/SDPi-File-Organization-Scheme[SDPi File Organization Scheme]
 
 == Asciidoc Source Conventions
 
@@ -120,12 +135,11 @@ include::../plantuml/vol2-figure-xyz.puml[]
 ----
 ====
 
-== NEW STUFF
+== Topics Parking Lot
 
 Include:
 
-* Overview (article purpose & content)
-
+Add:  Continuous Build process documentation ... for multi-file / multi-page AsciiDoc sources
 * Section Numbering & Naming Conventions
 Much of this is specified in the IHE template, but
 see "depth" and discontinuous section numbering issues
