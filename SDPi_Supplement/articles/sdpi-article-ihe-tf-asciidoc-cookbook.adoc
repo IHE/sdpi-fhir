@@ -4,10 +4,7 @@
 :xrefstyle: short
 :toc-title: Contents
 :toc: left
-<<<<<<< HEAD
 :toclevels: 3
-=======
-:toclevels: 2
 :!sectnums:
 :icons: font
 :imagesoutdir: images/
