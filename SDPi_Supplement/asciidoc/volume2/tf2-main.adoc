@@ -1,8 +1,15 @@
 = Volume 2 -- Transactions
 
+[#clause-transactions]
+
+== Transactions
+
+include::dev-23/tf2-dev-23.adoc[]
+
 NOTE:  This document integrates all the content that makes up the supplement volume 2 document.
 
 IMPORTANT:  Migrate the content below from main.adoc into this document OR rename main.adoc to this ... though the content is different.  +
 {empty} +
 *_See the Word document for what this is supposed to look like_*.
 
+include::tf2-ch-a-mdpws.adoc[]

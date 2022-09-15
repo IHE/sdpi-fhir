@@ -1,0 +1,12 @@
+[appendix#vol2_appendix_a_mdpws_messages]
+== ISO/IEEE 11073 SDC / MDPWS Message Specifications (Normative)
+
+//NOTE: This file integrates all the Volume 2 / Appendix A MDPWS profiling and examples. +
+//{empty} +
+//__This file is currently in a subfolder under volume2; however, it could be moved up to the volume2 folder and integrate the transaction specific MDPWS content from the transaction subfolders. __
+
+=== Service Mapping
+
+=== Message Mapping
+
+include::dev-23/tf2-ch-a-mdpws-dev-23.adoc[]

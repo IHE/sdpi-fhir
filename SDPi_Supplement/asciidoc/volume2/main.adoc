@@ -1,35 +1,8 @@
 = Volume 2
 
-This chapter, Volume 2 of the Service-oriented Device Point-of-care Interoperability (SDPi) defines transactions used in IHE Patient Care Device profiles.
-// todo is that right? "in IHE Patient Care Devices profiles"?
-
-== Introduction to IHE
-
-Integrating the Healthcare Enterprise (IHE) is an international initiative to promote the use of standards to achieve interoperability among health information technology (HIT) systems and effective use of electronic health records (EHRs). IHE provides a forum for care providers, HIT experts and other stakeholders in several clinical and operational domains to reach consensus on standards-based solutions to critical interoperability issues.
-
-The primary output of IHE is system implementation guides, called IHE Profiles. IHE publishes each profile through a well-defined process of public review and trial implementation and gathers profiles that have reached final text status into an IHE Technical Framework, of which this volume is a part.
-
-For more general information regarding IHE, refer to http://www.ihe.net[www.ihe.net]. It is strongly recommended that, prior to reading this volume, the reader familiarizes themselves with the concepts defined in the IHE Technical Frameworks General Introduction.
-
-== Intended Audience
-
-The intended audience of IHE Technical Frameworks Volume 2 is:
-
-- IT departments of healthcare institutions
-- Technical staff of vendors participating in the IHE initiative
-- Experts involved in standards development
-
-== Overview of Technical Framework Volume 2
-
-Volume 2 comprises several distinct sections:
-
-- <<clause-transactions>> defines Patient Care Device domain transactions in detail, specifying the roles for each actor, the standards employed, the information exchanged, and in some cases, implementation options for the transaction.
-//- <<clause-mdpws-constraints-corrigenda-adjuncts>> specifies constraints, corrigenda and adjuncts to the IEEE 11073-20702 standard
-//- <<clause-biceps-constraints-corrigenda-adjuncts>> specifies constraints, corrigenda and adjuncts to the IEEE 11073-10207 standard
-//- <<clause-sdc-glue-constraints-corrigenda-adjuncts>> specifies constraints, corrigenda and adjuncts to the IEEE 11073-20701 standard
-//- <<clause-message-transport-using-mdpws>> specifies example materials to map transactions to MDPWS message exchanges
-
 [#clause-transactions]
+
+
 == Transactions
 
 include::dev-23/tf2-dev-23.adoc[]
@@ -144,7 +117,7 @@ include::dev-23/tf2-dev-23.adoc[]
 [appendix#clause-message-transport-using-mdpws]
 == Message Transport using MDPWS
 
-include::dev-23/apdnx-mdpws-dev-23.adoc[]
+include::tf2-ch-a-mdpws.adoc[]
 
 //
 //=== Announce Network Presence [DEV-23]

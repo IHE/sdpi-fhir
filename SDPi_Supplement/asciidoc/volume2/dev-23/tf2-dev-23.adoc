@@ -1,10 +1,10 @@
 
-:var-transaction-id: DEV-23
-:var-label-transaction-name: Announce Network Presence
+:var_transaction_id: DEV-23
+:var_label_transaction_name: Announce Network Presence
 
-:var-label-dev-23-message-announce-network-presence: AnnounceNetworkPresence
-:var-label-dev-23-payload-provider-uid: Provider UID
-:val-label-dev-23-payload-discovery-scope: Discovery Scope
+:var_label_dev_23_message_announce_network_presence: AnnounceNetworkPresence
+:var_label_dev_23_payload_provider_uid: Provider UID
+:val_label_dev_23_payload_discovery_scope: Discovery Scope
 
 //reset|+1|off
 [#vol2-clause-dev-23]
@@ -14,7 +14,7 @@
 
 [sdpi_transaction#transaction-dev-23,actors='actor-somds-provider actor-somds-consumer',figure=vol2-figure-dev-23-sequence,messages='message-announce-network-presence']
 
-This transaction is used to notify all <<actor-somds-consumer>>s that a <<actor-somds-provider>> is connected to the network and ready to exchange messages with other <<actor-somds-participant>>s.
+This transaction is used to notify all <<actor-somds-consumer>>s that a <<actor_somds_provider>> is connected to the network and ready to exchange messages with other <<actor-somds-participant>>s.
 
 ==== Actor Roles
 
@@ -23,7 +23,7 @@ This transaction is used to notify all <<actor-somds-consumer>>s that a <<actor-
 |===
 |Actor |Roles
 
-|<<actor-somds-provider>>
+|<<actor_somds_provider>>
 |Announces its presence by broadcasting <<message-announce-network-presence>> messages to all listening systems.
 
 |<<actor-somds-consumer>>
@@ -44,28 +44,28 @@ include::../../plantuml/vol2-figure-dev-23-sequence.puml[]
 ....
 
 [#message-announce-network-presence]
-===== {var-label-dev-23-message-announce-network-presence}
+===== {var_label_dev_23_message_announce_network_presence}
 
-The {var-label-dev-23-message-announce-network-presence} message is part of the BICEPS _implicit discovery_ protocol for allowing <<actor-somds-consumer>>s to receive a notification when a <<actor-somds-provider>> is ready to exchange messages with other <<actor-somds-consumer>>s.
+The {var_label_dev_23_message_announce_network_presence} message is part of the BICEPS _implicit discovery_ protocol for allowing <<actor-somds-consumer>>s to receive a notification when a <<actor_somds_provider>> is ready to exchange messages with other <<actor-somds-consumer>>s.
 
-The {var-label-dev-23-message-announce-network-presence} is a broadcast message that is sent from each <<actor-somds-provider>> to all listening <<actor-somds-consumer>>s (zero to many). Limited but sufficient information is provided with the message to enable <<actor-somds-consumer>>s to determine if they are interested in connecting with the <<actor-somds-provider>> discovering additional information.
+The {var_label_dev_23_message_announce_network_presence} is a broadcast message that is sent from each <<actor_somds_provider>> to all listening <<actor-somds-consumer>>s (zero to many). Limited but sufficient information is provided with the message to enable <<actor-somds-consumer>>s to determine if they are interested in connecting with the <<actor_somds_provider>> discovering additional information.
 
 [#message-announce-network-presence-trigger-events]
 ====== Trigger Events
 
 This message is sent
 
-1. whenever a <<actor-somds-provider>> joins a network,
+1. whenever a <<actor_somds_provider>> joins a network,
 2. when it is returning to normal _on-line_ operation after having indicated temporary suspension of message exchanges, or
-3. when any metadata of the <<actor-somds-provider>> changes, e.g. when <<payload-dev-23-discovery-scope>> is updated.
+3. when any metadata of the <<actor_somds_provider>> changes, e.g. when <<payload_dev_23_discovery_scope>> is updated.
 
 [#message-announce-network-presence-message-semantics,sdpi_depth=+1]
 ====== Message Semantics
 
-[[payload-dev-23-provider-uid]]Provider UID:: A globally unique identifier for the <<actor-somds-provider>>.
-[[payload-dev-23-discovery-scope]]Discovery Scope:: A scope for basic filtering.
+[[payload_dev_23_provider_uid]]Provider UID:: A globally unique identifier for the <<actor_somds_provider>>.
+[[payload_dev_23_discovery_scope]]Discovery Scope:: A scope for basic filtering.
 
 [#message-announce-network-presence-expected-actions]
 ====== Expected Actions
 
-When a <<actor-somds-provider>> sends this message, there is no expected or required responses. This is due to the fact that either there are no <<actor-somds-consumer>>s listening for announcement messages, or the information in the message (e.g., Discovery Type) is not of interest to any receiving <<actor-somds-consumer>>s.
+When a <<actor_somds_provider>> sends this message, there is no expected or required responses. This is due to the fact that either there are no <<actor-somds-consumer>>s listening for announcement messages, or the information in the message (e.g., Discovery Type) is not of interest to any receiving <<actor-somds-consumer>>s.
