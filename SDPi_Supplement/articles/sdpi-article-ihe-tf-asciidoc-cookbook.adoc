@@ -38,11 +38,27 @@ ROUGH NOTES FROM DEMO SESSION 2022.09.14 ...
 . Ensure Gradle is installed!
 .. IntelliJ should discover the build.gradle.kts script file in the converter project root director; this file contains instructions for how to build the application
 .. Gradel should be automatically installed and configured for the asciidoc-converter project
-.Open asciidoc converter project
-. ...
+. Open asciidoc converter project
+..  1st time the converter project is opened ...
+..  Configure the application's "run" command line arguments
+... Select the "Run/Debug Configuration" item above the file display area (between the hammer and the play icons)
+... Select "Edit Configurations ..."
+... In the "Run" item window, past the following:
+
+.AsciiDoc-Converter Command Line
+====
+[source,asciidoc]
+----
+run --args="--input-file ../asciidoc/sdpi-supplement.adoc --output-folder ../sdpi-supplement"
+----
+====
+
+... Select "Apply" or "OK" and you should be good to go!
 . From Gradle window (on right side)
-... Navigate to  Tasks::applcation::run
-... Execute (double click on) "run"
+... Press the Play icon at the top of the project window OR
+... Navigate to  Tasks::application::run & Execute (double click on "run")
+... A "Run" log window will display at the bottom of the screen showing the execution steps of the project
+... You should see "BUILD SUCCESSFUL" as one of the last entries in the log window
 )
 
 ==== Publishing the SDPi Supplement to HTML
