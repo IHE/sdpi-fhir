@@ -3,3 +3,49 @@
 
 NOTE:  This file contains the core Volume 1 specification for the SDPi-R profile.
 
+// 11.
+== Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
+
+// 11.1
+=== SDPi-R Actors, Transactions, and Content Modules
+
+// 11.1.1
+==== Actor Descriptions and Actor Profile Requirements
+
+// 11.2
+=== SDPi-R Actor Options
+
+// 11.2.1
+==== tbd Option
+// NOTE:  These options are TBD for SDPi 1.0
+
+// 11.3
+=== SDPi-R Required Actor Groupings
+
+// 11.4
+=== SDPi-R Overview
+
+// 11.4.1
+==== Concepts
+
+// 11.4.2
+==== Use Cases
+
+// 11.5
+=== SDPi-R Safety, Effectiveness, Security Considerations and Requirements
+
+// 11.5.1
+==== SES General Considerations
+
+// 11.5.2
+==== Safety Requirements & Considerations
+
+// 11.5.3
+==== Effectiveness Requirements & Considerations
+
+// 11.5.4
+==== Security Requirements & Considerations
+
+// 11.6
+=== SDPi-R Cross Profile Considerations
+

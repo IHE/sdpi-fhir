@@ -2,3 +2,18 @@
 
 NOTE:  This document integrates all the content that makes up the supplement volume 3 document.
 
+
+[#clause-content-modules]
+
+== Content Modules
+
+include::tf3-ch-8.2.8-biceps-content.adoc[]
+
+include::tf3-ch-8.3.1-infusion-pump.adoc[]
+
+include::tf3-ch-8.3.2-ventilator.adoc[]
+
+include::tf3-ch-8.3.3-physiologic-monitor.adoc[]
+
+include::tf3-ch-8.3.4-surgical.adoc[]
+
