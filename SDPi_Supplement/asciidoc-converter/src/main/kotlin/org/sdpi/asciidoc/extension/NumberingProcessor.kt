@@ -41,7 +41,7 @@ class NumberingProcessor : Treeprocessor() {
             cutFrom = startFromLevel
         }
 
-        if (cutFrom == level) {
+        if (cutFrom > level) {
             return ""
         }
 
