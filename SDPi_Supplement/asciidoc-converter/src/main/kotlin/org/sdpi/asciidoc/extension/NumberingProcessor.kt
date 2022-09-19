@@ -27,6 +27,8 @@ class NumberingProcessor : Treeprocessor() {
     private var numbering = mutableListOf<Number>()
     private var currentAdditionalLevel = 0
     private val startFromLevel = 1
+    private var currentAppendix = 'A'
+    private var appendixCaption = ""
 
     override fun process(document: Document): Document {
         processBlock(document as StructuralNode)
@@ -58,7 +60,12 @@ class NumberingProcessor : Treeprocessor() {
         block.toSealed().let { node ->
             when (node) {
                 is StructuralNodeWrapper.Document -> {
-                    node.wrapped.attributes
+                    if (node.wrapped.attributes.containsKey(ATTRIBUTE_APPENDIX_CAPTION)) {
+                        appendixCaption = node.wrapped.attributes[ATTRIBUTE_APPENDIX_CAPTION].toString().trim() + " "
+                    }
+
+                    logger.info { "Set appendix caption to '$appendixCaption'" }
+
                     node.wrapped.blocks.forEach {
                         validate(!it.isAppendix(), it) {
                             "Part is not allowed to be appendix"
@@ -70,15 +77,16 @@ class NumberingProcessor : Treeprocessor() {
 
                 is StructuralNodeWrapper.Section -> {
                     val level = processLevelOption(node.wrapped)
-                    handleSectionNumber(node.wrapped, level)
+                    initSectionNumbers(node.wrapped, level)
                     processOffsetOption(node.wrapped, level)
+                    sanitizeAppendix(node.wrapped, level)
 
                     // attach section number to section title
                     createSectionId(numbering, level).let {
                         // trim leading blanks in case of an empty section id (i.e. appendix)
                         "$it ${node.wrapped.title}".trim()
                     }.also {
-                        logger.info { "Attach section number: $it" }
+                        logger.info { "Attach section number: ${node.wrapped.caption ?: ""}$it" }
                         node.wrapped.title = it
                     }
 
@@ -102,12 +110,16 @@ class NumberingProcessor : Treeprocessor() {
             }
 
             else -> (sdpiOffset as String).let {
-                validate(!section.isAppendix(), section) {
-                    "Custom offsets do not support appendices."
-                }
-                validate(optionOffsetRegex.matches(sdpiOffset), section) {
-                    "Option $OPTION_OFFSET set to '$sdpiOffset'. " +
-                            "Valid values: $OPTION_OFFSET_PATTERN"
+                if (section.isAppendix()) {
+                    validate(optionAppendixOffsetRegex.matches(sdpiOffset), section) {
+                        "Option $OPTION_OFFSET set to '$sdpiOffset' for appendix. " +
+                                "Valid values: $OPTION_APPENDIX_OFFSET_PATTERN"
+                    }
+                } else {
+                    validate(optionOffsetRegex.matches(sdpiOffset), section) {
+                        "Option $OPTION_OFFSET set to '$sdpiOffset'. " +
+                                "Valid values: $OPTION_OFFSET_PATTERN"
+                    }
                 }
 
                 when (sdpiOffset) {
@@ -117,10 +129,14 @@ class NumberingProcessor : Treeprocessor() {
                         )
                     }
 
-                    else -> numbering[level] = sdpiOffset.toInt().let {
-                        numbering[level].copy(offset = it)
-                    }.also {
-                        logger.debug { "Found numbering offset at level ${level}: $sdpiOffset" }
+                    else -> if (section.isAppendix()) {
+                        currentAppendix = sdpiOffset.first()
+                    } else {
+                        numbering[level] = sdpiOffset.toInt().let {
+                            numbering[level].copy(offset = it)
+                        }.also {
+                            logger.debug { "Found numbering offset at level ${level}: $sdpiOffset" }
+                        }
                     }
                 }
             }
@@ -172,19 +188,24 @@ class NumberingProcessor : Treeprocessor() {
         }
     }
 
-    private fun handleSectionNumber(section: Section, level: Int) {
+    private fun initSectionNumbers(section: Section, level: Int) {
         for (i in level + 1..numbering.lastIndex) {
             numbering[i] = numbering[i].copy(current = 0, appendix = null)
         }
-
         if (numbering.lastIndex < level) {
             numbering.add(Number(section.title))
         }
+    }
 
+    private fun sanitizeAppendix(section: Section, level: Int) {
         numbering[level] = numbering[level].copy(
             title = section.title,
             appendix = if (section.isAppendix()) {
-                section.numeral
+                validate(currentAppendix <= 'Z', section) {
+                    "Maximum number of appendices exceeded (26, A to Z)."
+                }
+                section.caption = "$appendixCaption$currentAppendix: "
+                (currentAppendix++).toString()
             } else {
                 null
             }
@@ -206,9 +227,14 @@ class NumberingProcessor : Treeprocessor() {
         const val MAX_HEADING_DEPTH = 6
         const val MAX_DISTANCE = 1
 
+        const val ATTRIBUTE_APPENDIX_CAPTION = "appendix-caption"
+
         const val OPTION_OFFSET = "sdpi_offset"
         const val OPTION_OFFSET_PATTERN = "^[0-9]+|$CLEAR_NUMBERING$"
+        const val OPTION_APPENDIX_OFFSET_PATTERN = "^[A-Z]$"
+
         val optionOffsetRegex = OPTION_OFFSET_PATTERN.toRegex()
+        val optionAppendixOffsetRegex = OPTION_APPENDIX_OFFSET_PATTERN.toRegex()
 
         const val OPTION_LEVEL = "sdpi_level"
         const val OPTION_LEVEL_PATTERN = "^\\+[0-9]+$"
