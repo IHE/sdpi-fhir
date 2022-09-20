@@ -1,9 +1,0 @@
-
-WARNING:  These definitions will be moved somewhere else!
-
-[[actor-somds-participant]]SOMDS Participant:: #todo add description#
-
-[[actor_somds_provider]]SOMDS Provider:: #todo add description#
-
-[[actor-somds-consumer]]SOMDS Consumer:: #todo add description#
-

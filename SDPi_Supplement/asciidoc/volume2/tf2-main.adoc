@@ -2,7 +2,7 @@
 
 [#clause-transactions]
 
-WARNING: The Volume 2 is ... 2; butthe first transaction clause is 3.23.  Section numbering fun!
+WARNING: The Volume 2 is ... 2; but the first transaction clause is 3.23.  Section numbering fun!
 
 [sdpi_offset=3]
 == Transactions
@@ -16,4 +16,7 @@ IMPORTANT:  Migrate the content below from main.adoc into this document OR renam
 *_See the Word document for what this is supposed to look like_*.
 
 include::tf2-ch-a-mdpws.adoc[]
+
+include::tf2-ch-b-gateways.adoc[]
+
 

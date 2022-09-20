@@ -1,4 +1,7 @@
-= SDPi HL7 V2 Gateway -- General Mapping
+// = SDPi HL7 V2 Gateway -- General Mapping
 
 NOTE:  This file contains the general HL7 V2 gateway actor (SOMDS_V2_Gateway) logic for mapping from SDC BICEPS MDIB content and interactions with IHE DEV "PCD" V2-based messaging, using HL7 V2 ORU^R01 messages.
+
+
+=== Gateway: HL7 V2 General Mapping
 

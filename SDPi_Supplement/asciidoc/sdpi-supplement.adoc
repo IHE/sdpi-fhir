@@ -12,10 +12,8 @@
 :imagesdir: images/
 :title-logo-image: image::ihe-logo.png[pdfwidth=4in,align=center]
 
-// Foreword
 
-// [#clause-foreword]
-
+[#clause-foreword]
 = Foreword
 
 This is a supplement to the IHE Devices Technical Framework Revision 10.0. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
@@ -43,15 +41,9 @@ The current version of the IHE DevicesTechnical Framework can be found at http:/
 
 __<Comments may be submitted on IHE Technical Framework templates any time at http://ihe.net/Templates_Public_Comments. Please enter comments/issues as soon as they are found. Do not wait until a future review cycle is announced.>__
 
-// == Definitions
-
-WARNING:  These definitions are currently needed to build / publish to HTML
-
-include::definitions.adoc[]
-
 // Table of Contents
 
-WARNING: The ToC should come AFTER the Forward section
+WARNING: #The ToC should come AFTER the Forward section#
 
 include::sdpi-supplement-intro.adoc[]
 

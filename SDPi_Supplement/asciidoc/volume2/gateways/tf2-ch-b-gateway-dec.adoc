@@ -1,4 +1,6 @@
-= SDPi DEC Gateway -- Mapping
+// = SDPi DEC Gateway -- Mapping
 
 NOTE:  This file contains the SDPi gateway actor (SOMDS_DEC_Gateway) logic for mapping from SDC BICEPS MDIB content and interactions with IHE DEV "PCD" DEC profile messaging.
+
+=== Gateway:  IHE DEV DEC Profile
 
