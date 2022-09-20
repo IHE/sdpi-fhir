@@ -10,6 +10,8 @@
 [#vol2_clause_dev_23,sdpi_offset=3]
 === Announce Network Presence [DEV-23]
 
+{var_transaction_id}
+
 ==== Scope
 
 [sdpi_transaction#transaction_dev_23,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_23_sequence,messages='message_announce_network_presence']
@@ -43,14 +45,14 @@ This transaction is used to notify all <<actor_somds_consumer>>s that a <<actor_
 include::../../plantuml/vol2-figure-dev-23-sequence.puml[]
 ....
 
-[#message_announce_network_presence]
+[#vol2_clause_dev_23_message_announce_network_presence]
 ===== {var_label_dev_23_message_announce_network_presence}
 
 The {var_label_dev_23_message_announce_network_presence} message is part of the BICEPS _implicit discovery_ protocol for allowing <<actor_somds_consumer>>s to receive a notification when a <<actor_somds_provider>> is ready to exchange messages with other <<actor_somds_consumer>>s.
 
 The {var_label_dev_23_message_announce_network_presence} is a broadcast message that is sent from each <<actor_somds_provider>> to all listening <<actor_somds_consumer>>s (zero to many). Limited but sufficient information is provided with the message to enable <<actor_somds_consumer>>s to determine if they are interested in connecting with the <<actor_somds_provider>> discovering additional information.
 
-[#message_announce_network_presence_trigger_events]
+[#vol2_clause_dev_23_message_announce_network_presence_trigger_events]
 ====== Trigger Events
 
 This message is sent
@@ -59,13 +61,13 @@ This message is sent
 2. when it is returning to normal _on-line_ operation after having indicated temporary suspension of message exchanges, or
 3. when any metadata of the <<actor_somds_provider>> changes, e.g. when <<payload_dev_23_discovery_scope>> is updated.
 
-[#message_announce_network_presence_message_semantics,sdpi_depth=+1]
+[#vol2_clause_dev_23_message_announce_network_presence_message_semantics,sdpi_depth=+1]
 ====== Message Semantics
 
 [[payload_dev_23_provider_uid]]Provider UID:: A globally unique identifier for the <<actor_somds_provider>>.
 [[payload_dev_23_discovery_scope]]Discovery Scope:: A scope for basic filtering.
 
-[#message-announce-network-presence-expected-actions]
+[#vol2_clause_dev_23_message_announce_network_presence_expected_actions]
 ====== Expected Actions
 
 When a <<actor_somds_provider>> sends this message, there is no expected or required responses. This is due to the fact that either there are no <<actor_somds_consumer>>s listening for announcement messages, or the information in the message (e.g., Discovery Type) is not of interest to any receiving <<actor_somds_consumer>>s.
