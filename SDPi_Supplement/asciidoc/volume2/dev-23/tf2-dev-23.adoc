@@ -10,11 +10,9 @@
 [#vol2_clause_dev_23,sdpi_offset=3]
 === Announce Network Presence [DEV-23]
 
-{var_transaction_id}
-
 ==== Scope
 
-[sdpi_transaction#transaction-dev-23,actors='actor-somds-provider actor-somds-consumer',figure=vol2-figure-dev-23-sequence,messages='message-announce-network-presence']
+[sdpi_transaction#transaction_dev_23,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_23_sequence,messages='message_announce_network_presence']
 
 This transaction is used to notify all <<actor_somds_consumer>>s that a <<actor_somds_provider>> is connected to the network and ready to exchange messages with other <<actor_somds_participant>>s.
 
