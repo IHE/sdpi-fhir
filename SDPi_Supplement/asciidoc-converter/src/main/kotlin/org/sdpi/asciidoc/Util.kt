@@ -48,8 +48,6 @@ fun validate(value: Boolean, node: StructuralNode, msg: () -> String) {
 }
 
 fun StructuralNode.isAppendix() = when (val section = this.toSealed()) {
-    is StructuralNodeWrapper.Section -> section.wrapped.numeral?.let {
-        it.length == 1 && it.uppercase().first() in 'A'..'Z'
-    } ?: false
+    is StructuralNodeWrapper.Section -> section.wrapped.sectionName == "appendix"
     else -> false
 }
