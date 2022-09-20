@@ -1,9 +1,11 @@
 name: Latest Master State
     
-on:
-  push:
-    branches:
-      - master
+# on:
+#  push:
+#    branches:
+#      - master
+
+on: [push]
 
 env:
   CI: true
