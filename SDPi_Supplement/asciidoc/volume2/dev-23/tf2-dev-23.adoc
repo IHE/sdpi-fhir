@@ -8,6 +8,7 @@
 
 //reset|+1|off
 [#vol2-clause-dev-23]
+[sdpi_offset=23]
 === Announce Network Presence [DEV-23]
 
 ==== Scope

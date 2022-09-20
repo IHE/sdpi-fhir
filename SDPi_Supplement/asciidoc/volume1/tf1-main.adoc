@@ -9,6 +9,7 @@ IMPORTANT:  Migrate the content below from main.adoc into this document OR renam
 
 [#clause-profiles]
 
+[sdpi_offset=1]
 == Profiles
 
 // 2.
