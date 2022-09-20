@@ -1,2 +1,11 @@
 = Devices:  Surgical
 
+NOTE:  This file contains the content that profiles BICEPS semantics for use in the SDPi profiles.
+
+
+// 8.3.4
+==== 8.3.4	Device:  Surgical
+
+// 8.3.4.4
+===== SDC/BICEPS content module
+

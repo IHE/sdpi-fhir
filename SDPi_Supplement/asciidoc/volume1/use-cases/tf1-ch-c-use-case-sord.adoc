@@ -2,3 +2,25 @@
 
 NOTE:  This file contains the use case content for SORD.  See the Word document for the baseline.  Gherkin plugin may be utilized.
 
+// C.2
+=== Use Case Feature: Standalone OR Dashboard (SORD)
+
+// C.2.1
+==== Narrative:
+Dr. Presky is in the Operating Room performing an operation to remove cancerous tumors from the patient’s abdominal area.  He can view previous radiology results, electrosurgical equipment settings, patient readings such as HR, Blood Pressure, SpO2 and associated waveforms integrated on his real-time ‘Dashboard’ display.  The dashboard display can display visual alarms but does not sound alerts or provide any remote-control capabilities.  (This display can be considered an xDISsp.)
+
+// C.2.2
+==== Background: Technical Pre-Conditions
+
+*Given* all devices communicate using SDC
+
+*And* at least one OR Dashboard display
+
+// C.2.3
+==== Scenario: SORD 1.1 - OR Devices are Accessible to the Dashboard
+
+*Given* dashboard detected at least one accessible OR device
+
+*When* one or more OR Devices are operational
+
+*Then* the Cockpit shall display parameter, waveform, setting, alarm, imaging, etc. information from those devices (based on configuration)

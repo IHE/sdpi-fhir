@@ -2,3 +2,49 @@
 
 NOTE:  This file contains the core Volume 1 specification for the SDPi-A profile.
 
+// 12.
+== Service-oriented Device Point-of-care Interoperability - Alerting (SDPi-A) Profile
+
+// 12.1
+=== SDPi-A Actors, Transactions, and Content Modules
+
+// 12.1.1
+==== Actor Descriptions and Actor Profile Requirements
+
+// 12.2
+=== SDPi-A Actor Options
+
+// 12.2.1
+==== tbd Option
+// NOTE:  These options are TBD for SDPi 1.0
+
+// 12.3
+=== SDPi-A Required Actor Groupings
+
+// 12.4
+=== SDPi-A Overview
+
+// 12.4.1
+==== Concepts
+
+// 12.4.2
+==== Use Cases
+
+// 12.5
+=== SDPi-A Safety, Effectiveness, Security Considerations and Requirements
+
+// 12.5.1
+==== SES General Considerations
+
+// 12.5.2
+==== Safety Requirements & Considerations
+
+// 12.5.3
+==== Effectiveness Requirements & Considerations
+
+// 12.5.4
+==== Security Requirements & Considerations
+
+// 12.6
+=== SDPi-A Cross Profile Considerations
+
