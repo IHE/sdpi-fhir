@@ -26,10 +26,10 @@ This transaction is used to notify all <<actor_somds_consumer>>s that a <<actor_
 |Actor |Roles
 
 |<<actor_somds_provider>>
-|Announces its presence by broadcasting <<message_announce_network_presence>> messages to all listening systems.
+|Announces its presence by broadcasting <<vol2_clause_dev_23_message_announce_network_presence>> messages to all listening systems.
 
 |<<actor_somds_consumer>>
-|Listens for <<message_announce_network_presence>> messages  to identify any provider systems that it may want to establish a connection with and further discover a provider’s service capabilities.
+|Listens for <<vol2_clause_dev_23_message_announce_network_presence>> messages  to identify any provider systems that it may want to establish a connection with and further discover a provider’s service capabilities.
 
 |===
 
