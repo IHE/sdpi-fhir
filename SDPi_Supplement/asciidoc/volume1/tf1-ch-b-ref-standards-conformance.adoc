@@ -10,9 +10,11 @@ CAUTION:  This appendix may be deferred to SDPi 1.x
 NOTE: the following section was moved from the mothership document to here for incorporation toward the front of Appendix C.
 
 // Appendix B
+[appendix#vol1_appendix_b_referenced_standards_requirements_and_conformance,sdpi_offset=B]
 == Referenced Standards Requirements and Conformance
 
 // Appendix B.1
+[sdpi_offset=1]
 === Mapping Foundational Requirements to SDPi Constructs
 
 // Appendix B.2

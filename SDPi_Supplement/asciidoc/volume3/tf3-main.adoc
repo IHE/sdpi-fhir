@@ -5,9 +5,23 @@ NOTE:  This document integrates all the content that makes up the supplement vol
 
 [#clause-content-modules]
 
-== Content Modules
+// == Content Modules
+
+// 8
+[sdpi_offset=8]
+== DEV Semantic Content Modules
+
+// 8.1
+[sdpi_offset=1]
+=== Overview of device semantic content
+
+// 8.2
+=== General device content considerations
 
 include::tf3-ch-8.2.8-biceps-content.adoc[]
+
+// 8.3
+=== Device specialization content modules
 
 include::tf3-ch-8.3.1-infusion-pump.adoc[]
 

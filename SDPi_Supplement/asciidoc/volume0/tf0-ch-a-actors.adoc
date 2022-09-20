@@ -1,12 +1,11 @@
-// = TF-0 Appendix A:  Actor Summary Definitions
 
-:sectnums:
+// = TF-0 Appendix A:  Actor Summary Definitions
 
 NOTE:  Migrate content from the Word document here
 
 // Appendix A
 
-
+[appendix#vol0_appendix_a_actor_summary_definitions,sdpi_offset=A]
 == Actor Summary Definitions
 
 ADD: Summary definitions from the Word document.

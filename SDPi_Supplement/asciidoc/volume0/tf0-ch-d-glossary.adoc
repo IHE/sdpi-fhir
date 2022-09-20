@@ -1,13 +1,12 @@
-// = TF-0 Appendix D:  Glossary
 
-:sectnums:
+// = TF-0 Appendix D:  Glossary
 
 NOTE:  Migrate content from the Word document here
 
 // Appendix D
 
+[appendix#vol0_appendix_d_glossary,sdpi_offset=D]
 == Glossary
 
 ADD:  Glossary definitions from the Word document
 
-    

@@ -1,11 +1,13 @@
-= Device:  Ventilator
+
+// = Device:  Ventilator
 
 NOTE:  This file contains the content that profiles BICEPS semantics for use in the SDPi profiles.
 
 
 // 8.3.2
-==== 8.3.1	Device:  Ventilator
+==== Device:  Ventilator
 
 // 8.3.2.4
+[sdpi_offset=4]
 ===== SDC/BICEPS content module
 
