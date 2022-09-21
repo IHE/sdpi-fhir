@@ -2,3 +2,15 @@
 
 NOTE:  This file contains the Volume 1 / Chapter 2 content, including overviews for SES, SDPi (general profile architecture) and for each of the four SDPi profiles.
 
+// 2.
+== Devices Integration Profiles
+
+// 2.2
+=== Safety, Effectiveness & Security Considerations and Requirements
+
+// 2.3
+=== Integration Profiles Overview
+
+// 2.x
+=== Service-oriented Device Point-of-care Interoperability (SDPi) – Overview & Framework
+

@@ -1,4 +1,13 @@
-= TF-0 Appendix D:  Glossary
+// = TF-0 Appendix D:  Glossary
+
+:sectnums:
+
+NOTE:  Migrate content from the Word document here
+
+// Appendix D
+
+== Glossary
 
 ADD:  Glossary definitions from the Word document
 
+    

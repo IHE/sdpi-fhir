@@ -121,4 +121,3 @@ include::dev-23/tf2-dev-23.adoc[]
 //*_See the Word document for what this is supposed to look like_*.
 
 include::tf2-ch-a-mdpws.adoc[]
-
