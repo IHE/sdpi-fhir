@@ -1,4 +1,12 @@
-= TF-0 Appendix B:  Transaction Summary Definitions
+// = TF-0 Appendix B:  Transaction Summary Definitions
+
+:sectnums:
+
+NOTE:  Migrate content from the Word document here
+
+// Appendix B
+
+== Transaction Summary Definitions
 
 ADD:  Summary definitions for each transaction from the Word file
 

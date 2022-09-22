@@ -1,4 +1,13 @@
-= TF-0 Appendix A:  Actor Summary Definitions
+// = TF-0 Appendix A:  Actor Summary Definitions
+
+:sectnums:
+
+NOTE:  Migrate content from the Word document here
+
+// Appendix A
+
+
+== Actor Summary Definitions
 
 ADD: Summary definitions from the Word document.
 
