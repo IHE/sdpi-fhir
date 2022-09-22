@@ -1,4 +1,5 @@
 :var_uri_ws_discovery_hello: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231821
+:var_uri_dpws_discovery: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672091
 
 [#vol2_clause_appendix_mdpws_dev_23]
 ==== MDPWS: Announce Network Presence [DEV-23]
@@ -10,11 +11,12 @@ The {var_label_dev_23_message_hello} message is encoded by using {var_uri_ws_dis
 ===== Referenced Standards
 
 * <<ws_discovery_2009>> {var_uri_ws_discovery_hello}[Section 4.1 Hello]
+* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
 
 ===== Message Outline
 
 .Hello message
-[source#vol2_clause_appendix_a_mdpws_dev_23_hello,xml,role=line-numbers]
+[source#vol2_clause_appendix_a_mdpws_dev_23_hello,xml]
 ----
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-23-hello.xml[]
 ----

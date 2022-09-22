@@ -85,7 +85,7 @@ The {var_label_dev_24_message_probe_match} message is a uni-cast message that is
 [#vol2_clause_dev_24_message_probe_match_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_24_message_probe_match} message is sent whenever a <<actor_somds_provider>> receives <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> message that contains a <<payload_dev_24_probe_discovery_scope>> that matches the <<actor_somds_provider>>'s <<property_discovery_scope>>.
+The {var_label_dev_24_message_probe_match} message is sent whenever a <<actor_somds_provider>> receives a <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> message that contains a <<payload_dev_24_probe_discovery_scope>> that matches the <<actor_somds_provider>>'s <<property_discovery_scope>>.
 
 [#vol2_clause_dev_24_message_probe_match_semantics]
 ====== Message Semantics
@@ -136,12 +136,12 @@ When a <<actor_somds_consumer>> sends this message, every receiving <<actor_somd
 
 The {var_label_dev_24_message_resolve_match} message is sent as part of the BICEPS _explicit discovery_ protocol in response to an incoming <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message.
 
-The {var_label_dev_24_message_resolve_match} message is a uni-cast message that is sent by a <<actor_somds_provider>> when an incoming <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_resolve}>> message contains a <<payload_dev_24_provider_uid>> that matches the <<actor_somds_provider>>'s <<property_somds_provider_uid>>. Limited but sufficient information is provided with the message to enable <<actor_somds_consumer>>s to determine a matching <<actor_somds_provider>>'s <<payload_dev_24_probe_match_physical_address>>.
+The {var_label_dev_24_message_resolve_match} message is a uni-cast message that is sent by a <<actor_somds_provider>> when an incoming <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message contains a <<payload_dev_24_provider_uid>> that matches the <<actor_somds_provider>>'s <<property_somds_provider_uid>>. Limited but sufficient information is provided with the message to enable <<actor_somds_consumer>>s to determine a matching <<actor_somds_provider>>'s <<payload_dev_24_probe_match_physical_address>>.
 
 [#vol2_clause_dev_24_message_resolve_match_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_24_message_resolve_match} message is sent whenever a <<actor_somds_provider>> receives <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> message that contains a <<payload_dev_24_probe_discovery_scope>> that matches the <<actor_somds_provider>>'s <<property_discovery_scope>>.
+The {var_label_dev_24_message_resolve_match} message is sent whenever a <<actor_somds_provider>> receives a <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message that contains a <<payload_dev_24_probe_discovery_scope>> that matches the <<actor_somds_provider>>'s <<property_discovery_scope>>.
 
 [#vol2_clause_dev_24_message_resolve_match_semantics]
 ====== Message Semantics
@@ -152,5 +152,5 @@ The {var_label_dev_24_message_resolve_match} message is sent whenever a <<actor_
 [#vol2_clause_dev_24_message_resolve_match_expected_actions]
 ====== Expected Actions
 
-The <<actor_somds_consumer>> that receives a {var_label_dev_24_message_resolve_match} message can use the <<payload_dev_24_probe_match_physical_address>> to exchange secured messages with the <<actor_somds_provider>> from which it received the <<vol2_clause_dev_24_message_resolve_match>> message.
+The <<actor_somds_consumer>> that receives a {var_label_dev_24_message_resolve_match} message can use the <<payload_dev_24_probe_match_physical_address>> to exchange secured messages with the <<actor_somds_provider>> from which it received the <<vol2_clause_dev_24_message_resolve_match, {var_label_dev_24_message_resolve_match}>> message.
 

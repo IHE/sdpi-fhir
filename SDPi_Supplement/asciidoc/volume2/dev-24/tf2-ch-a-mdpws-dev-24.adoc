@@ -2,6 +2,7 @@
 :var_uri_ws_discovery_probe_match: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231835
 :var_uri_ws_discovery_resolve: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231840
 :var_uri_ws_discovery_resolve_match: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231844
+:var_uri_dpws_discovery: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672091
 
 [#vol2_clause_appendix_mdpws_dev_24]
 ==== MDPWS: Discovery Network Topology [DEV-24]
@@ -17,6 +18,7 @@ The <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> messa
 ====== Referenced Standards
 
 * <<ws_discovery_2009>> {var_uri_ws_discovery_probe}[Section 5.2 Probe]
+* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
 
 ====== Message Outline
 
@@ -47,6 +49,7 @@ The <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_ma
 ====== Referenced Standards
 
 * <<ws_discovery_2009>> {var_uri_ws_discovery_probe_match}[Section 5.3 Probe Match]
+* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
 
 ====== Message Outline
 
@@ -76,6 +79,7 @@ The <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> m
 ====== Referenced Standards
 
 * <<ws_discovery_2009>> {var_uri_ws_discovery_resolve}[Section 6.2 Resolve]
+* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
 
 ====== Message Outline
 
@@ -102,11 +106,12 @@ The <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_resolve_
 ====== Referenced Standards
 
 * <<ws_discovery_2009>> {var_uri_ws_discovery_resolve_match}[Section 6.3 Resolve Match]
+* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
 
 ====== Message Outline
 
 .WS-Discovery Resolve Match message
-[source#vol2_clause_appendix_a_mdpws_dev_24_resolve_match,xml,linenums]
+[source#vol2_clause_appendix_a_mdpws_dev_24_resolve_match,xml]
 ----
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-resolve-match.xml[]
 ----

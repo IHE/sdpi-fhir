@@ -56,6 +56,8 @@ include::definitions.adoc[]
 
 * [[[ws_discovery_2009, WS-Discovery:2009]]] Web Services Dynamic Discovery (WS-Discovery) Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/discovery/1.1/wsdd-discovery-1.1-spec.html
 
+* [[[dpws_2009, DPWS:2009]]] Devices Profile for Web Services Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/dpws/wsdd-dpws-1.1-spec.html
+
 // Table of Contents
 
 WARNING: The ToC should come AFTER the Forward section
