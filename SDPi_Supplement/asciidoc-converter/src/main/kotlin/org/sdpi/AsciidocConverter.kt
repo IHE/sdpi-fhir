@@ -24,7 +24,12 @@ class AsciidocConverter(
         val asciidoctor = Asciidoctor.Factory.create()
 
         asciidoctor.javaExtensionRegistry().block(RequirementsBlockProcessor())
-        asciidoctor.javaExtensionRegistry().treeprocessor(NumberingProcessor())
+        asciidoctor.javaExtensionRegistry().treeprocessor(NumberingProcessor(
+            when(mode) {
+                is Mode.Test -> mode.structureDump
+                else -> null
+            }
+        ))
         asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
 
         asciidoctor.requireLibrary("asciidoctor-diagram") // enables plantuml
@@ -47,6 +52,6 @@ class AsciidocConverter(
 
     sealed interface Mode {
         object Productive: Mode
-        object Test: Mode
+        data class Test(val structureDump: OutputStream): Mode
     }
 }

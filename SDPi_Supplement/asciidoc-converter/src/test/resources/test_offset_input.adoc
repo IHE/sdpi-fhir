@@ -63,5 +63,5 @@
 
 === Part 2 Appendix X Section 1
 
+[appendix]
 == Part 2 Appendix Y
-
