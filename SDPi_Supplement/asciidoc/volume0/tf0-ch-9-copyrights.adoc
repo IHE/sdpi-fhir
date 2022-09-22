@@ -1,10 +1,9 @@
+
 // = TF-0 Chapter 9: Copyrights
 
 NOTE:  Migrate content from the Word document here
 
 // 9
-
-:sectnums:
 
 [sdpi_offset=9]
 == Copyright Licenses

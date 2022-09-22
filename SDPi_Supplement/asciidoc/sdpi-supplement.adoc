@@ -1,6 +1,5 @@
 = Service-oriented Device Point-of-care Interoperability (SDPi) Technical Framework
 :doctype: book
-:preface-title: Preface
 :xrefstyle: short
 :toc-title: Contents
 :toc: left
@@ -12,11 +11,9 @@
 :imagesdir: images/
 :title-logo-image: image::ihe-logo.png[pdfwidth=4in,align=center]
 
-// Forward
 
-[#clause-forward]
-
-= Forward
+[#supplement_clause_foreword]
+== Foreword
 
 This is a supplement to the IHE Devices Technical Framework Revision 10.0. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
 
@@ -43,24 +40,10 @@ The current version of the IHE DevicesTechnical Framework can be found at http:/
 
 __<Comments may be submitted on IHE Technical Framework templates any time at http://ihe.net/Templates_Public_Comments. Please enter comments/issues as soon as they are found. Do not wait until a future review cycle is announced.>__
 
-// == Definitions
-
-WARNING:  These definitions are currently needed to build / publish to HTML
-
-include::definitions.adoc[]
-
-[bibliography]
-== Bibliography
-
-* [[[ieee_11073_10207_2017,IEEE 11073-10207:2017]]] IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2018-02, available at https://standards.ieee.org/standard/11073-10207-2017.html.
-
-* [[[ws_discovery_2009, WS-Discovery:2009]]] Web Services Dynamic Discovery (WS-Discovery) Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/discovery/1.1/wsdd-discovery-1.1-spec.html
-
-* [[[dpws_2009, DPWS:2009]]] Devices Profile for Web Services Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/dpws/wsdd-dpws-1.1-spec.html
 
 // Table of Contents
 
-WARNING: The ToC should come AFTER the Forward section
+WARNING: #The ToC should come AFTER the Forward section#
 
 include::sdpi-supplement-intro.adoc[]
 

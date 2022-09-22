@@ -1,5 +1,0 @@
-[[actor_somds_participant]]SOMDS Participant:: #todo add description#
-[[actor_somds_provider]]SOMDS Provider:: #todo add description#
-[[actor_somds_consumer]]SOMDS Consumer:: #todo add description#
-[[property_somds_provider_uid]]SOMDS Provider UID:: A globally unique identifier for a <<actor_somds_provider>> that is stable across re-initializations.
-[[property_discovery_scope]]Discovery Scope:: A set of zero to many identifiers that allows for organizing <<actor_somds_provider>>s into logical groups.

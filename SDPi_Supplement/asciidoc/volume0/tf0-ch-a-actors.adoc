@@ -1,13 +1,22 @@
-// = TF-0 Appendix A:  Actor Summary Definitions
 
-:sectnums:
+// = TF-0 Appendix A:  Actor Summary Definitions
 
 NOTE:  Migrate content from the Word document here
 
 // Appendix A
 
-
+[appendix#vol0_appendix_a_actor_summary_definitions,sdpi_offset=A]
 == Actor Summary Definitions
 
 ADD: Summary definitions from the Word document.
+
+// from:  definitions.adoc
+
+[[actor-somds-participant]]SOMDS Participant:: #todo add description#
+
+[[actor_somds_provider]]SOMDS Provider:: #todo add description#
+
+[[actor-somds-consumer]]SOMDS Consumer:: #todo add description#
+
+
 
