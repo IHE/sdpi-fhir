@@ -7,7 +7,7 @@
 :val_label_dev_23_payload_discovery_scope: Discovery Scope
 
 //reset|+1|off
-[#vol2_clause_dev_23,sdpi_offset=3]
+[#vol2_clause_dev_23,sdpi_offset=23]
 === Announce Network Presence [DEV-23]
 
 {var_transaction_id}

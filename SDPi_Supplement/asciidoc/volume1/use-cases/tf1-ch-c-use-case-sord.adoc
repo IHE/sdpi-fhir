@@ -1,8 +1,11 @@
-= Use Case Feature: Standalone OR Dashboard (SORD)
+// = Use Case Feature: Standalone OR Dashboard (SORD)
+
 
 NOTE:  This file contains the use case content for SORD.  See the Word document for the baseline.  Gherkin plugin may be utilized.
 
 // C.2
+// [appendix#vol1_appendix_c_dpi_use_cases,sdpi_offset=C]
+[sdpi_offset=2]
 === Use Case Feature: Standalone OR Dashboard (SORD)
 
 // C.2.1

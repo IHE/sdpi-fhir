@@ -36,6 +36,10 @@ class NumberingProcessor : Treeprocessor() {
     }
 
     private fun createSectionId(numbers: List<Number>, level: Int): String {
+        if (numbers.find { it.clear } != null) {
+            return ""
+        }
+
         var cutFrom = numbers.indexOfFirst { it.appendix != null }
         if (cutFrom == -1) {
             cutFrom = startFromLevel
@@ -123,11 +127,7 @@ class NumberingProcessor : Treeprocessor() {
                 }
 
                 when (sdpiOffset) {
-                    CLEAR_NUMBERING -> numbering[level] = numbering[level].let { last ->
-                        last.copy(
-                            current = last.current + 1, offset = null
-                        )
-                    }
+                    CLEAR_NUMBERING -> numbering[level] = numbering[level].copy(clear = true)
 
                     else -> if (section.isAppendix()) {
                         currentAppendix = sdpiOffset.first()
@@ -189,11 +189,16 @@ class NumberingProcessor : Treeprocessor() {
     }
 
     private fun initSectionNumbers(section: Section, level: Int) {
-        for (i in level + 1..numbering.lastIndex) {
-            numbering[i] = numbering[i].copy(current = 0, appendix = null)
+        for (i in level..numbering.lastIndex) {
+            numbering[i] = numbering[i].copy(current = 0, appendix = null, clear = false)
         }
-        if (numbering.lastIndex < level) {
-            numbering.add(Number(section.title))
+
+        while (numbering.lastIndex < level) {
+            if (numbering.lastIndex == level - 1) {
+                numbering.add(Number(section.title))
+            } else {
+                numbering.add(Number("<MISSING-PART-PLACEHOLDER>"))
+            }
         }
     }
 
@@ -218,7 +223,8 @@ class NumberingProcessor : Treeprocessor() {
         val title: String, // for debug purposes
         val current: Int = 0,
         val offset: Int? = null,
-        val appendix: String? = null
+        val appendix: String? = null,
+        val clear: Boolean = false
     )
 
     private companion object : Logging {
@@ -230,7 +236,7 @@ class NumberingProcessor : Treeprocessor() {
         const val ATTRIBUTE_APPENDIX_CAPTION = "appendix-caption"
 
         const val OPTION_OFFSET = "sdpi_offset"
-        const val OPTION_OFFSET_PATTERN = "^[0-9]+|$CLEAR_NUMBERING$"
+        const val OPTION_OFFSET_PATTERN = "^[0-9]+|$CLEAR_NUMBERING|$"
         const val OPTION_APPENDIX_OFFSET_PATTERN = "^[A-Z]$"
 
         val optionOffsetRegex = OPTION_OFFSET_PATTERN.toRegex()

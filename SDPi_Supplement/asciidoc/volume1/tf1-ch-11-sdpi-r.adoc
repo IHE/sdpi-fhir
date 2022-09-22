@@ -7,6 +7,7 @@ NOTE:  This file contains the core Volume 1 specification for the SDPi-R profile
 == Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
 
 // 11.1
+[sdpi_offset=1]
 === SDPi-R Actors, Transactions, and Content Modules
 
 // 11.1.1
