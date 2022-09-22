@@ -17,3 +17,4 @@ ADD: Summary definitions from the Word document.
 [[actor_somds_provider]]SOMDS Provider:: #todo add description#
 
 [[actor_somds_consumer]]SOMDS Consumer:: #todo add description#
+
