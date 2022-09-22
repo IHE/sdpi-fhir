@@ -9,6 +9,7 @@ import org.sdpi.asciidoc.isAppendix
 import org.sdpi.asciidoc.model.StructuralNodeWrapper
 import org.sdpi.asciidoc.model.toSealed
 import org.sdpi.asciidoc.validate
+import java.io.OutputStream
 
 /**
  * Takes care of section numbering.
@@ -23,7 +24,7 @@ import org.sdpi.asciidoc.validate
  *
  * Option name: sdpi_level
  */
-class NumberingProcessor : Treeprocessor() {
+class NumberingProcessor(val structureDump: OutputStream? = null) : Treeprocessor() {
     private var numbering = mutableListOf<Number>()
     private var currentAdditionalLevel = 0
     private val startFromLevel = 1
