@@ -5,8 +5,6 @@ NOTE:  Migrate content from the Word document here
 
 // 9
 
-:sectnums:
-
 [sdpi_offset=9]
 == Copyright Licenses
 

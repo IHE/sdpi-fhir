@@ -7,9 +7,7 @@ IMPORTANT:  Migrate the content below from main.adoc into this document OR renam
 *_See the Word document for what this is supposed to look like_*.
 
 
-[#clause-profiles]
-
-[sdpi_offset=1]
+[#clause-profiles,sdpi_offset=1]
 == Profiles
 
 // 2.

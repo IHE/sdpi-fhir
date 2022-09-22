@@ -1,6 +1,5 @@
 = Service-oriented Device Point-of-care Interoperability (SDPi) Technical Framework
 :doctype: book
-:preface-title: Foreword
 :xrefstyle: short
 :toc-title: Contents
 :toc: left
@@ -13,8 +12,8 @@
 :title-logo-image: image::ihe-logo.png[pdfwidth=4in,align=center]
 
 
-[#clause-foreword]
-= Foreword
+[#supplement_clause_foreword]
+== Foreword
 
 This is a supplement to the IHE Devices Technical Framework Revision 10.0. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
 

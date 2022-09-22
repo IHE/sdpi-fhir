@@ -4,7 +4,7 @@
 
 WARNING: The Volume 2 is ... 2; but the first transaction clause is 3.23.  Section numbering fun!
 
-[sdpi_offset=3]
+[#vol2_clause_transactions,sdpi_offset=3]
 == Transactions
 
 include::dev-23/tf2-dev-23.adoc[]

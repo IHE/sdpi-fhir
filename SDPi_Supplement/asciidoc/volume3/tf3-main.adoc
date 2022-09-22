@@ -8,7 +8,7 @@ NOTE:  This document integrates all the content that makes up the supplement vol
 // == Content Modules
 
 // 8
-[sdpi_offset=8]
+[#vol3_clause_content_modules,sdpi_offset=8]
 == DEV Semantic Content Modules
 
 // 8.1

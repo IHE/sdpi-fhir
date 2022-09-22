@@ -9,9 +9,7 @@ IMPORTANT:  Migrate the content below from main.adoc into this document OR renam
 *_See the Word document for what this is supposed to look like_*.
 
 
-[#clause-general]
-
-[sdpi_offset=clear]
+[#vol0_clause_general,sdpi_offset=clear]
 == IHE Technical Frameworks General Introduction
 The http://ihe.net/Technical_Frameworks/#GenIntro[IHE Technical Framework General Introduction] is shared by all of the IHE domain technical frameworks. Each technical framework volume contains links to this document where appropriate.
 
