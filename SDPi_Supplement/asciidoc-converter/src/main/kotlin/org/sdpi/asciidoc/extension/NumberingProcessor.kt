@@ -76,7 +76,7 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
                     logger.info { "Set appendix caption to '$appendixCaption'" }
 
                     node.wrapped.blocks.forEach {
-                        validate(!it.isAppendix(), it) {
+                        validate(it.level > 0 || !it.isAppendix(), it) {
                             "Part is not allowed to be appendix"
                         }
 
