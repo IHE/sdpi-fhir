@@ -38,8 +38,9 @@ Information about the organization of IHE Technical Frameworks and Supplements a
 
 The current version of the IHE DevicesTechnical Framework can be found at http://ihe.net/Technical_Frameworks.
 
-__<Comments may be submitted on IHE Technical Framework templates any time at http://ihe.net/Templates_Public_Comments. Please enter comments/issues as soon as they are found. Do not wait until a future review cycle is announced.>__
+__<Cmmnts my b sbmittd n H Tchncl Frmewrk templates any time at http://ihe.net/Templates_Public_Comments. Please enter comments/issues as soon as they are found. Do not wait until a future review cycle is announced.>__
 
+And something new here. That is pushed to master already.
 
 // Table of Contents
 
