@@ -11,7 +11,7 @@ import java.io.OutputStream
 
 class AsciidocConverter(
     private val inputType: Input,
-    private val outputStream: OutputStream,
+    private val outputFile: File,
     private val mode: Mode = Mode.Productive
 ) : Runnable {
     override fun run() {
@@ -19,7 +19,7 @@ class AsciidocConverter(
             .safe(SafeMode.UNSAFE)
             .backend(BACKEND)
             .sourcemap(true)
-            .toStream(outputStream).build()
+            .toFile(outputFile).build()
 
         val asciidoctor = Asciidoctor.Factory.create()
 
