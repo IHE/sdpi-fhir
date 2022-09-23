@@ -68,7 +68,7 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
 
             asciidoctor.javaExtensionRegistry().block(RequirementsBlockProcessor())
             asciidoctor.javaExtensionRegistry().treeprocessor(NumberingProcessor())
-            asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
+            asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor(adocInputFile))
 
             asciidoctor.requireLibrary("asciidoctor-diagram") // enables plantuml
             asciidoctor.convertFile(adocInputFile, options)

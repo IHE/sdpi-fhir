@@ -43,6 +43,10 @@ class NumberingProcessor : Treeprocessor() {
         var cutFrom = numbers.indexOfFirst { it.appendix != null }
         if (cutFrom == -1) {
             cutFrom = startFromLevel
+        }  else {
+            if (level - cutFrom == 0) {
+                return ""
+            }
         }
 
         if (cutFrom > level) {
@@ -190,7 +194,10 @@ class NumberingProcessor : Treeprocessor() {
 
     private fun initSectionNumbers(section: Section, level: Int) {
         for (i in level..numbering.lastIndex) {
-            numbering[i] = numbering[i].copy(current = 0, appendix = null, clear = false)
+            numbering[i] = numbering[i].copy(appendix = null, clear = false)
+        }
+        for (i in level + 1..numbering.lastIndex) {
+            numbering[i] = numbering[i].copy(current = 0)
         }
 
         while (numbering.lastIndex < level) {

@@ -25,6 +25,8 @@ NOTE: the following section was moved from the mothership document to here for i
 
 * [[[ws_discovery_2009, WS-Discovery:2009]]] Web Services Dynamic Discovery (WS-Discovery) Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/discovery/1.1/wsdd-discovery-1.1-spec.html
 
+* [[[dpws_2009, DPWS:2009]]] Devices Profile for Web Services Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/dpws/wsdd-dpws-1.1-spec.html
+
 // Appendix B.3
 === IEEE Implementation Conformance Statement (ICS) Table Overview
 

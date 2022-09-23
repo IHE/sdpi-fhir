@@ -18,5 +18,3 @@ ADD: Summary definitions from the Word document.
 
 [[actor_somds_consumer]]SOMDS Consumer:: #todo add description#
 
-
-
