@@ -1,14 +1,18 @@
 = Volume 2 -- Transactions
 
-[#vol2_clause_transactions,sdpi_offset=2]
+WARNING: The Volume 2 is ... 2; but the first transaction clause is 3.23.  Section numbering fun!
+
+[#vol2_clause_transactions,sdpi_offset=3]
 == Transactions
 
+// Announce Network Presence
 include::dev-23/tf2-dev-23.adoc[]
 
-//=== Discover Network Topology [DEV-24]
-//
-//=== Discover BICEPS Services [DEV-25]
-//
+// Discover Network Topology [DEV-24]
+include::dev-24/tf2-dev-24.adoc[]
+
+// Discover BICEPS Services [DEV-25]
+
 //=== Discover System Context and Capabilities [DEV-26]
 //
 //=== Manage BICEPS Subscription [DEV-27]
@@ -121,3 +125,6 @@ include::dev-23/tf2-dev-23.adoc[]
 //*_See the Word document for what this is supposed to look like_*.
 
 include::tf2-ch-a-mdpws.adoc[]
+include::tf2-ch-b-gateways.adoc[]
+
+

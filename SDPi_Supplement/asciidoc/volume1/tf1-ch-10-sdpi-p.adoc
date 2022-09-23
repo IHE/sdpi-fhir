@@ -3,9 +3,11 @@
 NOTE:  This file contains the core Volume 1 specification for the SDPi-P profile.
 
 // 10.
+[sdpi_offset=10]
 == Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
 
 // 10.1
+[sdpi_offset=1]
 === SDPi-P Actors, Transactions, and Content Modules
 
 // 10.1.1
