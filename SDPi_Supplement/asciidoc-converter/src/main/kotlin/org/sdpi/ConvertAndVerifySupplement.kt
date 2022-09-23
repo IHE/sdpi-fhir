@@ -15,6 +15,7 @@ import org.sdpi.asciidoc.extension.DisableSectNumsProcessor
 import org.sdpi.asciidoc.extension.RequirementsBlockProcessor
 import org.sdpi.asciidoc.extension.NumberingProcessor
 import java.io.File
+import java.io.FileOutputStream
 
 fun main(args: Array<String>) = ConvertAndVerifySupplement().main(
     when (System.getenv().containsKey("CI")) {
@@ -58,21 +59,7 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
 
             logger.info { "Write output to '${outFile.canonicalPath}'" }
 
-            val options = Options.builder()
-                .safe(SafeMode.UNSAFE)
-                .backend(backend.lowercase())
-                .sourcemap(true)
-                .toFile(outFile).build()
-
-            val asciidoctor = Asciidoctor.Factory.create()
-
-            asciidoctor.javaExtensionRegistry().block(RequirementsBlockProcessor())
-            asciidoctor.javaExtensionRegistry().treeprocessor(NumberingProcessor())
-            asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor(adocInputFile))
-
-            asciidoctor.requireLibrary("asciidoctor-diagram") // enables plantuml
-            asciidoctor.convertFile(adocInputFile, options)
-            asciidoctor.shutdown()
+            AsciidocConverter(AsciidocConverter.Input.FileInput(adocInputFile), FileOutputStream(outFile)).run()
 
             logger.info { "File successfully written" }
         }.onFailure {

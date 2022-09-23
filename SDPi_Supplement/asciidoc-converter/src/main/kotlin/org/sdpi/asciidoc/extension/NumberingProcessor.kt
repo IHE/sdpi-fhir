@@ -9,6 +9,7 @@ import org.sdpi.asciidoc.isAppendix
 import org.sdpi.asciidoc.model.StructuralNodeWrapper
 import org.sdpi.asciidoc.model.toSealed
 import org.sdpi.asciidoc.validate
+import java.io.OutputStream
 
 /**
  * Takes care of section numbering.
@@ -23,7 +24,7 @@ import org.sdpi.asciidoc.validate
  *
  * Option name: sdpi_level
  */
-class NumberingProcessor : Treeprocessor() {
+class NumberingProcessor(private val structureDump: OutputStream? = null) : Treeprocessor() {
     private var numbering = mutableListOf<Number>()
     private var currentAdditionalLevel = 0
     private val startFromLevel = 1
@@ -43,7 +44,7 @@ class NumberingProcessor : Treeprocessor() {
         var cutFrom = numbers.indexOfFirst { it.appendix != null }
         if (cutFrom == -1) {
             cutFrom = startFromLevel
-        }  else {
+        } else {
             if (level - cutFrom == 0) {
                 return ""
             }
@@ -75,7 +76,7 @@ class NumberingProcessor : Treeprocessor() {
                     logger.info { "Set appendix caption to '$appendixCaption'" }
 
                     node.wrapped.blocks.forEach {
-                        validate(!it.isAppendix(), it) {
+                        validate(it.level > 0 || !it.isAppendix(), it) {
                             "Part is not allowed to be appendix"
                         }
 
@@ -96,6 +97,8 @@ class NumberingProcessor : Treeprocessor() {
                     }.also {
                         logger.info { "Attach section number: ${node.wrapped.caption ?: ""}$it" }
                         node.wrapped.title = it
+                    }.also {
+                        structureDump?.write("${node.wrapped.caption ?: ""}$it\n".toByteArray())
                     }
 
                     // recursively process children of this child block
@@ -131,7 +134,9 @@ class NumberingProcessor : Treeprocessor() {
                 }
 
                 when (sdpiOffset) {
-                    CLEAR_NUMBERING -> numbering[level] = numbering[level].copy(clear = true)
+                    CLEAR_NUMBERING -> numbering[level] = numbering[level].let { last ->
+                        last.copy(current = last.current + 1, offset = last.offset?.let { it + 1 }, clear = true)
+                    }
 
                     else -> if (section.isAppendix()) {
                         currentAppendix = sdpiOffset.first()
@@ -197,7 +202,7 @@ class NumberingProcessor : Treeprocessor() {
             numbering[i] = numbering[i].copy(appendix = null, clear = false)
         }
         for (i in level + 1..numbering.lastIndex) {
-            numbering[i] = numbering[i].copy(current = 0)
+            numbering[i] = numbering[i].copy(current = 0, offset = null)
         }
 
         while (numbering.lastIndex < level) {
