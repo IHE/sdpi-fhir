@@ -55,3 +55,7 @@ include::volume2/tf2-main.adoc[]
 * [[[ieee-11073-10207-2017,IEEE 11073-10207:2017]]] IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2018-02, available at https://standards.ieee.org/standard/11073-10207-2017.html.
 
 * [[[ws-discovery-2009, WS-Discovery:2009]]] Web Services Dynamic Discovery (WS-Discovery) Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/discovery/1.1/wsdd-discovery-1.1-spec.html
+
+* [[[ws-transfer-2006, WS-Transfer:2006]]] Web Services Transfer (WS-Transfer), W3C Standard, 27 September 2006, available at https://www.w3.org/Submission/WS-Transfer/
+
+* [[[dpws-2009, DPWS:2009]]] Devices Profile for Web Services Version 1.1, OASIS Standard, 1 July 2209, available at http://docs.oasis-open.org/ws-dd/dpws/wsdd-dpws-1.1-spec.html
