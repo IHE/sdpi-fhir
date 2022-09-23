@@ -1,4 +1,4 @@
-[appendix#vol2_appendix_a_mdpws_messages]
+[appendix#vol2_appendix_a_mdpws_messages,sdpi_offset=A]
 == ISO/IEEE 11073 SDC / MDPWS Message Specifications (Normative)
 
 //NOTE: This file integrates all the Volume 2 / Appendix A MDPWS profiling and examples. +
@@ -9,4 +9,36 @@
 
 === Message Mapping
 
+// Announce Network Presence [DEV-23]
 include::dev-23/tf2-ch-a-mdpws-dev-23.adoc[]
+
+//=== Discover Network Topology [DEV-24]
+include::dev-24/tf2-ch-a-mdpws-dev-24.adoc[]
+
+//=== Discover BICEPS Services [DEV-25]
+//
+//=== Discover System Context and Capabilities [DEV-26]
+//
+//=== Manage BICEPS Subscription [DEV-27]
+//
+//=== Notify Change in System Context and Capabilities [DEV-28]
+//
+//=== Publish BICEPS Update Reports [DEV-29]
+//
+//=== Retrieve BICEPS Content [DEV-30]
+//
+//=== Retrieve Localization Information [DEV-33]
+//
+//=== Announce Network Departure [DEV-34]
+//
+//=== Establish Medical Data Exchange [DEV-35]
+//
+//=== Publish Medical Data [DEV-36]
+//
+//=== Retrieve Medical Data [DEV-37]
+//
+//=== Establish Medical Alert Exchange [DEV-38]
+//
+//=== Publish Medical Alert Update [DEV-39]
+//
+//=== Retrieve Medical Alert Status [DEV-40]

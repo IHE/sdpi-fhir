@@ -1,19 +1,19 @@
 @startuml
+
 skinparam monochrome true
 autonumber
 
-!global $str_sdpi_p_somds_cons = "SOMDS Consumer"
-!global $str_sdpi_p_somds_prov = "SOMDS Provider"
+!global $str_somds_consumer = "SOMDS Consumer"
+!global $str_somds_provider = "SOMDS Provider"
 
-participant "$str_sdpi_p_somds_cons" as sdpi_somds_consumer
-participant "$str_sdpi_p_somds_prov" as sdpi_somds_provider
+participant "$str_somds_consumer" as consumer
+participant "$str_somds_provider" as provider
 
-== SDPi [DEV-23]  Announce Network Presence ==
+== SDPi [DEV-23] Announce Network Presence  ==
 |||
 group unsecured
-    sdpi_somds_provider -> sdpi_somds_consumer: BICEPS: AnnounceNetworkPresence( Provider UID, Discovery Scope, ...)
+    provider -> consumer: BICEPS: Hello(Provider UID, Discovery Scope, ...)
 end
 |||
-
 
 @enduml

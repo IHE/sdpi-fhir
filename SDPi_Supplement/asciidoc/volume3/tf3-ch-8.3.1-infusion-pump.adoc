@@ -1,2 +1,13 @@
-= Device:  Infusion pump
+
+// = Device:  Infusion pump
+
+NOTE:  This file contains the content that profiles BICEPS semantics for use in the SDPi profiles.
+
+// 8.3.1
+[sdpi_offset=1]
+==== Device:  Infusion Pump
+
+// 8.3.1.4
+[sdpi_offset=4]
+===== SDC/BICEPS content module
 

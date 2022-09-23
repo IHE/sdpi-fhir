@@ -2,3 +2,50 @@
 
 NOTE:  This file contains the core Volume 1 specification for the SDPi-xC profile.
 
+// 13.
+== Service-oriented Device Point-of-care Interoperability – external Control (SDPi-xC) Profile
+
+// 13.1
+[sdpi_offset=1]
+=== SDPi-xC Actors, Transactions, and Content Modules
+
+// 13.1.1
+==== Actor Descriptions and Actor Profile Requirements
+
+// 13.2
+=== SDPi-xC Actor Options
+
+// 13.2.1
+==== tbd Option
+// NOTE:  These options are TBD for SDPi 1.0
+
+// 13.3
+=== SDPi-xD Required Actor Groupings
+
+// 13.4
+=== SDPi-xC Overview
+
+// 13.4.1
+==== Concepts
+
+// 13.4.2
+==== Use Cases
+
+// 13.5
+=== SDPi-xC Safety, Effectiveness, Security Considerations and Requirements
+
+// 13.5.1
+==== SES General Considerations
+
+// 13.5.2
+==== Safety Requirements & Considerations
+
+// 13.5.3
+==== Effectiveness Requirements & Considerations
+
+// 13.5.4
+==== Security Requirements & Considerations
+
+// 13.6
+=== SDPi-xC Cross Profile Considerations
+

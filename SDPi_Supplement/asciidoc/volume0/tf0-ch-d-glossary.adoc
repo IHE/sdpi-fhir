@@ -1,4 +1,15 @@
-= TF-0 Appendix D:  Glossary
+
+// = TF-0 Appendix D:  Glossary
+
+NOTE:  Migrate content from the Word document here
+
+// Appendix D
+
+[appendix#vol0_appendix_d_glossary,sdpi_offset=D]
+== Glossary
+
+[[property_somds_provider_uid]]SOMDS Provider UID:: A globally unique identifier for a <<actor_somds_provider>> that is stable across re-initializations.
+[[property_discovery_scope]]Discovery Scope:: A set of zero to many identifiers that allows for organizing <<actor_somds_provider>>s into logical groups.
 
 ADD:  Glossary definitions from the Word document
 

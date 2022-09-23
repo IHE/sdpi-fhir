@@ -1,4 +1,12 @@
-= TF-0 Chapter 9: Copyrights
+
+// = TF-0 Chapter 9: Copyrights
+
+NOTE:  Migrate content from the Word document here
+
+// 9
+
+[sdpi_offset=9]
+== Copyright Licenses
 
 ADD:  file contains the IEEE copyright permission language
 

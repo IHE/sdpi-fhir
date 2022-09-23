@@ -2,3 +2,51 @@
 
 NOTE:  This file contains the core Volume 1 specification for the SDPi-P profile.
 
+// 10.
+[sdpi_offset=10]
+== Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
+
+// 10.1
+[sdpi_offset=1]
+=== SDPi-P Actors, Transactions, and Content Modules
+
+// 10.1.1
+==== Actor Descriptions and Actor Profile Requirements
+
+// 10.2
+=== SDPi-P Actor Options
+
+// 10.2.1
+==== Streaming Option
+// NOTE:  These options are TBD for SDPi 1.0
+
+// 10.3
+=== SDPi-P Required Actor Groupings
+
+// 10.4
+=== SDPi-P Overview
+
+// 10.4.1
+==== Concepts
+
+// 10.4.2
+==== Use Cases
+
+// 10.5
+=== SDPi-P Safety, Effectiveness, Security Considerations and Requirements
+
+// 10.5.1
+==== SES General Considerations
+
+// 10.5.2
+==== Safety Requirements & Considerations
+
+// 10.5.3
+==== Effectiveness Requirements & Considerations
+
+// 10.5.4
+==== Security Requirements & Considerations
+
+// 10.6
+=== SDPi-P Cross Profile Considerations
+

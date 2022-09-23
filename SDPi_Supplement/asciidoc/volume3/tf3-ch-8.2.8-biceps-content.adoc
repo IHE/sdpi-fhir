@@ -1,4 +1,26 @@
-= SDC/BICEPS semantic content
+==== SDC/BICEPS semantic content
 
 NOTE:  This file contains the content that profiles BICEPS semantics for use in the SDPi profiles.  It is a compliment to the other general requirements that are in chapter 8.2.
+
+// 8.2.8
+[sdpi_offset=8]
+===== SDC/BICEPS semantic content
+
+// 8.2.8.1
+===== SDC/BICEPS Content Module
+
+// 8.2.8.2
+===== SDC/BICEPS Descriptive Model
+
+// 8.2.8.3
+===== SDC/BICEPS Relationship to Classic DIM
+
+// 8.2.8.4
+===== Nomenclature Considerations – Private Extensions & External Systems
+
+// 8.2.8.5
+===== Safety, Effectiveness, Security Content Requirements & Considerations
+
+// 8.2.8.6
+===== SDC/BICEPS Conventions for device specialization content modules
 

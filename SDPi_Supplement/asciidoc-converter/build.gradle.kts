@@ -35,6 +35,13 @@ dependencies {
     // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api-kotlin
     implementation("org.apache.logging.log4j:log4j-api-kotlin:1.0.0")
 
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+    testImplementation(group = "org.junit.jupiter", name = "junit-jupiter-api", version = "5.7.1")
+
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
+    runtimeOnly(group = "org.junit.jupiter", name = "junit-jupiter-engine", version = "5.7.1")
+
+
     testImplementation(kotlin("test"))
 }
 

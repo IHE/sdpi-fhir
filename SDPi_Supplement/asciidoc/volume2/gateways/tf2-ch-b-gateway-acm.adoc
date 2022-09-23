@@ -1,4 +1,5 @@
-= SDPi ACM Gateway -- Mapping
+// = SDPi ACM Gateway -- Mapping
 
 NOTE:  This file contains the SDPi gateway actor (SOMDS_ACM_Gateway) logic for mapping from SDC BICEPS MDIB content and interactions with IHE DEV "PCD" ACM profile messaging.
 
+=== Gateway:  IHE DEV ACM Profile
