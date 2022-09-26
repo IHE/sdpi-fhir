@@ -34,20 +34,20 @@ include::../../plantuml/vol2-figure-dev-25-sequence.puml[]
 
 [#message-discover-biceps-services]
 ===== TransferGet
-The TransferGet message is used for a <<actor-somds-consumer>> to ask for the resource representation data for a <<actor_somds_provider>>.
+The GetMetadata message is used by a <<actor-somds-consumer>> to request the resource representation data of a <<actor_somds_provider>>.
 
 ====== Trigger Events
-This message is sent if a <<actor-somds-consumer>> has an endpoint reference and transport address for a <<actor_somds_provider>>.
+This message is sent when a <<actor-somds-consumer>> has discovered a <<property_transport_address>> for a <<actor_somds_provider>>.
 
 ====== Expected Actions
 When a <<actor-somds-consumer>> sends this message, the TransferGetResponse message is expected as a response.
 
 [#message-response-discover-biceps-services]
 ===== TransferGetResponse
-The TransferGetResponse message is the response of the TransferGet message which includes the ThisDevice metadata for a <<actor_somds_provider>>. A <<actor_somds_provider>> MAY also provide other means for a <<actor-somds-consumer>> to retrieve its ThisDevice metadata.
+The GetMetadataResponse message is sent in response to an incoming <<vol2_clause_dev_25_message_get_metadata, GetMetadata>> message.
 
 ====== Trigger Events
-This message is sent when a <<actor-somds-consumer>> requests the transfer of the resource representation.
+The GetMetadataResponse message is sent whenever a <<actor_somds_provider>> receives a <<vol2_clause_dev_25_message_get_metadata, GetMetadata>> message.
 
 
 ====== Message Semantics
