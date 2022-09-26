@@ -12,6 +12,7 @@ include::dev-23/tf2-dev-23.adoc[]
 include::dev-24/tf2-dev-24.adoc[]
 
 // Discover BICEPS Services [DEV-25]
+include::dev-25/tf2-dev-25.adoc[]
 
 //=== Discover System Context and Capabilities [DEV-26]
 //
