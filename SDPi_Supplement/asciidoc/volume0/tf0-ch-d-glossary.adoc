@@ -10,6 +10,6 @@ NOTE:  Migrate content from the Word document here
 
 [[property_somds_provider_uid]]SOMDS Provider UID:: A globally unique identifier for a <<actor_somds_provider>> that is stable across re-initializations.
 [[property_discovery_scope]]Discovery Scope:: A set of zero to many identifiers that allows for organizing <<actor_somds_provider>>s into logical groups.
-
+[[property_transport_address]] Transport Address: A physical endpoint address that can be used to communicate with a <<actor_somds_provider>>.
 ADD:  Glossary definitions from the Word document
 

@@ -14,8 +14,6 @@
             <wsm:MetadataSection Dialect="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01/ThisModel">
                 <dpws:ThisModel>
                     <dpws:Manufacturer xml:lang="..."><!-- ... --></dpws:Manufacturer>
-                    <dpws:Manufacturer xml:lang="..."><!-- ... --></dpws:Manufacturer>
-                    <dpws:Manufacturer xml:lang="..."><!-- ... --></dpws:Manufacturer>
                     <dpws:ManufacturerUrl><!-- ... --></dpws:ManufacturerUrl>
                     <dpws:ModelName><!-- ... --></dpws:ModelName>
                     <dpws:ModelNumber><!-- ... --></dpws:ModelNumber>

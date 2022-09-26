@@ -32,8 +32,8 @@ This transaction is used to exchange the resources metadata between a <<actor_so
 include::../../plantuml/vol2-figure-dev-25-sequence.puml[]
 ....
 
-[#message-discover-biceps-services]
-===== TransferGet
+[#vol2_clause_dev_25_message_get_metadata]
+===== GetMetadata Message
 The TransferGet message is used for a <<actor-somds-consumer>> to ask for the resource representation data for a <<actor_somds_provider>>.
 
 ====== Trigger Events
@@ -42,8 +42,8 @@ This message is sent if a <<actor-somds-consumer>> has an endpoint reference and
 ====== Expected Actions
 When a <<actor-somds-consumer>> sends this message, the TransferGetResponse message is expected as a response.
 
-[#message-response-discover-biceps-services]
-===== TransferGetResponse
+[#vol2_clause_dev_25_message_get_metadata_response]
+===== GetMetadataResponse Message
 The TransferGetResponse message is the response of the TransferGet message which includes the ThisDevice metadata for a <<actor_somds_provider>>. A <<actor_somds_provider>> MAY also provide other means for a <<actor-somds-consumer>> to retrieve its ThisDevice metadata.
 
 ====== Trigger Events
@@ -51,7 +51,7 @@ This message is sent when a <<actor-somds-consumer>> requests the transfer of th
 
 
 ====== Message Semantics
-BICEPS Services:: Collection of BICEPS services this provider offers.
+[[payload_dev_25_get_metadata_biceps_services]]BICEPS Services:: Collection of BICEPS services this provider offers.
 [#message-semantics-discover-biceps-services-device]
 Device Metadata:: Expresses <<actor_somds_provider>> characteristics that typically vary from one <<actor_somds_provider>> to another of the same kind, e.g.:
 * FriendlaName
