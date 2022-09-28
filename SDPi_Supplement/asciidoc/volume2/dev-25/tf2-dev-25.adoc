@@ -1,4 +1,5 @@
-[#vol2-clause-dev-25]
+[#vol2_clause_dev_25]
+
 === Discover BICEPS Services [DEV-25]
 
 ==== Scope
@@ -27,7 +28,8 @@ This transaction is used to exchange the resources metadata between a <<actor_so
 
 ==== Messages
 .Message Interaction Diagram DEV-25
-[plantuml#vol2-figure-dev-25-sequence, target=puml-dev-25-sequence, format=svg, reftext='{figure-caption} {counter:refnum}',width=100%]
+[plantuml#vol2_figure_dev_25_sequence, target=puml-dev-25-sequence, format=svg, reftext='{figure-caption} {counter:refnum}',width=100%]
+
 ....
 include::../../plantuml/vol2-figure-dev-25-sequence.puml[]
 ....
@@ -44,14 +46,14 @@ When a <<actor-somds-consumer>> sends this message, the TransferGetResponse mess
 
 [#vol2_clause_dev_25_message_get_metadata_response]
 ===== GetMetadataResponse Message
-The TransferGetResponse message is the response of the TransferGet message which includes the ThisDevice metadata for a <<actor_somds_provider>>. A <<actor_somds_provider>> MAY also provide other means for a <<actor-somds-consumer>> to retrieve its ThisDevice metadata.
+The GetMetadataResponse message is the response of the GetMetadata message which includes the ThisDevice metadata for a <<actor_somds_provider>>.
 
 ====== Trigger Events
 This message is sent when a <<actor-somds-consumer>> requests the transfer of the resource representation.
 
 
 ====== Message Semantics
-[[payload_dev_25_get_metadata_biceps_services]]BICEPS Services:: Collection of BICEPS services this provider offers.
+[[payload_dev_25_get_metadata_biceps_services]]BICEPS Services:: Collection of BICEPS services the <<actor_somds_provider>> offers.
 [#message-semantics-discover-biceps-services-device]
 Device Metadata:: Expresses <<actor_somds_provider>> characteristics that typically vary from one <<actor_somds_provider>> to another of the same kind, e.g.:
 * FriendlaName
