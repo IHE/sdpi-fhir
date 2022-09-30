@@ -1,24 +1,30 @@
-:var_ihe_tf-2_long: IHE Patient Care Device Technical Framework, Vol. 2 (PCD TF-2)
-:var_ihe_tf-2_short: IHE PCD TF-2
-:var_sdc_std_10207: ISO/IEEE 11073-10207, Health informatics - Personal health device communication - Part 10207, Domain information and service model for service-oriented point-of-care medical device communication
+include::tf2-ch-b-gateway-global-vars.adoc[]
 
 = SDPi DEC Gateway -- Mapping
 
 NOTE:  This file contains the SDPi gateway actor (SOMDS_DEC_Gateway) logic for mapping from SDC BICEPS MDIB content and interactions with IHE DEV "PCD" DEC profile messaging.
 
 == Scope
-This chapter defines the mapping between SDC messages as defined in this document and IHE Device Enterprise Communication (DEC) profile messages as defined in the {var_ihe_tf-2_long}.
+This chapter defines the mapping from SDC MDIB content as defined in this document and its underlying standards, and IHE Device Enterprise Communication (DEC) profile messages as defined in the *{var_ihe_tf-2_long}*.
 
-The following sections supplement the IHE DEC profile as appropriate. If there are no supplementing definitions, the definitions as described in the {var_ihe_tf-2_short} will apply.
+The SDPi gateway actor represents the Device Observation Reporter (DOR) role of the IHE DEC profile.
+
+The following sections supplement the IHE DEC profile as appropriate. If there are no supplementing definitions, the definitions as described in the *{var_ihe_tf-2_short}* will apply.
 
 == Referenced Standards & Profiles
 This section provides an overview about the referenced standards and profiles used in this chapter:
 
 * {var_ihe_tf-2_long}
 * {var_sdc_std_10207}
+* {var_sdc_std_10700}
 
 == HL7 Segment Descriptions
-The following sections refer to the *Appendix B Common Segment Descriptions* of the {var_ihe_tf-2_long}.
+The following sections refer to the *Appendix B Common Segment Descriptions* of the *{var_ihe_tf-2_long}*.
 
 === MSH - Message Header Segment
-The MSH...
+The HL7 Message Header (MSH) segment does not require a specific mapping between the SDC MDIB content and the HL7 DEC profile messages. In context of this chapter, the MSH segment content shall be in compliance with the [PCD-01] transaction as described in the {var_ihe_tf-2_short}.
+
+include::tf2-ch-b-gateway-pid-mapping.adoc[]
+
+include::tf2-ch-b-gateway-pv1-mapping.adoc[]
+

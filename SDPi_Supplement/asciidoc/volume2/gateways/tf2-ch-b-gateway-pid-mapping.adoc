@@ -1,0 +1,296 @@
+include::tf2-ch-b-gateway-global-vars.adoc[]
+
+=== PID - Patient Identification Segment
+The HL7 Patient Identification (PID) segment requires a mapping from the SDC patient context information to the PID segment field.
+
+.Prerequisite of Valid Patient Context
+[NOTE#ref_valid_pt_ctxt_note]
+====
+The SDC patient context information shall only be mapped to the corresponding fields in the HL7 PID segment when the requirements (e. g. inferred patient ensemble context, associated patient context, etc.) as defined in the *{var_sdc_std_10700}* are fulfilled.
+
+If the SDC patient context information shall not be used for the mapping, please refer to the *{var_ihe_tf-2_short}* on how to populate the fields of the PID segment in this case.
+====
+
+==== PID-3 Patient Identifier List
+The PID-3 field is a list of patient identifiers (e. g. medical record number, socal security number, visit number, account number, etc.). The table <<ref_tbl_pid3_mapping>> defines the mapping of the SDC patient identifier to the data fields of the HL7 data type *CX* used in the PID-3 field.
+
+The SDC patient identifier element *pm:PatientContextState/pm:Identification* may contain more than one patient identifier. Each SDC patient identifier shall be mapped according to the <<ref_tbl_pid3_mapping>> table and added to the PID-3 patient identifier list.
+
+[#ref_tbl_pid3_mapping]
+.PID-3 Patient Identifier List Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|PID-3/CX-1
+|ID Number
+|pm:PatientContextState
+/pm:Identification
+/@Extension
+|The @Extension attribute contains the unique patient identifer.
+
+*Note that the field may contain a null value indicating that the identifier is missing.*
+
+|PID-3/CX-4
+|Assigning Authority
+|pm:PatientContextState
+/pm:Identification
+| HL7 data type *HD*
+
+|PID-3/CX-4.1
+|Namespace ID
+|/@Root
+|The @Root contains the unique identification of the HDO.
+
+*Note that if the HDO identifer is not defined the CX-4 field shall be left empty.*
+
+|PID-3/CX-5
+|Identifier Type Code
+|pm:PatientContextState
+/pm:Identification
+/pm:Type
+/@Code
+|The type of the patient identifier set in the @Code attribute must be mapped HL7 table 0203.
+#ToDo: what types does SDC support? how are the types coded?#
+
+|===
+
+==== PID-5 Patient Name
+The PID-5 field shall contain the patient name information. The table <<ref_tbl_pid5_mapping>> defines the mapping of the SDC patient name information to the data fields of the HL7 data type *XPN* used in the PID-5 field.
+
+[#ref_tbl_pid5_mapping]
+.PID-5 Patient Name Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|PID-5/XPN-1
+|Family Name
+|pm:PatientContextState
+/pm:CoreData
+|HL7 data type *FN*
+
+|PID-5/XPN-1.1
+|Surname
+|/pm:Familyname
+|
+
+|PID-5/XPN-2
+|Given Name
+|pm:PatientContextState
+/pm:CoreData
+/pm:Givenname
+|
+
+|PID-5/XPN-3
+|Second and Further Given Names or Initials
+|pm:PatientContextState
+/pm:CoreData
+/pm:Middlename
+|
+
+|PID-5/XPN-5
+|Prefix (e.g. DR)
+|pm:PatientContextState
+/pm:CoreData
+/pm:Title
+|
+
+|PID-5/XPN-7
+|Name Type Code
+|pm:PatientContextState
+/pm:CoreData
+|This field shall be set to "L" when a patient name is available, or "U" when the patient name is not set.
+
+Please refer also to the corresponding section in the *{var_ihe_tf-2_short}*.
+
+|===
+
+==== PID-6 Mother’s Maiden Name
+The PID-6 field shall contain the mother's maiden name or birth name before marriage. The table <<ref_tbl_pid6_mapping>> defines the mapping of the SDC patient name information to the data fields of the HL7 data type *XPN* used in the PID-6 field.
+
+[#ref_tbl_pid6_mapping]
+.PID-6 Mother’s Maiden Name Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|PID-6/XPN-1
+|Family Name
+|pm:PatientContextState
+/pm:CoreData
+|HL7 data type *FN*
+
+|PID-6/XPN-1.1
+|Surname
+|/pm:Birthname
+|
+
+|===
+
+==== PID-7 Date/Time of Birth
+The PID-7 field shall contain the date & time of birth. The table <<ref_tbl_pid7_mapping>> defines the mapping of the SDC patient's date of birth information to the data fields of the HL7 data type *DTM* used in the PID-7 field.
+
+[#ref_tbl_pid7_mapping]
+.PID-7 Date/Time of Birth Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|PID-6/DTM-1
+|Date/Time
+|pm:PatientContextState
+/pm:CoreData
+/pm:DateOfBirth
+|Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
+
+|===
+
+[#ref_expl_dt_mapping]
+.Date/Time Format Mapping
+====
+xsd:dateTime: *2001-10-26T21:32:52* -> HL7 DTM: *20011026213252*
+
+xsd:date: *2001-10-26* -> HL7 DTM: *20011026*
+====
+
+==== PID-8 Administrative Sex
+The PID-8 field shall contain the administrative sex - usually the sex at birth. The table <<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex information to the data fields of the HL7 data type *IS* used in the PID-8 field.
+
+[#ref_tbl_pid8_mapping]
+.PID-8 Administrative Sex Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|PID-8/IS-1
+|Administrative Sex
+|pm:PatientContextState
+/pm:CoreData
+/pm:Sex
+|Note that the HL7 Administrative Sex value set (HL7 table 0001) differs from the SDC pm:Sex value set and requires a mapping accordingly (see also <<ref_tbl_sex_mapping>>).
+
+|===
+
+[#ref_tbl_sex_mapping]
+.Patient's Sex Value Set Mapping
+|===
+|SDC Value |SDC Description |HL7 Value |HL7 Description
+
+|Unspec
+|Unspecified. Sex is not designated.
+|A
+|Ambiguous
+
+|M
+|Male. Indicates a male patient.
+|M
+|Male
+
+|F
+|Female. Indicates a female patient.
+|F
+|Female
+
+|Unkn
+|Unknown. Indicates that the sex is unknown for different reasons.
+|U
+|Unknown
+
+|===
+
+==== PID-10 Race
+The PID-10 field shall contain the patient's race. The table <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race information to the data fields of the HL7 data type *CWE* used in the PID-10 field.
+
+[#ref_tbl_pid10_mapping]
+.PID-10 Race Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|PID-10/CWE-1
+|Identifier
+|pm:PatientContextState
+/pm:CoreData
+/pm:Race
+/@Code
+|
+
+|PID-10/CWE-2
+|Text
+|pm:PatientContextState
+/pm:CoreData
+/pm:Race
+/@SymbolicCodeName
+|
+
+|PID-10/CWE-3
+|Name of Coding System
+|pm:PatientContextState
+/pm:CoreData
+/pm:Race
+/@CodingSystem
+|
+
+|PID-10/CWE-4
+|Alternate Identifier
+|pm:PatientContextState
+/pm:CoreData
+/pm:Race
+/pm:Translation
+/@Code
+|Note that only the first entry of the *pm:Translation* element list shall be mapped.
+
+|PID-10/CWE-6
+|Name of Alternate Coding System
+|pm:PatientContextState
+/pm:CoreData
+/pm:Race
+/pm:Translation
+/@CodingSystem
+|Note that only the first entry of the *pm:Translation* element list shall be mapped.
+
+|PID-10/CWE-7
+|Coding System Version ID
+|pm:PatientContextState
+/pm:CoreData
+/pm:Race
+/@CodingSystemVersion
+|
+
+|PID-10/CWE-8
+|Alternate Coding System Version ID
+|pm:PatientContextState
+/pm:CoreData
+/pm:Race
+/pm:Translation
+/@CodingSystemVersion
+|Note that only the first entry of the *pm:Translation* element list shall be mapped.
+
+|===
+
+==== PID-31 Identity Unknown Indicator
+The PID-31 field shall indicate whether or not the patient's identity is known.
+
+The field value shall be determined from the present of the PatientContextState and its content. The value shall be set to "Y" when the following preconditions are fulfilled:
+
+* There is a valid patient context (please refer also to <<ref_valid_pt_ctxt_note>> for further information)
+* The *pm:PatientContextState/pm:Identification* element contains a valid patient identifier (e. g. medical record number, social security number, visit number, etc.).
+
+In all other cases, the value shall be set to "N".
+
+[NOTE]
+The presence of the patient name in the *pm:PatientContextState/pm:CoreData* is optional and not a primary criteria.
+
+==== PID-33 Last Update Date/Time
+The PID-33 field shall contain the date & time of last patient context update. The table <<ref_tbl_pid33_mapping>> defines the mapping of the SDC patient context update information to the data fields of the HL7 data type *DTM* used in the PID-33 field.
+
+[#ref_tbl_pid33_mapping]
+.PID-33 Last Update Date/Time Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|PID-33/DTM-1
+|Date/Time
+|?
+|Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
+
+|===
+
+#Todo: how can the last update time be determined in SDC?#
+
+

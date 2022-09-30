@@ -1,0 +1,4 @@
+include::tf2-ch-b-gateway-global-vars.adoc[]
+
+=== PV1 - Patient Visit Segment
+tbd
