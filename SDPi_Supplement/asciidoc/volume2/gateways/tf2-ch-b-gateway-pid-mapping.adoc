@@ -1,7 +1,7 @@
 include::tf2-ch-b-gateway-global-vars.adoc[]
 
 === PID - Patient Identification Segment
-The HL7 Patient Identification (PID) segment requires a mapping from the SDC patient context information to the PID segment field.
+The HL7 Patient Identification (PID) segment requires a mapping from the SDC patient context information to the PID segment fields.
 
 .Prerequisite of Valid Patient Context
 [NOTE#ref_valid_pt_ctxt_note]
@@ -151,7 +151,7 @@ xsd:date: *2001-10-26* -> HL7 DTM: *20011026*
 ====
 
 ==== PID-8 Administrative Sex
-The PID-8 field shall contain the administrative sex - usually the sex at birth. The table <<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex information to the data fields of the HL7 data type *IS* used in the PID-8 field.
+The PID-8 field shall contain the code for the administrative sex - usually the sex at birth. The table <<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex information to the data fields of the HL7 data type *IS* used in the PID-8 field.
 
 [#ref_tbl_pid8_mapping]
 .PID-8 Administrative Sex Mapping
