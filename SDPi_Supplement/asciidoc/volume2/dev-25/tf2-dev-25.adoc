@@ -14,7 +14,7 @@ This transaction is used to exchange the resources metadata between a <<actor_so
 |===
 |Actor |Roles
 
-|<<actor-somds-consumer>>
+|<<actor_somds_consumer>>
 | Asks for the resource representation of the <<actor_somds_provider>> via the <<message-discover-biceps-services>> messages.
 
 |<<actor_somds_provider>>
