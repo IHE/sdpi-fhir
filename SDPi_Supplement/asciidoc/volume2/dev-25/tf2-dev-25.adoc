@@ -56,10 +56,10 @@ This message is sent when a <<actor-somds-consumer>> requests the transfer of th
 [[payload_dev_25_get_metadata_biceps_services]]BICEPS Services:: Collection of BICEPS services the <<actor_somds_provider>> offers.
 [#message-semantics-discover-biceps-services-device]
 Device Metadata:: Expresses <<actor_somds_provider>> characteristics that typically vary from one <<actor_somds_provider>> to another of the same kind, e.g.:
-* FriendlaName
+* Friendly Name
 * FirmwareVersion
 * SerialNumber
-[#message-semantics-discover-biceps-services-model]
+[#message_semantics_discover_biceps_services_model]
 Model Metadata:: Expresses <<actor_somds_provider>> characteristics that are typically fixed across all <<actor_somds_provider>>s of the same model by their manufacturer, e.g.:
 * Manufacturer
 * ModelName
