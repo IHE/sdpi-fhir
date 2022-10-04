@@ -1,18 +1,68 @@
 
 // = Open Issues and Questions
 
-NOTE:  This file will contain both the open and closed issues section relating to the supplement.  Linked to Github Issues.
+#FOR A FORMAT EXAMPLE SEE https://profiles.ihe.net/ITI/BALP/issues.html#
+
+[sdpi_offset=clear]
+== SDPi "Topic of Interest" Issue Management
+
+#PROVIDE AN OVERVIEW OF HOW SDPI ISSUES ToI are managed and lined below; include a reference to the wiki article on co-working#
+
+All SDPi supplement issues are tracked in the https://github.com/IHE/sdpi-fhir/issues[IHE Github sdpi-fhir repository Issues section]. Filter the issues on "SDPi Topic of Interest" to see a full list.  +
+
+* To see the full list of OPEN issues, filter on: is:issue is:open label:"SDPi Topic of Interest"
+* To see the full list of CLOSED issues, filter on: is:issue is:closed label:"SDPi Topic of Interest"
+
 
 [sdpi_offset=clear]
 == Open Issues and Questions
 
+* Issue: https://confluence.hl7.org/pages/viewpage.action?pageId=86970701[_SystemContext Profiling & Use_]
+** #short description of OPEN issue - from ToI table or page#
+* Issue: MDIB Version Update Guidelines
+** #short description of OPEN issue - from ToI table or page#
+* Issue: Profiling BICEPS Services in SDPi-P
+** #short description of OPEN issue - from ToI table or page#
+* Issue: https://confluence.hl7.org/pages/viewpage.action?pageId=91994093[_Security Certificate Provisioning_]
+** #short description of OPEN issue - from ToI table or page#
+* Issue: https://confluence.hl7.org/display/GP/Topic%3A+SDPi-P+Compression+Option[_SDPi-P Compression Option_]
+** #short description of OPEN issue - from ToI table or page#
+* Issue: https://confluence.hl7.org/pages/viewpage.action?pageId=104761310[_MDIB Report Retrofit / Best Practices_]
+** #short description of OPEN issue - from ToI table or page#
+* Issue: BICEPS Extension Model Use in SDPi?
+** #short description of OPEN issue - from ToI table or page#
+* Issue: https://confluence.hl7.org/display/GP/Topic%3A+Discovery+Proxy+Actors[_Discovery Proxy Actors_]
+** Note: This issue is targeted for v1.1 but may have some element in v1.0
+** #short description of OPEN issue - from ToI table or page#
 
 [sdpi_offset=clear]
 == Closed Issues
 
-NOTE:  Include all the closed issues linked to github entries +
-{empty} +
-DOES THIS NEED TO BE A SEPARATE FILE?
+* Issue: Connect Time Delay Algorithm
+** #Link to github issue#
+** #Identify list of updates to this supplement w/ links#
+* Issue: Handling missed discovery messags
+** #Link to github issue#
+** #Identify list of updates to this supplement w/ links#
+* Issue: Info exchanged during unsecured discovery
+** #Link to github issue#
+** #Identify list of updates to this supplement w/ links#
+* Issue: What is a Central?
+** #Link to github issue#
+** #Identify list of updates to this supplement w/ links#
+* Issue: What is a Smart Alert System?
+** #Link to github issue#
+** #Identify list of updates to this supplement w/ links#
+* Issue: SDPi BICEPS Extension Namespace
+** #Link to github issue#
+** #Identify list of updates to this supplement w/ links#
+* Issue: MDIB/MDS Modeling for Device Aggregators
+** #Link to github issue#
+** #Identify list of updates to this supplement w/ links#
+* Issue: SDPi-xC with Mixed Device Safety Classes
+** #Link to github issue#
+** #Identify list of updates to this supplement w/ links#
+
 
 
 

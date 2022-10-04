@@ -1,8 +1,67 @@
 
 // = Introduction to this Supplement
 
-NOTE:  Migrate content from the Word document here
-
 [sdpi_offset=clear]
 == Introduction to this Supplement
 
+[%noheader]
+[%autowidth]
+[cols="1a"]
+|===
+|Whenever possible, IHE profiles are based on established and stable underlying standards. However, if an IHE domain determines that an emerging standard has high likelihood of industry adoption, and the standard offers significant benefits for the use cases it is attempting to address, the domain may develop IHE profiles based on such a standard. During Trial Implementation, the IHE domain will update and republish the IHE profile as the underlying standard evolves.
+
+Product implementations and site deployments may need to be updated in order for them to remain interoperable and conformant with an updated IHE profile.
+
+This <profile acronym> Profile (or This Technical Framework Supplement) is based on Release 4 of the emerging HL7^®^{empty}footnote:[HL7 is the registered trademark of Health Level Seven International.]  FHIR^®^{empty}footnote:[FHIR is the registered trademark of Health Level Seven International.]  specification. HL7 describes FHIR Change Management and Versioning at https://www.hl7.org/fhir/versions.html.
+
+HL7 provides a rating of the maturity of FHIR content based on the FHIR Maturity Model (FMM): level 0 (draft) through N (Normative). See http://hl7.org/fhir/versions.html#maturity.
+
+The FMM levels for FHIR content used in this profile are:
+
+##FIGURE OUT HOW TO MAKE THE FOLLOWING TABLE CENTERED OR INDENT OR FOLLOWING TEXT CENTERED ^ vs. Left Aligned
+##
+
+[%header]
+[width=50%]
+[cols="^2,^1"]
+!====
+.^! FHIR Content +
+(Resources, ValueSets, etc.) !FMM Level
+
+!  !
+
+!  !
+
+! <e.g., Communication ! 2>
+
+!====
+{empty} +
+
+|===
+
+
+This IHE Devices Technical Framework supplement introduces a new _family of interoperability profiles_, Service-oriented Device Point-of-care Interoperability (SDPi), that comprise (4) separate profiles:
+
+* SDPi-Plug-and-trust (SDPi-P) Profile
+* SDPi-Reporting (SDPi-R) Profile
+* SDPi-Alerting (SDPi-A) Profile
+* SDPi-external Control (SDPi-xC) Profile
+
+To that end, the supplement includes updates to all (3) IHE DEV TF volumes, including:
+
+*TF-1  Integration Profiles*
+
+* General overview of the SDPi architectural approach & integrated set of profiles
+* Profile specific sections
+* Related appendices, for example the integration of this family of SDPi profiles with other sources of requirements - use cases or reference standards
+
+*TF-2  Transactions*
+
+* Extensive new set of transactions based on ISO/IEEE 11073 Service-oriented Device Connectivity (SDC) medical device interoperability standards.
+* Related appendices, for example the specialized use of web services messaging for device communication and gateways to other protocols or profiles
+
+*TF-3  Content Modules*
+
+* New content covering the application of ISO/IEEE 11073 SDC semantic standards to device content modules, with a primary focus on specifications related to the ISO/IEEE 11073-10207 BICEPS standard.
+
+{empty} +

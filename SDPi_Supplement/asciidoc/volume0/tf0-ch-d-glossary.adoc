@@ -1,15 +1,121 @@
 
 // = TF-0 Appendix D:  Glossary
 
-NOTE:  Migrate content from the Word document here
-
-// Appendix D
-
 [appendix#vol0_appendix_d_glossary,sdpi_offset=D]
 == Glossary
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+|Add the following *_new or updated_* glossary terms to the IHE Technical Frameworks General Introduction Appendix D.
+|===
+
+##ADD REFERENCES LINKS IN TF-1 APPENDIX B TO THE DEFINITIONS SECTIONS BELOW
+##
+
+[%autowidth]
+[cols="^2,5,^1,^1"]
+|===
+|New Glossary Term |Definition |Synonyms |Acronyms / Abbreviation
+
+.^|[[term_basic_ice_protocol_specification,Basic ICE Protocol Specification (BICEPS)]] Basic ICE Protocol Specification
+| General reference to the abstract, implementation technology independent SDC components defined in the ISO/IEEE 11073-10207 standard.  (See ISO/IEEE 11073-10207)
+|
+.^| [[acronym_biceps,BICEPS]] BICEPS
+
+.^| [[term_central_station,Central Station]] Central Station
+| #See description in TF-1 Appendix C or TF-3#
+| Central
+.^|
+
+.^| [[term_clinical_system_function,Clinical System Function]] Clinical System Function
+| #See definition in ISO/IEEE 11073-20701#
+|
+.^| [[acronym_csf,CSF]] CSF
+
+.^| [[term_integratec_clinical_environment,Integrated Clinical Environment (ICE)]] Integrated Clinical Environment
+| Environment that combines interoperable heterogeneous POINT-OF-CARE (PoC) MEDICAL DEVICEs and other equipment integrated to create a medical device system for the care of a single high acuity patient. (See ISO/IEEE 11073-20701 and AAMI 2700-1).
+|
+.^| [[acronym_ice,ICE]] ICE
+
+.^| [[term_medical_data_information_base,Medical Data Information Base (MDIB)]] Medical Data Information Base
+| Structured collection of any data objects that are provided by a <<actor_somds_provider>> or <<actor_biceps_content_creator>>, including both descriptive and state information.  (See ISO/IEEE 11073-10207)
+|
+.^| [[acronym_mdib,MDIB]] MDIB
+
+.^| [[term_medical_device_interoperability,Medical Device Interoperability (MDI)]] Medical Device Interoperability
+| The application of informatics technology standards to achieve seamless and dynamic connection of #Point of Care Devices#.
+|
+.^| [[acronym_mdi,MDI]] MDI
+
+.^| [[term_plug_and_trust,Plug-and-Trust (PnT)]] Plug-and-Trust
+| The integration of an SES framework and MDI  plug-and-play technology to enable the dynamic establishment of trust between participant systems at the point of connection to a #SOMDS# network.
+| SES MDI
+.^| [[acronym_pnt,PnT]] PnT
+
+.^| [[term_point_of_care,Point of Care (PoC)]] Point of Care
+| #Where in the IHE DEV TF is this defined?#
+|
+.^| [[acronym_poc,PoC]] PoC
+
+.^| [[term_poc_cockpit,PoC Cockpit]] Point of Care Cockpit
+| #See TF-1 Appendix C or TF-3 description language#
+| Cockpit
+.^|
+
+.^| [[term_point_of_care_device,Point of Care Device (PoCD)]] Point of Care Device
+| A healthcare device that is used at a point of care, typically at a patient’s clinical bedside.  May include patient-connected mobile devices, such as telemetry monitors.
+|
+.^| [[acronym_pocd,PoCD]] PoCD
+
+.^| [[term_poc_dashboard,PoC Dashboard]] Point of Care Dashboard
+| #See TF-1 Appendix C or TF-3 description language#
+| Dashboard
+.^|
+
+.^| [[term_safe_effective_secure,Safe Effective & Secure (SES)]] Safe, Effective & Secure
+| General name given to the requirements, general and specific, derived by the application of medical device and health software quality standards, including ISO 81001-1 and IEC 80001-1.
+|
+.^| [[acronym_ses,SES]] SES
+
+.^| [[term_service_oriented_device_connectivity,Service-oriented Device Connectivity (SDC)]] Service-oriented Device Connectivity
+| Application of service-oriented architecture to support healthcare device interoperability. (See ISO/IEEE 11073-20701)
+|
+.^| [[acronym_sdc,SDC]] SDC
+
+.^| [[term_service_oriented_device_poc_interoperability,Service-oriented Device Point of Care Interoperability (SDPi)]] Service-oriented Device Point of Care Interoperability
+| ## Add description from Supplement Introduction or other section ###
+|
+.^| SDPi
+
+.^| [[term_service_oriented_medical_device_system,Service-oriented Medical Device System (SOMDS)]] Service-oriented Medical Device System
+| A point-of-care system of products that
+implements a service-oriented #SDC# architecture composed of service providers and service consumers. (See ISO/IEEE 11073-10207)
+|
+.^| [[acronym_somds,SOMDS]] SOMDS
+
+.^| [[term_smart_alarm_system,Smart Alarm System (SAS)]] Smart Alarm System
+| #See TF-1 Appendix C or TF-3 description language#
+|
+.^| [[acronym_sas,SAS]] SAS
+
+.^| [[term_system_function_contribution,System Function Contribution (SFC)]] System Function Contribution
+| A detailed specification of the capabilities of a #SOMDS# network participant
+|
+.^| [[acronym_sfc,SFC]] SFC
+
+.^| ...
+| ...
+| ...
+.^| ...
+
+|===
+
+##THE FOLLOWING DEFINITIONS SHOULD GO SOMEWHERE - IN GLOSSARY OR OTHER IHE DEV TF LOCATION???
+##
 
 [[property_somds_provider_uid]]SOMDS Provider UID:: A globally unique identifier for a <<actor_somds_provider>> that is stable across re-initializations.
 [[property_discovery_scope]]Discovery Scope:: A set of zero to many identifiers that allows for organizing <<actor_somds_provider>>s into logical groups.
 
-ADD:  Glossary definitions from the Word document
 
