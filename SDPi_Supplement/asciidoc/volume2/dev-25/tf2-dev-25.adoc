@@ -5,7 +5,7 @@
 ==== Scope
 [sdpi_transaction#transaction-dev-25,actors='actor-somds-provider actor-somds-consumer',figure=vol2-figure-dev-25-sequence,messages='message-discover-biceps-services']
 
-This transaction is used to exchange the resources metadata between a <<actor_somds_provider>> and a <<actor-somds-consumer>>.
+This transaction is used to exchange the resources metadata between a <<actor_somds_provider>> and a <<actor_somds_consumer>>.
 
 ==== Actor Roles
 
@@ -15,10 +15,10 @@ This transaction is used to exchange the resources metadata between a <<actor_so
 |Actor |Roles
 
 |<<actor_somds_consumer>>
-| Asks for the resource representation of the <<actor_somds_provider>> via the <<message-discover-biceps-services>> messages.
+| Asks for the resource representation of the <<actor_somds_provider>> via the <<vol2_clause_dev_25_message_get_metadata>> messages.
 
 |<<actor_somds_provider>>
-| Sends its resource representation to the <<actor-somds-consumer>> via the <<message-response-discover-biceps-services>> messages.
+| Sends its resource representation to the <<actor_somds_consumer>> via the <<vol2_clause_dev_25_message_get_metadata_response>> messages.
 
 |===
 
@@ -36,34 +36,33 @@ include::../../plantuml/vol2-figure-dev-25-sequence.puml[]
 
 [#vol2_clause_dev_25_message_get_metadata]
 ===== GetMetadata Message
-The TransferGet message is used for a <<actor-somds-consumer>> to ask for the resource representation data for a <<actor_somds_provider>>.
+The GetMetadata message is used by a <<actor_somds_consumer>> to request the resource representation data of a <<actor_somds_provider>>.
 
 ====== Trigger Events
-This message is sent if a <<actor-somds-consumer>> has an endpoint reference and transport address for a <<actor_somds_provider>>.
+This message is sent when a <<actor_somds_consumer>> has discovered a <<property_transport_address>> for a <<actor_somds_provider>>.
 
 ====== Expected Actions
-When a <<actor-somds-consumer>> sends this message, the TransferGetResponse message is expected as a response.
+When a <<actor_somds_consumer>> sends this message, the <<vol2_clause_dev_25_message_get_metadata_response, GetMetadataResponse>> message is expected as a response.
 
 [#vol2_clause_dev_25_message_get_metadata_response]
 ===== GetMetadataResponse Message
-The GetMetadataResponse message is the response of the GetMetadata message which includes the ThisDevice metadata for a <<actor_somds_provider>>.
+The GetMetadataResponse message is sent in response to an incoming <<vol2_clause_dev_25_message_get_metadata, GetMetadata>> message.
 
 ====== Trigger Events
-This message is sent when a <<actor-somds-consumer>> requests the transfer of the resource representation.
-
+The GetMetadataResponse message is sent whenever a <<actor_somds_provider>> receives a <<vol2_clause_dev_25_message_get_metadata, GetMetadata>> message.
 
 ====== Message Semantics
 [[payload_dev_25_get_metadata_biceps_services]]BICEPS Services:: Collection of BICEPS services the <<actor_somds_provider>> offers.
-[#message-semantics-discover-biceps-services-device]
+[#message_semantics_discover_biceps_services_device]
 Device Metadata:: Expresses <<actor_somds_provider>> characteristics that typically vary from one <<actor_somds_provider>> to another of the same kind, e.g.:
-* Friendly Name
-* FirmwareVersion
-* SerialNumber
+* Friendly name
+* Firmware version
+* Serial number
 [#message_semantics_discover_biceps_services_model]
 Model Metadata:: Expresses <<actor_somds_provider>> characteristics that are typically fixed across all <<actor_somds_provider>>s of the same model by their manufacturer, e.g.:
 * Manufacturer
-* ModelName
-* ModelNumber
+* Model name
+* Model number
 
 ====== Expected Actions
 When a <<actor_somds_provider>> sends this message, there is no expected or required response.

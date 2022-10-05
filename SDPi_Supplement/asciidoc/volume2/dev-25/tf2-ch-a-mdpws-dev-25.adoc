@@ -3,9 +3,9 @@
 [#vol2-clause-appendix-mdpws-dev-25]
 ==== MDPWS: Discover BICEPS Services [DEV-25]
 
-===== TransferGet Message
+===== GetMetadata Message
 
-The TransferGet message is encoded by using {var_uri_ws_discovery_transfer}[WS-Get].
+The GetMetadata message is encoded by using {var_uri_ws_discovery_transfer}[WS-Get].
 
 ====== Referenced Standards
 
@@ -13,18 +13,18 @@ The TransferGet message is encoded by using {var_uri_ws_discovery_transfer}[WS-G
 * <<dpws-2009>> {var_uri_dpws}[Section 4]
 
 ====== Message Outline
-.TransferGet message
+.GetMetadata message
 [source#vol2_clause_appendix_a_mdpws_dev_25_transfer_get,xml]
 ----
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-25-transfer-get.xml[]
 ----
 
 ====== Message Semantics
-The TransferGet message does not contain any further semantics.
+The GetMetadata message does not contain any further semantics.
 
-===== TransferGetResponse
+===== GetMetadataResponse Message
 
-The TransferGetResponse message is encoded by using {var_uri_ws_discovery_transfer}[WS-Get].
+The GetMetadataResponse message is encoded by using {var_uri_ws_discovery_transfer}[WS-Get].
 
 ====== Referenced Standards
 
@@ -32,7 +32,7 @@ The TransferGetResponse message is encoded by using {var_uri_ws_discovery_transf
 * <<dpws-2009>> {var_uri_dpws}[Section 4]
 
 ====== Message Outline
-.TransferGetResponse message
+.GetMetadataResponse message
 [source#vol2_clause_appendix_a_mdpws_dev_25_transfer,xml]
 ----
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-25-transfer-response.xml[]
@@ -40,7 +40,7 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-25-transfer-response.xm
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/wsm:Metadata/wsm:MetadataSection/dpws:ThisModel`:: The <<actor_somds_provider>>'s maps to the <<message-semantics-discover-biceps-services-model>> metadata.
+`s12:Envelope/s12:Body/wsm:Metadata/wsm:MetadataSection/dpws:ThisModel`:: The <<actor_somds_provider>>'s maps to the <<message_semantics_discover_biceps_services_model>> metadata.
 
-`s12:Envelope/s12:Body/wsm:Metadata/wsm:MetadataSection/dpws:ThisDevice`:: The <<actor_somds_provider>>'s maps to the <<message-semantics-discover-biceps-services-device>> metadata.
+`s12:Envelope/s12:Body/wsm:Metadata/wsm:MetadataSection/dpws:ThisDevice`:: The <<actor_somds_provider>>'s maps to the <<message_semantics_discover_biceps_services_device>> metadata.
 
