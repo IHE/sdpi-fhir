@@ -1,0 +1,125 @@
+:var_uri_ws_discovery_probe: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231831
+:var_uri_ws_discovery_probe_match: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231835
+:var_uri_ws_discovery_resolve: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231840
+:var_uri_ws_discovery_resolve_match: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231844
+:var_uri_dpws_discovery: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672091
+
+[#vol2_clause_appendix_mdpws_dev_24]
+==== MDPWS: Discovery Network Topology [DEV-24]
+
+
+// ---------- PROBE ---------
+
+
+===== {var_label_dev_24_message_probe} Message
+
+The <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> message is encoded by using {var_uri_ws_discovery_probe}[WS-Discovery Probe].
+
+====== Referenced Standards
+
+* <<ws_discovery_2009>> {var_uri_ws_discovery_probe}[Section 5.2 Probe]
+* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+
+====== Message Outline
+
+.WS-Discovery Probe message
+[source#vol2_clause_appendix_a_mdpws_dev_24_probe,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-probe.xml[]
+----
+
+====== Message Semantics
+
+#TODO Default wsd:Scopes/@MatchBy is http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/rfc3986, which is partly broken; fix it here or always use strcmp?#
+
+#TODO Allow for multiple MatchBy or only use one, two, many?#
+
+`s12:Envelope/s12:Body/wsd:Probe/wsa:Types`:: List that contains at least `mdpws:MedicalDevice` to express seeking <<actor_somds_provider>>s that conform to MDPWS.
+`s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes/@MatchBy`:: The algorithm used to compare the `s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes` against the <<actor_somds_provider>>'s scopes.
+`s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes`:: The <<payload_dev_24_probe_discovery_scope>> as a list of URIs to probe for.
+
+
+// ---------- PROBE MATCH ---------
+
+
+===== {var_label_dev_24_message_probe_match} Message
+
+The <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> message is encoded by using {var_uri_ws_discovery_probe_match}[WS-Discovery Probe Match].
+
+====== Referenced Standards
+
+* <<ws_discovery_2009>> {var_uri_ws_discovery_probe_match}[Section 5.3 Probe Match]
+* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+
+====== Message Outline
+
+.WS-Discovery Probe Match message
+[source#vol2_clause_appendix_a_mdpws_dev_24_probe_match,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-probe-match.xml[]
+----
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/wsd:ProbeMatches`:: In case where multiple <<actor_somds_provider>>s are running on a single machine, `wsd:ProbeMatches` can contain multiple `wsd:ProbeMatch` results.
+`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:ProbeMatch/wsa:EndpointReference/wsa:Address`:: The <<actor_somds_provider>>'s <<property_somds_provider_uid>> encoded as URI.
+`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:Types`:: List of types that contains at least `dpws:Device` and mdpws:MedicalDevice`, which expresses the <<actor_somds_provider>> to conform to DPWS and MDPWS.
+`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:Scopes`:: The <<property_discovery_scope>> of the <<actor_somds_provider>>, encoded as a list of URIs.
+`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:XAddrs`:: A list of HTTPS addresses under which the <<actor_somds_provider>> receives secured messages.
+`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:MetadataVersion`:: A metadata version of the <<actor_somds_provider>>. To be ignored as the transmission of the Probe Match message is unsecure.
+
+
+// ---------- RESOLVE ---------
+
+
+===== {var_label_dev_24_message_resolve} Message
+
+The <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message is encoded by using {var_uri_ws_discovery_resolve}[WS-Discovery Resolve].
+
+====== Referenced Standards
+
+* <<ws_discovery_2009>> {var_uri_ws_discovery_resolve}[Section 6.2 Resolve]
+* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+
+====== Message Outline
+
+.WS-Discovery Resolve message
+[source#vol2_clause_appendix_a_mdpws_dev_24_resolve,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-resolve.xml[]
+----
+
+====== Message Semantics
+
+#TODO Should the address be RFC3981 compared or just strcmp0?#
+
+`s12:Envelope/s12:Body/wsd:Resolve/wsa:EndpointReference/wsa:Address`:: The <<payload_dev_24_provider_uid>> to resolve, encoded as URI.
+
+
+// ---------- RESOLVE MATCH ---------
+
+
+===== {var_label_dev_24_message_resolve_match} Message
+
+The <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_resolve_match}>> message is encoded by using {var_uri_ws_discovery_resolve_match}[WS-Discovery Resolve Match].
+
+====== Referenced Standards
+
+* <<ws_discovery_2009>> {var_uri_ws_discovery_resolve_match}[Section 6.3 Resolve Match]
+* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+
+====== Message Outline
+
+.WS-Discovery Resolve Match message
+[source#vol2_clause_appendix_a_mdpws_dev_24_resolve_match,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-resolve-match.xml[]
+----
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:ResolveMatch/wsa:EndpointReference/wsa:Address`:: The <<actor_somds_provider>>'s <<property_somds_provider_uid>> encoded as URI.
+`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:Types`:: List of types that contains at least `dpws:Device` and mdpws:MedicalDevice`, which expresses the <<actor_somds_provider>> to conform to DPWS and MDPWS.
+`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:Scopes`:: The <<property_discovery_scope>> of the <<actor_somds_provider>>, encoded as a list of URIs.
+`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:XAddrs`:: A list of HTTPS addresses under which the <<actor_somds_provider>> receives secured messages.
+`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:MetadataVersion`:: A metadata version of the <<actor_somds_provider>>. To be ignored as the transmission of the Resolve Match message is unsecure.
