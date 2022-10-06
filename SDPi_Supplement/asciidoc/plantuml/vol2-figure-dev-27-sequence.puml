@@ -29,6 +29,6 @@ alt consumer decides to quit subscription
     consumer -> provider: Unsubscribe(Subscription Manager)
     consumer <-- provider: UnsubscribeResponse()
 else provider decides to quit subscription
-    consumer <- provider: SubscriptionEnd(Subscription Manager)
+    consumer <- provider: SubscriptionEnd(Subscription Manager, Status)
 end
 @enduml

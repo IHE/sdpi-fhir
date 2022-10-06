@@ -17,8 +17,8 @@
                     <wsa:Address><!-- ... --></wsa:Address>
                 </wse:NotifyTo>
             </wse:Delivery>
-            <wse:Expires><!-- ... --></wse:Expires> <!-- PT1M -->
-            <wse:Filter Dialect="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01/Action"><!-- ... --></wse:Filter>
+            <wse:Expires><!-- ... --></wse:Expires>
+            <wse:Filter Dialect="..."><!-- ... --></wse:Filter>
         </wse:Subscribe>
     </s12:Body>
 </s12:Envelope>

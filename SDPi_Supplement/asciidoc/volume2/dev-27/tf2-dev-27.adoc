@@ -27,10 +27,16 @@ This transaction is used to establish a publish-subscribe session between a <<ac
 |Actor |Roles
 
 |<<actor_somds_consumer>>
-|Initiates communication by first subscribing to a <<actor_somds_provider>> sending <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}>> and . Then keeps alive  or <<vol2_clause_dev_27_message_renew, {var_label_dev_27_message_renew}>> messages to <<actor_somds_provider>>s. Then listens for <<vol2_clause_dev_27_message_subscribe_response, {var_label_dev_27_message_subscribe_response}>> and <<vol2_clause_dev_27_message_renew_response, {var_label_dev_27_message_renew_response}>> messages to discover those <<actor_somds_provider>>s that it intends to exchange messages with and further retrieves the <<actor_somds_provider>>'s service capabilities.
+|Initiates communication by first subscribing to a <<actor_somds_provider>> by sending a <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}>> message. While the subscription is running, the subscription is kept alive by sending <<vol2_clause_dev_27_message_renew, {var_label_dev_27_message_renew}>> messages and <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages are being received.
+
+Finally, the <<actor_somds_consumer>> unsubscribes from a <<actor_somds_provider>> by sending an <<vol2_clause_dev_27_message_unsubscribe, {var_label_dev_27_message_unsubscribe}>> message.
 
 |<<actor_somds_provider>>
-|Listens for <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}>> and <<vol2_clause_dev_27_message_renew, {var_label_dev_27_message_renew}>> messages, which it responds to with <<vol2_clause_dev_27_message_subscribe_response, {var_label_dev_27_message_subscribe_response}>> or <<vol2_clause_dev_27_message_renew_response, {var_label_dev_27_message_renew_response}>> messages respectively.
+|Listens for <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}>>, <<vol2_clause_dev_27_message_renew, {var_label_dev_27_message_renew}>> and <<vol2_clause_dev_27_message_unsubscribe, {var_label_dev_27_message_unsubscribe}>> messages, which it responds to with <<vol2_clause_dev_27_message_subscribe_response, {var_label_dev_27_message_subscribe_response}>>, <<vol2_clause_dev_27_message_renew_response, {var_label_dev_27_message_renew_response}>> or <<vol2_clause_dev_27_message_unsubscribe_response, {var_label_dev_27_message_unsubscribe_response}>> messages respectively.
+
+While a subscription is running, the <<actor_somds_provider>> delivers <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages.
+
+When at some point the subscription has to be ended, the <<actor_somds_provider>> sends a <<vol2_clause_dev_27_message_subscription_end, {var_label_dev_27_message_subscription_end}>> message.
 
 |===
 
@@ -253,7 +259,7 @@ A {var_label_dev_27_message_subscription_end} message is sent whenever a <<actor
 ====== Message Semantics
 
 [[payload_dev_27_subscription_end_subscription_manager]]Subscription Manager:: The subscription manager that was closed.
-[[payload_dev_27_subscription_end_reason]]Reason:: A reason whether the subscription was ended.
+[[payload_dev_27_subscription_end_status]]Status:: Status that signifies the general reason for the subscription end.
 
 [#vol2_clause_dev_27_message_subscription_end_expected_actions]
 ====== Expected Actions

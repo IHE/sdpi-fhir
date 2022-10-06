@@ -1,125 +1,249 @@
-:var_uri_ws_discovery_probe: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231831
-:var_uri_ws_discovery_probe_match: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231835
-:var_uri_ws_discovery_resolve: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231840
-:var_uri_ws_discovery_resolve_match: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231844
-:var_uri_dpws_discovery: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672091
+:var_uri_ws_eventing_subscribe: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Subscribe
+:var_uri_ws_eventing_subscribe_response: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Subscribe
+:var_uri_ws_eventing_renew: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Renew
+:var_uri_ws_eventing_renew_response: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Renew
+:var_uri_ws_eventing_unsubscribe: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Unsubscribe
+:var_uri_ws_eventing_unsubscribe_response: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Unsubscribe
+:var_uri_ws_eventing_subscription_end: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Subscription_End
+:var_uri_ws_eventing_notification: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Notifications
+:var_uri_dpws_eventing: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672097
+:var_uri_xsd_duration: https://www.w3.org/TR/xmlschema-2/#duration
+:var_xsd_duration_regex: ^PT(\d+H)?(\d+M)?(\d+(.\d+)?S)?(?<!PT)$
+:var_filter_dialect_action: http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01/Action
+:var_status_delivery_failure: http://schemas.xmlsoap.org/ws/2004/08/eventing/DeliveryFailure
+:var_status_shutdown: http://schemas.xmlsoap.org/ws/2004/08/eventing/SourceShuttingDown
+:var_status_cancel: http://schemas.xmlsoap.org/ws/2004/08/eventing/SourceCancelling
 
-[#vol2_clause_appendix_mdpws_dev_24]
-==== MDPWS: Discovery Network Topology [DEV-24]
+[#vol2_clause_appendix_mdpws_dev_27]
+==== MDPWS: Manage BICEPS Subscription [DEV-27]
 
 
-// ---------- PROBE ---------
+// ---------- SUBSCRIBE ---------
 
 
-===== {var_label_dev_24_message_probe} Message
+===== {var_label_dev_27_message_subscribe} Message
 
-The <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> message is encoded by using {var_uri_ws_discovery_probe}[WS-Discovery Probe].
+The <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}>> message is encoded by using {var_uri_ws_eventing_subscribe}[WS-Eventing Subscribe].
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_discovery_probe}[Section 5.2 Probe]
-* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ws_discovery_2009>> {var_uri_ws_eventing_subscribe}[Section 3.1 Subscribe]
+* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
 
-.WS-Discovery Probe message
-[source#vol2_clause_appendix_a_mdpws_dev_24_probe,xml]
+.WS-Eventing Subscribe message
+[source#vol2_clause_appendix_a_mdpws_dev_27_subscribe,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-probe.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-subscribe.xml[]
 ----
 
 ====== Message Semantics
 
-#TODO Default wsd:Scopes/@MatchBy is http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/rfc3986, which is partly broken; fix it here or always use strcmp?#
+`s12:Envelope/s12:Body/wse:Subscribe/wse:EndTo/wsa:Address`:: HTTPS server address at which <<vol2_clause_dev_27_message_subscription_end, {var_label_dev_27_message_subscription_end}>> messages are supposed to be delivered.
+`s12:Envelope/s12:Body/wse:Subscribe/wse:Delivery/wse:NotifyTo/wsa:Address`:: HTTPS server address at which <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages are supposed to be delivered.
+`s12:Envelope/s12:Body/wse:Subscribe/wse:Expires`:: <<payload_dev_27_susbcribe_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`)
+`s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/@Dialect`:: In accordance with DPWS, support for at least `{var_filter_dialect_action}`.
+`s12:Envelope/s12:Body/wse:Subscribe/wse:Filter`:: If `s12:Envelope/s12:Body/wse:Subscribe/wse:Filter/@Dialect` is `{var_filter_dialect_action}`, <<payload_dev_27_susbcribe_filter>> is specified by a list of action URIs as defined in
+<<vol2_table_appendix_mdpws_dev_27_subscribe_filter>> that contains at least one URI. There is no normative support for other filters at the moment.
 
-#TODO Allow for multiple MatchBy or only use one, two, many?#
+.Filter mapping of BICEPS reports to action URIs
+[#vol2_table_appendix_mdpws_dev_27_subscribe_filter, cols="1,2"]
+|===
+|BICEPS report type |Action URI
 
-`s12:Envelope/s12:Body/wsd:Probe/wsa:Types`:: List that contains at least `mdpws:MedicalDevice` to express seeking <<actor_somds_provider>>s that conform to MDPWS.
-`s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes/@MatchBy`:: The algorithm used to compare the `s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes` against the <<actor_somds_provider>>'s scopes.
-`s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes`:: The <<payload_dev_24_probe_discovery_scope>> as a list of URIs to probe for.
+|DescriptionModificationReport as specified in <<ieee_11073_10207_2017>>, Annex C.5
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/DescriptionEventService/DescriptionModificationReport
+
+|EpisodicAlertReport as specified in <<ieee_11073_10207_2017>>, Annex C.11
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicAlertReport
+
+|EpisodicComponentReport as specified in <<ieee_11073_10207_2017>>, Annex C.12
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicComponentReport
+
+|EpisodicContextReport as specified in <<ieee_11073_10207_2017>>, Annex C.13
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/ContextService/EpisodicContextReport
+
+|EpisodicMetricReport as specified in <<ieee_11073_10207_2017>>, Annex C.14
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicMetricReport
+
+|EpisodicOperationalStateReport as specified in <<ieee_11073_10207_2017>>, Annex C.15
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicOperationalStateReport
+
+|OperationInvokedReport as specified in <<ieee_11073_10207_2017>>, Annex C.77
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/SetService/OperationInvokedReport
+
+|WaveformStream as specified in <<ieee_11073_10207_2017>>, Annex C.112
+|http://standards.ieee.org/downloads/11073/11073-20701-2018/WaveformService/WaveformStream
+|===
+
+// ---------- SUBSCRIBE RESPONSE ---------
 
 
-// ---------- PROBE MATCH ---------
+===== {var_label_dev_27_message_subscribe_response} Message
 
-
-===== {var_label_dev_24_message_probe_match} Message
-
-The <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> message is encoded by using {var_uri_ws_discovery_probe_match}[WS-Discovery Probe Match].
+The <<vol2_clause_dev_27_message_subscribe_response, {var_label_dev_27_message_subscribe_response}>> message is encoded by using {var_uri_ws_eventing_subscribe_response}[WS-Eventing SubscribeResponse].
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_discovery_probe_match}[Section 5.3 Probe Match]
-* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ws_discovery_2009>> {var_uri_ws_eventing_subscribe}[Section 3.1 Subscribe]
+* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
 
-.WS-Discovery Probe Match message
-[source#vol2_clause_appendix_a_mdpws_dev_24_probe_match,xml]
+.WS-Eventing SubscribeResponse message
+[source#vol2_clause_appendix_a_mdpws_dev_27_subscribe_response,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-probe-match.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-subscribe-response.xml[]
 ----
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/wsd:ProbeMatches`:: In case where multiple <<actor_somds_provider>>s are running on a single machine, `wsd:ProbeMatches` can contain multiple `wsd:ProbeMatch` results.
-`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:ProbeMatch/wsa:EndpointReference/wsa:Address`:: The <<actor_somds_provider>>'s <<property_somds_provider_uid>> encoded as URI.
-`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:Types`:: List of types that contains at least `dpws:Device` and mdpws:MedicalDevice`, which expresses the <<actor_somds_provider>> to conform to DPWS and MDPWS.
-`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:Scopes`:: The <<property_discovery_scope>> of the <<actor_somds_provider>>, encoded as a list of URIs.
-`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:XAddrs`:: A list of HTTPS addresses under which the <<actor_somds_provider>> receives secured messages.
-`s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:MetadataVersion`:: A metadata version of the <<actor_somds_provider>>. To be ignored as the transmission of the Probe Match message is unsecure.
+#Requirement that stipulates path dispatching (linkage somewhere here)#
+
+`s12:Envelope/s12:Body/wse:SubscribeResponse/wse:SubscriptionManager/wsa:Address`:: URI that serves as an access point to manage the subscription, which satisfies <<payload_dev_27_subscribe_response_subscription_manager>>.
+`s12:Envelope/s12:Body/wse:SubscribeResponse/wse:Expires`:: <<payload_dev_27_subscribe_response_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`).
 
 
-// ---------- RESOLVE ---------
+// ---------- NOTIFICATION ---------
 
 
-===== {var_label_dev_24_message_resolve} Message
+===== {var_label_dev_27_message_notification} Message
 
-The <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message is encoded by using {var_uri_ws_discovery_resolve}[WS-Discovery Resolve].
+<<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages are not constrained in general because, depending on the subscription filter, any message may be a notification.
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_discovery_resolve}[Section 6.2 Resolve]
-* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ws_discovery_2009>> {var_uri_ws_eventing_notification}[Section 4 Notifications]
+* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+
+
+// ---------- RENEW ---------
+
+
+===== {var_label_dev_27_message_renew} Message
+
+The <<vol2_clause_dev_27_message_renew, {var_label_dev_27_message_renew}>> message is encoded by using {var_uri_ws_eventing_renew}[WS-Eventing Renew].
+
+====== Referenced Standards
+
+* <<ws_discovery_2009>> {var_uri_ws_eventing_renew}[Section 3.2 Renew]
+* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
 
-.WS-Discovery Resolve message
-[source#vol2_clause_appendix_a_mdpws_dev_24_resolve,xml]
+.WS-Eventing Renew message
+[source#vol2_clause_appendix_a_mdpws_dev_27_renew,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-resolve.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-renew.xml[]
 ----
 
 ====== Message Semantics
 
-#TODO Should the address be RFC3981 compared or just strcmp0?#
-
-`s12:Envelope/s12:Body/wsd:Resolve/wsa:EndpointReference/wsa:Address`:: The <<payload_dev_24_provider_uid>> to resolve, encoded as URI.
+`s12:Envelope/s12:Body/wse:Renew/wse:Expires`:: <<payload_dev_27_renew_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`)
 
 
-// ---------- RESOLVE MATCH ---------
+// ---------- RENEW RESPONSE ---------
 
 
-===== {var_label_dev_24_message_resolve_match} Message
+===== {var_label_dev_27_message_renew_response} Message
 
-The <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_resolve_match}>> message is encoded by using {var_uri_ws_discovery_resolve_match}[WS-Discovery Resolve Match].
+The <<vol2_clause_dev_27_message_renew_response, {var_label_dev_27_message_renew_response}>> message is encoded by using {var_uri_ws_eventing_renew_response}[WS-Eventing RenewResponse].
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_discovery_resolve_match}[Section 6.3 Resolve Match]
-* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ws_discovery_2009>> {var_uri_ws_eventing_renew}[Section 3.2 Renew]
+* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
 
-.WS-Discovery Resolve Match message
-[source#vol2_clause_appendix_a_mdpws_dev_24_resolve_match,xml]
+.WS-Eventing RenewResponse message
+[source#vol2_clause_appendix_a_mdpws_dev_27_renew_response,xml]
 ----
-include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-resolve-match.xml[]
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-renew-response.xml[]
 ----
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:ResolveMatch/wsa:EndpointReference/wsa:Address`:: The <<actor_somds_provider>>'s <<property_somds_provider_uid>> encoded as URI.
-`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:Types`:: List of types that contains at least `dpws:Device` and mdpws:MedicalDevice`, which expresses the <<actor_somds_provider>> to conform to DPWS and MDPWS.
-`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:Scopes`:: The <<property_discovery_scope>> of the <<actor_somds_provider>>, encoded as a list of URIs.
-`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:XAddrs`:: A list of HTTPS addresses under which the <<actor_somds_provider>> receives secured messages.
-`s12:Envelope/s12:Body/wsd:ResolveMatches/wsd:MetadataVersion`:: A metadata version of the <<actor_somds_provider>>. To be ignored as the transmission of the Resolve Match message is unsecure.
+`s12:Envelope/s12:Body/wse:RenewResponse/wse:Expires`:: <<payload_dev_27_renew_response_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`).
+
+
+// ---------- UNSUBSCRIBE ---------
+
+
+===== {var_label_dev_27_message_unsubscribe} Message
+
+The <<vol2_clause_dev_27_message_unsubscribe, {var_label_dev_27_message_unsubscribe}>> message is encoded by using {var_uri_ws_eventing_unsubscribe}[WS-Eventing Unsubscribe].
+
+====== Referenced Standards
+
+* <<ws_discovery_2009>> {var_uri_ws_eventing_unsubscribe}[Section 3.4 Unsubscribe]
+* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+
+====== Message Outline
+
+.WS-Eventing Unsubscribe message
+[source#vol2_clause_appendix_a_mdpws_dev_27_unsubscribe,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-unsubscribe.xml[]
+----
+
+====== Message Semantics
+
+The WS-Eventing RenewResponse message does not contain any further semantics.
+
+
+// ---------- UNSUBSCRIBE RESPONSE ---------
+
+
+===== {var_label_dev_27_message_unsubscribe_response} Message
+
+The <<vol2_clause_dev_27_message_unsubscribe_response, {var_label_dev_27_message_unsubscribe_response}>> message is encoded by using {var_uri_ws_eventing_unsubscribe_response}[WS-Eventing UnsubscribeResponse].
+
+====== Referenced Standards
+
+* <<ws_discovery_2009>> {var_uri_ws_eventing_unsubscribe_response}[Section 3.4 Unsubscribe]
+* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+
+====== Message Outline
+
+.WS-Eventing UnsubscribeResponse message
+[source#vol2_clause_appendix_a_mdpws_dev_27_unsubscribe_response,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-unsubscribe-response.xml[]
+----
+
+====== Message Semantics
+
+The WS-Eventing UnsubscribeResponse message does not contain any further semantics.
+
+
+// ---------- SUBSCRIPTION END ---------
+
+
+===== {var_label_dev_27_message_subscription_end} Message
+
+The <<vol2_clause_dev_27_message_subscription_end, {var_label_dev_27_message_subscription_end}>> message is encoded by using {var_uri_ws_eventing_subscription_end}[WS-Eventing Subscription End].
+
+====== Referenced Standards
+
+* <<ws_discovery_2009>> {var_uri_ws_eventing_subscription_end}[Section 3.5 Subscription End]
+* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+
+====== Message Outline
+
+.WS-Eventing SubscriptionEnd message
+[source#vol2_clause_appendix_a_mdpws_dev_27_renew_response,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-subscription-end.xml[]
+----
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/wse:SubscriptionEnd/wse:SubscriptionManager/wsa:Address`:: <<payload_dev_27_renew_response_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`).
+`s12:Envelope/s12:Body/wse:SubscriptionEnd/wse:Status`:: <<payload_dev_27_subscription_end_status>> which is encoded in accordance with WS-Eventing to one of {var_status_delivery_failure}, {var_status_shutdown} or {var_status_cancel}.
+
+// cleanup of variables where the likelihood of ambiguity is increased
+:!var_status_delivery_failure:
+:!var_status_shutdown:
+:!var_status_cancel:
