@@ -19,7 +19,6 @@
             </wse:Delivery>
             <wse:Expires><!-- ... --></wse:Expires> <!-- PT1M -->
             <wse:Filter Dialect="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01/Action"><!-- ... --></wse:Filter>
-            <!-- http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicAlertReport http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicComponentReport http://standards.ieee.org/downloads/11073/11073-20701-2018/ContextService/EpisodicContextReport http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicMetricReport http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicOperationalStateReport http://standards.ieee.org/downloads/11073/11073-20701-2018/DescriptionEventService/DescriptionModificationReport http://standards.ieee.org/downloads/11073/11073-20701-2018/SetService/OperationInvokedReport http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/SystemErrorReport http://standards.ieee.org/downloads/11073/11073-20701-2018/WaveformService/WaveformStream -->
         </wse:Subscribe>
     </s12:Body>
 </s12:Envelope>
