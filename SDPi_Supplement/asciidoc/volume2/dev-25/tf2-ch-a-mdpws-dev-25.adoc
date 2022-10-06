@@ -1,5 +1,5 @@
 :var_uri_ws_discovery_transfer: https://www.w3.org/Submission/2006/SUBM-WS-Transfer-20060927/#Get
-:var_uri_dpws: http://docs.oasis-open.org/ws-dd/dpws/wsdd-dpws-1.1-spec.html
+:var_uri_dpws: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672092
 [#vol2-clause-appendix-mdpws-dev-25]
 ==== MDPWS: Discover BICEPS Services [DEV-25]
 
@@ -9,8 +9,8 @@ The GetMetadata message is encoded by using {var_uri_ws_discovery_transfer}[WS-G
 
 ====== Referenced Standards
 
-* <<ws-transfer-2006>> {var_uri_ws_discovery_transfer}[Section 3.1 Get]
-* <<dpws-2009>> {var_uri_dpws}[Section 4]
+* <<ws_transfer_2006>> {var_uri_ws_discovery_transfer}[Section 3.1 Get]
+* <<dpws_2009>> {var_uri_dpws}[Section 4]
 
 ====== Message Outline
 .GetMetadata message
