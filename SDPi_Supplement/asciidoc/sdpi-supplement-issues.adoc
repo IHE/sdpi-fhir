@@ -4,7 +4,7 @@
 #FOR A FORMAT EXAMPLE SEE https://profiles.ihe.net/ITI/BALP/issues.html#
 
 [sdpi_offset=clear]
-== SDPi "Topic of Interest" Issue Management
+=== SDPi "Topic of Interest" Issue Management
 
 #PROVIDE AN OVERVIEW OF HOW SDPI ISSUES ToI are managed and lined below; include a reference to the wiki article on co-working#
 
