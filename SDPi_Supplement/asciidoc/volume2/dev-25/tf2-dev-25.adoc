@@ -15,16 +15,16 @@ This transaction is used to exchange the resources metadata between a <<actor_so
 |Actor |Roles
 
 |<<actor_somds_consumer>>
-| Asks for the resource representation of the <<actor_somds_provider>> via the <<vol2_clause_dev_25_message_get_metadata>> messages.
+| Asks for the resource representation of the <<actor_somds_provider>> via the <<vol2_clause_dev_25_message_get_metadata, GetMetadata>> messages.
 
 |<<actor_somds_provider>>
-| Sends its resource representation to the <<actor_somds_consumer>> via the <<vol2_clause_dev_25_message_get_metadata_response>> messages.
+| Sends its resource representation to the <<actor_somds_consumer>> via the <<vol2_clause_dev_25_message_get_metadata_response, GetMetadataResponse>> messages.
 
 |===
 
 ==== Referenced Standards
 
-* <<ieee-11073-10207-2017>> Section 9 Discovery Model
+* <<ieee_11073_10207_2017>> Section 9 Discovery Model
 
 ==== Messages
 .Message Interaction Diagram DEV-25
