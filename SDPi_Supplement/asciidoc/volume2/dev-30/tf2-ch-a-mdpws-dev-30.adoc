@@ -1,0 +1,52 @@
+:var_uri_dpws_messaging: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672084
+
+[#vol2_clause_appendix_mdpws_dev_30]
+==== MDPWS: Retrieve BICEPS Content [DEV-30]
+
+
+// ---------- Get Mdib ---------
+
+
+===== {var_label_dev_30_message_getmdib} Message
+
+The <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+
+====== Referenced Standards
+
+* <<dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+
+====== Message Outline
+
+.GetMdib message
+[source#vol2_clause_appendix_a_mdpws_dev_30_getmdib,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-30-getmdib.xml[]
+----
+
+====== Message Semantics
+
+The <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message does not contain any further semantics.
+
+// ---------- Get Mdib Response ---------
+
+===== {var_label_dev_30_message_getmdibresponse} Message
+
+The <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+
+====== Referenced Standards
+
+* <<dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+
+====== Message Outline
+
+.GetMdibResponse message
+[source#vol2_clause_appendix_a_mdpws_dev_30_getmdibresponse,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-30-getmdibresponse.xml[]
+----
+
+====== Message Semantics
+
+#TODO#
+
+

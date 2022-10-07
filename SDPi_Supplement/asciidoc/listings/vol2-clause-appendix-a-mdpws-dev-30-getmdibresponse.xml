@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><s12:Envelope
+        xmlns:s12="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:pm="http://standards.ieee.org/downloads/11073/11073-10207-2017/participant"
+        xmlns:msg="http://standards.ieee.org/downloads/11073/11073-10207-2017/message"
+        xmlns:wsa="http://www.w3.org/2005/08/addressing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <s12:Header>
+        <wsa:Action>http://standards.ieee.org/downloads/11073/11073-20701-2018/GetService/GetMdibResponse</wsa:Action>
+        <wsa:MessageID><!-- ... --></wsa:MessageID>
+        <wsa:RelatesTo><!-- ... --></wsa:RelatesTo>
+    </s12:Header>
+    <s12:Body>
+        <msg:GetMdibResponse MdibVersion="..." SequenceId="..." InstanceId="...">
+            <msg:Mdib MdibVersion="..." SequenceId="..." InstanceId="...">
+                <pm:MdDescription DescriptionVersion="...">
+                    <pm:Mds Handle="..." DescriptorVersion="..." SafetyClassification="Inf">
+                        <pm:Type Code="...">
+                            <pm:ConceptDescription Lang="...S"><!-- ... --></pm:ConceptDescription>
+                        </pm:Type>
+                        <pm:AlertSystem SelfCheckPeriod="..." Handle="..." DescriptorVersion="..." SafetyClassification="Inf">
+                            <pm:AlertCondition Kind="Phy" Priority="Me" Handle="..." DescriptorVersion="..." SafetyClassification="Inf">
+                                <pm:Type Code="...">
+                                    <pm:ConceptDescription Lang="..."><!-- ... --></pm:ConceptDescription>
+                                </pm:Type>
+                                <pm:Source>...</pm:Source>
+                            </pm:AlertCondition>
+                            <pm:AlertSignal ConditionSignaled="..." Manifestation="Aud" Latching="false" Handle="..." DescriptorVersion="..." SafetyClassification="Inf"/>
+                        </pm:AlertSystem>
+                        <pm:Sco Handle="..." DescriptorVersion="...">
+                            <pm:Operation xsi:type="pm:ActivateOperationDescriptor" OperationTarget="..." MaxTimeToFinish="..." Retriggerable="true" Handle="..." DescriptorVersion="..." SafetyClassification="Inf">
+                            </pm:Operation>
+                        </pm:Sco>
+                        <pm:MetaData/>
+                        <pm:SystemContext Handle="..." DescriptorVersion="...">
+                            <pm:PatientContext Handle="..." DescriptorVersion="..."/>
+                            <pm:LocationContext Handle="..." DescriptorVersion="..."/>
+                        </pm:SystemContext>
+                        <pm:Clock Handle="..." DescriptorVersion="...">
+                        </pm:Clock>
+                        <pm:Vmd Handle="..." DescriptorVersion="..." SafetyClassification="Inf">
+                            <pm:Type Code="...">
+                                <pm:ConceptDescription Lang="..."><!-- ... --></pm:ConceptDescription>
+                            </pm:Type>
+                            <pm:AlertSystem SelfCheckPeriod="..." Handle="..." DescriptorVersion="..." SafetyClassification="Inf">
+                            </pm:AlertSystem>
+                            <pm:Sco Handle="..." DescriptorVersion="..."/>
+                            <pm:Channel Handle="..." DescriptorVersion="..." SafetyClassification="Inf">
+                                <pm:Type Code="...">
+                                    <pm:ConceptDescription Lang="..."><!-- ... --></pm:ConceptDescription>
+                                </pm:Type>
+                                <pm:Metric xsi:type="pm:NumericMetricDescriptor" Resolution="..." MetricCategory="Set" MetricAvailability="Intr" Handle="..." DescriptorVersion="..." SafetyClassification="Inf">
+                                    <pm:Type Code="...">
+                                        <pm:ConceptDescription Lang=".."><!-- ... --></pm:ConceptDescription>
+                                    </pm:Type>
+                                    <pm:Unit Code="...">
+                                        <pm:ConceptDescription Lang="..."><!-- ... --></pm:ConceptDescription>
+                                    </pm:Unit>
+                                    <pm:TechnicalRange Lower="..." Upper="..." StepWidth="..."/>
+                                </pm:Metric>
+                            </pm:Channel>
+                        </pm:Vmd>
+                    </pm:Mds>
+                </pm:MdDescription>
+                <pm:MdState StateVersion="...">
+                    <pm:State xsi:type="pm:MdsState" Lang="..." OperatingMode="Nml" StateVersion="..." DescriptorHandle="..." DescriptorVersion="..."/>
+                </pm:MdState>
+            </msg:Mdib>
+        </msg:GetMdibResponse>
+    </s12:Body>
+</s12:Envelope>

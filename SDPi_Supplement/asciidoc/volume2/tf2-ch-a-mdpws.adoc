@@ -26,7 +26,8 @@ include::dev-24/tf2-ch-a-mdpws-dev-24.adoc[]
 //=== Publish BICEPS Update Reports [DEV-29]
 //
 //=== Retrieve BICEPS Content [DEV-30]
-//
+include::dev-30/tf2-ch-a-mdpws-dev-30.adoc[]
+
 //=== Retrieve Localization Information [DEV-33]
 //
 //=== Announce Network Departure [DEV-34]
