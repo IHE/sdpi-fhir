@@ -2,3 +2,5 @@
 :var_ihe_tf-2_short: IHE PCD TF-2
 :var_sdc_std_10207: ISO/IEEE 11073-10207, Health informatics - Personal health device communication - Part 10207, Domain information and service model for service-oriented point-of-care medical device communication
 :var_sdc_std_10700: P11073-10700™/D7 Draft Standard for Health Informatics – Device Interoperability – Part 10700: Point-of-Care Medical Device Communication – Standard for Base Requirements for Participants in a Service-Oriented Device Connectivity (SDC) System
+:var_sdc_std_10701: P11073-10701™/D4 Draft Standard for Health Informatics – Device Interoperability – Part 10701: Point-of-Care Medical Device Communication - Metric Provisioning by Participants in a Service-Oriented Device Connectivity (SDC) System
+:var_sdc_std_10702: P11073-10702™/D1 Draft Standard for Health Informatics – Device Interoperability – Part 10702: Point-of-Care Medical Device Communication – Alert Provisioning by Participants in a Service-Oriented Device Connectivity (SDC) System

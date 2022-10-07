@@ -293,4 +293,6 @@ The PID-33 field shall contain the date & time of last patient context update. T
 
 #Todo: how can the last update time be determined in SDC?#
 
+#Todo: shall height and weight from the CoreData be mapped to an OBX field?#
+
 
