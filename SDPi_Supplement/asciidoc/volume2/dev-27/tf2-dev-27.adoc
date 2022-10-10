@@ -157,7 +157,7 @@ The {var_label_dev_27_message_renew} message is sent as part of the BICEPS publi
 [#vol2_clause_dev_27_message_renew_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_27_message_renew} message is sent whenever a subscription is about to expire according to <<payload_dev_27_subscribe_response_expiration_time>> or <<payload_dev_27_renew_response_expiration_time>> respectively.
+The {var_label_dev_27_message_renew} message is sent whenever a subscription is about to expire according to the subscribe response <<payload_dev_27_subscribe_response_expiration_time>> or renew response <<payload_dev_27_renew_response_expiration_time>> respectively.
 
 [#vol2_clause_dev_27_message_renew_message_semantics]
 ====== Message Semantics
