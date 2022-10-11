@@ -1,24 +1,22 @@
-include::tf2-ch-b-gateway-global-vars.adoc[]
-
-=== PV1 - Patient Visit Segment
+===== PV1 - Patient Visit Segment
 The HL7 Patient Visit (PV1) segment requires a mapping from the SDC patient and location context information to the PV1 segment fields.
 
 .Prerequisite of Valid Patient & Location Context
 [NOTE#ref_valid_pt_loc_ctxt_note]
 ====
-The SDC patient and location context information shall only be mapped to the corresponding fields in the HL7 PV1 segment when the requirements (e. g. inferred patient and/or location ensemble context, associated patient and/or location context, etc.) as defined in the *{var_sdc_std_10700}* are fulfilled.
+The SDC patient and location context information shall only be mapped to the corresponding fields in the HL7 PV1 segment when the requirements (e. g. inferred patient and/or location ensemble context, associated patient and/or location context, etc.) as defined in the <<ieee_11073_10700_2022>> are fulfilled.
 
-If the SDC patient and/or location context information shall not be used for the mapping, please refer to the *{var_ihe_tf-2_short}* on how to populate the fields of the PV1 segment in this case.
+If the SDC patient and/or location context information shall not be used for the mapping, please refer to the <<ihe_pcd_tf-2_2019>> on how to populate the fields of the PV1 segment in this case.
 ====
 
-==== PV1-2 Patient Class
+====== PV1-2 Patient Class
 The PV1-2 field shall contain the code for the patient class. The *HL7 table 0004 - Patient Class* defines a set of recommended codes to be used for the data fields of the HL7 data type *IS* used in the PV1-2 field.
 
 Usually, a PoC device is used for patients admitted to a care unit in the hospital, and therefore, the field shall be set to *"I" (Inpatient)*. If the patient class is unknown, the field shall be set to *"U" (Unknown)*.
 
 #Todo: is there a way to get info about the patient class from the SDC provider? Or derive them from the device type?#
 
-==== PV1-3 Assigned Patient Location
+====== PV1-3 Assigned Patient Location
 The PV1-3 field shall contain the patient's assigned location. The table <<ref_tbl_pv13_mapping>> defines the mapping of the SDC patient location information to the data fields of the HL7 data type *PL* used in the PV1-3 field.
 
 [#ref_tbl_pv13_mapping]
@@ -74,7 +72,7 @@ The PV1-3 field shall contain the patient's assigned location. The table <<ref_t
 
 |===
 
-==== PV1-19 Visit Number
+====== PV1-19 Visit Number
 The PV1-19 field shall contain the patient's visit identifier (visit number, account number, etc.). The table <<ref_tbl_pv119_mapping>> defines the mapping of the SDC patient identifier to the data fields of the HL7 data type *CX* used in the PV1-19 field.
 
 The SDC patient identifier element *pm:PatientContextState/pm:Identification* may contain more than one patient identifier. Only the unique identifier assigned to the patient's visit shall be mapped according to the <<ref_tbl_pv119_mapping>> table.
@@ -119,9 +117,9 @@ When there is no unique visit identifier assigned to the patient's visit, the fi
 
 |===
 
-==== PV1-44 Admit Time / Date
+====== PV1-44 Admit Time / Date
 #Todo: how can the admit time / date be determined? Which admission time can a device provide - hospital admission, unit admission, device admission?#
 
-==== PV1-51 Visit Indicator
+====== PV1-51 Visit Indicator
 #Todo: can this be determined by the patient identifier type code in the Patient Context State/Identification?#
 

@@ -1,29 +1,29 @@
-include::tf2-ch-b-gateway-global-vars.adoc[]
-
-= SDPi DEC Gateway -- Mapping
+=== SDPi DEC Gateway -- Mapping
 
 NOTE:  This file contains the SDPi gateway actor (SOMDS_DEC_Gateway) logic for mapping from SDC BICEPS MDIB content and interactions with IHE DEV "PCD" DEC profile messaging.
 
-== Scope
-This chapter defines the mapping from SDC MDIB content as defined in this document and its underlying standards, to IHE Device Enterprise Communication (DEC) profile messages as defined in the *{var_ihe_tf-2_long}*.
+==== Scope
+This chapter defines the mapping from SDC MDIB content as defined in this document and its underlying standards, to IHE Device Enterprise Communication (DEC) profile messages as defined in the <<ihe_pcd_tf-2_2019>>.
 
 The SDPi gateway actor represents the Device Observation Reporter (DOR) role of the IHE DEC profile.
 
-The following sections supplement the IHE DEC profile as appropriate. If there are no supplementing definitions, the definitions as described in the *{var_ihe_tf-2_short}* will apply.
+The following sections supplement the IHE DEC profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ihe_pcd_tf-2_2019>> will apply.
 
-== Referenced Standards & Profiles
+==== Referenced Standards & Profiles
 This section provides an overview about the referenced standards and profiles used in this chapter:
 
-* {var_ihe_tf-2_long}
-* {var_sdc_std_10207}
-* {var_sdc_std_10700}
-* {var_sdc_std_10701}
+* <<ihe_pcd_tf-2_2019>>
+* <<ieee_11073_10701_2022>>
+* <<ieee_11073_10700_2022>>
+* <<ieee_11073_10207_2017>>
 
-== HL7 Segment Descriptions
-The following sections refer to the *Appendix B Common Segment Descriptions* of the *{var_ihe_tf-2_long}*.
 
-=== MSH - Message Header Segment
-The HL7 Message Header (MSH) segment does not require a specific mapping between the SDC MDIB content and the HL7 DEC profile messages. In context of this chapter, the MSH segment content shall be in compliance with the [PCD-01] transaction as described in the {var_ihe_tf-2_short}.
+
+==== HL7 Segment Descriptions
+The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ihe_pcd_tf-2_2019>>.
+
+===== MSH - Message Header Segment
+The HL7 Message Header (MSH) segment does not require a specific mapping between the SDC MDIB content and the HL7 DEC profile messages. In context of this chapter, the MSH segment content shall be in compliance with the [PCD-01] transaction as described in the <<ihe_pcd_tf-2_2019>>.
 
 #Todo: consider demo data#
 
@@ -31,23 +31,23 @@ include::tf2-ch-b-gateway-pid-mapping.adoc[]
 
 include::tf2-ch-b-gateway-pv1-mapping.adoc[]
 
-=== OBR - Observation Request Segment
+===== OBR - Observation Request Segment
 The the HL7 Obervation Request (OBR) segment requires a mapping from the SDC containment tree and metric data to the OBR segment fields.
 
-==== OBR-2 Placer Order Number
-For IHE DEC profile, the OBR-2 field shall contain the identifier of the Device Observation Reporter (DOR) of the IHE DEC gateway (not the individual device identifier). For further information, please refer to the *{var_ihe_tf-2_short}*.
+====== OBR-2 Placer Order Number
+For IHE DEC profile, the OBR-2 field shall contain the identifier of the Device Observation Reporter (DOR) of the IHE DEC gateway (not the individual device identifier). For further information, please refer to the <<ihe_pcd_tf-2_2019>>.
 
-==== OBR-3 Filler Order Number
-For the IHE DEC profile, the OBR-3 field shall contain the identifier of the Device Observation Reporter (DOR) of the IHE DEC gateway (not the individual device identifier). For further information, please refer to the *{var_ihe_tf-2_short}*.
+====== OBR-3 Filler Order Number
+For the IHE DEC profile, the OBR-3 field shall contain the identifier of the Device Observation Reporter (DOR) of the IHE DEC gateway (not the individual device identifier). For further information, please refer to the <<ihe_pcd_tf-2_2019>>.
 
-==== OBR-4 Universal Service ID
-For the IHE DEC profile, the OBR-4 field shall contain the service identifier of the device. For further information, please refer to the *{var_ihe_tf-2_short}*.
+====== OBR-4 Universal Service ID
+For the IHE DEC profile, the OBR-4 field shall contain the service identifier of the device. For further information, please refer to the <<ihe_pcd_tf-2_2019>>.
 
 #Todo: how can we map the device type to the proposed SNOMED code from the SDC information? Should we use MDC codes instead? What about the licensing issue with SNOMED code?#
 
 #Todo: special requirements for infusion pumps#
 
-==== OBR-7 Observation Date/Time
+====== OBR-7 Observation Date/Time
 The OBR-7 field shall contain the date & time of the continuously measured metrics to be exported with the same metric measurement timestamp. For episodic measurements and the absence of any continuously measured metrics for this export interval, the OBR-7 field shall be set to the oldest measurement timestamp of the episodic metrics to be exported in this interval.
 The table <<ref_tbl_dec_obr7_mapping>> defines the mapping of the SDC metric measurement timestamp to the data fields of the HL7 data type *DTM* used in the OBR-7 field.
 
@@ -80,22 +80,22 @@ Note that the HL7 date & time format differs from the xsd date/time formats and 
 
 |===
 
-==== OBR-8 Observation End Date/Time
+====== OBR-8 Observation End Date/Time
 The OBR-8 field shall not be used for the SDPi DEC gateway.
 
-==== OBR-10 Collector Identifier
+====== OBR-10 Collector Identifier
 #Todo: shall/could this field be mapped to the SDC user context?#
 
-=== OBX - Observation/Result Segment
-The the HL7 Obervation/Result (OBX) segment requires a mapping from the SDC containment tree and metric data to the OBX segment fields.
+===== OBX - Observation/Result Segment
+The the HL7 Obervation/Result (OBX) segment requires a mapping from the SDC containment tree and metric items to the OBX segment fields.
 
-#Todo: MDS/VMD/CHAN OBX tbd#
+More information about the containment tree mapping can be found in *Appendix A Mapping ISO/IEEE 11073 Domain Information Model to HL7* in the <<ihe_pcd_tf-2_2019>>
 
-==== OBX-2 Value Type
+====== OBX-2 Value Type
 The OBX-2 field shall be set to the metric value type code as define in *HL7 table 0125*. The table <<ref_tbl_dec_obx2_mapping>> defines the mapping of the SDC metric type to the data fields of the HL7 data type *ID* used in the OBX-2 field.
 
 [NOTE]
-This field shall be left empty for OBX segments defining the device containment tree information such as MDS, VMD and CHAN.
+This field shall be left empty for OBX segments defining the device's MDS, VMD, or CHAN containment tree item.
 
 [#ref_tbl_dec_obx2_mapping]
 .OBX-2 Value Type Mapping
@@ -114,4 +114,116 @@ This field shall be left empty for OBX segments defining the device containment 
 
 |===
 
-==== OBX-3 Observation Identifier
+====== OBX-3 Observation Identifier
+The OBX-3 field shall contain the identifier of the item in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric to be exported. The tables below defines the mapping of the SDC containment tree item to the data fields of the HL7 data type *CWE* used in the OBX-3 field.
+
+[#ref_tbl_dec_obx3_mds_mapping]
+.OBX-3 Observation Identifier Mapping - MDS Level
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-3/CWE-1
+|Identifier
+|pm:Mds
+/pm:Type
+/@Code
+|
+
+|OBX-3/CWE-2
+|Text
+|If *@Code* is an MDC code, this field shall contain the RefId of the MDC code.
+
+In all other cases, the field shall be set to the pm:Mds /pm:Type /@SymbolicCodeName.
+| Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field shall be set to pm:Mds /pm:Type /@CodingSystem.
+
+|Note that MDC is the default coding system if no coding system is specified.
+
+|===
+
+[#ref_tbl_dec_obx3_vmd_mapping]
+.OBX-3 Observation Identifier Mapping - VMD Level
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-3/CWE-1
+|Identifier
+|pm:Vmd
+/pm:Type
+/@Code
+|
+
+|OBX-3/CWE-2
+|Text
+|If *@Code* is an MDC code, this field shall contain the RefId of the MDC code.
+
+In all other cases, the field shall be set to the pm:Vmd /pm:Type /@SymbolicCodeName.
+| Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field shall be set to pm:Vmd /pm:Type /@CodingSystem.
+
+|Note that MDC is the default coding system if no coding system is specified.
+
+|===
+
+[#ref_tbl_dec_obx3_chan_mapping]
+.OBX-3 Observation Identifier Mapping - CHAN Level
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-3/CWE-1
+|Identifier
+|pm:Channel
+/pm:Type
+/@Code
+|
+
+|OBX-3/CWE-2
+|Text
+|If *@Code* is an MDC code, this field shall contain the RefId of the MDC code.
+
+In all other cases, the field shall be set to the pm:Channel /pm:Type /@SymbolicCodeName.
+| Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field shall be set to pm:Channel /pm:Type /@CodingSystem.
+
+|Note that MDC is the default coding system if no coding system is specified.
+
+|===
+
+[#ref_tbl_dec_obx3_metric_mapping]
+.OBX-3 Observation Identifier Mapping - Metric Level
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-3/CWE-1
+|Identifier
+|
+|
+
+|OBX-3/CWE-2
+|Text
+|
+|
+
+|OBX-3/CWE-3
+|Name of Coding System
+|
+|
+
+|===
+
+#Todo: what to use as coding system, when there is a Translation? Code is MDC but code is a private code?#
