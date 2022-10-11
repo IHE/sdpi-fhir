@@ -11,31 +11,32 @@
 |Add the following *_new or modified_* transactions to the IHE Technical Frameworks General Introduction Appendix B:
 |===
 
-##ALIGN THE CELLS BELOW + SPAN THE TOP TWO FOR NUMBER & NAME; it isn't clear IF or HOW to achieve this
-##
-
 [cols="^1,^2,3"]
 |===
 |New Transaction Number |New Transaction Name |Definition
 
 .^| DEV-23
 | Announce Network Presence
-| <<transaction_summary_dev_23>>  #TBD HOW TO REPLACE LINK WITH SUMMARY TEXT VS. LINK TEXT#
+|
+include::../volume2/dev-23/tf2-dev-23-summary.adoc[]
 
 .^|[[transaction_summary_dev_24,DEV-24 Discover Network Topology]] DEV-24
 | Discover Network Topology
-| *_TBD Summary Description from TF-2_*
+|
+include::../volume2/dev-24/tf2-dev-24-summary.adoc[]
 
 .^|[[transaction_summary_dev_25,DEV-25 Discover BICEPS Services]] DEV-25
 | Discover BICEPS Services
-| *_TBD Summary Description from TF-2_*
+|
+include::../volume2/dev-25/tf2-dev-25-summary.adoc[]
 
 .^|[[transaction_summary_dev_26,DEV-26 Discover System Context and Capabilties]] DEV-26 | Discover System Context and Capabilties
 | *_TBD Summary Description from TF-2_*
 
 .^|[[transaction_summary_dev_27,DEV-27 Manage BICEPS Subscription]] DEV-27
 | Manage BICEPS Subscription
-| *_TBD Summary Description from TF-2_*
+|
+include::../volume2/dev-27/tf2-dev-27-summary.adoc[]
 
 .^|[[transaction_summary_dev_28,DEV-28 Notify Change in System Context and Capabilities]] DEV-28
 | Notify Change in System Context and Capabilities
