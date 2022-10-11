@@ -91,7 +91,7 @@ The {var_label_dev_24_message_probe_match} message is sent whenever a <<actor_so
 ====== Message Semantics
 
 [[payload_dev_24_probe_match_provider_uid]]Provider UID:: The <<property_somds_provider_uid>>.
-[[payload_dev_24_probe_match_physical_address]]Physical Address:: The physical address under which the <<actor_somds_provider>> can receive secured messages.
+[[payload_dev_24_probe_match_physical_address]]Physical Address:: The <<property_transport_address>> under which the <<actor_somds_provider>> can receive secured messages.
 
 [#vol2_clause_dev_24_message_probe_match_expected_actions]
 ====== Expected Actions
@@ -147,7 +147,7 @@ The {var_label_dev_24_message_resolve_match} message is sent whenever a <<actor_
 ====== Message Semantics
 
 [[payload_dev_24_provider_uid]]Provider UID:: The <<property_somds_provider_uid>>.
-[[payload_dev_24_physical_address]]Physical Address:: The physical address under which the <<actor_somds_provider>> can receive secured messages.
+[[payload_dev_24_physical_address]]Physical Address:: The <<property_transport_address>> under which the <<actor_somds_provider>> can receive secured messages.
 
 [#vol2_clause_dev_24_message_resolve_match_expected_actions]
 ====== Expected Actions
