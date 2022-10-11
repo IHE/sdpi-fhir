@@ -27,6 +27,8 @@ NOTE: the following section was moved from the mothership document to here for i
 
 * [[[dpws_2009, DPWS:2009]]] Devices Profile for Web Services Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/dpws/wsdd-dpws-1.1-spec.html
 
+* [[[ws_transfer_2006, WS-Transfer:2006]]] Web Services Transfer (WS-Transfer), W3C Standard, 27 September 2006, available at https://www.w3.org/Submission/WS-Transfer/
+
 // Appendix B.3
 === IEEE Implementation Conformance Statement (ICS) Table Overview
 
