@@ -47,6 +47,10 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-30-getmdibresponse.xml[
 
 ====== Message Semantics
 
-#TODO#
+`s12:Envelope/s12:Body/msg:GetMdibResponse/msg:Mdib/pm:MdDescription`:: The <<actor_somds_provider>>'s descriptive part of the MDIB.
+
+`s12:Envelope/s12:Body/msg:GetMdibResponse/msg:Mdib/pm:MdState`:: The <<actor_somds_provider>>'s state part of the MDIB.
+
+#TODO Add a requirement that explicitly demands the transmission of context states in the response#
 
 
