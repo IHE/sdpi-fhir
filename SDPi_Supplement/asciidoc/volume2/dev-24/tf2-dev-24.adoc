@@ -13,7 +13,7 @@
 
 // [sdpi_transaction#transaction_dev_24,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_24_probe_sequence,messages='message_announce_network_presence']
 
-This transaction is used to discover and resolve all available <<actor_somds_provider>>s a <<actor_somds_consumer>> is potentially interested in.
+include::tf2-dev-24-summary.adoc[]
 
 ==== Actor Roles
 
