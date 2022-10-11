@@ -27,7 +27,7 @@ This transaction is used to establish a publish-subscribe session between a <<ac
 |Actor |Roles
 
 |<<actor_somds_consumer>>
-|Initiates communication by first subscribing to a <<actor_somds_provider>> by sending a <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}>> message. While the subscription is running, the subscription is kept alive by sending <<vol2_clause_dev_27_message_renew, {var_label_dev_27_message_renew}>> messages and <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages are being received.
+|Initiates communication by first subscribing to a <<actor_somds_provider>> by sending a <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}>> message. While the subscription is running, the subscription is kept alive by sending <<vol2_clause_dev_27_message_renew, {var_label_dev_27_message_renew}>> messages and receiving <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages.
 
 Finally, the <<actor_somds_consumer>> unsubscribes from a <<actor_somds_provider>> by sending an <<vol2_clause_dev_27_message_unsubscribe, {var_label_dev_27_message_unsubscribe}>> message.
 
