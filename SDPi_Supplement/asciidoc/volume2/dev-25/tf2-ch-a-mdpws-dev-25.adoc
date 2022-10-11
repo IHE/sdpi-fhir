@@ -28,8 +28,8 @@ The GetMetadataResponse message is encoded by using {var_uri_ws_discovery_transf
 
 ====== Referenced Standards
 
-* <<ws-transfer-2006>> {var_uri_ws_discovery_transfer}[Section 3.1 Get]
-* <<dpws-2009>> {var_uri_dpws}[Section 4]
+* <<ws_transfer_2006>> {var_uri_ws_discovery_transfer}[Section 3.1 Get]
+* <<dpws_2009>> {var_uri_dpws}[Section 4]
 
 ====== Message Outline
 .GetMetadataResponse message
@@ -41,7 +41,6 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-25-transfer-response.xm
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/wsm:Metadata/wsm:MetadataSection/dpws:ThisModel`:: The <<actor_somds_provider>>'s metadata that maps to the <<message_semantics_discover_biceps_services_model, Model Metadata>>.
-
 
 `s12:Envelope/s12:Body/wsm:Metadata/wsm:MetadataSection/dpws:ThisDevice`:: The <<actor_somds_provider>>'s metadata that maps to the <<message_semantics_discover_biceps_services_device, Device Metadata>>.
 

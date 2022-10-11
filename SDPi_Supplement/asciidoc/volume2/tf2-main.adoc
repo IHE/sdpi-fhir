@@ -16,7 +16,9 @@ include::dev-25/tf2-dev-25.adoc[]
 
 //=== Discover System Context and Capabilities [DEV-26]
 //
-//=== Manage BICEPS Subscription [DEV-27]
+// Manage BICEPS Subscription [DEV-27]
+include::dev-27/tf2-dev-27.adoc[]
+
 //
 //=== Notify Change in System Context and Capabilities [DEV-28]
 //
