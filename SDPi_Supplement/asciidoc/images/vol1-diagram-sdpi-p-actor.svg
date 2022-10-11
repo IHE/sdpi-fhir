@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1077.5609"
+   height="523.34296"
+   overflow="hidden"
+   version="1.1"
+   id="svg224"
+   sodipodi:docname="vol1-diagram-sdpi-p-actor.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview226"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     showborder="false"
+     inkscape:zoom="0.32777778"
+     inkscape:cx="494.23729"
+     inkscape:cy="202.88136"
+     inkscape:window-width="1620"
+     inkscape:window-height="1058"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg224" />
+  <defs
+     id="defs118">
+    <clipPath
+       id="clip0">
+      <rect
+         x="0"
+         y="0"
+         width="1280"
+         height="720"
+         id="rect115" />
+    </clipPath>
+  </defs>
+  <g
+     clip-path="url(#clip0)"
+     id="g222"
+     transform="translate(-146.6057,-157.83333)">
+    <rect
+       x="734.5"
+       y="285.5"
+       width="189"
+       height="77"
+       fill="#ffffff"
+       id="rect122" />
+    <path
+       d="m 734.167,285.167 h 189.666 v 77.666 H 734.167 Z m 0.666,77.333 -0.333,-0.333 h 189 l -0.333,0.333 v -77 l 0.333,0.333 h -189 l 0.333,-0.333 z"
+       id="path124" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(765.318,317)"
+       id="text128">SOMDS FHIR <tspan
+   font-size="24px"
+   x="19.666599"
+   y="29"
+   id="tspan126">Gateway</tspan></text>
+    <rect
+       x="1047.5"
+       y="207.5"
+       width="176"
+       height="129"
+       stroke="#000000"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="none"
+       id="rect130" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(1074.33,265)"
+       id="text138">Non<tspan
+   font-size="24px"
+   x="40.833401"
+   y="0"
+   id="tspan132">-</tspan><tspan
+   font-size="24px"
+   x="48.166698"
+   y="0"
+   id="tspan134">SOMDS</tspan><tspan
+   font-size="24px"
+   x="21.353399"
+   y="29"
+   id="tspan136">Systems</tspan></text>
+    <path
+       d="m 959,272 h 88.41"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-miterlimit="8"
+       stroke-dasharray="2, 2"
+       fill="none"
+       fill-rule="evenodd"
+       id="path140" />
+    <path
+       d="m 404,377 v 49.524"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-miterlimit="8"
+       fill="none"
+       fill-rule="evenodd"
+       id="path142" />
+    <rect
+       x="734.5"
+       y="373.5"
+       width="189"
+       height="77"
+       fill="#ffffff"
+       id="rect144" />
+    <path
+       d="m 734.167,373.167 h 189.666 v 77.666 H 734.167 Z m 0.666,77.333 -0.333,-0.333 h 189 l -0.333,0.333 v -77 l 0.333,0.333 h -189 l 0.333,-0.333 z"
+       id="path146" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(775.151,405)"
+       id="text150">SOMDS V2 <tspan
+   font-size="24px"
+   x="9.8333101"
+   y="29"
+   id="tspan148">Gateway</tspan></text>
+    <rect
+       x="695.5"
+       y="158.5"
+       width="264"
+       height="479"
+       stroke="#000000"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       stroke-dasharray="5.33333, 4"
+       fill="none"
+       id="rect152" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-style="italic"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(736.412,242)"
+       id="text156">SOMDS Connector <tspan
+   font-weight="400"
+   font-size="24px"
+   x="43.146702"
+   y="29"
+   id="tspan154">{abstract}</tspan></text>
+    <rect
+       x="734.5"
+       y="461.5"
+       width="189"
+       height="77"
+       fill="#ffffff"
+       id="rect158" />
+    <path
+       d="m 734.167,461.167 h 189.666 v 77.666 H 734.167 Z m 0.666,77.333 -0.333,-0.333 h 189 l -0.333,0.333 v -77 l 0.333,0.333 h -189 l 0.333,-0.333 z"
+       id="path160" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(754.818,493)"
+       id="text164">SOMDS Sensor <tspan
+   font-size="24px"
+   x="30.166599"
+   y="29"
+   id="tspan162">Gateway</tspan></text>
+    <rect
+       x="734.5"
+       y="549.5"
+       width="189"
+       height="77"
+       fill="#ffffff"
+       id="rect166" />
+    <path
+       d="m 734.167,549.167 h 189.666 v 77.666 H 734.167 Z m 0.666,77.333 -0.333,-0.333 h 189 l -0.333,0.333 v -77 l 0.333,0.333 h -189 l 0.333,-0.333 z"
+       id="path168" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(758.567,581)"
+       id="text172">SOMDS Smart <tspan
+   font-size="24px"
+   x="3.78668"
+   y="29"
+   id="tspan170">App Platform</tspan></text>
+    <rect
+       x="1047.5"
+       y="549.5"
+       width="176"
+       height="77"
+       stroke="#000000"
+       stroke-width="1.33333"
+       stroke-miterlimit="8"
+       fill="none"
+       id="rect174" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="24px"
+       transform="translate(1079.05,581)"
+       id="text178">Smart Apps<tspan
+   font-size="24px"
+   x="-4.05334"
+   y="29"
+   id="tspan176">(incl. SAMD)</tspan></text>
+    <path
+       d="m 923,587 h 124.34"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-miterlimit="8"
+       stroke-dasharray="2, 2"
+       fill="none"
+       fill-rule="evenodd"
+       id="path180" />
+    <rect
+       x="261.5"
+       y="202.5"
+       width="287"
+       height="175"
+       stroke="#000000"
+       stroke-width="0.666667"
+       stroke-miterlimit="8"
+       fill="#ffffff"
+       id="rect182" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(366.57,283)"
+       id="text190">SOMDS <tspan
+   font-size="24px"
+   x="-4.6533198"
+   y="29"
+   id="tspan184">Provider</tspan><tspan
+   font-weight="400"
+   font-size="24px"
+   x="-56.279999"
+   y="58"
+   id="tspan186">(MDIB, Services, …)</tspan><tspan
+   font-style="italic"
+   font-weight="400"
+   font-size="24px"
+   x="-81.149399"
+   y="-53"
+   id="tspan188">&lt;&lt;SOMDS Participant&gt;&gt;</tspan></text>
+    <rect
+       x="261.5"
+       y="427.5"
+       width="287"
+       height="182"
+       stroke="#000000"
+       stroke-width="0.666667"
+       stroke-miterlimit="8"
+       fill="#ffffff"
+       id="rect192" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="700"
+       font-size="24px"
+       transform="translate(313.487,512)"
+       id="text202">SOMDS Consumer<tspan
+   font-weight="400"
+   font-size="24px"
+   x="-11.5267"
+   y="29"
+   id="tspan194">(consume MDIB info,</tspan><tspan
+   font-weight="400"
+   font-size="24px"
+   x="-0.246674"
+   y="58"
+   id="tspan196">invoke services, …)</tspan><tspan
+   font-style="italic"
+   font-weight="400"
+   font-size="24px"
+   x="-25.583401"
+   y="-54"
+   id="tspan198">&lt;&lt;SOMDS Participant&gt;&gt;</tspan><tspan
+   font-style="italic"
+   font-weight="400"
+   font-size="21px"
+   x="410.258"
+   y="-317"
+   id="tspan200">&lt;&lt;SOMDS Participant&gt;&gt;</tspan></text>
+    <path
+       d="M 548,296 H 695.719"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-miterlimit="8"
+       fill="none"
+       fill-rule="evenodd"
+       id="path204" />
+    <path
+       d="M 548,522 H 695.719"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-miterlimit="8"
+       fill="none"
+       fill-rule="evenodd"
+       id="path206" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(145.01,635)"
+       id="text208">Legend:</text>
+    <path
+       d="m 163,652 h 65.024"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-miterlimit="8"
+       fill="none"
+       fill-rule="evenodd"
+       id="path210" />
+    <path
+       d="m 163,677 h 65.024"
+       stroke="#000000"
+       stroke-width="2"
+       stroke-miterlimit="8"
+       stroke-dasharray="2, 2"
+       fill="none"
+       fill-rule="evenodd"
+       id="path212" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(240.87,654)"
+       id="text220">SDC Communication<tspan
+   font-size="19px"
+   x="-0.000106812"
+   y="27"
+   id="tspan214">Non</tspan><tspan
+   font-size="19px"
+   x="31.666599"
+   y="27"
+   id="tspan216">-</tspan><tspan
+   font-size="19px"
+   x="37.333199"
+   y="27"
+   id="tspan218">SDC Communication</tspan></text>
+  </g>
+</svg>
