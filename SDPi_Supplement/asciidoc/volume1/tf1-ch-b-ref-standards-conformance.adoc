@@ -24,7 +24,11 @@ NOTE: the following section was moved from the mothership document to here for i
 ##ADD REFERENCES FROM GLOSSARY
 ##
 
-* [[[ieee_11073_10207_2017,IEEE 11073-10207:2017]]] IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2018-02, available at https://standards.ieee.org/standard/11073-10207-2017.html.  footnote:ieee_permission[]
+* [[[ieee_11073_10207_2017,IEEE 11073-10207:2017]]] IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2017-12, available at https://standards.ieee.org/ieee/11073-10207/6032 footnote:ieee_permission[]
+
+* [[[ieee_11073_20701_2018,IEEE 11073-20701:2018]]] IEEE 11073-20701-2018, Health informatics — Point-of-care medical device communication — Part 20701: Service-Oriented Medical Device Exchange Architecture and Protocol Binding, 2018-09, available at https://standards.ieee.org/ieee/11073-20701/6059
+
+* [[[ieee_11073_20702_2016,IEEE 11073-20702:2016]]] IEEE 11073-20702-2016, Health informatics — Point-of-care medical device communication — Part 20702: Medical Devices Communication Profile for Web Services, 2016-09, available at https://standards.ieee.org/ieee/11073-20702/6034
 
 * [[[ws_discovery_2009,WS-Discovery:2009]]] Web Services Dynamic Discovery (WS-Discovery) Version 1.1, OASIS Standard, 1 July 2009, available at http://docs.oasis-open.org/ws-dd/discovery/1.1/wsdd-discovery-1.1-spec.html
 

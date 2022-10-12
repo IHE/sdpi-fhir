@@ -229,6 +229,8 @@ The <<vol2_clause_dev_27_message_subscription_end, {var_label_dev_27_message_sub
 
 * <<ws_discovery_2009>> {var_uri_ws_eventing_subscription_end}[Section 3.5 Subscription End]
 * <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+* <<ieee_11073_20702_2016>>
+* <<ieee_11073_20701_2018>>
 
 ====== Message Outline
 
