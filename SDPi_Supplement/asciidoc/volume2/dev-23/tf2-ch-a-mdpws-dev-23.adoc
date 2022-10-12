@@ -4,7 +4,7 @@
 [#vol2_clause_appendix_mdpws_dev_23]
 ==== MDPWS: Announce Network Presence [DEV-23]
 
-===== AnnounceNetworkPresence Message
+===== {var_label_dev_23_message_hello} Message
 
 The {var_label_dev_23_message_hello} message is encoded by using {var_uri_ws_discovery_hello}[WS-Discovery Hello].
 
@@ -12,6 +12,8 @@ The {var_label_dev_23_message_hello} message is encoded by using {var_uri_ws_dis
 
 * <<ws_discovery_2009>> {var_uri_ws_discovery_hello}[Section 4.1 Hello]
 * <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ieee_11073_20702_2016>>
+* <<ieee_11073_20701_2018>>
 
 ===== Message Outline
 

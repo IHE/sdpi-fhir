@@ -19,6 +19,8 @@ The <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> messa
 
 * <<ws_discovery_2009>> {var_uri_ws_discovery_probe}[Section 5.2 Probe]
 * <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ieee_11073_20702_2016>>
+* <<ieee_11073_20701_2018>>
 
 ====== Message Outline
 
