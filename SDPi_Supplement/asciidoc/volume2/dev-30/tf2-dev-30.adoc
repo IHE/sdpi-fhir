@@ -19,7 +19,7 @@ This transaction is used to retrieve the MDIB of a <<actor_somds_provider>> a <<
 |Actor |Roles
 
 |<<actor_somds_consumer>>
-|Initiates communication by sending <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> messages to <<actor_somds_provider>>s. Then listens for <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> messages to retrieve the <<actor_somds_provider>>'s MDIB.
+|Initiates communication by sending a <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message to a <<actor_somds_provider>>. Then listens for a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> message to retrieve the <<actor_somds_provider>>'s MDIB.
 
 |<<actor_somds_provider>>
 |Listens for <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> messages, which it responds to with <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> messages respectively.
@@ -45,7 +45,7 @@ include::../../plantuml/vol2-figure-dev-30-sequence.puml[]
 [#vol2_clause_dev_30_message_getmdib]
 ===== {var_label_dev_30_message_getmdib} Message
 
-The {var_label_dev_30_message_getmdib} message is sent as part of the BICEPS _Get Service_ protocol for allowing <<actor_somds_consumer>>s to retrieve the description and state of an MDIB from a <<actor_somds_provider>>.
+The {var_label_dev_30_message_getmdib} message is sent as part of the BICEPS GET SERVICE for allowing <<actor_somds_consumer>>s to retrieve the description and state of an MDIB from a <<actor_somds_provider>>.
 
 [#vol2_clause_dev_30_message_getmdib_trigger_events]
 ====== Trigger Events
@@ -62,7 +62,7 @@ The {var_label_dev_30_message_getmdib} message does not contain any further sema
 [#vol2_clause_dev_30_message_getmdib_expected_actions]
 ====== Expected Actions
 
-When a <<actor_somds_consumer>> sends this message, every receiving <<actor_somds_provider>> responds with a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> message.
+When a <<actor_somds_consumer>> sends this message, the receiving <<actor_somds_provider>> responds with a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> message.
 
 
 // ---------- Get Mdib Response ---------
@@ -71,7 +71,8 @@ When a <<actor_somds_consumer>> sends this message, every receiving <<actor_somd
 [#vol2_clause_dev_30_message_getmdibresponse]
 ===== {var_label_dev_30_message_getmdibresponse} Message
 
-The {var_label_dev_30_message_getmdibresponse} message is sent as part of the BICEPS _Get Service_ protocol in response to an incoming <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message.
+The {var_label_dev_30_message_getmdibresponse} message is sent as part of the BICEPS GET SERVICE in response to an incoming <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message.
+
 
 [#vol2_clause_dev_30_message_getmdibresponse_trigger_events]
 ====== Trigger Events
