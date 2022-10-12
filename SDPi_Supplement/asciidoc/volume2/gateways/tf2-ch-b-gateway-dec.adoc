@@ -1,7 +1,5 @@
 === SDPi DEC Gateway -- Mapping
 
-NOTE:  This file contains the SDPi gateway actor (SOMDS_DEC_Gateway) logic for mapping from SDC BICEPS MDIB content and interactions with IHE DEV "PCD" DEC profile messaging.
-
 ==== Scope
 This chapter defines the mapping from SDC MDIB content as defined in this document and its underlying standards, to IHE Device Enterprise Communication (DEC) profile messages as defined in the <<ihe_pcd_tf-2_2019>>.
 
@@ -22,10 +20,7 @@ This section provides an overview about the referenced standards and profiles us
 ==== HL7 Segment Descriptions
 The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ihe_pcd_tf-2_2019>>.
 
-===== MSH - Message Header Segment
-The HL7 Message Header (MSH) segment does not require a specific mapping between the SDC MDIB content and the HL7 DEC profile messages. In context of this chapter, the MSH segment content shall be in compliance with the [PCD-01] transaction as described in the <<ihe_pcd_tf-2_2019>>.
-
-#Todo: consider demo data#
+include::tf2-ch-b-gateway-msh-mapping.adoc[]
 
 include::tf2-ch-b-gateway-pid-mapping.adoc[]
 
@@ -46,6 +41,8 @@ For the IHE DEC profile, the OBR-4 field shall contain the service identifier of
 #Todo: how can we map the device type to the proposed SNOMED code from the SDC information? Should we use MDC codes instead? What about the licensing issue with SNOMED code?#
 
 #Todo: special requirements for infusion pumps#
+
+#Todo: fallback generic device - using the device type of the MDS??#
 
 ====== OBR-7 Observation Date/Time
 The OBR-7 field shall contain the date & time of the continuously measured metrics to be exported with the same metric measurement timestamp. For episodic measurements and the absence of any continuously measured metrics for this export interval, the OBR-7 field shall be set to the oldest measurement timestamp of the episodic metrics to be exported in this interval.
@@ -84,7 +81,7 @@ Note that the HL7 date & time format differs from the xsd date/time formats and 
 The OBR-8 field shall not be used for the SDPi DEC gateway.
 
 ====== OBR-10 Collector Identifier
-#Todo: shall/could this field be mapped to the SDC user context?#
+#Todo: shall/could this field be mapped to the SDC user/operator context? -> same as patient / location context but no inferred context#
 
 ===== OBX - Observation/Result Segment
 The the HL7 Obervation/Result (OBX) segment requires a mapping from the SDC containment tree and metric items to the OBX segment fields.
@@ -93,6 +90,8 @@ More information about the containment tree mapping can be found in *Appendix A 
 
 ====== OBX-2 Value Type
 The OBX-2 field shall be set to the metric value type code as define in *HL7 table 0125*. The table <<ref_tbl_dec_obx2_mapping>> defines the mapping of the SDC metric type to the data fields of the HL7 data type *ID* used in the OBX-2 field.
+
+#OBX-4 gateway mappes the handles to numbers to ident the tree presentation#
 
 [NOTE]
 This field shall be left empty for OBX segments defining the device's MDS, VMD, or CHAN containment tree item.
@@ -227,3 +226,7 @@ In all other cases, the field shall be set to pm:Channel /pm:Type /@CodingSystem
 |===
 
 #Todo: what to use as coding system, when there is a Translation? Code is MDC but code is a private code?#
+
+====
+123455\^MDC_PRIVATE_123455^MDC\^123455^^urn:oid:1.3.6.1.4.1.3592.2.1.2.
+====

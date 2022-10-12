@@ -49,6 +49,7 @@ The SDC patient identifier element *pm:PatientContextState/pm:Identification* ma
 /@Code
 |The type of the patient identifier set in the @Code attribute must be mapped HL7 table 0203.
 #ToDo: what types does SDC support? how are the types coded?#
+Decision use 203 table
 
 |===
 
@@ -192,6 +193,8 @@ The PID-8 field shall contain the code for the administrative sex - usually the 
 
 |===
 
+#Note: we have to consider the biological and social gender. https://build.fhir.org/ig/HL7/uv-pocd/StructureDefinition-Patient.html#
+
 ====== PID-10 Race
 The PID-10 field shall contain the patient's race. The table <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race information to the data fields of the HL7 data type *CWE* used in the PID-10 field.
 
@@ -271,6 +274,8 @@ The field value shall be determined from the present of the PatientContextState 
 
 In all other cases, the value shall be set to "N".
 
+#When there is a inferred patient context, there shall be also an identification -> set to "Y"#
+
 [NOTE]
 The presence of the patient name in the *pm:PatientContextState/pm:CoreData* is optional and not a primary criteria.
 
@@ -290,7 +295,10 @@ The PID-33 field shall contain the date & time of last patient context update. T
 |===
 
 #Todo: how can the last update time be determined in SDC?#
+To Associated / disassociation on the state part, binding start/binding ending
 
 #Todo: shall height and weight from the CoreData be mapped to an OBX field?#
+
+Map it to an Observation generic height/weight
 
 

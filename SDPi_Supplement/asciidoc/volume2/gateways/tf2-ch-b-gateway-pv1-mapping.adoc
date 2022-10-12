@@ -14,6 +14,8 @@ The PV1-2 field shall contain the code for the patient class. The *HL7 table 000
 
 Usually, a PoC device is used for patients admitted to a care unit in the hospital, and therefore, the field shall be set to *"I" (Inpatient)*. If the patient class is unknown, the field shall be set to *"U" (Unknown)*.
 
+#Always set it to Unknown (default) for the mapping or configurable in the gateway#
+
 #Todo: is there a way to get info about the patient class from the SDC provider? Or derive them from the device type?#
 
 ====== PV1-3 Assigned Patient Location
@@ -119,7 +121,10 @@ When there is no unique visit identifier assigned to the patient's visit, the fi
 
 ====== PV1-44 Admit Time / Date
 #Todo: how can the admit time / date be determined? Which admission time can a device provide - hospital admission, unit admission, device admission?#
+Leave empty or gateway have to figure out the admission time
 
 ====== PV1-51 Visit Indicator
 #Todo: can this be determined by the patient identifier type code in the Patient Context State/Identification?#
+
+#If id is a visit number "VN" than set to "V" otherwise leave empty#
 
