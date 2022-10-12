@@ -13,7 +13,7 @@
 
 [sdpi_transaction#transaction_dev_23,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_23_sequence,messages='message_announce_network_presence']
 
-This transaction is used to notify all <<actor_somds_consumer>>s that a <<actor_somds_provider>> is connected to the network and ready to exchange messages with other <<actor_somds_participant>>s.
+include::tf2-dev-23-summary.adoc[]
 
 ==== Actor Roles
 
