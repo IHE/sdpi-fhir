@@ -1,13 +1,5 @@
-= Volume 0 -- IHE Technical Frameworks General Introduction
 
-NOTE:  This document integrates all the content that makes up the supplement volume 0 (IHE General Introduction) document.
-
-OTE:  This document integrates all the content that makes up the supplement volume 0 document.
-
-IMPORTANT:  Migrate the content below from main.adoc into this document OR rename main.adoc to this ... though the content is different.  +
-{empty} +
-*_See the Word document for what this is supposed to look like_*.
-
+//= Volume 0 -- IHE Technical Frameworks General Introduction
 
 [#vol0_clause_general,sdpi_offset=clear]
 == IHE Technical Frameworks General Introduction
@@ -19,8 +11,7 @@ include::tf0-ch-9-copyrights.adoc[]
 
 [sdpi_offset=10]
 == Trademark
-NOTE:  TBD if there are any additional trademark clauses for this section; for example "SDC" ???
-
+IHE^®^ and the IHE logo are trademarks of the Healthcare Information Management Systems Society in the United States and trademarks of IHE Europe in the European Community. They may only be used with the written consent of the IHE International Board Operations Committee, which may be given to a Member Organization in broad terms for any use that is consistent with the IHE mission and operating principles.
 
 [sdpi_offset=1]
 [sdpi_offset=clear]

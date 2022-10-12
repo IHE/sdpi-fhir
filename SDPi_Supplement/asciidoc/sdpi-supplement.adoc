@@ -43,7 +43,7 @@ __<Comments may be submitted on IHE Technical Framework templates any time at ht
 
 // Table of Contents
 
-WARNING: #The ToC should come AFTER the Forward section#
+WARNING: #The ToC should come AFTER the Forward section - but it is on the sidebar ... do we just note this in the source?#
 
 include::sdpi-supplement-intro.adoc[]
 

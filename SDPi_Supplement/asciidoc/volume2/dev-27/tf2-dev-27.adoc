@@ -17,7 +17,7 @@
 
 // [sdpi_transaction#transaction_dev_27,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_27_probe_sequence,messages='message_announce_network_presence']
 
-This transaction is used to establish a publish-subscribe session between a <<actor_somds_provider>>, acting as the event source, and a <<actor_somds_consumer>>, acting as the event sink.
+include::tf2-dev-27-summary.adoc[]
 
 ==== Actor Roles
 
