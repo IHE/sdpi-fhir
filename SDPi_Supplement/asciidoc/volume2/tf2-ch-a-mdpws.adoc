@@ -25,7 +25,8 @@ include::dev-27/tf2-ch-a-mdpws-dev-27.adoc[]
 
 //
 //=== Notify Change in System Context and Capabilities [DEV-28]
-//
+include::dev-28/tf2-ch-a-mdpws-dev-28.adoc[]
+
 //=== Publish BICEPS Update Reports [DEV-29]
 //
 //=== Retrieve BICEPS Content [DEV-30]

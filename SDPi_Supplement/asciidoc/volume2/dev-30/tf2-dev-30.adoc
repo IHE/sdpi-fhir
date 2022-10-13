@@ -9,8 +9,7 @@
 
 ==== Scope
 
-This transaction is used to retrieve the MDIB of a <<actor_somds_provider>> a <<actor_somds_consumer>> is interested in.
-
+include::tf2-dev-30-summary.adoc[]
 ==== Actor Roles
 
 .Actor Roles {var_transaction_id}
