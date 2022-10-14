@@ -61,3 +61,5 @@ The {var_label_dev_28_message_contextreport} message is sent whenever a <<actor_
 ====== Expected Actions
 
 When a <<actor_somds_provider>> sends this message, the receiving <<actor_somds_consumer>> could unsubscribe.
+
+:!var_transaction_id:
