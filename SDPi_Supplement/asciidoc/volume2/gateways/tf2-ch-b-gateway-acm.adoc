@@ -21,8 +21,7 @@ This section provides an overview about the referenced standards and profiles us
 ==== HL7 Segment Descriptions
 The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ihe_pcd_tf-2_2019>>.
 
-===== MSH - Message Header Segment
-The HL7 Message Header (MSH) segment does not require a specific mapping between the SDC MDIB content and the HL7 ACM profile messages. In context of this chapter, the MSH segment content shall be in compliance with the [PCD-04] transaction as described in the <<ihe_pcd_tf-2_2019>>.
+include::tf2-ch-b-gateway-msh-mapping.adoc[]
 
 include::tf2-ch-b-gateway-pid-mapping.adoc[]
 

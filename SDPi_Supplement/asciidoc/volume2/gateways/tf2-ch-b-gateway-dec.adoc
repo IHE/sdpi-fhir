@@ -24,6 +24,202 @@ include::tf2-ch-b-gateway-msh-mapping.adoc[]
 
 include::tf2-ch-b-gateway-pid-mapping.adoc[]
 
+===== Height and Weight Mapping
+The *pm:PatientContextState/pm:CoreData* element may also contain elements for patient's height and/or weight. If available, the height and weight shall be exported as OBX segments on the MDS level. The mapping for the height observation is defined in table <<ref_tbl_dec_obx_height_mapping>> and the weight mapping in table <<ref_tbl_dec_obx_weight_mapping>>.
+
+.Height/Weight Observation Date Time Consideration
+[NOTE#ref_height_weight_dt_issue_note]
+====
+In SDC Domain Information and Service Model, there are no explicit timestamps for the heigt and weight observation in *pm:PatientContextState/pm:CoreData* element. The only timestamp associated timestamp with the current patient context state is the *pm:PatientContextState/@BindingStartTime*, but this timestamp is set only once when the context was associated regardless whether height and weight has been set or updated in the meantime.
+
+The gateway could also keep track of the *pm:PatientContextState* updates and evaluate height/weight value changes in the state updates. The assigned state update timestamp can be used for the height and/or weight observation that has been changed. The problem is that when the gateway loses connection to the PoC device it can only get the ... the state has no timestamp - just a version number - only when connected there is the consumer receive time !!
+====
+
+[#ref_tbl_dec_obx_height_mapping]
+.OBX Height Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-1
+|Set ID - OBX
+|
+|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+
+|OBX-2
+|Value Type
+|
+|Set to *"NM"* since height is always represented as a decimal number.
+
+|OBX-3/CWE-1
+|Identifier
+|
+|Set to MDC code *"68060"*.
+
+|OBX-3/CWE-2
+|Text
+|
+| Set to MDC RefId *"MDC_ATTR_PT_HEIGHT"*.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|
+|Set to coding system *"MDC"*.
+
+|OBX-4
+|Observation Sub-ID
+|
+|Set to *"<MDS>.0.0.1"* where *<MDS>* is the number of the MDS level assigned by the gateway.
+See <<ref_dec_obx4>> for further information.
+
+|OBX-5
+|Observation Value
+|pm:PatientContextState
+/pm:CoreData
+/pm:Height
+/@MeasuredValue
+|Note that the decimal number shall be formatted according the HL7 numeric value formatting rules.
+
+|OBX-6
+|Units
+|
+|HL7 data type *CWE*
+
+|OBX-6/CWE-1
+|Identifier
+|pm:PatientContextState
+/pm:CoreData
+/pm:Height
+/pm:MeasurementUnit
+/@Code
+|
+
+|OBX-6/CWE-2
+|Text
+|If @Code is an MDC code, this field shall contain the RefId of the MDC code.
+
+In all other cases, the field shall be set to the pm:PatientContextState
+/pm:CoreData
+/pm:Height
+/pm:MeasurementUnit
+/@SymbolicCodeName.
+|Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-6/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field shall be set to pm:PatientContextState
+/pm:CoreData
+/pm:Height
+/pm:MeasurementUnit
+/@CodingSystem.
+|Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-11
+|Observation Result Status
+|
+|Set to final result status *"F"*.
+
+|OBX-14
+|Date/Time of the Observation
+|
+|#Is there a timestamp for height and weight? Shall we use the context bindingStarttime?#
+
+|===
+
+
+[#ref_tbl_dec_obx_weight_mapping]
+.OBX Weight Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-1
+|Set ID - OBX
+|
+|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+
+|OBX-2
+|Value Type
+|
+|Set to *"NM"* since weight is always represented as a decimal number.
+
+|OBX-3/CWE-1
+|Identifier
+|
+|Set to MDC code *"68063"*.
+
+|OBX-3/CWE-2
+|Text
+|
+| Set to MDC RefId *"MDC_ATTR_PT_WEIGHT"*.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|
+|Set to coding system *"MDC"*.
+
+|OBX-4
+|Observation Sub-ID
+|
+|Set to *"<MDS>.0.0.2"* where *<MDS>* is the number of the MDS level assigned by the gateway.
+See <<ref_dec_obx4>> for further information.
+
+|OBX-5
+|Observation Value
+|pm:PatientContextState
+/pm:CoreData
+/pm:Weight
+/@MeasuredValue
+|Note that the decimal number shall be formatted according the HL7 numeric value formatting rules.
+
+|OBX-6
+|Units
+|
+|HL7 data type *CWE*
+
+|OBX-6/CWE-1
+|Identifier
+|pm:PatientContextState
+/pm:CoreData
+/pm:Weight
+/pm:MeasurementUnit
+/@Code
+|
+
+|OBX-6/CWE-2
+|Text
+|If @Code is an MDC code, this field shall contain the RefId of the MDC code.
+
+In all other cases, the field shall be set to the pm:PatientContextState
+/pm:CoreData
+/pm:Weight
+/pm:MeasurementUnit
+/@SymbolicCodeName.
+|Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-6/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field shall be set to pm:PatientContextState
+/pm:CoreData
+/pm:Weight
+/pm:MeasurementUnit
+/@CodingSystem.
+|Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-11
+|Observation Result Status
+|
+|Set to final result status *"F"*.
+
+|OBX-14
+|Date/Time of the Observation
+|
+|#Is there a timestamp for height and weight? Shall we use the context bindingStarttime?#
+
+|===
+
 include::tf2-ch-b-gateway-pv1-mapping.adoc[]
 
 ===== OBR - Observation Request Segment
@@ -230,3 +426,6 @@ In all other cases, the field shall be set to pm:Channel /pm:Type /@CodingSystem
 ====
 123455\^MDC_PRIVATE_123455^MDC\^123455^^urn:oid:1.3.6.1.4.1.3592.2.1.2.
 ====
+
+[#ref_dec_obx4]
+====== OBX-4 Observation Sub-ID
