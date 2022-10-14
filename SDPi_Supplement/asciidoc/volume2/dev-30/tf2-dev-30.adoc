@@ -10,6 +10,7 @@
 ==== Scope
 
 include::tf2-dev-30-summary.adoc[]
+
 ==== Actor Roles
 
 .Actor Roles {var_transaction_id}
