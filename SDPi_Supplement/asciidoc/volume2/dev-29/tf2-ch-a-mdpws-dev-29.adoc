@@ -1,0 +1,34 @@
+:var_uri_ws_eventing_notification: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Notifications
+
+[#vol2_clause_appendix_mdpws_dev_29]
+==== MDPWS: Publish BICEPS Update Reports  [DEV-29]
+
+
+// ---------- Notification ---------
+
+
+===== {var_label_dev_29_message_notification} Message
+
+The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_notification>> message is encoded by using {var_uri_dpws_messaging}[DPWS Messaging].
+
+====== Referenced Standards
+
+* <<dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+
+====== Message Outline
+
+.EpisodicContextReport message
+[source#vol2_clause_appendix_a_mdpws_dev_29_notification,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-notification.xml[]
+----
+
+====== Message Semantics
+
+`s12:Envelope/s12:Body/msg:EpisodicAlertReport/msg:ReportPart`:: Updated alert information of a <<actor_somds_provider>>.
+
+`s12:Envelope/s12:Body/msg:EpisodicMetricReport/msg:ReportPart`:: Updated metric information of a <<actor_somds_provider>>.
+
+`s12:Envelope/s12:Body/msg:EpisodicComponentReport/msg:ReportPart`:: Updated component information of a <<actor_somds_provider>>.
+
+`s12:Envelope/s12:Body/msg:WaveformStream/msg:State`:: Waveform stream of a <<actor_somds_provider>>.
