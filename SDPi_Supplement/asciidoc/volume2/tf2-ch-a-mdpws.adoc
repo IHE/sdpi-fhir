@@ -46,3 +46,7 @@ include::dev-30/tf2-ch-a-mdpws-dev-30.adoc[]
 //=== Publish Medical Alert Update [DEV-39]
 //
 //=== Retrieve Medical Alert Status [DEV-40]
+
+=== Replacements and Adjuncts
+
+include::connect-time-algorithm/tf2-ch-a-mdpws-connect-time-algorithm.adoc[]
