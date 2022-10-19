@@ -11,22 +11,22 @@ NOTE:  This file contains the content that profiles BICEPS semantics for use in 
 
 ====== BICEPS Extension Model
 
-IEEE 11073-10207 provides a powerful extension model.
+IEEE 11073-10207 provides a flexible extension model.
 This enables manufacturers to add information that does not fit into the defined structure.
-Therefore, nearly every element in the participant and message model contains an extension point (`tns:Extension`).
+Therefore, nearly every element in the participant and message model contains an extension point (`ext:Extension`).
 However, the fundamental rule is: Do not use an extension for anything that can be expressed using the given models.
 Especially, the powerful concept of coded values must be considered before using an extension.
 
-The boarders of using extension are given by:
+The borders of using extension are given by:
 
-* Clause 8 of <<ieee_11073_10207_2017>>, especially R0109, and
-* Clause 6.7 of <<ieee_11073_10700_2022>>
+* <<ieee_11073_10207_2017>> Clause 8, especially R0109, and
+* <<ieee_11073_10700_2022>> Clause 6.7
 
 There are two kinds of extensions, those, the service consumer must understand to perform system functions safely with the service provider, and those the service consumer does not have to understand.
-This is indicated by the Boolean Attribute `@ext:MustUnderstand`.
+This is indicated by the Boolean attribute `@ext:MustUnderstand`.
 Consequently, a service provider should be careful with defining extension with `@ext:MustUnderstand = true`, as this potentially reduces interoperability.
 
-There are extensions that are defined in standards, like the PKP standards. Sometimes, they are used to introduce neu features to the IEEE 11073-10207 models.
+There are standardized extensions, like those that are specified in the PKP standards or this profile, which can be considered common knowledge and therefore do not break interoperability between different manufacturers.
 Consequently, these extensions can be seen as common knowledge and do not hinder interoperability between different manufacturers.
 
 // 8.2.8.2
