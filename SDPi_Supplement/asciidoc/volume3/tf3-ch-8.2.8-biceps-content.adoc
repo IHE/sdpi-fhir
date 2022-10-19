@@ -14,17 +14,22 @@ NOTE:  This file contains the content that profiles BICEPS semantics for use in 
 IEEE 11073-10207 provides a flexible extension model.
 This enables manufacturers to add information that does not fit into the defined structure.
 Therefore, nearly every element in the participant and message model contains an extension point (`ext:Extension`).
-However, the fundamental rule is: Do not use an extension for anything that can be expressed using the given models.
-Especially, the powerful concept of coded values must be considered before using an extension.
+However, the fundamental rules are: Do not use a proprietary extension if the purpose of the extension can be expressed by (in the specified order)
+
+. the given participant and message models,
+. a standardized coded value,
+. a standardized extension, or
+. a private coded value.
+
 
 The borders of using extension are given by:
 
 * <<ieee_11073_10207_2017>> Clause 8, especially R0109, and
 * <<ieee_11073_10700_2022>> Clause 6.7
 
-There are two kinds of extensions, those, the service consumer must understand to perform system functions safely with the service provider, and those the service consumer does not have to understand.
+There are two kinds of extensions, those, the <<actor_somds_consumer>> must understand to perform system functions safely with the <<actor_somds_provider>>, and those the <<actor_somds_consumer>> does not have to understand.
 This is indicated by the Boolean attribute `@ext:MustUnderstand`.
-Consequently, a service provider should be careful with defining extension with `@ext:MustUnderstand = true`, as this potentially reduces interoperability.
+Consequently, a manufacturer of a <<actor_somds_provider>> should be careful with defining extension with `@ext:MustUnderstand = true`, as this potentially reduces interoperability.
 
 There are standardized extensions, like those that are specified in the PKP standards or this profile, which can be considered common knowledge and therefore do not break interoperability between different manufacturers.
 Consequently, these extensions can be seen as common knowledge and do not hinder interoperability between different manufacturers.
