@@ -214,9 +214,9 @@ And this is back to a non-indented sentence
 
 
 === Special Characters / Symbols
-Inserting special characters (e.g., a plus sign) can be achieved using the icon: macro.  For example: #<ADD LITERAL BOX HERE FOR CARACTER TEXT># is rendered as "icon:plus[]"
+Inserting special characters (e.g., a plus sign) can be achieved using the icon: macro.  For example:  "\icon:plus[]" is rendered as "icon:plus[]"
 
-Of course, the hex code for a special character may also be used.  For example: #<ADD LITERAL BOX HERE FOR CARACTER TEXT># is rendered as  "&#169;"
+Of course, the hex code for a special character may also be used.  For example:  "\&#169;" is rendered as  "&#169;"
 
 See https://docs.asciidoctor.org/asciidoc/latest/subs/replacements/[AsciiDoc Character Replacement Substitutions] article.
 
