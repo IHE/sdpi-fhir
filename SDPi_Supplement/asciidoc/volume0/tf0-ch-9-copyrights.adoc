@@ -52,8 +52,10 @@ IEEE^®^ and IEEE 11073^®^ are registered trademarks of the The Institute of El
 
 . IHE understands and agrees that the following shall appear in each section where the material is used:
 
-* _Adapted and reprinted with permission from IEEE. Copyright IEEE Year.  All rights reserved._*  footnote:ieee_permission[Adapted and reprinted with permission from IEEE. Copyright IEEE Year.  All rights reserved.]
+[none]
+* _Adapted and reprinted with permission from IEEE. Copyright IEEE Year.  All rights reserved._  footnote:ieee_permission[Adapted and reprinted with permission from IEEE. Copyright IEEE Year.  All rights reserved.]
 
+[start=3]
 . IHE understands and agrees that the Material is the intellectual property of IEEE. Except as provided in this agreement no ownership rights to the Material shall be transferred to IHE.
 
 . Except as necessary to give effect to the Purpose, no other use of the Material including, but not limited to, reproduction or distribution of the IEEE Standards in any format is prohibited without prior written consent of IEEE.

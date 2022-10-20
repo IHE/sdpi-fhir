@@ -77,3 +77,14 @@ NOTE:  #Add an overview section here that discusses how this supplement was deve
 
 NOTE:  #Provide a high-level overview of the unique aspects of this supplement that utilizes AsciiDoc + how it supports rich metadata for implementing RI+MC+RR capabilities.  This supplement introductory section is about HOW the supplement was crafted and generally about the content vs. the actual supplement content itself which is in the Volume 1 to 3 sections.#
 
+##This section will cover at least the high-level concepts - we may add a subsection for the RI formalization as discussed in the next section OR we could add that level of detail to the Appendix A.  In the latter case, we would do that in order to make sure it is kept in the final text.  If we keep it in this section, then it will only be in the Supplement document and dropped subsequently.
+##
+For the RI support ... detail it as follows ...
+
+* Add UML model here
+
+* Add examples per TF-2 Appendix A MDPWS  tf2-ch-a-mdpws-connect-time-algorithm.adoc
+
+##NOTE THAT UPDATES TO THE STRATEGY WILL INCLUDE:
+##* Labeling Rxxxx & Cxxxx (for capabilities)
+* Including Capability Links (Lxxxx?) in the Rxxx box as a collapsable item in the R box, similar to the Notes: section

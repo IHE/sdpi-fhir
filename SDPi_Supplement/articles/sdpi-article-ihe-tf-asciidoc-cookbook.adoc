@@ -189,6 +189,36 @@ This would result in the following text:
 |Add the following _*new or modified*_ actors to the IHE Technical Frameworks General Introduction Appendix A
 |===
 
+=== Indenting a Block
+How hard can it be?!  Using  "[none]" does the trick as in:
+
+====
+[source,asciidoc]
+----
+This is a regular left-aligned sentence.
+
+[none]
+* This is an indented sentence
+And this is back to a non-indented sentence
+----
+
+Would result in the following text:
+
+This is a regular left-aligned sentence.
+[none]
+* This is an indented sentence
+[none]
+** This is indented even more!
+
+And this is back to a non-indented sentence
+
+
+=== Special Characters / Symbols
+Inserting special characters (e.g., a plus sign) can be achieved using the icon: macro.  For example: #<ADD LITERAL BOX HERE FOR CARACTER TEXT># is rendered as "icon:plus[]"
+
+Of course, the hex code for a special character may also be used.  For example: #<ADD LITERAL BOX HERE FOR CARACTER TEXT># is rendered as  "&#169;"
+
+See https://docs.asciidoctor.org/asciidoc/latest/subs/replacements/[AsciiDoc Character Replacement Substitutions] article.
 
 == Topics Parking Lot
 
