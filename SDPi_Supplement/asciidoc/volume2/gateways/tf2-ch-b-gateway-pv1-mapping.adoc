@@ -12,11 +12,9 @@ If the SDC patient and/or location context information shall not be used for the
 ====== PV1-2 Patient Class
 The PV1-2 field shall contain the code for the patient class. The *HL7 table 0004 - Patient Class* defines a set of recommended codes to be used for the data fields of the HL7 data type *IS* used in the PV1-2 field.
 
-Usually, a PoC device is used for patients admitted to a care unit in the hospital, and therefore, the field shall be set to *"I" (Inpatient)*. If the patient class is unknown, the field shall be set to *"U" (Unknown)*.
+Usually, a PoC device is used for patients admitted to a care unit in the hospital, and therefore, the field shall be set to *"I"* (Inpatient). If the patient class is unknown, the field shall be set to *"U"* (Unknown).
 
-#Always set it to Unknown (default) for the mapping or configurable in the gateway#
-
-#Todo: is there a way to get info about the patient class from the SDC provider? Or derive them from the device type?#
+The SDC data model does not support the concept of a patient class. Therefore, the field shall either be set to *"U"* (Unknown) by default, or set to a configurable value by the gateway.
 
 ====== PV1-3 Assigned Patient Location
 The PV1-3 field shall contain the patient's assigned location. The table <<ref_tbl_pv13_mapping>> defines the mapping of the SDC patient location information to the data fields of the HL7 data type *PL* used in the PV1-3 field.
@@ -114,17 +112,21 @@ When there is no unique visit identifier assigned to the patient's visit, the fi
 /pm:Identification
 /pm:Type
 /@Code
-|The type of the patient identifier set in the @Code attribute must be mapped HL7 table 0203.
-#ToDo: what types does SDC support? how are the types coded?#
+|The type of the patient identifier set in the @Code attribute shall be set to a value from HL7 V2 table 0203. The @CodingSystem shall be set to *"urn:oid:2.16.840.1.113883.18.108"*.
+
+Valid *"Identifier Type Code"* values for a visit number are, for example, *"VN"* (Visit Number), *"AN"* (Account Number), etc.
 
 |===
 
 ====== PV1-44 Admit Time / Date
-#Todo: how can the admit time / date be determined? Which admission time can a device provide - hospital admission, unit admission, device admission?#
-Leave empty or gateway have to figure out the admission time
+The SDC data model does not support the concept of an admission date/time. There are also different types of admissions; e. g. hospital admission, care unit admission, etc.
+
+This said, it is up to the gateway to figure out the admission date/time to be set in the PV1-44 field. If the gateway is not able to determine the admission date/time, the field shall be left empty.
 
 ====== PV1-51 Visit Indicator
-#Todo: can this be determined by the patient identifier type code in the Patient Context State/Identification?#
+The PV1-51 field shall contain the code for the visit indicator. The HL7 table 0326 - Visit Indicator defines a set of recommended codes to be used for the data fields of the HL7 data type IS used in the PV1-51 field.
 
-#If id is a visit number "VN" than set to "V" otherwise leave empty#
+If *"pm:PatientContextState/pm:Identification/pm:Type/@Code"* is "VN" (Visit Number), the field shall be set to *"V"*.
+
+Otherwise, the field shall be left empty by default.
 

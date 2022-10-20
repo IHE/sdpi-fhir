@@ -294,17 +294,9 @@ The PID-10 field shall contain the patient's race. The table <<ref_tbl_pid10_map
 ====== PID-31 Identity Unknown Indicator
 The PID-31 field shall indicate whether or not the patient's identity is known.
 
-The field value shall be determined from the present of the PatientContextState and its content. The value shall be set to "Y" when the following preconditions are fulfilled:
-
-* There is a valid patient context (please refer also to <<ref_valid_pt_ctxt_note>> for further information)
-* The *pm:PatientContextState/pm:Identification* element contains a valid patient identifier (e. g. medical record number, social security number, visit number, etc.).
+The field value shall be determined from the present of a patient-inferred ensemble context (*pm:EnsembleContextDescriptor/pm:Type/@Code = MDC_IDT_ENSEMBLE_PATIENT_INFERRED*) with an associated context association state (*pm:EnsembleContextState/@ContextAssociation = Assoc*). In this case, the value shall be set to "Y".
 
 In all other cases, the value shall be set to "N".
-
-#When there is a inferred patient context, there shall be also an identification -> set to "Y"#
-
-[NOTE]
-The presence of the patient name in the *pm:PatientContextState/pm:CoreData* is optional and not a primary criteria.
 
 ====== PID-33 Last Update Date/Time
 The PID-33 field shall contain the date & time of last patient context update. The table <<ref_tbl_pid33_mapping>> defines the mapping of the SDC patient context update information to the data fields of the HL7 data type *DTM* used in the PID-33 field.
@@ -316,12 +308,19 @@ The PID-33 field shall contain the date & time of last patient context update. T
 
 |PID-33/DTM-1
 |Date/Time
-|?
+|If *pm:PatientContextState
+/pm:Identification
+/@ContextAssociation = Assoc*, the field shall be set to *pm:PatientContextState/@BindingStartTime*.
+
+In all other cases, the field shall be set to *pm:PatientContextState/@BindingEndTime*.
+
 |Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
 
 |===
 
-#Todo: how can the last update time be determined in SDC?#
-To Associated / disassociation on the state part, binding start/binding ending
+[NOTE]
+====
+The SDC data model does not support the concept of a last update timestamp. The SDC consumer participant could determine context updates from the SDC state report events (receiving timestamp of the state report). However, when the connection between the SDC provider and SDC consumer gets lost, the SDC consumer will not be able to determine the lastest update timestamp.
+====
 
 
