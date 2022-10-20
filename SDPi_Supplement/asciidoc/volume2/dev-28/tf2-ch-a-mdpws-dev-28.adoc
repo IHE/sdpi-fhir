@@ -25,4 +25,4 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-28-contextreport.xml[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/msg:EpisodicContextReport/msg:ReportPart`:: Updated context information of a <<actor_somds_provider>>.
+`s12:Envelope/s12:Body/msg:EpisodicContextReport`:: Updated context information of a <<actor_somds_provider>>.
