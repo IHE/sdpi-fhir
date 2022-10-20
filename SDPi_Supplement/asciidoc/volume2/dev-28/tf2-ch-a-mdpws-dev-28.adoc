@@ -1,4 +1,5 @@
 :var_uri_ws_eventing_notification: https://www.w3.org/Submission/2006/SUBM-WS-Eventing-20060315/#Notifications
+:var_uri_dpws_messaging: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672084
 
 [#vol2_clause_appendix_mdpws_dev_28]
 ==== MDPWS: Notify Change in System Context and Capabilities  [DEV-28]
