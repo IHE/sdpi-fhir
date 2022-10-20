@@ -53,3 +53,4 @@ Unluckily, SDC makes heavy use of request payloads when delivering notifications
 ****
 If an HTTP client includes an Accept-Encoding header field in an HTTP header in a WS-Eventing (W3C WS-Eventing) Subscribe request, then the Event Source may transmit Notifications related to that subscription encoded with the encoding that was defined in the Subscribe request.
 ****
+
