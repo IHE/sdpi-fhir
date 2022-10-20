@@ -31,3 +31,10 @@ include::tf3-ch-8.3.3-physiologic-monitor.adoc[]
 
 include::tf3-ch-8.3.4-surgical.adoc[]
 
+[appendix#vol3,sdpi_offset=A]
+== CodedAttribute XML Schema
+
+[source,xml]
+----
+include::../../sources/extension-models/coded-attribute/CodedAttribute.xsd[]
+----
