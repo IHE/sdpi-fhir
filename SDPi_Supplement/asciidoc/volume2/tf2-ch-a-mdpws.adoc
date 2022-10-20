@@ -55,3 +55,4 @@ include::dev-34/tf2-ch-a-mdpws-dev-34.adoc[]
 include::connect-time-algorithm/tf2-ch-a-mdpws-connect-time-algorithm.adoc[]
 
 include::mdib-report-retrofit/tf2-ch-a-mdpws-mdib-report-retrofit.adoc[]
+include::mdpws-compression/tf2-ch-a-mdpws-compression.adoc[]
