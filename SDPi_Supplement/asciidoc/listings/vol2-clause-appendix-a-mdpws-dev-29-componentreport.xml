@@ -9,21 +9,8 @@
         <wsa:To><!-- ... --></wsa:To>
     </s12:Header>
     <s12:Body>
-        <msg:EpisodicAlertReport MdibVersion="..." SequenceId="..." InstanceId="...">
-            <msg:ReportPart>
-            </msg:ReportPart>
-        </msg:EpisodicAlertReport>
-        <msg:EpisodicMetricReport MdibVersion="..." SequenceId="..." InstanceId="...">
-            <msg:ReportPart>
-            </msg:ReportPart>
-        </msg:EpisodicMetricReport>
         <msg:EpisodicComponentReport MdibVersion="..." SequenceId="..." InstanceId="...">
-            <msg:ReportPart>
-            </msg:ReportPart>
+            <!-- ... -->
         </msg:EpisodicComponentReport>
-        <msg:WaveformStream MdibVersion="..." SequenceId="..." InstanceId="...">
-            <msg:State DescriptorHandle="...">
-            </msg:State>
-        </msg:WaveformStream>
     </s12:Body>
 </s12:Envelope>

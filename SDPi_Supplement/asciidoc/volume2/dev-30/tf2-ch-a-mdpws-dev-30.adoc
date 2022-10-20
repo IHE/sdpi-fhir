@@ -1,4 +1,4 @@
-:var_uri_dpws_messaging: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672084
+
 
 [#vol2_clause_appendix_mdpws_dev_30]
 ==== MDPWS: Retrieve BICEPS Content [DEV-30]
