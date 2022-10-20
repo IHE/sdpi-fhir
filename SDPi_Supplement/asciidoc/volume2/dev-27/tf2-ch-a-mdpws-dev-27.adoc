@@ -235,7 +235,7 @@ The <<vol2_clause_dev_27_message_subscription_end, {var_label_dev_27_message_sub
 ====== Message Outline
 
 .WS-Eventing SubscriptionEnd message
-[source#vol2_clause_appendix_a_mdpws_dev_27_renew_response,xml]
+[source#vol2_clause_appendix_a_mdpws_dev_27_subscription_end,xml]
 ----
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-subscription-end.xml[]
 ----
