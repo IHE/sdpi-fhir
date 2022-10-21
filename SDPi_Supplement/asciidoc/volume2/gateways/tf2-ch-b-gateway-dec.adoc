@@ -665,12 +665,15 @@ The format of the range string shall be *"<Lower Limit> - <Upper Limit>"* where
 * <Lower Limit> is set to *pm:NumericMetricDescriptor/pm:TechnicalRange/@Lower*
 * <Upper Limit> is set to *pm:NumericMetricDescriptor/pm:TechnicalRange/@Upper*
 
+The OBX-7 field shall define the range of the alert limits on the metric level, when the *@Handle* of the metric is referenced by a *pm:LimitAlertConditionDescriptor* in the *pm:LimitAlertConditionDescriptor\pm:Source* list. The format of the range string shall be *"<Lower Limit> - <Upper Limit>"* where
+
+* <Lower Limit> is set to *pm:LimitAlertConditionDescriptor/pm:MaxLimits/@Lower*
+* <Upper Limit> is set to *pm:LimitAlertConditionDescriptor/pm:MaxLimits/@Upper*
+
 [NOTE]
 ====
 The decimal number shall be formatted according the HL7 numeric value formatting rules.
 ====
-
-<<ihe_pcd_tf-2_2019>> defines that the alarm ranges of a numeric metric shall be set in this field on the metric level. Since SDC does not provide this information, the field shall be left empty.
 
 ====== OBX-8 Abnormal Flags
 The OBX-8 field is not required to be set if the gateway exports valid and validated metric data only - this is highly recommended.
