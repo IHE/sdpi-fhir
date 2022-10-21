@@ -12,7 +12,7 @@
 // Announce Network Presence [DEV-23]
 include::dev-23/tf2-ch-a-mdpws-dev-23.adoc[]
 
-//=== Discover Network Topology [DEV-24]
+// Discover Network Topology [DEV-24]
 include::dev-24/tf2-ch-a-mdpws-dev-24.adoc[]
 
 //=== Discover BICEPS Services [DEV-25]
@@ -20,14 +20,17 @@ include::dev-25/tf2-ch-a-mdpws-dev-25.adoc[]
 
 //=== Discover System Context and Capabilities [DEV-26]
 //
-//=== Manage BICEPS Subscription [DEV-27]
+// Manage BICEPS Subscription [DEV-27]
+include::dev-27/tf2-ch-a-mdpws-dev-27.adoc[]
+
 //
 //=== Notify Change in System Context and Capabilities [DEV-28]
 //
 //=== Publish BICEPS Update Reports [DEV-29]
 //
 //=== Retrieve BICEPS Content [DEV-30]
-//
+include::dev-30/tf2-ch-a-mdpws-dev-30.adoc[]
+
 //=== Retrieve Localization Information [DEV-33]
 //
 //=== Announce Network Departure [DEV-34]
@@ -43,3 +46,7 @@ include::dev-25/tf2-ch-a-mdpws-dev-25.adoc[]
 //=== Publish Medical Alert Update [DEV-39]
 //
 //=== Retrieve Medical Alert Status [DEV-40]
+
+=== Amendments and Corrigenda
+
+include::connect-time-algorithm/tf2-ch-a-mdpws-connect-time-algorithm.adoc[]

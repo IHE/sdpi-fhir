@@ -19,6 +19,8 @@ The <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> messa
 
 * <<ws_discovery_2009>> {var_uri_ws_discovery_probe}[Section 5.2 Probe]
 * <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ieee_11073_20702_2016>>
+* <<ieee_11073_20701_2018>>
 
 ====== Message Outline
 
@@ -61,7 +63,7 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-probe-match.xml[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/wsd:ProbeMatches`:: In case where multiple <<actor_somds_provider>>s are running on a single machine, `wsd:ProbeMatches` can contain multiple `wsd:ProbeMatch` results.
+`s12:Envelope/s12:Body/wsd:ProbeMatches`:: In cases where multiple <<actor_somds_provider>>s are running on a single machine, `wsd:ProbeMatches` can contain multiple `wsd:ProbeMatch` results.
 `s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:ProbeMatch/wsa:EndpointReference/wsa:Address`:: The <<actor_somds_provider>>'s <<property_somds_provider_uid>> encoded as URI.
 `s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:Types`:: List of types that contains at least `dpws:Device` and mdpws:MedicalDevice`, which expresses the <<actor_somds_provider>> to conform to DPWS and MDPWS.
 `s12:Envelope/s12:Body/wsd:ProbeMatches/wsd:Scopes`:: The <<property_discovery_scope>> of the <<actor_somds_provider>>, encoded as a list of URIs.

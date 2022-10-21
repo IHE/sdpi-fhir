@@ -1,8 +1,9 @@
 package org.sdpi
 
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import java.io.ByteArrayOutputStream
+import java.nio.file.Files
 
 internal class ConvertAndVerifySupplementTest {
     @Test
@@ -24,14 +25,19 @@ internal class ConvertAndVerifySupplementTest {
             javaClass.classLoader.getResourceAsStream(expectedStructureResourceName)?.reader()?.readText()
                 ?: throw Exception("Read failed")
         val actualOutput = ByteArrayOutputStream(expectedOutput.toByteArray().size)
-        AsciidocConverter(
-            AsciidocConverter.Input.StringInput(
-                javaClass.classLoader.getResourceAsStream(testInputResourceName)?.reader()?.readText()
-                    ?: throw Exception("Read failed")
-            ),
-            ByteArrayOutputStream(),
-            AsciidocConverter.Mode.Test(actualOutput)
-        ).run()
+
+        Files.createTempFile("asciidoc-converter-test", ".tmp").toFile().also {
+            AsciidocConverter(
+                AsciidocConverter.Input.StringInput(
+                    javaClass.classLoader.getResourceAsStream(testInputResourceName)?.reader()?.readText()
+                        ?: throw Exception("Read failed")
+                ),
+                it,
+                AsciidocConverter.Mode.Test(actualOutput)
+            ).run()
+        }.also {
+            it.delete()
+        }
 
         assertEquals(expectedOutput, actualOutput.toString(Charsets.UTF_8))
     }

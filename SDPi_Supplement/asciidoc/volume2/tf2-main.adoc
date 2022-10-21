@@ -16,7 +16,9 @@ include::dev-25/tf2-dev-25.adoc[]
 
 //=== Discover System Context and Capabilities [DEV-26]
 //
-//=== Manage BICEPS Subscription [DEV-27]
+// Manage BICEPS Subscription [DEV-27]
+include::dev-27/tf2-dev-27.adoc[]
+
 //
 //=== Notify Change in System Context and Capabilities [DEV-28]
 //
@@ -25,7 +27,8 @@ include::dev-25/tf2-dev-25.adoc[]
 //=== Publish BICEPS Update Reports [DEV-29]
 //
 //=== Retrieve BICEPS Content [DEV-30]
-//
+include::dev-30/tf2-dev-30.adoc[]
+
 // todo what is that all about?
 //
 //=== Retrieve Localization Information [DEV-33]
