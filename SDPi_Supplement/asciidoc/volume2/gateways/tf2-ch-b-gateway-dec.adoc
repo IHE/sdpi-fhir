@@ -697,7 +697,7 @@ The table <<ref_tbl_dec_obx14_mapping>> defines the mapping of the SDC metric me
 |===
 |HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
 
-|OBR-7/DTM-1
+|OBR-14/DTM-1
 |Date/Time
 |pm:EnumStringMetricState
 /pm:MetricValue
