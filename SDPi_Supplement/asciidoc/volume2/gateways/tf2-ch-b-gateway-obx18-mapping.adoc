@@ -1,0 +1,71 @@
+The OBX-18 field shall contain the equipment (or device) identifier on the MDS level and/or the measurement module identifier of the equipment on the VMD level.
+
+The table <<ref_tbl_dec_obx18_mds_mapping>> defines the mapping of the SDC MDS meta data to the data fields of the HL7 data type *EI* used in the OBX-18 field.
+
+he table <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the SDC VMD information to the data fields of the HL7 data type *EI* used in the OBX-18 field.
+
+[#ref_tbl_dec_obx18_mds_mapping]
+.OBX-18 Equipment Instance Identifier Mapping - MDS level
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-18/EI-1
+|Entity Identifier
+|pm:Mds
+\pm:MetaData
+\pm:Udi
+\pm:DeviceIdentifier
+|
+
+|OBX-18/EI-2
+|Namespace ID
+|pm:Mds
+\pm:MetaData
+\pm:Udi
+\pm:Issuer
+\@Root
+|
+
+|OBX-18/EI-2
+|Universal ID
+|pm:Mds
+\pm:MetaData
+\pm:Udi
+\pm:DeviceIdentifier
+|
+
+|OBX-18/EI-2
+|Universal ID Type
+|
+|Set to *""L"*
+
+|===
+
+[#ref_tbl_dec_obx18_vmd_mapping]
+.OBX-18 Equipment Instance Identifier Mapping - VMD level
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-18/EI-1
+|Entity Identifier
+|
+|
+
+|OBX-18/EI-2
+|Namespace ID
+|
+|
+
+|OBX-18/EI-2
+|Universal ID
+|
+|
+
+|OBX-18/EI-2
+|Universal ID Type
+|
+|
+
+|===
+
+#Todo: which identifer to use on VMD level?#
