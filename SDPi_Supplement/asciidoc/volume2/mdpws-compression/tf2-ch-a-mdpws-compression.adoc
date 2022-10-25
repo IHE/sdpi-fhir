@@ -5,7 +5,7 @@
 .R0005
 [sdpi_requirement#r0005,sdpi_req_level=should]
 ****
-HTTP clients should request gzip compression by using Accept-Encoding with "gzip".
+In its role as an HTTP client, a <<actor_somds_participant>> should request gzip compression by using Accept-Encoding with "gzip".
 ****
 ===== Example of compression request:
 [%collapsible]
