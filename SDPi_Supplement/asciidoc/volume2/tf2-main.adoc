@@ -21,6 +21,7 @@ include::dev-27/tf2-dev-27.adoc[]
 
 //
 //=== Notify Change in System Context and Capabilities [DEV-28]
+include::dev-28/tf2-dev-28.adoc[]
 //
 // todo what is that all about?
 //

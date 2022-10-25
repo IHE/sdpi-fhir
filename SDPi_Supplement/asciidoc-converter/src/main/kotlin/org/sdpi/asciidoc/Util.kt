@@ -1,21 +1,20 @@
 package org.sdpi.asciidoc
 
 import org.apache.logging.log4j.kotlin.loggerOf
-import org.asciidoctor.ast.Section
 import org.asciidoctor.ast.StructuralNode
+import org.sdpi.asciidoc.model.RequirementLevel
 import org.sdpi.asciidoc.model.StructuralNodeWrapper
 import org.sdpi.asciidoc.model.toSealed
 
 /**
- * Resolves the block id attribute from an attributes map.
+ * Resolves the block id attribute from an attributes map or throws otherwise.
  */
-fun blockId(attributes: Map<String, Any>) = attributes[BlockAttribute.ID.key].toString()
+fun Attributes.id() = this[BlockAttribute.ID] ?: throw Exception("Block identifier is missing")
 
 /**
- * Resolves the block title attribute from an attributes map.
+ * Resolves the block title attribute from an attributes map or throws otherwise.
  */
-fun blockTitle(attributes: Map<String, Any>) = attributes[BlockAttribute.TITLE.key].toString()
-
+fun Attributes.title() = this[BlockAttribute.TITLE] ?: throw Exception("Block title is missing")
 
 /**
  * Creates a context name without a leading colon.
@@ -47,6 +46,11 @@ fun validate(value: Boolean, node: StructuralNode, msg: () -> String) {
     throw Exception(msgWithLocation)
 }
 
+/**
+ * Checks if a node is an appendix block.
+ *
+ * @return true if yes, false otherwise.
+ */
 fun StructuralNode.isAppendix() = when (val section = this.toSealed()) {
     is StructuralNodeWrapper.Section -> section.wrapped.sectionName == "appendix"
     else -> false

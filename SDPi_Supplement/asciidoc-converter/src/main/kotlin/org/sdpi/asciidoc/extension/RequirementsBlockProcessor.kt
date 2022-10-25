@@ -8,11 +8,11 @@ import org.asciidoctor.extension.BlockProcessor
 import org.asciidoctor.extension.Contexts
 import org.asciidoctor.extension.Name
 import org.asciidoctor.extension.Reader
-import org.sdpi.asciidoc.blockId
+import org.sdpi.asciidoc.*
+import org.sdpi.asciidoc.model.RequirementLevel
 import org.sdpi.asciidoc.model.SdpiRequirement
-import org.sdpi.asciidoc.plainContext
 
-const val BLOCK_NAME_SDPI_REQUIREMENT = "sdpi_req"
+const val BLOCK_NAME_SDPI_REQUIREMENT = "sdpi_requirement"
 
 /**
  * Block processor that searches for sdpi_req blocks.
@@ -21,12 +21,13 @@ const val BLOCK_NAME_SDPI_REQUIREMENT = "sdpi_req"
  * - Stores all requirements in [RequirementsBlockProcessor.detectedRequirements] for further processing
  */
 @Name(BLOCK_NAME_SDPI_REQUIREMENT)
-@Contexts(Contexts.OPEN)
+@Contexts(Contexts.SIDEBAR)
 @ContentModel(ContentModel.COMPOUND)
 class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
     private companion object : Logging {
         val REQUIREMENT_NUMBER_FORMAT = "^r(\\d+)$".toRegex()
         val REQUIREMENT_TITLE_FORMAT = "^([A-Z])*?R(\\d+)$".toRegex()
+        val REQUIREMENT_ROLE = "requirement"
     }
 
     private val detectedRequirements = mutableMapOf<Int, SdpiRequirement>()
@@ -40,9 +41,10 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
 
     override fun process(
         parent: StructuralNode, reader: Reader,
-        attributes: Map<String, Any>
-    ): Any = retrieveRequirement(reader, attributes).let { requirement ->
+        attributes: MutableMap<String, Any>
+    ): Any = retrieveRequirement(reader, Attributes(attributes)).let { requirement ->
         logger.info { "Found SDPi requirement #{${requirement.number}: $requirement" }
+        requirement.asciiDocAttributes[BlockAttribute.ROLE] = REQUIREMENT_ROLE
         storeRequirement(requirement)
         createBlock(
             parent, plainContext(Contexts.SIDEBAR), mapOf(
@@ -56,12 +58,21 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
         }
     }
 
-    private fun retrieveRequirement(reader: Reader, attributes: Map<String, Any>): SdpiRequirement {
-        val matchResults = REQUIREMENT_NUMBER_FORMAT.findAll(blockId(attributes))
+    private fun retrieveRequirement(reader: Reader, attributes: Attributes): SdpiRequirement {
+        val matchResults = REQUIREMENT_NUMBER_FORMAT.findAll(attributes.id())
         val requirementNumber = matchResults.map { it.groupValues[1] }.toList().first().toInt()
         val lines = reader.readLines()
+        val requirementLevel =
+            RequirementLevel.values().firstOrNull { it.keyword == attributes[BlockAttribute.REQUIREMENT_LEVEL] }.let {
+                checkNotNull(it) {
+                    ("Missing requirement level for SDPi requirement #$requirementNumber").also {
+                        logger.error { it }
+                    }
+                }
+            }
         return SdpiRequirement(
             requirementNumber,
+            requirementLevel,
             attributes,
             lines
         )
@@ -78,6 +89,12 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
         check(reqNumberFromTitle == requirement.number) {
             ("SDPi requirement title format is wrong or number differs from ID: " +
                     "title=${requirement.blockTitle}, id=${requirement.blockId}").also {
+                logger.error { it }
+            }
+        }
+
+        checkNotNull(requirement.asciiDocAttributes[BlockAttribute.ROLE]) {
+            "SDPi requirement #'${requirement.number}' has no role; expected '$REQUIREMENT_ROLE'".also {
                 logger.error { it }
             }
         }
