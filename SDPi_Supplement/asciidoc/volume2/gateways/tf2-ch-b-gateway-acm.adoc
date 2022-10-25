@@ -1,7 +1,5 @@
 === SDPi ACM Gateway -- Mapping
 
-NOTE:  This file contains the SDPi gateway actor (SOMDS_ACM_Gateway) logic for mapping from SDC BICEPS MDIB content and interactions with IHE DEV "PCD" ACM profile messaging.
-
 ==== Scope
 This chapter defines the mapping from SDC MDIB content as defined in this document and its underlying standards, to IHE Alert Communication Management (ACM) profile messages as defined in the <<ihe_pcd_tf-2_2019>>.
 
@@ -17,6 +15,8 @@ This section provides an overview about the referenced standards and profiles us
 * <<ieee_11073_10701_2022>>
 * <<ieee_11073_10700_2022>>
 * <<ieee_11073_10207_2017>>
+
+include::tf2-ch-b-gateway-private-mdc-mapping.adoc[]
 
 ==== HL7 Segment Descriptions
 The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ihe_pcd_tf-2_2019>>.
@@ -34,4 +34,380 @@ The the HL7 Obervation Request (OBR) segment requires a mapping from the SDC con
 For IHE ACM profile, the OBR-2 field shall contain the identifier of the Alarm Reporter (AR) of the IHE ACM gateway (not the individual device identifier). For further information, please refer to the <<ihe_pcd_tf-2_2019>>.
 
 ====== OBR-3 Filler Order Number
-For the IHE ACM profile, the OBR-3 field shall contain the identifier of the Alarm Reporter (AR) of the IHE ACM gateway (not the individual device identifier). For further information, please refer to the <<ihe_pcd_tf-2_2019>>.
+The OBR-3 field shall contain a unique identifier for the status to the alert indication. The content depends on the state of the alert event:
+
+* *Initial alert event announcement message*: the OBR-3 field shall contain the unique identifier for the alert event. This identifer shall consist of the *pm:AlertConditionState\@DescriptorHandle* plus *pm:AlertConditionState\@StateVersion* plus the *SequenceId* of the state report. #Todo: there shall be an extension with the id in the future#
+
+* ss
+
+===== OBX - Observation/Result Segment
+The OBX segment is utilized to export seven alert event attributes in the following order as defined in the <<ihe_pcd_tf-2_2019>>:
+
+* Event identification
+* Source identification
+* Event phase
+* Alert state
+* Inactivation State
+* Alert Priority
+* Alert Type
+
+The OBX segments representing the alert event attributes are preceded by up to three device-related OBX segments for the MDS, VMD and CHANNEL.
+
+====== Device-related OBX Segments
+tbd
+
+====== Event Identification OBX Segment
+tbd
+
+====== Event Phase OBX Segment
+tbd
+
+====== Alert State OBX Segment
+The actual value of the IHE ACM Alert State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_dec_obx_alert_state_mapping>>.
+
+[NOTE]
+====
+The IHE ACM gateway only reports an inactive alert condition when the alarm condition changed from active (*pm:AlertConditionState\@Presence* set to *"true"*) to inactive (*pm:AlertConditionState\@Presence* set to *"false"*).
+====
+
+[#ref_tbl_dec_obx_alert_state_mapping]
+.OBX Alert State Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-1
+|Set ID - OBX
+|
+|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+
+|OBX-2
+|Value Type
+|
+|Set to *"ST"*.
+
+|OBX-3/CWE-1
+|Identifier
+|
+|Set to MDC code *"68482"*.
+
+|OBX-3/CWE-2
+|Text
+|
+| Set to MDC RefId *"MDC_ATTR_ALARM_STATE"*.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|
+|Set to coding system *"MDC"*.
+
+|OBX-4
+|Observation Sub-ID
+|
+|Set to *"<MDS>.<VMD>.<CHAN>.<METRIC>.4"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device's containment tree levels assigned by the gateway.
+#See <<ref_dec_obx4>> for further information.#
+
+|OBX-5
+|Observation Value
+|The actual value of OBX-5 depends on a combination  of various SDC alert attributes and states.
+|Please refer to the table <<ref_tbl_alert_alert_state_mapping>> to determine actual value of this field.
+
+|OBX-11
+|Observation Result Status
+|
+|Set to *"R"*.
+
+|===
+
+[NOTE]
+====
+Alle *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_inactivation_state_mapping>> and needed to determine the actual inactivation state, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
+
+Unless the *pm:AlertConditionState\@ActivationState* is set to *"On"*, the *pm:AlertConditionState\@Presence* shall always be set to *"false"*; that is, the gateway shall not export any IHE ACM alert event messages.
+====
+
+[#ref_tbl_alert_alert_state_mapping]
+.Alert State Mapping
+|===
+|IHE ACM Alert State |SDC Alert Condition\Signal State
+
+|Active
+|*pm:AlertConditionState\@Presence* set to *"true"* AND
+all *pm:AlertSignalState* elements with *@ActivationState* set to *"On"* AND *@Presence* set to *"On"*
+
+OR
+
+*pm:AlertConditionState\@Presence* changed from *"true"* to  *"false"* AND
+all *pm:AlertSignalState* elements with *@ActivationState* set to *"On"* and *@Presence* set to *"Latch"*
+
+|Inactive
+|*pm:AlertConditionState\@Presence* set to  *"true"* AND
+only the *pm:AlertSignalState* element with the *pm:AlertSignalDescriptor/@Manifestation* set to *"Aud"* has its  *@ActivationState* set to *"Psd"*
+
+|Latched
+|*pm:AlertConditionState\@Presence* set to  *"true"* AND
+only the *pm:AlertSignalState* element with the *pm:AlertSignalDescriptor/@Manifestation* set to *"Aud"* has its  *@ActivationState* set to *"Off"* OR *@ActivationState* set to *"On"* and *@Presence* set to *"Off"* or *"Ack"*
+
+|===
+
+====== Inactivation State OBX Segment
+The actual value of the IHE ACM Alert Inactivation State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_dec_obx_inactivation_state_mapping>>.
+
+[NOTE]
+====
+The OBX-5 field may contain multiple inactivation states separated by the HL7 message 'repeating field' character (usually '~'). Example: *"audio-off~alert-acknowledged"*
+====
+
+[#ref_tbl_dec_obx_inactivation_state_mapping]
+.OBX Inactivation State Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-1
+|Set ID - OBX
+|
+|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+
+|OBX-2
+|Value Type
+|
+|Set to *"ST"*.
+
+|OBX-3/CWE-1
+|Identifier
+|
+|Set to MDC code *"68483"*.
+
+|OBX-3/CWE-2
+|Text
+|
+| Set to MDC RefId *"MDC_ATTR_ALARM_INACTIVATION_STATE"*.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|
+|Set to coding system *"MDC"*.
+
+|OBX-4
+|Observation Sub-ID
+|
+|Set to *"<MDS>.<VMD>.<CHAN>.<METRIC>.5"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device's containment tree levels assigned by the gateway.
+#See <<ref_dec_obx4>> for further information.#
+
+|OBX-5
+|Observation Value
+|The actual value of OBX-5 depends on a combination  of various SDC alert attributes and states.
+|Please refer to the table <<ref_tbl_alert_inactivation_state_mapping>> to determine actual value of this field.
+
+|OBX-11
+|Observation Result Status
+|
+|Set to *"R"*.
+
+|===
+
+[NOTE]
+====
+Alle *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_inactivation_state_mapping>> and needed to determine the actual inactivation state, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
+
+Unless the *pm:AlertConditionState\@ActivationState* is set to *"On"*, the *pm:AlertConditionState\@Presence* shall always be set to *"false"*; that is, the gateway shall not export any IHE ACM alert event messages.
+====
+
+[#ref_tbl_alert_inactivation_state_mapping]
+.Alert Inactivation State Mapping
+|===
+|IHE ACM Inactivation State |SDC Alert Condition\Signal State
+
+|enabled
+|*pm:AlertConditionState\@Presence* set to *"true"* AND
+all *pm:AlertSignalState* elements with *@ActivationState* set to *"On"* AND *@Presence* set to *"On"*
+
+OR
+
+*pm:AlertConditionState\@Presence* changed from *"true"* to  *"false"* AND
+all *pm:AlertSignalState* elements with *@ActivationState* set to *"On"* and *@Presence* set to *"Latch"*
+
+|audio-paused
+|*pm:AlertConditionState\@Presence* set to  *"true"* AND
+only the *pm:AlertSignalState* element with the *pm:AlertSignalDescriptor/@Manifestation* set to *"Aud"* has its  *@ActivationState* set to *"Psd"*
+
+|audio-off
+|*pm:AlertConditionState\@Presence* set to  *"true"* AND
+only the *pm:AlertSignalState* element with the *pm:AlertSignalDescriptor/@Manifestation* set to *"Aud"* has its  *@ActivationState* set to *"Off"* OR *@ActivationState* set to *"On"* and *@Presence* set to *"Off"* or *"Ack"*
+
+|alarm-paused
+|*pm:AlertConditionState\@Presence* set to  *"true"* AND
+all *pm:AlertSignalState* elements have their *@ActivationState* set to *"Psd"*
+
+|alarm-off
+|*pm:AlertConditionState\@Presence* set to  *"true"* AND
+all *pm:AlertSignalState* elements have their *@ActivationState* set to *"Off"* OR have their *@ActivationState* set to *"On"* and *@Presence* set to *"Off"*
+
+|alert-acknowledged
+|At least one of the *pm:AlertSignalState* elements has its *@Presence* set to *"Ack"*
+
+|===
+
+
+====== Alert Priority OBX Segment
+The SDC *pm:AlertConditionDescriptor/@Priority* shall be mapped to an IHE ACM Alert Priority OBX segment as defined in the <<ihe_pcd_tf-2_2019>>. In the case of an alert priority escalation or deescalation, the *pm:AlertConditionState/@ActualPriority* is updated with a new priority that differs from the previous *@ActualPriority* in the state or the *@Priority* in the descriptor. In this case, the gateway shall send a new alert event message with the updated priority.  The mapping is defined in table <<ref_tbl_dec_obx_alert_priority_mapping>>.
+
+[#ref_tbl_dec_obx_alert_priority_mapping]
+.OBX Alert Priority Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-1
+|Set ID - OBX
+|
+|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+
+|OBX-2
+|Value Type
+|
+|Set to *"ST"*.
+
+|OBX-3/CWE-1
+|Identifier
+|
+|Set to MDC code *"68484"*.
+
+|OBX-3/CWE-2
+|Text
+|
+| Set to MDC RefId *"MDC_ATTR_ALARM_PRIORITY"*.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|
+|Set to coding system *"MDC"*.
+
+|OBX-4
+|Observation Sub-ID
+|
+|Set to *"<MDS>.<VMD>.<CHAN>.<METRIC>.6"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device's containment tree levels assigned by the gateway.
+#See <<ref_dec_obx4>> for further information.#
+
+|OBX-5
+|Observation Value
+|if *pm:AlertConditionState
+/@ActualPriority* is available, use
+pm:AlertConditionState
+/@ActualPriority
+
+Otherwise, use
+pm:AlertConditionDescriptor
+/@Priority
+|Note that the IHE ACM value set for the Alert Priorities differs from the SDC *pm:AlertConditionPriority* value set and requires a mapping accordingly. Please refer to table <<ref_tbl_alert_priorities_mapping>>.
+
+|OBX-11
+|Observation Result Status
+|
+|Set to *"R"*.
+
+|===
+
+[#ref_tbl_alert_priorities_mapping]
+.Alert Priorities Value Set Mapping
+|===
+|SDC Value |SDC Description |HL7 Value |HL7 Description
+
+|Lo
+|Lo = Low. Awareness of the ALERT CONDITION is required.
+|PL
+|Low
+
+|Me
+|Me = Medium. Prompt response to remove the ALERT CONDITION is required.
+|PM
+|Medium
+
+|Hi
+|Hi = High. Immediate response to remove the ALERT CONDITION is required.
+|PH
+|High
+
+|None
+|No awareness of the ALERT CONDITION is required.
+|PN
+|not indicated
+
+|===
+
+====== Alert Type OBX Segment
+The SDC *pm:AlertConditionDescriptor/@Kind* shall be mapped to an IHE ACM Alert Type OBX segment as defined in the <<ihe_pcd_tf-2_2019>>. The mapping is defined in table <<ref_tbl_dec_obx_alert_type_mapping>>.
+
+[#ref_tbl_dec_obx_alert_type_mapping]
+.OBX Alert Type Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-1
+|Set ID - OBX
+|
+|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+
+|OBX-2
+|Value Type
+|
+|Set to *"ST"*.
+
+|OBX-3/CWE-1
+|Identifier
+|
+|Set to MDC code *"68485"*.
+
+|OBX-3/CWE-2
+|Text
+|
+| Set to MDC RefId *"MDC_ATTR_ALERT_TYPE"*.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|
+|Set to coding system *"MDC"*.
+
+|OBX-4
+|Observation Sub-ID
+|
+|Set to *"<MDS>.<VMD>.<CHAN>.<METRIC>.7"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device's containment tree levels assigned by the gateway.
+#See <<ref_dec_obx4>> for further information.#
+
+|OBX-5
+|Observation Value
+|pm:AlertConditionDescriptor
+/@Kind
+|Note that the IHE ACM value set for the Alert Types differs from the SDC *pm:AlertConditionKind* value set and requires a mapping accordingly. Please refer to table <<ref_tbl_alert_types_mapping>>.
+
+|OBX-11
+|Observation Result Status
+|
+|Set to *"R"*.
+
+|===
+
+[#ref_tbl_alert_types_mapping]
+.Alert Types Value Set Mapping
+|===
+|SDC Value |SDC Description |HL7 Value |HL7 Description
+
+|Phy
+|Phy = Physiological. The condition arises from a patient-related variable.
+|SP
+|Alert is Alarm – Physiological
+
+|Tec
+|Tec = Technical. The condition arises from a monitored equipment-related or ALERT SYSTEM-related variable.
+|ST
+|Alert is Alarm – Technical
+
+|Oth
+|Oth = Other. The condition arises from another origin, e.g., equipment-user
+advisory condition.
+|SA
+|Alert is Advisory
+
+|===
+
+===== PRT - Participation Information Segment
+The PRT segment is optional for the [PCD-04] transaction and currently not supported by the ACM gateway actor.
+
