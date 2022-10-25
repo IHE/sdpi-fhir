@@ -6,14 +6,14 @@
 [sdpi_requirement#r0005,sdpi_req_level=should]
 ****
 In its role as an HTTP client, a <<actor_somds_participant>> should request gzip compression by using Accept-Encoding with "gzip".
-****
-===== Example of compression request:
+
+.Examples
 [%collapsible]
 ====
+.Request header to request compression
 [, cols="1"]
 |===
-|*Request header to request compression*|
-GET /path/to/resource HTTP/1.1
+|GET /path/to/resource HTTP/1.1
 
 Host: www.example.com
 
@@ -21,12 +21,12 @@ Accept-Encoding: gzip
 |===
 The client indicates gzip compression to be an accepted response encoding. Note that the server is nevertheless free to send the response without compression.
 
+.Response header indicating compressed content
 [, cols="1"]
 |===
-|*Response header indicating compressed content*|
-HTTP/1.1 200 OK
+|HTTP/1.1 200 OK
 
-Date: mon, 26 June 2016 22:38:34 GMT
+Date: sun, 26 June 2016 22:38:34 GMT
 
 Server: Apache/1.3.3.7 (Unix)  (Red-Hat/Linux)
 
@@ -45,7 +45,7 @@ Content-Encoding: gzip
 The HTTP server decided to encode the response with the gzip compression. Note that servers are not required to actually compress (e.g. due to load conditions or unknown algorithms they are entitled to answer with identity encoding).
 
 ====
-
+****
 Unluckily, SDC makes heavy use of request payloads when delivering notifications. Hence, it is further recommended to allow for <<actor_somds_provider>>s to send compressed WS-Eventing Notification requests if a Subscribe request already included an accepted encoding.
 
 .R0006
