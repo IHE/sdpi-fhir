@@ -26,7 +26,8 @@ include::dev-28/tf2-dev-28.adoc[]
 // todo what is that all about?
 //
 //=== Publish BICEPS Update Reports [DEV-29]
-//
+include::dev-29/tf2-dev-29.adoc[]
+
 //=== Retrieve BICEPS Content [DEV-30]
 include::dev-30/tf2-dev-30.adoc[]
 
