@@ -10,10 +10,16 @@ participant "$str_somds_consumer" as consumer
 participant "$str_somds_provider" as provider
 
 == SDPi [DEV-29] Publish BICEPS Update Reports  ==
-
+opt
 consumer <-- provider: Notification(EpisodicAlertReport)
+end
+opt
 consumer <-- provider: Notification(EpisodicMetricReport)
+end
+opt
 consumer <-- provider: Notification(EpisodicComponentReport)
+end
+opt
 consumer <-- provider: Notification(WaveformStream)
-
+end
 @enduml
