@@ -16,6 +16,9 @@
             <wsa:EndpointReference>
                 <wsa:Address><!-- ... --></wsa:Address>
             </wsa:EndpointReference>
+            <wsd:Types>dpws:Device mdpws:MedicalDevice</wsd:Types>
+            <wsd:Scopes><!-- ... --></wsd:Scopes>
+            <wsd:MetadataVersion><!-- ... --></wsd:MetadataVersion>
         </wsd:Bye>
     </s12:Body>
 </s12:Envelope>
