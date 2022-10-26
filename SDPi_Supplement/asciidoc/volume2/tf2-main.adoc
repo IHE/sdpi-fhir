@@ -38,6 +38,7 @@ include::dev-30/tf2-dev-30.adoc[]
 // todo I guess this should be part of 1.0
 //
 //=== Announce Network Departure [DEV-34]
+include::dev-34/tf2-dev-34.adoc[]
 //
 //=== Establish Medical Data Exchange [DEV-35]
 //
