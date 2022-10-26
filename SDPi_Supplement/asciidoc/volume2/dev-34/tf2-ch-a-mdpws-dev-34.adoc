@@ -1,0 +1,28 @@
+:var_uri_ws_discovery_bye: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231825
+:var_uri_dpws_discovery: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672091
+
+[#vol2_clause_appendix_mdpws_dev_34]
+==== MDPWS: Announce Network Departure [DEV-34]
+
+===== {var_label_dev_34_message_bye} Message
+
+The {var_label_dev_34_message_bye} message is encoded by using {var_uri_ws_discovery_bye}[WS-Discovery Bye].
+
+===== Referenced Standards
+
+* <<ws_discovery_2009>> {var_uri_ws_discovery_hello}[Section 4.2 Bye]
+* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ieee_11073_20702_2016>>
+* <<ieee_11073_20701_2018>>
+
+===== Message Outline
+
+.Bye message
+[source#vol2_clause_appendix_a_mdpws_dev_34_bye,xml]
+----
+include::../../listings/vol2-clause-appendix-a-mdpws-dev-34-bye.xml[]
+----
+
+===== Message Semantics
+
+`s12:Envelope/s12:Body/wsd:Bye/wsa:EndpointReference/wsa:Address`:: The <<actor_somds_provider>>'s <<payload_dev_34_provider_uid>> as URI.

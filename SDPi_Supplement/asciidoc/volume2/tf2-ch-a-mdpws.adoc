@@ -36,7 +36,8 @@ include::dev-30/tf2-ch-a-mdpws-dev-30.adoc[]
 //=== Retrieve Localization Information [DEV-33]
 //
 //=== Announce Network Departure [DEV-34]
-//
+include::dev-34/tf2-ch-a-mdpws-dev-34.adoc[]
+
 //=== Establish Medical Data Exchange [DEV-35]
 //
 //=== Publish Medical Data [DEV-36]
