@@ -1,0 +1,53 @@
+==== MDIB Report Retrofit Best Practices
+
+#TODO MDIB reports are sent out every time descriptors or states of an MDIB containment tree change. Descriptor changes cause corresponding states to also change whereas state changes do not cause descriptors to change. A BICEPS Service Provider is supposed to transmit every change of descriptors and their corresponding states in the msg:DescriptionModificationReport message and every change of states only in msg:ObservedValueStream, msg:WaveformStream, msg:EpisodicAlertReport, msg:EpisodicComponentReport, msg:EpisodicContextReport, msg:EpisodicMetricReport, and msg:EpisodicOperationalStateReport messages (periodic reports are out of scope for this topic of interest).#
+
+//Unfortunately, BICEPS lacks requirements when it comes to the generation of report messages to the extent that BICEPS Service Consumers cannot appropriately be implemented at reasonable costs. This topic of interest discusses best practices for the transmission of MDIB reports in a way that BICEPS Service Consumers can effectively and efficiently process those reports.
+
+===== Additional Requirements
+The following list of requirements enhances the processing of reports. Without those, BICEPS poses a lot of optionality, which reduces interoperability and increases implementation costs.
+
+====== Order of message reception
+Requirements in this section are only relevant to an MDPWS binding, gRPC verifies ordered delivery by default when using streams data types.
+
+.R1001
+[sdpi_requirement#r1001,sdpi_req_level=shall]
+****
+For an MDPWS transport binding, an SDC Participant shall only utilize HTTP 1.1 without HTTP pipelining for any HTTP traffic.
+
+.Notes
+[%collapsible]
+====
+NOTE: Enforces use of HTTP 1.1 only in order to confine the means by which re-ordering of message delivery can be implemented.
+====
+****
+
+.R1002
+[sdpi_requirement#r1002,sdpi_req_level=shall]
+****
+An SDC Service Provider shall transmit msg:WaveformStream, msg:AbstractMetricReport, msg:AbstractOperationalStateReport, msg:AbstractComponentReport, msg:AbstractAlertReport, msg:ObservedValueStream, msg:DescriptionModificationReport, and msg:AbstractContextReport messages sequentially.
+
+.Notes
+[%collapsible]
+====
+NOTE: This allows for an SDC Service Consumer to apply reports on its internal MDIB data structures before receiving the next report.
+====
+****
+
+.R1007
+[sdpi_requirement#r1007,sdpi_req_level=shall]
+****
+Messages (expect for Discovery messages) send between a <<actor_somds_consumer>> and a <<actor_somds_provider>> SHALL be sent via HTTP.
+****
+
+.R1008
+[sdpi_requirement#r1008,sdpi_req_level=shall]
+****
+Only one TCP connection at a time SHALL be established for every subscribed <<actor_somds_consumer>>.
+
+.Notes
+[%collapsible]
+====
+NOTE: All introduced provider requirements should ensure absence of version gaps or flips at the consumer side. A <<actor_somds_consumer>> SHOULD reconnect or go into a fail-safe mode if a <<actor_somds_consumer>> experiences something wrong.
+====
+****

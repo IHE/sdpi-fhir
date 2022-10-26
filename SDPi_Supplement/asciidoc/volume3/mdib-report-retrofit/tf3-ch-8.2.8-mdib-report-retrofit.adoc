@@ -1,0 +1,83 @@
+==== MDIB Report Retrofit
+#TODO MDIB reports are sent out every time descriptors or states of an MDIB containment tree change. Descriptor changes cause corresponding states to also change whereas state changes do not cause descriptors to change. A BICEPS Service Provider is supposed to transmit every change of descriptors and their corresponding states in the msg:DescriptionModificationReport message and every change of states only in msg:ObservedValueStream, msg:WaveformStream, msg:EpisodicAlertReport, msg:EpisodicComponentReport, msg:EpisodicContextReport, msg:EpisodicMetricReport, and msg:EpisodicOperationalStateReport messages (periodic reports are out of scope for this topic of interest).#
+
+===== Additional Requirements
+The following list of requirements enhances the processing of reports. Without those, BICEPS poses a lot of optionality, which reduces interoperability and increases implementation costs.
+
+====== Order of MDIB Changes
+
+.R1003
+[sdpi_requirement#r1003,sdpi_req_level=shall]
+****
+An SDC Service Provider shall send messages that convey msg:WaveformStream, msg:AbstractMetricReport, msg:AbstractOperationalStateReport, msg:AbstractComponentReport, msg:AbstractAlertReport, msg:ObservedValueStream, msg:DescriptionModificationReport, and msg:AbstractContextReport to an SDC Service Consumer in the ascending order of the MDIB's pm:MdibVersionGroup/@MdibVersion.
+
+.Notes
+[%collapsible]
+====
+NOTE: Actually, BICEPS does not specify the order in which messages are sent. This requirements restricts message transmission to the ascending order of the SDC Service Provider's MDIB version.
+====
+****
+
+.R1004
+[sdpi_requirement#r1004,sdpi_req_level=shall]
+****
+Within an MDIB sequence, an SDC Provider shall send msg:DescriptionModificationReport, msg:ObservedValueStream, msg:WaveformStream, msg:EpisodicAlertReport, msg:EpisodicComponentReport, msg:EpisodicContextReport, msg:EpisodicMetricReport, and msg:EpisodicOperationalStateReport messages with a strictly increasing msg:AbstractReport/@MdibVersion.
+
+.Notes
+[%collapsible]
+====
+NOTE: This requirement verifies that for an SDC Service Provider there will be no two reports with the same MDIB version; plus, it prohibits decrementation of version numbers within an MDIB sequence.
+====
+****
+
+.R1005
+[sdpi_requirement#r1005,sdpi_req_level=shall]
+****
+An SDC Provider shall not send msg:DescriptionModificationReport messages in which any two descriptors have the same handle.
+
+.Notes
+[%collapsible]
+====
+NOTE: This simplifies processing of changes for an SDC Service Consumer in a way that they can apply description modifications changes one by one without additional consistency checks. If deletion and re-insertion of objects is needed, an SDC Service Provider can send out two description modification reports in a row.
+====
+****
+
+.R1006
+[sdpi_requirement#r1006,sdpi_req_level=shall]
+****
+An SDC Service Provider shall order msg:DescriptionModificationReport/msg:ReportPart elements in a way that for an inserted parent descriptor inserted child descriptors appear after that parent descriptor.
+
+.Notes
+[%collapsible]
+====
+NOTE: This explicitly requires to only communicate children as inserted if the parent is inserted already, which simplifies insertion of descriptors on the SDC Service Consumer side.
+====
+****
+
+===== Replacements
+
+Some requirements in BICEPS are not specified precisely enough. This section proposes replacements for some of the description modification requirements.
+
+.Replacement of biceps:R5024
+[sdpi_requirement#rbiceps:5024,sdpi_req_level=shall]
+****
+An SDC Service Provider shall not add pm:AbstractDescriptor elements to pm:AbstractDescriptors below msg:DescriptionModificationReport/msg:ReportPart.
+
+.Notes
+[%collapsible]
+====
+NOTE: Replaces "Descriptors in this list SHALL not include nested descriptors."
+====
+****
+
+.Replacement of biceps:R5046
+[sdpi_requirement#rbiceps:5046,sdpi_req_level=shall]
+****
+An SDC Service Provider shall ony communicate a parent descriptor as deleted if it does not include any child descriptors.
+
+.Notes
+[%collapsible]
+====
+NOTE: Replaces "R5046: If a parent descriptor is deleted, then all child descriptors of that parent SHALL communicated as deleted in advance."
+====
+****
