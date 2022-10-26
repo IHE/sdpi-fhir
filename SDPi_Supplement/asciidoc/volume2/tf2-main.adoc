@@ -118,7 +118,8 @@ include::dev-30/tf2-dev-30.adoc[]
 // todo https://confluence.hl7.org/display/GP/Topic%3A+Connect+Time+Delay+Algorithm
 //
 //=== MDIB Report Retrofit / Best Practices
-//
+
+include::mdib-report-retrofit/tf2-ch-a-mdpws-mdib-report-retrofit.adoc[]
 // todo https://confluence.hl7.org/pages/viewpage.action?pageId=104761310
 //
 
