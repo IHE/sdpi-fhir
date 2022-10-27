@@ -53,3 +53,4 @@ include::dev-34/tf2-ch-a-mdpws-dev-34.adoc[]
 === Amendments and Corrigenda
 
 include::connect-time-algorithm/tf2-ch-a-mdpws-connect-time-algorithm.adoc[]
+include::mdpws-compression/tf2-ch-a-mdpws-compression.adoc[]
