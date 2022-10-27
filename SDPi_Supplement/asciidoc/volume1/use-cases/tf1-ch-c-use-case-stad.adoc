@@ -8,7 +8,9 @@ Nurse Jean attaches a ventilator to the SDC based network in the ICU.  It automa
 
 ==== Technical View
 
-##TODO:  Add graphic here##
+.Synchronized Time Across Devices (STAD) -- Technical View
+
+image::../../images/vol1-diagram-use-case-stad-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 
