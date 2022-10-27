@@ -10,17 +10,6 @@ Note that AsciiDoc Gherkin (plugin?) may be used ... eventually ... !
 [appendix#vol1_appendix_c_dpi_use_cases,sdpi_offset=C]
 == Appendix C - Device Point-of-care Interoperability (DPI) Use Cases
 
-This Appendix describes a number of use cases that explore the various SDPi functions.
-
-This Appendix describes a number of use cases that explore the various SDPi functions.
-Each Use Case (also called a Feature in Gherkin) is organized as follows:
-
-•	*Narrative* – a description of the desired functionality from the user perspective
-•	*Technical Pre-Conditions* – any assumptions or pre-conditions
-•	*Scenario(s)* – the scenarios explore both the Happy Path when everything goes according to plan and the Alternative Paths where things do not go according to plan.
-
-##TODO:  Include model graphic showing relationships ...
-##
 // C.1
 [sdpi_offset=1]
 === General Overview of DPI Use Cases & Analysis
