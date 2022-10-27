@@ -31,7 +31,7 @@ include::tf3-ch-8.3.3-physiologic-monitor.adoc[]
 
 include::tf3-ch-8.3.4-surgical.adoc[]
 
-[appendix#vol3,sdpi_offset=A]
+[appendix#vol3_xml_schema_coded_attribute,sdpi_offset=A]
 == CodedAttribute XML Schema
 
 [source,xml]
