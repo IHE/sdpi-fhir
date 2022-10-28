@@ -34,8 +34,13 @@
 |
 .^| [[acronym_csf,CSF]] CSF
 
-.^| [[term_coded_attribute, Coded Attribute]] Coded Attribute
+.^| [[term_coded_attribute]] Coded Attribute
 | A BICEPS participant model extension that allows for a <<actor_somds_provider>> to provide attributes from the first partition of the IEEE 11073-10101 nomenclature. Specified in <<vol3_clause_coded_attribute>>.
+|
+.^|
+
+.^| [[term_discovery_scope]] Discovery Scope
+| A set of zero to many identifiers that allows for organizing <<actor_somds_provider>>s into logical groups.
 |
 .^|
 
@@ -105,12 +110,22 @@ implements a service-oriented #SDC# architecture composed of service providers a
 |
 .^| [[acronym_sas,SAS]] SAS
 
+.^| [[term_somds_provider_uid]] SOMDS Provider UID
+| A globally unique identifier for a <<actor_somds_provider>> that is stable across re-initializations.
+|
+.^|
+
 .^| [[term_system_function_contribution,System Function Contribution (SFC)]] System Function Contribution
 | A detailed specification of the capabilities of a #SOMDS# network participant
 |
 .^| [[acronym_sfc,SFC]] SFC
 
-.^| [[term_q_name, QName]] QName
+.^| [[term_transport_address]] Transport Address
+| A physical endpoint address that can be used to communicate with a <<actor_somds_provider>>.
+| XAddr
+.^|
+
+.^| [[term_q_name]] QName
 | XML Schema QName. In this specification, QNames are encoded as `{<namespace>}<local-name>`.
 |
 .^|
@@ -122,11 +137,5 @@ implements a service-oriented #SDC# architecture composed of service providers a
 
 |===
 
-##THE FOLLOWING DEFINITIONS SHOULD GO SOMEWHERE - IN GLOSSARY OR OTHER IHE DEV TF LOCATION???
-##
-
-[[property_somds_provider_uid]]SOMDS Provider UID:: A globally unique identifier for a <<actor_somds_provider>> that is stable across re-initializations.
-[[property_discovery_scope]]Discovery Scope:: A set of zero to many identifiers that allows for organizing <<actor_somds_provider>>s into logical groups.
-[[property_transport_address]] Transport Address:: A physical endpoint address that can be used to communicate with a <<actor_somds_provider>>.
 
 

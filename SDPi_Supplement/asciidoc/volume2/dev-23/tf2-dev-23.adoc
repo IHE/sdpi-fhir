@@ -61,8 +61,8 @@ This message is sent
 [#vol2_clause_dev_23_message_announce_network_presence_message_semantics]
 ====== Message Semantics
 
-[[payload_dev_23_provider_uid]]Provider UID:: The <<property_somds_provider_uid>>.
-[[payload_dev_23_discovery_scope]]Discovery Scope:: The <<property_discovery_scope>> of the <<actor_somds_provider>>.
+[[payload_dev_23_provider_uid]]Provider UID:: The <<term_somds_provider_uid>>.
+[[payload_dev_23_discovery_scope]]Discovery Scope:: The <<term_discovery_scope>> of the <<actor_somds_provider>>.
 
 [#vol2_clause_dev_23_message_announce_network_presence_expected_actions]
 ====== Expected Actions

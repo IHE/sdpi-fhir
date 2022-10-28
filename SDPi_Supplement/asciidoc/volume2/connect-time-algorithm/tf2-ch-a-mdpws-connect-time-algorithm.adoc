@@ -7,7 +7,7 @@ When a <<actor_somds_provider>> joins a network and sends out a <<vol2_clause_de
 <<ieee_11073_20701_2018>> normatively references <<dpws_2009>> which in turn leverages <<ws_discovery_2009>> to provide distributed (ad-hoc) or centralized (managed) service registries. WS-Discovery decomposes into two message sequences, <<vol2_clause_appendix_mdpws_dev_23, implicit discovery>> and <<vol2_clause_appendix_mdpws_dev_24, explicit discovery>> of which implicit discovery can lead to loss of performance for <<actor_somds_provider>>s when multiple <<actor_somds_consumer>>s attempt to connect at the same time.
 
 
-In order to suppress concurrent connection attempts, in the ad-hoc mode a <<actor_somds_provider>> can omit the <<property_transport_address>> from the {var_label_dev_23_message_hello} message. Subsequently, a <<actor_somds_consumer>> needs to send a {var_label_dev_24_message_resolve} message to resolve the <<actor_somds_provider>>'s <<property_transport_address>>.
+In order to suppress concurrent connection attempts, in the ad-hoc mode a <<actor_somds_provider>> can omit the <<term_transport_address>> from the {var_label_dev_23_message_hello} message. Subsequently, a <<actor_somds_consumer>> needs to send a {var_label_dev_24_message_resolve} message to resolve the <<actor_somds_provider>>'s <<term_transport_address>>.
 
 [none]
 * icon:plus[] Deferral is controlled by the entity that is affected by concurrent connection attempts.
@@ -27,7 +27,7 @@ NOTE: It is up to the manufacturer of the <<actor_somds_provider>> to choose a d
 
 ===== Consumer-controlled Delay
 
-<<ieee_11073_20701_2018>> proposes the concept of priority groups. If a priority group is configured for a <<actor_somds_consumer>>, it postpones initial connection requests once in retrieved the <<property_transport_address>> of a <<actor_somds_provider>>. Depending on the priority groups 0 to 9, with increasing group numbers the initial connection delay increases linearly based on random or fixed durations in predefined intervals.
+<<ieee_11073_20701_2018>> proposes the concept of priority groups. If a priority group is configured for a <<actor_somds_consumer>>, it postpones initial connection requests once in retrieved the <<term_transport_address>> of a <<actor_somds_provider>>. Depending on the priority groups 0 to 9, with increasing group numbers the initial connection delay increases linearly based on random or fixed durations in predefined intervals.
 
 <<ieee_11073_20701_2018>> does not define numbers for specific purposes but rather appeal to manufacturers to implement priority groups meaningful to their <<actor_somds_consumer>>'s purpose.
 
