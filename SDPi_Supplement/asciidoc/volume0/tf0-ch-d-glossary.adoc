@@ -34,6 +34,11 @@
 |
 .^| [[acronym_csf,CSF]] CSF
 
+.^| [[term_coded_attribute, Coded Attribute]] Coded Attribute
+| A BICEPS participant model extension that allows for a <<actor_somds_provider>> to provide attributes from the first partition of the IEEE 11073-10101 nomenclature. Specified in <<vol3_clause_coded_attribute>>.
+|
+.^|
+
 .^| [[term_integratec_clinical_environment,Integrated Clinical Environment (ICE)]] Integrated Clinical Environment
 | Environment that combines interoperable heterogeneous POINT-OF-CARE (PoC) MEDICAL DEVICEs and other equipment integrated to create a medical device system for the care of a single high acuity patient. (See ISO/IEEE 11073-20701 and AAMI 2700-1).
 |
@@ -105,6 +110,11 @@ implements a service-oriented #SDC# architecture composed of service providers a
 |
 .^| [[acronym_sfc,SFC]] SFC
 
+.^| [[term_q_name, QName]] QName
+| XML Schema QName. In this specification, QNames are encoded as `{<namespace>}<local-name>`.
+|
+.^|
+
 .^| ...
 | ...
 | ...
@@ -118,6 +128,5 @@ implements a service-oriented #SDC# architecture composed of service providers a
 [[property_somds_provider_uid]]SOMDS Provider UID:: A globally unique identifier for a <<actor_somds_provider>> that is stable across re-initializations.
 [[property_discovery_scope]]Discovery Scope:: A set of zero to many identifiers that allows for organizing <<actor_somds_provider>>s into logical groups.
 [[property_transport_address]] Transport Address:: A physical endpoint address that can be used to communicate with a <<actor_somds_provider>>.
-[[property_q_name]] QName:: XML Schema QName. In this specification, QNames are encoded as `{<namespace>}<local-name>`.
 
 

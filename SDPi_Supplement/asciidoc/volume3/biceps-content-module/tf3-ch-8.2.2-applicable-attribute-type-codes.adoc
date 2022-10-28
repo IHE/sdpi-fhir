@@ -5,7 +5,7 @@
 .R0009
 [sdpi_requirement#r0009,sdpi_req_level=shall]
 ****
-If available by the manufacturer of a <<actor_somds_provider>>, the <<actor_somds_provider>> shall include every attribute listed in <<vol3_table_attributes>> its MDS descriptors.
+If available by the manufacturer of a <<actor_somds_provider>>, the <<actor_somds_provider>> shall include every attribute listed in <<vol3_table_attributes>> in its MDS descriptors.
 
 .Notes
 [%collapsible]
@@ -14,7 +14,7 @@ NOTE: Other attributes may be used for types that are not listed in <<vol3_table
 ====
 ****
 
-.Attributes to be provided by a <<actor_somds_provider>> in MDS descriptors if available
+.Attribute provisions by <<actor_somds_provider>>s in MDS descriptors
 [#vol3_table_attributes,cols="2,3,1,1"]
 |===
 |RefId |Description| IEEE 11073-10101 <Partition>::<Code>| Context-free Code

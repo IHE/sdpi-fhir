@@ -36,6 +36,11 @@ NOTE: the following section was moved from the mothership document to here for i
 
 * [[[ws_transfer_2006, WS-Transfer:2006]]] Web Services Transfer (WS-Transfer), W3C Standard, 27 September 2006, available at https://www.w3.org/Submission/WS-Transfer/
 
+* [[[iso_iec_14977_1996, ISO/IEC 14977:1996]]] ISO/IEC 14977, Information technology - Syntactic
+metalanguage - Extended BNF, 15 December 1996, available at https://standards.iso.org/ittf/PubliclyAvailableStandards/s026153_ISO_IEC_14977_1996(E).zip
+
+* [[[rfc_3986, RFC 3986]]] T. Berners-Lee et al., RFC 3986, Uniform Resource Identifier (URI): Generic Syntax, January 2005, available at https://www.rfc-editor.org/rfc/rfc3986
+
 // Appendix B.3
 === IEEE Implementation Conformance Statement (ICS) Table Overview
 
