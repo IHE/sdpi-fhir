@@ -29,12 +29,6 @@ All SDPi supplement issues are tracked in the https://github.com/IHE/sdpi-fhir/i
 * *Issue:* https://confluence.hl7.org/pages/viewpage.action?pageId=91994093[*_Security Certificate Provisioning_*]
 ** ISO/IEEE 11073-20702 MDPWS defines how WS-Security w/ X.509 certificates and Extended Key Use (EKU) provisions should be adapted for SDC; however, SDPi profiles will not only add specificity, but also address operationalization challenges including security certificate provisioning.  What should be added to the SDPi supplement to support this operationalization?  What should be added to the Gemini SDPi+FHIR program, including tooling and testing, to support SDPi security?
 
-* *Issue:* https://confluence.hl7.org/display/GP/Topic%3A+SDPi-P+Compression+Option[*_SDPi-P Compression Option_*]
-** https://github.com/IHE/sdpi-fhir/issues/97[Github Issue #97 _Append TOI: Compression Option_] +
-##ADDED A NOTE TO THE ISSUE THAT THIS IS STILL OPEN IN THE ToI TABLE AND THUS IN THE OPEN LIST THOUGH IT HAS A GITHUB ISSUE NUMBER
-##
-** MDPWS defines EXI as the designated means to compress XML data. Unluckily, even though EXI is a W3C recommendation since 2014 it hasn't been widely adopted. Another means to compress data of any type is HTTP 1.1 content encoding, build-in to most HTTP servers. What should SDPi-P require for the compression option?
-
 * *Issue:* https://confluence.hl7.org/pages/viewpage.action?pageId=104761310[*_MDIB Report Retrofit / Best Practices_*]
 ** https://github.com/IHE/sdpi-fhir/issues/104[Github Issue \#104 _Append TOI: MDIB Report Retrofit / Best Practices_] +
 ##ADDED A NOTE TO THE ISSUE THAT THIS IS STILL OPEN IN THE ToI TABLE AND THUS IN THE OPEN LIST THOUGH IT HAS A GITHUB ISSUE NUMBER
@@ -85,6 +79,10 @@ https://github.com/IHE/sdpi-fhir/issues/33[Github Issue #33 _Topic: Connect Time
 ** https://github.com/IHE/sdpi-fhir/issues/61[Github Issue #61 _Topic: SDPi-xC with Mixed Device Safety Classes_]
 ** #Identify list of updates to this supplement w/ links#
 
+* *Issue: _SDPi-P Compression Option_*
+** https://github.com/IHE/sdpi-fhir/issues/97[Github Issue #97 _Append TOI: Compression Option_] +
+
+** Changes were made in line with https://confluence.hl7.org/display/GP/Topic%3A+SDPi-P+Compression+Option[TOI Page: SDPi-P Compression Option]; In a nutshell, introduced two requirements on gzip compression. This was made in Vol 2, Annex A (sections: #tf2-ch-a-mdpws.adoc# and #tf2-ch-a-mdpws-compression.adoc#).
 
 
 
