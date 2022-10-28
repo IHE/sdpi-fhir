@@ -39,7 +39,7 @@
 |
 .^|
 
-.^| [[term_discovery_scope]] Discovery Scope
+.^| [[term_discovery_scope, Discovery Scope]] Discovery Scope
 | A set of zero to many identifiers that allows for organizing <<actor_somds_provider>>s into logical groups.
 |
 .^|
@@ -58,6 +58,11 @@
 | The application of informatics technology standards to achieve seamless and dynamic connection of #Point of Care Devices#.
 |
 .^| [[acronym_mdi,MDI]] MDI
+
+.^| [[term_manufacturer, Manufacturer]] Manufacturer
+| Natural or legal person with responsibility for the design, manufacture, packaging, or labeling of medical electrical equipment, assembling a medical electrical system, or adapting medical electrical equipment or a medical electrical system, regardless of whether these operations are performed by that person or on that person's behalf.
+|
+.^|
 
 .^| [[term_plug_and_trust,Plug-and-Trust (PnT)]] Plug-and-Trust
 | The integration of an SES framework and MDI  plug-and-play technology to enable the dynamic establishment of trust between participant systems at the point of connection to a #SOMDS# network.
@@ -110,7 +115,7 @@ implements a service-oriented #SDC# architecture composed of service providers a
 |
 .^| [[acronym_sas,SAS]] SAS
 
-.^| [[term_somds_provider_uid]] SOMDS Provider UID
+.^| [[term_somds_provider_uid, SOMDS Provider UID]] SOMDS Provider UID
 | A globally unique identifier for a <<actor_somds_provider>> that is stable across re-initializations.
 |
 .^|
@@ -120,12 +125,12 @@ implements a service-oriented #SDC# architecture composed of service providers a
 |
 .^| [[acronym_sfc,SFC]] SFC
 
-.^| [[term_transport_address]] Transport Address
+.^| [[term_transport_address, Transport Address]] Transport Address
 | A physical endpoint address that can be used to communicate with a <<actor_somds_provider>>.
 | XAddr
 .^|
 
-.^| [[term_q_name]] QName
+.^| [[term_q_name, QName]] QName
 | XML Schema QName. In this specification, QNames are encoded as `{<namespace>}<local-name>`.
 |
 .^|

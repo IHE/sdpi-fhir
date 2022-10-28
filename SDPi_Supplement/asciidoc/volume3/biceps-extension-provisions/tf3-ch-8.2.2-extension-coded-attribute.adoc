@@ -8,7 +8,7 @@ For example, BICEPS only supports the following MDS meta information below the `
 
 * UDI
 * Lot number
-* Manufacturer name
+* <<term_manufacturer>> name
 * Expiration date
 * Model name
 * Model number
@@ -43,6 +43,6 @@ A <<actor_somds_provider>> shall set `sdpi:MdcAttribute/@Code` to any code from 
 .Notes
 [%collapsible]
 ====
-NOTE: This prevents manufacturers from using codes outside the intended range of attributes.
+NOTE: This prevents <<term_manufacturer>>s from using codes outside the intended range of attributes.
 ====
 ****

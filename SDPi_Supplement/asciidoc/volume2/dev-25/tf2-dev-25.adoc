@@ -69,8 +69,8 @@ Device Metadata:: Expresses <<actor_somds_provider>> characteristics that typica
 * Firmware version
 * Serial number
 [#message_semantics_discover_biceps_services_model]
-Model Metadata:: Expresses <<actor_somds_provider>> characteristics that are typically fixed across all <<actor_somds_provider>>s of the same model by their manufacturer, e.g.:
-* Manufacturer
+Model Metadata:: Expresses <<actor_somds_provider>> characteristics that are typically fixed across all <<actor_somds_provider>>s of the same model by their <<term_manufacturer>>, e.g.:
+* <<term_manufacturer>>
 * Model name
 * Model number
 
