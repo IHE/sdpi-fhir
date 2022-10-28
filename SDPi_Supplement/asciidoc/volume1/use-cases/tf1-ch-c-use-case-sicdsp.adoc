@@ -9,7 +9,9 @@
 
 ==== Technical View
 
-##TODO:  Add graphic here##
+.Standalone ICU Dashboard SP (SICDSP) -- Technical View
+
+image::../../images/vol1-diagram-use-case-sicdsp-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 

@@ -9,7 +9,9 @@
 
 ==== Technical View
 
-##TODO:  Add graphic here##
+.Alerts to Clinician Notification Systems (ACNS) -- Technical View
+
+image::../../images/vol1-diagram-use-case-acns-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 

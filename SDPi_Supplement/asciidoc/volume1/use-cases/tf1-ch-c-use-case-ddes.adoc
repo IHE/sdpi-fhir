@@ -9,7 +9,9 @@
 
 ==== Technical View
 
-##TODO:  Add graphic here##
+.Device Data to Enterprise Systems (DDES) -- Technical View
+
+image::../../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 

@@ -9,7 +9,9 @@
 
 ==== Technical View
 
-##TODO:  Add graphic here##
+.Standalone ICU Dashboard MP (SICDMP) -- Technical View
+
+image::../../images/vol1-diagram-use-case-sicdmp-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 

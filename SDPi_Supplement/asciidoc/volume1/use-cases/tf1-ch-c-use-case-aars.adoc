@@ -9,7 +9,10 @@
 
 ==== Technical View
 
-##TODO:  Add graphic here##
+.Alerts to Alert Recording Systems (AARS) -- Technical View
+
+image::../../images/vol1-diagram-use-case-aars-tech-view.svg[]
+
 
 ==== Technical Pre-Conditions
 
