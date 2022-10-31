@@ -5,7 +5,7 @@
 
 ==== Narrative:
 
-#TODO:  Add narrative text#
+Bonjour Hospital is in the process of installing a nurse alert notification system which will communicate alerts from the ICU devices (patient monitors, ventilators, infusion devices, etc.) directly to nurse devices such as pagers or smartphones.  Bobby Thornton is responsible for integrating data from their ICU devices with the alert notification system.  Once they are done, the alerts from the devices will be forwarded by the gateway to the nurse devices for viewing in a timely manner.
 
 ==== Technical View
 
@@ -15,18 +15,51 @@ image::../../images/vol1-diagram-use-case-acns-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 
-*Given* ...
+*Given* All devices communicate using SDC
 
-*And* ...
+*And* At least one Alert Gateway (AGW) Service on the SDC network
+
+*And* At least one Clinical Notification System is connected to the AGW Service.
+
+*And* All devices report either a device label and/or location and/or patient ID
+
+*And* The AGW Service is associated with a specific set of device labels, and/or location(s) (Scope)
+
 
 ==== Scenarios
 
-===== Scenario: ACNS {var_use_case_id}.1 - ...
+===== Scenario: ACNS {var_use_case_id}.1 - New device is connected to network with AGW service
 
-*Given* ...
+*Given* the AGW service has detected a new device in its scope
 
-*When* ...
+*When* the AGW service is operational
 
-*Then* ...
+*Then* the AGW service will connect to the device and communicate alerts to the Clinician Notification System
+
+===== Scenario: ACNS {var_use_case_id}.2 - The AGW service loses connectivity with the ICU devices
+
+*Given* the AGW service no longer communicates with ICU devices in its scope
+
+*When* There is a communications failure
+
+*Then* the AGW will notify the Clinician Notification System of the failure
+
+*Then* when the AGW regains communication with the devices it will resume reporting active alerts to the Clinician Notification System
+
+===== Scenario: ACNS {var_use_case_id}.3 - The AGW service fails
+
+*Given* the AGW fails
+
+*Then* the Clinician Notification System will detect a loss of communications with the AGW
+
+*Then* when the AGW recovers it will resume reporting active alerts to the Clinician Notification System
+
+===== Scenario: ACNS {var_use_case_id}.4 - The Clinician Notification System loses connectivity with the AGW
+
+*Given* the Clinician Notification System can no longer communicate with the AGW
+
+*Then* the Clinician Notification System will detect a loss of communications with the AGW
+
+*Then*  when connectivity recovers the Clinician Notification System will resume reporting active alerts
 
 
