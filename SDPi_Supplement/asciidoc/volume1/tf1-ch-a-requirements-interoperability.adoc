@@ -13,7 +13,7 @@ The content for this appendix may be pushed to SDPi 1.x.
 === Requirements:  From Narratives to Plug-and-Trust Interfaces
 
 
-.Synchronized Time Across Devices (STAD) -- Technical View
+.Hanging Gardens Framework
 
 image::../images/vol1-diagram-hanging-gardens.svg[]
 
