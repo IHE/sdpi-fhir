@@ -16,7 +16,7 @@ image::../../images/vol1-diagram-use-case-aars-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 
-*Given* •	All devices communicate using SDC
+*Given* All devices communicate using SDC
 
 *And* At least one Alert Gateway (AGW) Service on the SDC network
 
