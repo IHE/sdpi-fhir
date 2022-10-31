@@ -39,7 +39,7 @@ NOTE: This allows for an SDC Service Consumer to apply reports on its internal M
 .R1007
 [sdpi_requirement#r1007,sdpi_req_level=shall]
 ****
-Messages sent between a <<actor_somds_consumer>> and a <<actor_somds_provider>> shall be sent via a TCP connection (expect for Discovery messages).
+Messages sent between a <<actor_somds_consumer>> and a <<actor_somds_provider>> shall be sent via a TCP connection (except for Discovery messages).
 ****
 
 .R1008
