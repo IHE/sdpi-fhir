@@ -12,6 +12,12 @@ The content for this appendix may be pushed to SDPi 1.x.
 [sdpi_offset=1]
 === Requirements:  From Narratives to Plug-and-Trust Interfaces
 
+
+.Synchronized Time Across Devices (STAD) -- Technical View
+
+image::../images/vol1-diagram-hanging-gardens.svg[]
+
+
 // A.2
 === Integrating Safety, Effectiveness & Security Requirements & Considerations
 
