@@ -31,6 +31,25 @@ Looking to leverage this wealth of use cases in considering SDPi, a "compendium 
 
 ##TODO:  Include Word content now or push to later (1.x) version?##
 
+==== Use Cases, MBSE Requirements Modeling & SysML 2.0
+
+##TODO:
+- MBSE Reference incl. Requirements Modeling
+- Reference SysML 2.0 7.20 + intro slides on <topics>
+- ALL USE CASE FEATURE are REQUIREMENTS
+- MBSE Requirements Modeling
+##
+
+OMB's Systems Modeling Language 2.0 (see <<omg_sysml_2-0_spec>> and <<omg_sysml_2-0_intro_graphical_model>>), provides extended support for requirements modeling that not only provides the foundation for MBSE's Requirements Modeling, but also a computable specification that enables automated verification (e.g., using "Verification Cases").
+
+#TODO:  Add reference to SysML 2.0 section 7.20 Requirements & 7.23 Verification Cases
+
+#TODO:  Add reference to Hanging Gardens Framework ... use case requirements are the top level
+
+#TODO:  Add reference to RI+MC+RR w/ RI supported in modeling via SysML starting constructs + MC = SysML 2.0
+
+For the
+
 // C.1.4
 ==== Use Case Specification Conventions Using Cucumber/Gherkin
 
