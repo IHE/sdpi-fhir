@@ -1,0 +1,16 @@
+// ISO/IEC 60601-1-8 Overview & Definitions for DIS / DAS / CDAS Use Cases
+
+
+//[sdpi_offset=2]
+===== ISO/IEC 60601-1-8 Concepts for DIS, DAS and CDAS
+
+The following is a quick guide to the functionality of DIS, CDIS, DAS and CDAS systems.  Please refer to the section on Definitions from <<iec_60601_1_8_2020>> for normative definitions for these terms.
+
+This section provides some additional guidance on how these concepts are used and interpreted in this IHE Supplement.  Please also note that the 1.0 version of the SDPi Profile only support the Distributed Information System (DIS).
+
+#TODO:  ADD REMAINDER OF CONTENT FROM SDPI USE CASES 1.5 FILE#
+
+===== ISO/IEC 60601-1-8 Definitions for DIS, DAS and CDAS
+
+#TODO:  ADD REMAINDER OF CONTENT FROM SDPI USE CASES 1.5 FILE#
+

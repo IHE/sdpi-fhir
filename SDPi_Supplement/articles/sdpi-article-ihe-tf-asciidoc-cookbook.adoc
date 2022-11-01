@@ -182,7 +182,7 @@ Now you should have an SVG version of the graphic; hopefully in the same directo
 When PowerPoint exprts to SVG, it also includes the background area, which will display as a small graphic on a large white background.  To crop the SVG to the final version that will be rendered in the AsciiDoc file, follow the following steps:
 
 . Load the .svg file into InkScape (see above for installing the tool)
-. Delete the background layer:  click anywhere on the background whitespace, right click, delete.
+. Delete the background layer:  double click anywhere on the background whitespace, press Del key.
 . Crop the borders to 15 pixels around the graphic:
 ** File -> Document Properties -> Page -> _Resize page to content ..._
 ** Set Top / Bottom / Left / Right to 15.0

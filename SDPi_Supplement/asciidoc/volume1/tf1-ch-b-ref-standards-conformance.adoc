@@ -59,6 +59,9 @@ WARNING: #DOES ASCIIDOC NOT SUPPORT REPLACEMENT CARACTERS (SEE NEXT TWO) OR IS I
 
 * [[[omg_sysml_2-0_intro_graphical_model, OMG SysML ^&#174;^ Intro-Graphical Notation 2.0]]]  Systems Modeling Language&#8482;  (SysML^&#174;^), Version 2.0, Introduction to the Graphical Model, Object Management Group (OMG) standard.  Available at https://github.com/Systems-Modeling/SysML-v2-Release/tree/master/doc[github.com/Systems-Modeling/SysML-v2-Release/doc/]
 
+* [[[iec_60601_1_8_2020, IEC 60601-1-8:2020]]], IEC 60601-1-8:2006/AMD2:2020, Medical electrical equipment — Part 1-8: General requirements for basic safety and essential performance — Collateral standard: General requirements, tests and guidance for alarm systems in medical electrical equipment and medical electrical systems; Amendment 1:2020, and Amendment 2:2020. available at https://webstore.iec.ch/publication/59648[IEC Webstore] and the https://www.iso.org/standard/41986.html[ISO standards store].
+
+
 // Appendix B.3
 === IEEE Implementation Conformance Statement (ICS) Table Overview
 

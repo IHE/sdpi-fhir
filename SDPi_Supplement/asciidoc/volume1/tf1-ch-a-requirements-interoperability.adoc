@@ -17,7 +17,6 @@ The content for this appendix may be pushed to SDPi 1.x.
 
 image::../images/vol1-diagram-hanging-gardens.svg[]
 
-
 // A.2
 === Integrating Safety, Effectiveness & Security Requirements & Considerations
 
