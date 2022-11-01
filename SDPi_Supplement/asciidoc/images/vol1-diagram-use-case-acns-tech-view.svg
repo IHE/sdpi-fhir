@@ -1,1 +1,523 @@
-<svg width="1280" height="720" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="hidden"><defs><clipPath id="clip0"><rect x="0" y="0" width="1280" height="720"/></clipPath><clipPath id="clip1"><rect x="0" y="0" width="266700" height="476250"/></clipPath><image width="52" height="90" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCABaADQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD7I/bW+MGp/A/9nTxN4m0R/I1dVS1tZsZMTyHbvA6ZA3Y9D61+D+sfFLxj4g1Ke/1HxTrF3dzMWklkvpSSf++q/an/AIKWwi6/Zb1GF13wyapZJIM9VMhHb+n4d66D/h2P+zT/ANE0X/wd6l/8kUAfhaPGviEqn/FS6mCxOQbyb5frz/KiXxp4hRQV8S6lIfRbyb+pr90v+HY/7NP/AETRf/B3qX/yRR/w7H/Zp/6Jov8A4O9S/wDkigD8Kf8AhOPEf/Qf1T/wNk/+Kr9HP+CTP7R3i/xJ421n4deINYvNb0v7A19YtfTNK9syMoKqzZO0hunYgYr66/4dj/s0/wDRNF/8Hepf/JFeWfD/AOBHgX9nz/golpnh/wAAaENA0i6+HzX81sLqe43zteyoW3TO7DKxoMA9uBk0AfbuwN1XP/AVP8zRQSO5UfUp/X+nFFAHyr/wUqZh+zHckZx/bFjnHPBkPX8cf/Wr7Cr47/4KYM6fsw3O0tg6zp4bGenm9/xx+OM84r7DzQAtFFFABXyD4uZl/wCCn3hlQSA3w1YHHcfbrn/61fX1fIvig/8AGzzQB/1TBv8A04T/AOeeKAPqPft/ix/wPH9DRRuI6Mw+hf8AoP580UAfKf8AwUyO39lm+7f8TnTR/wCTC19gV8f/APBTL/k1m+H/AFGdN/8ASha+wKAH0UUUAFfIfin/AJSgeH/T/hV7n/yozV9eV8h+Kf8AlKB4fP8A1S9v/TjNQB9SBWbou7/gLH+RoppVW6rn/gKn+ZooA+V/+CmA3fss3/8A2GNOP/kdf8/yr6/r5C/4KVfN+y5qH/YWsD/5GH+f8K+vhQA6iiigAr5E8UD/AI2faB/2TBv/AE4z/wCeOa+u6+RfFH/KTrQf+yYkf+VCegD6hyvcqPqU/r/Tiik37f4sf8Dx/Q0UAfLP/BSpsfsvahn/AKCtj1/66j/P86+shrWn/wDP9bf9/l/xr5R/4KU+FdS8XfsleK7bS4HuZ7WSG8kjjUlvLR/nOOvGcn0A5r8FGLKSCSDQB/U1/bWn/wDP9bf9/l/xo/trT/8An+tv+/y/41/LTbr5koVn2gg4JPGccD88U+QbbbL/ACy78AdCRjnI+uPzNAH9Sf8AbWn/APP9bf8Af5f8a+TPEN3Ddf8ABTjQmgmjmT/hWRUmNgwz/aFwccf1r8GNx9TX35/wR18K6nefHrXfEUcD/wBlWGjyQT3BHyh5HTauemTgnHopPSgD9ksnsWH0L/0H8+aKFUuMhSf+Asf5GigChqGnrfQywyLuikBVl7EHjB/CvnvWP2A/gdrmpXF9d/D/AE97mdy8jB5VBYnngPgfh/LmvpST5WcDgAtj8GAH86Q9/r/7Ux/LigD5dP8AwTt+BH/RPtP/AO/s3/xf+f1pv/Duv4Dj/mn1h/3+mP8A7PX1GoBZARnJXP4sR/IUkXzbM8525/ENn+Q/KgD5fX/gnb8Bu/w90/8A7/Tf/F/5/SvZ/hz8J/DXwo0OPR/Cmj22iaYjbvs9qm0FvUnqT7nP9K7leVX6D/0An+fNDfdb2B/9AB/nzQA2OP5RkZ/4CDj8zRV62iRxJuRWw5AyM+lFAH//2Q==" preserveAspectRatio="none" id="img2"></image><clipPath id="clip3"><rect x="0" y="0" width="266700" height="461596"/></clipPath><clipPath id="clip4"><rect x="0" y="0" width="257175" height="476250"/></clipPath><clipPath id="clip5"><rect x="0" y="0" width="257175" height="445111"/></clipPath><clipPath id="clip6"><rect x="0" y="4.65661e-10" width="266700" height="476250"/></clipPath><clipPath id="clip7"><rect x="0" y="0" width="266700" height="461596"/></clipPath><clipPath id="clip8"><rect x="0" y="0" width="257175" height="466725"/></clipPath><clipPath id="clip9"><rect x="0" y="0" width="257175" height="445111"/></clipPath></defs><g clip-path="url(#clip0)"><rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/><text fill="#F6A800" font-family="Calibri,Calibri_MSFontService,sans-serif" font-weight="400" font-size="13" transform="translate(14.3562 18)">Internal<tspan fill="#000000" font-size="21" x="386.967" y="587">Patient</tspan></text><rect x="269.5" y="519.5" width="101" height="49" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" fill="#9FC5E8"/><text font-family="Arial,Arial_MSFontService,sans-serif" font-weight="400" font-size="19" transform="translate(288.065 550)">Monitor</text><rect x="389.5" y="519.5" width="86" height="49" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" fill="#9FC5E8"/><text font-family="Arial,Arial_MSFontService,sans-serif" font-weight="400" font-size="19" transform="translate(407.504 550)">Pump</text><rect x="493.5" y="519.5" width="101" height="49" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" fill="#9FC5E8"/><text font-family="Arial,Arial_MSFontService,sans-serif" font-weight="400" font-size="19" transform="translate(503.732 550)">Ventilator</text><path d="M273.5 454.5 1021.23 454.5" stroke="#44546A" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10" fill="none" fill-rule="evenodd"/><path d="M320.5 518.642 320.5 452.5" stroke="#44546A" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10" fill="none" fill-rule="evenodd"/><path d="M0 0 0.000104987 67.2126" stroke="#44546A" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10" fill="none" fill-rule="evenodd" transform="matrix(1 0 0 -1 429.5 520.713)"/><path d="M548.5 520.713 548.5 453.5" stroke="#44546A" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10" fill="none" fill-rule="evenodd"/><text font-family="Calibri,Calibri_MSFontService,sans-serif" font-weight="400" font-size="21" transform="translate(387.105 441)">SDC LAN<tspan font-size="21" x="441.856" y="164">Patient</tspan></text><rect x="696.5" y="519.5" width="101" height="49" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" fill="#9FC5E8"/><text font-family="Arial,Arial_MSFontService,sans-serif" font-weight="400" font-size="19" transform="translate(715.702 550)">Monitor</text><rect x="816.5" y="519.5" width="87" height="49" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" fill="#9FC5E8"/><text font-family="Arial,Arial_MSFontService,sans-serif" font-weight="400" font-size="19" transform="translate(835.14 550)">Pump</text><rect x="920.5" y="519.5" width="101" height="49" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" fill="#9FC5E8"/><text font-family="Arial,Arial_MSFontService,sans-serif" font-weight="400" font-size="19" transform="translate(931.369 550)">Ventilator</text><path d="M748.5 518.642 748.5 452.5" stroke="#44546A" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10" fill="none" fill-rule="evenodd"/><path d="M0 0 0.000104987 67.2126" stroke="#44546A" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10" fill="none" fill-rule="evenodd" transform="matrix(1 0 0 -1 857.5 520.713)"/><path d="M975.5 520.713 975.5 453.5" stroke="#44546A" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10" fill="none" fill-rule="evenodd"/><path d="M0 0 0.000104987 199.89" stroke="#44546A" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10" fill="none" fill-rule="evenodd" transform="matrix(1 0 0 -1 642.5 456.39)"/><rect x="219.5" y="382.5" width="405" height="254" stroke="#2F528F" stroke-width="2.66667" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="10.6667 8" fill="none"/><rect x="666.5" y="382.5" width="404" height="254" stroke="#2F528F" stroke-width="2.66667" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="10.6667 8" fill="none"/><rect x="577.5" y="310.5" width="128" height="49" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" fill="#A4C2F4"/><text font-family="Arial,Arial_MSFontService,sans-serif" font-weight="400" font-size="19" transform="translate(602.879 330)">Alert GW <tspan font-size="19" x="6.74664" y="23">Service</tspan></text><rect x="789.5" y="310.5" width="158" height="49" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" fill="#A4C2F4"/><text font-family="Arial,Arial_MSFontService,sans-serif" font-weight="400" font-size="19" transform="translate(801.769 330)">Clinician <tspan font-size="19" x="75.6667" y="0">Notific</tspan><tspan font-size="19" x="127.5" y="0">. </tspan><tspan font-size="19" x="35.2534" y="23">System</tspan></text><path d="M0 0 0.000104987 54.2754" stroke="#44546A" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10" fill="none" fill-rule="evenodd" transform="matrix(1 0 0 -1 869.5 310.775)"/><path d="M570.5 256.5 925.684 256.5" stroke="#44546A" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10" fill="none" fill-rule="evenodd"/><path d="M949.344 308.5 953.407 320.041 951.732 321.402 956.849 331.291 955.173 332.943 961.5 349.5 950.77 336.811 952.817 335.049 946.15 326.922 948.539 324.41 941.5 315.884Z" stroke="#2F528F" stroke-width="2.66667" stroke-linejoin="round" stroke-miterlimit="10" fill="#4472C4" fill-rule="evenodd"/><g clip-path="url(#clip1)" transform="matrix(0.000104987 0 0 0.000104987 1007 283)"><g clip-path="url(#clip3)" transform="matrix(1 0 0 1.03175 0 -0.25)"><use width="100%" height="100%" xlink:href="#img2" transform="scale(5128.85 5128.85)"></use></g></g><g clip-path="url(#clip4)" transform="matrix(0.000104987 0 0 0.000104987 1015 291)"><g clip-path="url(#clip5)" transform="scale(1 1.06996)"><use width="100%" height="100%" xlink:href="#img2" transform="scale(4945.67 4945.67)"></use></g></g><g clip-path="url(#clip6)" transform="matrix(0.000104987 0 0 0.000104987 1022 299)"><g clip-path="url(#clip7)" transform="matrix(1 0 0 1.03175 0 -0.25)"><use width="100%" height="100%" xlink:href="#img2" transform="scale(5128.85 5128.85)"></use></g></g><g clip-path="url(#clip8)" transform="matrix(0.000104987 0 0 0.000104987 1030 307)"><g clip-path="url(#clip9)" transform="matrix(1 0 0 1.04856 -1 0)"><use width="100%" height="100%" xlink:href="#img2" transform="scale(4945.67 4945.67)"></use></g></g><path d="M1045.03 282.5 1046.86 288.13 1046.1 288.794 1048.41 293.618 1047.65 294.423 1050.5 302.5 1045.67 296.31 1046.59 295.451 1043.59 291.486 1044.67 290.261 1041.5 286.102Z" stroke="#2F528F" stroke-width="2.66667" stroke-linejoin="round" stroke-miterlimit="10" fill="#4472C4" fill-rule="evenodd"/><rect x="991.5" y="273.5" width="95.9999" height="90" stroke="#2F528F" stroke-width="2.66667" stroke-linejoin="round" stroke-miterlimit="10" fill="#4472C4" fill-opacity="0.101961"/><rect x="0" y="-1" width="88" height="38" fill="#FFFFFF"/><path d="M711 332.167 767.77 332.167 767.77 335.833 711 335.833ZM765.937 328.5 776.937 334 765.937 339.5Z" fill="#3F6EC3"/></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="900.66656"
+   height="412.83334"
+   overflow="hidden"
+   version="1.1"
+   id="svg1125"
+   sodipodi:docname="vol1-diagram-use-case-acns-tech-view.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1127"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="15"
+     fit-margin-left="15"
+     fit-margin-right="15"
+     fit-margin-bottom="15"
+     inkscape:zoom="0.8609375"
+     inkscape:cx="437.31397"
+     inkscape:cy="119.05626"
+     inkscape:window-width="1620"
+     inkscape:window-height="1058"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1123" />
+  <defs
+     id="defs1017">
+    <clipPath
+       id="clip0">
+      <rect
+         x="0"
+         y="0"
+         width="1280"
+         height="720"
+         id="rect989" />
+    </clipPath>
+    <clipPath
+       id="clip1">
+      <rect
+         x="0"
+         y="0"
+         width="266700"
+         height="476250"
+         id="rect992" />
+    </clipPath>
+    <image
+       width="52"
+       height="90"
+       xlink:href="data:image/jpeg;base64,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"
+       preserveAspectRatio="none"
+       id="img2" />
+    <clipPath
+       id="clip3">
+      <rect
+         x="0"
+         y="0"
+         width="266700"
+         height="461596"
+         id="rect996" />
+    </clipPath>
+    <clipPath
+       id="clip4">
+      <rect
+         x="0"
+         y="0"
+         width="257175"
+         height="476250"
+         id="rect999" />
+    </clipPath>
+    <clipPath
+       id="clip5">
+      <rect
+         x="0"
+         y="0"
+         width="257175"
+         height="445111"
+         id="rect1002" />
+    </clipPath>
+    <clipPath
+       id="clip6">
+      <rect
+         x="0"
+         y="4.6566101e-10"
+         width="266700"
+         height="476250"
+         id="rect1005" />
+    </clipPath>
+    <clipPath
+       id="clip7">
+      <rect
+         x="0"
+         y="0"
+         width="266700"
+         height="461596"
+         id="rect1008" />
+    </clipPath>
+    <clipPath
+       id="clip8">
+      <rect
+         x="0"
+         y="0"
+         width="257175"
+         height="466725"
+         id="rect1011" />
+    </clipPath>
+    <clipPath
+       id="clip9">
+      <rect
+         x="0"
+         y="0"
+         width="257175"
+         height="445111"
+         id="rect1014" />
+    </clipPath>
+  </defs>
+  <g
+     clip-path="url(#clip0)"
+     id="g1123"
+     transform="translate(-203.16666,-240)">
+    <rect
+       style="fill:#ffffff"
+       id="rect1831"
+       width="962.90381"
+       height="470.41742"
+       x="162.51331"
+       y="213.28494" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(401.323,605)"
+       id="text1021">Patient</text>
+    <rect
+       x="269.5"
+       y="519.5"
+       width="101"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect1023" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(288.065,550)"
+       id="text1025">Monitor</text>
+    <rect
+       x="389.5"
+       y="519.5"
+       width="86"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect1027" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(407.504,550)"
+       id="text1029">Pump</text>
+    <rect
+       x="493.5"
+       y="519.5"
+       width="101"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect1031" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(503.732,550)"
+       id="text1033">Ventilator</text>
+    <path
+       d="m 273.5,454.5 h 747.73"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path1035" />
+    <path
+       d="M 320.5,518.642 V 452.5"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path1037" />
+    <path
+       d="M 0,0 1.04987e-4,67.2126"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,429.5,520.713)"
+       id="path1039" />
+    <path
+       d="M 548.5,520.713 V 453.5"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path1041" />
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(387.105,441)"
+       id="text1045">SDC LAN<tspan
+   font-size="21px"
+   x="441.85599"
+   y="164"
+   id="tspan1043">Patient</tspan></text>
+    <rect
+       x="696.5"
+       y="519.5"
+       width="101"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect1047" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(715.702,550)"
+       id="text1049">Monitor</text>
+    <rect
+       x="816.5"
+       y="519.5"
+       width="87"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect1051" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(835.14,550)"
+       id="text1053">Pump</text>
+    <rect
+       x="920.5"
+       y="519.5"
+       width="101"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#9fc5e8"
+       id="rect1055" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(931.369,550)"
+       id="text1057">Ventilator</text>
+    <path
+       d="M 748.5,518.642 V 452.5"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path1059" />
+    <path
+       d="M 0,0 1.04987e-4,67.2126"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,857.5,520.713)"
+       id="path1061" />
+    <path
+       d="M 975.5,520.713 V 453.5"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path1063" />
+    <path
+       d="M 0,0 1.04987e-4,199.89"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,642.5,456.39)"
+       id="path1065" />
+    <rect
+       x="219.5"
+       y="382.5"
+       width="405"
+       height="254"
+       stroke="#2f528f"
+       stroke-width="2.66667"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="10.6667, 8"
+       fill="none"
+       id="rect1067" />
+    <rect
+       x="666.5"
+       y="382.5"
+       width="404"
+       height="254"
+       stroke="#2f528f"
+       stroke-width="2.66667"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       stroke-dasharray="10.6667, 8"
+       fill="none"
+       id="rect1069" />
+    <rect
+       x="577.5"
+       y="310.5"
+       width="128"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#a4c2f4"
+       id="rect1071" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(602.879,330)"
+       id="text1075">Alert GW <tspan
+   font-size="19px"
+   x="6.7466402"
+   y="23"
+   id="tspan1073">Service</tspan></text>
+    <rect
+       x="789.5"
+       y="310.5"
+       width="158"
+       height="49"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#a4c2f4"
+       id="rect1077" />
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(801.769,330)"
+       id="text1085">Clinician <tspan
+   font-size="19px"
+   x="75.666702"
+   y="0"
+   id="tspan1079">Notific</tspan><tspan
+   font-size="19px"
+   x="127.5"
+   y="0"
+   id="tspan1081">.</tspan><tspan
+   font-size="19px"
+   x="35.253399"
+   y="23"
+   id="tspan1083">System</tspan></text>
+    <path
+       d="M 0,0 1.04987e-4,54.2754"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       transform="matrix(1,0,0,-1,869.5,310.775)"
+       id="path1087" />
+    <path
+       d="M 570.5,256.5 H 925.684"
+       stroke="#44546a"
+       stroke-width="3"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="none"
+       fill-rule="evenodd"
+       id="path1089" />
+    <path
+       d="m 949.344,308.5 4.063,11.541 -1.675,1.361 5.117,9.889 -1.676,1.652 6.327,16.557 -10.73,-12.689 2.047,-1.762 -6.667,-8.127 2.389,-2.512 -7.039,-8.526 z"
+       stroke="#2f528f"
+       stroke-width="2.66667"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#4472c4"
+       fill-rule="evenodd"
+       id="path1091" />
+    <g
+       clip-path="url(#clip1)"
+       transform="matrix(1.04987e-4,0,0,1.04987e-4,1007,283)"
+       id="g1097">
+      <g
+         clip-path="url(#clip3)"
+         transform="matrix(1,0,0,1.03175,0,-0.25)"
+         id="g1095">
+        <use
+           width="100%"
+           height="100%"
+           xlink:href="#img2"
+           transform="scale(5128.85)"
+           id="use1093"
+           x="0"
+           y="0" />
+      </g>
+    </g>
+    <g
+       clip-path="url(#clip4)"
+       transform="matrix(1.04987e-4,0,0,1.04987e-4,1015,291)"
+       id="g1103">
+      <g
+         clip-path="url(#clip5)"
+         transform="scale(1,1.06996)"
+         id="g1101">
+        <use
+           width="100%"
+           height="100%"
+           xlink:href="#img2"
+           transform="scale(4945.67)"
+           id="use1099"
+           x="0"
+           y="0" />
+      </g>
+    </g>
+    <g
+       clip-path="url(#clip6)"
+       transform="matrix(1.04987e-4,0,0,1.04987e-4,1022,299)"
+       id="g1109">
+      <g
+         clip-path="url(#clip7)"
+         transform="matrix(1,0,0,1.03175,0,-0.25)"
+         id="g1107">
+        <use
+           width="100%"
+           height="100%"
+           xlink:href="#img2"
+           transform="scale(5128.85)"
+           id="use1105"
+           x="0"
+           y="0" />
+      </g>
+    </g>
+    <g
+       clip-path="url(#clip8)"
+       transform="matrix(1.04987e-4,0,0,1.04987e-4,1030,307)"
+       id="g1115">
+      <g
+         clip-path="url(#clip9)"
+         transform="matrix(1,0,0,1.04856,-1,0)"
+         id="g1113">
+        <use
+           width="100%"
+           height="100%"
+           xlink:href="#img2"
+           transform="scale(4945.67)"
+           id="use1111"
+           x="0"
+           y="0" />
+      </g>
+    </g>
+    <path
+       d="m 1045.03,282.5 1.83,5.63 -0.76,0.664 2.31,4.824 -0.76,0.805 2.85,8.077 -4.83,-6.19 0.92,-0.859 -3,-3.965 1.08,-1.225 -3.17,-4.159 z"
+       stroke="#2f528f"
+       stroke-width="2.66667"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#4472c4"
+       fill-rule="evenodd"
+       id="path1117" />
+    <rect
+       x="991.5"
+       y="273.5"
+       width="95.999901"
+       height="90"
+       stroke="#2f528f"
+       stroke-width="2.66667"
+       stroke-linejoin="round"
+       stroke-miterlimit="10"
+       fill="#4472c4"
+       fill-opacity="0.101961"
+       id="rect1119" />
+    <path
+       d="m 711,332.167 h 56.77 v 3.666 H 711 Z m 54.937,-3.667 11,5.5 -11,5.5 z"
+       fill="#3f6ec3"
+       id="path1121" />
+  </g>
+</svg>
