@@ -55,3 +55,12 @@ fun StructuralNode.isAppendix() = when (val section = this.toSealed()) {
     is StructuralNodeWrapper.Section -> section.wrapped.sectionName == "appendix"
     else -> false
 }
+
+/**
+ * Takes a string and converts it to a [RequirementLevel] enum.
+ *
+ * @param raw Raw text being shall, should or may.
+ *
+ * @return the [RequirementLevel] enum or null if the conversion failed (raw was not shall, should or may).
+ */
+fun resolveRequirementLevel(raw: String) = RequirementLevel.values().firstOrNull { it.keyword == raw }

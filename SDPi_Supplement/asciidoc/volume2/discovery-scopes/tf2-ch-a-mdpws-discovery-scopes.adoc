@@ -7,8 +7,8 @@
 
 ===== Encoding of Production Specifications
 
-.R0009
-[sdpi_requirement#r0009,sdpi_req_level=shall]
+.R0010
+[sdpi_requirement#r0010,sdpi_req_level=shall]
 ****
 If a <<term_manufacturer>> of a <<actor_somds_provider>> intends to include MDS production specifications in the WS-Discovery Scopes of the <<actor_somds_provider>>, the <<actor_somds_provider>> shall encode the production specifications by using the rules in <<vol2_listing_encoding_production_specification_mds>>.
 
@@ -65,8 +65,8 @@ NOTE: `ProductionSpecification` is specified in <<vol2_listing_encoding_producti
 
 ===== Encoding of Attributes
 
-.R0010
-[sdpi_requirement#r0010,sdpi_req_level=shall]
+.R0011
+[sdpi_requirement#r0011,sdpi_req_level=shall]
 ****
 If a <<term_manufacturer>> of a <<actor_somds_provider>> intends to include MDS attributes in the WS-Discovery Scopes of the <<actor_somds_provider>>, the <<actor_somds_provider>> shall encode the attributes by using the rules in <<vol2_listing_encoding_attribute_mds>>.
 
