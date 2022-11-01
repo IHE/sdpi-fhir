@@ -22,7 +22,7 @@ This profile specifies the <<term_coded_attribute>> extension that allows for a 
 [sdpi_level=+1]
 ====== Model
 
-The CodedAttribute XML Schema is available in <<vol3_xml_schema_coded_attribute>>. <<vol3_example_extension_coded_attribute>> shows an exemplary XML instance of a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> including the `MDC_ATTR_ID_SOFT` attribute as an additional metadata item.
+The CodedAttribute XML Schema is available in <<vol3_appendix_a_xml_schemas_coded_attribute>>. <<vol3_example_extension_coded_attribute>> shows an exemplary XML instance of a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> including the `MDC_ATTR_ID_SOFT` attribute as an additional metadata item.
 
 .MDS with CodedAttribute representing a Soft ID
 ====

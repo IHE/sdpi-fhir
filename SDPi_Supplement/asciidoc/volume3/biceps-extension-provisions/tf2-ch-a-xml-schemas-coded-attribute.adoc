@@ -1,3 +1,4 @@
+[#vol3_appendix_a_xml_schemas_coded_attribute]
 === Coded Attribute XML Schema
 
 [source,xml]
