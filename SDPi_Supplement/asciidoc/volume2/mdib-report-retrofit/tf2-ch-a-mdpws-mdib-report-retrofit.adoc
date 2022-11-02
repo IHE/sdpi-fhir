@@ -47,5 +47,5 @@ NOTE: This allows for a <<actor_somds_consumer>> to apply report data on interna
 .R1005
 [sdpi_requirement#r1005,sdpi_req_level=should]
 ****
-A <<actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a report with an <<acronym_mdib>> version that is either less than or more than one version greater than the last received version.
+A <<actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a report with an <<acronym_mdib>> version that is either lower than the last received version or more than one version higher than the last received version.
 ****
