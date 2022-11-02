@@ -117,13 +117,6 @@ include::dev-30/tf2-dev-30.adoc[]
 //
 // todo https://confluence.hl7.org/display/GP/Topic%3A+Connect+Time+Delay+Algorithm
 //
-//=== MDIB Report Retrofit / Best Practices
-
-include::mdib-report-retrofit/tf2-ch-a-mdpws-mdib-report-retrofit.adoc[]
-// todo https://confluence.hl7.org/pages/viewpage.action?pageId=104761310
-//
-
-
 
 //NOTE:  This document integrates all the content that makes up the supplement volume 2 document.
 //
@@ -132,6 +125,7 @@ include::mdib-report-retrofit/tf2-ch-a-mdpws-mdib-report-retrofit.adoc[]
 //*_See the Word document for what this is supposed to look like_*.
 
 include::tf2-ch-a-mdpws.adoc[]
+
 include::tf2-ch-b-gateways.adoc[]
 
 

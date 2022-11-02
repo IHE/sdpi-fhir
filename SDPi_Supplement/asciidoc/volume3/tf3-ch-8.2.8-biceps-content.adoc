@@ -1,6 +1,3 @@
-==== SDC/BICEPS semantic content
-
-NOTE:  This file contains the content that profiles BICEPS semantics for use in the SDPi profiles.  It is a compliment to the other general requirements that are in chapter 8.2.
 
 // 8.2.8
 [sdpi_offset=8]
