@@ -1,16 +1,16 @@
+[#vol3_clause_mdib_report_retrofit]
 ==== MDIB Report Retrofit
 
-A <<actor_somds_provider>> sens out episodic reports every time descriptors or states of in an <<acronym_mdib>> change. Descriptor changes cause corresponding states to also change whereas state changes do not cause descriptors to change. A <<actor_somds_provider>> is supposed to transmit every change of a descriptor and its corresponding states in the msg:DescriptionModificationReport message. Changes to states are transmitted in msg:ObservedValueStream, msg:WaveformStream, msg:EpisodicAlertReport, msg:EpisodicComponentReport, msg:EpisodicContextReport, msg:EpisodicMetricReport, and msg:EpisodicOperationalStateReport messages.
+A <<actor_somds_provider>> sends out episodic reports every time descriptors or states in the <<acronym_mdib>> change. Descriptor changes cause corresponding states to also change whereas state changes do not cause descriptors to change. A <<actor_somds_provider>> is supposed to transmit every change of a descriptor and its corresponding states in the msg:DescriptionModificationReport message. Changes to states are transmitted in msg:ObservedValueStream, msg:WaveformStream, msg:EpisodicAlertReport, msg:EpisodicComponentReport, msg:EpisodicContextReport, msg:EpisodicMetricReport, and msg:EpisodicOperationalStateReport messages.
 
-NOTE: BICEPS also supports periodic reports, which are out of scope for this section.
-
+BICEPS also supports periodic reports, which are out of scope for this section.
 
 The following list of requirements enhances the processing of reports in order to reduce optionality and hence increase interoperability between <<actor_somds_participant>>s.
 
 ===== Amendments
 
-.R1003
-[sdpi_requirement#r1003,sdpi_req_level=shall]
+.R1006
+[sdpi_requirement#r1006,sdpi_req_level=shall]
 ****
 A <<actor_somds_provider>> shall send messages that convey msg:WaveformStream, msg:AbstractMetricReport, msg:AbstractOperationalStateReport, msg:AbstractComponentReport, msg:AbstractAlertReport, msg:ObservedValueStream, msg:DescriptionModificationReport, and msg:AbstractContextReport elements to a <<actor_somds_consumer>> in the ascending order of the <<acronym_mdib>>'s pm:MdibVersionGroup/@MdibVersion.
 
@@ -21,8 +21,8 @@ NOTE: BICEPS does not specify the order in which report messages are sent to <<a
 ====
 ****
 
-.R1004
-[sdpi_requirement#r1004,sdpi_req_level=shall]
+.R1007
+[sdpi_requirement#r1007,sdpi_req_level=shall]
 ****
 Within an <<acronym_mdib>> sequence, a <<actor_somds_provider>> shall send msg:DescriptionModificationReport, msg:ObservedValueStream, msg:WaveformStream, msg:EpisodicAlertReport, msg:EpisodicComponentReport, msg:EpisodicContextReport, msg:EpisodicMetricReport, and msg:EpisodicOperationalStateReport messages with a strictly increasing msg:AbstractReport/@MdibVersion.
 
@@ -33,8 +33,8 @@ NOTE: This requirement verifies that for a <<actor_somds_provider>> there will b
 ====
 ****
 
-.R1005
-[sdpi_requirement#r1005,sdpi_req_level=shall]
+.R1008
+[sdpi_requirement#r1008,sdpi_req_level=shall]
 ****
 A <<actor_somds_provider>> shall not send msg:DescriptionModificationReport messages in which any two descriptors have the same handle.
 
@@ -45,8 +45,8 @@ NOTE: This requirement simplifies processing of changes for a <<actor_somds_cons
 ====
 ****
 
-.R1006
-[sdpi_requirement#r1006,sdpi_req_level=shall]
+.R1008
+[sdpi_requirement#r1008,sdpi_req_level=shall]
 ****
 A <<actor_somds_provider>> shall order msg:DescriptionModificationReport/msg:ReportPart elements in a way that for an inserted parent descriptor, inserted child descriptors appear after that parent descriptor.
 
@@ -59,10 +59,10 @@ NOTE: This explicitly requires to only communicate children as inserted if the p
 
 ===== Corrigenda
 
-Requirement <<r1007>> replaces biceps:R5024.
+Requirement <<r1009>> replaces biceps:R5024.
 
-.R1007
-[sdpi_requirement#r1007,sdpi_req_level=shall]
+.R1009
+[sdpi_requirement#r1009,sdpi_req_level=shall]
 ****
 A <<actor_somds_provider>> shall not add pm:AbstractDescriptor elements to pm:AbstractDescriptors below msg:DescriptionModificationReport/msg:ReportPart.
 
@@ -73,10 +73,10 @@ NOTE: Replaces biceps:R5024: "Descriptors in this list SHALL not include nested 
 ====
 ****
 
-Requirement <<r1008>> replaces biceps:R5046.
+Requirement <<r1010>> replaces biceps:R5046.
 
-.R1008
-[sdpi_requirement#r1008,sdpi_req_level=shall]
+.R1010
+[sdpi_requirement#r1010,sdpi_req_level=shall]
 ****
 A <<actor_somds_provider>> shall communicate a parent descriptor as deleted only if it does not include any child descriptors.
 

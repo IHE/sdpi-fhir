@@ -1,57 +1,51 @@
-==== MDIB Report Retrofit Best Practices
+==== MDIB Report Retrofit
 
-#TODO MDIB reports are sent out every time descriptors or states of an MDIB containment tree change. Descriptor changes cause corresponding states to also change whereas state changes do not cause descriptors to change. A BICEPS Service Provider is supposed to transmit every change of descriptors and their corresponding states in the msg:DescriptionModificationReport message and every change of states only in msg:ObservedValueStream, msg:WaveformStream, msg:EpisodicAlertReport, msg:EpisodicComponentReport, msg:EpisodicContextReport, msg:EpisodicMetricReport, and msg:EpisodicOperationalStateReport messages (periodic reports are out of scope for this topic of interest).#
-
-//Unfortunately, BICEPS lacks requirements when it comes to the generation of report messages to the extent that BICEPS Service Consumers cannot appropriately be implemented at reasonable costs. This topic of interest discusses best practices for the transmission of MDIB reports in a way that BICEPS Service Consumers can effectively and efficiently process those reports.
-
-===== Additional Requirements
-The following list of requirements enhances the processing of reports. Without those, BICEPS <<ieee_11073_10207_2017>> poses a lot of optionality, which reduces interoperability and increases implementation costs.
-
-====== Order of message reception
-Requirements in this section are only relevant to an MDPWS binding.
-
-NOTE: Future transport bindings may not need these requirements. For example, gRPC verifies ordered delivery by default when using streams data types.
+In addition to <<vol3_clause_mdib_report_retrofit>>, this section specifies requirements to an MDPWS transport binding. The requirements aim to verify that <<acronym_mdib>> versions received by a <<actor_somds_consumer>> are not decremented and present no gap.
 
 .R1001
 [sdpi_requirement#r1001,sdpi_req_level=shall]
 ****
-For an MDPWS transport binding, a <<actor_somds_participant>> shall only utilize HTTP 1.1 without HTTP pipelining for any HTTP traffic.
-
-.Notes
-[%collapsible]
-====
-NOTE: Enforces use of HTTP 1.1 only in order to confine the means by which re-ordering of message delivery can be implemented.
-====
+A <<actor_somds_provider>> shall only establish one TCP connection at a time for every subscribed <<actor_somds_consumer>>.
 ****
 
 .R1002
 [sdpi_requirement#r1002,sdpi_req_level=shall]
+****
+A <<actor_somds_participant>> shall utilize TCP to exchange messages with other <<actor_somds_participant>>s except for messages exchanged in the WS-Discovery Ad-hoc mode.
+
+.Notes
+[%collapsible]
+====
+NOTE: The WS-Discovery Ad-hoc mode utilizes UDP to exchange messages, see <<ws_discovery_2009>>.
+====
+****
+
+.R1003
+[sdpi_requirement#r1003,sdpi_req_level=shall]
+****
+A <<actor_somds_participant>> shall only utilize HTTP 1.1 without HTTP pipelining for any HTTP traffic.
+
+.Notes
+[%collapsible]
+====
+NOTE: Enforces use of HTTP 1.1 in order to limit choices by which a re-ordering of message delivery can be implemented.
+====
+****
+
+.R1004
+[sdpi_requirement#r1004,sdpi_req_level=shall]
 ****
 A <<actor_somds_provider>> shall transmit msg:WaveformStream, msg:AbstractMetricReport, msg:AbstractOperationalStateReport, msg:AbstractComponentReport, msg:AbstractAlertReport, msg:ObservedValueStream, msg:DescriptionModificationReport, and msg:AbstractContextReport messages sequentially.
 
 .Notes
 [%collapsible]
 ====
-NOTE: This allows for an SDC Service Consumer to apply reports on its internal MDIB data structures before receiving the next report.
+NOTE: This allows for a <<actor_somds_consumer>> to apply report data on internal <<acronym_mdib>> data structures before receiving the next report without buffering.
 ====
 ****
 
-.R1007
-[sdpi_requirement#r1007,sdpi_req_level=shall]
+.R1005
+[sdpi_requirement#r1005,sdpi_req_level=should]
 ****
-Messages sent between a <<actor_somds_consumer>> and a <<actor_somds_provider>> shall be sent via a TCP connection (except for Discovery messages).
-****
-
-.R1008
-[sdpi_requirement#r1008,sdpi_req_level=shall]
-****
-Only one TCP connection at a time shall be established for every subscribed <<actor_somds_consumer>>.
-****
-
-The requirements included in this section and in #SECTION TF3-Ch-8.2.8# aim to ensure that MDIB report versions received by a <<actor_somds_consumer>> present no gap or decrementation.
-
-.R1009
-[sdpi_requirement#r1009,sdpi_req_level=should]
-****
-A <<actor_somds_consumer>> should reconnect or go into a fail-safe mode if it receives an MDIB report version that is either lower or more than 1 version higher than the last previously received version.
+A <<actor_somds_consumer>> should reconnect or go into a fail-safe mode when it receives a report with an <<acronym_mdib>> version that is either less than or more than one version greater than the last received version.
 ****
