@@ -45,8 +45,8 @@ NOTE: This requirement simplifies processing of changes for a <<actor_somds_cons
 ====
 ****
 
-.R1008
-[sdpi_requirement#r1008,sdpi_req_level=shall]
+.R1009
+[sdpi_requirement#r1009,sdpi_req_level=shall]
 ****
 A <<actor_somds_provider>> shall order msg:DescriptionModificationReport/msg:ReportPart elements in a way that for an inserted parent descriptor, inserted child descriptors appear after that parent descriptor.
 
@@ -59,24 +59,24 @@ NOTE: This explicitly requires to only communicate children as inserted if the p
 
 ===== Corrigenda
 
-Requirement <<r1009>> replaces biceps:R5024.
+Requirement <<r1010>> replaces biceps:R5024.
 
-.R1009
-[sdpi_requirement#r1009,sdpi_req_level=shall]
+.R1010
+[sdpi_requirement#r1010,sdpi_req_level=shall]
 ****
 A <<actor_somds_provider>> shall not add pm:AbstractDescriptor elements to pm:AbstractDescriptors below msg:DescriptionModificationReport/msg:ReportPart.
 
 .Notes
 [%collapsible]
 ====
-NOTE: Replaces biceps:R5024: "Descriptors in this list SHALL not include nested descriptors."
+NOTE: Replaces biceps:R5024: "Descriptors in this list shall not include nested descriptors."
 ====
 ****
 
-Requirement <<r1010>> replaces biceps:R5046.
+Requirement <<r1011>> replaces biceps:R5046.
 
-.R1010
-[sdpi_requirement#r1010,sdpi_req_level=shall]
+.R1011
+[sdpi_requirement#r1011,sdpi_req_level=shall]
 ****
 A <<actor_somds_provider>> shall communicate a parent descriptor as deleted only if it does not include any child descriptors.
 
