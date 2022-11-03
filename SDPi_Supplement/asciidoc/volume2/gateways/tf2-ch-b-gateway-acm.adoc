@@ -37,9 +37,99 @@ For the IHE ACM profile, the OBR-2 field shall contain the identifier of the Ala
 ====== OBR-3 Filler Order Number
 The OBR-3 field shall contain a unique identifier for the status to the alert indication. The content depends on the state of the alert event:
 
-* *Initial alert event announcement message*: the OBR-3 field shall contain the unique identifier for the alert event. This identifer shall consist of the *pm:AlertConditionState\@DescriptorHandle* plus *pm:AlertConditionState\@StateVersion* plus the *SequenceId* of the state report. #Todo: there shall be an extension with the id in the future#
+* *Initial alert event announcement message*: the OBR-3/EI-1 field shall contain the unique identifier for the alert event. This identifer shall consist of the *pm:AlertConditionState\@DescriptorHandle*  plus the *SequenceId* plus the *pm:AlertConditionState\@StateVersion* of the state report.
 
-* ss
+.Unique Alert Event Identifier
+====
+0x5C00009D.ae3170b5-4fd7-43b5-94c6-71b933342ffe.45
+====
+
+#Todo: there shall be an extension with the id in the future#
+
+#Todo: does this has to be unique globally or only per device?#
+
+* *Subsequent alert event messages for the same alert event*: the OBR-3/EI-1 field shall contain the unique identifier for the alert event message that relates to the same alert event as announced in the initial alert event message. This identifier may be defined by the gateway.
+
+.Unique Alert Event Message Identifier
+====
+bd3170b6-4fd7-43b5-94c6-71b935642fac
+====
+
+The table <<ref_tbl_acm_obr3_mapping>> defines the mapping of the Alert Event Identifier to the data fields of the HL7 data type *EI* used in the OBR-3 field.
+
+[#ref_tbl_acm_obr3_mapping]
+.OBR-7 Filler Order Number Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBR-7/EI-1
+|Entity Identifier
+|
+|Set either to the unique *alert event identifier* or *alert event message identifier*. Please refer to the description above for further information.
+
+|OBR-7/EI-2
+|Namespace ID
+|
+|Shall be set to the EI-2 field as defined in table <<ref_acm_equipment_id_mapping>>.
+
+|OBR-7/EI-3
+|Universal ID
+|
+|Shall be set to the EI-3 field as defined in table <<ref_acm_equipment_id_mapping>>.
+
+|OBR-7/EI-4
+|Universal ID Type
+|
+|Shall be set to the EI-4 field as defined in table <<ref_acm_equipment_id_mapping>>.
+
+|===
+
+====== OBR-4 Universal Service Identifier
+The OBR-4 field shall be set to *"196616\^MDC_EVT_ALARM^MDC"*.
+
+====== OBR-7 Observation Date/Time
+The OBR-7 field shall contain the date & time at which the Alert Reporter (AR) of the IHE ACM gateway created the alert event message to be sent. Please refer to the *Appendix B  B.7.1 OBR Observation Request Segment in ACM Transaction [PCD-04]* of the <<ihe_pcd_tf-2_2019>> further information.
+
+====== OBR-29 Parent
+The OBR-29 field shall contain the unique alert event identifier of the initial alert event message as defined for the OBR-7 field (please refer to <<ref_tbl_acm_obr3_mapping>> for further information).
+
+The field shall be left empty for the initial alert event announcement message which shall contain the unique alert event identifier in the OBR-7 field.
+
+In all subsequent alert event messages, the OBR-29 field shall be set to the initial unique alert event identifier from the OBR-7 field.
+
+The table <<ref_tbl_acm_obr29_mapping>> defines the mapping of the Alert Event Identifier to the data fields of the HL7 data type *EIP* used in the OBR-29 field.
+
+[#ref_tbl_acm_obr29_mapping]
+.OBR-29 Parent Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBR-29/EIP-2
+|Filler Assigned Identifier
+|
+|HL7 data type *EI*
+
+|OBR-29/EIP-2/EI-1
+|Entity Identifier
+|
+|Set to the unique *alert event identifier*. Please refer to the <<ref_tbl_acm_obr3_mapping>> for further information.
+
+|OBR-29/EIP-2/EI-2
+|Namespace ID
+|
+|Shall be set to the EI-2 field as defined in table <<ref_acm_equipment_id_mapping>>.
+
+|OBR-29/EIP-2/EI-3
+|Universal ID
+|
+|Shall be set to the EI-3 field as defined in table <<ref_acm_equipment_id_mapping>>.
+
+|OBR-29/EIP-2/EI-4
+|Universal ID Type
+|
+|Shall be set to the EI-4 field as defined in table <<ref_acm_equipment_id_mapping>>.
+
+|===
 
 ===== OBX - Observation/Result Segment
 The OBX segment is utilized to export seven alert event attributes in the following order as defined in the <<ihe_pcd_tf-2_2019>>:
@@ -52,13 +142,442 @@ The OBX segment is utilized to export seven alert event attributes in the follow
 * Alert Priority
 * Alert Type
 
-The OBX segments representing the alert event attributes are preceded by up to three device-related OBX segments for the MDS, VMD and CHANNEL.
+The OBX segments representing the alert event attributes are preceded by up to three device-related OBX segments for the MDS, VMD and CHANNEL (see also <<ref_acm_obx_device_related_mapping>> for further information).
 
+[#ref_acm_containment_tree_mapping]
+===== Containment Tree Hierarchy Representation
+include::tf2-ch-b-gateway-obx4-mapping.adoc[]
+
+[#ref_acm_equipment_id_mapping]
+===== Equipment Instance Identifier Mapping
+include::tf2-ch-b-gateway-obx18-mapping.adoc[]
+
+[#ref_acm_obx_device_related_mapping]
 ====== Device-related OBX Segments
-tbd
+The device-related OBX segments shall define the hierarchical relationship of the alert event in the device's containment tree. There might be up to three device-related OBX segments for the MDS, VMD, and CHANNEL dependent on the specific device's containment tree. The general mapping of the device-related OBX segments is defined in table <<ref_tbl_acm_obx_device_related_mapping>>.
+
+[NOTE]
+====
+If a private *MDC* code is used for the coding of the SDC device-related element, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
+====
+
+[#ref_tbl_acm_obx_device_related_mapping]
+.OBX Device-related Element Mapping
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-1
+|Set ID - OBX
+|
+|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+
+|OBX-2
+|Value Type
+|
+|Shall be left empty.
+
+|OBX-3
+|Observation Identifier
+|pm:Mds or pm:Vmd or pm:Channel
+/pm:Type
+/@Code
+|Please refer to <<ref_acm_obs_id_mapping>> for further information.
+
+|OBX-4
+|Observation Sub-ID
+|
+|Set to *"<MDS>.<VMD>.<CHAN>.0"* where *<MDS>*, *<VMD>*, and *<CHAN>* are the numbers of the device's containment tree levels assigned by the gateway.
+Please refer to <<ref_acm_containment_tree_mapping>> for further information.
+
+|OBX-5
+|Observation Value
+|
+|Always left empty.
+
+|OBX-11
+|Observation Result Status
+|
+|Set to *"X"*.
+
+|OBX-18
+|Equipment Instance Identifier
+|
+|Please refer to <<ref_acm_equipment_id_mapping>> for further information.
+
+Note that this field shall only be set for the MDS and/or the VMD element if applicable. Otherwise, this field shall be left empty or omitted.
+
+|===
+
+// todo: need a further level
+[#ref_acm_obs_id_mapping]
+====== Observation Identifier Mapping
+include::tf2-ch-b-gateway-obx3-mapping.adoc[]
+
+[NOTE]
+====
+The Observation Identifier Mapping on metric level is only used for the Source Identification OBX segment (please refer to <<ref_acm_obx_source_id_mapping>> for further information).
+
+For a physiological alert event, the OBX-3 field shall contain the source identifier.
+
+For a technical or advisory alert event, the OBX-5 field shall contain the source identifier.
+====
+
+.OBX Device-related Elements Mapping
+====
+OBX|1||69965\^MDC_DEV_MON_PHYSIO_MULTI_PARAM_MDS^MDC|1.0.0.0|||||||X|||||||XY150Z0409\^^0009FBFFFF059322^EUI-64
+
+OBX|2||69710\^MDC_DEV_ANALY_PRESS_BLD_VMD^MDC|1.1.0.0|||||||X
+
+OBX|3||69855\^MDC_DEV_METER_PRESS_BLD_CHAN^MDC|1.1.1.0|||||||X
+====
+
 
 ====== Event Identification OBX Segment
-tbd
+The Event Identification OBX segment shall identify the alert event.
+
+The mapping differs for physiological alert events and technical/advisory alert events (see also <<ref_tbl_acm_obx_alert_type_mapping>> for further information).
+
+// todo: need a further level
+[#ref_acm_obx14_event_id_mapping]
+====== Date/Time Mapping
+The OBX-14 field of the Event Identification OBX segment shall contain the date/time of the alert event status change. This either applies to a change of the *pm:AlertConditionState* or the *pm:AlertSignalState* of the signals related to the alert condition.
+
+The date/time to be set in the OBX-14 field relates to the alert event phase. Table <<ref_tbl_acm_obx14_alert_phase_mapping>> defines the date/time mapping per alert event phase.
+
+[NOTE]
+====
+The HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
+====
+
+[#ref_tbl_acm_obx14_alert_phase_mapping]
+.Date/Time Alert Event Phase Mapping
+|===
+|IHE ACM Alert Event Phase |SDC Alert Condition\Signal State
+
+|start
+|*pm:AlertConditionState \pm:DeterminationTime* which shall represent the alert onset date/time.
+
+|continue
+|The gateway may resend the unchanged alert event information, for example, on a regular basis in order to mitigate the risk of an alert message loss, or after a reconnection to the Alert Manager or Alert Consumer in order to synchronize the current alert status. In this case, the date/time is determined by the gateway for this message.
+
+
+
+|end
+|*pm:AlertConditionState \pm:DeterminationTime* which shall represent the end of the alert condition without latching.
+
+|update
+|*pm:AlertConditionState \pm:DeterminationTime* or *pm:AlertSignalState \pm:DeterminationTime* for any updates/changes to be reported but does not match any other Alert Event Phase mapping criteria.
+
+|escalate
+|*pm:AlertConditionState \pm:DeterminationTime* which shall represent the change of the alert priority.
+
+Note that when there are more changes than just the Alert Priority, the Alert Event Phase shall be reported as *"update"*.
+
+|deescalate
+|*pm:AlertConditionState \pm:DeterminationTime* which shall represent the change of the alert priority.
+
+Note that when there are more changes than just the Alert Priority, the Alert Event Phase shall be reported as *"update"*.
+
+|reset
+|*pm:AlertSignalState \pm:DeterminationTime* which shall represent the end of a latched alert event state.
+
+|===
+
+
+// todo: need a further level
+====== Physiological Alerts
+The event identification mapping for a physiological alert is defined in table <<ref_tbl_acm_obx_event_phy_mapping>>.
+
+[NOTE]
+====
+If a private *MDC* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
+====
+
+[#ref_tbl_acm_obx_event_phy_mapping]
+.OBX Event Identification Mapping - Physiological Alert Event
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-1
+|Set ID - OBX
+|
+|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+
+|OBX-2
+|Value Type
+|
+|Set to *"ST"*.
+
+|OBX-3/CWE-1
+|Identifier
+|pm:AlertConditionDescriptor
+/pm:Type
+/@Code
+|
+
+|OBX-3/CWE-2
+|Text
+|If *@Code* is an MDC code, this field shall contain the RefId of the MDC code.
+
+In all other cases, the field shall be set to the pm:AlertConditionDescriptor /pm:Type /@SymbolicCodeName.
+| Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field shall be set to pm:AlertConditionDescriptor /pm:Type /@CodingSystem.
+
+|Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-4
+|Observation Sub-ID
+|
+|Set to *"<MDS>.<VMD>.<CHAN>.<METRIC>.1"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device's containment tree levels assigned by the gateway.
+Please refer to <<ref_acm_containment_tree_mapping>> for further information.
+
+|OBX-5
+|Observation Value
+|pm:AlertConditionDescriptor
+/pm:Type
+/pm:ConceptDescription
+|
+
+|OBX-11
+|Observation Result Status
+|
+|Set to *"R"*.
+
+|OBX-14
+|Date/Time of Observation
+|
+|Please refer to <<ref_acm_obx14_event_id_mapping>> for further information.
+
+|OBX-18
+|Equipment Instance Identifier
+|
+|Please refer to <<ref_acm_equipment_id_mapping>> for further information.
+
+|===
+
+
+.OBX Event Identification Mapping - Physiological Alert Event
+====
+OBX|4|ST|196648\^MDC_EVT_HI^MDC|1.1.1.1.1|**ABPs 119>110||||||R|||20191121102600||||XY150Z0409\^^0009FBFFFF059322^EUI-64
+====
+
+
+// todo: need a further level
+====== Technical Alerts
+The event identification mapping for a technical alert is defined in table <<ref_tbl_acm_obx_event_tec_mapping>>.
+
+[NOTE]
+====
+If a private *MDC* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
+====
+
+[#ref_tbl_acm_obx_event_tec_mapping]
+.OBX Event Identification Mapping - Technical Alert Event
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-1
+|Set ID - OBX
+|
+|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+
+|OBX-2
+|Value Type
+|
+|Set to *"CWE"*.
+
+|OBX-3/CWE-1
+|Identifier
+|
+|Set to MDC code *"196616"*.
+
+|OBX-3/CWE-2
+|Text
+|
+| Set to MDC RefId *"MDC_EVT_ALARM"*.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|
+|Set to coding system *"MDC"*.
+
+|OBX-4
+|Observation Sub-ID
+|
+|Set to *"<MDS>.<VMD>.<CHAN>.<METRIC>.1"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device's containment tree levels assigned by the gateway.
+Please refer to <<ref_acm_containment_tree_mapping>> for further information.
+
+|OBX-5
+|Observation Value
+|
+|HL7 data type *CWE*
+
+|OBX-5/CWE-1
+|Identifier
+|pm:AlertConditionDescriptor
+/pm:Type
+/@Code
+|
+
+|OBX-5/CWE-2
+|Text
+|If *@Code* is an MDC code, this field shall contain the RefId of the MDC code.
+
+In all other cases, the field shall be set to the pm:AlertConditionDescriptor /pm:Type /@SymbolicCodeName.
+| Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-5/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field shall be set to pm:AlertConditionDescriptor /pm:Type /@CodingSystem.
+
+|Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-5/CWE-9
+|Original Text
+|pm:AlertConditionDescriptor
+/pm:Type
+/pm:ConceptDescription
+|
+
+|OBX-14
+|Date/Time of Observation
+|
+|Please refer to <<ref_acm_obx14_event_id_mapping>> for further information.
+
+|OBX-11
+|Observation Result Status
+|
+|Set to *"R"*.
+
+|OBX-18
+|Equipment Instance Identifier
+|
+|Please refer to <<ref_acm_equipment_id_mapping>> for further information.
+
+|===
+
+
+.OBX Event Identification Mapping - Technical Alert Event
+====
+OBX|4|CWE|196616\^MDC_EVT_ALARM^MDC|1.1.1.1.1|196882\^MDC_EVT_LEADS_OFF^MDC^^^^^^!! ECG Leads Off||||||R|||||||XY150Z0409\^^0009FBFFFF059322^EUI-64
+====
+
+[#ref_acm_obx_source_id_mapping]
+====== Source Identification OBX Segment
+The Source Identification OBX segment shall identify the source that led to the alert event.
+
+The mapping differs for physiological alert events and technical/advisory alert events (see also <<ref_tbl_acm_obx_alert_type_mapping>> for further information).
+
+For physiological alert conditions, the alert event usually relates to a metric and its corresponding value that triggered the alert event. The *pm:AlertConditionDescriptor/pm:Source* element shall contain the handle to the related metric for the alert condition.
+
+For technical alert conditions, the alert event usually relates to a device-related element such as the MDS, a VMD, a CHANNEL, or METRIC. The *pm:AlertConditionDescriptor/pm:Source* element usually contains the handle to the device-related element. If *pm:Source* is empty, the alert condition relates to the device-related element which is the parent of the alert system to which the alert condition is assigned to.
+
+// todo: need a further level
+====== Physiological Alerts
+The source identification for physiological alerts shall be mapped to an OBX segment as defined in <<ref_dec_obx_mapping>>. The gateway shall capture the state of the related metric at the time the alert event occurred.
+
+#Todo: How can SDC "freeze" the state of the metric that causes the alert event?#
+
+The OBX-4 Observation Sub-ID shall be set to *"<MDS>.<VMD>.<CHAN>.<METRIC>.2"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device’s containment tree levels assigned by the gateway.
+
+The OBX-11 Observation Result Status shall be set to *"R"*.
+
+.OBX Source Identification Mapping - Pysiological Alert Event
+====
+OBX|5|NM|150037\^MDC_PRESS_BLD_ART_ABP_SYS^MDC|1.1.1.1.2|119|266016\^MDC_DIM_MMHG^MDC|90-110||||R
+====
+
+// todo: need a further level
+====== Technical Alerts
+The source identification mapping for a technical alert is defined in table <<ref_tbl_acm_obx_source_tec_mapping>>.
+
+[NOTE]
+====
+If a private *MDC* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
+====
+
+[#ref_tbl_acm_obx_source_tec_mapping]
+.OBX Source Identification Mapping - Technical Alert Event
+|===
+|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
+
+|OBX-1
+|Set ID - OBX
+|
+|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+
+|OBX-2
+|Value Type
+|
+|Set to *"CWE"*.
+
+|OBX-3/CWE-1
+|Identifier
+|
+|Set to MDC code *"68480"*.
+
+|OBX-3/CWE-2
+|Text
+|
+| Set to MDC RefId *"MDC_ATTR_ALERT_SOURCE"*.
+
+|OBX-3/CWE-3
+|Name of Coding System
+|
+|Set to coding system *"MDC"*.
+
+|OBX-4
+|Observation Sub-ID
+|
+|Set to *"<MDS>.<VMD>.<CHAN>.<METRIC>.2"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device's containment tree levels assigned by the gateway.
+Please refer to <<ref_acm_containment_tree_mapping>> for further information.
+
+|OBX-5
+|Observation Value
+|
+|HL7 data type *CWE*
+
+|OBX-5/CWE-1
+|Identifier
+|pm:Mds or pm:Vmd or pm:Channel or pm:Metric
+/pm:Type
+/@Code
+|
+
+|OBX-5/CWE-2
+|Text
+|If *@Code* is an MDC code, this field shall contain the RefId of the MDC code.
+
+In all other cases, the field shall be set to the pm:Mds or pm:Vmd or pm:Channel or pm:Metric /pm:Type /@SymbolicCodeName.
+| Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-5/CWE-3
+|Name of Coding System
+|*"MDC"* if no other coding system is specified.
+
+In all other cases, the field shall be set to pm:Mds or pm:Vmd or pm:Channel or pm:Metric /pm:Type /@CodingSystem.
+
+|Note that MDC is the default coding system if no coding system is specified.
+
+|OBX-11
+|Observation Result Status
+|
+|Set to *"R"*.
+
+|===
+
+.OBX Source Identification Mapping - Technical Alert
+====
+OBX|5|CWE|68480\^MDC_ATTR_ALERT_SOURCE^MDC|1.1.1.1.2|131328\^MDC_ECG_ELEC_POTL^MDC||||||R
+====
+
 
 ====== Event Phase OBX Segment
 The actual value of the IHE ACM Alert Event Phase attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_phase_mapping>>.
@@ -97,7 +616,7 @@ The actual value of the IHE ACM Alert Event Phase attribute depends on a combina
 |Observation Sub-ID
 |
 |Set to *"<MDS>.<VMD>.<CHAN>.<METRIC>.3"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device's containment tree levels assigned by the gateway.
-#See <<ref_dec_obx4>> for further information.#
+Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |OBX-5
 |Observation Value
@@ -113,7 +632,7 @@ The actual value of the IHE ACM Alert Event Phase attribute depends on a combina
 
 [NOTE]
 ====
-Alle *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_phase_mapping>> and needed to determine the actual alert state, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
+Alle *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_phase_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
 
 Unless the *pm:AlertConditionState\@ActivationState* is set to *"On"*, the *pm:AlertConditionState\@Presence* shall always be set to *"false"*; that is, the gateway shall not export any IHE ACM alert event messages.
 ====
@@ -154,6 +673,11 @@ Note that when there are more changes than just the Alert Priority, the Alert Ev
 all the *pm:AlertSignalState* elements with *@ActivationState* set to *"On"* transitioned from *@Presence* set to *"Latch"* to *@Presence* set to *"Off"* or *"Ack"*. This state ends the current alert event for this condition.
 
 |===
+
+.OBX Alert Event Phase Mapping
+====
+OBX|6|ST|68481\^MDC_ATTR_EVENT_PHASE^MDC|1.1.1.1.3|start||||||R
+====
 
 ====== Alert State OBX Segment
 The actual value of the IHE ACM Alert State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_state_mapping>>.
@@ -197,7 +721,7 @@ The IHE ACM gateway shall only report an inactive alert condition when the alarm
 |Observation Sub-ID
 |
 |Set to *"<MDS>.<VMD>.<CHAN>.<METRIC>.4"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device's containment tree levels assigned by the gateway.
-#See <<ref_dec_obx4>> for further information.#
+Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |OBX-5
 |Observation Value
@@ -235,6 +759,11 @@ none of the *pm:AlertSignalState* elements with *@ActivationState* set to *"On"*
 at least one of the *pm:AlertSignalState* elements with *@ActivationState* set to *"On"* and *@Presence* set to *"Latch"*
 
 |===
+
+.OBX Alert State Mapping
+====
+OBX|7|ST|68482\^MDC_ATTR_ALARM_STATE^MDC|1.1.1.1.4|active||||||R
+====
 
 ====== Inactivation State OBX Segment
 The actual value of the IHE ACM Alert Inactivation State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_inactivation_state_mapping>>.
@@ -278,7 +807,7 @@ The OBX-5 field may contain multiple inactivation states separated by the HL7 me
 |Observation Sub-ID
 |
 |Set to *"<MDS>.<VMD>.<CHAN>.<METRIC>.5"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device's containment tree levels assigned by the gateway.
-#See <<ref_dec_obx4>> for further information.#
+Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |OBX-5
 |Observation Value
@@ -328,6 +857,11 @@ all *pm:AlertSignalState* elements have their *@ActivationState* set to *"Off"* 
 
 |===
 
+.OBX Inactivation State Mapping
+====
+OBX|8|ST|68483\^MDC_ATTR_ALARM_INACTIVATION_STATE^MDC|1.1.1.1.5|enabled||||||R
+====
+
 [#ref_acm_alert_priority_obx_mapping]
 ====== Alert Priority OBX Segment
 The SDC *pm:AlertConditionDescriptor/@Priority* shall be mapped to an IHE ACM Alert Priority OBX segment as defined in the <<ihe_pcd_tf-2_2019>>. In the case of an alert priority escalation or deescalation, the *pm:AlertConditionState/@ActualPriority* is updated with a new priority that differs from the previous *@ActualPriority* in the state or the *@Priority* in the descriptor. In this case, the gateway shall send a new alert event message with the updated priority.  The mapping is defined in table <<ref_tbl_acm_obx_alert_priority_mapping>>.
@@ -366,7 +900,7 @@ The SDC *pm:AlertConditionDescriptor/@Priority* shall be mapped to an IHE ACM Al
 |Observation Sub-ID
 |
 |Set to *"<MDS>.<VMD>.<CHAN>.<METRIC>.6"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device's containment tree levels assigned by the gateway.
-#See <<ref_dec_obx4>> for further information.#
+Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |OBX-5
 |Observation Value
@@ -414,6 +948,11 @@ pm:AlertConditionDescriptor
 
 |===
 
+.OBX Alert Priority Mapping
+====
+OBX|9|ST|68484\^MDC_ATTR_ALARM_PRIORITY^MDC|1.1.1.1.6|PM||||||R
+====
+
 ====== Alert Type OBX Segment
 The SDC *pm:AlertConditionDescriptor/@Kind* shall be mapped to an IHE ACM Alert Type OBX segment as defined in the <<ihe_pcd_tf-2_2019>>. The mapping is defined in table <<ref_tbl_acm_obx_alert_type_mapping>>.
 
@@ -451,7 +990,7 @@ The SDC *pm:AlertConditionDescriptor/@Kind* shall be mapped to an IHE ACM Alert 
 |Observation Sub-ID
 |
 |Set to *"<MDS>.<VMD>.<CHAN>.<METRIC>.7"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device's containment tree levels assigned by the gateway.
-#See <<ref_dec_obx4>> for further information.#
+Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |OBX-5
 |Observation Value
@@ -488,6 +1027,11 @@ advisory condition.
 |Alert is Advisory
 
 |===
+
+.OBX Alert Type Mapping
+====
+OBX|10|ST|68485\^MDC_ATTR_ALERT_TYPE^MDC|1.1.1.1.7|ST||||||R
+====
 
 ===== PRT - Participation Information Segment
 The PRT segment is optional for the [PCD-04] transaction and currently not supported by the ACM gateway actor.

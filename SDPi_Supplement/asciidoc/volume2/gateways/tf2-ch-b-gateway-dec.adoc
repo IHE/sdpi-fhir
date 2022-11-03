@@ -356,6 +356,7 @@ The field shall be left empty if there is no valid SDC operator context.
 
 |===
 
+[#ref_dec_obx_mapping]
 ===== OBX - Observation/Result Segment
 The the HL7 Obervation/Result (OBX) segment requires a mapping from the SDC containment tree and metric items to the OBX segment fields.
 
@@ -385,162 +386,11 @@ This field shall be left empty for OBX segments defining the device's MDS, VMD, 
 |===
 
 ====== OBX-3 Observation Identifier
-The OBX-3 field shall contain the identifier of the element in the hierarchical containment tree such as MDS, VMD, CHAN, or the actual related metric to be exported. The tables below defines the mapping of the SDC containment tree element to the data fields of the HL7 data type *CWE* used in the OBX-3 field.
-
-[NOTE]
-====
-If a private *MDC* code is used for the coding of the SDC containment tree element, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
-====
-
-[#ref_tbl_dec_obx3_mds_mapping]
-.OBX-3 Observation Identifier Mapping - MDS Level
-|===
-|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
-
-|OBX-3/CWE-1
-|Identifier
-|pm:Mds
-/pm:Type
-/@Code
-|
-
-|OBX-3/CWE-2
-|Text
-|If *@Code* is an MDC code, this field shall contain the RefId of the MDC code.
-
-In all other cases, the field shall be set to the pm:Mds /pm:Type /@SymbolicCodeName.
-| Note that MDC is the default coding system if no coding system is specified.
-
-|OBX-3/CWE-3
-|Name of Coding System
-|*"MDC"* if no other coding system is specified.
-
-In all other cases, the field shall be set to pm:Mds /pm:Type /@CodingSystem.
-
-|Note that MDC is the default coding system if no coding system is specified.
-
-|===
-
-[#ref_tbl_dec_obx3_vmd_mapping]
-.OBX-3 Observation Identifier Mapping - VMD Level
-|===
-|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
-
-|OBX-3/CWE-1
-|Identifier
-|pm:Vmd
-/pm:Type
-/@Code
-|
-
-|OBX-3/CWE-2
-|Text
-|If *@Code* is an MDC code, this field shall contain the RefId of the MDC code.
-
-In all other cases, the field shall be set to the pm:Vmd /pm:Type /@SymbolicCodeName.
-| Note that MDC is the default coding system if no coding system is specified.
-
-|OBX-3/CWE-3
-|Name of Coding System
-|*"MDC"* if no other coding system is specified.
-
-In all other cases, the field shall be set to pm:Vmd /pm:Type /@CodingSystem.
-
-|Note that MDC is the default coding system if no coding system is specified.
-
-|===
-
-[#ref_tbl_dec_obx3_chan_mapping]
-.OBX-3 Observation Identifier Mapping - CHAN Level
-|===
-|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
-
-|OBX-3/CWE-1
-|Identifier
-|pm:Channel
-/pm:Type
-/@Code
-|
-
-|OBX-3/CWE-2
-|Text
-|If *@Code* is an MDC code, this field shall contain the RefId of the MDC code.
-
-In all other cases, the field shall be set to the pm:Channel /pm:Type /@SymbolicCodeName.
-| Note that MDC is the default coding system if no coding system is specified.
-
-|OBX-3/CWE-3
-|Name of Coding System
-|*"MDC"* if no other coding system is specified.
-
-In all other cases, the field shall be set to pm:Channel /pm:Type /@CodingSystem.
-
-|Note that MDC is the default coding system if no coding system is specified.
-
-|===
-
-[#ref_tbl_dec_obx3_metric_mapping]
-.OBX-3 Observation Identifier Mapping - Metric Level
-|===
-|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
-
-|OBX-3/CWE-1
-|Identifier
-|pm:NumericMetricDescriptor
-/pm:Type
-/@Code
-
-pm:StringMetricDescriptor
-/pm:Type
-/@Code
-
-pm:EnumStringMetricDescriptor
-/pm:Type
-/@Code
-|
-
-|OBX-3/CWE-2
-|Text
-|If *@Code* is an MDC code, this field shall contain the RefId of the MDC code.
-
-In all other cases, the field shall be set to the pm:xxxMetricDescriptor /pm:Type /@SymbolicCodeName.
-|Note that MDC is the default coding system if no coding system is specified.
-
-|OBX-3/CWE-3
-|Name of Coding System
-|*"MDC"* if no other coding system is specified.
-
-In all other cases, the field shall be set to pm:xxxMetricDescriptor /pm:Type /@CodingSystem.
-
-|Note that MDC is the default coding system if no coding system is specified.
-
-|===
-
+include::tf2-ch-b-gateway-obx3-mapping.adoc[]
 
 [#ref_dec_obx4]
 ====== OBX-4 Observation Sub-ID
-The OBX-4 field shall contain a flattened representation of the SDC element in the hierarchical containment tree. Please refer to the IHE technical framework <<ihe_pcd_tf-2_2019>> for further information.
-
-The gateway shall assign the handles (which are required to be unique in the same MDIB) of the containment tree elements pm:Mds, pm:Vmd, pm:Channel, and pm:Metic to unique integer numbers. The numbers have to be unique per contrainment tree level e. g. all pm:Vmd elements are assigned to a unique number. The pm:Channel elements may use the same numbers as the pm:Vmd elements but on the pm:Channel level the numbers must be unique as well.
-
-There is no requirement to preserve the same assigned number for a containment tree element from message to message, but it is highly recommended since this makes it much easier for the DOC to process the HL7 V2 messages.
-
-.Containment Tree Element Handle Assignment
-====
-The gateway assigns the handles of the containment tree elements to
-
-* "3" for pm:Mds/@Handle="My1Mds".
-* "1" for pm:Vmd/@Handle="Vmd.1".
-* "2" for pm:Channel/@Handle="Chan.4".
-* "1" for pm:Metric/@Handle="Metric.Spo2".
-
-The OBX-4 field for the containment tree elements shall be set to
-
-* "3.0.0.0" for the MDS OBX segment.
-* "3.1.0.0" for the VMD OBX segment.
-* "3.1.2.0" for the CHAN OBX segment.
-* "3.1.2.1" for the Metric OBX segment.
-====
+include::tf2-ch-b-gateway-obx4-mapping.adoc[]
 
 ====== OBX-5 Observation Value
 The OBX-5 field shall contain the value of the SDC metric. The formatting of the data depends on the data type.

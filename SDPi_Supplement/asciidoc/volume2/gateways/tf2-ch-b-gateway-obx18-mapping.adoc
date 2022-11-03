@@ -2,7 +2,7 @@ The OBX-18 field shall contain the equipment (or device) identifier on the MDS l
 
 The table <<ref_tbl_dec_obx18_mds_mapping>> defines the mapping of the SDC MDS meta data to the data fields of the HL7 data type *EI* used in the OBX-18 field.
 
-he table <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the SDC VMD information to the data fields of the HL7 data type *EI* used in the OBX-18 field.
+The table <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the SDC VMD information to the data fields of the HL7 data type *EI* used in the OBX-18 field.
 
 [#ref_tbl_dec_obx18_mds_mapping]
 .OBX-18 Equipment Instance Identifier Mapping - MDS level
@@ -26,7 +26,7 @@ he table <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the SDC VMD in
 \@Root
 |
 
-|OBX-18/EI-2
+|OBX-18/EI-3
 |Universal ID
 |pm:Mds
 \pm:MetaData
@@ -34,12 +34,14 @@ he table <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the SDC VMD in
 \pm:DeviceIdentifier
 |
 
-|OBX-18/EI-2
+|OBX-18/EI-4
 |Universal ID Type
 |
-|Set to *""L"*
+|Set to *"L"*
 
 |===
+
+#Todo: there is no Universal ID Type definition for a UDI right now. So, "L" is used for "local id type". Is that correct? Shall we push HL7 to define a new type? Shall we just use "UDI"?#
 
 [#ref_tbl_dec_obx18_vmd_mapping]
 .OBX-18 Equipment Instance Identifier Mapping - VMD level
@@ -56,12 +58,12 @@ he table <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the SDC VMD in
 |
 |
 
-|OBX-18/EI-2
+|OBX-18/EI-3
 |Universal ID
 |
 |
 
-|OBX-18/EI-2
+|OBX-18/EI-4
 |Universal ID Type
 |
 |
