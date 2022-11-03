@@ -6,30 +6,32 @@
 
 The following is a quick guide to the functionality of DIS, CDIS, DAS and CDAS systems and how we have used and interpreted them for the purpose of this IHE Profile Supplement.  Please refer to the next section on Definitions from <<iec_60601_1_8_2020>> for normative definitions for these terms.
 
-NOTE: Note that the 1.0 version of the SDPi Profile only supports the Distributed Information System (DIS).
+NOTE: Note that the 1.0 version of the SDPi Profile only supports the Distributed Information System (DIS) model detailed below.  The other models are anticipated for subsequent versions.
 
 
 ====== DIS – Distributed Information System
 
-DIS is a system for reporting alarm signals with no technical confirmation (of receipt).
+*DIS* is a system for reporting alarm signals with no technical confirmation (of receipt).
 
 •	Cannot rely on it for alarm signaling as a risk control
 
 •	Optional support operator alarm management* response locally
 
-•	Example - patient remote display, hallway display, one-way pager
+•	Example -- patient remote display, hallway display, one-way pager
 
 ====== CDIS – Distributed Information System with Confirmation
-CDIS is a system for reporting alarm signals with no technical confirmation but with operator confirmation (accept/reject). (Note it is not recognized in 60601-1-8)
+
+*CDIS* is a system for reporting alarm signals with no technical confirmation but with operator confirmation (accept/reject). (Note it is not recognized in 60601-1-8)
 
 •	Cannot rely on it for alarm signaling as a risk control
 
 •	Optional support operator alarm management* response locally and remotely
 
-•	Example – two-way pager (open loop)
+•	Example –- two-way pager (open loop)
 
 ====== DAS – Distributed Alarm System
-DAS is a system for reporting alarm signals with technical confirmation (of receipt).
+
+*DAS* is a system for reporting alarm signals with technical confirmation (of receipt).
 
 •	Can rely on it for alarm signaling as a risk control
 
@@ -37,10 +39,11 @@ DAS is a system for reporting alarm signals with technical confirmation (of rece
 
 •	A communications failure or failure in any remote component of the DAS must initiate a technical alarm.
 
-•	Example - Central Station
+•	Example -- Central Station
 
 ====== CDAS - Distributed Information System with Confirmation
-CDAS is a system for reporting alarm signals with technical and operator confirmation (accept/reject) (of receipt).
+
+*CDAS* is a system for reporting alarm signals with technical and operator confirmation (accept/reject) (of receipt).
 
 •	Can rely on it for alarm signaling as a risk control
 
@@ -50,117 +53,105 @@ CDAS is a system for reporting alarm signals with technical and operator confirm
 
 •	A communications failure or failure in any remote component of the DAS must initiate a technical alarm.
 
-•	Example - System that sends alarm to caregiver mobile device with accept / reject.  Integrator may redirect
+•	Example -- System that sends alarm to caregiver mobile device with accept / reject.  Integrator may redirect
 
 NOTE: An xDIS can be either a DIS or CDIS.  Similarly an xDAS can be either a DAS or CDAS.
 
 [%autowidth]
-[cols="^3,^1,^1,^1,^1,^2"]
+[cols="^2,^1,^1,^1,^1,^2"]
 |===
-|Description |Type|Technical Delivery Confirmation (1)|Operator Delivery Confirmation(2)|Optional Alarm Management|Examples
+|Description |Type|Technical Delivery Confirmation^1^|Operator Delivery Confirmation^2^|Optional Alarm Management|Examples
 
-|Reports alerts from a single patient (sp)
-|DISsp
-|No
-|No
-|Local
-|Single-Pt. information Dashboard
+.4+.^|Reports alerts from a single patient (sp)
+.^| DISsp
+.^| No
+.^| No
+.^| Local
+.^| Single-Pt. information Dashboard
 
-|"
-|CDISsp
-|No
-|Yes(3)
-|Remote(3)
-|Single-Pt. Remote View w/accept/reject
+.^| CDISsp
+.^| No
+.^| Yes^3^
+.^| Remote^3^
+.^| Single-Pt. Remote View w/accept/reject
 
-|"
-|DASsp
-|Yes
-|No
-|Local
-|Single-Pt. Cockpit w/audible alarms
+.^| DASsp
+.^| Yes
+.^| No
+.^| Local
+.^| Single-Pt. Cockpit w/audible alarms
 
-|"
-|CDASsp
-|Yes
-|Yes
-|Remote
-|Single-Pt. Cockpit w/accept/reject
+.^| CDASsp
+.^| Yes
+.^| Yes
+.^| Remote
+.^| Single-Pt. Cockpit w/accept/reject
 
-|Reports alerts from multiple patients (mp)
-|DISmp
-|No
-|No
-|Local
-|Multiple-Pt. information Dashboard or View Station
+.4+.^|Reports alerts from multiple patients (mp)
+.^| DISmp
+.^| No
+.^| No
+.^| Local
+.^| Multiple-Pt. information Dashboard or View Station
 
-|"
-|CDISmp
-|No
-|Yes(3)
-|Remote(3)
-|Multiple-Pt. info. View Station w/accept/reject
+.^| CDISmp
+.^| No
+.^| Yes^3^
+.^| Remote^3^
+.^| Multiple-Pt. info. View Station w/accept/reject
 
-|"
-|DASmp
-|Yes
-|No
-|Local
-|Multiple-Pt. Central Station w/audible alarms
+.^| DASmp
+.^| Yes
+.^| No
+.^| Local
+.^| Multiple-Pt. Central Station w/audible alarms
 
-|"
-|CDASmp
-|Yes
-|Yes
-|Remote
-|Multiple-Pt. Central Station w/accept/reject
+.^| CDASmp
+.^| Yes
+.^| Yes
+.^| Remote
+.^| Multiple-Pt. Central Station w/accept/reject
 
-|Reports and directs alerts to responsible caregiver (cg)
-|DIScg
-|No
-|No
-|Local
-|Alerts to caregiver pager, Mobile viewer
+.4+.^|Reports and directs alerts to responsible caregiver (cg)
+.^| DIScg
+.^| No
+.^| No
+.^| Local
+.^| Alerts to caregiver pager, Mobile viewer
 
-|"
-|CDIScg
-|No
-|Yes(3)
-|Remote(3)
-|Alerts to caregiver pager, w/accept/reject
+.^| CDIScg
+.^| No
+.^| Yes^3^
+.^| Remote^3^
+.^| Alerts to caregiver pager, w/accept/reject
 
-|"
-|DAScg
-|Yes
-|No
-|Local
-|Alerts to caregiver w/audible/haptic signals
+.^| DAScg
+.^| Yes
+.^| No
+.^| Local
+.^| Alerts to caregiver w/audible/haptic signals
 
-|"
-|CDAScg
-|Yes
-|Yes
-|Remote
-|Alerts to caregiver w/accept/reject
+.^| CDAScg
+.^| Yes
+.^| Yes
+.^| Remote
+.^| Alerts to caregiver w/accept/reject
 
+6+<| ^1^ In each communication step the receiving device provides a technical response to the sending device that it received and is taking responsibility for the alert
+
+^2^ Operator can, at their choice, use the receiving device (communicator) UI to accept or reject responsibility for the alert
+
+^3^ Not recommended since there is no confirmation that the Source has received the commands
 |===
-
-
-|===
-| (1) In each communication step the receiving device provides a technical response to the sending device that it received and is taking responsibility for the alert
-
-(2) Operator can, at their choice, use the receiving device (communicator) UI to accept or reject responsibility for the alert
-
-(3) Not recommended since there is no confirmation that the Source has received the commands
-|===
-
-
+{empty} +
 
 ===== ISO/IEC 60601-1-8 Definitions for DIS, DAS and CDAS
 
-The following content is extracted directly from the IEC 60601-1-8:2020 standard for reference purposes.
+The following content is extracted directly from the <<iec_60601_1_8_2020>> standard for reference purposes.  Please consult that standard for comprehensive discussion and complete normative requirements, as well as the "rationale" section, which includes many of the concepts identified in this section.
 
-====== DIS - * DISTRIBUTED INFORMATION SYSTEM ABOUT ALARM CONDITIONS
+#TODO: REVIEW THE CONTENT OF THIS SECTION FOR ANY COPYRIGHT REQUIREMENTS - PERHAPS ENGAGE HAE ...#
+
+====== DIS - DISTRIBUTED INFORMATION SYSTEM ABOUT ALARM CONDITIONS
 system that involves more than one item of equipment in a ME SYSTEM intended to provide information about ALARM CONDITIONS but does not guarantee delivery of that information
 
 NOTE: NOTE 1: A DISTRIBUTED INFORMATION SYSTEM ABOUT ALARM CONDITIONS is not intended to notify OPERATORS of the existence of an ALARM CONDITION as a RISK CONTROL measure. A DISTRIBUTED INFORMATION SYSTEM ABOUT ALARM CONDITIONS is intended to provide information about an ALARM CONDITION while the OPERATOR is aware of the existence of the ALARM CONDITION by an ALARM SYSTEM.
@@ -168,10 +159,10 @@ NOTE: NOTE 1: A DISTRIBUTED INFORMATION SYSTEM ABOUT ALARM CONDITIONS is not int
 NOTE: NOTE 2: A DISTRIBUTED INFORMATION SYSTEM ABOUT ALARM CONDITIONS is not intended for confirmed delivery of ALARM CONDITIONS
 
 Examples include:
+[none]
+. Sometimes referred to as secondary alerting devices: Hallway display of active alarms; Hallway light over room door; Caregiver worn device;
 
-Sometimes referred to as secondary alerting devices: Hallway display of active alarms; Hallway light over room door; Caregiver worn device;
-
-====== DAS - * DISTRIBUTED ALARM SYSTEM
+====== DAS - DISTRIBUTED ALARM SYSTEM
 ALARM SYSTEM that involves more than one item of equipment in a ME SYSTEM intended for delivery of ALARM CONDITIONS with technical confirmation
 
 NOTE: NOTE 1 The parts of a DISTRIBUTED ALARM SYSTEM can be widely separated in distance.
@@ -180,8 +171,13 @@ NOTE: NOTE 2 A DISTRIBUTED ALARM SYSTEM is intended to notify OPERATORS of the e
 
 NOTE: NOTE 3 For the purposes of this document, technical confirmation means that each element of a DISTRIBUTED ALARM SYSTEM confirms or guarantees the successful delivery of the ALARM CONDITION to the next element or appropriate TECHNICAL ALARM CONDITIONS are created as described in 6.11.2.2.1.
 
+{empty} +
 
-image::image-2022-11-02-12-11-40-295.png[]
+#TODO:  THE FOLLOWING IMAGE DOES RENDERS HERE BUT NOT IN THE PUBLISHED ASCIIDOC-CONVERTER FILE ... ???#
+
+.IEC 60601-1-8:2020, Figure 2 -- Functions of a DISTRIBUTED ALARM SYSTEM utilizing a MEDICAL IT NETWORK
+
+image::../../images/vol1-diagram-60601-1-8-2020-figure-2.svg[]
 
 Examples include:
 
@@ -200,17 +196,21 @@ Examples include:
 - Bed to Bed alarm feature supporting alarm acknowledge;
 - Caregiver worn device supporting alarm acknowledge
 
-IEC 60601-1-8 clause 6.11.2.4 * CDAS
+#TODO: MAKE THE FOLLOWING SECTION ONE LEVEL DEEPER#
+
+====== IEC 60601-1-8:2020, Subclause 6.11.2.4 CDAS
 
 In a CDAS, the COMMUNICATOR that receives an ALARM CONDITION shall have means to create the OPERATOR responses (RESPONSIBILITY ACCEPTED or RESPONSIBILITY REJECTED) and transfer them to the INTEGRATOR.
 
-a)	In a CDAS, the COMMUNICATOR that receives an ALARM CONDITION and initiates an OPERATOR response (RESPONSIBILITY ACCEPTED or RESPONSIBILITY REJECTED) shall indicate the OPERATOR response state (RESPONSIBILITY ACCEPTED or RESPONSIBILITY REJECTED).
+[loweralpha]
+. In a CDAS, the COMMUNICATOR that receives an ALARM CONDITION and initiates an OPERATOR response (RESPONSIBILITY ACCEPTED or RESPONSIBILITY REJECTED) shall indicate the OPERATOR response state (RESPONSIBILITY ACCEPTED or RESPONSIBILITY REJECTED).
 
 The means of control used to initiate an OPERATOR response or indication of state may be marked with:
 
-a)	symbol ISO 7000-6334A (2015-06) (see Symbol 13 of Table C.1) for RESPONSIBILITY ACCEPTED; or
+[loweralpha]
+. symbol ISO 7000-6334A (2015-06) (see Symbol 13 of Table C.1) for RESPONSIBILITY ACCEPTED; or
 
-b)	symbol ISO 7000-6335A (2015-06) (see Symbol 16 of Table C.1) for RESPONSIBILITY REJECTED.
+. symbol ISO 7000-6335A (2015-06) (see Symbol 16 of Table C.1) for RESPONSIBILITY REJECTED.
 
 Means shall be provided for the OPERATOR to terminate RESPONSIBILITY ACCEPTED or RESPONSIBILITY REJECTED while the related ALARM CONDITION is active. Initiating RESPONSIBILITY REJECTED may be used to terminate RESPONSIBILITY ACCEPTED. Initiating RESPONSIBILITY ACCEPTED may be used to terminate RESPONSIBILITY REJECTED.
 
@@ -222,7 +222,9 @@ In a CDAS, the INTEGRATOR shall have means to accept OPERATOR responses from the
 
 In a CDAS, the SOURCE may receive OPERATOR responses from the INTEGRATOR.
 
-IEC 60601-1-8 Subclause 6.11.2.4 – CDAS
+#TODO: MAKE THE FOLLOWING SECTION ONE LEVEL DEEPER#
+
+====== IEC 60601-1-8:2020, Subclause 6.11.2.4 – CDAS
 
 The terms RESPONSIBILITY ACCEPTED, RESPONSIBILITY REJECTED, and RESPONSIBILITY UNDEFINED are new to this document. They are most often applicable to a DISTRIBUTED ALARM SYSTEM for use in an intensive care setting or a hospital ward setting, in which each OPERATOR has a COMMUNICATOR (example: pocket pager or phone) that provides an ALARM CONDITION to a specific OPERATOR. If the DISTRIBUTED ALARM SYSTEM presents an ALARM CONDITION to a specific OPERATOR, then there can be three possibilities:
 

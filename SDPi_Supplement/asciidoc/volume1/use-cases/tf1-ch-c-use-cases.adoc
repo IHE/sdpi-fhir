@@ -33,6 +33,8 @@ include::tf1-ch-c-60601-1-8.adoc[]
 
 ==== Use Cases, MBSE Requirements Modeling & SysML 2.0
 
+#MOVE THIS UP TO APPENDIX A#
+
 ##TODO:
 - MBSE Reference incl. Requirements Modeling
 - Reference SysML 2.0 7.20 + intro slides on <topics>
@@ -52,6 +54,8 @@ For the
 
 // C.1.4
 ==== Use Case Specification Conventions Using Cucumber/Gherkin
+
+TODO:  ADD UML MODEL FOR GHERKIN HERE + DISCUSSION
 
 Each Use Case (also called a Feature in Gherkin) is organized as follows:
 

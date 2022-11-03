@@ -61,6 +61,15 @@ WARNING: #DOES ASCIIDOC NOT SUPPORT REPLACEMENT CARACTERS (SEE NEXT TWO) OR IS I
 
 * [[[iec_60601_1_8_2020, IEC 60601-1-8:2020]]], IEC 60601-1-8:2006/AMD2:2020, Medical electrical equipment — Part 1-8: General requirements for basic safety and essential performance — Collateral standard: General requirements, tests and guidance for alarm systems in medical electrical equipment and medical electrical systems; Amendment 1:2020, and Amendment 2:2020. available at https://webstore.iec.ch/publication/59648[IEC Webstore] and the https://www.iso.org/standard/41986.html[ISO standards store].
 
+* [[[iec_80001_1_2021, ISO/IEC 80001-1:2021]]], IEC 80001-1:2021
+Application of risk management for IT-networks incorporating medical devices — Part 1: Safety, effectiveness and security in the implementation and use of connected medical devices or connected health software.  Available at https://webstore.iec.ch/publication/34263[IEC Webstore] and https://www.iso.org/standard/72026.html[ISO standards store].
+
+* [[[iso_81001_1_2021, ISO/IEC 81001-1:2021]]], ISO 81001-1:2021
+Health software and health IT systems safety, effectiveness and security — Part 1: Principles and concepts.  Availabe at https://www.iso.org/standard/71538.html[ISO standards store] and https://webstore.iec.ch/publication/34286[IEC Webstore].
+
+* [[[iso_81001_temple, ISO 81001-1 "The Temple"]]], ISO/IEC 81001-1 Figure 1 "The Temple" Diagram, Copyright &#169; 2019 NHS Digital, licensed via Wikimedia Commons, http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3[Greg Wye, NHS Digital, OGL 3], available at https://81001.org/page/Framework[81001.org Framework].
+
+* [[[ihe_eu_experience_2021_presentation_cooper_schlichting,  IHE EU Experience-2021 IHE CA for MedTech Solutions]]], "IHE & IHE Catalyst: Advancing Interoperable MedTec Solutions with "Regulatory Submission Ready" Conformity Assessment", presentation by Todd Cooper and Dr. Stefan Schlichting, available at https://connectathon.ihe-europe.net/experience-sessions-2021-presentations[IHE Europe Experience 2021 Presentations web page].
 
 // Appendix B.3
 === IEEE Implementation Conformance Statement (ICS) Table Overview
