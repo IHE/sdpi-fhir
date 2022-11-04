@@ -4,11 +4,6 @@ NOTE:  This file contains the general introduction to how SDPi handles standards
 {empty} +
 ICS Statements per standard may be in a different subfolder and files - along with this appendix B file.
 
-CAUTION:  This appendix may be deferred to SDPi 1.x
-
-
-NOTE: the following section was moved from the mothership document to here for incorporation toward the front of Appendix C.
-
 // Appendix B
 [appendix#vol1_appendix_b_referenced_standards_requirements_and_conformance,sdpi_offset=B]
 == Referenced Standards Requirements and Conformance
@@ -21,9 +16,9 @@ NOTE: the following section was moved from the mothership document to here for i
 [bibliography]
 === Referenced Standards
 
-##ADD REFERENCES FROM GLOSSARY##
+#TODO: ADD REFERENCES FROM GLOSSARY#
 
-WARNING:  #For IHE stuff, Do we want to include the actual URL?  Or point to profiles.ihe.org/DEV/. or include the URL but under a better display name (see compendium toward the bottom of the list)#
+#TODO:  For IHE stuff, Do we want to include the actual URL?  Or point to profiles.ihe.org/DEV/. or include the URL but under a better display name (see compendium toward the bottom of the list)#
 
 * [[[ieee_11073_10207_2017,IEEE 11073-10207:2017]]] IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2017-12, available at https://standards.ieee.org/ieee/11073-10207/6032 footnote:ieee_permission[]
 
@@ -31,11 +26,11 @@ WARNING:  #For IHE stuff, Do we want to include the actual URL?  Or point to pro
 
 * [[[ieee_11073_20702_2016,IEEE 11073-20702:2016]]] IEEE 11073-20702-2016, Health informatics — Point-of-care medical device communication — Part 20702: Medical Devices Communication Profile for Web Services, 2016-09, available at https://standards.ieee.org/ieee/11073-20702/6034
 
-* [[[ihe_pcd_tf-1_2019, IHE PCD TF-1:2019]]] IHE Patient Care Device Technical Framework, Vol. 1, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol1.pdf.
+* [[[ihe_pcd_tf_1_2019, IHE PCD TF-1:2019]]] IHE Patient Care Device Technical Framework, Vol. 1, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol1.pdf.
 
-* [[[ihe_pcd_tf-2_2019, IHE PCD TF-2:2019]]] IHE Patient Care Device Technical Framework, Vol. 2, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol2.pdf.
+* [[[ihe_pcd_tf_2_2019, IHE PCD TF-2:2019]]] IHE Patient Care Device Technical Framework, Vol. 2, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol2.pdf.
 
-* [[[ihe_pcd_tf-3_2019, IHE PCD TF-3:2019]]] IHE Patient Care Device Technical Framework, Vol. 3, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol3.pdf.
+* [[[ihe_pcd_tf_3_2019, IHE PCD TF-3:2019]]] IHE Patient Care Device Technical Framework, Vol. 3, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol3.pdf.
 
 * [[[ieee_11073_10702_202x,IEEE 11073-10702:202x]]] P11073-10702™/D1 Draft Standard for Health Informatics – Device Interoperability – Part 10702: Point-of-Care Medical Device Communication – Alert Provisioning by Participants in a Service-Oriented Device Connectivity (SDC) System
 
@@ -53,7 +48,7 @@ WARNING:  #For IHE stuff, Do we want to include the actual URL?  Or point to pro
 
 * [[[ihe_pcd_sdpi_use_cases_compendium_2019, IHE PCD SDPi Use Cases Compendium:2019]]] IHE Patient Care Devices (PCD) Compendium of Medical Device Oriented Use Cases, Companion to the "Service-oriented Device Point-of-Care Interoperability (SDPi)" White Paper, Revision 1.1, November 1, 2019.  Available at https://profiles.ihe.net/DEV/[profiles.ihe.net/DEV/].
 
-WARNING: #DOES ASCIIDOC NOT SUPPORT REPLACEMENT CARACTERS (SEE NEXT TWO) OR IS IT DONE IN PUBLICATION TO HTML?#
+#TODO: DOES ASCIIDOC NOT SUPPORT REPLACEMENT CHARACTERS (SEE NEXT TWO) OR IS IT DONE IN PUBLICATION TO HTML?#
 
 * [[[omg_sysml_2-0_spec, OMG SysML ^&#174;^ 2.0]]]  Systems Modeling Language &#8482; (SysML^&#174;^), Version 2.0, Object Management Group (OMG) specification.  Available at https://github.com/Systems-Modeling/SysML-v2-Release/tree/master/doc[github.com/Systems-Modeling/SysML-v2-Release/doc/]
 
