@@ -173,8 +173,6 @@ NOTE: NOTE 3 For the purposes of this document, technical confirmation means tha
 
 {empty} +
 
-#TODO:  THE FOLLOWING IMAGE DOES RENDERS HERE BUT NOT IN THE PUBLISHED ASCIIDOC-CONVERTER FILE ... ???#
-
 .IEC 60601-1-8:2020, Figure 2 -- Functions of a DISTRIBUTED ALARM SYSTEM utilizing a MEDICAL IT NETWORK
 
 image::../../images/vol1-diagram-60601-1-8-2020-figure-2.svg[]
@@ -196,8 +194,7 @@ Examples include:
 - Bed to Bed alarm feature supporting alarm acknowledge;
 - Caregiver worn device supporting alarm acknowledge
 
-#TODO: MAKE THE FOLLOWING SECTION ONE LEVEL DEEPER#
-
+[sdpi_level=+1]
 ====== IEC 60601-1-8:2020, Subclause 6.11.2.4 CDAS
 
 In a CDAS, the COMMUNICATOR that receives an ALARM CONDITION shall have means to create the OPERATOR responses (RESPONSIBILITY ACCEPTED or RESPONSIBILITY REJECTED) and transfer them to the INTEGRATOR.
@@ -224,6 +221,7 @@ In a CDAS, the SOURCE may receive OPERATOR responses from the INTEGRATOR.
 
 #TODO: MAKE THE FOLLOWING SECTION ONE LEVEL DEEPER#
 
+[sdpi_level=+1]
 ====== IEC 60601-1-8:2020, Subclause 6.11.2.4 – CDAS
 
 The terms RESPONSIBILITY ACCEPTED, RESPONSIBILITY REJECTED, and RESPONSIBILITY UNDEFINED are new to this document. They are most often applicable to a DISTRIBUTED ALARM SYSTEM for use in an intensive care setting or a hospital ward setting, in which each OPERATOR has a COMMUNICATOR (example: pocket pager or phone) that provides an ALARM CONDITION to a specific OPERATOR. If the DISTRIBUTED ALARM SYSTEM presents an ALARM CONDITION to a specific OPERATOR, then there can be three possibilities:
