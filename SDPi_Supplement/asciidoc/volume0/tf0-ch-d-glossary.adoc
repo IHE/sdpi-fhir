@@ -39,6 +39,11 @@
 |
 | [[acronym_ice,ICE]] ICE
 
+| [[term_implementation_conformance_statement,Implementation Conformance Statement (ICS)]] Implementation Conformance Statement
+| A clause in many standards that specifies how conformance claims to that standard should be formalized, including identification of any deviations, extensions and option selection.
+|
+| [[acronym_ics,ICS]] ICS
+
 | [[term_medical_data_information_base,Medical Data Information Base (MDIB)]] Medical Data Information Base
 | Structured collection of any data objects that are provided by a <<actor_somds_provider>> or <<actor_biceps_content_creator>>, including both descriptive and state information.  (See ISO/IEEE 11073-10207)
 |
@@ -49,9 +54,19 @@
 |
 | [[acronym_mdi,MDI]] MDI
 
+| [[term_model_based_systems_engineering,Model-Based Systems Engineering (MBSE)]] Model-Based Systems Engineering
+| An approach to systems engineering where a single, highly integrated, executable model is created (often using OMG System's Modeling Language (e.g., SysML 2.0), to capture all elements, from requirements to system components to Verification & Validation test cases.  This _*model-centric*_ (*[[acronym_mc,MC]]MC*) specification approach replaces the traditional _*document-centric*_ approach.
+| [[acronym_ri_mc_rr,RI+MC+RR]] RI+MC+RR
+| [[acronym_mbse,MBSE]] MBSE
+
+| [[term_participant_key_purposes,Participant Key Purposes (PKP)]] Participant Key Purposes
+| These generally refer to the ISO/IEEE 11073-1070x standards that provide a consensus set of risk control measures aligned with the four core <<acronym_mdi>> functions:  <<term_plug_and_trust>>, reporting, alerting & external control.
+|
+| [[acronym_pkp,PKP]] PKP
+
 | [[term_plug_and_trust,Plug-and-Trust (PnT)]] Plug-and-Trust
 | The integration of an SES framework and MDI  plug-and-play technology to enable the dynamic establishment of trust between participant systems at the point of connection to a #SOMDS# network.
-| SES MDI
+| [[acronym_ses_mdi,SES+MDI]] SES+MDI
 | [[acronym_pnt,PnT]] PnT
 
 | [[term_point_of_care,Point of Care (PoC)]] Point of Care
@@ -61,7 +76,7 @@
 
 | [[term_poc_cockpit,PoC Cockpit]] Point of Care Cockpit
 | #See TF-1 Appendix C or TF-3 description language#
-| Cockpit
+| [[term_cockpit,Cockpit]] Cockpit
 |
 
 | [[term_point_of_care_device,Point of Care Device (PoCD)]] Point of Care Device
@@ -73,6 +88,16 @@
 | #See TF-1 Appendix C or TF-3 description language#
 | Dashboard
 |
+
+| [[term_regulatory_ready,Regulatory Ready (RR)]] Regulatory Ready
+| For regulated medical device technology, integrating <<acronym_ses>> and <<acronym_ri>> content such that conformity assessment test reports may be directly included as supporting evidence in pre-market submissions to regulatory agencies.  It is part of the Requirements Interoperability + Model Centric + Regulatory Ready (<<acronym_ri_mc_rr>>) focus of the IHE Devices Technical Framework.
+| <<acronym_ri_mc_rr>>
+| [[acronym_rr,RR]] RR
+
+| [[term_requirements_interoperability,Requirements Interoperability (RI)]] Requirements Interoperability
+| The ability to specify the requirements of one specification in such a way that they can be connected with capabilities of other specifications.  It is part of the Requirements Interoperability + Model Centric + Regulatory Ready (RI+MC+RR) focus of the IHE Devices Technical Framework.
+| RI+MC+RR
+| [[acronym_ri,RI]] RI
 
 | [[term_safe_effective_secure,Safe Effective & Secure (SES)]] Safe, Effective & Secure
 | General name given to the requirements, general and specific, derived by the application of medical device and health software quality standards, including ISO 81001-1 and IEC 80001-1.
@@ -112,8 +137,7 @@ implements a service-oriented #SDC# architecture composed of service providers a
 
 |===
 
-##THE FOLLOWING DEFINITIONS SHOULD GO SOMEWHERE - IN GLOSSARY OR OTHER IHE DEV TF LOCATION???
-##
+#TODO: THE FOLLOWING DEFINITIONS SHOULD GO SOMEWHERE - IN GLOSSARY OR OTHER IHE DEV TF LOCATION???#
 
 [[property_somds_provider_uid]]SOMDS Provider UID:: A globally unique identifier for a <<actor_somds_provider>> that is stable across re-initializations.
 [[property_discovery_scope]]Discovery Scope:: A set of zero to many identifiers that allows for organizing <<actor_somds_provider>>s into logical groups.

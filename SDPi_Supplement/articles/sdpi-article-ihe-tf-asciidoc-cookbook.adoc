@@ -268,6 +268,61 @@ This would result in the following text:
 |Add the following _*new or modified*_ actors to the IHE Technical Frameworks General Introduction Appendix A
 |===
 
+=== Term & Acronym Definitions and References
+
+Specialized terms and acronyms should be added to the TF-0 Glossary table and referenced appropriately throughout the specification text.  For example, the special term "Participant Key Purposes" and acronmy "PKP" would be added to the glossary table as follows:
+
+
+[source]
+----
+| [[term_participant_key_purposes,Participant Key Purposes (PKP)]] Participant Key Purposes
+| These generally refer to the ISO/IEEE 11073-1070x standards that provide a consensus set of risk control measures aligned with the four core <<acronym_mdi>> functions:  <<term_plug_and_trust>>, reporting, alerting & external control.
+|
+| [[acronym_pkp,PKP]] PKP
+----
+
+Subsequent references in the AsciiDoc specification should utilize "term_" and "acronym_".  If the acronym is only used locally, with in a single section or subsection, then it should be defined there at the outer most level and not formalized in the IHE Glossary.
+
+NOTE:  The IHE TF-0 Appendix D glossary collects specialized (defined) terms used throughout all the IHE domain technical framework specifications.  Any conflicts with other defined terms and acronyms may result in updating to the specifications.
+
+=== Paragraphs - LONG Paragraph Conventions
+Paragraphs with multiple sentences -- which may be deemed "long" by some editors and readers! -- should separate each sentence with a single new-line.
+This will make the AsciiDoc source much more readable without resulting in any format changes when rendered.
+For example:
+
+[source, asciidoc]
+----
+First paragraph - first sentence.
+Second sentence.
+Third sentence.
+
+Second paragraph ...
+----
+
+Would be rendered as:
+[none]
+. First paragraph - first sentence.
+Second sentence.
+Third sentence.
+
+. Second paragraph ...
+
+== IHE Style Guide Conventions
+IHE technical framework specifications follow a set of style conventions and associated templates.  Though this is to some degree in "flux" given the movement to HTML-based specifications, the style conventions in the subsections below help ensure consistency in the IHE DEV SDPi content.
+
+=== Table and Figure Numbering
+
+#TODO:  section-based sequential table numbering + referencing w/ AsciiDoc examples#
+
+=== Bullet List Conventions
+
+#TODO:  Review that the following is agreeable by the SDPi Editors#
+
+For a bulleted list of items, the final "full stop" character of each non-final bullet should be ";" semicolon, with the final bullet ending in a "." period.  For example:
+
+. First bullet;
+. Second bullet;
+. Final Bullet.
 
 == Topics Parking Lot
 
