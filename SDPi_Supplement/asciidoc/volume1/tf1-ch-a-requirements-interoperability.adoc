@@ -33,7 +33,7 @@ Though a full explanation of the this framework is beyond this discussion footno
 
 #TODO:  ADD INTEROPERABILITY PATHS EXAMPLE VIA A TABLE (VS. LINES THROUGH GRAPHIC)#
 
-Note:  The implementation of this framework will be extended as the specifications and tooling mature.
+NOTE: The implementation of this framework will be extended as the specifications and tooling mature.
 
 // A.2
 === Integrating Safety, Effectiveness & Security Requirements & Considerations
