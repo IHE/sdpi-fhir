@@ -268,15 +268,21 @@ The HL7 date & time format differs from the xsd date/time formats and requires a
 |update
 |*pm:AlertConditionState \pm:DeterminationTime* or *pm:AlertSignalState \pm:DeterminationTime* for any updates/changes to be reported but does not match any other Alert Event Phase mapping criteria.
 
+Note that the *pm:AlertConditionState \pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
+
 |escalate
 |*pm:AlertConditionState \pm:DeterminationTime* which shall represent the change of the alert priority.
 
 Note that when there are more changes than just the Alert Priority, the Alert Event Phase shall be reported as *"update"*.
 
+Note that the *pm:AlertConditionState \pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
+
 |deescalate
 |*pm:AlertConditionState \pm:DeterminationTime* which shall represent the change of the alert priority.
 
 Note that when there are more changes than just the Alert Priority, the Alert Event Phase shall be reported as *"update"*.
+
+Note that the *pm:AlertConditionState \pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
 
 |reset
 |*pm:AlertSignalState \pm:DeterminationTime* which shall represent the end of a latched alert event state.
@@ -483,7 +489,10 @@ For technical alert conditions, the alert event usually relates to a device-rela
 ====== Physiological Alerts
 The source identification for physiological alerts shall be mapped to an OBX segment as defined in <<ref_dec_obx_mapping>>. The gateway shall capture the state of the related metric at the time the alert event occurred.
 
-#Todo: How can SDC "freeze" the state of the metric that causes the alert event?#
+[NOTE]
+====
+In SDC, the metric value that led to the physiological alert event is required to be reported in a state update before the *pm:AlertConditionState* update is reported. That is, the latest state of the metric related to the alert condition contains the value that led to the alert event when the *pm:AlertConditionState/@Presence* changed from *"false"* to *"true"*.
+====
 
 The OBX-4 Observation Sub-ID shall be set to *"<MDS>.<VMD>.<CHAN>.<METRIC>.2"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device’s containment tree levels assigned by the gateway.
 
