@@ -59,7 +59,7 @@ To address this SES implementation problem, the SDPi profiles:
 . Implementation Conformance Statement (ICS) tables from each of these PKP standards is included in TF-1 Appendix B of this specification, with indication as to whether, how and where each requirement is addressed
 . "Safety, Effectiveness, Security Considerations and Requirements" sections are integrated throughout the profile specifications to link from the PKP ICS table requirements to the satisfying capabilities.
 [none]
-.. Additional non-PKP risk management will also be performed by subject matter experts and formalized in these SES consideration sections, where appropriate.
+.. Additional non-PKP risk management will also be performed by subject matter experts and formalized in these SES Consideration sections, where appropriate.
 
 These SES Considerations sections are the result of the IHE "Security Considerations" sections + the IHE Devices "Safety Considerations" sections, but now consolidated into a single SES Considerations section that includes the 3rd risk management property, Effectiveness, and is tied to meeting the requirements of specific standards.
 
