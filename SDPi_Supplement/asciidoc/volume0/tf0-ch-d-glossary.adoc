@@ -125,6 +125,11 @@ implements a service-oriented #SDC# architecture composed of service providers a
 |
 | [[acronym_sas,SAS]] SAS
 
+| [[term_software_as_a_medical_device,Software as a Medical Device (SaMD)]] Software as a Medical Device
+| Software intended to be used for one or more medical purposes that perform these purposes without being part of a hardware medical device. (Source:  https://www.fda.gov/medical-devices/cdrh-international-programs/international-medical-device-regulators-forum-imdrf[IMDRF])
+|
+| [[acronym_samd,SaMD]] SaMD
+
 | [[term_system_function_contribution,System Function Contribution (SFC)]] System Function Contribution
 | A detailed specification of the capabilities of a #SOMDS# network participant
 |

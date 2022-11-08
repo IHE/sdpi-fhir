@@ -1,9 +1,11 @@
+[#vol3_clause_sdc_biceps_semantic_content]
 
 // 8.2.8
 [sdpi_offset=8]
 ==== SDC/BICEPS semantic content
 
 // 8.2.8.1
+[#vol3_clause_sdc_biceps_semantic_content_module]
 ===== SDC/BICEPS Content Module
 
 ====== BICEPS Extension Model
