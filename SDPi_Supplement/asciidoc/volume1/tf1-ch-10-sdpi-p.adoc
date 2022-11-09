@@ -316,7 +316,93 @@ Note 1: _All content exchanged on a SOMDS shall conform to the general SDPi “B
 ==== Actor Descriptions and Actor Profile Requirements
 SDPi-P actor roles and responsibilities are described in the subsections below.
 
-#TODO:  THIS IS WHERE TODD STOPPED PULLING IN CONTENT FROM THE WORD SDPI DRAFT#
+Unless otherwise specified in these sections, specific transaction requirements are specified in in the #DEV TF-2 Transactions# volume, and requirements related to content modules are detailed in #DEV TF-3 DEV Semantic Content Modules#.
+This section documents any additional requirements on the profile’s content actors.
+
+The #following sequence diagram# illustrates a typical (not comprehensive) exchange scenarios between SDPi-P actors:
+
+.SDPi-P Example Sequence Diagram
+[[vol1_figure_sdpi_p_example_sequence_diagram]]
+[plantuml, target=puml-sdpi-p-example-sequence-diagram, format=svg, reftext='{figure-caption} {counter:refnum}']
+....
+include::../plantuml/vol1-figure-sdpi-p-example-sequence-diagram.puml[]
+....
+
+===== SOMDS Participant
+
+Actor Summary Definition:
+[none]
+. A foundational abstract actor that provides the SOA architectural constructs for interoperating in a Service-Oriented Medical Device System (SOMDS) network instance, including information, messaging and dynamic behavior models.   (See <<ieee_11073_10207_2017>>  “PARTICIPANT” definition)
+
+All systems participating in a SOMDS network instance must implement this abstract actor.
+
+All SDPi profiles actors are grouped with (inherit from) this actor, including both transport / transaction actors and content module actors.
+This required grouping ensures that all systems connecting to a SOMDS network support the <<acronym_ses_mdi>>  requirements necessary for establishing a <<term_plug_and_trust>> ecosystem, including the secure and dynamic provision of an implementation’s system function contribution (SFC).
+See #A.3 Specifying SystemFunctionContribution (SFC) for Plug-and-Trust Interfaces# for more information.
+
+#TODO:  TODD STOPPED HERE 2022.11.09#
+
+===== SOMDS Provider
+
+Actor Summary Definition:
+[none]
+. A <<actor_somds_participant>> that provides at least one service to the other participant systems.  (See <<ieee_11073_10207_2017>>  “SERVICE PROVIDER” definition)
+
+===== SOMDS Consumer
+
+Actor Summary Definition:
+[none]
+. A <<actor_somds_participant>> that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a <<actor_somds_provider>>. (See <<ieee_11073_10207_2017>>  “SERVICE CONSUMER” and “SERVICE” definitions.)
+
+
+===== SOMDS Connector
+
+Actor Summary Definition:
+[none]
+. A <<actor_somds_participant>> that enables seamless interaction with systems and software applications that are outside the scope of the SOMDS network instance.  This abstract actor provides a consistent method for interacting, as a <<actor_somds_consumer>> and / or <<actor_somds_provider>>, with a specific SOMDS instance, as the foundation for protocol-specific gateway and platform actors.
+
+
+===== SOMDS FHIR Gateway
+
+Actor Summary Definition:
+[none]
+. A <<actor_somds_connector>> that supports use of HL7 FHIR for interoperating with Non-SOMDS Systems.
+
+
+===== SOMDS V2 Gateway
+
+Actor Summary Definition:
+[none]
+. A <<actor_somds_connector>> that supports use of HL7 Version 2 (V2) for interoperating with Non-SOMDS Systems.
+
+
+===== SOMDS Sensor Gateway
+
+Actor Summary Definition:
+[none]
+. A _<<actor_somds_connector>>_  that supports integration of sensors external to a SOMDS network.
+
+
+===== SOMDS Smart App Platform
+
+Actor Summary Definition:
+[none]
+. A _<<actor_somds_connector>>_  that supports connection to a SOMDS network that is optimized for applications, including <<term_software_as_a_medical_device>>.
+
+
+===== BICEPS Content Creator
+
+Actor Summary Definition:
+[none]
+. Provides <<acronym_mdib>> content conformant to <<ieee_11073_10207_2017>> BICEPS specification and for consumption by other <<actor_biceps_content_consumer>> systems.
+
+
+===== BICEPS Content Consumer
+
+Actor Summary Definition:
+[none]
+. Processes <<acronym_mdib>> information conformant to <<ieee_11073_10207_2017>> BICEPS specifications provided by <<actor_biceps_content_creator>> systems.
+
 
 // 10.2
 === SDPi-P Actor Options

@@ -134,7 +134,9 @@ PlantUML diagram target names shall start with `puml` to easily identify any gen
 PlantUmlTarget = 'puml-' Name
 ----
 
-.Example of including a PlantUML diagram. Note the leading `puml-` at the target option.
+.Example of including a PlantUML diagram.
+Note the leading `puml-` at the target option.
+
 ====
 [source,asciidoc]
 ----
