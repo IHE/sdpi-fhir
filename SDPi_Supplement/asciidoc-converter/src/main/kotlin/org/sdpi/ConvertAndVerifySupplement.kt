@@ -16,6 +16,7 @@ import org.sdpi.asciidoc.extension.RequirementsBlockProcessor
 import org.sdpi.asciidoc.extension.NumberingProcessor
 import java.io.File
 import java.io.FileOutputStream
+import kotlin.system.exitProcess
 
 fun main(args: Array<String>) = ConvertAndVerifySupplement().main(
     when (System.getenv().containsKey("CI")) {
@@ -65,6 +66,7 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
         }.onFailure {
             logger.error { it.message }
             logger.trace(it) { it.message }
+            exitProcess(1)
         }
     }
 }

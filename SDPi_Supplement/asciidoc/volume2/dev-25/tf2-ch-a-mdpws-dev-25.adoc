@@ -51,7 +51,7 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-25-transfer-response.xm
 
 `s12:Envelope/s12:Body/wsm:Metadata/wsm:MetadataSection/dpws:Relationship/dpws:Hosted/dpws:Types`:: Designates available <<payload_dev_25_get_metadata_biceps_services>> by providing a list of service types that contains at least one or more of the BICEPS services as mapped in <<vol2_table_appendix_mdpws_dev_25_hosted_types>>.
 
-.Filter mapping of BICEPS services to <<property_q_name>>s.
+.Filter mapping of BICEPS services to <<term_q_name>>s.
 [#vol2_table_appendix_mdpws_dev_25_hosted_types, cols="1,2"]
 |===
 |BICEPS service |Web Service XML Schema QName

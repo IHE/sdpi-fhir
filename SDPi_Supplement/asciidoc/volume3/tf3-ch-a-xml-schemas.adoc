@@ -1,0 +1,4 @@
+[appendix#vol3_appendix_a_xml_schemas,sdpi_offset=A]
+== BICEPS Extension Provisions XML Schemas
+
+include::biceps-extension-provisions/tf2-ch-a-xml-schemas-coded-attribute.adoc[]

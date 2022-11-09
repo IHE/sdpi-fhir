@@ -53,7 +53,7 @@ Block Identifiers shall be made up from the following rules:
 [source]
 ----
 Volume = 'vol0' | vol1' | 'vol2' | 'vol3'
-ReferenceType ::= 'clause' | 'appendix' | 'listing' | 'figure' | 'table'
+ReferenceType ::= 'clause' | 'appendix' | 'listing' | 'figure' | 'table' | 'example'
 
 BlockIdentifier ::= Volume '_' ReferenceType '_' Name
 ----
