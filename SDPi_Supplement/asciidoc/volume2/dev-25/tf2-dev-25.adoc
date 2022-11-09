@@ -40,7 +40,7 @@ include::../../plantuml/vol2-figure-dev-25-sequence.puml[]
 The GetMetadata message is used by a <<actor_somds_consumer>> to request the resource representation data of a <<actor_somds_provider>>.
 
 ====== Trigger Events
-This message is sent when a <<actor_somds_consumer>> has discovered a <<property_transport_address>> for a <<actor_somds_provider>>.
+This message is sent when a <<actor_somds_consumer>> has discovered a <<term_transport_address>> for a <<actor_somds_provider>>.
 
 ====== Expected Actions
 When a <<actor_somds_consumer>> sends this message, the <<vol2_clause_dev_25_message_get_metadata_response, GetMetadataResponse>> message is expected as a response.
@@ -69,8 +69,8 @@ Device Metadata:: Expresses <<actor_somds_provider>> characteristics that typica
 * Firmware version
 * Serial number
 [#message_semantics_discover_biceps_services_model]
-Model Metadata:: Expresses <<actor_somds_provider>> characteristics that are typically fixed across all <<actor_somds_provider>>s of the same model by their manufacturer, e.g.:
-* Manufacturer
+Model Metadata:: Expresses <<actor_somds_provider>> characteristics that are typically fixed across all <<actor_somds_provider>>s of the same model by their <<term_manufacturer>>, e.g.:
+* <<term_manufacturer>>
 * Model name
 * Model number
 

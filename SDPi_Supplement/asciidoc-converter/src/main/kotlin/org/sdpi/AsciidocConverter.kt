@@ -5,6 +5,7 @@ import org.asciidoctor.Options
 import org.asciidoctor.SafeMode
 import org.sdpi.asciidoc.extension.DisableSectNumsProcessor
 import org.sdpi.asciidoc.extension.NumberingProcessor
+import org.sdpi.asciidoc.extension.RequirementLevelProcessor
 import org.sdpi.asciidoc.extension.RequirementsBlockProcessor
 import java.io.File
 import java.io.OutputStream
@@ -30,6 +31,7 @@ class AsciidocConverter(
                 else -> null
             }
         ))
+        asciidoctor.javaExtensionRegistry().treeprocessor(RequirementLevelProcessor())
         asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
 
         asciidoctor.requireLibrary("asciidoctor-diagram") // enables plantuml
