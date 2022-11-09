@@ -1,14 +1,9 @@
-= Appendix C – Device Point-of-care Interoperability (DPI) Use Cases
-
-
-NOTE:  This file integrates the use cases that are linked to the SDPi profiles to provide functional requirements, including any introductory sections for how use cases are managed in SDPi. +
-{empty} +
-Note that each use case is in its own file. +
-{empty} +
-Note that AsciiDoc Gherkin (plugin?) may be used ... eventually ... !
+= Device Point-of-care Interoperability (DPI) Use Cases
 
 [appendix#vol1_appendix_c_dpi_use_cases,sdpi_offset=C]
-== Appendix C - Device Point-of-care Interoperability (DPI) Use Cases
+== Device Point-of-care Interoperability (DPI) Use Cases
+
+#TODO: ADD GENERAL RATIONALE FOR THIS APPENDIX, FUNCTIONAL REQUIREMENTS SOURCES, MAPPING TO PROFILE-SPECIFIC USE CASE SECTIONS, ETC.#
 
 // C.1
 [sdpi_offset=1]
@@ -41,27 +36,27 @@ include::tf1-ch-c-60601-1-8.adoc[]
 - ALL USE CASE FEATURE are REQUIREMENTS
 - MBSE Requirements Modeling #
 
-OMB's Systems Modeling Language 2.0 (see <<omg_sysml_2-0_spec>> and <<omg_sysml_2-0_intro_graphical_model>>), provides extended support for requirements modeling that not only provides the foundation for MBSE's Requirements Modeling, but also a computable specification that enables automated verification (e.g., using "Verification Cases").
+<<acronym_omg>>'s Systems Modeling Language 2.0 (see <<omg_sysml_2-0_spec>> and <<omg_sysml_2-0_intro_graphical_model>>), provides extended support for requirements modeling that not only provides the foundation for MBSE's Requirements Modeling, but also a computable specification that enables automated verification (e.g., using "Verification Cases").
 
-#TODO:  Add reference to SysML 2.0 section 7.20 Requirements & 7.23 Verification Cases
+#TODO:  Add reference to SysML 2.0 section 7.20 Requirements & 7.23 Verification Cases#
 
-#TODO:  Add reference to Hanging Gardens Framework ... use case requirements are the top level
+#TODO:  Add reference to Hanging Gardens Framework ... use case requirements are the top level#
 
-#TODO:  Add reference to RI+MC+RR w/ RI supported in modeling via SysML starting constructs + MC = SysML 2.0
+#TODO:  Add reference to RI+MC+RR w/ RI supported in modeling via SysML starting constructs + MC = SysML 2.0#
 
 For the
 
 // C.1.4
 ==== Use Case Specification Conventions Using Cucumber/Gherkin
 
-TODO:  ADD UML MODEL FOR GHERKIN HERE + DISCUSSION
+#TODO:  ADD UML MODEL FOR GHERKIN HERE + DISCUSSION#
 
 Each Use Case (also called a Feature in Gherkin) is organized as follows:
 
-•	*Narrative* – a description of the desired functionality from the user perspective
-•	*Technical View* - graphic representation of typical business system actors utilized in this use case
-•	*Technical Pre-Conditions* – any assumptions or pre-conditions
-•	*Scenario(s)* – the scenarios explore both the Happy Path when everything goes according to plan and the Alternative Paths where things do not go according to plan.
+* *Narrative* – a description of the desired functionality from the user perspective
+* *Technical View* - graphic representation of typical business system actors utilized in this use case
+* *Technical Pre-Conditions* – any assumptions or pre-conditions
+* *Scenario(s)* – the scenarios explore both the Happy Path when everything goes according to plan and the Alternative Paths where things do not go according to plan.
 
 ##TODO:  Include model graphic showing relationships ...##
 

@@ -2,6 +2,7 @@
 
 
 //[sdpi_offset=2]
+[#vol1_appendix_c_60601_1_8_concepts_for_dis_das_cdas]
 ===== ISO/IEC 60601-1-8 Concepts for DIS, DAS and CDAS
 
 The following is a quick guide to the functionality of DIS, CDIS, DAS and CDAS systems and how we have used and interpreted them for the purpose of this IHE Profile Supplement.

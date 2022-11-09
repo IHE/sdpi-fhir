@@ -149,4 +149,9 @@ implements a service-oriented #SDC# architecture composed of service providers a
 [[property_transport_address]] Transport Address:: A physical endpoint address that can be used to communicate with a <<actor_somds_provider>>.
 [[property_q_name]] QName:: XML Schema QName. In this specification, QNames are encoded as `{<namespace>}<local-name>`.
 
+#TODO: THE FOLLOWING ACRONYMS AND ORGANIZATIONAL NAMES SHOULD GO SOMEWHERE - BUT NOT NECESSARILY HERE!#
+
+[[organization_object_management_group,Object Management Group (OMG)]] [[acronym_omg,OMG]] Object Management Group (OMG)
+
+[[organization_standards_development_organization,Standards Development Organization (SDO)]] [[acronym_sdo]] Standards Development Organization (SDO)
 
