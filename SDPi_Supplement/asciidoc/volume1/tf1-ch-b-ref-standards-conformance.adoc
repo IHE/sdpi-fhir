@@ -17,15 +17,15 @@ ICS Statements per standard may be in a different subfolder and files - along wi
 [#vol1_appendix_b_referenced_standards,TF-1 Appendix B - Referenced Standards]
 === Referenced Standards
 
-#TODO: ADD REFERENCES FROM GLOSSARY#
+#TODO:  WHAT ORDER SHOULD THE FOLLOWING LIST BE ... ORDERED?  BY SDO -> Standard Number?  Sandard Number#
 
-#TODO:  For IHE stuff, Do we want to include the actual URL?  Or point to profiles.ihe.org/DEV/. or include the URL but under a better display name (see compendium toward the bottom of the list)#
+#TODO: SHOULD WE ADD TO THE START OF EACH REFERENCE ref_ieee_ A PAIN AT THIS POINT BUT WOULD MAKE IT MORE INTELLIGIBLE AND ALINED WITH acronym_ and actor_ ETC.#
 
-* [[[ieee_11073_10207_2017,IEEE 11073-10207:2017]]] IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2017-12, available at https://standards.ieee.org/ieee/11073-10207/6032 footnote:ieee_permission[]
+* [[[ieee_11073_10207_2017,ISO/IEEE 11073-10207:2017]]] ISO/IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2017-12, available at https://standards.ieee.org/ieee/11073-10207/6032 footnote:ieee_permission[]
 
-* [[[ieee_11073_20701_2018,IEEE 11073-20701:2018]]] IEEE 11073-20701-2018, Health informatics — Point-of-care medical device communication — Part 20701: Service-Oriented Medical Device Exchange Architecture and Protocol Binding, 2018-09, available at https://standards.ieee.org/ieee/11073-20701/6059
+* [[[ieee_11073_20701_2018,ISO/IEEE 11073-20701:2018]]] ISO/IEEE 11073-20701-2018, Health informatics — Point-of-care medical device communication — Part 20701: Service-Oriented Medical Device Exchange Architecture and Protocol Binding, 2018-09, available at https://standards.ieee.org/ieee/11073-20701/6059
 
-* [[[ieee_11073_20702_2016,IEEE 11073-20702:2016]]] IEEE 11073-20702-2016, Health informatics — Point-of-care medical device communication — Part 20702: Medical Devices Communication Profile for Web Services, 2016-09, available at https://standards.ieee.org/ieee/11073-20702/6034
+* [[[ieee_11073_20702_2016,ISO/IEEE 11073-20702:2016]]] ISO/IEEE 11073-20702-2016, Health informatics — Point-of-care medical device communication — Part 20702: Medical Devices Communication Profile for Web Services, 2016-09, available at https://standards.ieee.org/ieee/11073-20702/6034
 
 * [[[ihe_pcd_tf_1_2019,IHE PCD TF-1:2019]]] IHE Patient Care Device Technical Framework, Vol. 1, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol1.pdf.
 
@@ -57,15 +57,21 @@ ICS Statements per standard may be in a different subfolder and files - along wi
 
 * [[[iec_60601_1_8_2020,IEC 60601-1-8:2020]]], IEC 60601-1-8:2006/AMD2:2020, Medical electrical equipment — Part 1-8: General requirements for basic safety and essential performance — Collateral standard: General requirements, tests and guidance for alarm systems in medical electrical equipment and medical electrical systems; Amendment 1:2020, and Amendment 2:2020. available at https://webstore.iec.ch/publication/59648[IEC Webstore] and the https://www.iso.org/standard/41986.html[ISO standards store].
 
-* [[[iec_80001_1_2021,ISO/IEC 80001-1:2021]]], IEC 80001-1:2021
-Application of risk management for IT-networks incorporating medical devices — Part 1: Safety, effectiveness and security in the implementation and use of connected medical devices or connected health software.  Available at https://webstore.iec.ch/publication/34263[IEC Webstore] and https://www.iso.org/standard/72026.html[ISO standards store].
+* [[[iec_80001_1_2021,ISO/IEC 80001-1:2021]]], IEC 80001-1:2021 Application of risk management for IT-networks incorporating medical devices — Part 1: Safety, effectiveness and security in the implementation and use of connected medical devices or connected health software.  Available at https://webstore.iec.ch/publication/34263[IEC Webstore] and https://www.iso.org/standard/72026.html[ISO standards store].
 
-* [[[iso_81001_1_2021,ISO/IEC 81001-1:2021]]], ISO 81001-1:2021
-Health software and health IT systems safety, effectiveness and security — Part 1: Principles and concepts.  Availabe at https://www.iso.org/standard/71538.html[ISO standards store] and https://webstore.iec.ch/publication/34286[IEC Webstore].
+* [[[iso_81001_1_2021,ISO/IEC 81001-1:2021]]], ISO 81001-1:2021  Health software and health IT systems safety, effectiveness and security — Part 1: Principles and concepts.  Availabe at https://www.iso.org/standard/71538.html[ISO standards store] and https://webstore.iec.ch/publication/34286[IEC Webstore].
 
 * [[[iso_81001_temple,ISO 81001-1 "The Temple"]]], ISO/IEC 81001-1 Figure 1 "The Temple" Diagram, Copyright &#169; 2019 NHS Digital, licensed via Wikimedia Commons, http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3[Greg Wye, NHS Digital, OGL 3], available at https://81001.org/page/Framework[81001.org Framework].
 
 * [[[ihe_eu_experience_2021_presentation_cooper_schlichting,IHE EU Experience-2021 IHE CA for MedTech Solutions]]], "IHE & IHE Catalyst: Advancing Interoperable MedTec Solutions with "Regulatory Submission Ready" Conformity Assessment", presentation by Todd Cooper and Dr. Stefan Schlichting, available at https://connectathon.ihe-europe.net/experience-sessions-2021-presentations[IHE Europe Experience 2021 Presentations web page].
+
+* [[[aami_2700_1_2019,AAMI 2700-1:2019]]]  AAMI 2700-1:2019  Medical Devices And Medical Systems - Essential Safety And Performance Requirements For Equipment Comprising The Patient-Centric Integrated Clinical Environment (ICE) - Part 1: General Requirements And Conceptual Model, available at https://webstore.ansi.org/Standards/AAMI/ansiaami27002019[ANSI/AAMI web store].
+
+* [[[hl7_fhir,HL7^&#174;^ FHIR^&#174;^]]]  HL7^&#174;^ Fast Healthcare Interoperability Resources (FHIR^&#174;^), available at http://hl7.org/fhir/[hl7.org/fhir/].
+
+* [[[hl7_v2,HL7^&#174;^ V2]]] HL7^&#174;^ Version 2 (V2), available at https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185[HL7 Version 2 Product Suite web page].
+
+* [[[hl7_fhir_pocd_ig,HL7^&#174;^ FHIR^&#174;^ Point-of-Care Device Implementation Guide]]] HL7 FHIR Point-of-Care Device Implementation Guide, drafts available on the https://confluence.hl7.org/display/DOF/Devices+On+FHIR[Devices on FHIR project page], and a continuous build version at http://build.fhir.org/ig/HL7/uv-pocd/[Point-of-Care Device Implementation Guide web page].
 
 // Appendix B.3
 === IEEE Implementation Conformance Statement (ICS) Table Overview

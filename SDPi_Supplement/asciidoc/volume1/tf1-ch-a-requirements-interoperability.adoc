@@ -1,12 +1,25 @@
 = Requirements Management for Plug-and-Trust Interoperability
 
-NOTE:  This file contains general "articles" to help those trying to understand the metadata integtated into the spec to support advances such as "requirements interoperability". +
-{empty} +
-The content for this appendix may be pushed to SDPi 1.x.
-
 // Appendix A
 [appendix#vol1_appendix_a_requirements_management_for_p_n_t_interperability,sdpi_offset=A]
 == Requirements Management for Plug-and-Trust Interoperability
+
+These SDPi specifications include the model-centric integration of requirements from multiple sources -- both within IHE and from other <<acronym_sdo>>s -- enabling a new level of *requirements management* that provides new value to all stakeholders.  Also termed *_<<term_requirements_interoperability>>_*, innovative capabilties include:
+
+. Explicit linking of requirements from their definition to their satisfaction / utilization in defined _capabilities_;
+. Explicit linking of requirements from external sources (e.g., normative standards references) to where they are supported in the profile specification, either completely, partially, unsupported or out-of-scope;
+. Requirement "chains" -- sequences of requirement-capability links, including requirement-to-requirement and capability-to-capability -- that enable traceability from capability conformance testing to the multiple requirements that the function satisfies ;
+. Referenced standard _traceability_ and _coverage_ is enabled by this linkage from each requirement to testable interface capabilities;
+. Both <<acronym_ses>> and <<acronym_mdi>> standards are supported, enabling true <<acronym_ses_mdi>> integration;
+. Test reports and declarations of conformity can be created to support the needs of and increase the confidence of all stakeholders, from technology product developers, to public regulatory agencies, to system integrators, to healthcare delivery organizations that manage and use the systems, to patients who will directly benefit from improved healthcare and health!
+
+These combine to establish <<acronym_ri>> as the door to a new generation of truly "computable" specifications.
+
+From another perspective, _requirements interoperability_ looks at one standard as having both a set of requirements that must be satisfied for a system to be conformant, and a set of capabilities that it provides that can be utilized to meet the requirements of other standards.  Requirements interoperability essentially looks at each standard as a set of building blocks that can be snapped together and integrated into a coherent and cohesive structure.
+
+The following sections in this appendix provide background on the concepts and rationale behind requirements interoperability and the details for how it is implemented in this specification.
+
+#TODO:  TODD STOPPED DETAILING OUT THE CONTENT IN THIS APPENDIX HERE ON 2022.11.10#
 
 // A.1
 [sdpi_offset=1]

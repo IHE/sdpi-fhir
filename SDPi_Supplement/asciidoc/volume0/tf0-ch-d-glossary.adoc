@@ -11,16 +11,13 @@
 |Add the following *_new or updated_* glossary terms to the IHE Technical Frameworks General Introduction Appendix D.
 |===
 
-##ADD REFERENCES LINKS IN TF-1 APPENDIX B TO THE DEFINITIONS SECTIONS BELOW
-##
-
 [%autowidth]
 [cols="^2,5,^1,^1"]
 |===
 |New Glossary Term |Definition |Synonyms |Acronyms / Abbreviation
 
 |[[term_basic_ice_protocol_specification,Basic ICE Protocol Specification (BICEPS)]] Basic ICE Protocol Specification
-| General reference to the abstract, implementation technology independent SDC components defined in the ISO/IEEE 11073-10207 standard.  (See ISO/IEEE 11073-10207)
+| General reference to the abstract, implementation technology independent SDC components defined in the ISO/IEEE 11073-10207 standard.  (See <<ieee_11073_10207_2017>>7)
 |
 | [[acronym_biceps,BICEPS]] BICEPS
 
@@ -35,7 +32,7 @@
 | [[acronym_csf,CSF]] CSF
 
 | [[term_integratec_clinical_environment,Integrated Clinical Environment (ICE)]] Integrated Clinical Environment
-| Environment that combines interoperable heterogeneous POINT-OF-CARE (PoC) MEDICAL DEVICEs and other equipment integrated to create a medical device system for the care of a single high acuity patient. (See ISO/IEEE 11073-20701 and AAMI 2700-1).
+| Environment that combines interoperable heterogeneous POINT-OF-CARE (PoC) MEDICAL DEVICEs and other equipment integrated to create a medical device system for the care of a single high acuity patient. (See <<ieee_11073_20701_2018>> and <<aami_2700_1_2019>>).
 |
 | [[acronym_ice,ICE]] ICE
 
@@ -45,7 +42,7 @@
 | [[acronym_ics,ICS]] ICS
 
 | [[term_medical_data_information_base,Medical Data Information Base (MDIB)]] Medical Data Information Base
-| Structured collection of any data objects that are provided by a <<actor_somds_provider>> or <<actor_biceps_content_creator>>, including both descriptive and state information.  (See ISO/IEEE 11073-10207)
+| Structured collection of any data objects that are provided by a <<actor_somds_provider>> or <<actor_biceps_content_creator>>, including both descriptive and state information.  (See <<ieee_11073_10207_2017>>)
 |
 | [[acronym_mdib,MDIB]] MDIB
 
@@ -55,7 +52,7 @@
 | [[acronym_mdi,MDI]] MDI
 
 | [[term_model_based_systems_engineering,Model-Based Systems Engineering (MBSE)]] Model-Based Systems Engineering
-| An approach to systems engineering where a single, highly integrated, executable model is created (often using OMG System's Modeling Language (e.g., SysML 2.0), to capture all elements, from requirements to system components to Verification & Validation test cases.  This _*model-centric*_ (*[[acronym_mc,MC]]MC*) specification approach replaces the traditional _*document-centric*_ approach.
+| An approach to systems engineering where a single, highly integrated, executable model is created (often using OMG System's Modeling Language (e.g., <<omg_sysml_2_0_spec>>), to capture all elements, from requirements to system components to Verification & Validation test cases.  This _model-centric_ (*[[acronym_mc,MC]]MC*) specification approach replaces the traditional _document-centric_ approach.
 | [[acronym_ri_mc_rr,RI+MC+RR]] RI+MC+RR
 | [[acronym_mbse,MBSE]] MBSE
 
@@ -65,7 +62,7 @@
 | [[acronym_pkp,PKP]] PKP
 
 | [[term_plug_and_trust,Plug-and-Trust (PnT)]] Plug-and-Trust
-| The integration of an SES framework and MDI  plug-and-play technology to enable the dynamic establishment of trust between participant systems at the point of connection to a #SOMDS# network.
+| The integration of an SES framework and MDI  plug-and-play technology to enable the dynamic establishment of trust between participant systems at the point of connection to a <<acronym_somds>> network.
 | [[acronym_ses_mdi,SES+MDI]] SES+MDI
 | [[acronym_pnt,PnT]] PnT
 
@@ -100,12 +97,12 @@
 | [[acronym_ri,RI]] RI
 
 | [[term_safe_effective_secure,Safe Effective & Secure (SES)]] Safe, Effective & Secure
-| General name given to the requirements, general and specific, derived by the application of medical device and health software quality standards, including ISO 81001-1 and IEC 80001-1.
+| General name given to the requirements, general and specific, derived by the application of medical device and health software quality standards, including <<iso_81001_1_2021>> and <<iec_80001_1_2021>>.
 |
 | [[acronym_ses,SES]] SES
 
 | [[term_service_oriented_device_connectivity,Service-oriented Device Connectivity (SDC)]] Service-oriented Device Connectivity
-| Application of service-oriented architecture to support healthcare device interoperability. (See ISO/IEEE 11073-20701)
+| Application of service-oriented architecture to support healthcare device interoperability. (See <<ieee_11073_20701_2018>>)
 |
 | [[acronym_sdc,SDC]] SDC
 
@@ -116,7 +113,7 @@
 
 | [[term_service_oriented_medical_device_system,Service-oriented Medical Device System (SOMDS)]] Service-oriented Medical Device System
 | A point-of-care system of products that
-implements a service-oriented #SDC# architecture composed of service providers and service consumers. (See ISO/IEEE 11073-10207)
+implements a service-oriented <<acronym_sdc>> architecture composed of service providers and service consumers. (See <<ieee_11073_10207_2017>>)
 |
 | [[acronym_somds,SOMDS]] SOMDS
 
