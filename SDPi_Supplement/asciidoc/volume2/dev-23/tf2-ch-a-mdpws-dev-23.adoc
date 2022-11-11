@@ -32,7 +32,7 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-23-hello.xml[]
 ====== Recurring Hello
 In addition to the standard trigger events of Hello messages defined in <<#vol2_clause_dev_23_message_announce_network_presence_trigger_events>>, recurring Hello messages are needed to decrease the likelihood of missed discovery messages in case of network topology changes during operation, e.g. when operational networks are extended by plugging switches (together).
 
-R2001
+.R2001
 [sdpi_requirement#r2001,sdpi_req_level=shall]
 ****
 A <<actor_somds_provider>> shall periodically send Hello messages at random intervals between 60 seconds and 120 seconds.
