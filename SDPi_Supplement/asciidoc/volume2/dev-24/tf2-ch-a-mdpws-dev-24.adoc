@@ -43,7 +43,7 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-probe.xml[]
 ====== Recurring Probe
 While the number of Hello messages scales linearly with the number of <<actor_somds_provider>>s, in the worst case the number of Probe / ProbeMatch messages is the product of the number of <<actor_somds_provider>>s and the number of <<actor_somds_consumer>>s. Therefore, in order to prevent the network congestion from Probe / ProbeMatch messages, the following requirements are defined:
 
-R3001
+.R3001
 [sdpi_requirement#r3001,sdpi_req_level=should]
 ****
 A <<actor_somds_consumer>> should not periodically send Probe messages.
@@ -55,7 +55,7 @@ If Probe messages are sent periodically, a rationale is to be provided, since <<
 ====
 ****
 
-R3002
+.R3002
 [sdpi_requirement#r3002,sdpi_req_level=may]
 ****
 A <<actor_somds_consumer>> may re-send Probe messages if demanded by a dedicated user interaction.
