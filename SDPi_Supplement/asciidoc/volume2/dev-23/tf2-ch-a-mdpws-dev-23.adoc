@@ -56,7 +56,7 @@ A <<actor_somds_provider>> should create Hello messages of less than the MTU siz
 
 Moreover, as further mitigation measure, note that <<SOAP_over_UDP_v1.1>> already defines a non-normative retry and back-off algorithm.
 
-R2003
+.R2003
 [sdpi_requirement#r2003,sdpi_req_level=should]
 ****
 A <<actor_somds_participant>> should implement the retry and back-off algorithm defined in SOAP-over-UDP, Appendix A.
