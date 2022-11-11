@@ -48,7 +48,7 @@ The random interval between 60 seconds and 120 seconds aims to prevent <<actor_s
 ====== Hello message size
 In IT networks such as WLAN, messages can get lost or fragmented and data can consequently be delivered in the wrong order, especially with increasing concurrent data traffic caused by an increasing number of <<actor_somds_participant>>s. This becomes crucial when connectionless transport protocols like UDP are used. <<ieee_11073_20701_2018>> leverages UDP for service discovery and hence suffers from the aforementioned issues. To mitigate this, <<actor_somds_provider>>s should create Hello messages of less than the MTU size.
 
-R2002
+.R2002
 [sdpi_requirement#r2002,sdpi_req_level=should]
 ****
 A <<actor_somds_provider>> should create Hello messages of less than the MTU size.
