@@ -68,12 +68,17 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
                     logger.error { it }
                 }
             }
-        return SdpiRequirement(
-            requirementNumber,
-            requirementLevel,
-            attributes,
-            lines
-        )
+        try {
+            return SdpiRequirement(
+                requirementNumber,
+                requirementLevel,
+                attributes,
+                lines
+            )
+        } catch (e: Exception) {
+            logger.error { "Error while processing requirement #$requirementNumber: ${e.message}" }
+            throw e
+        }
     }
 
     private fun storeRequirement(requirement: SdpiRequirement) {
