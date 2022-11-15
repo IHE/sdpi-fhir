@@ -15,7 +15,7 @@ image::../../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 
-*Given* All devices communicate using a common MD LAN protocol
+*Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
 *And* There is at least one Data Gateway (DGW) Service
 

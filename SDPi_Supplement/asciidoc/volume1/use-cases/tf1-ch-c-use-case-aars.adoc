@@ -16,9 +16,9 @@ image::../../images/vol1-diagram-use-case-aars-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 
-*Given* All devices communicate using a common MD LAN protocol
+*Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
-*And* At least one Alert Gateway (AGW) Service on the MD LAN
+*And* At least one Alert Gateway (AGW) Service on the <<acronym_md_lan>>
 
 *And* At least one Alert Recording System is connected to the Alert Gateway (AGW) Service.
 

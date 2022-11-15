@@ -15,9 +15,9 @@ image::../../images/vol1-diagram-use-case-acns-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 
-*Given* All devices communicate using a common MD LAN protocol
+*Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
-*And* At least one Alert Gateway (AGW) Service on the MD LAN network
+*And* At least one Alert Gateway (AGW) Service on the <<acronym_md_lan>> network
 
 *And* At least one Clinical Notification System is connected to the AGW Service.
 

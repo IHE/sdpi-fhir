@@ -15,7 +15,7 @@ image::../../images/vol1-diagram-use-case-sicdsp-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 
-*Given* All devices communicate using a common MD LAN protocol
+*Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
 *And* At least one ICU Dashboard display
 
@@ -27,7 +27,7 @@ image::../../images/vol1-diagram-use-case-sicdsp-tech-view.svg[]
 
 *Given* Dashboard has detected at least one assigned accessible ICU device
 
-*When* the ICU devices are communicating on the MD LAN
+*When* the ICU devices are communicating on the <<acronym_md_lan>>
 
 *Then* the Dashboard will display parameter, waveform, alarm, setting, imagine, etc. information from all assigned accessible devices
 

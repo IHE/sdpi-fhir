@@ -21,31 +21,31 @@ image::../../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
 ==== Technical Pre-Conditions
 
-*Given* All devices communicate using a common MD LAN protocol
+*Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
-*And* A Time Source (TS) Service is on the MD LAN network
+*And* A Time Source (TS) Service is on the <<acronym_md_lan>> network
 
 ==== Scenarios
 
 ===== Scenario: STAD {var_use_case_id}.1 - Device is connected to network with a Time Source service
 
-*Given* Device has detected at least one TS Service
+*Given* Device has detected at least one <<acronym_ts_service>>
 
-*When* The TS Service is operational
+*When* The <<acronym_ts_service>> is operational
 
-*Then* The device will synchronize its time with the TS Service
+*Then* The device will synchronize its time with the <<acronym_ts_service>>
 
-===== Scenario: STAD {var_use_case_id}.2 - Device is connected to network with a TS Service and a second device’s time setting is changed manually
+===== Scenario: STAD {var_use_case_id}.2 - Device is connected to network with a <<acronym_ts_service>> and a second device’s time setting is changed manually
 
-*Given* Device has detected at least one TS Service
+*Given* Device has detected at least one <<acronym_ts_service>>
 
-*When* The TS Service is operational
+*When* The <<acronym_ts_service>> is operational
 
 *And* The time at another device is changed manually
 
-*Then* The device will continue to synchronize its time with the TS Service
+*Then* The device will continue to synchronize its time with the <<acronym_ts_service>>
 
-===== Scenario: STAD {var_use_case_id}.3 - Device is connected to network and cannot connect to a TS Service
+===== Scenario: STAD {var_use_case_id}.3 - Device is connected to network and cannot connect to a <<acronym_ts_service>>
 
 [%noheader]
 [%autowidth]
@@ -54,9 +54,9 @@ image::../../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 | *SDPi Supplement Version Note*:  This scenario is currently out of scope
 |===
 
-*Given* Device has just connected to the network and has not detected any TS Services
+*Given* Device has just connected to the network and has not detected any <<acronym_ts_service>>s
 
-*When* The TS Service is not operational or inaccessible
+*When* The <<acronym_ts_service>> is not operational or inaccessible
 
 *Then* The device will synchronize its time with another  device on the network
 
@@ -69,9 +69,9 @@ image::../../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 | *SDPi Supplement Version Note*:  This scenario is currently out of scope
 |===
 
-*Given* Device has not detected any TS Services
+*Given* Device has not detected any <<acronym_ts_service>>s
 
-*When* The TS Service is not operational or inaccessible
+*When* The <<acronym_ts_service>> is not operational or inaccessible
 
 *And* The time at another device is changed manually
 
