@@ -15,45 +15,45 @@ image::../../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 
-*Given* All devices communicate using SDC
+*Given* All devices communicate using a common MD LAN protocol
 
-*And* There is at least one Data Gateway Service
+*And* There is at least one Data Gateway (DGW) Service
 
 *And* All devices report either a device label and/or location
 
-*And* A Data Gateway is associated with a specific set of device labels, and/or location(s) (i.e. devices in scope).
+*And* A DGW Service is associated with a specific set of device labels, and/or location(s) (i.e. devices in scope).
 
 ==== Scenarios
 
 ===== Scenario: DDES {var_use_case_id}.1 - New in scope device is connected to network with MGW service
 
-*Given* Data Gateway service has detected a new in scope device
+*Given* The DGW Service has detected a new in scope device
 
-*When* The Data Gateway service is operational
+*When* The DGW Service is operational
 
-*Then* The Data Gateway service will connect to the device and export data to the EHR using the HL7 v2 based IHE DEV DOR actor of the DEV DEC profile
+*Then* The DGW Service will connect to the device and export data to the EHR using the HL7 v2 based IHE DEV DOR actor of the DEV DEC profile
 
 #TODO:  SHOULD REFERENCE THE DOR ACTOR FROM THE PROFILES AS INDICATED BUT WHERE AND HOW AND WHERE HERE DO WE REFERENCE THE ACRONYMS THAT ARE ALREADY DEFINED IN THE TF-0 APPENDIX A BUT NOT IN OUR GLOSSARY AND NOT WITH ASCIIDOC METADATA - SYNC WITH TF-2 APPENDIX B GATEWAY CONTENT#
 
 ===== Scenario: DDES {var_use_case_id}.2 - Data Gateway Service is connected to the EHR
 
-*Given* Data Gateway is exporting data to the EHR
+*Given* The DGW Service is exporting data to the EHR
 
-*Then* The Data Gateway service will comply with all IHE DEV DEC profile DOR actor functional and test requirements.
+*Then* The DGW Service will comply with all IHE DEV DEC profile DOR actor functional and test requirements.
 
 ===== Scenario: DDES {var_use_case_id}.3 - Data Gateway Service has a failure
 
-*Given* The Data Gateway service was connected to in scope devices and to an Enterprise system and fails
+*Given* The DGW Service was connected to in scope devices and to an Enterprise system and fails
 
-*Then* The Data Gateway service will backfill its data store and then backfill to the EHR when it recovers from its failure
+*Then* The DGW Service will backfill its data store and then backfill to the EHR when it recovers from its failure
 
 ===== Scenario: DDES {var_use_case_id}.4 - Data Gateway Service connection to the Enterprise System fails
 
-*Given* The Enterprise System stops receiving data from the Data Gateway Service
+*Given* The Enterprise System stops receiving data from the DGW Service
 
-*When* There is a communications failure between the Data Gateway and the Enterprise System
+*When* There is a communications failure between the DGW Service and the Enterprise System
 
-*Then* The Data Gateway service will backfill missed data to the Enterprise System when communications resumes
+*Then* The DGW Service will backfill missed data to the Enterprise System when communications resumes
 
 
 

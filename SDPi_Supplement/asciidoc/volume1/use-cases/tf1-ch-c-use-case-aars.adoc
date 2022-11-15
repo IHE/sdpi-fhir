@@ -16,11 +16,11 @@ image::../../images/vol1-diagram-use-case-aars-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 
-*Given* All devices communicate using SDC
+*Given* All devices communicate using a common MD LAN protocol
 
-*And* At least one Alert Gateway (AGW) Service on the SDC network
+*And* At least one Alert Gateway (AGW) Service on the MD LAN
 
-*And* At least one Alert Recording System is connected to the AGW Service.
+*And* At least one Alert Recording System is connected to the Alert Gateway (AGW) Service.
 
 *And* All devices report either a device label and/or location and/or patient ID
 
@@ -31,15 +31,15 @@ image::../../images/vol1-diagram-use-case-aars-tech-view.svg[]
 
 ===== Scenario: ARRS {var_use_case_id}.1 - New device is connected to network with AGW service
 
-*Given* the AGW service has detected a new device in its scope
+*Given* the AGW Service has detected a new device in its scope
 
-*When* the AGW service is operational
+*When* the AGW Service is operational
 
-*Then* the AGW service will connect to the device and communicate alerts to the Alert Recording System
+*Then* the AGW Service will connect to the device and communicate alerts to the Alert Recording System
 
 ===== Scenario: ARRS {var_use_case_id}.2 - The AGW service loses connectivity with the ICU devices
 
-*Given* the AGW service no longer communicates with ICU devices in its scope
+*Given* the AGW Service no longer communicates with ICU devices in its scope
 
 *When* There is a communications failure
 
@@ -53,14 +53,14 @@ image::../../images/vol1-diagram-use-case-aars-tech-view.svg[]
 
 *Then* the Alert Recording System will detect a loss of communications with the AGW
 
-*Then* when the AGW recovers it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts
+*Then* when the AGW Service recovers it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts
 
 ===== Scenario: ARRS {var_use_case_id}.4 - The Alert Recording System loses connectivity with the AGW
 
 *Given* the Alert Recording System can no longer communicate with the AGW
 
-*Then* the Alert Recording System will detect a loss of communications with the AGW
+*Then* the Alert Recording System will detect a loss of communications with the AGW Service
 
-*Then*  when the AGW regains communication with the Alert Recording System it will resume reporting active alerts to the Alert Recording System and backfill any missing alerts.
+*Then*  when the AGW Service regains communication with the Alert Recording System it will resume reporting active alerts to the Alert Recording System and backfill any missing alerts.
 
 

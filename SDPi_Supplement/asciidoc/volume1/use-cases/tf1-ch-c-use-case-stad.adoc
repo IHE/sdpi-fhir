@@ -11,7 +11,7 @@
 === Use Case Feature {var_use_case_id}: Synchronized Time Across Devices (STAD)
 
 ==== Narrative:
-Nurse Jean attaches a ventilator to the SDC based network in the ICU.  It automatically synchronizes its clock with the clocks of the other devices on the network.
+Nurse Jean attaches a ventilator to the medical device network in the ICU.  It automatically obtains the correct time.
 
 ==== Technical View
 
@@ -21,45 +21,59 @@ image::../../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
 ==== Technical Pre-Conditions
 
-*Given* All devices communicate using SDC
+*Given* All devices communicate using a common MD LAN protocol
 
-*And* NTP service on the SDC network
+*And* A Time Source (TS) Service is on the MD LAN network
 
 ==== Scenarios
 
-===== Scenario: STAD {var_use_case_id}.1 - Device is connected to network with NTP service
+===== Scenario: STAD {var_use_case_id}.1 - Device is connected to network with a Time Source service
 
-*Given* Device has detected at least one NTP service
+*Given* Device has detected at least one TS Service
 
-*When* The NTP service is operational
+*When* The TS Service is operational
 
-*Then* The device will synchronize its time with the NTP service time
+*Then* The device will synchronize its time with the TS Service
 
-===== Scenario: STAD {var_use_case_id}.2 - Device is connected to network with a failed NTP server
+===== Scenario: STAD {var_use_case_id}.2 - Device is connected to network with a TS Service and a second device’s time setting is changed manually
 
-*Given* Device has not detected at least one NTP service
+*Given* Device has detected at least one TS Service
 
-*When* The NTP service is not operational or inaccessible
-
-*Then* The device will synchronize its time with another SDC device in the cluster
-
-===== Scenario: STAD {var_use_case_id}.3 - Device is connected to network with NTP server and a second device’s time setting is changed manually
-
-*Given* Device has detected at least one NTP service
-
-*When* The NTP service is operational
-
-*And* The time at another device is changed manually (maybe this is disallowed?)
-
-*Then* The device will continue to synchronize its time with the NTP service time
-
-===== Scenario: STAD {var_use_case_id}.4 - Device is connected to network with a failed NTP server and a second device’s time setting is changed manually
-
-*Given* Device has not detected at least one NTP service
-
-*When* The NTP service is not operational or inaccessible
+*When* The TS Service is operational
 
 *And* The time at another device is changed manually
 
-*Then* The device will synchronize its time with the time from the SDC device that had its time changed
+*Then* The device will continue to synchronize its time with the TS Service
+
+===== Scenario: STAD {var_use_case_id}.3 - Device is connected to network and cannot connect to a TS Service
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+| *SDPi Supplement Version Note*:  This scenario is currently out of scope
+|===
+
+*Given* Device has just connected to the network and has not detected any TS Services
+
+*When* The TS Service is not operational or inaccessible
+
+*Then* The device will synchronize its time with another  device on the network
+
+===== Scenario: STAD {var_use_case_id}.4 - Device is connected to network but cannot connect to a Time Source server and a second device’s time setting is changed manually
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+| *SDPi Supplement Version Note*:  This scenario is currently out of scope
+|===
+
+*Given* Device has not detected any TS Services
+
+*When* The TS Service is not operational or inaccessible
+
+*And* The time at another device is changed manually
+
+*Then* The devices on the network will synchronize their time with the time from the device that had its time changed
 
