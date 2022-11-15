@@ -67,7 +67,9 @@ A dedicated user interaction can be a button press on a <<actor_somds_consumer>>
 ====
 ****
 
-In addition, a filter criterion for Probe messages could be set. For example, only <<actor_somds_consumer>>s that are assigned to a patient and lost network connection can send Probe messages.
+In addition, a filter criterion for Probe messages could be set.
+For example, only <<actor_somds_consumer>>s that are assigned to a patient and lost network connection can send Probe messages.
+
 
 
 // ---------- PROBE MATCH ---------
