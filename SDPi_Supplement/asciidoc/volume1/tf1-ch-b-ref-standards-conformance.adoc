@@ -43,7 +43,7 @@ metalanguage - Extended BNF, 15 December 1996, available at https://standards.is
 
 * [[[rfc_3986, RFC 3986]]] T. Berners-Lee et al., RFC 3986, Uniform Resource Identifier (URI): Generic Syntax, January 2005, available at https://www.rfc-editor.org/rfc/rfc3986
 
-* [[[SOAP_over_UDP_v1.1, SOAP-over-UDP Version 1.1]]] OASIS Standard, SOAP-over-UDP Version 1.1, July 2009, available at http://docs.oasis-open.org/ws-dd/soapoverudp/1.1/os/wsdd-soapoverudp-1.1-spec-os.docx.
+* [[[SOAP_over_UDP_v1_1, SOAP-over-UDP Version 1.1]]] OASIS Standard, SOAP-over-UDP Version 1.1, July 2009, available at http://docs.oasis-open.org/ws-dd/soapoverudp/1.1/os/wsdd-soapoverudp-1.1-spec-os.docx.
 
 // Appendix B.3
 === IEEE Implementation Conformance Statement (ICS) Table Overview
