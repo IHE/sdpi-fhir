@@ -4,7 +4,7 @@
    height="356.83334"
    overflow="hidden"
    version="1.1"
-   id="svg122"
+   id="svg45"
    sodipodi:docname="vol1-diagram-use-case-sicdsp-tech-view.svg"
    inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -12,7 +12,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="namedview124"
+     id="namedview47"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -25,16 +25,16 @@
      fit-margin-right="15"
      fit-margin-bottom="15"
      inkscape:zoom="0.8609375"
-     inkscape:cx="381.5608"
+     inkscape:cx="380.39927"
      inkscape:cy="67.949183"
      inkscape:window-width="1620"
      inkscape:window-height="1058"
      inkscape:window-x="-6"
      inkscape:window-y="-6"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g120" />
+     inkscape:current-layer="g43" />
   <defs
-     id="defs84">
+     id="defs5">
     <clipPath
        id="clip0">
       <rect
@@ -42,26 +42,26 @@
          y="0"
          width="1280"
          height="720"
-         id="rect81" />
+         id="rect2" />
     </clipPath>
   </defs>
   <g
      clip-path="url(#clip0)"
-     id="g120"
+     id="g43"
      transform="translate(-258.5,-292)">
     <rect
        style="fill:#ffffff"
-       id="rect228"
-       width="876.95099"
-       height="422.79492"
-       x="235.26952"
-       y="264.12341" />
+       id="rect93"
+       width="857.20508"
+       height="419.31033"
+       x="228.30037"
+       y="265.28494" />
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="21px"
        transform="translate(628.233,601)"
-       id="text88">Patient</text>
+       id="text9">Patient</text>
     <rect
        x="592.5"
        y="307.5"
@@ -71,17 +71,19 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#a4c2f4"
-       id="rect90" />
+       id="rect11" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(620.419,327)"
-       id="text94">ICU Bed <tspan
-   font-size="19px"
-   x="-10.2467"
-   y="23"
-   id="tspan92">Dashboard</tspan></text>
+       id="text13">ICU Bed</text>
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(610.173,350)"
+       id="text15">Dashboard</text>
     <rect
        x="496.5"
        y="515.5"
@@ -91,13 +93,13 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#9fc5e8"
-       id="rect96" />
+       id="rect17" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(514.975,547)"
-       id="text98">Monitor</text>
+       id="text19">Monitor</text>
     <rect
        x="616.5"
        y="515.5"
@@ -107,13 +109,13 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#9fc5e8"
-       id="rect100" />
+       id="rect21" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(634.413,547)"
-       id="text102">Pump</text>
+       id="text23">Pump</text>
     <rect
        x="720.5"
        y="515.5"
@@ -123,13 +125,13 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#9fc5e8"
-       id="rect104" />
+       id="rect25" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(730.641,547)"
-       id="text106">Ventilator</text>
+       id="text27">Ventilator</text>
     <path
        d="m 273.5,451.5 h 747.73"
        stroke="#44546a"
@@ -138,7 +140,7 @@
        stroke-miterlimit="10"
        fill="none"
        fill-rule="evenodd"
-       id="path108" />
+       id="path29" />
     <path
        d="M 547.5,515.642 V 449.5"
        stroke="#44546a"
@@ -147,7 +149,7 @@
        stroke-miterlimit="10"
        fill="none"
        fill-rule="evenodd"
-       id="path110" />
+       id="path31" />
     <path
        d="M 0,0 1.04987e-4,161.966"
        stroke="#44546a"
@@ -157,7 +159,7 @@
        fill="none"
        fill-rule="evenodd"
        transform="matrix(1,0,0,-1,656.5,517.466)"
-       id="path112" />
+       id="path33" />
     <path
        d="M 775.5,517.713 V 450.5"
        stroke="#44546a"
@@ -166,13 +168,19 @@
        stroke-miterlimit="10"
        fill="none"
        fill-rule="evenodd"
-       id="path114" />
+       id="path35" />
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="21px"
        transform="translate(351.659,441)"
-       id="text116">SDC LAN</text>
+       id="text37">MD</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(387.825,441)"
+       id="text39">LAN</text>
     <rect
        x="446.5"
        y="378.5"
@@ -184,6 +192,6 @@
        stroke-miterlimit="10"
        stroke-dasharray="10.6667, 8"
        fill="none"
-       id="rect118" />
+       id="rect41" />
   </g>
 </svg>

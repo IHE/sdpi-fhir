@@ -4,7 +4,7 @@
    height="412.83334"
    overflow="hidden"
    version="1.1"
-   id="svg845"
+   id="svg79"
    sodipodi:docname="vol1-diagram-use-case-aars-tech-view.svg"
    inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -12,7 +12,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="namedview847"
+     id="namedview81"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -25,16 +25,16 @@
      fit-margin-right="15"
      fit-margin-bottom="15"
      inkscape:zoom="0.8609375"
-     inkscape:cx="437.31397"
+     inkscape:cx="436.15245"
      inkscape:cy="119.05626"
      inkscape:window-width="1620"
      inkscape:window-height="1058"
      inkscape:window-x="-6"
      inkscape:window-y="-6"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g843" />
+     inkscape:current-layer="g77" />
   <defs
-     id="defs771">
+     id="defs5">
     <clipPath
        id="clip0">
       <rect
@@ -42,26 +42,26 @@
          y="0"
          width="1280"
          height="720"
-         id="rect768" />
+         id="rect2" />
     </clipPath>
   </defs>
   <g
      clip-path="url(#clip0)"
-     id="g843"
+     id="g77"
      transform="translate(-203.16666,-240)">
     <rect
        style="fill:#ffffff"
-       id="rect2032"
-       width="945.48096"
-       height="476.22504"
-       x="169.48245"
-       y="199.34665" />
+       id="rect127"
+       width="987.29584"
+       height="501.77859"
+       x="162.51331"
+       y="198.18512" />
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="21px"
        transform="translate(401.323,605)"
-       id="text775">Patient</text>
+       id="text9">Patient</text>
     <rect
        x="269.5"
        y="519.5"
@@ -71,13 +71,13 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#9fc5e8"
-       id="rect777" />
+       id="rect11" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(288.065,550)"
-       id="text779">Monitor</text>
+       id="text13">Monitor</text>
     <rect
        x="389.5"
        y="519.5"
@@ -87,13 +87,13 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#9fc5e8"
-       id="rect781" />
+       id="rect15" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(407.504,550)"
-       id="text783">Pump</text>
+       id="text17">Pump</text>
     <rect
        x="493.5"
        y="519.5"
@@ -103,13 +103,13 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#9fc5e8"
-       id="rect785" />
+       id="rect19" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(503.732,550)"
-       id="text787">Ventilator</text>
+       id="text21">Ventilator</text>
     <path
        d="m 273.5,454.5 h 747.73"
        stroke="#44546a"
@@ -118,7 +118,7 @@
        stroke-miterlimit="10"
        fill="none"
        fill-rule="evenodd"
-       id="path789" />
+       id="path23" />
     <path
        d="M 320.5,518.642 V 452.5"
        stroke="#44546a"
@@ -127,7 +127,7 @@
        stroke-miterlimit="10"
        fill="none"
        fill-rule="evenodd"
-       id="path791" />
+       id="path25" />
     <path
        d="M 0,0 1.04987e-4,67.2126"
        stroke="#44546a"
@@ -137,7 +137,7 @@
        fill="none"
        fill-rule="evenodd"
        transform="matrix(1,0,0,-1,429.5,520.713)"
-       id="path793" />
+       id="path27" />
     <path
        d="M 548.5,520.713 V 453.5"
        stroke="#44546a"
@@ -146,17 +146,19 @@
        stroke-miterlimit="10"
        fill="none"
        fill-rule="evenodd"
-       id="path795" />
+       id="path29" />
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="21px"
        transform="translate(387.105,441)"
-       id="text799">SDC LAN<tspan
-   font-size="21px"
-   x="441.85599"
-   y="164"
-   id="tspan797">Patient</tspan></text>
+       id="text31">MD LAN</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(828.96,605)"
+       id="text33">Patient</text>
     <rect
        x="696.5"
        y="519.5"
@@ -166,13 +168,13 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#9fc5e8"
-       id="rect801" />
+       id="rect35" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(715.702,550)"
-       id="text803">Monitor</text>
+       id="text37">Monitor</text>
     <rect
        x="816.5"
        y="519.5"
@@ -182,13 +184,13 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#9fc5e8"
-       id="rect805" />
+       id="rect39" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(835.14,550)"
-       id="text807">Pump</text>
+       id="text41">Pump</text>
     <rect
        x="920.5"
        y="519.5"
@@ -198,13 +200,13 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#9fc5e8"
-       id="rect809" />
+       id="rect43" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(931.369,550)"
-       id="text811">Ventilator</text>
+       id="text45">Ventilator</text>
     <path
        d="M 748.5,518.642 V 452.5"
        stroke="#44546a"
@@ -213,7 +215,7 @@
        stroke-miterlimit="10"
        fill="none"
        fill-rule="evenodd"
-       id="path813" />
+       id="path47" />
     <path
        d="M 0,0 1.04987e-4,67.2126"
        stroke="#44546a"
@@ -223,7 +225,7 @@
        fill="none"
        fill-rule="evenodd"
        transform="matrix(1,0,0,-1,857.5,520.713)"
-       id="path815" />
+       id="path49" />
     <path
        d="M 975.5,520.713 V 453.5"
        stroke="#44546a"
@@ -232,7 +234,7 @@
        stroke-miterlimit="10"
        fill="none"
        fill-rule="evenodd"
-       id="path817" />
+       id="path51" />
     <path
        d="M 0,0 1.04987e-4,199.89"
        stroke="#44546a"
@@ -242,7 +244,7 @@
        fill="none"
        fill-rule="evenodd"
        transform="matrix(1,0,0,-1,642.5,456.39)"
-       id="path819" />
+       id="path53" />
     <rect
        x="219.5"
        y="382.5"
@@ -254,7 +256,7 @@
        stroke-miterlimit="10"
        stroke-dasharray="10.6667, 8"
        fill="none"
-       id="rect821" />
+       id="rect55" />
     <rect
        x="666.5"
        y="382.5"
@@ -266,7 +268,7 @@
        stroke-miterlimit="10"
        stroke-dasharray="10.6667, 8"
        fill="none"
-       id="rect823" />
+       id="rect57" />
     <rect
        x="577.5"
        y="310.5"
@@ -276,17 +278,19 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#a4c2f4"
-       id="rect825" />
+       id="rect59" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(602.879,330)"
-       id="text829">Alert GW <tspan
-   font-size="19px"
-   x="6.7466402"
-   y="23"
-   id="tspan827">Service</tspan></text>
+       id="text61">Alert GW</text>
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(609.625,353)"
+       id="text63">Service</text>
     <rect
        x="811.5"
        y="310.5"
@@ -296,17 +300,19 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#a4c2f4"
-       id="rect831" />
+       id="rect65" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(820.624,330)"
-       id="text835">Alert Recording <tspan
-   font-size="19px"
-   x="33.080002"
-   y="23"
-   id="tspan833">System</tspan></text>
+       id="text67">Alert Recording</text>
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(853.704,353)"
+       id="text69">System</text>
     <path
        d="M 0,0 1.04987e-4,54.2754"
        stroke="#44546a"
@@ -316,7 +322,7 @@
        fill="none"
        fill-rule="evenodd"
        transform="matrix(1,0,0,-1,884.5,310.775)"
-       id="path837" />
+       id="path71" />
     <path
        d="M 493.5,256.5 H 951.466"
        stroke="#44546a"
@@ -325,10 +331,10 @@
        stroke-miterlimit="10"
        fill="none"
        fill-rule="evenodd"
-       id="path839" />
+       id="path73" />
     <path
        d="m 716,332.167 h 80.149 v 3.666 H 716 Z m 78.316,-3.667 11,5.5 -11,5.5 z"
        fill="#3f6ec3"
-       id="path841" />
+       id="path75" />
   </g>
 </svg>

@@ -4,7 +4,7 @@
    height="357.83334"
    overflow="hidden"
    version="1.1"
-   id="svg1425"
+   id="svg69"
    sodipodi:docname="vol1-diagram-use-case-sicdmp-tech-view.svg"
    inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -12,7 +12,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="namedview1427"
+     id="namedview71"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -25,16 +25,16 @@
      fit-margin-right="15"
      fit-margin-bottom="15"
      inkscape:zoom="0.8609375"
-     inkscape:cx="437.31397"
+     inkscape:cx="436.15245"
      inkscape:cy="74.91833"
      inkscape:window-width="1620"
      inkscape:window-height="1058"
      inkscape:window-x="-6"
      inkscape:window-y="-6"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g1423" />
+     inkscape:current-layer="g67" />
   <defs
-     id="defs1363">
+     id="defs5">
     <clipPath
        id="clip0">
       <rect
@@ -42,26 +42,26 @@
          y="0"
          width="1280"
          height="720"
-         id="rect1360" />
+         id="rect2" />
     </clipPath>
   </defs>
   <g
      clip-path="url(#clip0)"
-     id="g1423"
+     id="g67"
      transform="translate(-203.16666,-285)">
     <rect
        style="fill:#ffffff"
-       id="rect1575"
-       width="938.51178"
-       height="430.9256"
-       x="167.15939"
-       y="248.99274" />
+       id="rect117"
+       width="981.48822"
+       height="441.3793"
+       x="165.99788"
+       y="253.63884" />
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="21px"
        transform="translate(401.323,595)"
-       id="text1367">Patient</text>
+       id="text9">Patient</text>
     <rect
        x="577.5"
        y="300.5"
@@ -71,17 +71,19 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#a4c2f4"
-       id="rect1369" />
+       id="rect11" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(624.625,320)"
-       id="text1373">ICU <tspan
-   font-size="19px"
-   x="-29.4133"
-   y="23"
-   id="tspan1371">Dashboard</tspan></text>
+       id="text13">ICU</text>
+    <text
+       font-family="Arial, Arial_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="19px"
+       transform="translate(595.212,343)"
+       id="text15">Dashboard</text>
     <rect
        x="269.5"
        y="509.5"
@@ -91,13 +93,13 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#9fc5e8"
-       id="rect1375" />
+       id="rect17" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(288.065,540)"
-       id="text1377">Monitor</text>
+       id="text19">Monitor</text>
     <rect
        x="389.5"
        y="509.5"
@@ -107,13 +109,13 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#9fc5e8"
-       id="rect1379" />
+       id="rect21" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(407.504,540)"
-       id="text1381">Pump</text>
+       id="text23">Pump</text>
     <rect
        x="493.5"
        y="509.5"
@@ -123,13 +125,13 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#9fc5e8"
-       id="rect1383" />
+       id="rect25" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(503.732,540)"
-       id="text1385">Ventilator</text>
+       id="text27">Ventilator</text>
     <path
        d="m 273.5,444.5 h 747.73"
        stroke="#44546a"
@@ -138,7 +140,7 @@
        stroke-miterlimit="10"
        fill="none"
        fill-rule="evenodd"
-       id="path1387" />
+       id="path29" />
     <path
        d="M 320.5,508.642 V 442.5"
        stroke="#44546a"
@@ -147,7 +149,7 @@
        stroke-miterlimit="10"
        fill="none"
        fill-rule="evenodd"
-       id="path1389" />
+       id="path31" />
     <path
        d="M 0,0 1.04987e-4,67.2126"
        stroke="#44546a"
@@ -157,7 +159,7 @@
        fill="none"
        fill-rule="evenodd"
        transform="matrix(1,0,0,-1,429.5,510.713)"
-       id="path1391" />
+       id="path33" />
     <path
        d="M 548.5,510.713 V 443.5"
        stroke="#44546a"
@@ -166,17 +168,25 @@
        stroke-miterlimit="10"
        fill="none"
        fill-rule="evenodd"
-       id="path1393" />
+       id="path35" />
     <text
        font-family="Calibri, Calibri_MSFontService, sans-serif"
        font-weight="400"
        font-size="21px"
        transform="translate(387.105,431)"
-       id="text1397">SDC LAN<tspan
-   font-size="21px"
-   x="441.85599"
-   y="164"
-   id="tspan1395">Patient</tspan></text>
+       id="text37">MD</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(423.271,431)"
+       id="text39">LAN</text>
+    <text
+       font-family="Calibri, Calibri_MSFontService, sans-serif"
+       font-weight="400"
+       font-size="21px"
+       transform="translate(828.96,595)"
+       id="text41">Patient</text>
     <rect
        x="696.5"
        y="509.5"
@@ -186,13 +196,13 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#9fc5e8"
-       id="rect1399" />
+       id="rect43" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(715.702,540)"
-       id="text1401">Monitor</text>
+       id="text45">Monitor</text>
     <rect
        x="816.5"
        y="509.5"
@@ -202,13 +212,13 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#9fc5e8"
-       id="rect1403" />
+       id="rect47" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(835.14,540)"
-       id="text1405">Pump</text>
+       id="text49">Pump</text>
     <rect
        x="920.5"
        y="509.5"
@@ -218,13 +228,13 @@
        stroke-linejoin="round"
        stroke-miterlimit="10"
        fill="#9fc5e8"
-       id="rect1407" />
+       id="rect51" />
     <text
        font-family="Arial, Arial_MSFontService, sans-serif"
        font-weight="400"
        font-size="19px"
        transform="translate(931.369,540)"
-       id="text1409">Ventilator</text>
+       id="text53">Ventilator</text>
     <path
        d="M 748.5,508.642 V 442.5"
        stroke="#44546a"
@@ -233,7 +243,7 @@
        stroke-miterlimit="10"
        fill="none"
        fill-rule="evenodd"
-       id="path1411" />
+       id="path55" />
     <path
        d="M 0,0 1.04987e-4,67.2126"
        stroke="#44546a"
@@ -243,7 +253,7 @@
        fill="none"
        fill-rule="evenodd"
        transform="matrix(1,0,0,-1,857.5,510.713)"
-       id="path1413" />
+       id="path57" />
     <path
        d="M 975.5,510.713 V 443.5"
        stroke="#44546a"
@@ -252,7 +262,7 @@
        stroke-miterlimit="10"
        fill="none"
        fill-rule="evenodd"
-       id="path1415" />
+       id="path59" />
     <path
        d="M 0,0 1.04987e-4,96.9004"
        stroke="#44546a"
@@ -262,7 +272,7 @@
        fill="none"
        fill-rule="evenodd"
        transform="matrix(1,0,0,-1,642.5,446.4)"
-       id="path1417" />
+       id="path61" />
     <rect
        x="219.5"
        y="372.5"
@@ -274,7 +284,7 @@
        stroke-miterlimit="10"
        stroke-dasharray="10.6667, 8"
        fill="none"
-       id="rect1419" />
+       id="rect63" />
     <rect
        x="666.5"
        y="372.5"
@@ -286,6 +296,6 @@
        stroke-miterlimit="10"
        stroke-dasharray="10.6667, 8"
        fill="none"
-       id="rect1421" />
+       id="rect65" />
   </g>
 </svg>
