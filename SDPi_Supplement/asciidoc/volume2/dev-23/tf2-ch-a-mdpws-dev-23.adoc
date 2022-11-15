@@ -54,7 +54,7 @@ In IT networks such as WLAN, messages can get lost or fragmented and data can co
 A <<actor_somds_provider>> should create Hello messages of less than the MTU size.
 ****
 
-Moreover, as further mitigation measure, note that <<SOAP_over_UDP_v1.1>> already defines a non-normative retry and back-off algorithm.
+Moreover, as further mitigation measure, note that <<SOAP_over_UDP_v1_1>> already defines a non-normative retry and back-off algorithm.
 
 .R2003
 [sdpi_requirement#r2003,sdpi_req_level=should]
