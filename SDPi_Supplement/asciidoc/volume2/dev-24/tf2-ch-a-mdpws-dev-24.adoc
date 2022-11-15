@@ -41,7 +41,9 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-probe.xml[]
 `s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes`:: The <<payload_dev_24_probe_discovery_scope>> as a list of URIs to probe for.
 [#vol2_clause_appendix_mdpws_dev_24_recurring_probe]
 ====== Recurring Probe
-While the number of Hello messages scales linearly with the number of <<actor_somds_provider>>s, in the worst case the number of Probe / ProbeMatch messages is the product of the number of <<actor_somds_provider>>s and the number of <<actor_somds_consumer>>s. Therefore, in order to prevent the network congestion from Probe / ProbeMatch messages, the following requirements are defined:
+While the number of Hello messages scales linearly with the number of <<actor_somds_provider>>s, in the worst case the number of Probe / ProbeMatch messages is the product of the number of <<actor_somds_provider>>s and the number of <<actor_somds_consumer>>s.
+Therefore, in order to prevent the network congestion from Probe / ProbeMatch messages, the following requirements are defined:
+
 
 .R3001
 [sdpi_requirement#r3001,sdpi_req_level=should]
