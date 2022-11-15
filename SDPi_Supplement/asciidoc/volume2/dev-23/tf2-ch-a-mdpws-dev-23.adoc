@@ -53,7 +53,7 @@ This becomes crucial when connectionless transport protocols like UDP are used.
 .Note
 [%collapsible]
 ====
-To mitigate this, <<actor_somds_provider>>s are advised to create Hello messages of less than the MTU size over UDP, in accordance with the DPWS requirement R0029.
+To mitigate this, <<actor_somds_provider>>s are advised to create Hello messages of less than the MTU size over UDP, in accordance with the <<dpws_2009>> requirement R0029.
 ====
 
 Moreover, as further mitigation measure, note that <<SOAP_over_UDP_v1_1>> already defines a non-normative retry and back-off algorithm.
