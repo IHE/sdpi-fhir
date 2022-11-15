@@ -49,6 +49,7 @@ The random interval between 60 seconds and 120 seconds aims to prevent <<actor_s
 In IT networks such as WLAN, messages can get lost or fragmented and data can consequently be delivered in the wrong order, especially with increasing concurrent data traffic caused by an increasing number of <<actor_somds_participant>>s.
 This becomes crucial when connectionless transport protocols like UDP are used.
 <<ieee_11073_20701_2018>> leverages UDP for service discovery and hence suffers from the aforementioned issues.
+
 .Note
 [%collapsible]
 ====
