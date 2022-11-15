@@ -31,8 +31,18 @@
 |
 | [[acronym_csf,CSF]] CSF
 
+| [[term_coded_attribute]] Coded Attribute
+| A BICEPS participant model extension that allows for a <<actor_somds_provider>> to provide attributes from the first partition of the IEEE 11073-10101 nomenclature. Specified in <<vol3_clause_coded_attribute>>.
+|
+|
+
+| [[term_discovery_scope, Discovery Scope]] Discovery Scope
+| A set of zero to many identifiers that allows for organizing <<actor_somds_provider>>s into logical groups.
+|
+|
+
 | [[term_integratec_clinical_environment,Integrated Clinical Environment (ICE)]] Integrated Clinical Environment
-| Environment that combines interoperable heterogeneous POINT-OF-CARE (PoC) MEDICAL DEVICEs and other equipment integrated to create a medical device system for the care of a single high acuity patient. (See <<ieee_11073_20701_2018>> and <<aami_2700_1_2019>>).
+| Environment that combines interoperable heterogeneous POINT-OF-CARE (PoC) MEDICAL DEVICEs and other equipment integrated to create a medical device system for the care of a single high acuity patient. (See ISO/IEEE 11073-20701 and AAMI 2700-1).
 |
 | [[acronym_ice,ICE]] ICE
 
@@ -55,6 +65,16 @@
 | An approach to systems engineering where a single, highly integrated, executable model is created (often using OMG System's Modeling Language (e.g., <<omg_sysml_2_0_spec>>), to capture all elements, from requirements to system components to Verification & Validation test cases.  This _model-centric_ (*[[acronym_mc,MC]]MC*) specification approach replaces the traditional _document-centric_ approach.
 | [[acronym_ri_mc_rr,RI+MC+RR]] RI+MC+RR
 | [[acronym_mbse,MBSE]] MBSE
+
+| [[term_manufacturer, Manufacturer]] Manufacturer
+| Natural or legal person with responsibility for the design, manufacture, packaging, or labeling of medical electrical equipment, assembling a medical electrical system, or adapting medical electrical equipment or a medical electrical system, regardless of whether these operations are performed by that person or on that person's behalf.
+|
+|
+
+| [[term_plug_and_trust,Plug-and-Trust (PnT)]] Plug-and-Trust
+| The integration of an SES framework and MDI  plug-and-play technology to enable the dynamic establishment of trust between participant systems at the point of connection to a #SOMDS# network.
+| SES MDI
+| [[acronym_pnt,PnT]] PnT
 
 | [[term_participant_key_purposes,Participant Key Purposes (PKP)]] Participant Key Purposes
 | These generally refer to the ISO/IEEE 11073-1070x standards that provide a consensus set of risk control measures aligned with the four core <<acronym_mdi>> functions:  <<term_plug_and_trust>>, reporting, alerting & external control.
@@ -127,11 +147,27 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 |
 | [[acronym_samd,SaMD]] SaMD
 
+| [[term_somds_provider_uid, SOMDS Provider UID]] SOMDS Provider UID
+| A globally unique identifier for a <<actor_somds_provider>> that is stable across re-initializations.
+|
+|
+
 | [[term_system_function_contribution,System Function Contribution (SFC)]] System Function Contribution
 | A detailed specification of the capabilities of a #SOMDS# network participant
 |
 | [[acronym_sfc,SFC]] SFC
 
+| [[term_transport_address, Transport Address]] Transport Address
+| A physical endpoint address that can be used to communicate with a <<actor_somds_provider>>.
+| XAddr
+|
+
+.^| [[term_q_name, QName]] QName
+| XML Schema QName. In this specification, QNames are encoded as `{<namespace>}<local-name>`.
+|
+|
+
+| ...
 | ...
 | ...
 | ...
@@ -139,12 +175,6 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 
 |===
 
-#TODO: THE FOLLOWING DEFINITIONS SHOULD GO SOMEWHERE - IN GLOSSARY OR OTHER IHE DEV TF LOCATION???#
-
-[[property_somds_provider_uid]]SOMDS Provider UID:: A globally unique identifier for a <<actor_somds_provider>> that is stable across re-initializations.
-[[property_discovery_scope]]Discovery Scope:: A set of zero to many identifiers that allows for organizing <<actor_somds_provider>>s into logical groups.
-[[property_transport_address]] Transport Address:: A physical endpoint address that can be used to communicate with a <<actor_somds_provider>>.
-[[property_q_name]] QName:: XML Schema QName. In this specification, QNames are encoded as `{<namespace>}<local-name>`.
 
 #TODO: THE FOLLOWING ACRONYMS AND ORGANIZATIONAL NAMES SHOULD GO SOMEWHERE - BUT NOT NECESSARILY HERE!#
 

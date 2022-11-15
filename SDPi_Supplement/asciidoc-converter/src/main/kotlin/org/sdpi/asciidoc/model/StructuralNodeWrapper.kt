@@ -1,8 +1,10 @@
 package org.sdpi.asciidoc.model
 
+import org.asciidoctor.ast.Block
 import org.asciidoctor.ast.Document
 import org.asciidoctor.ast.Section
 import org.asciidoctor.ast.StructuralNode
+import org.sdpi.asciidoc.extension.BLOCK_NAME_SDPI_REQUIREMENT
 
 /**
  * Creates a [StructuralNodeWrapper] from a structural node.
@@ -12,6 +14,12 @@ fun StructuralNode.toSealed(): StructuralNodeWrapper {
     return when (this.context) {
         "section" -> StructuralNodeWrapper.Section(this as Section)
         "document" -> StructuralNodeWrapper.Document(this as Document)
+        "paragraph" -> StructuralNodeWrapper.Paragraph(this as Block)
+        "sidebar" -> this.attributes.entries.find {
+            it.key == "1" && it.value == BLOCK_NAME_SDPI_REQUIREMENT
+        }?.let {
+            StructuralNodeWrapper.SdpiRequirement(this as Block)
+        } ?: StructuralNodeWrapper.Sidebar(this as Block)
         else -> StructuralNodeWrapper.Unknown
     }
 }
@@ -19,9 +27,12 @@ fun StructuralNode.toSealed(): StructuralNodeWrapper {
 /**
  * Wrapper class for improved functional dispatching.
  */
-sealed class StructuralNodeWrapper() {
+sealed class StructuralNodeWrapper {
     data class Section(val wrapped: org.asciidoctor.ast.Section) : StructuralNodeWrapper()
     data class Document(val wrapped: org.asciidoctor.ast.Document) : StructuralNodeWrapper()
+    data class Sidebar(val wrapped: Block) : StructuralNodeWrapper()
+    data class SdpiRequirement(val wrapped: Block) : StructuralNodeWrapper()
+    data class Paragraph(val wrapped: Block): StructuralNodeWrapper()
     object Unknown : StructuralNodeWrapper()
 }
 
