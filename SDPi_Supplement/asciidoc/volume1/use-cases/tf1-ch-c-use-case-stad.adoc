@@ -1,0 +1,79 @@
+// = Use Case Feature: Synchronized Time Across Devices (STAD)
+
+#TODO:  Add use case metadata strategy#
+
+// [mdi_use_case#use_case_stad,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_24_probe_sequence,messages='message_announce_network_presence']
+
+// FROM TF-2 DEV-24 Transaction document
+// [sdpi_transaction#transaction_dev_24,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_24_probe_sequence,messages='message_announce_network_presence']
+
+[sdpi_offset=2]
+=== Use Case Feature {var_use_case_id}: Synchronized Time Across Devices (STAD)
+
+==== Narrative:
+Nurse Jean attaches a ventilator to the medical device network in the ICU.  It automatically obtains the correct time.
+
+==== Technical View
+
+.Synchronized Time Across Devices (STAD) -- Technical View
+
+image::../../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
+
+==== Technical Pre-Conditions
+
+*Given* All devices communicate using a common <<acronym_md_lan>> protocol
+
+*And* A Time Source (TS) Service is on the <<acronym_md_lan>> network
+
+==== Scenarios
+
+===== Scenario: STAD {var_use_case_id}.1 - Device is connected to network with a Time Source service
+
+*Given* Device has detected at least one <<acronym_ts_service>>
+
+*When* The <<acronym_ts_service>> is operational
+
+*Then* The device will synchronize its time with the <<acronym_ts_service>>
+
+===== Scenario: STAD {var_use_case_id}.2 - Device is connected to network with a <<acronym_ts_service>> and a second device’s time setting is changed manually
+
+*Given* Device has detected at least one <<acronym_ts_service>>
+
+*When* The <<acronym_ts_service>> is operational
+
+*And* The time at another device is changed manually
+
+*Then* The device will continue to synchronize its time with the <<acronym_ts_service>>
+
+===== Scenario: STAD {var_use_case_id}.3 - Device is connected to network and cannot connect to a <<acronym_ts_service>>
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+| *SDPi Supplement Version Note*:  This scenario is currently out of scope
+|===
+
+*Given* Device has just connected to the network and has not detected any <<acronym_ts_service>>s
+
+*When* The <<acronym_ts_service>> is not operational or inaccessible
+
+*Then* The device will synchronize its time with another  device on the network
+
+===== Scenario: STAD {var_use_case_id}.4 - Device is connected to network but cannot connect to a Time Source server and a second device’s time setting is changed manually
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+| *SDPi Supplement Version Note*:  This scenario is currently out of scope
+|===
+
+*Given* Device has not detected any <<acronym_ts_service>>s
+
+*When* The <<acronym_ts_service>> is not operational or inaccessible
+
+*And* The time at another device is changed manually
+
+*Then* The devices on the network will synchronize their time with the time from the device that had its time changed
+

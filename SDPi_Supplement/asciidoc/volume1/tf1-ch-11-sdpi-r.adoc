@@ -10,6 +10,10 @@ NOTE:  This file contains the core Volume 1 specification for the SDPi-R profile
 [sdpi_offset=1]
 === SDPi-R Actors, Transactions, and Content Modules
 
+.SDPi-R Actor Diagram
+
+image::../images/vol1-diagram-sdpi-r-actor.svg[]
+
 // 11.1.1
 ==== Actor Descriptions and Actor Profile Requirements
 
