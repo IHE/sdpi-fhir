@@ -56,10 +56,7 @@ If a specific <<term_somds_provider_uid>> is unknown to a <<actor_somds_consumer
 [#vol2_clause_dev_24_message_probe_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_24_message_probe} message is sent
-
-1. whenever a <<actor_somds_consumer>> joins a network and is ready to exchange messages with <<actor_somds_provider>>s or
-2. when a <<actor_somds_consumer>> runs in a mode where it periodically checks for availability of <<actor_somds_provider>>s matching a specific <<term_discovery_scope>>.
+The {var_label_dev_24_message_probe} message is sent whenever a <<actor_somds_consumer>> joins a network and is ready to exchange messages with <<actor_somds_provider>>s.
 
 [#vol2_clause_dev_24_message_probe_semantics]
 ====== Message Semantics
@@ -71,9 +68,7 @@ The {var_label_dev_24_message_probe} message is sent
 
 When a <<actor_somds_consumer>> sends this message, every receiving <<actor_somds_provider>> that matches the requested <<payload_dev_24_probe_discovery_scope>> responds with a <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> message.
 
-
 // ---------- PROBE MATCH ---------
-
 
 [#vol2_clause_dev_24_message_probe_match]
 ===== {var_label_dev_24_message_probe_match} Message
