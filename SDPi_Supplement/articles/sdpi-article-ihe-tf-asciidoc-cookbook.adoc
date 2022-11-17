@@ -20,6 +20,21 @@ Related articles that support the information below include:
 * https://github.com/IHE/sdpi-fhir/blob/50ace3692b9299cdfcea434501df87b192f5220c/SDPi_Supplement/articles/sdpi-article-asciidoc-cheat-sheet.adoc[AsciiDoc Cheat Sheet]
 * https://github.com/IHE/sdpi-fhir/wiki/SDPi-File-Organization-Scheme[SDPi File Organization Scheme]
 
+There are a few methods to review the HTML that will be rendered from the AsciiDoc sources:
+
+. IntelliJ Editor has quick view panes that can be used during content development +
+. An "HTML" that can be used for creation of a .html version of the file (and included files) being edited
+. GitHub Actions can be used to view the fully rendered document:
+.. Push the local branch to remote; this will automatically trigger "Verify and upload SDPi supplement" workflow action
+.. Use your browser to navigate to https://github.com/IHE/sdpi-fhir/actions[sdpi-fhir gihub actions page
+.. Select "All workflows" or the "Verify and ..." tab
+.. Note that it typically takes a minute or two to complete the workflow action -- status will be displayed on the right side of your push's row
+.. Select your branches latest upload (push remote)
+.. IF the action was successful, there will be listed in the "Artifacts" section; click on the artifact Name to download a ZIP of the rendered document.
+.. Extract the ZIP, select the "singlepage" subfolder and open the sdpi-supplement.html document
+
+Enjoy AsciiDoc content creation!
+
 == Asciidoc Source Conventions
 
 The following subsections specify conventions for the writing of Asciidoc markup.

@@ -79,10 +79,11 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | R
 | #DEV TF-2:3.25# <<vol2_clause_dev_25>>
 
-| <<transaction_name_discover_system_context_and_capabilities>>
+| <<transaction_name_discover_system_context_and_capabilities>> (_deferred_)
 | Responder
 | R
-| #DEV TF-2:3.26# <<vol2_clause_dev_26>>
+| Deferred to SDPi 1.x
+// <<vol2_clause_dev_26>>
 
 | <<transaction_name_manage_biceps_subscription>>
 | Responder
@@ -107,17 +108,20 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_set_provider_state>> (_deferred_)
 | Responder
 | O
-| #DEV TF-2:3.31# <<vol2_clause_dev_31>>
+| Deferred to SDPi-xC
+// <<vol2_clause_dev_31>>
 
 | <<transaction_name_retrieve_archive_data>>  (_deferred_)
 | Responder
 | O
-| #DEV TF-2:3.32# <<vol2_clause_dev_32>>
+| Deferred to SDPi 1.x
+// <<vol2_clause_dev_32>>
 
 | <<transaction_name_retrieve_localization_information>>
 | Responder
 | O
-| #DEV TF-2:3.33# <<vol2_clause_dev_33>>
+| Deferred to SDPi 1.x
+// <<vol2_clause_dev_33>>
 
 | <<transaction_name_announce_network_departure>>
 | Initiator
@@ -140,10 +144,11 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | R
 | #DEV TF-2:3.25# <<vol2_clause_dev_25>>
 
-| <<transaction_name_discover_system_context_and_capabilities>>
+| <<transaction_name_discover_system_context_and_capabilities>> (_deferred_)
 | Initiator
 | R
-| #DEV TF-2:3.26# <<vol2_clause_dev_26>>
+| Deferred to SDPi 1.x
+// <<vol2_clause_dev_26>>
 
 | <<transaction_name_manage_biceps_subscription>>
 | Initiator
@@ -168,17 +173,20 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_set_provider_state>> (_deferred_)
 | Initiator
 | O
-| #DEV TF-2:3.31# <<vol2_clause_dev_31>>
+| Deferred to SDPi-xC
+// <<vol2_clause_dev_31>>
 
 | <<transaction_name_retrieve_archive_data>>  (_deferred_)
 | Initiator
 | O
-| #DEV TF-2:3.32# <<vol2_clause_dev_32>>
+| Deferred to SDPi 1.x
+// <<vol2_clause_dev_32>>
 
 | <<transaction_name_retrieve_localization_information>>
 | Initiator
 | O
-| #DEV TF-2:3.33# <<vol2_clause_dev_33>>
+| Deferred to SDPi 1.x
+// <<vol2_clause_dev_33>>
 
 | <<transaction_name_announce_network_departure>>
 | _Receiver_
@@ -539,6 +547,40 @@ Dependencies between options, when applicable, are specified in notes.
 
 // 10.4.1
 ==== Concepts
+
+===== SOA & SOMDS Architecture Alignment
+#TODO: Link back to SDPi general overview at the top and how leveraged for SDPi-P Actors Model;  SOMDS Participant ABSTRACT actor role#
+
+===== General Healthcare vs. Medical Interoperability Purposes
+#TODO: All the transactions here are focused on healthcare information exchange with out any intended medical purpose; relationship to the other SDPi Profiles#
+
+===== Ensuring Time Synchronization
+#TODO: This is a key topic for all health information exchange, and especially that of medical data.  A consuming system has to know, for example, that the time stamps provided in the BICEPS content or in the messages is accurate (and to what degree).  Requirements will be included HERE for SOMDS Participant & all other actors including BICEPS Content <xyz>.  Additional requirements may be added to the TF-3 BICEPS Content Module section as well.
+Integration of CT and ATNA (TBD) below in required groupings is assumed.#
+
+===== Waveform Communication
+#TODO:  Explain how waveforms are communicated, both snippets and especially "streaming"; include references to appropriate TF-2 & TF-3 Sections; this is part of the "DO WE NEED A WAVEFORM OPTION?" question to help end users?#
+
+===== Aggregators, Proxies, Sensors
+##TODO: :  Include single / multiple patient variations.  See Topic on confluence; ultimately probably in TF-1 & -2 & -3.  NOTE added a section in TF-3 as well.
+Mention SENSORS and WSN referencing SOMDS Sensor Gateways w/ rationale.
+Include CLINICAL WORKPLACE SOMDS PROXY SERVICE …
+NOTE:  This is not defined in 11073-20701 beyond clause 3. Definitions
+See Gateways in the actors discussion above … and below?
+##
+
+===== Protocol-Specific Gateways
+#TODO: :  External interfaces “gateways” defined in the abstract and in the protocol-specific.  These actors are leveraged in other profiles such as SDPi-Reporting for a DEC Gateway or in SDPi-Alerting for an ACM gateway.  Include proprietary protocols as well.
+Given the discussion in Actors above, is this necessary here?  Or should some of that content be moved here?  YES … show examples for how the Actors might be grouped into a real-world gateway to … for example … an EHR etc.]#
+
+===== Smart App Platforms
+#TODO: 1.	This section enhances the short actor description above to describe in more detail the various aspects of an application “platform”; see Word draft section 10.4.1.5 for additional content#
+
+===== Workflow vs. Transport Actors and Interactions
+#TODO: discuss the challenges of drawing a line between transport profile actors in SDPi and applications of those actors in more care context / workflow applications, such as Smart Alarming or MDIRA/ICE or ICU Integration etc.  Reference TF-0 profile "types" - workflow vs. transport vs. content (???) ]#
+
+===== SDC / BICEPS MDIB Versioning Management
+#TODO: Where do we address profiling of MDIB versioning?  TF-1, TF-2 (e.g., in Appendix), TF-3 in MDIB content module?  Mix of all three?!#
 
 // 10.4.2
 ==== Use Cases

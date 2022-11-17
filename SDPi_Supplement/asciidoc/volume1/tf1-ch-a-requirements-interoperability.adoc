@@ -101,6 +101,7 @@ It should be further noted that though conformity testing aspects are beyond thi
 
 To formally integrate requirements in to this specification, the following requirements model provides the starting point:
 
+[#vol1_figure_appendix_a_sdpi_requirements_core_model]
 .SDPi Requirements - Core Model
 
 image::../images/vol1-diagram-sdpi-req-types-model.svg[align=center]
@@ -156,6 +157,24 @@ Each type is a source of requirements that are explicitly identified and formali
 #note navigating relationships from usage to requirements supports traceability from capabilities / feature verification back to source requirements and group coverage#
 
 #TODO:  Mention traceability & coverage#
+
+==== Requirements Binding Strategies
+Although <<vol1_figure_appendix_a_sdpi_requirements_core_model>> generally indicates bi-directional navigation (arrows on both ends of Requirement-Usage pairs, supporting *_bi-directional bindings_* and navigation is not always helpful.
+This is especially the case when considering potential future updates to the profile specifications.
+In that case, the general rule is:
+
+[none]
+. *Add backward references from _Requirement Usage_ to _Requirement Definition_*.
+
+For example, in TF-2 Transactions, each transaction section is paired with a message transport section in #TF-2 Appendix A MDPWS#; however, future versions of the specification may provide options for alternative transports.
+In this case, the actual transaction definition will remain unchanged, but the bindings to transport messages and services would change.
+Given the rule above, bindings are made in the current TF-2 Appendix A MDPWS profile pointing backweard (or upward!) to the transaction requirements that they satisfy.
+There are no bindings in the opposite direction.
+Taking this approach, a new transport appendix could be added in the future without impacting the core transaction specifications.
+
+Application of this rule would also hold true in other places such as backward references from a profile's Use Case section to the specific #TF-1 Appendix C# use case and scenario requirements that they satisfy.
+
+In some cases, it may be necessary to provide bi-directional bindings; however, that would be the exception and not the rule.
 
 ==== Alignment with SysML 2.0 Requirements Modeling
 #TODO:  THIS WHOLE SECTION#
