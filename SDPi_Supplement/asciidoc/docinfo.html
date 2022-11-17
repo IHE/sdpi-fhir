@@ -1,7 +1,20 @@
 <style>
 /* increase width of the table of contents bar (default is 15em) */
+/* change to responsive design: 30% TOC, 6% padding, 64% content */
+
+body.toc2 {
+    padding-left: 0;
+}
+
 #toc.toc2 {
     width: 30%;
+}
+
+#header, #content, #footnotes, #footer {
+    max-width: 100%;
+    margin: 0;
+    padding-left: 33%;
+    padding-right: 3%;
 }
 
 /* align sidebar titles to the left (default is centered) */
@@ -9,6 +22,7 @@
     text-align: left;
 }
 
+/* remove underlining from anchors to improve readability */
 a {
     text-decoration: none;
 }
