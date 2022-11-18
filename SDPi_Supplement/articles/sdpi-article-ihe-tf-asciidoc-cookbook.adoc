@@ -46,14 +46,14 @@ Name ::= /^[a-z0-9_]+$/
 
 Name:: Custom name that contains small letters, digits and underscores only.
 
-==== Blocks
+==== Identifier prefix
 
-Block Identifiers shall be made up from the following rules:
+Identifiers shall be made up from the following rules:
 
 [source]
 ----
 Volume = 'vol0' | vol1' | 'vol2' | 'vol3'
-ReferenceType ::= 'clause' | 'appendix' | 'listing' | 'figure' | 'table' | 'example'
+ReferenceType ::= 'clause' | 'appendix' | 'listing' | 'figure' | 'table' | 'example' | 'ref'
 
 BlockIdentifier ::= Volume '_' ReferenceType '_' Name
 ----
