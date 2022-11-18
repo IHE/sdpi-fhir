@@ -129,7 +129,7 @@
 |
 
 | [[term_medical_device_lan,Medical Device LAN (MD LAN)]] Medical Device LAN
-| A <<term_local_area_network>> that integrates <<term_medical_device>>s often around a single bedside or care area (e.g., Emergency Department).  For the purposes of the SDPi specifications, <<acronym_md_lan>> refers to an integrated set of devices around a high-acuity point-of-care such as an Operating Room Table or ICU bed.
+| A local area network that integrates <<term_medical_device>>s often around a single bedside or care area (e.g., Emergency Department).  For the purposes of the SDPi specifications, <<acronym_md_lan>> refers to an integrated set of devices around a high-acuity point-of-care such as an Operating Room Table or ICU bed.
 | [[acronym_sdc_lan,SDC LAN]] SDC LAN
 | [[acronym_md_lan,MD LAN]] MD LAN
 |

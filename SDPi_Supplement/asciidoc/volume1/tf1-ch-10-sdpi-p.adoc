@@ -82,7 +82,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_discover_system_context_and_capabilities>>
 | Responder
 | R
-| #DEV TF-2:3.26# <<vol2_clause_dev_26>>
+| #DEV TF-2:3.26# #TODO insert DEV-26 reference here#
 
 | <<transaction_name_manage_biceps_subscription>>
 | Responder
@@ -99,7 +99,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | R
 | #DEV TF-2:3.29# <<vol2_clause_dev_29>>
 
-| <<transaction_name_retrieve_biceps_content>>
+| #TODO fix reference: transaction_name_retrieve_biceps_content#
 | Responder
 | O
 | #DEV TF-2:3.30# <<vol2_clause_dev_30>>
@@ -107,22 +107,22 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_set_provider_state>> (_deferred_)
 | Responder
 | O
-| #DEV TF-2:3.31# <<vol2_clause_dev_31>>
+| #DEV TF-2:3.31# #TODO insert DEV-31 reference here#
 
 | <<transaction_name_retrieve_archive_data>>  (_deferred_)
 | Responder
 | O
-| #DEV TF-2:3.32# <<vol2_clause_dev_32>>
+| #DEV TF-2:3.32# #TODO insert DEV-32 reference here#
 
 | <<transaction_name_retrieve_localization_information>>
 | Responder
 | O
-| #DEV TF-2:3.33# <<vol2_clause_dev_33>>
+| #DEV TF-2:3.33# #TODO insert DEV-33 reference here#
 
 | <<transaction_name_announce_network_departure>>
 | Initiator
 | R
-| #DEV TF-2:3.34# <<vol2_clause_dev_34>>
+| #DEV TF-2:3.34# #TODO insert DEV-34 reference here#
 
 .12+| <<actor_somds_consumer>>
 .^| <<transaction_name_announce_network_presence>>
@@ -143,7 +143,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_discover_system_context_and_capabilities>>
 | Initiator
 | R
-| #DEV TF-2:3.26# <<vol2_clause_dev_26>>
+| #DEV TF-2:3.26# #TODO insert DEV-26 reference here#
 
 | <<transaction_name_manage_biceps_subscription>>
 | Initiator
@@ -160,7 +160,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | R
 | #DEV TF-2:3.29# <<vol2_clause_dev_29>>
 
-| <<transaction_name_retrieve_biceps_content>>
+| #TODO fix reference transaction_name_retrieve_biceps_content#
 | Initiator
 | O
 | #DEV TF-2:3.30# <<vol2_clause_dev_30>>
@@ -168,22 +168,22 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_set_provider_state>> (_deferred_)
 | Initiator
 | O
-| #DEV TF-2:3.31# <<vol2_clause_dev_31>>
+| #DEV TF-2:3.31# #TODO insert DEV-31 reference here#
 
 | <<transaction_name_retrieve_archive_data>>  (_deferred_)
 | Initiator
 | O
-| #DEV TF-2:3.32# <<vol2_clause_dev_32>>
+| #DEV TF-2:3.32# #TODO insert DEV-32 reference here#
 
 | <<transaction_name_retrieve_localization_information>>
 | Initiator
 | O
-| #DEV TF-2:3.33# <<vol2_clause_dev_33>>
+| #DEV TF-2:3.33# #TODO insert DEV-33 reference here#
 
 | <<transaction_name_announce_network_departure>>
 | _Receiver_
 | O
-| #DEV TF-2:3.34# <<vol2_clause_dev_34>>
+| #DEV TF-2:3.34# #TODO insert DEV-34 reference here#
 
 | <<actor_somds_connector>>
 | #TODO: TBD HOW TO REPLICATE TRANSACTIONS; ACTOR SUPPORTS ALL PROVIDER & CONSUMER TRANSACTIONS WITH SAME OPTIONALITY#
@@ -371,7 +371,7 @@ A _<<actor_somds_connector>>_ can implement both <<actor_somds_consumer>> and <<
 In the case of a connector implementing a <<actor_somds_consumer>> actor, it is able to interact with other <<actor_somds_provider>> actors to either obtain information that is then made available to Non-SOMDS Systems or invoke services that are requested from the external Non-SOMDS Systems.
 For example, forwarding patient respiratory rate readings to an external “flow sheet” application or invoking a device’s “pause alert audio” service when a clinician indicates they are responding to a physiological alert condition (e.g., high respiratory rate).
 
-In the case of a connector implementing a <<acronym_somds_provider>> actor, service capabilities for interacting with Non-SOMDS Systems are provided to the other networked <<acronym_somds_consumer>> actors.
+In the case of a connector implementing a <<actor_somds_provider>> actor, service capabilities for interacting with Non-SOMDS Systems are provided to the other networked <<actor_somds_consumer>> actors.
 For example, an application that wants to retrieve patient information from an EHR or check the latest patient laboratory results.
 
 Note that the term “connector” is used to allow for SOMDS interaction with other systems that do not require protocol “gateway” adaptation, but do require a consistent interface to the other participants within a SOMDS environment.
