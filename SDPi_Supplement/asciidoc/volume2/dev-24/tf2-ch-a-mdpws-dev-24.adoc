@@ -37,6 +37,7 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-probe.xml[]
 `s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes/@MatchBy`:: The algorithm used to compare the `s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes` against the <<actor_somds_provider>>'s scopes.
 `s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes`:: The <<payload_dev_24_probe_discovery_scope>> as a list of URIs to probe for.
 
+.R7000
 [sdpi_requirement#r7000,sdpi_req_level=shall]
 ****
 A <<actor_somds_provider>> shall implement the scope matching rule `{var_uri_matching_rule}` as specified by <<ws_discovery_2009>> in a way that the use of _prefix_ refers to the definition of a prefix in formal theory.
