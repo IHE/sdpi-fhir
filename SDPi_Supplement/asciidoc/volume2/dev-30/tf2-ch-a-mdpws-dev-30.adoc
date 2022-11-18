@@ -53,8 +53,8 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-30-getmdibresponse.xml[
 
 ====== Context States
 
-.R7001
-[sdpi_requirement#r7001,sdpi_req_level=shall]
+.R7002
+[sdpi_requirement#r7002,sdpi_req_level=shall]
 ****
 A <<actor_somds_provider>> shall enclose all context states in pm:GetMdibResponse messages.
 
