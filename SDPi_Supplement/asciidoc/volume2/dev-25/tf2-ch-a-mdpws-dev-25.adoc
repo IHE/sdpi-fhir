@@ -12,10 +12,10 @@ The GetMetadata message is encoded by using {var_uri_ws_discovery_transfer}[WS-G
 
 ====== Referenced Standards
 
-* <<ws_transfer_2006>> {var_uri_ws_discovery_transfer}[Section 3.1 Get]
-* <<dpws_2009>> {var_uri_dpws}[Section 4]
-* <<ieee_11073_20702_2016>>
-* <<ieee_11073_20701_2018>>
+* <<ref_ws_transfer_2006>> {var_uri_ws_discovery_transfer}[Section 3.1 Get]
+* <<ref_dpws_2009>> {var_uri_dpws}[Section 4]
+* <<ref_ieee_11073_20702_2016>>
+* <<ref_ieee_11073_20701_2018>>
 
 ====== Message Outline
 .GetMetadata message
@@ -33,8 +33,8 @@ The GetMetadataResponse message is encoded by using {var_uri_ws_discovery_transf
 
 ====== Referenced Standards
 
-* <<ws_transfer_2006>> {var_uri_ws_discovery_transfer}[Section 3.1 Get]
-* <<dpws_2009>> {var_uri_dpws}[Section 4]
+* <<ref_ws_transfer_2006>> {var_uri_ws_discovery_transfer}[Section 3.1 Get]
+* <<ref_dpws_2009>> {var_uri_dpws}[Section 4]
 
 ====== Message Outline
 .GetMetadataResponse message

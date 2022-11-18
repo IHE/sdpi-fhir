@@ -28,7 +28,7 @@ include::tf2-dev-30-summary.adoc[]
 
 ==== Referenced Standards
 
-* <<ieee_11073_10207_2017>> Section 7.3.2 Get Service
+* <<ref_ieee_11073_10207_2017>> Section 7.3.2 Get Service
 
 ==== Messages
 

@@ -32,7 +32,7 @@ include::tf2-dev-23-summary.adoc[]
 
 ==== Referenced Standards
 
-* <<ieee_11073_10207_2017>> Section 9.2 Implicit Discovery
+* <<ref_ieee_11073_10207_2017>> Section 9.2 Implicit Discovery
 
 ==== Messages
 
