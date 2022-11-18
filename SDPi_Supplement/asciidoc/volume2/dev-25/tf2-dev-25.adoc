@@ -1,5 +1,5 @@
-[#vol2_clause_dev_25]
-
+//reset|+1|off
+[#vol2_clause_dev_25,sdpi_offset=25]
 === Discover BICEPS Services [DEV-25]
 
 ==== Scope
