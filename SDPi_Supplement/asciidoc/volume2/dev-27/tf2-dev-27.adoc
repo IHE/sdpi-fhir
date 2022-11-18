@@ -10,7 +10,8 @@
 :var_label_dev_27_message_unsubscribe_response: UnsubscribeResponse
 :var_label_dev_27_message_subscription_end: SubscriptionEnd
 
-[#vol2_clause_dev_27]
+//reset|+1|off
+[#vol2_clause_dev_27,sdpi_offset=27]
 === Manage BICEPS Subscription [{var_transaction_id}]
 
 ==== Scope

@@ -6,7 +6,8 @@
 :var_label_dev_24_message_resolve: Resolve
 :var_label_dev_24_message_resolve_match: ResolveMatch
 
-[#vol2_clause_dev_24]
+//reset|+1|off
+[#vol2_clause_dev_24,sdpi_offset=24]
 === Discover Network Topology [{var_transaction_id}]
 
 ==== Scope

@@ -4,7 +4,8 @@
 :var_label_dev_30_message_getmdibresponse: GetMdibResponse
 
 
-[#vol2_clause_dev_30]
+//reset|+1|off
+[#vol2_clause_dev_30,sdpi_offset=30]
 === Retrieve BICEPS Content [{var_transaction_id}]
 
 ==== Scope

@@ -3,7 +3,8 @@
 :var_label_dev_29_message_notification: Notification
 
 
-[#vol2_clause_dev_29]
+//reset|+1|off
+[#vol2_clause_dev_29,sdpi_offset=29]
 === Publish BICEPS Update Reports [{var_transaction_id}]
 
 ==== Scope

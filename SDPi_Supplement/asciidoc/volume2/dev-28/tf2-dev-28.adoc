@@ -3,7 +3,8 @@
 :var_label_dev_28_message_contextreport: Notification
 
 
-[#vol2_clause_dev_28]
+//reset|+1|off
+[#vol2_clause_dev_28,sdpi_offset=28]
 === Notify Change in System Context and Capabilities [{var_transaction_id}]
 
 ==== Scope
