@@ -17,10 +17,10 @@ The <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> messa
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_discovery_probe}[Section 5.2 Probe]
-* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
-* <<ieee_11073_20702_2016>>
-* <<ieee_11073_20701_2018>>
+* <<ref_ws_discovery_2009>> {var_uri_ws_discovery_probe}[Section 5.2 Probe]
+* <<ref_dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ref_ieee_11073_20702_2016>>
+* <<ref_ieee_11073_20701_2018>>
 
 ====== Message Outline
 
@@ -83,8 +83,8 @@ The <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_ma
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_discovery_probe_match}[Section 5.3 Probe Match]
-* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ref_ws_discovery_2009>> {var_uri_ws_discovery_probe_match}[Section 5.3 Probe Match]
+* <<ref_dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
 
 ====== Message Outline
 
@@ -113,8 +113,8 @@ The <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> m
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_discovery_resolve}[Section 6.2 Resolve]
-* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ref_ws_discovery_2009>> {var_uri_ws_discovery_resolve}[Section 6.2 Resolve]
+* <<ref_dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
 
 ====== Message Outline
 
@@ -140,8 +140,8 @@ The <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_resolve_
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_discovery_resolve_match}[Section 6.3 Resolve Match]
-* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ref_ws_discovery_2009>> {var_uri_ws_discovery_resolve_match}[Section 6.3 Resolve Match]
+* <<ref_dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
 
 ====== Message Outline
 

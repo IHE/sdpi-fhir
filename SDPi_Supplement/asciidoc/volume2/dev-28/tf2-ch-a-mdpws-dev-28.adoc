@@ -14,7 +14,7 @@ The <<vol2_clause_dev_28_message_notification, {var_label_dev_28_message_context
 
 ====== Referenced Standards
 
-* <<dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+* <<ref_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
 
 ====== Message Outline
 
