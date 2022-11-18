@@ -32,7 +32,7 @@ include::tf2-dev-23-summary.adoc[]
 
 ==== Referenced Standards
 
-* <<ieee_11073_10207_2017>> Section 9.2 Implicit Discovery
+* <<ref_ieee_11073_10207_2017>> Section 9.2 Implicit Discovery
 
 ==== Messages
 
@@ -68,3 +68,4 @@ This message is sent
 ====== Expected Actions
 
 When a <<actor_somds_provider>> sends this message, there is no expected or required responses. This is due to the fact that either there are no <<actor_somds_consumer>>s listening for announcement messages, or the information in the message (e.g., Discovery Type) is not of interest to any receiving <<actor_somds_consumer>>s.
+

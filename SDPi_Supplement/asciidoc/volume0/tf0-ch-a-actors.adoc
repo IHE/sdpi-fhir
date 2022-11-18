@@ -22,11 +22,11 @@
 
 |[[actor_biceps_content_consumer,BICEPS Content Consumer]] BICEPS Content Consumer
 
-|Processes MDIB information conformant to <<ieee_11073_10207_2017>> BICEPS specifications provided by <<actor_biceps_content_creator>> systems.
+|Processes <<acronym_mdib>> information conformant to <<ref_ieee_11073_10207_2017>> BICEPS specifications provided by <<actor_biceps_content_creator>> systems.
 
 |[[actor_biceps_content_creator,BICEPS Content Creator]] BICEPS Content Creator
 
-|Provides MDIB content conformant to <<ieee_11073_10207_2017>> BICEPS specification and for consumption by other <<actor_biceps_content_consumer>> systems.
+|Provides <<acronym_mdib>> content conformant to <<ref_ieee_11073_10207_2017>> BICEPS specification and for consumption by other <<actor_biceps_content_consumer>> systems.
 
 |[[actor_somds_acm_gateway,SOMDS ACM Gateway]] SOMDS ACM Gateway
 
@@ -38,7 +38,7 @@
 
 |[[actor_somds_consumer,SOMDS Consumer]] SOMDS Consumer
 
-|A <<actor_somds_participant>> that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a <<actor_somds_provider>>. (See <<ieee_11073_10207_2017>>  “SERVICE CONSUMER” and “SERVICE” definitions.)
+|A <<actor_somds_participant>> that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a <<actor_somds_provider>>. (See <<ref_ieee_11073_10207_2017>>  “SERVICE CONSUMER” and “SERVICE” definitions.)
 
 |[[actor_somds_dec_gateway,SOMDS DEC Gateway]] SOMDS DEC Gateway
 
@@ -50,15 +50,23 @@
 
 |[[actor_somds_participant,SOMDS Participant]] SOMDS Participant
 
-|A foundational abstract actor that provides the SOA architectural constructs for interoperating in a Service-Oriented Medical Device System (SOMDS) network instance, including information, messaging and dynamic behavior models.   (See <<ieee_11073_10207_2017>>  “PARTICIPANT” definition)
+|A foundational abstract actor that provides the SOA architectural constructs for interoperating in a Service-Oriented Medical Device System (SOMDS) network instance, including information, messaging and dynamic behavior models.   (See <<ref_ieee_11073_10207_2017>>  “PARTICIPANT” definition)
 
 |[[actor_somds_provider,SOMDS Provider]] SOMDS Provider
 
-|A <<actor_somds_participant>> that provides at least one service to the other participant systems.  (See <<ieee_11073_10207_2017>>  “SERVICE PROVIDER” definition)
+|A <<actor_somds_participant>> that provides at least one service to the other participant systems.  (See <<ref_ieee_11073_10207_2017>>  “SERVICE PROVIDER” definition)
+
+|[[actor_somds_sensor_gateway,SOMDS Sensor Gateway]] SOMDS Sensor Gateway
+
+|A _<<actor_somds_connector>>_  that supports integration of sensors external to a SOMDS network.
+
+|[[actor_somds_smart_app_platform,SOMDS Smart App Platform]] SOMDS Smart App Platform
+
+|A _<<actor_somds_connector>>_  that supports connection to a SOMDS network that is optimized for applications, including <<term_software_as_a_medical_device>>.
 
 |[[actor_somds_v2_gateway,SOMDS V2 Gateway]] SOMDS V2 Gateway
 
-|A <<actor_somds_connector>> that supports use of HL7 Version 2 (V2) for interoperating with Non-SOMDS Systems.
+|A _<<actor_somds_connector>>_ that supports use of HL7 Version 2 (V2) for interoperating with Non-SOMDS Systems.
 
 |===
 

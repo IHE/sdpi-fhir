@@ -4,7 +4,8 @@
 :var_label_dev_30_message_getmdibresponse: GetMdibResponse
 
 
-[#vol2_clause_dev_30]
+//reset|+1|off
+[#vol2_clause_dev_30,sdpi_offset=30]
 === Retrieve BICEPS Content [{var_transaction_id}]
 
 ==== Scope
@@ -28,7 +29,7 @@ include::tf2-dev-30-summary.adoc[]
 
 ==== Referenced Standards
 
-* <<ieee_11073_10207_2017>> Section 7.3.2 Get Service
+* <<ref_ieee_11073_10207_2017>> Section 7.3.2 Get Service
 
 ==== Messages
 

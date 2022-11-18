@@ -29,8 +29,8 @@ The <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_eventing_subscribe}[Section 3.1 Subscribe]
-* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+* <<ref_ws_discovery_2009>> {var_uri_ws_eventing_subscribe}[Section 3.1 Subscribe]
+* <<ref_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
 
@@ -54,28 +54,28 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-subscribe.xml[]
 |===
 |BICEPS report type |Action URI
 
-|DescriptionModificationReport as specified in <<ieee_11073_10207_2017>>, Annex C.5
+|DescriptionModificationReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.5
 |http://standards.ieee.org/downloads/11073/11073-20701-2018/DescriptionEventService/DescriptionModificationReport
 
-|EpisodicAlertReport as specified in <<ieee_11073_10207_2017>>, Annex C.11
+|EpisodicAlertReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.11
 |http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicAlertReport
 
-|EpisodicComponentReport as specified in <<ieee_11073_10207_2017>>, Annex C.12
+|EpisodicComponentReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.12
 |http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicComponentReport
 
-|EpisodicContextReport as specified in <<ieee_11073_10207_2017>>, Annex C.13
+|EpisodicContextReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.13
 |http://standards.ieee.org/downloads/11073/11073-20701-2018/ContextService/EpisodicContextReport
 
-|EpisodicMetricReport as specified in <<ieee_11073_10207_2017>>, Annex C.14
+|EpisodicMetricReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.14
 |http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicMetricReport
 
-|EpisodicOperationalStateReport as specified in <<ieee_11073_10207_2017>>, Annex C.15
+|EpisodicOperationalStateReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.15
 |http://standards.ieee.org/downloads/11073/11073-20701-2018/StateEventService/EpisodicOperationalStateReport
 
-|OperationInvokedReport as specified in <<ieee_11073_10207_2017>>, Annex C.77
+|OperationInvokedReport as specified in <<ref_ieee_11073_10207_2017>>, Annex C.77
 |http://standards.ieee.org/downloads/11073/11073-20701-2018/SetService/OperationInvokedReport
 
-|WaveformStream as specified in <<ieee_11073_10207_2017>>, Annex C.112
+|WaveformStream as specified in <<ref_ieee_11073_10207_2017>>, Annex C.112
 |http://standards.ieee.org/downloads/11073/11073-20701-2018/WaveformService/WaveformStream
 |===
 
@@ -101,8 +101,8 @@ The <<vol2_clause_dev_27_message_subscribe_response, {var_label_dev_27_message_s
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_eventing_subscribe}[Section 3.1 Subscribe]
-* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+* <<ref_ws_discovery_2009>> {var_uri_ws_eventing_subscribe}[Section 3.1 Subscribe]
+* <<ref_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
 
@@ -129,8 +129,8 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-subscribe-response.x
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_eventing_notification}[Section 4 Notifications]
-* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+* <<ref_ws_discovery_2009>> {var_uri_ws_eventing_notification}[Section 4 Notifications]
+* <<ref_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 
 // ---------- RENEW ---------
@@ -142,8 +142,8 @@ The <<vol2_clause_dev_27_message_renew, {var_label_dev_27_message_renew}>> messa
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_eventing_renew}[Section 3.2 Renew]
-* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+* <<ref_ws_discovery_2009>> {var_uri_ws_eventing_renew}[Section 3.2 Renew]
+* <<ref_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
 
@@ -167,8 +167,8 @@ The <<vol2_clause_dev_27_message_renew_response, {var_label_dev_27_message_renew
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_eventing_renew}[Section 3.2 Renew]
-* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+* <<ref_ws_discovery_2009>> {var_uri_ws_eventing_renew}[Section 3.2 Renew]
+* <<ref_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
 
@@ -192,8 +192,8 @@ The <<vol2_clause_dev_27_message_unsubscribe, {var_label_dev_27_message_unsubscr
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_eventing_unsubscribe}[Section 3.4 Unsubscribe]
-* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+* <<ref_ws_discovery_2009>> {var_uri_ws_eventing_unsubscribe}[Section 3.4 Unsubscribe]
+* <<ref_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
 
@@ -217,8 +217,8 @@ The <<vol2_clause_dev_27_message_unsubscribe_response, {var_label_dev_27_message
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_eventing_unsubscribe_response}[Section 3.4 Unsubscribe]
-* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+* <<ref_ws_discovery_2009>> {var_uri_ws_eventing_unsubscribe_response}[Section 3.4 Unsubscribe]
+* <<ref_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
 
 ====== Message Outline
 
@@ -242,10 +242,10 @@ The <<vol2_clause_dev_27_message_subscription_end, {var_label_dev_27_message_sub
 
 ====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_eventing_subscription_end}[Section 3.5 Subscription End]
-* <<dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
-* <<ieee_11073_20702_2016>>
-* <<ieee_11073_20701_2018>>
+* <<ref_ws_discovery_2009>> {var_uri_ws_eventing_subscription_end}[Section 3.5 Subscription End]
+* <<ref_dpws_2009>> {var_uri_dpws_eventing}[Section 5 Eventing]
+* <<ref_ieee_11073_20702_2016>>
+* <<ref_ieee_11073_20701_2018>>
 
 ====== Message Outline
 
