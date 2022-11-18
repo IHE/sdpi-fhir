@@ -36,7 +36,7 @@ include::tf1-ch-c-60601-1-8.adoc[]
 - ALL USE CASE FEATURE are REQUIREMENTS
 - MBSE Requirements Modeling #
 
-<<acronym_omg>>'s Systems Modeling Language 2.0 (see <<omg_sysml_2-0_spec>> and <<omg_sysml_2-0_intro_graphical_model>>), provides extended support for requirements modeling that not only provides the foundation for MBSE's Requirements Modeling, but also a computable specification that enables automated verification (e.g., using "Verification Cases").
+<<acronym_omg>>'s Systems Modeling Language 2.0 (see <<ref_omg_sysml_2_0_spec>> and <<ref_omg_sysml_2_0_intro_graphical_model>>), provides extended support for requirements modeling that not only provides the foundation for MBSE's Requirements Modeling, but also a computable specification that enables automated verification (e.g., using "Verification Cases").
 
 #TODO:  Add reference to SysML 2.0 section 7.20 Requirements & 7.23 Verification Cases#
 
