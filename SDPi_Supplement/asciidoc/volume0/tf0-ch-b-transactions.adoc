@@ -40,15 +40,18 @@ include::../volume2/dev-27/tf2-dev-27-summary.adoc[]
 
 .^|[[transaction_summary_dev_28,DEV-28 Notify Change in System Context and Capabilities]] DEV-28
 | Notify Change in System Context and Capabilities
-| *_TBD Summary Description from TF-2_*
+|
+include::../volume2/dev-28/tf2-dev-28-summary.adoc[]
 
 .^|[[transaction_summary_dev_29,DEV-29 Publish BICEPS Update Reports]] DEV-29
 | Publish BICEPS Update Reports
-| *_TBD Summary Description from TF-2_*
+|
+include::../volume2/dev-29/tf2-dev-29-summary.adoc[]
 
 .^|[[transaction_summary_dev_30,DEV-30 Retrieve BICEPS Content]] DEV-30
 | Retrieve BICEPS Content
-| *_TBD Summary Description from TF-2_*
+|
+include::../volume2/dev-30/tf2-dev-30-summary.adoc[]
 
 .^|[[transaction_summary_dev_33,DEV-33 Retrieve Localization Information]] DEV-33
 | Retrieve Localization Information
@@ -56,31 +59,38 @@ include::../volume2/dev-27/tf2-dev-27-summary.adoc[]
 
 .^|[[transaction_summary_dev_34,DEV-34 Announce Network Departure]] DEV-34
 | Announce Network Departure
-| *_TBD Summary Description from TF-2_*
+|
+include::../volume2/dev-34/tf2-dev-34-summary.adoc[]
 
 .^|[[transaction_summary_dev_35,DEV-35 Establish Medical Data Exchange]] DEV-35
 | Establish Medical Data Exchange
-| *_TBD Summary Description from TF-2_*
+|
+include::../volume2/dev-35/tf2-dev-35-summary.adoc[]
 
 .^|[[transaction_summary_dev_36,DEV-36 Publish Medical Data]] DEV-36
 | Publish Medical Data
-| *_TBD Summary Description from TF-2_*
+|
+include::../volume2/dev-36/tf2-dev-36-summary.adoc[]
 
 .^|[[transaction_summary_dev_37,DEV-37 Retrieve Medical Data]] DEV-37
 | Retrieve Medical Data
-| *_TBD Summary Description from TF-2_*
+|
+include::../volume2/dev-37/tf2-dev-37-summary.adoc[]
 
 .^|[[transaction_summary_dev_38,DEV-38 Establish Medical Alert Exchange]] DEV-38
 | Establish Medical Alert Exchange
-| *_TBD Summary Description from TF-2_*
+|
+include::../volume2/dev-38/tf2-dev-38-summary.adoc[]
 
 .^|[[transaction_summary_dev_39,DEV-39 Publish Medical Alert Update]] DEV-39
 | Publish Medical Alert Update
-| *_TBD Summary Description from TF-2_*
+|
+include::../volume2/dev-39/tf2-dev-39-summary.adoc[]
 
 .^|[[transaction_summary_dev_40,DEV-40 Retrieve Medical Alert Status]] DEV-40
 | Retrieve Medical Alert Status
-| *_TBD Summary Description from TF-2_*
+|
+include::../volume2/dev-40/tf2-dev-40-summary.adoc[]
 
 |===
 
