@@ -1,23 +1,45 @@
 ===== PV1 - Patient Visit Segment
 The HL7 Patient Visit (PV1) segment requires a mapping from the SDC patient and location context information to the PV1 segment fields.
 
-.Prerequisite of Valid Patient & Location Context
-[NOTE#ref_valid_pt_loc_ctxt_note]
-====
+====== Prerequisite of Valid Patient & Location Context
+
+.R8111
+[sdpi_requirement#r8111,sdpi_req_level=shall]
+****
 The SDC patient and location context information shall only be mapped to the corresponding fields in the HL7 PV1 segment when the requirements (e. g. inferred patient and/or location ensemble context, associated patient and/or location context, etc.) as defined in the <<ieee_11073_10700_2022>> are fulfilled.
 
 If the SDC patient and/or location context information shall not be used for the mapping, please refer to the <<ihe_pcd_tf-2_2019>> on how to populate the fields of the PV1 segment in this case.
-====
+****
 
 ====== PV1-2 Patient Class
-The PV1-2 field shall contain the code for the patient class. The *HL7 table 0004 - Patient Class* defines a set of recommended codes to be used for the data fields of the HL7 data type *IS* used in the PV1-2 field.
+.R8112
+[sdpi_requirement#r8112,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall set the PV1-2 field to the code for the patient class.
+
+.Notes
+[%collapsible]
+====
+NOTE: The *HL7 table 0004 - Patient Class* defines a set of recommended codes to be used for the data fields of the HL7 data type *IS* used in the PV1-2 field.
+====
+****
 
 Usually, a PoC device is used for patients admitted to a care unit in the hospital, and therefore, the field shall be set to *"I"* (Inpatient). If the patient class is unknown, the field shall be set to *"U"* (Unknown).
 
 The SDC data model does not support the concept of a patient class. Therefore, the field shall either be set to *"U"* (Unknown) by default, or set to a configurable value by the gateway.
 
 ====== PV1-3 Assigned Patient Location
-The PV1-3 field shall contain the patient's assigned location. The table <<ref_tbl_pv13_mapping>> defines the mapping of the SDC patient location information to the data fields of the HL7 data type *PL* used in the PV1-3 field.
+.R8113
+[sdpi_requirement#r8113,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall set the PV1-3 field to the patient's assigned location.
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_pv13_mapping>> defines the mapping of the SDC patient location information to the data fields of the HL7 data type *PL* used in the PV1-3 field.
+====
+****
 
 [#ref_tbl_pv13_mapping]
 .PV1-3 Patient Location Mapping
@@ -73,11 +95,21 @@ The PV1-3 field shall contain the patient's assigned location. The table <<ref_t
 |===
 
 ====== PV1-19 Visit Number
-The PV1-19 field shall contain the patient's visit identifier (visit number, account number, etc.). The table <<ref_tbl_pv119_mapping>> defines the mapping of the SDC patient identifier to the data fields of the HL7 data type *CX* used in the PV1-19 field.
+.R8114
+[sdpi_requirement#r8114,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall set the PV1-19 field to the patient's visit identifier (visit number, account number, etc.).
 
 The SDC patient identifier element *pm:PatientContextState/pm:Identification* may contain more than one patient identifier. Only the unique identifier assigned to the patient's visit shall be mapped according to the <<ref_tbl_pv119_mapping>> table.
 
 When there is no unique visit identifier assigned to the patient's visit, the field shall be left empty.
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_pv119_mapping>> defines the mapping of the SDC patient identifier to the data fields of the HL7 data type *CX* used in the PV1-19 field.
+====
+****
 
 [#ref_tbl_pv119_mapping]
 .PV1-19 Visit Number Mapping
@@ -119,14 +151,30 @@ Valid *"Identifier Type Code"* values for a visit number are, for example, *"VN"
 |===
 
 ====== PV1-44 Admit Time / Date
+.R8115
+[sdpi_requirement#r8115,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall set the PV1-44 field to the patient's admission date/time.
+
 The SDC data model does not support the concept of an admission date/time. There are also different types of admissions; e. g. hospital admission, care unit admission, etc.
 
-This said, it is up to the gateway to figure out the admission date/time to be set in the PV1-44 field. If the gateway is not able to determine the admission date/time, the field shall be left empty.
+This said, it is up to the <<actor_somds_dec_gateway>> to figure out the admission date/time to be set in the PV1-44 field. If the gateway is not able to determine the admission date/time, the field shall be left empty.
+****
 
 ====== PV1-51 Visit Indicator
-The PV1-51 field shall contain the code for the visit indicator. The HL7 table 0326 - Visit Indicator defines a set of recommended codes to be used for the data fields of the HL7 data type IS used in the PV1-51 field.
+.R8116
+[sdpi_requirement#r8116,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall set the PV1-51 field to the code for the visit indicator.
 
 If *"pm:PatientContextState/pm:Identification/pm:Type/@Code"* is "VN" (Visit Number), the field shall be set to *"V"*.
 
 Otherwise, the field shall be left empty by default.
+
+.Notes
+[%collapsible]
+====
+NOTE: The HL7 table 0326 - Visit Indicator defines a set of recommended codes to be used for the data fields of the HL7 data type IS used in the PV1-51 field.
+====
+****
 

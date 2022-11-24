@@ -314,21 +314,29 @@ NOTE: For further information, please refer to the <<ihe_pcd_tf-2_2019>>.
 ****
 
 A <<actor_somds_dec_gateway>> shall set the OBR-7 field to the date and time of the continuously measured metrics to be exported with the same metric measurement timestamp.
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_dec_obr7_mapping>> defines the mapping of the SDC metric measurement timestamp to the data fields of the HL7 data type *DTM* used in the OBR-7 field.
+====
 ****
 
 .R8007
 [sdpi_requirement#r8007,sdpi_req_level=shall]
 ****
 
-For episodic measurements and the absence of any continuously measured metrics for this export interval, the OBR-7 field shall be set to the oldest measurement timestamp of the episodic metrics to be exported in this interval.
+For episodic measurements and the absence of any continuously measured metrics for this export interval, a <<actor_somds_dec_gateway>> shall set the OBR-7 field to the oldest measurement timestamp of the episodic metrics to be exported in this interval.
 
-#TODO: This requirement text needs to be aligned with R8006#
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_dec_obr7_mapping>> defines the mapping of the SDC metric measurement timestamp to the data fields of the HL7 data type *DTM* used in the OBR-7 field.
+====
 ****
 
-<<ref_tbl_dec_obr7_mapping>> defines the mapping of the SDC metric measurement timestamp to the data fields of the HL7 data type *DTM* used in the OBR-7 field.
-
 [NOTE]
-Only metrics that fulfil certain criteria are exported by the <<actor_somds_dec_gateway>>. Please refer to #TODO: add reference# for further information.
+Only metrics that fulfil certain criteria are exported by the <<actor_somds_dec_gateway>>. Please refer to <<r8018>> and <<r8017>> for further information.
 
 [#ref_tbl_dec_obr7_mapping]
 .OBR-7 Metric Measurement Timestamp Mapping
@@ -372,14 +380,14 @@ A <<actor_somds_dec_gateway>> shall not use the OBR-8 field.
 ****
 A <<actor_somds_dec_gateway>> shall set the OBR-10 field to the operator (user) information if available.
 
+The field shall be left empty if there is no valid SDC operator context.
+
 .Notes
 [%collapsible]
 ====
 NOTE: <<ref_tbl_OBR10_mapping>> defines the mapping of the SDC operator context information to the data fields of the HL7 data type *XCN* used in the OBR-10 field.
 
 NOTE: The SDC operator context is only valid when the *pm:OperatorContextState/@ContextAssociation* is set to *"Assoc"* and a *pm:OperatorContextState/@BindingStartTime* is set.
-
-NOTE: The field is left empty if there is no valid SDC operator context.
 ====
 ****
 
@@ -649,14 +657,12 @@ NOTE: Please refer to the IHE technical framework <<ihe_pcd_tf-2_2019>> for furt
 .R8015
 [sdpi_requirement#r8015,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall assign the handles (which are required to be unique in the same MDIB sequence) of the containment tree elements representing MDSs, VMDs, channels and metrics to unique integer numbers per containment tree level.
-
-#TODO: is this really meant to be per level or per children of a parent?#
+A <<actor_somds_dec_gateway>> shall assign the handles (which are required to be unique in the same MDIB sequence) of the containment tree elements representing MDSs, VMDs, channels and metrics to unique integer numbers per child level of the same parent.
 
 .Notes
 [%collapsible]
 ====
-NOTE: This implies that, e.g. channel elements may use the same numbers as VMD elements but on the channel level the numbers must be unique as well.
+NOTE: This implies that, e.g. channel elements may use the same numbers as VMD elements but on the channel level the numbers must be unique for the channels related to the same VMD.
 
 NOTE: There is no requirement to preserve the same assigned number for a containment tree element from message to message, but it is highly recommended since this makes it much easier for the DOC to process the HL7 V2 messages.
 ====
@@ -695,9 +701,13 @@ A <<actor_somds_dec_gateway>> shall set the OBX-5 field to the value of the SDC 
 [%collapsible]
 ====
 NOTE: The formatting of the data depends on the data type.
-
-NOTE: For a device-related element such as MDS, VMD, or channel, the OBX-5 field is left empty.
 ====
+****
+
+.R8036
+[sdpi_requirement#r8036,sdpi_req_level=shall]
+****
+For a device-related element such as MDS, VMD, or channel, the OBX-5 field shall be left empty.
 ****
 
 .R8017
@@ -742,10 +752,6 @@ NOTE: Note that the decimal number needs to be formatted according to the HL7 nu
 
 [sdpi_level=+1]
 ====== String Metric
-
-[sdpi_level=+1]
-====== Numeric Metric
-
 .R8020
 [sdpi_requirement#r8020,sdpi_req_level=shall]
 ****
@@ -866,7 +872,7 @@ In all other cases, the field is set to pm:NumericMetricDescriptor /pm:Unit /@Co
 .R8025
 [sdpi_requirement#r8025,sdpi_req_level=shall]
 ****
-For the OBX-7 field, a <<actor_somds_dec_gateway>> shall define the measurement range of the numeric metric measurement channel by the format `<Lower Limit> - <Upper Limit>` where
+A <<actor_somds_dec_gateway>> shall define the measurement range of the numeric metric measurement channel by the format `<Lower Limit> - <Upper Limit>` where
 
 * `<Lower Limit>` is set to *pm:NumericMetricDescriptor/pm:TechnicalRange/@Lower* and
 * `<Upper Limit>` is set to *pm:NumericMetricDescriptor/pm:TechnicalRange/@Upper*.
@@ -875,13 +881,15 @@ For the OBX-7 field, a <<actor_somds_dec_gateway>> shall define the measurement 
 [%collapsible]
 ====
 NOTE: Note that this refers to the numeric metric measurement channel, not the metric!
+
+NOTE: Note that the decimal number needs to be formatted according to the HL7 numeric value formatting rules.
 ====
 ****
 
 .R8026
 [sdpi_requirement#r8026,sdpi_req_level=shall]
 ****
-For the OBX-7 field, a <<actor_somds_dec_gateway>> shall define the range of the alert limits on the metric level, if the *@Handle* of the metric is referenced by a *pm:LimitAlertConditionDescriptor* in the *pm:LimitAlertConditionDescriptor\pm:Source* list, by the format `<Lower Limit> - <Upper Limit>` where
+A <<actor_somds_dec_gateway>> shall define the range of the alert limits on the metric level, if the *@Handle* of the metric is referenced by a *pm:LimitAlertConditionDescriptor* in the *pm:LimitAlertConditionDescriptor\pm:Source* list, by the format `<Lower Limit> - <Upper Limit>` where
 
 * `<Lower Limit>` is set to *pm:LimitAlertConditionDescriptor/pm:MaxLimits/@Lower* and
 * `<Upper Limit>` is set to *pm:LimitAlertConditionDescriptor/pm:MaxLimits/@Upper*
@@ -929,7 +937,7 @@ For metrics with the *pm:AbstractMetricValue/pm:MetricQuality/@Validity* set to 
 .R8031
 [sdpi_requirement#r8031,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall the OBX-14 field to the date and time of the intermittently measured metric value.
+A <<actor_somds_dec_gateway>> shall set the OBX-14 field to the date and time of the intermittently measured metric value.
 
 .Notes
 [%collapsible]

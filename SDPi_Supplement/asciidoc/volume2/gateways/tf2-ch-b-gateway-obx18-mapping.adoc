@@ -1,8 +1,18 @@
-The OBX-18 field shall contain the equipment (or device) identifier on the MDS level and/or the measurement module identifier of the equipment on the VMD level.
+.R8117
+[sdpi_requirement#r8117,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall set the OBX-18 field to the equipment (or device) identifier on the MDS level and/or the measurement module identifier of the equipment on the VMD level.
 
-The table <<ref_tbl_dec_obx18_mds_mapping>> defines the mapping of the SDC MDS meta data to the data fields of the HL7 data type *EI* used in the OBX-18 field.
 
-he table <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the SDC VMD information to the data fields of the HL7 data type *EI* used in the OBX-18 field.
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_dec_obx18_mds_mapping>> defines the mapping of the SDC MDS meta data to the data fields of the HL7 data type *EI* used in the OBX-18 field.
+
+NOTE: <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the SDC VMD information to the data fields of the HL7 data type *EI* used in the OBX-18 field.
+====
+****
 
 [#ref_tbl_dec_obx18_mds_mapping]
 .OBX-18 Equipment Instance Identifier Mapping - MDS level
