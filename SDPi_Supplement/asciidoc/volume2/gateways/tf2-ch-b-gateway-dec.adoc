@@ -1,16 +1,16 @@
 === SDPi DEC Gateway -- Mapping
 
 ==== Scope
-This chapter defines the mapping from SDC MDIB content as defined in this document and its underlying standards, to IHE Device Enterprise Communication (DEC) profile messages as defined in the <<ihe_pcd_tf-2_2019>>.
+This chapter defines the mapping from <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Device Enterprise Communication (DEC) profile messages as defined in the <<ihe_pcd_tf_2_2019>>.
 
 The SDPi gateway actor represents the Device Observation Reporter (DOR) role of the IHE DEC profile.
 
-The following sections supplement the IHE DEC profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ihe_pcd_tf-2_2019>> will apply.
+The following sections supplement the IHE DEC profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ihe_pcd_tf_2_2019>> will apply.
 
 ==== Referenced Standards & Profiles
 This section provides an overview about the referenced standards and profiles used in this chapter:
 
-* <<ihe_pcd_tf-2_2019>>
+* <<ihe_pcd_tf_2_2019>>
 * <<ieee_11073_10701_2022>>
 * <<ieee_11073_10700_2022>>
 * <<ieee_11073_10207_2017>>
@@ -18,7 +18,7 @@ This section provides an overview about the referenced standards and profiles us
 include::tf2-ch-b-gateway-private-mdc-mapping.adoc[]
 
 ==== HL7 Segment Descriptions
-The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ihe_pcd_tf-2_2019>>.
+The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ihe_pcd_tf_2_2019>>.
 
 include::tf2-ch-b-gateway-msh-mapping.adoc[]
 
@@ -67,7 +67,7 @@ A <<actor_somds_dec_gateway>> shall use the *pm:PatientContextState/@BindingStar
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -164,7 +164,7 @@ When there are further updates of the height value after the association of the 
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -267,7 +267,7 @@ For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-2 fie
 .Notes
 [%collapsible]
 ====
-NOTE: For further information, please refer to the <<ihe_pcd_tf-2_2019>>.
+NOTE: For further information, please refer to the <<ihe_pcd_tf_2_2019>>.
 ====
 ****
 
@@ -282,7 +282,7 @@ For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-3 fie
 .Notes
 [%collapsible]
 ====
-NOTE: For further information, please refer to the <<ihe_pcd_tf-2_2019>>.
+NOTE: For further information, please refer to the <<ihe_pcd_tf_2_2019>>.
 ====
 ****
 
@@ -297,7 +297,7 @@ For the IHE DEC profile, the <<actor_somds_dec_gateway>> shall set the OBR-4 fie
 .Notes
 [%collapsible]
 ====
-NOTE: For further information, please refer to the <<ihe_pcd_tf-2_2019>>.
+NOTE: For further information, please refer to the <<ihe_pcd_tf_2_2019>>.
 ====
 ****
 
@@ -454,7 +454,7 @@ NOTE: The SDC operator context is only valid when the *pm:OperatorContextState/@
 
 ===== OBX - Observation/Result Segment
 The HL7 Observation/Result (OBX) segment requires a mapping from the SDC containment tree and metric items to the OBX segment fields.
-More information about the containment tree mapping can be found in *Appendix A Mapping ISO/IEEE 11073 Domain Information Model to HL7* in <<ihe_pcd_tf-2_2019>>.
+More information about the containment tree mapping can be found in *Appendix A Mapping ISO/IEEE 11073 Domain Information Model to HL7* in <<ihe_pcd_tf_2_2019>>.
 
 ====== OBX-2 Value Type
 
@@ -650,14 +650,14 @@ A <<actor_somds_dec_gateway>> shall set the OBX-4 field to a flattened represent
 .Notes
 [%collapsible]
 ====
-NOTE: Please refer to the IHE technical framework <<ihe_pcd_tf-2_2019>> for further information.
+NOTE: Please refer to the IHE technical framework <<ihe_pcd_tf_2_2019>> for further information.
 ====
 ****
 
 .R8015
 [sdpi_requirement#r8015,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall assign the handles (which are required to be unique in the same MDIB sequence) of the containment tree elements representing MDSs, VMDs, channels and metrics to unique integer numbers per child level of the same parent.
+A <<actor_somds_dec_gateway>> shall assign the handles (which are required to be unique in the same <<acronym_mdib>> sequence) of the containment tree elements representing MDSs, VMDs, channels and metrics to unique integer numbers per child level of the same parent.
 
 .Notes
 [%collapsible]
@@ -909,7 +909,7 @@ The OBX-8 field is not required to be set if the gateway exports valid and valid
 .R8027
 [sdpi_requirement#r8027,sdpi_req_level=shall]
 ****
-If a <<actor_somds_dec_gateway>> is intended to export metrics with a different validity state (*pm:AbstractMetricValue/pm:MetricQuality/@Validity*) than valid or validated, the measurement status shall be set in this field as specified in the <<ihe_pcd_tf-2_2019>>.
+If a <<actor_somds_dec_gateway>> is intended to export metrics with a different validity state (*pm:AbstractMetricValue/pm:MetricQuality/@Validity*) than valid or validated, the measurement status shall be set in this field as specified in the <<ihe_pcd_tf_2_2019>>.
 ****
 
 ====== OBX-11 Observation Result Status

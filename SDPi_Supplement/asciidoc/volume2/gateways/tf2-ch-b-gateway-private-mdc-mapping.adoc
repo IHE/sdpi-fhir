@@ -6,6 +6,8 @@ In addition to the standard codes, *MDC* defines private code ranges that can be
 
 Coded elements in SDC using *MDC* private codes shall also contain a *pm:Translation* element that defines the vendor-specific coding system.
 
+Please refer to <<ieee_11073_10700_2022>> *TR1358* for further information.
+
 The following example uses the SDC *pm:Type* to demonstrate the mapping of private MDC codes.
 
 [#ref_tbl_private_code_mapping]

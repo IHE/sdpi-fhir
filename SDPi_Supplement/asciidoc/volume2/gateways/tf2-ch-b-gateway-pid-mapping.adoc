@@ -1,5 +1,5 @@
 ===== PID - Patient Identification Segment
-The HL7 Patient Identification (PID) segment requires a mapping from the SDC patient context information to the PID segment fields.
+The HL7 Patient Identification (PID) segment requires a mapping from the <<acronym_mdib>> patient context information element *pm:PatientContextState* to the PID segment fields.
 
 ====== Prerequisite of Valid Patient Context
 .R8102
@@ -7,7 +7,7 @@ The HL7 Patient Identification (PID) segment requires a mapping from the SDC pat
 ****
 The SDC patient context information shall only be mapped to the corresponding fields in the HL7 PID segment when the requirements (e. g. inferred patient ensemble context, associated patient context, etc.) as defined in the <<ieee_11073_10700_2022>> are fulfilled.
 
-If the SDC patient context information shall not be used for the mapping, please refer to the <<ihe_pcd_tf-2_2019>> on how to populate the fields of the PID segment in this case.
+If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ihe_pcd_tf_2_2019>> on how to populate the fields of the PID segment in this case.
 ****
 
 ====== PID-3 Patient Identifier List
@@ -19,9 +19,9 @@ A <<actor_somds_dec_gateway>> shall map the patient identifier to the PID-3 fiel
 .Notes
 [%collapsible]
 ====
-NOTE: <<ref_tbl_pid3_mapping>> defines the mapping of the SDC patient identifier to the data fields of the HL7 data type *CX* used in the PID-3 field.
+NOTE: <<ref_tbl_pid3_mapping>> defines the mapping of the <<acronym_mdib>> patient identification to the data fields of the HL7 data type *CX* used in the PID-3 field.
 
-NOTE: The SDC patient identifier element *pm:PatientContextState/pm:Identification* may contain more than one patient identifier. Each SDC patient identifier shall be mapped according to the <<ref_tbl_pid3_mapping>> table and added to the PID-3 patient identifier list.
+NOTE: If the <<acronym_mdib>> patient identification element *pm:PatientContextState/pm:Identification* contains more than one patient identifier, each SDC patient identifier shall be mapped according to the <<ref_tbl_pid3_mapping>> table and added to the PID-3 patient identifier list.
 ====
 ****
 
@@ -58,7 +58,7 @@ NOTE: The SDC patient identifier element *pm:PatientContextState/pm:Identificati
 /pm:Identification
 /pm:Type
 /@Code
-|The type of the patient identifier set in the @Code attribute shall be set to a value from HL7 V2 table 0203. The @CodingSystem shall be set to *"urn:oid:2.16.840.1.113883.18.108"*.
+|The type of the patient identifier set in the @Code attribute shall be set to a value from HL7 V2 table 0203. The @CodingSystem shall be set to `urn:oid:2.16.840.1.113883.18.108`.
 
 |===
 
@@ -142,7 +142,7 @@ NOTE: <<ref_tbl_pid5_mapping>> defines the mapping of the SDC patient name infor
 /pm:CoreData
 |This field shall be set to "L" when a patient name is available, or "U" when the patient name is not set.
 
-Please refer also to the corresponding section in the <<ihe_pcd_tf-2_2019>>.
+Please refer also to the corresponding section in the <<ihe_pcd_tf_2_2019>>.
 
 |===
 
@@ -358,12 +358,12 @@ NOTE: <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race in
 .R8109
 [sdpi_requirement#r8109,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall set the PID-31 field to an indicator whether or not the patient's identity is known.
-****
+A <<actor_somds_dec_gateway>> shall set the PID-31 field to an indicator whether the patient's identity is known.
 
 The field value shall be determined from the present of a patient-inferred ensemble context (*pm:EnsembleContextDescriptor/pm:Type/@Code = MDC_IDT_ENSEMBLE_PATIENT_INFERRED*) with an associated context association state (*pm:EnsembleContextState/@ContextAssociation = Assoc*). In this case, the value shall be set to "Y".
 
 In all other cases, the value shall be set to "N".
+****
 
 ====== PID-33 Last Update Date/Time
 .R8110
@@ -376,7 +376,7 @@ A <<actor_somds_dec_gateway>> shall set the PID-33 field to the date & time of l
 ====
 NOTE: <<ref_tbl_pid33_mapping>> defines the mapping of the SDC patient context update information to the data fields of the HL7 data type *DTM* used in the PID-33 field.
 
-NOTE: The SDC data model does not support the concept of a last update timestamp. The SDC consumer participant could determine context updates from the SDC state report events (receiving timestamp of the state report). However, when the connection between the SDC provider and SDC consumer gets lost, the SDC consumer will not be able to determine the lastest update timestamp.
+NOTE: The <<acronym_mdib>> data model does not support the concept of a last update timestamp. A <<actor_somds_consumer>> could determine context updates from the SDC state report events (receiving timestamp of the state report). However, when the connection between the <<actor_somds_provider>> and <<actor_somds_consumer>> gets lost, the <<actor_somds_consumer>> will not be able to determine the lastest update timestamp.
 ====
 ****
 

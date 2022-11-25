@@ -29,7 +29,7 @@ NOTE: the following section was moved from the mothership document to here for i
 * [[[ieee_11073_20701_2018,IEEE 11073-20701:2018]]] IEEE 11073-20701-2018, Health informatics — Point-of-care medical device communication — Part 20701: Service-Oriented Medical Device Exchange Architecture and Protocol Binding, 2018-09, available at https://standards.ieee.org/ieee/11073-20701/6059
 
 * [[[ieee_11073_20702_2016,IEEE 11073-20702:2016]]] IEEE 11073-20702-2016, Health informatics — Point-of-care medical device communication — Part 20702: Medical Devices Communication Profile for Web Services, 2016-09, available at https://standards.ieee.org/ieee/11073-20702/6034
-* [[[ihe_pcd_tf-2_2019, IHE PCD TF-2:2019]]] IHE Patient Care Device Technical Framework, Vol. 2, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol2.pdf.
+* [[[ihe_pcd_tf_2_2019, IHE PCD TF-2:2019]]] IHE Patient Care Device Technical Framework, Vol. 2, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol2.pdf.
 
 * [[[ieee_11073_10702_202x,IEEE 11073-10702:202x]]] P11073-10702™/D1 Draft Standard for Health Informatics – Device Interoperability – Part 10702: Point-of-Care Medical Device Communication – Alert Provisioning by Participants in a Service-Oriented Device Connectivity (SDC) System
 

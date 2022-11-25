@@ -8,9 +8,9 @@ A <<actor_somds_dec_gateway>> shall set the OBX-18 field to the equipment (or de
 .Notes
 [%collapsible]
 ====
-NOTE: <<ref_tbl_dec_obx18_mds_mapping>> defines the mapping of the SDC MDS meta data to the data fields of the HL7 data type *EI* used in the OBX-18 field.
+NOTE: <<ref_tbl_dec_obx18_mds_mapping>> defines the mapping of the <<acronym_mdib>> MDS meta data to the data fields of the HL7 data type *EI* used in the OBX-18 field.
 
-NOTE: <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the SDC VMD information to the data fields of the HL7 data type *EI* used in the OBX-18 field.
+NOTE: <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the <<acronym_mdib>> VMD information to the data fields of the HL7 data type *EI* used in the OBX-18 field.
 ====
 ****
 
