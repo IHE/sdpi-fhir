@@ -36,7 +36,7 @@ NOTE: <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the <<acronym_mdi
 \@Root
 |
 
-|OBX-18/EI-2
+|OBX-18/EI-3
 |Universal ID
 |pm:Mds
 \pm:MetaData
@@ -44,7 +44,7 @@ NOTE: <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the <<acronym_mdi
 \pm:DeviceIdentifier
 |
 
-|OBX-18/EI-2
+|OBX-18/EI-4
 |Universal ID Type
 |
 |Set to *""L"*
@@ -66,12 +66,12 @@ NOTE: <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the <<acronym_mdi
 |
 |
 
-|OBX-18/EI-2
+|OBX-18/EI-3
 |Universal ID
 |
 |
 
-|OBX-18/EI-2
+|OBX-18/EI-4
 |Universal ID Type
 |
 |

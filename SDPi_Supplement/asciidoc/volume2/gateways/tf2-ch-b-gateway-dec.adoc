@@ -456,6 +456,9 @@ NOTE: The SDC operator context is only valid when the *pm:OperatorContextState/@
 The HL7 Observation/Result (OBX) segment requires a mapping from the SDC containment tree and metric items to the OBX segment fields.
 More information about the containment tree mapping can be found in *Appendix A Mapping ISO/IEEE 11073 Domain Information Model to HL7* in <<ihe_pcd_tf_2_2019>>.
 
+====== OBX-1 Set ID - OBX
+Please refer to the [ihe_pcd_tf_2_2019] *OBX-1 Set ID - OBX* for further information.
+
 ====== OBX-2 Value Type
 
 .R8010
@@ -981,6 +984,8 @@ A <<actor_somds_dec_gateway>> shall set the OBR-10 field to the operator.
 [%collapsible]
 ====
 NOTE: Please refer to <<ref_dec_obr10>> for further information.
+
+NOTE: The <<ihe_pcd_tf_2_2019>> requires only the map the "ID Number", and optionally the "Family Name" and "Given Name" in this field, whereas the OBR-10 field may contain additional information about the operator.
 ====
 ****
 
