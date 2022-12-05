@@ -213,6 +213,26 @@ xsd:date: *2001-10-26* -> HL7 DTM: *20011026*
 ====
 
 ====== PID-8 Administrative Sex
+[NOTE]
+====
+#Note for Reviewers and Request for Comment:#
+
+At the moment, there are various opinions on how to map the biological sex vs. the administrative sex (gender) to an IHE PCD profile conform HL7 V2 message.
+
+The SDC BICEPS standard defines a generic field for the patient's sex (*pm:PatientContextState/pm:CoreData/pm:Sex*). This field shall be set to the biological sex (or sex for clinical use). In addition, there will be a gender extension that shall be set to the administrative gender (or administrative sex).
+
+The HL7 V2.6 messaging standard only supports a "Administrative Sex" field in the PID segment.
+
+The following list a couple of options and any comments from the reviewers are highly appreciated:
+
+. *No mapping of sex/gender information at all*: the information of the patient's sex and gender shall not be mapped at all. Pros: no risk of mapping incorrect information. Cons: no information about the sex set at the device which may have influenced certain clinical calculations and algorithms.
+
+. *Map the "sex for clinical use" to the PID-8 Administrative Sex field*: in the context of a PoC device the sex for clinical use is the most important information for clinical calculations and algorithm. Therefore, this information shall be mapped to the PID-8 Administrative Sex field - even this is not necessarily the administrative gender. In addition, the Administrative Sex/Gender may be mapped to a separate OBX segment (only possible for DEC profile). Pros: this is backward compatible to the existing IHE PCD profiles. Cons: the information are not set in the correct field and may lead to wrong interpretations.
+
+. *Map the "sex for clinical use" in a separate OBX segment (only possible for DEC profile but not for ACM) and the Administrative Sex/Gender to the PID-8 Administrative Sex field*: the administrative sex/gender information is mapped to the correctly named PID-8 "Administrative Sex" field, and the sex for clinical use is provided in a separate OBX segment in the IHE DEC profile conform export. The sex for clinical use information will be not available in the ACM profile conform export. Pros: the information are mapped to the correct fields. Cons: this mapping might not be backward compatible to the existing IHE PCD profile actors (reporter/consumer). Information of the sex for clinical use may get lost in some profiles such as ACM.
+
+====
+
 .R8107
 [sdpi_requirement#r8107,sdpi_req_level=shall]
 ****

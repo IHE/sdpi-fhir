@@ -978,7 +978,7 @@ pm:StringMetricState
 .R8032
 [sdpi_requirement#r8032,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall set the OBR-10 field to the operator.
+A <<actor_somds_dec_gateway>> shall set the OBX-16 field to the operator.
 
 .Notes
 [%collapsible]

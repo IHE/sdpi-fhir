@@ -1,3 +1,13 @@
+[NOTE]
+====
+#Note for Reviewers and Request for Comment:#
+
+The UDI is not available for all devices and alternatives for uniquely identifying a device shall be defined. The SDC BICEPS standards provides the *pm:ProductionSpecification* on the MDS and VMD level which is a list of coded product specifications such as serial number, model, product number, manufacture, etc.
+Are there any general rules that can be applied to generate a unique deivce id? Or are there any information each device has to provide to generate a unique device id?
+
+Another issue is that the field "Universal ID Type" of the HL7 EI date type is bound to HL7 table 0301 which does not contain a "UDI" id type. Which code should be used in the case of an UDI?
+====
+
 .R8117
 [sdpi_requirement#r8117,sdpi_req_level=shall]
 ****
