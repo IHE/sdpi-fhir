@@ -380,7 +380,7 @@ A <<actor_somds_dec_gateway>> shall not use the OBR-8 field.
 ****
 A <<actor_somds_dec_gateway>> shall set the OBR-10 field to the operator (user) information if available.
 
-The field shall be left empty if there is no valid SDC operator context.
+The field is left empty if there is no valid SDC operator context.
 
 .Notes
 [%collapsible]

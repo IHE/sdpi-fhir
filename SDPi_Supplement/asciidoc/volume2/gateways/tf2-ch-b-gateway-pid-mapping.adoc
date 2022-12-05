@@ -14,7 +14,7 @@ If the SDC patient context information is not intended to be used for the mappin
 .R8103
 [sdpi_requirement#r8103,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall map the patient identifier to the PID-3 field which is a list of patient identifiers (e. g. medical record number, socal security number, visit number, account number, etc.).
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map the patient identifier to the PID-3 field which is a list of patient identifiers (e. g. medical record number, socal security number, visit number, account number, etc.).
 
 .Notes
 [%collapsible]
@@ -90,7 +90,7 @@ The following identifier type codes are proposed to be used for the patient iden
 .R8104
 [sdpi_requirement#r8104,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall set the PID-5 field to the patient name information.
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-5 field to the patient name information.
 
 .Notes
 [%collapsible]
@@ -150,7 +150,7 @@ Please refer also to the corresponding section in the <<ref_ihe_pcd_tf_2_2019>>.
 .R8105
 [sdpi_requirement#r8105,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall set the PID-6 field to the mother's maiden name or birth name before marriage.
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-6 field to the mother's maiden name or birth name before marriage.
 
 .Notes
 [%collapsible]
@@ -181,7 +181,7 @@ NOTE: <<ref_tbl_pid6_mapping>> defines the mapping of the SDC patient name infor
 .R8106
 [sdpi_requirement#r8106,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall set the PID-7 field to the date & time of birth.
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-7 field to the date & time of birth.
 
 .Notes
 [%collapsible]
@@ -236,7 +236,7 @@ The following list a couple of options and any comments from the reviewers are h
 .R8107
 [sdpi_requirement#r8107,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall set the PID-8 field to the code for the administrative sex.
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-8 field to the code for the administrative sex.
 
 However, in the clinical context of a point of care device the biological sex, or sex at birth is important for various algorithms.
 
@@ -299,7 +299,7 @@ The sex and gender of a patient (or a newborn) cannot exactly be mapped from ISO
 .R8108
 [sdpi_requirement#r8108,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall set the PID-10 field to the patient's race.
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-10 field to the patient's race.
 
 .Notes
 [%collapsible]
@@ -378,18 +378,19 @@ NOTE: <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race in
 .R8109
 [sdpi_requirement#r8109,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall set the PID-31 field to an indicator whether the patient's identity is known.
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-31 field to an indicator whether the patient's identity is known.
 
-The field value shall be determined from the present of a patient-inferred ensemble context (*pm:EnsembleContextDescriptor/pm:Type/@Code = MDC_IDT_ENSEMBLE_PATIENT_INFERRED*) with an associated context association state (*pm:EnsembleContextState/@ContextAssociation = Assoc*). In this case, the value shall be set to "Y".
+The field value is determined from the present of a patient-inferred ensemble context (*pm:EnsembleContextDescriptor/pm:Type/@Code = MDC_IDT_ENSEMBLE_PATIENT_INFERRED*) with an associated context association state (*pm:EnsembleContextState/@ContextAssociation = Assoc*).
+In this case, the value is set to "Y".
 
-In all other cases, the value shall be set to "N".
+In all other cases, the value is set to "N".
 ****
 
 ====== PID-33 Last Update Date/Time
 .R8110
 [sdpi_requirement#r8110,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall set the PID-33 field to the date & time of last patient context update.
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-33 field to the date & time of last patient context update.
 
 .Notes
 [%collapsible]

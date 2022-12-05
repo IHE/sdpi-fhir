@@ -11,7 +11,7 @@ Another issue is that the field "Universal ID Type" of the HL7 EI date type is b
 .R8117
 [sdpi_requirement#r8117,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall set the OBX-18 field to the equipment (or device) identifier on the MDS level and/or the measurement module identifier of the equipment on the VMD level.
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-18 field to the equipment (or device) identifier on the MDS level and/or the measurement module identifier of the equipment on the VMD level.
 
 
 
