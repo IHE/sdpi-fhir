@@ -3,7 +3,7 @@ The HL7 Patient Identification (PID) segment requires a mapping from the <<acron
 
 ====== Prerequisite of Valid Patient Context
 .R8102
-[sdpi_requirement#r8102,sdpi_req_level=shall]
+[sdpi_requirement#r8102,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 The SDC patient context information shall only be mapped to the corresponding fields in the HL7 PID segment when the requirements (e. g. inferred patient ensemble context, associated patient context, etc.) as defined in the <<ref_ieee_11073_10700_2022>> are fulfilled.
 
@@ -12,7 +12,7 @@ If the SDC patient context information is not intended to be used for the mappin
 
 ====== PID-3 Patient Identifier List
 .R8103
-[sdpi_requirement#r8103,sdpi_req_level=shall]
+[sdpi_requirement#r8103,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map the patient identifier to the PID-3 field which is a list of patient identifiers (e. g. medical record number, socal security number, visit number, account number, etc.).
 
@@ -88,7 +88,7 @@ The following identifier type codes are proposed to be used for the patient iden
 
 ====== PID-5 Patient Name
 .R8104
-[sdpi_requirement#r8104,sdpi_req_level=shall]
+[sdpi_requirement#r8104,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-5 field to the patient name information.
 
@@ -148,7 +148,7 @@ Please refer also to the corresponding section in the <<ref_ihe_pcd_tf_2_2019>>.
 
 ====== PID-6 Mother’s Maiden Name
 .R8105
-[sdpi_requirement#r8105,sdpi_req_level=shall]
+[sdpi_requirement#r8105,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-6 field to the mother's maiden name or birth name before marriage.
 
@@ -179,7 +179,7 @@ NOTE: <<ref_tbl_pid6_mapping>> defines the mapping of the SDC patient name infor
 
 ====== PID-7 Date/Time of Birth
 .R8106
-[sdpi_requirement#r8106,sdpi_req_level=shall]
+[sdpi_requirement#r8106,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-7 field to the date & time of birth.
 
@@ -234,7 +234,7 @@ The following list a couple of options and any comments from the reviewers are h
 ====
 
 .R8107
-[sdpi_requirement#r8107,sdpi_req_level=shall]
+[sdpi_requirement#r8107,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-8 field to the code for the administrative sex.
 
@@ -297,7 +297,7 @@ The sex and gender of a patient (or a newborn) cannot exactly be mapped from ISO
 
 ====== PID-10 Race
 .R8108
-[sdpi_requirement#r8108,sdpi_req_level=shall]
+[sdpi_requirement#r8108,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-10 field to the patient's race.
 
@@ -376,7 +376,7 @@ NOTE: <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race in
 
 ====== PID-31 Identity Unknown Indicator
 .R8109
-[sdpi_requirement#r8109,sdpi_req_level=shall]
+[sdpi_requirement#r8109,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-31 field to an indicator whether the patient's identity is known.
 
@@ -388,7 +388,7 @@ In all other cases, the value is set to "N".
 
 ====== PID-33 Last Update Date/Time
 .R8110
-[sdpi_requirement#r8110,sdpi_req_level=shall]
+[sdpi_requirement#r8110,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-33 field to the date & time of last patient context update.
 

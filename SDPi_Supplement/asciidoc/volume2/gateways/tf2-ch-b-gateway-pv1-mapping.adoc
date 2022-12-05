@@ -4,7 +4,7 @@ The HL7 Patient Visit (PV1) segment requires a mapping from the SDC patient and 
 ====== Prerequisite of Valid Patient & Location Context
 
 .R8111
-[sdpi_requirement#r8111,sdpi_req_level=shall]
+[sdpi_requirement#r8111,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 The SDC patient and location context information shall only be mapped to the corresponding fields in the HL7 PV1 segment when the requirements (e. g. inferred patient and/or location ensemble context, associated patient and/or location context, etc.) as defined in the <<ref_ieee_11073_10700_2022>> are fulfilled.
 
@@ -13,7 +13,7 @@ If the SDC patient and/or location context information is not be used for the ma
 
 ====== PV1-2 Patient Class
 .R8112
-[sdpi_requirement#r8112,sdpi_req_level=shall]
+[sdpi_requirement#r8112,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-2 field to the code for the patient class.
 
@@ -30,7 +30,7 @@ The SDC data model does not support the concept of a patient class. Therefore, t
 
 ====== PV1-3 Assigned Patient Location
 .R8113
-[sdpi_requirement#r8113,sdpi_req_level=shall]
+[sdpi_requirement#r8113,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-3 field to the patient's assigned location.
 
@@ -96,7 +96,7 @@ NOTE: <<ref_tbl_pv13_mapping>> defines the mapping of the SDC patient location i
 
 ====== PV1-19 Visit Number
 .R8114
-[sdpi_requirement#r8114,sdpi_req_level=shall]
+[sdpi_requirement#r8114,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-19 field to the patient's visit identifier (visit number, account number, etc.).
 
@@ -152,18 +152,18 @@ Valid *"Identifier Type Code"* values for a visit number are, for example, *"VN"
 
 ====== PV1-44 Admit Time / Date
 .R8115
-[sdpi_requirement#r8115,sdpi_req_level=shall]
+[sdpi_requirement#r8115,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-44 field to the patient's admission date/time.
 
 The SDC data model does not support the concept of an admission date/time. There are also different types of admissions; e. g. hospital admission, care unit admission, etc.
 
-This said, it is up to the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> to figure out the admission date/time to be set in the PV1-44 field. If the gateway is not able to determine the admission date/time, the field shall be left empty.
+This said, it is up to the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> to figure out the admission date/time to be set in the PV1-44 field. If the gateway is not able to determine the admission date/time, the field is left empty.
 ****
 
 ====== PV1-51 Visit Indicator
 .R8116
-[sdpi_requirement#r8116,sdpi_req_level=shall]
+[sdpi_requirement#r8116,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-51 field to the code for the visit indicator.
 
