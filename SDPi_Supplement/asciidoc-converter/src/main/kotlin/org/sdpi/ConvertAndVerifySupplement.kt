@@ -8,14 +8,9 @@ import com.github.ajalt.clikt.parameters.options.validate
 import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.file
 import org.apache.logging.log4j.kotlin.Logging
-import org.asciidoctor.Asciidoctor
-import org.asciidoctor.Options
-import org.asciidoctor.SafeMode
-import org.sdpi.asciidoc.extension.DisableSectNumsProcessor
-import org.sdpi.asciidoc.extension.RequirementsBlockProcessor
-import org.sdpi.asciidoc.extension.NumberingProcessor
+import org.sdpi.asciidoc.AsciidocErrorChecker
 import java.io.File
-import java.io.FileOutputStream
+import kotlin.system.exitProcess
 
 fun main(args: Array<String>) = ConvertAndVerifySupplement().main(
     when (System.getenv().containsKey("CI")) {
@@ -51,6 +46,8 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
 
     override fun run() {
         runCatching {
+            val asciidocErrorChecker = AsciidocErrorChecker()
+
             logger.info { "Start conversion of '${adocInputFile.canonicalPath}'" }
 
             val outFile = File(
@@ -61,10 +58,13 @@ class ConvertAndVerifySupplement : CliktCommand("convert-supplement") {
 
             AsciidocConverter(AsciidocConverter.Input.FileInput(adocInputFile), outFile).run()
 
+            asciidocErrorChecker.run()
+
             logger.info { "File successfully written" }
         }.onFailure {
             logger.error { it.message }
             logger.trace(it) { it.message }
+            exitProcess(1)
         }
     }
 }

@@ -38,6 +38,7 @@ include::dev-30/tf2-dev-30.adoc[]
 // todo I guess this should be part of 1.0
 //
 //=== Announce Network Departure [DEV-34]
+include::dev-34/tf2-dev-34.adoc[]
 //
 //=== Establish Medical Data Exchange [DEV-35]
 //
@@ -117,12 +118,6 @@ include::dev-30/tf2-dev-30.adoc[]
 //
 // todo https://confluence.hl7.org/display/GP/Topic%3A+Connect+Time+Delay+Algorithm
 //
-//=== MDIB Report Retrofit / Best Practices
-//
-// todo https://confluence.hl7.org/pages/viewpage.action?pageId=104761310
-//
-
-
 
 //NOTE:  This document integrates all the content that makes up the supplement volume 2 document.
 //
@@ -131,6 +126,7 @@ include::dev-30/tf2-dev-30.adoc[]
 //*_See the Word document for what this is supposed to look like_*.
 
 include::tf2-ch-a-mdpws.adoc[]
+
 include::tf2-ch-b-gateways.adoc[]
 
 

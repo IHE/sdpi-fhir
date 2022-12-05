@@ -36,7 +36,8 @@ include::dev-30/tf2-ch-a-mdpws-dev-30.adoc[]
 //=== Retrieve Localization Information [DEV-33]
 //
 //=== Announce Network Departure [DEV-34]
-//
+include::dev-34/tf2-ch-a-mdpws-dev-34.adoc[]
+
 //=== Establish Medical Data Exchange [DEV-35]
 //
 //=== Publish Medical Data [DEV-36]
@@ -52,3 +53,8 @@ include::dev-30/tf2-ch-a-mdpws-dev-30.adoc[]
 === Amendments and Corrigenda
 
 include::connect-time-algorithm/tf2-ch-a-mdpws-connect-time-algorithm.adoc[]
+
+include::mdib-report-retrofit/tf2-ch-a-mdpws-mdib-report-retrofit.adoc[]
+
+include::mdpws-compression/tf2-ch-a-mdpws-compression.adoc[]
+include::discovery-scopes/tf2-ch-a-mdpws-discovery-scopes.adoc[]
