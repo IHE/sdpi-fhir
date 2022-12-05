@@ -6,9 +6,9 @@ The HL7 Patient Visit (PV1) segment requires a mapping from the SDC patient and 
 .R8111
 [sdpi_requirement#r8111,sdpi_req_level=shall]
 ****
-The SDC patient and location context information shall only be mapped to the corresponding fields in the HL7 PV1 segment when the requirements (e. g. inferred patient and/or location ensemble context, associated patient and/or location context, etc.) as defined in the <<ieee_11073_10700_2022>> are fulfilled.
+The SDC patient and location context information shall only be mapped to the corresponding fields in the HL7 PV1 segment when the requirements (e. g. inferred patient and/or location ensemble context, associated patient and/or location context, etc.) as defined in the <<ref_ieee_11073_10700_2022>> are fulfilled.
 
-If the SDC patient and/or location context information shall not be used for the mapping, please refer to the <<ihe_pcd_tf_2_2019>> on how to populate the fields of the PV1 segment in this case.
+If the SDC patient and/or location context information shall not be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2019>> on how to populate the fields of the PV1 segment in this case.
 ****
 
 ====== PV1-2 Patient Class

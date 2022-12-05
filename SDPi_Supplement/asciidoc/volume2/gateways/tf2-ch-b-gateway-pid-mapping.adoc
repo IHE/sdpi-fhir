@@ -5,9 +5,9 @@ The HL7 Patient Identification (PID) segment requires a mapping from the <<acron
 .R8102
 [sdpi_requirement#r8102,sdpi_req_level=shall]
 ****
-The SDC patient context information shall only be mapped to the corresponding fields in the HL7 PID segment when the requirements (e. g. inferred patient ensemble context, associated patient context, etc.) as defined in the <<ieee_11073_10700_2022>> are fulfilled.
+The SDC patient context information shall only be mapped to the corresponding fields in the HL7 PID segment when the requirements (e. g. inferred patient ensemble context, associated patient context, etc.) as defined in the <<ref_ieee_11073_10700_2022>> are fulfilled.
 
-If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ihe_pcd_tf_2_2019>> on how to populate the fields of the PID segment in this case.
+If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2019>> on how to populate the fields of the PID segment in this case.
 ****
 
 ====== PID-3 Patient Identifier List
@@ -142,7 +142,7 @@ NOTE: <<ref_tbl_pid5_mapping>> defines the mapping of the SDC patient name infor
 /pm:CoreData
 |This field shall be set to "L" when a patient name is available, or "U" when the patient name is not set.
 
-Please refer also to the corresponding section in the <<ihe_pcd_tf_2_2019>>.
+Please refer also to the corresponding section in the <<ref_ihe_pcd_tf_2_2019>>.
 
 |===
 
