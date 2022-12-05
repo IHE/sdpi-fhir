@@ -20,3 +20,7 @@ WARNING:  Need to figure out how to have a specific number vs. ".x"!
 [sdpi_offset=10]
 === Service-oriented Device Point-of-care Interoperability (SDPi) – Overview & Framework
 
+.IHE SDPi Profiles & Foundational Standards
+
+image::../images/vol1-diagram-sdpi-profiles.svg[align=center]
+

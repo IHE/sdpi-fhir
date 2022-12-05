@@ -27,7 +27,7 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
     private companion object : Logging {
         val REQUIREMENT_NUMBER_FORMAT = "^r(\\d+)$".toRegex()
         val REQUIREMENT_TITLE_FORMAT = "^([A-Z])*?R(\\d+)$".toRegex()
-        val REQUIREMENT_ROLE = "requirement"
+        const val REQUIREMENT_ROLE = "requirement"
     }
 
     private val detectedRequirements = mutableMapOf<Int, SdpiRequirement>()
@@ -43,7 +43,7 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
         parent: StructuralNode, reader: Reader,
         attributes: MutableMap<String, Any>
     ): Any = retrieveRequirement(reader, Attributes(attributes)).let { requirement ->
-        logger.info { "Found SDPi requirement #{${requirement.number}: $requirement" }
+        logger.info { "Found SDPi requirement #${requirement.number}: $requirement" }
         requirement.asciiDocAttributes[BlockAttribute.ROLE] = REQUIREMENT_ROLE
         storeRequirement(requirement)
         createBlock(
@@ -63,19 +63,22 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
         val requirementNumber = matchResults.map { it.groupValues[1] }.toList().first().toInt()
         val lines = reader.readLines()
         val requirementLevel =
-            RequirementLevel.values().firstOrNull { it.keyword == attributes[BlockAttribute.REQUIREMENT_LEVEL] }.let {
-                checkNotNull(it) {
-                    ("Missing requirement level for SDPi requirement #$requirementNumber").also {
-                        logger.error { it }
-                    }
+            checkNotNull(resolveRequirementLevel(attributes[BlockAttribute.REQUIREMENT_LEVEL] ?: "")) {
+                ("Missing requirement level for SDPi requirement #$requirementNumber").also {
+                    logger.error { it }
                 }
             }
-        return SdpiRequirement(
-            requirementNumber,
-            requirementLevel,
-            attributes,
-            lines
-        )
+        try {
+            return SdpiRequirement(
+                requirementNumber,
+                requirementLevel,
+                attributes,
+                lines
+            )
+        } catch (e: Exception) {
+            logger.error { "Error while processing requirement #$requirementNumber: ${e.message}" }
+            throw e
+        }
     }
 
     private fun storeRequirement(requirement: SdpiRequirement) {
