@@ -16,7 +16,7 @@ Ultimately, the content of this appendix may be rearranged and even relocated; h
 |===
 
 // Appendix B.x
-[referenced_standards]
+[bibliography]
 === Referenced Standards
 
 * [[[ref_aami_2700_1_2019,AAMI 2700-1:2019]]]  AAMI 2700-1:2019  Medical Devices And Medical Systems - Essential Safety And Performance Requirements For Equipment Comprising The Patient-Centric Integrated Clinical Environment (ICE) - Part 1: General Requirements And Conceptual Model, available at https://webstore.ansi.org/Standards/AAMI/ansiaami27002019[ANSI/AAMI web store].
@@ -77,16 +77,17 @@ Ultimately, the content of this appendix may be rearranged and even relocated; h
 include::conformance-statements/tf1-ch-c-conformance-statement-ieee-11073-10207-2017.adoc[]
 
 // Appendix B.x
-[bibliography]
 === Bibliography
 
 In addition to Referenced Standards, which include normative requirements and capabilities that this technical framework utilizes, there are other standards, specifications, publications, presentations, materials, etc. that have proven valuable in both developing and understanding the framework's content.  This list identifies those items, including many of which are referenced throughout the specifications.
 
+[bibliography]
 ==== Media (non-standards) References
 
 * [[[ref_iso_81001_temple,ISO 81001-1 "The Temple"]]], ISO/IEC 81001-1 Figure 1 "The Temple" Diagram, Copyright &#169; 2019 NHS Digital, licensed via Wikimedia Commons, http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3[Greg Wye, NHS Digital, OGL 3], available at https://81001.org/page/Framework[81001.org Framework].
 
 
+[bibliography]
 ==== Standards & Publications
 
 * [[[ref_ihe_pcd_sdpi_use_cases_compendium_2019,IHE PCD SDPi Use Cases Compendium:2019]]] IHE Patient Care Devices (PCD) Compendium of Medical Device Oriented Use Cases, Companion to the "Service-oriented Device Point-of-Care Interoperability (SDPi)" White Paper, Revision 1.1, November 1, 2019.  Available at https://profiles.ihe.net/DEV/[profiles.ihe.net/DEV/].
@@ -102,6 +103,7 @@ metalanguage - Extended BNF, 15 December 1996, available at https://standards.is
 
 * [[[ref_omg_sysml_2_0_spec,OMG SysML ^&#174;^ 2.0]]]  OMG Systems Modeling Language &#8482; (SysML^&#174;^), Version 2.0, Object Management Group (OMG) specification.  Available at https://github.com/Systems-Modeling/SysML-v2-Release/tree/master/doc[github.com/Systems-Modeling/SysML-v2-Release/doc/]
 
+[bibliography]
 ==== Presentations
 
 * [[[ref_ihe_eu_experience_2021_presentation_cooper_schlichting,IHE EU Experience-2021 IHE CA for MedTech Solutions]]], "IHE & IHE Catalyst: Advancing Interoperable MedTec Solutions with "Regulatory Submission Ready" Conformity Assessment", presentation by Todd Cooper and Dr. Stefan Schlichting, available at https://connectathon.ihe-europe.net/experience-sessions-2021-presentations[IHE Europe Experience 2021 Presentations web page].
