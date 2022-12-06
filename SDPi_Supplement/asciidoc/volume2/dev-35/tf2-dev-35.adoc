@@ -27,9 +27,9 @@ include::tf2-dev-35-summary.adoc[]
 
 ==== Referenced Standards
 
-* <<ieee_11073_10207_2017>> Section 7.2.3 Request-Response
-* <<ieee_11073_10207_2017>> Section 7.2.4 Streaming
-* <<ieee_11073_10207_2017>> Annex C
+* <<ref_ieee_11073_10207_2017>> Section 7.2.3 Request-Response
+* <<ref_ieee_11073_10207_2017>> Section 7.2.4 Streaming
+* <<ref_ieee_11073_10207_2017>> Annex C
 
 ==== Messages
 

@@ -28,7 +28,7 @@ include::tf2-dev-40-summary.adoc[]
 
 ==== Referenced Standards
 
-* <<ieee_11073_10207_2017>> Section 7.3.2 Get Service
+* <<ref_ieee_11073_10207_2017>> Section 7.3.2 Get Service
 
 ==== Messages
 
@@ -36,3 +36,4 @@ include::tf2-dev-40-summary.adoc[]
 [plantuml#vol2_figure_dev_40_sequence, target=puml-dev-40-sequence, format=svg, reftext='{figure-caption} {counter:refnum}',width=100%]
 ....
 include::../../plantuml/vol2-figure-dev-40-sequence.puml[]
+....
