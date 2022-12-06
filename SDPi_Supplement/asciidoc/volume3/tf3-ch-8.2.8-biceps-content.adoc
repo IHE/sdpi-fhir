@@ -51,8 +51,11 @@ include::biceps-content-module/tf3-ch-8.2.2-applicable-attribute-type-codes.adoc
 // 8.2.8.6
 ===== BICEPS Conventions for device specialization content modules
 
+// 8.2.8.7
 ===== BICEPS Extension Provisions
 
 include::biceps-extension-provisions/tf3-ch-8.2.2-extension-coded-attribute.adoc[]
 
-
+// 8.2.8.8
+===== BICEPS Sex and Gender Extensions
+// This content will also be referenced from TF-2 Appendix B DEC Gateway

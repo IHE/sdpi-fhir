@@ -11,6 +11,27 @@ NOTE:  This document integrates all the content that makes up the supplement vol
 [#vol3_clause_content_modules,sdpi_offset=8]
 == DEV Semantic Content Modules
 
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+| *SDPi Supplement Version Note*: The organization of this Volume 3 supplement factors in two major changes:
+
+. IHE Supplement template (2020), with content mapped from the <<ref_ihe_pcd_tf_3_2019>> specification;
+
+. Addition of <<acronym_biceps>> content to a volume that is organized according to the "classic" <<ref_ieee_11073_10201_2004>> information model.
+
+For this version of the supplement, content from the 2019 version that was in sections 3 and 7 has now been collected into a single section 8.
+
+In order to clearly identify the supplement content that is related to <<acronym_biceps>>, specific sections with <<acronym_biceps>> in the title have been added.
+Although this results in a fairly clean supplement document, the flow of the outline is at times non sequitur.
+Another approach might be to move existing "classic" content to a set of subsections contained within a Classic DIM section, and then the new <<acronym_biceps>> content within a similarly labeled set of subsections.
+This would flow better, but it would also represent more of a change to the existing organization.
+
+*REVIEWER QUESTION*:  Please consider not only the <<acronym_biceps>>-related updates but also the general organization and provide guidance as to how TF-3 might be better organized for clarity and future extensions.
+
+|===
+
 // 8.1
 [sdpi_offset=1]
 === Overview of device semantic content
@@ -22,15 +43,16 @@ include::tf3-ch-8.2.8-biceps-content.adoc[]
 
 include::mdib-report-retrofit/tf3-ch-8.2.8-mdib-report-retrofit.adoc[]
 
-// 8.3
+// 8.12
+[sdpi_offset=12]
 === Device specialization content modules
 
-include::tf3-ch-8.3.1-infusion-pump.adoc[]
+include::tf3-ch-8.12.1-infusion-pump.adoc[]
 
-include::tf3-ch-8.3.2-ventilator.adoc[]
+include::tf3-ch-8.12.2-ventilator.adoc[]
 
-include::tf3-ch-8.3.3-physiologic-monitor.adoc[]
+include::tf3-ch-8.12.3-physiologic-monitor.adoc[]
 
-include::tf3-ch-8.3.4-surgical.adoc[]
+include::tf3-ch-8.12.4-surgical.adoc[]
 
 include::tf3-ch-a-xml-schemas.adoc[]

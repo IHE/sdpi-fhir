@@ -6,7 +6,7 @@ NOTE:  This file contains the core Volume 1 specification for the SDPi-A profile
 == Service-oriented Device Point-of-care Interoperability - Alerting (SDPi-A) Profile
 
 // 12.1
-[sdpi_offset=1]
+[sdpi_offset=12]
 === SDPi-A Actors, Transactions, and Content Modules
 
 .SDPi-A Actor Diagram

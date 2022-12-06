@@ -21,13 +21,15 @@ Ultimately, the content of this appendix may be rearranged and even relocated; h
 
 * [[[ref_aami_2700_1_2019,AAMI 2700-1:2019]]]  AAMI 2700-1:2019  Medical Devices And Medical Systems - Essential Safety And Performance Requirements For Equipment Comprising The Patient-Centric Integrated Clinical Environment (ICE) - Part 1: General Requirements And Conceptual Model, available at https://webstore.ansi.org/Standards/AAMI/ansiaami27002019[ANSI/AAMI web store].
 
-* [[[ref_hl7_fhir,HL7^&#174;^ FHIR^&#174;^]]]  HL7^&#174;^ Fast Healthcare Interoperability Resources (FHIR^&#174;^), available at http://hl7.org/fhir/[hl7.org/fhir/].
+* [[[ref_hl7_fhir,HL7 FHIR]]]  HL7^&#174;^ Fast Healthcare Interoperability Resources (FHIR^&#174;^), available at http://hl7.org/fhir/[hl7.org/fhir/].
 
-* [[[ref_hl7_fhir_pocd_ig,HL7^&#174;^ FHIR^&#174;^ Point-of-Care Device Implementation Guide]]] HL7 FHIR Point-of-Care Device Implementation Guide, drafts available on the https://confluence.hl7.org/display/DOF/Devices+On+FHIR[Devices on FHIR project page], and a continuous build version at http://build.fhir.org/ig/HL7/uv-pocd/[Point-of-Care Device Implementation Guide web page].
+* [[[ref_hl7_fhir_pocd_ig,HL7 FHIR Point-of-Care Device Implementation Guide]]] HL7 FHIR Point-of-Care Device Implementation Guide, drafts available on the https://confluence.hl7.org/display/DOF/Devices+On+FHIR[Devices on FHIR project page], and a continuous build version at http://build.fhir.org/ig/HL7/uv-pocd/[Point-of-Care Device Implementation Guide web page].
 
-* [[[ref_hl7_v2,HL7^&#174;^ V2]]] HL7^&#174;^ Version 2 (V2), available at https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185[HL7 Version 2 Product Suite web page].
+* [[[ref_hl7_v2,HL7 V2]]] HL7^&#174;^ Version 2 (V2), available at https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185[HL7 Version 2 Product Suite web page].
 
 * [[[ref_iec_60601_1_8_2020,IEC 60601-1-8:2020]]], IEC 60601-1-8:2006/AMD2:2020, Medical electrical equipment — Part 1-8: General requirements for basic safety and essential performance — Collateral standard: General requirements, tests and guidance for alarm systems in medical electrical equipment and medical electrical systems; Amendment 1:2020, and Amendment 2:2020. available at https://webstore.iec.ch/publication/59648[IEC Webstore] and the https://www.iso.org/standard/41986.html[ISO standards store].
+
+* [[[ref_ieee_11073_10201_2004,IEEE 11073-10201:2004]]] IEEE 11073-10201™ International Standard - Health informatics--Device interoperability--Part 10201:Point-of-care medical device communication--Domain information model.  Note this was updated in 2020.  Available at https://standards.ieee.org/ieee/11073-10201/10263/[IEEE online standards store].
 
 * [[[ref_ieee_11073_10700_2022,IEEE 11073-10700:2022]]] IEEE P11073-10700™/D7 Draft Standard for Health Informatics – Device Interoperability – Part 10700: Point-of-Care Medical Device Communication – Standard for Base Requirements for Participants in a Service-Oriented Device Connectivity (SDC) System.
 
