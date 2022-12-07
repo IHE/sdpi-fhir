@@ -18,12 +18,14 @@ enum class RequirementLevel(val keyword: String) {
  *
  * @property number The requirement number as an integer (no leading R or zero-padding).
  * @property level The requirement level as specified by the attribute [BlockAttribute.REQUIREMENT_LEVEL].
+ * @property maxOccurrence The number of occurrences in the document (some requirements are copy-pasted for sake of readability)
  * @property asciiDocAttributes All attributes captured by the block that represents this requirement.
  * @property asciiDocLines The actual ASCIIdoc source.
  */
 data class SdpiRequirement(
     val number: Int,
     val level: RequirementLevel,
+    val maxOccurrence: Int,
     val asciiDocAttributes: Attributes,
     val asciiDocLines: List<String>
 ) {

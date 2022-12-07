@@ -5,3 +5,6 @@ NOTE:  This file contains the general HL7 V2 gateway actor (SOMDS_V2_Gateway) lo
 
 === Gateway: HL7 V2 General Mapping
 
+
+
+#Issue HL7 Local Time vs. SDC UTC time: SDC requires that all timestamps are in UTC. The time zone is optional. In HL7 V2 all timestamps are local time and the time zone is optional as well. The gateway may have to convert UTC to local time!!#
