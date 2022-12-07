@@ -16,7 +16,7 @@ A <<actor_somds_participant>> shall utilize TCP to exchange messages with other 
 .Notes
 [%collapsible]
 ====
-NOTE: The WS-Discovery Ad-hoc mode utilizes UDP to exchange messages, see <<ref_ws_discovery_2009>>.
+NOTE: The WS-Discovery Ad-hoc mode utilizes UDP to exchange messages, see <<ref_oasis_ws_discovery_2009>>>.
 ====
 ****
 

@@ -18,7 +18,7 @@ The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_alertre
 
 ====== Referenced Standards
 
-* <<ref_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
 
 ====== Message Outline
 
@@ -40,7 +40,7 @@ The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_metricr
 
 ====== Referenced Standards
 
-* <<ref_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
 
 ====== Message Outline
 
@@ -62,7 +62,7 @@ The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_compone
 
 ====== Referenced Standards
 
-* <<ref_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
 
 ====== Message Outline
 
@@ -84,7 +84,7 @@ The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_wavefor
 
 ====== Referenced Standards
 
-* <<ref_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_messaging}[Section 2 Messaging]
 
 ====== Message Outline
 
