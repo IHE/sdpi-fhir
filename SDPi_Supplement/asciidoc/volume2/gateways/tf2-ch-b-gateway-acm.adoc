@@ -16,7 +16,7 @@ This section provides an overview about the referenced standards and profiles us
 * <<ieee_11073_10702_202x>>
 * <<ref_ieee_11073_10701_2022>>
 * <<ref_ieee_11073_10700_2022>>
-* <<ieee_11073_10207_2017>>
+* <<ref_ieee_11073_10207_2017>>
 
 ==== HL7 Segment Descriptions
 The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2019>>.
