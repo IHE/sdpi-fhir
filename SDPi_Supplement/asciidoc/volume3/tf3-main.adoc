@@ -41,7 +41,6 @@ This would flow better, but it would also represent more of a change to the exis
 
 include::tf3-ch-8.2.8-biceps-content.adoc[]
 
-#TODO: The content for this retrofit file better fits in TF-2 Appendix A than in TF-3 Semantic Content OR perhaps split between the two. The focus of this is on HOW to communicate (TF-2) vs. WHAT to communicate (TF-3).#
 include::mdib-report-retrofit/tf3-ch-8.2.8-mdib-report-retrofit.adoc[]
 
 // 8.12

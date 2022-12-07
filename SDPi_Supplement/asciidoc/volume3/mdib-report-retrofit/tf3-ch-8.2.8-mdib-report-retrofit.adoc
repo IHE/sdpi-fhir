@@ -1,6 +1,8 @@
 [#vol3_clause_mdib_report_retrofit]
 ===== MDIB Report Retrofit
 
+#TODO: The content for this retrofit file better fits in TF-2 Appendix A than in TF-3 Semantic Content OR perhaps split between the two. The focus of this is on HOW to communicate (TF-2) vs. WHAT to communicate (TF-3).#
+
 A <<actor_somds_provider>> sends out episodic reports every time descriptors or states in the <<acronym_mdib>> change. Descriptor changes cause corresponding states to also change whereas state changes do not cause descriptors to change. A <<actor_somds_provider>> is supposed to transmit every change of a descriptor and its corresponding states in the msg:DescriptionModificationReport message. Changes to states are transmitted in msg:ObservedValueStream, msg:WaveformStream, msg:EpisodicAlertReport, msg:EpisodicComponentReport, msg:EpisodicContextReport, msg:EpisodicMetricReport, and msg:EpisodicOperationalStateReport messages.
 
 BICEPS also supports periodic reports, which are out of scope for this section.
