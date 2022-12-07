@@ -559,7 +559,7 @@ Dependencies between options, when applicable, are specified in notes.
 Integration of CT and ATNA (TBD) below in required groupings is assumed.#
 
 ===== Waveform Communication
-#TODO:  Explain how waveforms are communicated, both snippets and especially "streaming"; include references to appropriate TF-2 & TF-3 Sections; this is part of the "DO WE NEED A WAVEFORM OPTION?" question to help end users?#
+#TODO:  Explain how waveforms are communicated, both snippets and especially "streaming"; include references to appropriate TF-2 & TF-3 Sections; this is part of the "DO WE NEED A WAVEFORM OPTION?" question to help end users? NO!!!  Could drop a note in TF-2 Appendix A for DEV-xyz and how RTSA/Waves would be transmitted / conveyed over the network#
 
 ===== Aggregators, Proxies, Sensors
 ##TODO: :  Include single / multiple patient variations.  See Topic on confluence; ultimately probably in TF-1 & -2 & -3.  NOTE added a section in TF-3 as well.

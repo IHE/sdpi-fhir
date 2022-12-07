@@ -138,7 +138,7 @@ include::../volume2/dev-34/tf2-dev-34-summary.adoc[]
 .^| [[vol0_transaction_summary_dev_43,DEV-43 Update Alert Acknowledgement Status]]
 [[transaction_number_dev_43,DEV-43]] DEV-43
 | [[transaction_name_update_alert_acknowledgement_status,Update Alert Acknowledgement Status]] Update Alert Acknowledgement Status
-| Deferred to SDPi 1.x
+| Deferred to SDPi 2.0
 // include::../volume2/dev-43/tf2-dev-43-summary.adoc[]
 
 .^| [[vol0_transaction_summary_dev_44,DEV-44 Manage Medical External Control]]
