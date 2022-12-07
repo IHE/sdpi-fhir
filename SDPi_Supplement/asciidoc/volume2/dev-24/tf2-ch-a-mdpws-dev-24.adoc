@@ -3,6 +3,7 @@
 :var_uri_ws_discovery_resolve: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231840
 :var_uri_ws_discovery_resolve_match: http://docs.oasis-open.org/ws-dd/discovery/1.1/os/wsdd-discovery-1.1-spec-os.html#_Toc234231844
 :var_uri_dpws_discovery: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672091
+:var_uri_matching_rule: http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/rfc3986
 
 [#vol2_clause_appendix_mdpws_dev_24]
 ==== MDPWS: Discovery Network Topology [DEV-24]
@@ -31,10 +32,6 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-probe.xml[]
 ----
 
 ====== Message Semantics
-
-#TODO Default wsd:Scopes/@MatchBy is http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/rfc3986, which is partly broken; fix it here or always use strcmp?#
-
-#TODO Allow for multiple MatchBy or only use one, two, many?#
 
 `s12:Envelope/s12:Body/wsd:Probe/wsa:Types`:: List that contains at least `mdpws:MedicalDevice` to express seeking <<actor_somds_provider>>s that conform to MDPWS.
 `s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes/@MatchBy`:: The algorithm used to compare the `s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes` against the <<actor_somds_provider>>'s scopes.
@@ -73,6 +70,19 @@ In addition, a filter criterion for Probe messages could be set.
 For example, only <<actor_somds_consumer>>s that are assigned to a patient and lost network connection can send Probe messages.
 
 
+.R7000
+[sdpi_requirement#r7000,sdpi_req_level=shall]
+****
+A <<actor_somds_provider>> shall implement the scope matching rule `{var_uri_matching_rule}` as specified by <<ref_ws_discovery_2009>> in a way that the use of _prefix_ refers to the definition of a prefix in formal theory.
+
+.Notes
+[%collapsible]
+====
+NOTE: This requirement erases disambiguation since there are multiple definitions of the term _prefix_.
+
+NOTE: From this it follows that a prefix can be empty as otherwise the term _proper prefix_ would have to be used.
+====
+****
 
 // ---------- PROBE MATCH ---------
 
@@ -125,8 +135,6 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-24-resolve.xml[]
 ----
 
 ====== Message Semantics
-
-#TODO Should the address be RFC3981 compared or just strcmp0?#
 
 `s12:Envelope/s12:Body/wsd:Resolve/wsa:EndpointReference/wsa:Address`:: The <<payload_dev_24_provider_uid>> to resolve, encoded as URI.
 

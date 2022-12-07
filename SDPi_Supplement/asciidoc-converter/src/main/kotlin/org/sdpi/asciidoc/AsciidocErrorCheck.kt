@@ -19,12 +19,12 @@ class AsciidocErrorChecker {
      */
     fun run() {
         val errors = errorStream.toByteArray().decodeToString()
-            .split("\n").count {
-                when (it.startsWith(ERROR_HINT, true)) {
-                    true -> logger.error {
-                        "Asciidoc issue detected: ${it.substring(ERROR_HINT.length)}"
+            .split("\n").count { line ->
+                when (val errorPrefix = errorHints.firstOrNull { line.startsWith(it, true) }) {
+                    null -> false
+                    else -> logger.error {
+                        "Asciidoc issue detected: ${line.substring(errorPrefix.length)}"
                     }.let { true }
-                    false -> false
                 }
             }
         if (errors > 0) {
@@ -33,6 +33,6 @@ class AsciidocErrorChecker {
     }
 
     private companion object : Logging {
-        const val ERROR_HINT = "information: "
+        val errorHints = listOf("information: ", "info: ")
     }
 }

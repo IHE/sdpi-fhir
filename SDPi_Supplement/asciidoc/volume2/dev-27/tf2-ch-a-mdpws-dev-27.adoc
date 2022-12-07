@@ -13,6 +13,8 @@
 :var_status_delivery_failure: http://schemas.xmlsoap.org/ws/2004/08/eventing/DeliveryFailure
 :var_status_shutdown: http://schemas.xmlsoap.org/ws/2004/08/eventing/SourceShuttingDown
 :var_status_cancel: http://schemas.xmlsoap.org/ws/2004/08/eventing/SourceCancelling
+:var_uri_strcmp0: http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/strcmp0
+:var_uri_rfc3986: http://docs.oasis-open.org/ws-dd/ns/discovery/2009/01/rfc3986
 
 [#vol2_clause_appendix_mdpws_dev_27]
 ==== MDPWS: Manage BICEPS Subscription [DEV-27]
@@ -76,6 +78,19 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-subscribe.xml[]
 |WaveformStream as specified in <<ref_ieee_11073_10207_2017>>, Annex C.112
 |http://standards.ieee.org/downloads/11073/11073-20701-2018/WaveformService/WaveformStream
 |===
+
+.R7001
+[sdpi_requirement#r7001,sdpi_req_level=shall]
+****
+When a <<actor_somds_consumer>> requests `{var_filter_dialect_action}` filter processing in a Subscribe message, the <<actor_somds_consumer>> shall assume the receiving <<actor_somds_provider>> to perform the `{var_uri_strcmp0}` matching rule.
+
+.Notes
+[%collapsible]
+====
+NOTE: The `{var_uri_rfc3986}` matching rule definition implemented by <<actor_somds_provider>>s ambiguously includes the term `prefix`.
+As `{var_uri_rfc3986}` subsumes `{var_uri_strcmp0}`, a fallback to case-sensitive string comparison is explicit and failsafe.
+====
+****
 
 // ---------- SUBSCRIBE RESPONSE ---------
 
