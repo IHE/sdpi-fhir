@@ -1,11 +1,8 @@
 = Volume 1 -- Profiles
 
-NOTE:  This document integrates all the content that makes up the supplement volume 1 document.
+#TODO:  SEE EDITORS'S NOTES AND CONTENT THAT MIGHT GO HERE; SYNC WITH DEV TF 2022 ORGANIZATION#
 
-IMPORTANT:  Migrate the content below from main.adoc into this document OR rename main.adoc to this ... though the content is different.  +
-{empty} +
-*_See the Word document for what this is supposed to look like_*.
-
+#STOPPED HERE 2022.12.07#
 
 [#vol1_clause_profiles,sdpi_offset=1]
 == Profiles
