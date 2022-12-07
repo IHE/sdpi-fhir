@@ -1,5 +1,37 @@
-// = SDPi ACM Gateway -- Mapping
+=== SDPi ACM Gateway -- Mapping
 
-NOTE:  This file contains the SDPi gateway actor (SOMDS_ACM_Gateway) logic for mapping from SDC BICEPS MDIB content and interactions with IHE DEV "PCD" ACM profile messaging.
+NOTE:  This file contains the SDPi gateway actor (SOMDS_ACM_Gateway) logic for mapping from <<acronym_mdib>> content and interactions with IHE DEV "PCD" ACM profile messaging.
 
-=== Gateway:  IHE DEV ACM Profile
+==== Scope
+This chapter defines the mapping from <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Alert Communication Management (ACM) profile messages as defined in the <<ref_ihe_pcd_tf_2_2019>>.
+
+The SDPi gateway actor represents the Alarm Reporter (AR) role of the IHE ACM profile.
+
+The following sections supplement the IHE ACM profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_pcd_tf_2_2019>> will apply.
+
+==== Referenced Standards & Profiles
+This section provides an overview about the referenced standards and profiles used in this chapter:
+
+* <<ref_ihe_pcd_tf_2_2019>>
+* <<ieee_11073_10702_202x>>
+* <<ref_ieee_11073_10701_2022>>
+* <<ref_ieee_11073_10700_2022>>
+* <<ieee_11073_10207_2017>>
+
+==== HL7 Segment Descriptions
+The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2019>>.
+
+include::tf2-ch-b-gateway-msh-mapping.adoc[]
+
+include::tf2-ch-b-gateway-pid-mapping.adoc[]
+
+include::tf2-ch-b-gateway-pv1-mapping.adoc[]
+
+===== OBR - Observation Request Segment
+The HL7 Observation Request (OBR) segment requires a mapping from the SDC containment tree and metric data to the OBR segment fields.
+
+====== OBR-2 Placer Order Number
+For the IHE ACM profile, the OBR-2 field shall contain the identifier of the Alarm Reporter (AR) of the IHE ACM gateway (not the individual device identifier). For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
+
+====== OBR-3 Filler Order Number
+For the IHE ACM profile, the OBR-3 field shall contain the identifier of the Alarm Reporter (AR) of the IHE ACM gateway (not the individual device identifier). For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.

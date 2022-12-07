@@ -9,10 +9,12 @@ import org.asciidoctor.extension.Contexts
 import org.asciidoctor.extension.Name
 import org.asciidoctor.extension.Reader
 import org.sdpi.asciidoc.*
-import org.sdpi.asciidoc.model.RequirementLevel
 import org.sdpi.asciidoc.model.SdpiRequirement
 
 const val BLOCK_NAME_SDPI_REQUIREMENT = "sdpi_requirement"
+
+private typealias RequirementNumber = Int
+private typealias Occurrence = Int
 
 /**
  * Block processor that searches for sdpi_req blocks.
@@ -24,6 +26,8 @@ const val BLOCK_NAME_SDPI_REQUIREMENT = "sdpi_requirement"
 @Contexts(Contexts.SIDEBAR)
 @ContentModel(ContentModel.COMPOUND)
 class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
+    private val intendedDuplicates = mutableMapOf<RequirementNumber, Occurrence>()
+
     private companion object : Logging {
         val REQUIREMENT_NUMBER_FORMAT = "^r(\\d+)$".toRegex()
         val REQUIREMENT_TITLE_FORMAT = "^([A-Z])*?R(\\d+)$".toRegex()
@@ -61,6 +65,14 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
     private fun retrieveRequirement(reader: Reader, attributes: Attributes): SdpiRequirement {
         val matchResults = REQUIREMENT_NUMBER_FORMAT.findAll(attributes.id())
         val requirementNumber = matchResults.map { it.groupValues[1] }.toList().first().toInt()
+        val maxOccurrence = attributes[BlockAttribute.MAX_OCCURRENCE]?.toInt() ?: 1
+
+        if (intendedDuplicates.containsKey(requirementNumber)) {
+            intendedDuplicates[requirementNumber] = intendedDuplicates[requirementNumber]!! + 1
+        } else {
+            intendedDuplicates[requirementNumber] = 1
+        }
+
         val lines = reader.readLines()
         val requirementLevel =
             checkNotNull(resolveRequirementLevel(attributes[BlockAttribute.REQUIREMENT_LEVEL] ?: "")) {
@@ -72,6 +84,7 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
             return SdpiRequirement(
                 requirementNumber,
                 requirementLevel,
+                maxOccurrence,
                 attributes,
                 lines
             )
@@ -102,7 +115,8 @@ class RequirementsBlockProcessor : BlockProcessor(BLOCK_NAME_SDPI_REQUIREMENT) {
             }
         }
 
-        check(!detectedRequirements.containsKey(requirement.number)) {
+        check(!detectedRequirements.containsKey(requirement.number) ||
+                intendedDuplicates[requirement.number]!! <= requirement.maxOccurrence) {
             "SDPi requirement #'${requirement.number}' already exists".also {
                 logger.error { it }
             }
