@@ -15,7 +15,7 @@ NOTE:  This document integrates all the content that makes up the supplement vol
 [%autowidth]
 [cols="1"]
 |===
-| *SDPi Supplement Version Note*: The organization of this Volume 3 supplement factors in two major changes:
+a| *SDPi Supplement Version Note*: The organization of this Volume 3 supplement factors in two major changes:
 
 . IHE Supplement template (2020), with content mapped from the <<ref_ihe_pcd_tf_3_2019>> specification;
 
@@ -41,6 +41,7 @@ This would flow better, but it would also represent more of a change to the exis
 
 include::tf3-ch-8.2.8-biceps-content.adoc[]
 
+#TODO: The content for this retrofit file better fits in TF-2 Appendix A than in TF-3 Semantic Content OR perhaps split between the two. The focus of this is on HOW to communicate (TF-2) vs. WHAT to communicate (TF-3).#
 include::mdib-report-retrofit/tf3-ch-8.2.8-mdib-report-retrofit.adoc[]
 
 // 8.12
