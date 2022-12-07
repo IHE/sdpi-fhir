@@ -50,7 +50,6 @@ include::../volume2/dev-27/tf2-dev-27-summary.adoc[]
 | [[transaction_name_notify_change_in_system_context_and_capabilities,Notify Change in System Context and Capabilities]] Notify Change in System Context and Capabilities
 |
 include::../volume2/dev-28/tf2-dev-28-summary.adoc[]
-
 .^| [[vol0_transaction_summary_dev_29,DEV-29 Publish BICEPS Update Reports]]
 [[transaction_number_dev_29,DEV-29]] DEV-29
 | [[transaction_name_publish_biceps_update_reports,Publish BICEPS Update Reports]] Publish BICEPS Update Reports
@@ -62,7 +61,6 @@ include::../volume2/dev-29/tf2-dev-29-summary.adoc[]
 | [[transaction_name_retrieve_biceps_contnt,Retrieve BICEPS Content]] Retrieve BICEPS Content
 |
 include::../volume2/dev-30/tf2-dev-30-summary.adoc[]
-
 .^| [[vol0_transaction_summary_dev_31,DEV-31 Set Provider State]]
 [[transaction_number_dev_31,DEV-31]] DEV-31
 | [[transaction_name_set_provider_state,Set Provider State]] Set Provider State
@@ -74,7 +72,6 @@ include::../volume2/dev-30/tf2-dev-30-summary.adoc[]
 | [[transaction_name_retrieve_archive_data,Retrieve Archive Data]] Retrieve Archive Data
 | Deferred to SDPi 1.x
 // include::../volume2/dev-32/tf2-dev-32-summary.adoc[]
-
 .^| [[vol0_transaction_summary_dev_33,DEV-33 Retrieve Localization Information]]
 [[transaction_number_dev_33,DEV-33]] DEV-33
 | [[transaction_name_retrieve_localization_information,Retrieve Localization Information]] Retrieve Localization Information
@@ -86,42 +83,40 @@ include::../volume2/dev-30/tf2-dev-30-summary.adoc[]
 | [[transaction_name_announce_network_departure,Announce Network Departure]] Announce Network Departure
 |
 include::../volume2/dev-34/tf2-dev-34-summary.adoc[]
-
 .^| [[vol0_transaction_summary_dev_35,DEV-35 Establish Medical Data Exchange]]
 [[transaction_number_dev_35,DEV-35]] DEV-35
 | [[transaction_name_establish_medical_data_exchange,Establish Medical Data Exchange]] Establish Medical Data Exchange
-| #TBD#
-// include::../volume2/dev-35/tf2-dev-35-summary.adoc[]
-
+|
+include::../volume2/dev-35/tf2-dev-35-summary.adoc[]
 .^| [[vol0_transaction_summary_dev_36,DEV-36 Publish Medical Data]]
 [[transaction_number_dev_36,DEV-36]] DEV-36
 | [[transaction_name_publish_medical_data,Publish Medical Data]] Publish Medical Data
-| #TBD#
-// include::../volume2/dev-36/tf2-dev-36-summary.adoc[]
-
+|
+include::../volume2/dev-36/tf2-dev-36-summary.adoc[]
 .^| [[vol0_transaction_summary_dev_37,DEV-37 Retrieve Medical Data]]
 [[transaction_number_dev_37,DEV-37]] DEV-37
 | [[transaction_name_retrieve_medical_data,Retrieve Medical Data]] Retrieve Medical Data
-| #TBD#
-// include::../volume2/dev-37/tf2-dev-37-summary.adoc[]
+|
+include::../volume2/dev-37/tf2-dev-37-summary.adoc[]
 
 .^| [[vol0_transaction_summary_dev_38,DEV-38 Establish Medical Alert Exchange]]
 [[transaction_number_dev_38,DEV-38]] DEV-38
 | [[transaction_name_establish_medical_alert_exchange,Establish Medical Alert Exchange]] Establish Medical Alert Exchange
 | #TBD#
 // include::../volume2/dev-38/tf2-dev-38-summary.adoc[]
-
+| *_TBD Summary Description from TF-2_*
 .^| [[vol0_transaction_summary_dev_39,DEV-39 Publish Medical Alert Update]]
 [[transaction_number_dev_39,DEV-39]] DEV-39
 | [[transaction_name_publish_medical_alert_update,Publish Medical Alert Update]] Publish Medical Alert Update
-| #TBD#
-// include::../volume2/dev-39/tf2-dev-39-summary.adoc[]
+|
+include::../volume2/dev-39/tf2-dev-39-summary.adoc[]
 
 .^| [[vol0_transaction_summary_dev_40,DEV-40 Retrieve Medical Alert Status]]
 [[transaction_number_dev_40,DEV-40]] DEV-40
 | [[transaction_name_retrieve_medical_alert_status,Retrieve Medical Alert Status]] Retrieve Medical Alert Status
 | #TBD#
 // include::../volume2/dev-40/tf2-dev-40-summary.adoc[]
+| *_TBD Summary Description from TF-2_*
 
 .^| [[vol0_transaction_summary_dev_41,DEV-41 Manage Medical Alert Delegation]]
 [[transaction_number_dev_41,DEV-41]] DEV-41
@@ -140,7 +135,7 @@ include::../volume2/dev-34/tf2-dev-34-summary.adoc[]
 | [[transaction_name_update_alert_acknowledgement_status,Update Alert Acknowledgement Status]] Update Alert Acknowledgement Status
 | Deferred to SDPi 2.0
 // include::../volume2/dev-43/tf2-dev-43-summary.adoc[]
-
+| *_TBD Summary Description from TF-2_*
 .^| [[vol0_transaction_summary_dev_44,DEV-44 Manage Medical External Control]]
 [[transaction_number_dev_44,DEV-44]] DEV-44
 | [[transaction_name_manage_medical_external_control,Manage Medical External Control]] Manage Medical External Control
@@ -152,8 +147,7 @@ include::../volume2/dev-34/tf2-dev-34-summary.adoc[]
 | [[transaction_name_invoke_medical_control_services,Invoke Medical Control Services]] Invoke Medical Control Services
 | Deferred to SDPi-xC
 // include::../volume2/dev-45/tf2-dev-45-summary.adoc[]
-
-// Transactions 46-50 Reserved for SDPi
+| *_TBD Summary Description from TF-2_*
 .^| DEV-46 | _Reserved_ |
 .^| DEV-47 | _Reserved_ |
 .^| DEV-48 | _Reserved_ |

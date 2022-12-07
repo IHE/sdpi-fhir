@@ -100,7 +100,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | R
 | #DEV TF-2:3.29# <<vol2_clause_dev_29>>
 
-| <<transaction_name_retrieve_biceps_content>>
+| #TODO fix reference: transaction_name_retrieve_biceps_content#
 | Responder
 | O
 | #DEV TF-2:3.30# <<vol2_clause_dev_30>>
@@ -111,11 +111,13 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | Deferred to SDPi-xC
 // <<vol2_clause_dev_31>>
 
+
 | <<transaction_name_retrieve_archive_data>>  (_deferred_)
 | Responder
 | O
 | Deferred to SDPi 1.x
 // <<vol2_clause_dev_32>>
+
 
 | <<transaction_name_retrieve_localization_information>>
 | Responder
@@ -123,10 +125,11 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | Deferred to SDPi 1.x
 // <<vol2_clause_dev_33>>
 
+
 | <<transaction_name_announce_network_departure>>
 | Initiator
 | R
-| #DEV TF-2:3.34# <<vol2_clause_dev_34>>
+| #DEV TF-2:3.34# #TODO insert DEV-34 reference here#
 
 .12+| <<actor_somds_consumer>>
 .^| <<transaction_name_announce_network_presence>>
@@ -150,6 +153,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | Deferred to SDPi 1.x
 // <<vol2_clause_dev_26>>
 
+
 | <<transaction_name_manage_biceps_subscription>>
 | Initiator
 | R
@@ -165,7 +169,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | R
 | #DEV TF-2:3.29# <<vol2_clause_dev_29>>
 
-| <<transaction_name_retrieve_biceps_content>>
+| #TODO fix reference transaction_name_retrieve_biceps_content#
 | Initiator
 | O
 | #DEV TF-2:3.30# <<vol2_clause_dev_30>>
@@ -176,11 +180,13 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | Deferred to SDPi-xC
 // <<vol2_clause_dev_31>>
 
+
 | <<transaction_name_retrieve_archive_data>>  (_deferred_)
 | Initiator
 | O
 | Deferred to SDPi 1.x
 // <<vol2_clause_dev_32>>
+
 
 | <<transaction_name_retrieve_localization_information>>
 | Initiator
@@ -188,10 +194,11 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | Deferred to SDPi 1.x
 // <<vol2_clause_dev_33>>
 
+
 | <<transaction_name_announce_network_departure>>
 | _Receiver_
 | O
-| #DEV TF-2:3.34# <<vol2_clause_dev_34>>
+| #DEV TF-2:3.34# #TODO insert DEV-34 reference here#
 
 | <<actor_somds_connector>>
 | #TODO: TBD HOW TO REPLICATE TRANSACTIONS; ACTOR SUPPORTS ALL PROVIDER & CONSUMER TRANSACTIONS WITH SAME OPTIONALITY#
@@ -341,7 +348,7 @@ include::../plantuml/vol1-figure-sdpi-p-example-sequence-diagram.puml[]
 ===== SOMDS Participant
 Actor Summary Definition:
 [none]
-. A foundational abstract actor that provides the SOA architectural constructs for interoperating in a Service-Oriented Medical Device System (SOMDS) network instance, including information, messaging and dynamic behavior models.   (See <<ieee_11073_10207_2017>>  “PARTICIPANT” definition)
+. A foundational abstract actor that provides the SOA architectural constructs for interoperating in a Service-Oriented Medical Device System (SOMDS) network instance, including information, messaging and dynamic behavior models.   (See <<ref_ieee_11073_10207_2017>>  “PARTICIPANT” definition)
 
 All systems participating in a SOMDS network instance must implement this abstract actor.
 
@@ -352,7 +359,7 @@ See #A.3 Specifying SystemFunctionContribution (SFC) for Plug-and-Trust Interfac
 ===== SOMDS Provider
 Actor Summary Definition:
 [none]
-. A <<actor_somds_participant>> that provides at least one service to the other participant systems.  (See <<ieee_11073_10207_2017>>  “SERVICE PROVIDER” definition)
+. A <<actor_somds_participant>> that provides at least one service to the other participant systems.  (See <<ref_ieee_11073_10207_2017>>  “SERVICE PROVIDER” definition)
 
 Every <<actor_somds_provider>> is paired with (inherits from) the abstract _<<actor_somds_participant>>_ actor.
 
@@ -361,7 +368,7 @@ A system that participates in a SOMDS network instance can include both <<actor_
 ===== SOMDS Consumer
 Actor Summary Definition:
 [none]
-. A <<actor_somds_participant>> that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a <<actor_somds_provider>>. (See <<ieee_11073_10207_2017>>  “SERVICE CONSUMER” and “SERVICE” definitions.)
+. A <<actor_somds_participant>> that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a <<actor_somds_provider>>. (See <<ref_ieee_11073_10207_2017>>  “SERVICE CONSUMER” and “SERVICE” definitions.)
 
 Every <<actor_somds_consumer>> is paired with (inherits from) the abstract _<<actor_somds_participant>>_ actor.
 
@@ -379,7 +386,7 @@ A _<<actor_somds_connector>>_ can implement both <<actor_somds_consumer>> and <<
 In the case of a connector implementing a <<actor_somds_consumer>> actor, it is able to interact with other <<actor_somds_provider>> actors to either obtain information that is then made available to Non-SOMDS Systems or invoke services that are requested from the external Non-SOMDS Systems.
 For example, forwarding patient respiratory rate readings to an external “flow sheet” application or invoking a device’s “pause alert audio” service when a clinician indicates they are responding to a physiological alert condition (e.g., high respiratory rate).
 
-In the case of a connector implementing a <<acronym_somds_provider>> actor, service capabilities for interacting with Non-SOMDS Systems are provided to the other networked <<acronym_somds_consumer>> actors.
+In the case of a connector implementing a <<actor_somds_provider>> actor, service capabilities for interacting with Non-SOMDS Systems are provided to the other networked <<actor_somds_consumer>> actors.
 For example, an application that wants to retrieve patient information from an EHR or check the latest patient laboratory results.
 
 Note that the term “connector” is used to allow for SOMDS interaction with other systems that do not require protocol “gateway” adaptation, but do require a consistent interface to the other participants within a SOMDS environment.
@@ -391,19 +398,19 @@ See related discussion at #DEV TF-3 8.2.8.7  SDC/BICEPS Mapping of SOMDS Connect
 Although the SDPi-P profile _<<actor_somds_connector>>_ actor provides for non-SOMDS _protocol-specific_ adaptors, they establish the foundation for specifying system and application-specific interfaces such as for EHR or decision support systems (e.g., sepsis determination). See #10.4.1.3 Ensuring Time Synchronization#, and #10.4.1.3 Aggregators, Proxies, Sensors# for additional perspectives and concepts on how SOMDS Connectors may be implemented.
 
 _<<actor_somds_connector>>_ system implementations may support multiple protocols where there is one SOMDS-facing participant model or API but with multiple protocols for non-SOMDS system integration.
-For example, a SOMDS “Alert” Gateway would interact with other _<<actor_somds_participant>>s_ in a single consistent way but may support both <<hl7_fhir>> and <<hl7_v2>> protocols for interacting with healthcare enterprise systems.
+For example, a SOMDS “Alert” Gateway would interact with other _<<actor_somds_participant>>s_ in a single consistent way but may support both <<ref_hl7_fhir>> and <<ref_hl7_v2>> protocols for interacting with healthcare enterprise systems.
 
 _<<actor_somds_connector>>_ actors are also utilized in other SDPi profiles for medical device information reporting (#SDPi-R#), alerting (#SDPi-A#) and external control (#SDPi-xC#). See those profile specifications for detailed usage.  In some cases, https://profiles.ihe.net/[IHE profiles] have been defined for supporting integration with Non-SOMDS Systems, such as the V2-based #IHE Devices Device to Enterprise Communication (DEC)# profile, or the #IHE ITI XDS-I# for locating and retrieving images for a specific patient using the #XDS.#b# profile.  In these cases, *_profile-specific_* _<<actor_somds_connector>>_ adaptors may be specified as well.
 
 ===== SOMDS FHIR Gateway
 Actor Summary Definition:
 [none]
-. A _<<actor_somds_connector>>_ that supports use of <<hl7_fhir>> for interoperating with Non-SOMDS Systems.
+. A _<<actor_somds_connector>>_ that supports use of <<ref_hl7_fhir>> for interoperating with Non-SOMDS Systems.
 
 <<actor_somds_fhir_gateway>> actors shall be grouped with (inherit from) the abstract _<<actor_somds_connector>>_ actor.
 They shall implement either a <<actor_somds_provider>> and / or <<actor_somds_consumer>> actor.
 
-The <<actor_somds_fhir_gateway>> actor identifies and specifies the logic necessary for connecting a SOMDS network environment with Non-SOMDS Systems that utilize <<hl7_fhir>> for their interoperability protocol.  Generally, this logic is defined in the HL7 <<hl7_fhir_pocd_ig>>.
+The <<actor_somds_fhir_gateway>> actor identifies and specifies the logic necessary for connecting a SOMDS network environment with Non-SOMDS Systems that utilize <<ref_hl7_fhir>> for their interoperability protocol.  Generally, this logic is defined in the HL7 <<ref_hl7_fhir_pocd_ig>>.
 
 Gateways implementing this actor can support any of the FHIR architectural approaches:  RESTful, messaging, documents, and SOA.
 For example, a <<actor_somds_fhir_gateway>> can utilize a <<actor_somds_consumer>> to retrieve information from other _<<actor_somds_participant>>_ systems, map it into FHIR Bundle resources and forward it on to non-SOMDS systems in a FHIR message.
@@ -416,12 +423,12 @@ The <<actor_somds_fhir_gateway>> can also support SOMDS services invoked by FHIR
 
 Actor Summary Definition:
 [none]
-. A <<actor_somds_connector>> that supports use of <<hl7_v2>> for interoperating with Non-SOMDS Systems.
+. A <<actor_somds_connector>> that supports use of <<ref_hl7_v2>> for interoperating with Non-SOMDS Systems.
 
 <<actor_somds_v2_gateway>> actors shall be grouped with (inherit from) the abstract _<<actor_somds_connector>>_ actor.
 They shall implement either a <<actor_somds_provider>> and / or <<actor_somds_consumer>> actor.
 
-The <<actor_somds_v2_gateway>> actor identifies and specifies the logic necessary for connecting a SOMDS network environment with Non-SOMDS Systems that utilize <<hl7_v2>> for their interoperability protocol.
+The <<actor_somds_v2_gateway>> actor identifies and specifies the logic necessary for connecting a SOMDS network environment with Non-SOMDS Systems that utilize <<ref_hl7_v2>> for their interoperability protocol.
 Since V2 is a message-based protocol, the primary implementation guide logic is defined in the #IHE DEV TF-2# appendices for V2 messaging, such as #Appendix B Common Segment Descriptions# and #Appendix C Common Data Types#.
 The logic for semantic content modules is detailed in #IHE DEV TF-3#, including #8.2.8.3  SDC/BICEPS Relationship to Classic DIM#.
 
@@ -474,7 +481,7 @@ See #10.4.1.5 Smart App Platforms# for additional discussion.
 ===== BICEPS Content Creator
 Actor Summary Definition:
 [none]
-. Provides <<acronym_mdib>> content conformant to <<ieee_11073_10207_2017>> BICEPS specification and for consumption by other <<actor_biceps_content_consumer>> systems.
+. Provides <<acronym_mdib>> content conformant to <<ref_ieee_11073_10207_2017>> BICEPS specification and for consumption by other <<actor_biceps_content_consumer>> systems.
 
 All content created and provided by a <<actor_biceps_content_creator>> shall be conformant to the BICEPS content module specifications in #DEV TF-3 8.2.8.1  SDC/BICEPS Content Module# and related sections.
 
@@ -486,7 +493,7 @@ Typically, this will be a <<actor_somds_provider>> system to a <<actor_somds_con
 ===== BICEPS Content Consumer
 Actor Summary Definition:
 [none]
-. Processes <<acronym_mdib>> information conformant to <<ieee_11073_10207_2017>> BICEPS specifications provided by <<actor_biceps_content_creator>> systems.
+. Processes <<acronym_mdib>> information conformant to <<ref_ieee_11073_10207_2017>> BICEPS specifications provided by <<actor_biceps_content_creator>> systems.
 
 A <<actor_biceps_content_consumer>> actor shall be capable of processing information provided by a <<actor_biceps_content_creator>>, in accordance to the BICEPS content module specifications in #DEV TF-3 8.2.8.1  SDC/BICEPS Content Module# and related sections.
 The supported BICEPS content processing shall include one or more of the options identified for this actor in #Table 10.2-1: SDPi-P – Actors and Options# below.

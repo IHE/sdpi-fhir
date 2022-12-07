@@ -8,14 +8,14 @@
 
 The {var_label_dev_23_message_hello} message is encoded by using {var_uri_ws_discovery_hello}[WS-Discovery Hello].
 
-===== Referenced Standards
+====== Referenced Standards
 
-* <<ws_discovery_2009>> {var_uri_ws_discovery_hello}[Section 4.1 Hello]
-* <<dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
-* <<ieee_11073_20702_2016>>
-* <<ieee_11073_20701_2018>>
+* <<ref_oasis_ws_discovery_2009>>> {var_uri_ws_discovery_hello}[Section 4.1 Hello]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
+* <<ref_ieee_11073_20702_2016>>
+* <<ref_ieee_11073_20701_2018>>
 
-===== Message Outline
+====== Message Outline
 
 .Hello message
 [source#vol2_clause_appendix_a_mdpws_dev_23_hello,xml]
@@ -23,8 +23,38 @@ The {var_label_dev_23_message_hello} message is encoded by using {var_uri_ws_dis
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-23-hello.xml[]
 ----
 
-===== Message Semantics
+====== Message Semantics
 
 `s12:Envelope/s12:Body/wsd:Hello/wsa:EndpointReference/wsa:Address`:: The <<actor_somds_provider>>'s <<payload_dev_23_provider_uid>> as URI.
 `s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes`:: The <<actor_somds_provider>>'s <<payload_dev_23_discovery_scope>> as a list of URIs.
 
+[#vol2_clause_appendix_mdpws_dev_23_recurring_hello]
+====== Recurring Hello
+In addition to the standard trigger events of Hello messages defined in <<vol2_clause_dev_23_message_announce_network_presence_trigger_events>>, recurring Hello messages are needed to decrease the likelihood of missed discovery messages in case of network topology changes during operation, e.g. when operational networks are extended by plugging switches (together) at runtime.
+
+.R2001
+[sdpi_requirement#r2001,sdpi_req_level=shall]
+****
+A <<actor_somds_provider>> shall periodically send Hello messages at random intervals between 60 seconds and 120 seconds.
+
+.Note
+[%collapsible]
+====
+The random interval between 60 seconds and 120 seconds aims to prevent <<actor_somds_provider>>s from congesting the network by sending recurring Hello messages at the same time.
+====
+****
+
+[#vol2_clause_appendix_mdpws_dev_23_hello_message_size]
+====== Hello message size
+In IT networks such as WLAN, messages can get lost or fragmented and data can consequently be delivered in the wrong order, especially with increasing concurrent data traffic caused by an increasing number of <<actor_somds_participant>>s.
+This becomes crucial when connectionless transport protocols like UDP are used.
+<<ref_ieee_11073_20701_2018>> leverages UDP for service discovery and hence suffers from the aforementioned issue.
+To mitigate this, <<actor_somds_provider>>s are advised to create Hello messages of less than the MTU size over UDP, in accordance with the <<ref_oasis_dpws_2009>> requirement R0029.
+
+Moreover, as further mitigation measure, note that <<ref_oasis_soap_over_udp_v1_1>> already defines a non-normative retry and back-off algorithm.
+
+.R2002
+[sdpi_requirement#r2002,sdpi_req_level=should]
+****
+A <<actor_somds_participant>> should implement the retry and back-off algorithm defined in SOAP-over-UDP, Appendix A.
+****

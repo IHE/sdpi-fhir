@@ -31,7 +31,7 @@
 | Organization
 
 |[[term_basic_ice_protocol_specification,Basic ICE Protocol Specification (BICEPS)]] Basic ICE Protocol Specification
-| General reference to the abstract, implementation technology independent SDC components defined in the ISO/IEEE 11073-10207 standard.  (See <<ieee_11073_10207_2017>>7)
+| General reference to the abstract, implementation technology independent SDC components defined in the ISO/IEEE 11073-10207 standard.  (See <<ref_ieee_11073_10207_2017>>7)
 |
 | [[acronym_biceps,BICEPS]] BICEPS
 |
@@ -48,7 +48,7 @@
 | Function or feature intended to be used for one or more specific medical purposes including but not limited to examination, monitoring, or modification of the structure or function of an individual's body; prediction, prevention, diagnosis, prognosis, treatment, or alleviation of a medical condition.
 |
 | [[acronym_cf,CF]] CF
-| <<<<ieee_11073_10700_2022>>>>
+| <<<<ref_ieee_11073_10700_2022>>>>
 | SDC
 
 | [[term_coded_attribute]] Coded Attribute
@@ -76,7 +76,7 @@
 | Environment that combines interoperable heterogeneous POINT-OF-CARE (PoC) MEDICAL DEVICEs and other equipment integrated to create a medical device system for the care of a single high acuity patient.
 |
 | [[acronym_ice,ICE]] ICE
-| <<ieee_11073_20701_2018>>; <<aami_2700_1_2019>>
+| <<ref_ieee_11073_20701_2018>>; <<ref_aami_2700_1_2019>>
 | SDC
 
 | [[term_international_medical_device_regulators_forum,International Medical Device Regulators Forum (IMDRF)]] International Medical Device Regulators Forum
@@ -111,7 +111,7 @@
 | Structured collection of any data objects that are provided by a <<actor_somds_provider>> or <<actor_biceps_content_creator>>, including both descriptive and state information.
 |
 | [[acronym_mdib,MDIB]] MDIB
-| <<ieee_11073_10207_2017>>
+| <<ref_ieee_11073_10207_2017>>
 | SDC
 
 | [[term_medical_device,Medical Device (MD)]] Medical Device
@@ -129,14 +129,14 @@
 |
 
 | [[term_medical_device_lan,Medical Device LAN (MD LAN)]] Medical Device LAN
-| A <<term_local_area_network>> that integrates <<term_medical_device>>s often around a single bedside or care area (e.g., Emergency Department).  For the purposes of the SDPi specifications, <<acronym_md_lan>> refers to an integrated set of devices around a high-acuity point-of-care such as an Operating Room Table or ICU bed.
+| A local area network that integrates <<term_medical_device>>s often around a single bedside or care area (e.g., Emergency Department).  For the purposes of the SDPi specifications, <<acronym_md_lan>> refers to an integrated set of devices around a high-acuity point-of-care such as an Operating Room Table or ICU bed.
 | [[acronym_sdc_lan,SDC LAN]] SDC LAN
 | [[acronym_md_lan,MD LAN]] MD LAN
 |
 |
 
 | [[term_model_based_systems_engineering,Model-Based Systems Engineering (MBSE)]] Model-Based Systems Engineering
-| An approach to systems engineering where a single, highly integrated, executable model is created (often using OMG System's Modeling Language (e.g., <<omg_sysml_2_0_spec>>), to capture all elements, from requirements to system components to Verification & Validation test cases.  This _model-centric_ (*[[acronym_mc,MC]]MC*) specification approach replaces the traditional _document-centric_ approach.
+| An approach to systems engineering where a single, highly integrated, executable model is created (often using OMG System's Modeling Language (e.g., <<ref_omg_sysml_2_0_spec>>), to capture all elements, from requirements to system components to Verification & Validation test cases.  This _model-centric_ (*[[acronym_mc,MC]]MC*) specification approach replaces the traditional _document-centric_ approach.
 | [[acronym_ri_mc_rr,RI+MC+RR]] RI+MC+RR
 | [[acronym_mbse,MBSE]] MBSE
 |
@@ -160,7 +160,7 @@
 | These generally refer to the ISO/IEEE 11073-1070x standards that provide a consensus set of risk control measures aligned with the four core <<acronym_mdi>> functions:  <<term_plug_and_trust>>, reporting, alerting & external control.
 |
 | [[acronym_pkp,PKP]] PKP
-| <<ieee_11073_10700_2022>>
+| <<ref_ieee_11073_10700_2022>>
 | SDC
 
 | [[term_plug_and_trust,Plug-and-Trust (PnT)]] Plug-and-Trust
@@ -216,14 +216,14 @@
 | General name given to the requirements, general and specific, derived by the application of medical device and health software quality standards.
 |
 | [[acronym_ses,SES]] SES
-| <<iso_81001_1_2021>>; <<iec_80001_1_2021>>
+| <<ref_iso_81001_1_2021>>; <<ref_iec_80001_1_2021>>
 |
 
 | [[term_service_oriented_device_connectivity,Service-oriented Device Connectivity (SDC)]] Service-oriented Device Connectivity
 | Application of service-oriented architecture to support healthcare device interoperability.
 |
 | [[acronym_sdc,SDC]] SDC
-| <<ieee_11073_20701_2018>>
+| <<ref_ieee_11073_20701_2018>>
 | SDC
 
 | [[term_service_oriented_device_poc_interoperability,Service-oriented Device Point of Care Interoperability (SDPi)]] Service-oriented Device Point of Care Interoperability
@@ -238,7 +238,7 @@
 implements a service-oriented <<acronym_sdc>> architecture composed of service providers and service consumers.
 |
 | [[acronym_somds,SOMDS]] SOMDS
-| <<ieee_11073_10207_2017>>
+| <<ref_ieee_11073_10207_2017>>
 | SDC
 
 | [[term_smart_alarm_system,Smart Alarm System (SAS)]] Smart Alarm System
@@ -273,7 +273,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | Function of a BICEPS PARTICIPANT that contributes to a <<term_clinical_function>> executed by two or more BICEPS PARTICIPANTs that are part of an SDC SYSTEM.
 |
 | [[acronym_sfc,SFC]] SFC
-| Adapted from <<ieee_11073_10700_2022>>.
+| Adapted from <<ref_ieee_11073_10700_2022>>.
 | SDC
 
 | [[term_time_synchronization_service,Time Synchronization Service (TS Service)]] Time Synchronization Service

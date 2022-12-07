@@ -3,10 +3,10 @@
 NOTE:  This file contains the core Volume 1 specification for the SDPi-xC profile.
 
 // 13.
+[sdpi_offset=13]
 == Service-oriented Device Point-of-care Interoperability – external Control (SDPi-xC) Profile
 
 // 13.1
-[sdpi_offset=1]
 === SDPi-xC Actors, Transactions, and Content Modules
 
 .SDPi-xC Actor Diagram
