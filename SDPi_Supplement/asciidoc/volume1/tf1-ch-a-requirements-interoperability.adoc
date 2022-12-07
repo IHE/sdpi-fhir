@@ -76,7 +76,7 @@ Though this reads well in the standards and the model organizes everything in a 
 To address this <<acronym_ses>> implementation problem, the SDPi profiles:
 
 . Leverage the ISO/IEEE 11073-1070x <<term_participant_key_purposes> standards, which represent a consensus standard for risk management of technologies that are implemented in that left-right gap on the Temple model;
-. <<term_implementation_conformance_statement>> tables from each of these <<acronym_pkp>> standards is included in <<vol1_appendix_b_referenced_standards>> of this specification, with indication as to whether, how and where each requirement is addressed;
+. <<term_implementation_conformance_statement>> tables from each of these <<acronym_pkp>> standards is included in <<vol1_appendix_b_references>> of this specification, with indication as to whether, how and where each requirement is addressed;
 . "Safety, Effectiveness, Security Considerations and Requirements" sections are integrated throughout the profile specifications to link from the <<acronym_pkp>> <<acronym_ics>> table requirements to the satisfying capabilities.
 [none]
 .. Additional non-PKP risk management will also be performed by subject matter experts and formalized in these <<acronym_ses>> Considerations sections, where appropriate.

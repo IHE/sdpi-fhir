@@ -51,7 +51,7 @@ This becomes crucial when connectionless transport protocols like UDP are used.
 <<ref_ieee_11073_20701_2018>> leverages UDP for service discovery and hence suffers from the aforementioned issue.
 To mitigate this, <<actor_somds_provider>>s are advised to create Hello messages of less than the MTU size over UDP, in accordance with the <<ref_oasis_dpws_2009>> requirement R0029.
 
-Moreover, as further mitigation measure, note that <<ref_soap_over_udp_v1_1>> already defines a non-normative retry and back-off algorithm.
+Moreover, as further mitigation measure, note that <<ref_oasis_soap_over_udp_v1_1>> already defines a non-normative retry and back-off algorithm.
 
 .R2002
 [sdpi_requirement#r2002,sdpi_req_level=should]
