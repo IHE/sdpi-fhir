@@ -8,7 +8,23 @@
 [#vol3_clause_sdc_biceps_semantic_content_module]
 ===== SDC/BICEPS Content Module
 
-====== BICEPS Extension Model
+// 8.2.8.2
+===== BICEPS Descriptive Model
+
+// 8.2.8.3
+===== BICEPS Relationship to Classic DIM
+
+// 8.2.8.4
+===== Nomenclature Considerations – Private Extensions & External Systems
+
+// 8.2.8.5
+===== Safety, Effectiveness, Security Content Requirements & Considerations
+
+// 8.2.8.6
+===== BICEPS Conventions for device specialization content modules
+
+// 8.2.8.7
+===== BICEPS Extension Model
 
 IEEE 11073-10207 provides a flexible extension model.
 This enables manufacturers to add information that does not fit into the defined structure.
@@ -36,23 +52,9 @@ include::biceps-content-module/tf3-ch-8.2.2-applicable-productions-specification
 
 include::biceps-content-module/tf3-ch-8.2.2-applicable-attribute-type-codes.adoc[]
 
-// 8.2.8.2
-===== BICEPS Descriptive Model
-
-// 8.2.8.3
-===== BICEPS Relationship to Classic DIM
-
-// 8.2.8.4
-===== Nomenclature Considerations – Private Extensions & External Systems
-
-// 8.2.8.5
-===== Safety, Effectiveness, Security Content Requirements & Considerations
-
-// 8.2.8.6
-===== BICEPS Conventions for device specialization content modules
-
-===== BICEPS Extension Provisions
-
 include::biceps-extension-provisions/tf3-ch-8.2.2-extension-coded-attribute.adoc[]
 
+// 8.2.8.8
+===== BICEPS Sex and Gender Extensions
+// This content will also be referenced from TF-2 Appendix B DEC Gateway
 
