@@ -58,7 +58,7 @@ include::../volume2/dev-29/tf2-dev-29-summary.adoc[]
 
 .^| [[vol0_transaction_summary_dev_30,DEV-30 Retrieve BICEPS Content]]
 [[transaction_number_dev_30,DEV-30]] DEV-30
-| [[transaction_name_retrieve_biceps_contnt,Retrieve BICEPS Content]] Retrieve BICEPS Content
+| [[transaction_name_retrieve_biceps_content,Retrieve BICEPS Content]] Retrieve BICEPS Content
 |
 include::../volume2/dev-30/tf2-dev-30-summary.adoc[]
 .^| [[vol0_transaction_summary_dev_31,DEV-31 Set Provider State]]
