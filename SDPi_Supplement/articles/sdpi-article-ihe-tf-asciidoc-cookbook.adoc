@@ -46,14 +46,14 @@ Name ::= /^[a-z0-9_]+$/
 
 Name:: Custom name that contains small letters, digits and underscores only.
 
-==== Blocks
+==== Identifier prefix
 
-Block Identifiers shall be made up from the following rules:
+Identifiers shall be made up from the following rules:
 
 [source]
 ----
 Volume = 'vol0' | vol1' | 'vol2' | 'vol3'
-ReferenceType ::= 'clause' | 'appendix' | 'listing' | 'figure' | 'table'
+ReferenceType ::= 'clause' | 'appendix' | 'listing' | 'figure' | 'table' | 'example' | 'ref'
 
 BlockIdentifier ::= Volume '_' ReferenceType '_' Name
 ----
@@ -134,7 +134,9 @@ PlantUML diagram target names shall start with `puml` to easily identify any gen
 PlantUmlTarget = 'puml-' Name
 ----
 
-.Example of including a PlantUML diagram. Note the leading `puml-` at the target option.
+.Example of including a PlantUML diagram.
+Note the leading `puml-` at the target option.
+
 ====
 [source,asciidoc]
 ----
@@ -146,6 +148,86 @@ include::../plantuml/vol2-figure-xyz.puml[]
 ....
 ----
 ====
+
+=== SVG Graphics -- PowerPoint to SVG + InkScape
+
+For those graphics that are not PlantUML based, the preferred format is Scalable Vector Graphics (SVG) format.  Since many of content developers utilize Microsoft PowerPoint as their graphics editor of choice, getting from a PowerPoint slide to an SVG file that renders well in AsciiDoc is a bit of a journey.  The following tools and process -- though a bit laborious -- works well and reliably.
+
+==== InkScape SVG Editing Tool
+Before you begin, install the InkScape SVG editing tool.  This open source tool is available for free download at:  https://inkscape.org/release/1.1.2/platforms/ [inkscape.org/release/1.1.2/platforms].
+
+[none]
+* Note:  _Version 1.1.2 should be downloaded at this point due to some feature changes in more recent versions.  This should be rectified in the Q1 2023 update._
+
+When installing, accept the normal "default" configuration options.  Our use of the tool is very basic!
+
+==== PowerPoint to SVG
+The first part of the process is to convert a PowerPoint graphic to SVG format:
+
+. PowerPoint file should have a *_single slide with the graphics_* to be converted.  File should be named according to the file naming conventions (See sdpi-fhir wiki article https://github.com/IHE/sdpi-fhir/wiki/SDPi-File-Organization-Scheme#file-naming-conventions[SDPi File Organization Scheme -- File Naming Conventions]).
+
+.  During development & conversion, maintain the files (.pptx & .svg) in a separate local directory.  Ultimately, they will be moved to the appropriate directories in the github repository (per the above article's conventions)
+
+. For the power point slide:
+
+** Select All objects (e.g., ctrl^a) to make sure only the objects in your graphic are included - delete any other objects on the slide (e.g., transparent boxes that don't render).
+
+** Hide any background graphics:  Design -> Format Background -> select _Hide background graphics_
+
+. Convert to SVG:  File -> Save As -> Scalable Vector Graphics Format (*.svg)
+
+*** Note:  Though there is only one slide per file, select "Just This One" when prompted for "Which slides do you want to export?"
+
+Now you should have an SVG version of the graphic; hopefully in the same directory as the source .pptx file.
+
+==== SVG to Final Cropped Version using InkScape
+When PowerPoint exprts to SVG, it also includes the background area, which will display as a small graphic on a large white background.  To crop the SVG to the final version that will be rendered in the AsciiDoc file, follow the following steps:
+
+. Load the .svg file into InkScape (see above for installing the tool)
+. Delete the background layer:  double click anywhere on the background whitespace, press Del key.
+. Crop the borders to 15 pixels around the graphic:
+** File -> Document Properties -> Page -> _Resize page to content ..._
+** Set Top / Bottom / Left / Right to 15.0
+** Click "_Resize page to drawing or selection_"
+** There should now be a box around the graphic with a 15 pixel border
+. Add a "background box" behind the graphic:
+** From the menu on the left of the tool's window, select the red rectangle ("Create Rectangles and Squares")
+** Draw a box on top of the cropped graphic
+** Change the box to white (click white on the color strip at the bottom of the tool's window)
+** Move the box to behind the graphic:  Object -> Lower to Bottom
+. Save edited SVG file (to your working directory)
+
+==== Move SVG Graphic Files to Repository
+The final step is to move both the source (pptx) and final SVG files from your working folder to the designated folders in the sdpi-fhir repository:
+
+* SVG to SDPi_Supplement/asciidoc/images
+* PPTX to SDPi_Supplement/sources
+
+Check the AsciiDoc source where the graphic is included to ensure that it is properly formatted.
+
+=== PNG & JPG & Other Automatic Image Formats
+
+In general, AsciiDoc automatically handles other image formats based on the file name extension (e.g., myGraphic.png).
+
+[none]
+. Note:  __The following path to the AsciiDoc images folder is due to the fact that this document is in the SDPi_Supplement articles folder. __
+
+[source]
+----
+image::../asciidoc/images/ihe-logo.png[]
+----
+
+Which should render as:
+
+WARNING:  #WHY DOESN'T THIS RENDER CORRECTLY EITHER HERE OR ON THE SUPPLEMENT'S TITLE PAGE?!#
+
+[none]
+. image:../asciidoc/images/ihe-logo.png[]
+
+[none]
+. Note: __ Two colons "::" are needed if the graphic is on a line by itself; if it is in-line with other text, then a single colon ":" should be used.__
+
+Additional information is provided on the https://docs.asciidoctor.org/asciidoc/latest/macros/image-format/[AsciiDoc Specify Image Format] page.  For general file types and formats information, consult the https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types[Mozilla Image File Type and Format Guide].
 
 === Section Numbering Challenges
 
@@ -169,7 +251,6 @@ Many of the IHE Technical Framework Supplement sections include instructions for
 
 For AsciiDoc, this text box is realized by defining a one-cell table, as follows:
 
-====
 [source,asciidoc]
 ----
 [%noheader]
@@ -189,6 +270,61 @@ This would result in the following text:
 |Add the following _*new or modified*_ actors to the IHE Technical Frameworks General Introduction Appendix A
 |===
 
+=== Term & Acronym Definitions and References
+
+Specialized terms and acronyms should be added to the TF-0 Glossary table and referenced appropriately throughout the specification text.  For example, the special term "Participant Key Purposes" and acronmy "PKP" would be added to the glossary table as follows:
+
+
+[source]
+----
+| [[term_participant_key_purposes,Participant Key Purposes (PKP)]] Participant Key Purposes
+| These generally refer to the ISO/IEEE 11073-1070x standards that provide a consensus set of risk control measures aligned with the four core <<acronym_mdi>> functions:  <<term_plug_and_trust>>, reporting, alerting & external control.
+|
+| [[acronym_pkp,PKP]] PKP
+----
+
+Subsequent references in the AsciiDoc specification should utilize "term_" and "acronym_".  If the acronym is only used locally, with in a single section or subsection, then it should be defined there at the outer most level and not formalized in the IHE Glossary.
+
+NOTE:  The IHE TF-0 Appendix D glossary collects specialized (defined) terms used throughout all the IHE domain technical framework specifications.  Any conflicts with other defined terms and acronyms may result in updating to the specifications.
+
+=== Paragraphs - LONG Paragraph Conventions
+Paragraphs with multiple sentences -- which may be deemed "long" by some editors and readers! -- should separate each sentence with a single new-line.
+This will make the AsciiDoc source much more readable without resulting in any format changes when rendered.
+For example:
+
+[source, asciidoc]
+----
+First paragraph - first sentence.
+Second sentence.
+Third sentence.
+
+Second paragraph ...
+----
+
+Would be rendered as:
+[none]
+. First paragraph - first sentence.
+Second sentence.
+Third sentence.
+
+. Second paragraph ...
+
+== IHE Style Guide Conventions
+IHE technical framework specifications follow a set of style conventions and associated templates.  Though this is to some degree in "flux" given the movement to HTML-based specifications, the style conventions in the subsections below help ensure consistency in the IHE DEV SDPi content.
+
+=== Table and Figure Numbering
+
+#TODO:  section-based sequential table numbering + referencing w/ AsciiDoc examples#
+
+=== Bullet List Conventions
+
+#TODO:  Review that the following is agreeable by the SDPi Editors#
+
+For a bulleted list of items, the final "full stop" character of each non-final bullet should be ";" semicolon, with the final bullet ending in a "." period.  For example:
+
+. First bullet;
+. Second bullet;
+. Final Bullet.
 
 == Topics Parking Lot
 

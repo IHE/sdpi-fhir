@@ -1,15 +1,30 @@
-==== SDC/BICEPS semantic content
-
-NOTE:  This file contains the content that profiles BICEPS semantics for use in the SDPi profiles.  It is a compliment to the other general requirements that are in chapter 8.2.
+[#vol3_clause_sdc_biceps_semantic_content]
 
 // 8.2.8
 [sdpi_offset=8]
-==== SDC/BICEPS semantic content
+==== BICEPS semantic content
 
 // 8.2.8.1
+[#vol3_clause_sdc_biceps_semantic_content_module]
 ===== SDC/BICEPS Content Module
 
-====== BICEPS Extension Model
+// 8.2.8.2
+===== BICEPS Descriptive Model
+
+// 8.2.8.3
+===== BICEPS Relationship to Classic DIM
+
+// 8.2.8.4
+===== Nomenclature Considerations – Private Extensions & External Systems
+
+// 8.2.8.5
+===== Safety, Effectiveness, Security Content Requirements & Considerations
+
+// 8.2.8.6
+===== BICEPS Conventions for device specialization content modules
+
+// 8.2.8.7
+===== BICEPS Extension Model
 
 IEEE 11073-10207 provides a flexible extension model.
 This enables manufacturers to add information that does not fit into the defined structure.
@@ -24,8 +39,8 @@ However, the fundamental rules are: Do not use a proprietary extension if the pu
 
 The borders of using extension are given by:
 
-* <<ieee_11073_10207_2017>> Clause 8, especially R0109, and
-* <<ieee_11073_10700_2022>> Clause 6.7
+* <<ref_ieee_11073_10207_2017>> Clause 8, especially R0109, and
+* <<ref_ieee_11073_10700_2022>> Clause 6.7
 
 There are two kinds of extensions, those the <<actor_somds_consumer>> must understand to perform system functions safely with the <<actor_somds_provider>>, and those the <<actor_somds_consumer>> does not have to understand.
 This is indicated by the Boolean attribute `@ext:MustUnderstand`.
@@ -33,18 +48,13 @@ Consequently, a manufacturer of a <<actor_somds_provider>> should be careful def
 
 There are standardized extensions, like those that are specified in the PKP standards or this profile, which can be considered common knowledge and therefore do not break interoperability between different manufacturers.
 
-// 8.2.8.2
-===== SDC/BICEPS Descriptive Model
+include::biceps-content-module/tf3-ch-8.2.2-applicable-productions-specification-type-codes.adoc[]
 
-// 8.2.8.3
-===== SDC/BICEPS Relationship to Classic DIM
+include::biceps-content-module/tf3-ch-8.2.2-applicable-attribute-type-codes.adoc[]
 
-// 8.2.8.4
-===== Nomenclature Considerations – Private Extensions & External Systems
+include::biceps-extension-provisions/tf3-ch-8.2.2-extension-coded-attribute.adoc[]
 
-// 8.2.8.5
-===== Safety, Effectiveness, Security Content Requirements & Considerations
-
-// 8.2.8.6
-===== SDC/BICEPS Conventions for device specialization content modules
+// 8.2.8.8
+===== BICEPS Sex and Gender Extensions
+// This content will also be referenced from TF-2 Appendix B DEC Gateway
 

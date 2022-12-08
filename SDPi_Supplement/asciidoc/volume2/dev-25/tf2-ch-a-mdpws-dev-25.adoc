@@ -1,6 +1,6 @@
 :var_uri_ws_discovery_transfer: https://www.w3.org/Submission/2006/SUBM-WS-Transfer-20060927/#Get
 :var_uri_dpws: http://docs.oasis-open.org/ws-dd/dpws/1.1/os/wsdd-dpws-1.1-spec-os.html#_Toc228672092
-:var_ref_biceps_service_model: <<ieee_11073_10207_2017>> Section 7.3 Service Model
+:var_ref_biceps_service_model: <<ref_ieee_11073_10207_2017>> Section 7.3 Service Model
 :var_uri_namespace_sdc: http://standards.ieee.org/downloads/11073/11073-20701-2018
 
 [#vol2-clause-appendix-mdpws-dev-25]
@@ -12,10 +12,10 @@ The GetMetadata message is encoded by using {var_uri_ws_discovery_transfer}[WS-G
 
 ====== Referenced Standards
 
-* <<ws_transfer_2006>> {var_uri_ws_discovery_transfer}[Section 3.1 Get]
-* <<dpws_2009>> {var_uri_dpws}[Section 4]
-* <<ieee_11073_20702_2016>>
-* <<ieee_11073_20701_2018>>
+* <<ref_wc3_ws_transfer_2006>> {var_uri_ws_discovery_transfer}[Section 3.1 Get]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws}[Section 4]
+* <<ref_ieee_11073_20702_2016>>
+* <<ref_ieee_11073_20701_2018>>
 
 ====== Message Outline
 .GetMetadata message
@@ -33,8 +33,8 @@ The GetMetadataResponse message is encoded by using {var_uri_ws_discovery_transf
 
 ====== Referenced Standards
 
-* <<ws_transfer_2006>> {var_uri_ws_discovery_transfer}[Section 3.1 Get]
-* <<dpws_2009>> {var_uri_dpws}[Section 4]
+* <<ref_wc3_ws_transfer_2006>> {var_uri_ws_discovery_transfer}[Section 3.1 Get]
+* <<ref_oasis_dpws_2009>> {var_uri_dpws}[Section 4]
 
 ====== Message Outline
 .GetMetadataResponse message
@@ -51,7 +51,7 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-25-transfer-response.xm
 
 `s12:Envelope/s12:Body/wsm:Metadata/wsm:MetadataSection/dpws:Relationship/dpws:Hosted/dpws:Types`:: Designates available <<payload_dev_25_get_metadata_biceps_services>> by providing a list of service types that contains at least one or more of the BICEPS services as mapped in <<vol2_table_appendix_mdpws_dev_25_hosted_types>>.
 
-.Filter mapping of BICEPS services to <<property_q_name>>s.
+.Filter mapping of BICEPS services to <<term_q_name>>s.
 [#vol2_table_appendix_mdpws_dev_25_hosted_types, cols="1,2"]
 |===
 |BICEPS service |Web Service XML Schema QName

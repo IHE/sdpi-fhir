@@ -1,15 +1,30 @@
 ===== MSH - Message Header Segment
-The HL7 Message Header (MSH) segment requires a mapping between the SDC MDIB content and the MSH segment fields.
+The HL7 Message Header (MSH) segment requires a mapping between the <<acronym_mdib>> content and the MSH segment fields.
 
-If not differently specified in this section, the MSH segment fields shall be in compliance with the [PCD-01] (DEC gateway) or [PCD-04] (ACM gateway) transaction, retrospectively, as described in the <<ihe_pcd_tf-2_2019>>.
+.R8100
+[sdpi_requirement#r8100,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+If not differently specified in this section, the MSH segment fields shall be in compliance with the [PCD-01] or [PCD-04] transaction, retrospectively, as described in the <<ref_ihe_pcd_tf_2_2019>>.
 
-[NOTE]
+.Notes
+[%collapsible]
 ====
-If the SDC MDIB contains several MDS elements that could operate in different *pm:MdsState/@OperatingMode* states, there shall be a separate [PCD-01] message per MDS.
+NOTE: If the <<acronym_mdib>> contains several MDS elements that could operate in different *pm:MdsState/@OperatingMode* states, there shall be a separate [PCD-01] message per MDS.
 ====
+****
 
 ====== MSH-11 Processing ID
-The MSH-11 field shall contain the code for the processing ID which shall either be *"P"* (Production) or *"D"* (Debugging). The table <<ref_tbl_msh11_mapping>> defines the mapping of the SDC MDS information to the data fields of the HL7 data type *PT* used in the MSH-11 field.
+.R8101
+[sdpi_requirement#r8101,sdpi_req_level=shall,sdpi_max_occurrence=2]
+****
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the MSH-11 field to the code for the processing ID which is either be *"P"* (Production) or *"D"* (Debugging).
+
+.Notes
+[%collapsible]
+====
+NOTE: <<ref_tbl_msh11_mapping>> defines the mapping of the SDC MDS information to the data fields of the HL7 data type *PT* used in the MSH-11 field.
+====
+****
 
 [#ref_tbl_msh11_mapping]
 .MSH-11 Processing ID Mapping
