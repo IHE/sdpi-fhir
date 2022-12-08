@@ -20,7 +20,7 @@ NOTE: Other port types are currently out of scope of this profile and may be add
 .Minimum required port types
 [#vol2_table_appendix_mdpws_service_mapping_port_types,cols="3,1"]
 |===
-|Port Type (as <<term_q_name>>) |BICEPS service <<ieee_11073_10207_2017>>
+|Port Type (as <<term_q_name>>) |BICEPS service <<ref_ieee_11073_10207_2017>>
 
 |{{uri_sdc_port_type}}GetService
 |GET SERVICE
@@ -47,7 +47,7 @@ A <<actor_somds_consumer>> should not request context states by using the `GetCo
 .Notes
 [%collapsible]
 ====
-NOTE: `GetContextStatesByIdentification` and `GetContextStatesByFilter` are insufficiently defined in <<ieee_11073_10207_2017>> and are likely to be obsoleted in a future revision of the specification.
+NOTE: `GetContextStatesByIdentification` and `GetContextStatesByFilter` are insufficiently defined in <<ref_ieee_11073_10207_2017>> and are likely to be obsoleted in a future revision of the specification.
 
 NOTE: A <<actor_somds_consumer>> may retrieve context states by using `GetContextStates` and perform filtering by itself.
 ====
