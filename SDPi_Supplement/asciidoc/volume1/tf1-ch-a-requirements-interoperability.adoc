@@ -52,6 +52,7 @@ Last accessed 2022.10.04.], some general observations will help understand the v
 NOTE:  The implementation of this framework will be extended as the specifications and tooling mature.
 
 // A.2
+[#vol1_appendix_a_integrating_ses]
 === Integrating Safety, Effectiveness & Security Requirements & Considerations
 
 In 2007, a joint effort between ISO/TC 215 and IEC/SC 62A was launched -- Joint Working Group 7 (JWG7) -- to focus on how to apply risk management to medical devices and health information systems and software that needed to interoperate on shared (hospital owned & managed) networking infrastructure.

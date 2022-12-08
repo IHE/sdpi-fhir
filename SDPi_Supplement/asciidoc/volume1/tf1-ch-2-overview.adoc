@@ -6,21 +6,57 @@ NOTE:  This file contains the Volume 1 / Chapter 2 content, including overviews 
 [sdpi_offset=2]
 == Devices Integration Profiles
 
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*: This supplement is being written after the 2019 reorganization of the IHE Patient Care Devices (*PCD*) domain to the IHE Devices (*DEV*) domain.
+It is intended to amend a new IHE DEV Technical Framework (TF), that covers the expanded areas not only of PCD devices (enterprise integration focused), but also Personal Connected Health (*PCH*) devices and Device Point-of-care Interoperability (*DPI*) for device-to-device integration around an acute point-of-care (e.g., operating room table, ICU bed, emergency department bed, etc.).
+As a result of these basic changes in the scope and organization of the IHE DEV domain, some additional TF sections have been proposed to help the community understand how these technical specifications are integrated.  For example,
+
+. Section(s) for General IHE Devices architecture, use contexts, and (4) <<term_participant_key_purposes>> functions -- Connecting, Reporting, Alerting, and Controlling (external)
+. Section addressing "What is a device?" (aligned with a similar topic within the joint IHE-HL7 Gemini project); especially relevant given the differences between <<term_personal_health_device>> and <<term_point_of_care_device>> as well as the increasing prevalence of <<term_software_as_a_medical_device>> applications.  (See https://confluence.hl7.org/x/Iw7xB["Paper:  What is a device?"] for additional background)
+
+These general concepts will help the technical framework reader understand the broader context into which the profile specifications are intended to be implemented.
+
+*REVIEWER QUESTION*:
+
+. Should the sections above be included in an updated IHE DEV TF specification?
+
+. If so, should they be added in this SDPi Supplement or should they be added as a separate CP to the main IHE DEV TF (version 2022 or later)?
+
+{empty} +
+|===
+
 // 2.2
 [sdpi_offset=2]
 === Safety, Effectiveness & Security Considerations and Requirements
+IHE specifications often include sections for "Security Considerations" and "Safety Considerations", capturing both general and specific guidance and requirements for system implementers.
+This supplement extends these two concepts to include a third:  Effectiveness.
+The sections are termed: <<term_safe_effective_secure>> Considerations.
+
+The background for <<acronym_ses>> is discussed in detail in <<vol1_appendix_a_integrating_ses>>; however, in general "<<acronym_ses>>" is used as a reference to the standards encompased (directly and indirectly by reference) in <<term_joint_working_group_7>>, including <<ref_iso_81001_1_2021>> and <<ref_iec_80001_1_2021>>.
+These standards are primarily, though not exclusively, focused on *_risk management of health software_* (including <<acronym_samd>>) *_and medical devices that are deployed on various kinds of infrastructure_*, with a focus to managing three key properties:  *Safety, Effectiveness and Security*.
+Thus the "<<acronym_ses>> Considerations" sections in this supplement are intended to reflect the results of that risk management and to guide those who are tasked with deploying and managing these interoperable solutions during use.
+
+Note that specific requirements from the above mentioned standards, may also be captured in section <<vol1_appendix_b_referenced_standards_conformance>> below.
+Generally, requirements from these standards would be mapped to the appropriate <<acronym_ses>> Considerations sections throughout the specification.
 
 // 2.3
 === Integration Profiles Overview
 
-// 2.x
-
-WARNING:  Need to figure out how to have a specific number vs. ".x"!
+#TODO:  DOES THIS SECTION WITH OPTIONS NEED TO BE DETAILED HERE OR IS IT SUFFICIENT TO HAVE TEMPLATE LANGUAGE POINTING TO THE http://www.ihe.net/Profiles/ PAGE?#
 
 [sdpi_offset=10]
 === Service-oriented Device Point-of-care Interoperability (SDPi) – Overview & Framework
 
-.IHE SDPi Profiles & Foundational Standards
+The Service-oriented Device Point-of-care Interoperability (SDPi) profiles are built upon a foundation of standards and profiles from <<acronym_hl7>>, <<acronym_ieee>>, IHE and other organizations.  An overview of the profiles and their relationships is provided in Figure <<figure_sdpi_profiles_foundational_standards>>:
 
+.IHE SDPi Profiles & Foundational Standards
+[#figure_sdpi_profiles_foundational_standards]
 image::../images/vol1-diagram-sdpi-profiles.svg[align=center]
+
+#TODO:  Introduce core concepts such as -- SoA (graphic with distributed registry), D2D, Plug-and-Trust, PKPs, Gateways, rationale for (4) profiles (functionally and "medical" PKP), use context (high acuity point-of-care = "bed"), ... reference the hanging gardens model in Appendix A; include ICS Appendix B references too#
+
+#TODO:  Include brief purpose & scope statement for each of the four profiles#
 

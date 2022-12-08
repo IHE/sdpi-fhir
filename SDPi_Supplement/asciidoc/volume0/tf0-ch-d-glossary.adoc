@@ -72,6 +72,13 @@
 |
 |
 
+| [[term_institute_of_electrical_and_electronics_engineers,Institute of Electrical and Electronic Engineers (IEEE)]] Institute of Electrical and Electronic Engineers
+| Organization dedicated to advancing innovation and technological excellence for the benefit of humanity, and is the world's largest technical professional society
+|
+| [[acronym_ieee,IEEE]] IEEE
+| https://www.ieee.org/about/ieee-history.html?utm_source=linkslist_text&utm_medium=lp-about&utm_campaign=history[About -- History of IEEE]
+| Organization
+
 | [[term_integratec_clinical_environment,Integrated Clinical Environment (ICE)]] Integrated Clinical Environment
 | Environment that combines interoperable heterogeneous POINT-OF-CARE (PoC) MEDICAL DEVICEs and other equipment integrated to create a medical device system for the care of a single high acuity patient.
 |
@@ -88,9 +95,16 @@
 
 | [[term_international_standards_organization,International Standards Organization (ISO)]] International Standards Organization
 | A globally recognized one-country-one-vote <<acronym_sdo>> that is composed of 100's of technical committees and other groups.
-| ...
+|
 | [[acronym_iso,ISO]] ISO
 | https://www.iso.org/home.html[www.ISO.org]
+| Organization
+
+| [[term_joint_working_group_7,ISO/IEC Joint Working Group 7 (JWG7)]] ISO/IEC Joint Working Group 7
+| A joint standardization group between ISO/TC 215 and IEC/SC 62A focused on the <<term_safe_effective_secure>> health software and health IT systems, including those incorporating medical devices.
+|
+| [[acronym_jwg7,JWG7]] JWG7
+| https://www.iso.org/committee/54960.html[ISO/TC 215 Health Informatics], https://www.iec.ch/dyn/www/f?p=103:29:::::FSP_ORG_ID:1359[IEC SC/62A]
 | Organization
 
 | Local Area Network
@@ -162,6 +176,13 @@
 | [[acronym_pkp,PKP]] PKP
 | <<ref_ieee_11073_10700_2022>>
 | SDC
+
+| [[term_personal_health_device,Personal Health Device (PHD)]] Personal Health Device
+| A healthcare device that is used by individuals for their own personal health purposes.
+|
+| [[acronym_phd,PHD]] PHD
+| #TODO:  ADD 11073 PHD REFERENCES?#
+|
 
 | [[term_plug_and_trust,Plug-and-Trust (PnT)]] Plug-and-Trust
 | The integration of an SES framework and MDI  plug-and-play technology to enable the dynamic establishment of trust between participant systems at the point of connection to a <<acronym_somds>> network.

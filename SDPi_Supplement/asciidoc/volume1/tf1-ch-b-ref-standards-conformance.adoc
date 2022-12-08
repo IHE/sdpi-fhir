@@ -64,6 +64,7 @@ Ultimately, the content of this appendix may be rearranged and even relocated; h
 * [[[ref_wc3_ws_transfer_2006,WC3 Standard, WS-Transfer:2006]]] WC3 Web Services Transfer (WS-Transfer), W3C Standard, 27 September 2006, available at https://www.w3.org/Submission/WS-Transfer/
 
 // Appendix B.x
+[#vol1_appendix_b_referenced_standards_conformance]
 === Referenced Standards Conformance
 
 // Appendix B.x

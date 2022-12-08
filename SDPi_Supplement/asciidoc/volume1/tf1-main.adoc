@@ -1,9 +1,5 @@
 = Volume 1 -- Profiles
 
-#TODO:  SEE EDITORS'S NOTES AND CONTENT THAT MIGHT GO HERE; SYNC WITH DEV TF 2022 ORGANIZATION#
-
-#STOPPED HERE 2022.12.07#
-
 [#vol1_clause_profiles,sdpi_offset=1]
 == Profiles
 
