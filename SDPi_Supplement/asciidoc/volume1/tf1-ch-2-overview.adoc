@@ -23,7 +23,7 @@ These general concepts will help the technical framework reader understand the b
 
 . Should the sections above be included in an updated IHE DEV TF specification?
 
-. If so, should they be added in this SDPi Supplement or should they be added as a separate CP to the main IHE DEV TF (version 2022 or later)?
+. If so, should they be added in this SDPi Supplement or should they be added as a separate Change Proposal to the main IHE DEV TF (version 2022 or later)?
 
 {empty} +
 |===
