@@ -1,25 +1,25 @@
 === SDPi ACM Gateway -- Mapping
 
 ==== Scope
-This chapter defines the mapping from SDC MDIB content as defined in this document and its underlying standards, to IHE Alert Communication Management (ACM) profile messages as defined in the <<ihe_pcd_tf-2_2019>>.
+This chapter defines the mapping from <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Alert Communication Management (ACM) profile messages as defined in the <<ref_ihe_pcd_tf_2_2019>>.
 
-The SDPi gateway actor represents the Alarm Reporter (AR) role of the IHE ACM profile.
+The <<actor_somds_acm_gateway>> represents the Alarm Reporter (AR) role of the IHE ACM profile.
 
-The following sections supplement the IHE ACM profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ihe_pcd_tf-2_2019>> will apply.
+The following sections supplement the IHE ACM profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_pcd_tf_2_2019>> will apply.
 
 ==== Referenced Standards & Profiles
 This section provides an overview about the referenced standards and profiles used in this chapter:
 
-* <<ihe_pcd_tf-2_2019>>
-* <<ieee_11073_10702_202x>>
-* <<ieee_11073_10701_2022>>
-* <<ieee_11073_10700_2022>>
-* <<ieee_11073_10207_2017>>
+* <<ref_ihe_pcd_tf_2_2019>>
+* <<ref_ieee_11073_10702_202x>>
+* <<ref_ieee_11073_10701_2022>>
+* <<ref_ieee_11073_10700_2022>>
+* <<ref_ieee_11073_10207_2017>>
 
 include::tf2-ch-b-gateway-private-mdc-mapping.adoc[]
 
 ==== HL7 Segment Descriptions
-The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ihe_pcd_tf-2_2019>>.
+The following sections refer to the *Appendix B Common Segment Descriptions* of the <<ref_ihe_pcd_tf_2_2019>>.
 
 include::tf2-ch-b-gateway-msh-mapping.adoc[]
 
@@ -31,53 +31,103 @@ include::tf2-ch-b-gateway-pv1-mapping.adoc[]
 The HL7 Observation Request (OBR) segment requires a mapping from the SDC containment tree and metric data to the OBR segment fields.
 
 ====== OBR-2 Placer Order Number
-For the IHE ACM profile, the OBR-2 field shall contain the identifier of the Alarm Reporter (AR) of the IHE ACM gateway (not the individual device identifier). For further information, please refer to the <<ihe_pcd_tf-2_2019>>.
+.R8050
+[sdpi_requirement#r8050,sdpi_req_level=shall]
+****
+For the IHE ACM profile, the <<actor_somds_acm_gateway>> shall set the OBR-2 field to the identifier of the Alarm Reporter (AR) of the IHE ACM gateway (not the individual device identifier).
+
+.Notes
+[%collapsible]
+====
+NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
+====
+****
 
 [#ref_acm_obr3_mapping]
 ====== OBR-3 Filler Order Number
-The OBR-3 field shall contain a unique identifier for the status to the alert indication. The content depends on the state of the alert event:
+.R8051
+[sdpi_requirement#r8051,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall set the OBR-3 field to a unique identifier for the status to the alert indication.
 
-* *Initial alert event announcement message*: the OBR-3/EI-1 field shall contain the unique identifier for the alert event. This identifer shall consist of the *pm:AlertConditionState\@DescriptorHandle*  plus the *SequenceId* plus the *pm:AlertConditionState\@StateVersion* of the state report.
+.Notes
+[%collapsible]
+====
+NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
+====
+****
 
-.Unique Alert Event Identifier
+The content depends on the state of the alert event:
+
+.R8052
+[sdpi_requirement#r8052,sdpi_req_level=shall]
+****
+For the *initial alert event announcement message*, a <<actor_somds_acm_gateway>> shall set the OBR-3/EI-1 field to the unique identifier for the alert event.
+
+.Notes
+[%collapsible]
 ====
-0x5C00009D.ae3170b5-4fd7-43b5-94c6-71b933342ffe.45
+NOTE: This identifer consists of the *pm:AlertConditionState\@DescriptorHandle*  plus the *SequenceId* plus the *pm:AlertConditionState\@StateVersion* of the state report.
+
 ====
+
+.Examples
+[%collapsible]
+====
+Unique Alert Event Identifier:
+
+"0x5C00009D.ae3170b5-4fd7-43b5-94c6-71b933342ffe.45"
+====
+****
 
 #Todo: there shall be an extension with the id in the future#
 
 #Todo: does this has to be unique globally or only per device?#
 
-* *Subsequent alert event messages for the same alert event*: the OBR-3/EI-1 field shall contain the unique identifier for the alert event message that relates to the same alert event as announced in the initial alert event message. This identifier may be defined by the gateway.
+.R8053
+[sdpi_requirement#r8053,sdpi_req_level=shall]
+****
+For the *subsequent alert event messages for the same alert event*, a <<actor_somds_acm_gateway>> shall set the OBR-3/EI-1 field to the unique identifier for the alert event message that relates to the same alert event as announced in the initial alert event message.
 
-.Unique Alert Event Message Identifier
+.Notes
+[%collapsible]
 ====
-bd3170b6-4fd7-43b5-94c6-71b935642fac
+NOTE: This identifier is usually defined by the gateway.
+
 ====
+
+.Examples
+[%collapsible]
+====
+Unique Alert Event Message Identifier:
+
+"bd3170b6-4fd7-43b5-94c6-71b935642fac"
+====
+****
 
 The table <<ref_tbl_acm_obr3_mapping>> defines the mapping of the Alert Event Identifier to the data fields of the HL7 data type *EI* used in the OBR-3 field.
 
 [#ref_tbl_acm_obr3_mapping]
-.OBR-7 Filler Order Number Mapping
+.OBR-3 Filler Order Number Mapping
 |===
 |HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
 
-|OBR-7/EI-1
+|OBR-3/EI-1
 |Entity Identifier
 |
 |Set either to the unique *alert event identifier* or *alert event message identifier*. Please refer to the description above for further information.
 
-|OBR-7/EI-2
+|OBR-3/EI-2
 |Namespace ID
 |
 |Shall be set to the EI-2 field as defined in table <<ref_acm_equipment_id_mapping>>.
 
-|OBR-7/EI-3
+|OBR-3/EI-3
 |Universal ID
 |
 |Shall be set to the EI-3 field as defined in table <<ref_acm_equipment_id_mapping>>.
 
-|OBR-7/EI-4
+|OBR-3/EI-4
 |Universal ID Type
 |
 |Shall be set to the EI-4 field as defined in table <<ref_acm_equipment_id_mapping>>.
@@ -85,19 +135,45 @@ The table <<ref_tbl_acm_obr3_mapping>> defines the mapping of the Alert Event Id
 |===
 
 ====== OBR-4 Universal Service Identifier
-The OBR-4 field shall be set to *"196616\^MDC_EVT_ALARM^MDC"*.
+.R8054
+[sdpi_requirement#r8054,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall set the OBR-4 field to *"196616\^MDC_EVT_ALARM^MDC"*.
+****
 
 ====== OBR-7 Observation Date/Time
-The OBR-7 field shall contain the date & time at which the Alert Reporter (AR) of the IHE ACM gateway created the alert event message to be sent. Please refer to the *Appendix B  B.7.1 OBR Observation Request Segment in ACM Transaction [PCD-04]* of the <<ihe_pcd_tf-2_2019>> further information.
+.R8055
+[sdpi_requirement#r8055,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall set the OBR-7 field to the date & time at which the Alert Reporter (AR) of the IHE ACM gateway created the alert event message to be sent.
+
+.Notes
+[%collapsible]
+====
+NOTE: Please refer to the *Appendix B  B.7.1 OBR Observation Request Segment in ACM Transaction [PCD-04]* of the <<ref_ihe_pcd_tf_2_2019>> for further information.
+====
+
+****
 
 ====== OBR-29 Parent
-The OBR-29 field shall contain the unique alert event identifier of the initial alert event message as defined for the OBR-7 field (please refer to <<ref_tbl_acm_obr3_mapping>> for further information).
+.R8056
+[sdpi_requirement#r8056,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall set the OBR-29 field to the unique alert event identifier of the initial alert event message as defined for the OBR-7 field.
 
-The field shall be left empty for the initial alert event announcement message which shall contain the unique alert event identifier in the OBR-7 field.
+.Notes
+[%collapsible]
+====
+NOTE: Please refer to <<ref_tbl_acm_obr3_mapping>> for further information.
 
-In all subsequent alert event messages, the OBR-29 field shall be set to the initial unique alert event identifier from the OBR-7 field.
+NOTE: The field is left empty for the initial alert event announcement message which contains the unique alert event identifier in the OBR-7 field.
 
-The table <<ref_tbl_acm_obr29_mapping>> defines the mapping of the Alert Event Identifier to the data fields of the HL7 data type *EIP* used in the OBR-29 field.
+NOTE: In all subsequent alert event messages, the OBR-29 field is set to the initial unique alert event identifier from the OBR-7 field.
+
+NOTE: The table <<ref_tbl_acm_obr29_mapping>> defines the mapping of the Alert Event Identifier to the data fields of the HL7 data type *EIP* used in the OBR-29 field.
+====
+
+****
 
 [#ref_tbl_acm_obr29_mapping]
 .OBR-29 Parent Mapping
@@ -132,7 +208,7 @@ The table <<ref_tbl_acm_obr29_mapping>> defines the mapping of the Alert Event I
 |===
 
 ===== OBX - Observation/Result Segment
-The OBX segment is utilized to export seven alert event attributes in the following order as defined in the <<ihe_pcd_tf-2_2019>>:
+The OBX segment is utilized to export seven alert event attributes in the following order as defined in the <<ref_ihe_pcd_tf_2_2019>>:
 
 * Event identification
 * Source identification
@@ -154,12 +230,24 @@ include::tf2-ch-b-gateway-obx18-mapping.adoc[]
 
 [#ref_acm_obx_device_related_mapping]
 ====== Device-related OBX Segments
-The device-related OBX segments shall define the hierarchical relationship of the alert event in the device's containment tree. There might be up to three device-related OBX segments for the MDS, VMD, and CHANNEL dependent on the specific device's containment tree. The general mapping of the device-related OBX segments is defined in table <<ref_tbl_acm_obx_device_related_mapping>>.
+.R8057
+[sdpi_requirement#r8057,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall export device-related OBX segments which define the hierarchical relationship of the alert event in the device's containment tree.
 
-[NOTE]
+.Notes
+[%collapsible]
 ====
+NOTE: There might be up to three device-related OBX segments for the MDS, VMD, and CHANNEL dependent on the specific device's containment tree. The general mapping of the device-related OBX segments is defined in table <<ref_tbl_acm_obx_device_related_mapping>>.
+
+====
+****
+
+.R8058
+[sdpi_requirement#r8058,sdpi_req_level=shall]
+****
 If a private *MDC* code is used for the coding of the SDC device-related element, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
-====
+****
 
 [#ref_tbl_acm_obx_device_related_mapping]
 .OBX Device-related Element Mapping
@@ -169,7 +257,7 @@ If a private *MDC* code is used for the coding of the SDC device-related element
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -208,19 +296,27 @@ Note that this field shall only be set for the MDS and/or the VMD element if app
 
 |===
 
-// todo: need a further level
 [#ref_acm_obs_id_mapping]
+[sdpi_level=+1]
 ====== Observation Identifier Mapping
 include::tf2-ch-b-gateway-obx3-mapping.adoc[]
 
 [NOTE]
 ====
 The Observation Identifier Mapping on metric level is only used for the Source Identification OBX segment (please refer to <<ref_acm_obx_source_id_mapping>> for further information).
-
-For a physiological alert event, the OBX-3 field shall contain the source identifier.
-
-For a technical or advisory alert event, the OBX-5 field shall contain the source identifier.
 ====
+
+.R8059
+[sdpi_requirement#r8059,sdpi_req_level=shall]
+****
+For a physiological alert event, a <<actor_somds_acm_gateway>> shall set the OBX-3 field in the <<ref_acm_obx_source_id_mapping>> to the source identifier.
+****
+
+.R8060
+[sdpi_requirement#r8060,sdpi_req_level=shall]
+****
+For a technical or advisory alert event, a <<actor_somds_acm_gateway>> shall set the OBX-5 field in the <<ref_acm_obx_source_id_mapping>> to the source identifier.
+****
 
 .OBX Device-related Elements Mapping
 ====
@@ -233,12 +329,21 @@ OBX|3||69855\^MDC_DEV_METER_PRESS_BLD_CHAN^MDC|1.1.1.0|||||||X
 
 
 ====== Event Identification OBX Segment
-The Event Identification OBX segment shall identify the alert event.
+.R8061
+[sdpi_requirement#r8061,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall export a Event Identification OBX segment which identifies the alert event.
 
-The mapping differs for physiological alert events and technical/advisory alert events (see also <<ref_tbl_acm_obx_alert_type_mapping>> for further information).
+.Notes
+[%collapsible]
+====
+NOTE: The mapping differs for physiological alert events and technical/advisory alert events (please refer also to <<ref_tbl_acm_obx_alert_type_mapping>> for further information).
 
-// todo: need a further level
+====
+****
+
 [#ref_acm_obx14_event_id_mapping]
+[sdpi_level=+1]
 ====== Date/Time Mapping
 The OBX-14 field of the Event Identification OBX segment shall contain the date/time of the alert event status change. This either applies to a change of the *pm:AlertConditionState* or the *pm:AlertSignalState* of the signals related to the alert condition.
 
@@ -290,7 +395,7 @@ Note that the *pm:AlertConditionState \pm:DeterminationTime* changes only when t
 |===
 
 
-// todo: need a further level
+[sdpi_level=+1]
 ====== Physiological Alerts
 The event identification mapping for a physiological alert is defined in table <<ref_tbl_acm_obx_event_phy_mapping>>.
 
@@ -307,7 +412,7 @@ If a private *MDC* code is used for the coding of the SDC coded element value, t
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -373,7 +478,7 @@ OBX|4|ST|196648\^MDC_EVT_HI^MDC|1.1.1.1.1|**ABPs 119>110||||||R|||20191121102600
 ====
 
 
-// todo: need a further level
+[sdpi_level=+1]
 ====== Technical Alerts
 The event identification mapping for a technical alert is defined in table <<ref_tbl_acm_obx_event_tec_mapping>>.
 
@@ -390,7 +495,7 @@ If a private *MDC* code is used for the coding of the SDC coded element value, t
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -485,7 +590,7 @@ For physiological alert conditions, the alert event usually relates to a metric 
 
 For technical alert conditions, the alert event usually relates to a device-related element such as the MDS, a VMD, a CHANNEL, or METRIC. The *pm:AlertConditionDescriptor/pm:Source* element usually contains the handle to the device-related element. If *pm:Source* is empty, the alert condition relates to the device-related element which is the parent of the alert system to which the alert condition is assigned to.
 
-// todo: need a further level
+[sdpi_level=+1]
 ====== Physiological Alerts
 The source identification for physiological alerts shall be mapped to an OBX segment as defined in <<ref_dec_obx_mapping>>. The gateway shall capture the state of the related metric at the time the alert event occurred.
 
@@ -503,7 +608,7 @@ The OBX-11 Observation Result Status shall be set to *"R"*.
 OBX|5|NM|150037\^MDC_PRESS_BLD_ART_ABP_SYS^MDC|1.1.1.1.2|119|266016\^MDC_DIM_MMHG^MDC|90-110||||R
 ====
 
-// todo: need a further level
+[sdpi_level=+1]
 ====== Technical Alerts
 The source identification mapping for a technical alert is defined in table <<ref_tbl_acm_obx_source_tec_mapping>>.
 
@@ -520,7 +625,7 @@ If a private *MDC* code is used for the coding of the SDC coded element value, t
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -599,7 +704,7 @@ The actual value of the IHE ACM Alert Event Phase attribute depends on a combina
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -704,7 +809,7 @@ The IHE ACM gateway shall only report an inactive alert condition when the alarm
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -790,7 +895,7 @@ The OBX-5 field may contain multiple inactivation states separated by the HL7 me
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -873,7 +978,7 @@ OBX|8|ST|68483\^MDC_ATTR_ALARM_INACTIVATION_STATE^MDC|1.1.1.1.5|enabled||||||R
 
 [#ref_acm_alert_priority_obx_mapping]
 ====== Alert Priority OBX Segment
-The SDC *pm:AlertConditionDescriptor/@Priority* shall be mapped to an IHE ACM Alert Priority OBX segment as defined in the <<ihe_pcd_tf-2_2019>>. In the case of an alert priority escalation or deescalation, the *pm:AlertConditionState/@ActualPriority* is updated with a new priority that differs from the previous *@ActualPriority* in the state or the *@Priority* in the descriptor. In this case, the gateway shall send a new alert event message with the updated priority.  The mapping is defined in table <<ref_tbl_acm_obx_alert_priority_mapping>>.
+The SDC *pm:AlertConditionDescriptor/@Priority* shall be mapped to an IHE ACM Alert Priority OBX segment as defined in the <<ref_ihe_pcd_tf_2_2019>>. In the case of an alert priority escalation or deescalation, the *pm:AlertConditionState/@ActualPriority* is updated with a new priority that differs from the previous *@ActualPriority* in the state or the *@Priority* in the descriptor. In this case, the gateway shall send a new alert event message with the updated priority.  The mapping is defined in table <<ref_tbl_acm_obx_alert_priority_mapping>>.
 
 [#ref_tbl_acm_obx_alert_priority_mapping]
 .OBX Alert Priority Mapping
@@ -883,7 +988,7 @@ The SDC *pm:AlertConditionDescriptor/@Priority* shall be mapped to an IHE ACM Al
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
@@ -963,7 +1068,7 @@ OBX|9|ST|68484\^MDC_ATTR_ALARM_PRIORITY^MDC|1.1.1.1.6|PM||||||R
 ====
 
 ====== Alert Type OBX Segment
-The SDC *pm:AlertConditionDescriptor/@Kind* shall be mapped to an IHE ACM Alert Type OBX segment as defined in the <<ihe_pcd_tf-2_2019>>. The mapping is defined in table <<ref_tbl_acm_obx_alert_type_mapping>>.
+The SDC *pm:AlertConditionDescriptor/@Kind* shall be mapped to an IHE ACM Alert Type OBX segment as defined in the <<ref_ihe_pcd_tf_2_2019>>. The mapping is defined in table <<ref_tbl_acm_obx_alert_type_mapping>>.
 
 [#ref_tbl_acm_obx_alert_type_mapping]
 .OBX Alert Type Mapping
@@ -973,7 +1078,7 @@ The SDC *pm:AlertConditionDescriptor/@Kind* shall be mapped to an IHE ACM Alert 
 |OBX-1
 |Set ID - OBX
 |
-|Please refer to the <<ihe_pcd_tf-2_2019>> *OBX-1 Set ID - OBX* for further information
+|Please refer to the <<ref_ihe_pcd_tf_2_2019>> *OBX-1 Set ID - OBX* for further information
 
 |OBX-2
 |Value Type
