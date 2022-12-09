@@ -11,3 +11,17 @@ NOTE:  This file contains the content that profiles BICEPS semantics for use in 
 [sdpi_offset=17]
 ===== SDC/BICEPS content module
 
+A highly-simplified physiologic monitor example comprised of one blood pressure VMD is represented by the following containment tree:
+
+#TODO: insert a table or a UML diagram of the containment tree that now lives on Javier's desk! It currently contains one (BP) VMD, one (NIBP) Channel underneath and two (NIBP) Metrics underneath. Optionally, Javier might add a Context (with LocationContext underneath) as well as an AlertSystem (hosting an AlertSignal, an AlertCondition, and two LimitAlertConditions).#
+
+The following XML snippet profiles BICEPS semantics in line with the containment tree represented above. The snippet focuses on the descriptive part of the MDIB file and, more specifically, on the VMDs / Channels / Metrics substructure:
+
+.BICEPS MDIB snippet of physiologic monitor describing VMDs / Channels / Metrics
+[source#vol3_clause_sdc_biceps_content_module_physio_monitor_snippet1,xml]
+----
+include::../../listings/vol3_clause_sdc_biceps_content_module_physio_monitor_snippet1.xml[]
+----
+
+
+
