@@ -25,8 +25,9 @@ This profile specifies the <<term_coded_attribute>> extension that allows for a 
 The CodedAttribute XML Schema is available in <<vol3_appendix_a_xml_schemas_coded_attribute>>. <<vol3_example_extension_coded_attribute>> shows an exemplary XML instance of a <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getmdibresponse}>> including the `MDC_ATTR_ID_SOFT` attribute as an additional metadata item.
 
 .MDS with CodedAttribute representing a Soft ID
+[#vol3_example_extension_coded_attribute]
 ====
-[source#vol3_example_extension_coded_attribute,xml]
+[source,xml]
 ----
 include::../../listings/vol3-clause-biceps-content-example-equipment-label.xml[]
 ----
