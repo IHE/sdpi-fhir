@@ -106,6 +106,8 @@ metalanguage - Extended BNF, 15 December 1996, available at https://standards.is
 * [[[ref_omg_sysml_2_0_intro_graphical_model,OMG SysML ^&#174;^ Intro-Graphical Notation 2.0]]]  OMG Systems Modeling Language&#8482;  (SysML^&#174;^), Version 2.0, Introduction to the Graphical Model, Object Management Group (OMG) standard.  Available at https://github.com/Systems-Modeling/SysML-v2-Release/tree/master/doc[github.com/Systems-Modeling/SysML-v2-Release/doc/]
 
 * [[[ref_omg_sysml_2_0_spec,OMG SysML ^&#174;^ 2.0]]]  OMG Systems Modeling Language &#8482; (SysML^&#174;^), Version 2.0, Object Management Group (OMG) specification.  Available at https://github.com/Systems-Modeling/SysML-v2-Release/tree/master/doc[github.com/Systems-Modeling/SysML-v2-Release/doc/]
+* [[[ref_gender_harmony_project, HL7-GENDER]]] HL7 gender harmony project, available at https://confluence.hl7.org/display/VOC/The+Gender+Harmony+Project
+
 
 [bibliography]
 ==== Presentations
