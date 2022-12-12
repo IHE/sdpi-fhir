@@ -24,16 +24,13 @@ This extension can be attached to the pm:PatientDemographicsCoreData/ext:Extensi
 		<xsd:annotation>
 			<xsd:documentation>Type defining the gender information of a patient.
 
-This allows the differentiation between Sex and Gender in a pm:PatientDemographicsCoreData as in HL7 v2 and HL7 FHIR (https://terminology.hl7.org/ValueSet-v2-0001.html).</xsd:documentation>
+This allows the differentiation between Sex and Gender in a pm:PatientDemographicsCoreData as in HL7 FHIR (https://hl7.org/fhir/valueset-administrative-gender.html).</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
-			<xsd:enumeration value="Female"/>
-			<xsd:enumeration value="Male"/>
-			<xsd:enumeration value="Other"/>
-			<xsd:enumeration value="Unknown"/>
-			<xsd:enumeration value="Ambiguous"/>
-			<xsd:enumeration value="Not applicable"/>
-			<xsd:enumeration value="Non-Binary"/>
+			<xsd:enumeration value="male"/>
+			<xsd:enumeration value="female"/>
+			<xsd:enumeration value="other"/>
+			<xsd:enumeration value="unknown"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 </xsd:schema>
