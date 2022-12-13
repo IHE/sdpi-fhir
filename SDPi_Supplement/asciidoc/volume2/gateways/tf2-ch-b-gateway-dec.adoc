@@ -1,7 +1,7 @@
 === SDPi DEC Gateway -- Mapping
 
 ==== Scope
-This chapter defines the mapping from <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Device Enterprise Communication (DEC) profile messages as defined in the <<ref_ihe_pcd_tf_2_2019>>.
+This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Device Enterprise Communication (DEC) profile messages as defined in the <<ref_ihe_pcd_tf_2_2019>>.
 
 The <<actor_somds_dec_gateway>> represents the Device Observation Reporter (DOR) role of the IHE DEC profile.
 
@@ -703,7 +703,7 @@ NOTE: Note that the decimal number needs to be formatted according to the HL7 nu
 .R8026
 [sdpi_requirement#r8026,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall define the range of the alert limits on the metric level, if the *@Handle* of the metric is referenced by a *pm:LimitAlertConditionDescriptor* in the *pm:LimitAlertConditionDescriptor\pm:Source* list, by the format `<Lower Limit> - <Upper Limit>` where
+A <<actor_somds_dec_gateway>> shall define the range of the alert limits on the metric level, if the *@Handle* of the metric is referenced by a *pm:LimitAlertConditionDescriptor* in the *pm:LimitAlertConditionDescriptor/pm:Source* list, by the format `<Lower Limit> - <Upper Limit>` where
 
 * `<Lower Limit>` is set to *pm:LimitAlertConditionDescriptor/pm:MaxLimits/@Lower* and
 * `<Upper Limit>` is set to *pm:LimitAlertConditionDescriptor/pm:MaxLimits/@Upper*

@@ -1,11 +1,11 @@
 === SDPi ACM Gateway -- Mapping
 
 ==== Scope
-This chapter defines the mapping from <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Alert Communication Management (ACM) profile messages as defined in the <<ref_ihe_pcd_tf_2_2019>>.
+This chapter defines the mapping from the <<acronym_mdib>> content as defined in this document and its underlying standards, to IHE Alert Communication Management (ACM) profile messages as defined in the <<ref_ihe_pcd_tf_2_2019>>.
 
 The <<actor_somds_acm_gateway>> represents the Alarm Reporter (AR) role of the IHE ACM profile.
 
-The following sections supplement the IHE ACM profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_pcd_tf_2_2019>> will apply.
+The following sections supplement the IHE ACM profile as appropriate. If there are no supplementing definitions, the definitions as described in the <<ref_ihe_pcd_tf_2_2019>> apply.
 
 ==== Referenced Standards & Profiles
 This section provides an overview about the referenced standards and profiles used in this chapter:
@@ -67,7 +67,7 @@ For the *initial alert event announcement message*, a <<actor_somds_acm_gateway>
 .Notes
 [%collapsible]
 ====
-NOTE: This identifer consists of the *pm:AlertConditionState\@DescriptorHandle*  plus the *SequenceId* plus the *pm:AlertConditionState\@StateVersion* of the state report.
+NOTE: This identifer consists of the *pm:AlertConditionState/@DescriptorHandle*  plus the *SequenceId* plus the *pm:AlertConditionState/@StateVersion* of the state report.
 
 ====
 
@@ -296,8 +296,7 @@ Note that this field shall only be set for the MDS and/or the VMD element if app
 
 |===
 
-[#ref_acm_obs_id_mapping]
-[sdpi_level=+1]
+[#ref_acm_obs_id_mapping,sdpi_level=+1]
 ====== Observation Identifier Mapping
 include::tf2-ch-b-gateway-obx3-mapping.adoc[]
 
@@ -342,25 +341,32 @@ NOTE: The mapping differs for physiological alert events and technical/advisory 
 ====
 ****
 
-[#ref_acm_obx14_event_id_mapping]
-[sdpi_level=+1]
+[#ref_acm_obx14_event_id_mapping,sdpi_level=+1]
 ====== Date/Time Mapping
-The OBX-14 field of the Event Identification OBX segment shall contain the date/time of the alert event status change. This either applies to a change of the *pm:AlertConditionState* or the *pm:AlertSignalState* of the signals related to the alert condition.
+.R8062
+[sdpi_requirement#r8062,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall set the OBX-14 field of the Event Identification OBX segment to the date/time of the alert event status change.
 
-The date/time to be set in the OBX-14 field relates to the alert event phase. Table <<ref_tbl_acm_obx14_alert_phase_mapping>> defines the date/time mapping per alert event phase.
+.Notes
+[%collapsible]
+====
+NOTE: This either applies to a change of the *pm:AlertConditionState* or the *pm:AlertSignalState* of the signals related to the alert condition.
 
-[NOTE]
+NOTE: The date/time to be set in the OBX-14 field relates to the alert event phase. Table <<ref_tbl_acm_obx14_alert_phase_mapping>> defines the date/time mapping per alert event phase.
+
+NOTE: The HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (please refer to <<ref_expl_dt_mapping>> for further information).
+
 ====
-The HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
-====
+****
 
 [#ref_tbl_acm_obx14_alert_phase_mapping]
 .Date/Time Alert Event Phase Mapping
 |===
-|IHE ACM Alert Event Phase |SDC Alert Condition\Signal State
+|IHE ACM Alert Event Phase |SDC Alert Condition/Signal State
 
 |start
-|*pm:AlertConditionState \pm:DeterminationTime* which shall represent the alert onset date/time.
+|*pm:AlertConditionState /pm:DeterminationTime* which shall represent the alert onset date/time.
 
 |continue
 |The gateway may resend the unchanged alert event information, for example, on a regular basis in order to mitigate the risk of an alert message loss, or after a reconnection to the Alert Manager or Alert Consumer in order to synchronize the current alert status. In this case, the date/time is determined by the gateway for this message.
@@ -368,29 +374,29 @@ The HL7 date & time format differs from the xsd date/time formats and requires a
 
 
 |end
-|*pm:AlertConditionState \pm:DeterminationTime* which shall represent the end of the alert condition without latching.
+|*pm:AlertConditionState /pm:DeterminationTime* which shall represent the end of the alert condition without latching.
 
 |update
-|*pm:AlertConditionState \pm:DeterminationTime* or *pm:AlertSignalState \pm:DeterminationTime* for any updates/changes to be reported but does not match any other Alert Event Phase mapping criteria.
+|*pm:AlertConditionState /pm:DeterminationTime* or *pm:AlertSignalState /pm:DeterminationTime* for any updates/changes to be reported but does not match any other Alert Event Phase mapping criteria.
 
-Note that the *pm:AlertConditionState \pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
+Note that the *pm:AlertConditionState /pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
 
 |escalate
-|*pm:AlertConditionState \pm:DeterminationTime* which shall represent the change of the alert priority.
+|*pm:AlertConditionState /pm:DeterminationTime* which shall represent the change of the alert priority.
 
 Note that when there are more changes than just the Alert Priority, the Alert Event Phase shall be reported as *"update"*.
 
-Note that the *pm:AlertConditionState \pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
+Note that the *pm:AlertConditionState /pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
 
 |deescalate
-|*pm:AlertConditionState \pm:DeterminationTime* which shall represent the change of the alert priority.
+|*pm:AlertConditionState /pm:DeterminationTime* which shall represent the change of the alert priority.
 
 Note that when there are more changes than just the Alert Priority, the Alert Event Phase shall be reported as *"update"*.
 
-Note that the *pm:AlertConditionState \pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
+Note that the *pm:AlertConditionState /pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
 
 |reset
-|*pm:AlertSignalState \pm:DeterminationTime* which shall represent the end of a latched alert event state.
+|*pm:AlertSignalState /pm:DeterminationTime* which shall represent the end of a latched alert event state.
 
 |===
 
@@ -399,10 +405,11 @@ Note that the *pm:AlertConditionState \pm:DeterminationTime* changes only when t
 ====== Physiological Alerts
 The event identification mapping for a physiological alert is defined in table <<ref_tbl_acm_obx_event_phy_mapping>>.
 
-[NOTE]
-====
+.R8063
+[sdpi_requirement#r8063,sdpi_req_level=shall]
+****
 If a private *MDC* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
-====
+****
 
 [#ref_tbl_acm_obx_event_phy_mapping]
 .OBX Event Identification Mapping - Physiological Alert Event
@@ -482,10 +489,11 @@ OBX|4|ST|196648\^MDC_EVT_HI^MDC|1.1.1.1.1|**ABPs 119>110||||||R|||20191121102600
 ====== Technical Alerts
 The event identification mapping for a technical alert is defined in table <<ref_tbl_acm_obx_event_tec_mapping>>.
 
-[NOTE]
-====
+.R8064
+[sdpi_requirement#r8064,sdpi_req_level=shall]
+****
 If a private *MDC* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
-====
+****
 
 [#ref_tbl_acm_obx_event_tec_mapping]
 .OBX Event Identification Mapping - Technical Alert Event
@@ -582,26 +590,47 @@ OBX|4|CWE|196616\^MDC_EVT_ALARM^MDC|1.1.1.1.1|196882\^MDC_EVT_LEADS_OFF^MDC^^^^^
 
 [#ref_acm_obx_source_id_mapping]
 ====== Source Identification OBX Segment
-The Source Identification OBX segment shall identify the source that led to the alert event.
+.R8065
+[sdpi_requirement#r8065,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall export a Source Identification OBX segment which identifies the source that led to the alert event.
 
-The mapping differs for physiological alert events and technical/advisory alert events (see also <<ref_tbl_acm_obx_alert_type_mapping>> for further information).
+.Notes
+[%collapsible]
+====
+NOTE: The mapping differs for physiological alert events and technical/advisory alert events (refer to <<ref_tbl_acm_obx_alert_type_mapping>> for further information).
 
-For physiological alert conditions, the alert event usually relates to a metric and its corresponding value that triggered the alert event. The *pm:AlertConditionDescriptor/pm:Source* element shall contain the handle to the related metric for the alert condition.
+NOTE: For physiological alert conditions, the alert event usually relates to a metric and its corresponding value that triggered the alert event. The *pm:AlertConditionDescriptor/pm:Source* element contains the handle to the related metric for the alert condition.
 
-For technical alert conditions, the alert event usually relates to a device-related element such as the MDS, a VMD, a CHANNEL, or METRIC. The *pm:AlertConditionDescriptor/pm:Source* element usually contains the handle to the device-related element. If *pm:Source* is empty, the alert condition relates to the device-related element which is the parent of the alert system to which the alert condition is assigned to.
+NOTE: For technical alert conditions, the alert event usually relates to a device-related element such as the MDS, a VMD, a CHANNEL, or METRIC. The *pm:AlertConditionDescriptor/pm:Source* element usually contains the handle to the device-related element. If *pm:Source* is empty, the alert condition relates to the device-related element which is the parent of the alert system to which the alert condition is assigned to.
+====
+****
 
 [sdpi_level=+1]
 ====== Physiological Alerts
-The source identification for physiological alerts shall be mapped to an OBX segment as defined in <<ref_dec_obx_mapping>>. The gateway shall capture the state of the related metric at the time the alert event occurred.
+.R8066
+[sdpi_requirement#r8066,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall map the source identification for physiological alerts to an OBX segment as defined in <<ref_dec_obx_mapping>>. The gateway captures the state of the related metric at the time the alert event occurred.
 
-[NOTE]
+.Notes
+[%collapsible]
 ====
-In SDC, the metric value that led to the physiological alert event is required to be reported in a state update before the *pm:AlertConditionState* update is reported. That is, the latest state of the metric related to the alert condition contains the value that led to the alert event when the *pm:AlertConditionState/@Presence* changed from *"false"* to *"true"*.
+NOTE: In SDC, the metric value that led to the physiological alert event is required to be reported in a state update before the *pm:AlertConditionState* update is reported. That is, the latest state of the metric related to the alert condition contains the value that led to the alert event when the *pm:AlertConditionState/@Presence* changed from *"false"* to *"true"*.
 ====
+****
 
-The OBX-4 Observation Sub-ID shall be set to *"<MDS>.<VMD>.<CHAN>.<METRIC>.2"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device’s containment tree levels assigned by the gateway.
+.R8067
+[sdpi_requirement#r8067,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall set the OBX-4 Observation Sub-ID to *"<MDS>.<VMD>.<CHAN>.<METRIC>.2"* where *<MDS>*, *<VMD>*, *<CHAN>*, and *<METRIC>* are the numbers of the device’s containment tree levels assigned by the gateway.
+****
 
-The OBX-11 Observation Result Status shall be set to *"R"*.
+.R8068
+[sdpi_requirement#r8068,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall set the OBX-11 Observation Result Status to *"R"*.
+****
 
 .OBX Source Identification Mapping - Pysiological Alert Event
 ====
@@ -612,10 +641,11 @@ OBX|5|NM|150037\^MDC_PRESS_BLD_ART_ABP_SYS^MDC|1.1.1.1.2|119|266016\^MDC_DIM_MMH
 ====== Technical Alerts
 The source identification mapping for a technical alert is defined in table <<ref_tbl_acm_obx_source_tec_mapping>>.
 
-[NOTE]
-====
+.R8069
+[sdpi_requirement#r8069,sdpi_req_level=shall]
+****
 If a private *MDC* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
-====
+****
 
 [#ref_tbl_acm_obx_source_tec_mapping]
 .OBX Source Identification Mapping - Technical Alert Event
@@ -694,7 +724,27 @@ OBX|5|CWE|68480\^MDC_ATTR_ALERT_SOURCE^MDC|1.1.1.1.2|131328\^MDC_ECG_ELEC_POTL^M
 
 
 ====== Event Phase OBX Segment
-The actual value of the IHE ACM Alert Event Phase attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_phase_mapping>>.
+.R8070
+[sdpi_requirement#r8070,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall export an Event Phase OBX segment which identifies the alert event phase.
+
+.Notes
+[%collapsible]
+====
+NOTE: The actual value of the IHE ACM Alert Event Phase attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_phase_mapping>>.
+
+NOTE: All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_phase_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
+
+NOTE: Unless the *pm:AlertConditionState/@ActivationState* is set to *"On"*, the *pm:AlertConditionState/@Presence* is always set to *"false"*; that is, the gateway will not export any IHE ACM alert event messages.
+====
+
+.Examples
+[%collapsible]
+====
+OBX|6|ST|68481\^MDC_ATTR_EVENT_PHASE^MDC|1.1.1.1.3|start||||||R
+====
+****
 
 [#ref_tbl_acm_obx_alert_phase_mapping]
 .OBX Alert Event Phase Mapping
@@ -744,20 +794,13 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |===
 
-[NOTE]
-====
-Alle *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_phase_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
-
-Unless the *pm:AlertConditionState\@ActivationState* is set to *"On"*, the *pm:AlertConditionState\@Presence* shall always be set to *"false"*; that is, the gateway shall not export any IHE ACM alert event messages.
-====
-
 [#ref_tbl_alert_phase_mapping]
 .Alert Event Phase Mapping
 |===
-|IHE ACM Alert Event Phase |SDC Alert Condition\Signal State
+|IHE ACM Alert Event Phase |SDC Alert Condition/Signal State
 
 |start
-|*pm:AlertConditionState\@Presence* transitioned from *"false"* to *"true"* indicating the start of a new alert event.
+|*pm:AlertConditionState/@Presence* transitioned from *"false"* to *"true"* indicating the start of a new alert event.
 
 |continue
 |The gateway may resend the unchanged alert event information, for example, on a regular basis in order to mitigate the risk of an alert message loss, or after a reconnection to the Alert Manager or Alert Consumer in order to synchronize the current alert status.
@@ -765,7 +808,7 @@ Unless the *pm:AlertConditionState\@ActivationState* is set to *"On"*, the *pm:A
 Note that the <<ref_acm_obr3_mapping>> has to be updated with a new identification number.
 
 |end
-|*pm:AlertConditionState\@Presence* transitioned from *"true"* to *"false"* AND none of the *pm:AlertSignalState* elements with *@ActivationState* set to *"On"* have *@Presence* set to *"Latch"*. This state ends the current alert event for this condition.
+|*pm:AlertConditionState/@Presence* transitioned from *"true"* to *"false"* AND none of the *pm:AlertSignalState* elements with *@ActivationState* set to *"On"* have *@Presence* set to *"Latch"*. This state ends the current alert event for this condition.
 
 Note that for latching alert signals, the Alert State (see also <<ref_tbl_alert_state_mapping>>) transitioned from *"Active"* to *"Latched"*. In this case, the Alert Event Phase shall be reported as *"update"*.
 
@@ -783,23 +826,39 @@ Note that when there are more changes than just the Alert Priority, the Alert Ev
 Note that when there are more changes than just the Alert Priority, the Alert Event Phase shall be reported as *"update"*.
 
 |reset
-|*pm:AlertConditionState\@Presence* is set to *"false"* AND
+|*pm:AlertConditionState/@Presence* is set to *"false"* AND
 all the *pm:AlertSignalState* elements with *@ActivationState* set to *"On"* transitioned from *@Presence* set to *"Latch"* to *@Presence* set to *"Off"* or *"Ack"*. This state ends the current alert event for this condition.
 
 |===
 
-.OBX Alert Event Phase Mapping
-====
-OBX|6|ST|68481\^MDC_ATTR_EVENT_PHASE^MDC|1.1.1.1.3|start||||||R
-====
-
 ====== Alert State OBX Segment
-The actual value of the IHE ACM Alert State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_state_mapping>>.
+.R8071
+[sdpi_requirement#r8071,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall export an Alert State OBX segment which defines the current state of the alert event.
 
-[NOTE]
+.Notes
+[%collapsible]
 ====
-The IHE ACM gateway shall only report an inactive alert condition when the alarm condition transitioned from active or latched to inactive.
+NOTE: The actual value of the IHE ACM Alert State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_state_mapping>>.
+
+NOTE: All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_phase_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
+
+NOTE: Unless the *pm:AlertConditionState/@ActivationState* is set to *"On"*, the *pm:AlertConditionState/@Presence* is always set to *"false"*; that is, the gateway will not export any IHE ACM alert event messages.
 ====
+
+.Examples
+[%collapsible]
+====
+OBX|7|ST|68482\^MDC_ATTR_ALARM_STATE^MDC|1.1.1.1.4|active||||||R
+====
+****
+
+.R8072
+[sdpi_requirement#r8072,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall only report an inactive alert condition when the alarm condition transitioned from active or latched to inactive.
+****
 
 [#ref_tbl_acm_obx_alert_state_mapping]
 .OBX Alert State Mapping
@@ -849,43 +908,48 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |===
 
-[NOTE]
-====
-Alle *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_state_mapping>> and needed to determine the actual alert state, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
-
-Unless the *pm:AlertConditionState\@ActivationState* is set to *"On"*, the *pm:AlertConditionState\@Presence* shall always be set to *"false"*; that is, the gateway shall not export any IHE ACM alert event messages.
-====
-
 [#ref_tbl_alert_state_mapping]
 .Alert State Mapping
 |===
-|IHE ACM Alert State |SDC Alert Condition\Signal State
+|IHE ACM Alert State |SDC Alert Condition/Signal State
 
 |Active
-|*pm:AlertConditionState\@Presence* is set to *"true"*
+|*pm:AlertConditionState/@Presence* is set to *"true"*
 
 |Inactive
-|*pm:AlertConditionState\@Presence* is set to *"false"* AND
+|*pm:AlertConditionState/@Presence* is set to *"false"* AND
 none of the *pm:AlertSignalState* elements with *@ActivationState* set to *"On"* have *@Presence* set to *"Latch"*
 
 |Latched
-|*pm:AlertConditionState\@Presence* is set to *"false"* AND
+|*pm:AlertConditionState/@Presence* is set to *"false"* AND
 at least one of the *pm:AlertSignalState* elements with *@ActivationState* set to *"On"* and *@Presence* set to *"Latch"*
 
 |===
 
-.OBX Alert State Mapping
-====
-OBX|7|ST|68482\^MDC_ATTR_ALARM_STATE^MDC|1.1.1.1.4|active||||||R
-====
-
 ====== Inactivation State OBX Segment
-The actual value of the IHE ACM Alert Inactivation State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_inactivation_state_mapping>>.
+.R8073
+[sdpi_requirement#r8073,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall export an Inactivation State OBX segment which defines the current inactivation state of the alert event.
 
-[NOTE]
+.Notes
+[%collapsible]
 ====
-The OBX-5 field may contain multiple inactivation states separated by the HL7 message 'repeating field' character (usually '~'). Example: *"audio-off~alert-acknowledged"*
+NOTE: The actual value of the IHE ACM Alert Inactivation State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_inactivation_state_mapping>>.
+
+NOTE: The OBX-5 field can contain multiple inactivation states separated by the HL7 message 'repeating field' character (usually '~'). Example: *"audio-off~alert-acknowledged"*
+
+NOTE: All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_phase_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
+
+NOTE: Unless the *pm:AlertConditionState/@ActivationState* is set to *"On"*, the *pm:AlertConditionState/@Presence* is always set to *"false"*; that is, the gateway will not export any IHE ACM alert event messages.
 ====
+
+.Examples
+[%collapsible]
+====
+OBX|8|ST|68483\^MDC_ATTR_ALARM_INACTIVATION_STATE^MDC|1.1.1.1.5|enabled||||||R
+====
+****
 
 [#ref_tbl_acm_obx_inactivation_state_mapping]
 .OBX Inactivation State Mapping
@@ -935,35 +999,28 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |===
 
-[NOTE]
-====
-Alle *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_inactivation_state_mapping>> and needed to determine the actual inactivation state, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
-
-Unless the *pm:AlertConditionState\@ActivationState* is set to *"On"*, the *pm:AlertConditionState\@Presence* shall always be set to *"false"*; that is, the gateway shall not export any IHE ACM alert event messages.
-====
-
 [#ref_tbl_alert_inactivation_state_mapping]
 .Alert Inactivation State Mapping
 |===
-|IHE ACM Inactivation State |SDC Alert Condition\Signal State
+|IHE ACM Inactivation State |SDC Alert Condition/Signal State
 
 |enabled
 |Default inactivation state when not overridden by one of the states below.
 
 |audio-paused
-|*pm:AlertConditionState\@Presence* set to  *"true"* AND
+|*pm:AlertConditionState/@Presence* set to  *"true"* AND
 only the *pm:AlertSignalState* element with the *pm:AlertSignalDescriptor/@Manifestation* set to *"Aud"* has its  *@ActivationState* set to *"Psd"*
 
 |audio-off
-|*pm:AlertConditionState\@Presence* set to  *"true"* AND
+|*pm:AlertConditionState/@Presence* set to  *"true"* AND
 only the *pm:AlertSignalState* element with the *pm:AlertSignalDescriptor/@Manifestation* set to *"Aud"* has its  *@ActivationState* set to *"Off"* OR *@ActivationState* set to *"On"* and *@Presence* set to *"Off"* or *"Ack"*
 
 |alarm-paused
-|*pm:AlertConditionState\@Presence* set to  *"true"* AND
+|*pm:AlertConditionState/@Presence* set to  *"true"* AND
 all *pm:AlertSignalState* elements have their *@ActivationState* set to *"Psd"*
 
 |alarm-off
-|*pm:AlertConditionState\@Presence* set to  *"true"* AND
+|*pm:AlertConditionState/@Presence* set to  *"true"* AND
 all *pm:AlertSignalState* elements have their *@ActivationState* set to *"Off"* OR have their *@ActivationState* set to *"On"* and *@Presence* set to *"Off"*
 
 |alert-acknowledged
@@ -971,14 +1028,34 @@ all *pm:AlertSignalState* elements have their *@ActivationState* set to *"Off"* 
 
 |===
 
-.OBX Inactivation State Mapping
-====
-OBX|8|ST|68483\^MDC_ATTR_ALARM_INACTIVATION_STATE^MDC|1.1.1.1.5|enabled||||||R
-====
-
 [#ref_acm_alert_priority_obx_mapping]
 ====== Alert Priority OBX Segment
-The SDC *pm:AlertConditionDescriptor/@Priority* shall be mapped to an IHE ACM Alert Priority OBX segment as defined in the <<ref_ihe_pcd_tf_2_2019>>. In the case of an alert priority escalation or deescalation, the *pm:AlertConditionState/@ActualPriority* is updated with a new priority that differs from the previous *@ActualPriority* in the state or the *@Priority* in the descriptor. In this case, the gateway shall send a new alert event message with the updated priority.  The mapping is defined in table <<ref_tbl_acm_obx_alert_priority_mapping>>.
+.R8074
+[sdpi_requirement#r8074,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Priority* attribute to an IHE ACM Alert Priority OBX segment as defined in the <<ref_ihe_pcd_tf_2_2019>>.
+
+.Notes
+[%collapsible]
+====
+NOTE: The mapping is defined in table <<ref_tbl_acm_obx_alert_priority_mapping>>.
+
+====
+
+.Examples
+[%collapsible]
+====
+OBX|9|ST|68484\^MDC_ATTR_ALARM_PRIORITY^MDC|1.1.1.1.6|PM||||||R
+====
+****
+
+.R8075
+[sdpi_requirement#r8075,sdpi_req_level=shall]
+****
+In the case of an alert priority escalation or deescalation, the *pm:AlertConditionState/@ActualPriority* is updated with a new priority that differs from the previous *@ActualPriority* in the state or the *@Priority* in the descriptor.
+
+In this case, the gateway shall send a new alert event message with the updated priority.
+****
 
 [#ref_tbl_acm_obx_alert_priority_mapping]
 .OBX Alert Priority Mapping
@@ -1062,13 +1139,24 @@ pm:AlertConditionDescriptor
 
 |===
 
-.OBX Alert Priority Mapping
+====== Alert Type OBX Segment
+.R8076
+[sdpi_requirement#r8076,sdpi_req_level=shall]
+****
+A <<actor_somds_acm_gateway>> shall map the SDC *pm:AlertConditionDescriptor/@Kind* to an IHE ACM Alert Type OBX segment as defined in the <<ref_ihe_pcd_tf_2_2019>>.
+
+.Notes
+[%collapsible]
 ====
-OBX|9|ST|68484\^MDC_ATTR_ALARM_PRIORITY^MDC|1.1.1.1.6|PM||||||R
+NOTE: The mapping is defined in table <<ref_tbl_acm_obx_alert_type_mapping>>.
 ====
 
-====== Alert Type OBX Segment
-The SDC *pm:AlertConditionDescriptor/@Kind* shall be mapped to an IHE ACM Alert Type OBX segment as defined in the <<ref_ihe_pcd_tf_2_2019>>. The mapping is defined in table <<ref_tbl_acm_obx_alert_type_mapping>>.
+.Examples
+[%collapsible]
+====
+OBX|10|ST|68485\^MDC_ATTR_ALERT_TYPE^MDC|1.1.1.1.7|ST||||||R
+====
+****
 
 [#ref_tbl_acm_obx_alert_type_mapping]
 .OBX Alert Type Mapping
@@ -1141,11 +1229,6 @@ advisory condition.
 |Alert is Advisory
 
 |===
-
-.OBX Alert Type Mapping
-====
-OBX|10|ST|68485\^MDC_ATTR_ALERT_TYPE^MDC|1.1.1.1.7|ST||||||R
-====
 
 ===== PRT - Participation Information Segment
 The PRT segment is optional for the [PCD-04] transaction and currently not supported by the ACM gateway actor.
