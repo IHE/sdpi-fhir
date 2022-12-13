@@ -20,7 +20,7 @@
                 <pm:Identification Root="http://www.sdpi.org" Extension="SamplePatientId123"/>
                 <pm:CoreData>
                     <ext:Extension>
-                        <sdpi:Gender>other</sdpi:Gender>
+                        <sdpi:Gender>Other</sdpi:Gender>
                     </ext:Extension>
                     <pm:Givenname>John</pm:Givenname>
                     <pm:Middlename>Donnelly</pm:Middlename>

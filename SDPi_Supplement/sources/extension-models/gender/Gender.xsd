@@ -7,7 +7,7 @@
 	<!--Gender-->
 	<xsd:element name="Gender">
 		<xsd:annotation>
-			<xsd:documentation>An extension to qualify the adminstrative gender for patients in BICEPS.
+			<xsd:documentation>An extension to qualify the administrative gender for patients in BICEPS.
 
 This extension can be attached to the pm:PatientDemographicsCoreData/ext:Extension element.
 		</xsd:documentation>
@@ -27,10 +27,10 @@ This extension can be attached to the pm:PatientDemographicsCoreData/ext:Extensi
 This allows the differentiation between Sex and Gender in a pm:PatientDemographicsCoreData as in HL7 FHIR (https://hl7.org/fhir/valueset-administrative-gender.html).</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
-			<xsd:enumeration value="male"/>
-			<xsd:enumeration value="female"/>
-			<xsd:enumeration value="other"/>
-			<xsd:enumeration value="unknown"/>
+			<xsd:enumeration value="Male"/>
+			<xsd:enumeration value="Female"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="Unknown"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 </xsd:schema>
