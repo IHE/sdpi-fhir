@@ -13,9 +13,9 @@ assignees: ''
 
 == Priority
 
-- High: Important issue where there is major issue to be resolved. Requires discussion and debate.
-- Medium: Significant issue or clarification. Requires discussion, but should not lead to long debate.
-- Low: Typo or other minor classification that an editor can manage. Requires no group discussion.
+- *High: Important issue where there is major issue to be resolved. Requires discussion and debate.*
+- *Medium: Significant issue or clarification. Requires discussion, but should not lead to long debate.*
+- *Low: Typo or other minor classification that an editor can manage. Requires no group discussion.*
 
 == Issue
 
