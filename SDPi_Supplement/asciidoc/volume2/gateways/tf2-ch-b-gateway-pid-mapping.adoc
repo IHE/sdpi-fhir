@@ -380,8 +380,7 @@ NOTE: <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race in
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-31 field to an indicator whether the patient's identity is known.
 
-The field value is determined from the present of a patient-inferred ensemble context (*pm:EnsembleContextDescriptor/pm:Type/@Code = MDC_IDT_ENSEMBLE_PATIENT_INFERRED*) with an associated context association state (*pm:EnsembleContextState/@ContextAssociation = Assoc*).
-In this case, the value is set to "N".
+The field value is determined from the present of a patient-inferred ensemble context (*pm:EnsembleContextDescriptor/pm:Type/@Code = MDC_IDT_ENSEMBLE_PATIENT_INFERRED*) with an associated context association state (*pm:EnsembleContextState/@ContextAssociation = Assoc*). In this case, the value is set to "N".
 
 In all other cases, the value is set to "Y".
 ****
