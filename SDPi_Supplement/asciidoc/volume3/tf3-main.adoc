@@ -1,8 +1,5 @@
 = Volume 3 -- Content Modules
 
-NOTE:  This document integrates all the content that makes up the supplement volume 3 document.
-
-
 [#clause-content-modules]
 
 // == Content Modules
@@ -19,16 +16,20 @@ a| *SDPi Supplement Version Note*: The organization of this Volume 3 supplement 
 
 . IHE Supplement template (2020), with content mapped from the <<ref_ihe_pcd_tf_3_2019>> specification;
 
-. Addition of <<acronym_biceps>> content to a volume that is organized according to the "classic" <<ref_ieee_11073_10201_2004>> information model.
+. Addition of <<acronym_biceps>> content to a volume that is organized according to the "classic" <<ref_ieee_11073_10201_2004>> domain information model (DIM).
 
 For this version of the supplement, content from the 2019 version that was in sections 3 and 7 has now been collected into a single section 8.
 
 In order to clearly identify the supplement content that is related to <<acronym_biceps>>, specific sections with <<acronym_biceps>> in the title have been added.
 Although this results in a fairly clean supplement document, the flow of the outline is at times non sequitur.
-Another approach might be to move existing "classic" content to a set of subsections contained within a Classic DIM section, and then the new <<acronym_biceps>> content within a similarly labeled set of subsections.
-This would flow better, but it would also represent more of a change to the existing organization.
+To address that problem -- again arising from the original volume organization never contemplating additional semantic content standards alignment beyond the Classic DIM -- subsections that are aligned with the Classic DIM have been organized in a subsection with that scope.
+That new content which is based on <<acronym_biceps>> is also contained within a similarly labeled set of subsections -- both at the same outline level.
+{empty} +
+For this version of SDPi 1.0, it isn't clear how best to address a smilar division of the device specialization sections (e.g., infusion pump or ventilator).
+Version note boxes (like this one) have therefore been added to the specializations section and a single BICEPS subsection has been added.
+Subsequent versions of the specification may address this more comprehensively.
 
-*REVIEWER QUESTION*:  Please consider not only the <<acronym_biceps>>-related updates but also the general organization and provide guidance as to how TF-3 might be better organized for clarity and future extensions.
+*REVIEWER QUESTION*:  Please consider not only the <<acronym_biceps>>-related updates but also the changes to the general organization and provide guidance as to whether this TF-3 is better organized for clarity and future extensions, or if a different approach should be taken.
 
 |===
 
@@ -36,15 +37,84 @@ This would flow better, but it would also represent more of a change to the exis
 [sdpi_offset=1]
 === Overview of device semantic content
 
+[%noheader]
+[cols="1"]
+|===
+| Move IHE PCD 2019 TF-3 section 3 (text immediately after the section header) to this SDPi 1.0 TF-3 section 8.1
+|===
+
+#TODO:  Update the IHE PCD 2019 TF-3 section 3 content to be model/format independent#
+
 // 8.2
 === General device content considerations
+
+[%noheader]
+[cols="1"]
+|===
+| Move IHE PCD 2019 TF-3 sections 3.1 to this SDPi 1.0 TF-3 section 8.2
+|===
+
+#TODO: UPDATE THE CONTENT IN THIS GENERAL SECTION TO BE AGNOSTIC TO CLASSIC-BICEPS-PHD#
+
+// 8.3
+===  Protocol-Specific Content Module Considerations
+
+// 8.3.1
+==== IEEE 11073-10201 Classic DIM Content Modules
+
+[%noheader]
+[cols="1"]
+|===
+| Move IHE PCD 2019 TF-3 sections 3.2 to 3.7 to this SDPi 1.0 TF-3 section 8.3.1.2 TO .7#
+|===
+
+#TODO: ADD A 8.3.1.1 section that addresses basic reporting ... otherwise this section starts with alerting only#
+
+// 8.3.2
+==== IEEE 11073-10207 BICEPS Content Modules
 
 include::tf3-ch-8.2.8-biceps-content.adoc[]
 
 include::mdib-report-retrofit/tf3-ch-8.2.8-mdib-report-retrofit.adoc[]
 
-// 8.12
-[sdpi_offset=12]
+
+// 8.3.3
+==== RESERVED
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*: This is a place holder section for content modules related to the Personal Health Device (PHD) semantics defined in the IEEE 11073-10206 and 11073-20601 standards.  Though there are no PHD requirements in this supplement, there are PHD profiles that may be integrated into the IHE DEV Technical Framework, and as a result may add content to this section.
+|===
+
+// 8.4 8.5 8.6 RESERVED
+=== RESERVED
+
+[%noheader]
+[cols="1"]
+|===
+| Move IHE PCD 2019 TF-3 section 4 Reserved to this SDPi 1.0 TF-3 section 8.4#
+|===
+
+=== RESERVED
+
+[%noheader]
+[cols="1"]
+|===
+| Move IHE PCD 2019 TF-3 section 5 Reserved to this SDPi 1.0 TF-3 section 8.5#
+|===
+
+=== RESERVED
+
+[%noheader]
+[cols="1"]
+|===
+| Move IHE PCD 2019 TF-3 section 6 Reserved to this SDPi 1.0 TF-3 section 8.6#
+|===
+
+// 8.7
+[sdpi_offset=7]
 === Device specialization content modules
 
 include::tf3-ch-8.12.1-infusion-pump.adoc[]
