@@ -71,6 +71,7 @@ Subsequent versions of the specification may address this more comprehensively.
 #TODO: ADD A 8.3.1.1 section that addresses basic reporting ... otherwise this section starts with alerting only#
 
 // 8.3.2
+[#vol3_clause_sdc_biceps_semantic_content]
 ==== IEEE 11073-10207 BICEPS Content Modules
 
 include::tf3-ch-8.2.8-biceps-content.adoc[]
