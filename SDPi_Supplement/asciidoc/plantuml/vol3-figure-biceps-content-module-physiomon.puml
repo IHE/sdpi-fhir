@@ -3,10 +3,17 @@
 skinparam monochrome true
 
 object Monitor_Mds
+Monitor_Mds : MDC_DEV_METER_PHYSIO_MULTI_PARAM_MDS
 object BP_Vmd
+BP_Vmd : MDC_DEV_METER_PRESS_BLD_VMD
 object NIBP_Channel
+NIBP_Channel : MDC_DEV_PRESS_BLD_NONINV_CHAN
 object NIBPSystolic_Metric
+NIBPSystolic_Metric : MDC_PRESS_BLD_NONINV_SYS
+NIBPSystolic_Metric : Metric unit: mmHg
 object NIBPDiastolic_Metric
+NIBPDiastolic_Metric : MDC_PRESS_BLD_NONINV_DIA
+NIBPDiastolic_Metric : Metric unit: mmHg
 object MonContexts_Context
 object MonLocContext_LocationContext
 object MonAlerts_AlertSystem
