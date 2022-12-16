@@ -10,14 +10,14 @@
 [sdpi_offset=2]
 === Use Case Feature {var_use_case_id}: Synchronized Time Across Devices (STAD)
 
-==== Narrative:
+==== Narrative
 Nurse Jean attaches a ventilator to the medical device network in the ICU.  It automatically obtains the correct time.
 
 ==== Technical View
 
 .Synchronized Time Across Devices (STAD) -- Technical View
 
-image::../../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
+image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
 ==== Technical Pre-Conditions
 

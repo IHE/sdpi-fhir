@@ -3,7 +3,7 @@
 [sdpi_offset=6]
 === Use Case Feature {var_use_case_id}: Alerts to Clinician Notification Systems (ACNS)
 
-==== Narrative:
+==== Narrative
 
 Bonjour Hospital is in the process of installing a nurse alert notification system which will communicate alerts from the ICU devices (patient monitors, ventilators, infusion devices, etc.) directly to nurse devices such as pagers or smartphones.  Bobby Thornton is responsible for integrating data from their ICU devices with the alert notification system.  Once they are done, the alerts from the devices will be forwarded by the gateway to the nurse devices for viewing in a timely manner.
 
@@ -11,7 +11,7 @@ Bonjour Hospital is in the process of installing a nurse alert notification syst
 
 .Alerts to Clinician Notification Systems (ACNS) -- Technical View
 
-image::../../images/vol1-diagram-use-case-acns-tech-view.svg[]
+image::../images/vol1-diagram-use-case-acns-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 
