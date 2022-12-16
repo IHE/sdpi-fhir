@@ -9,10 +9,9 @@
 :icons: font
 :imagesoutdir: images/
 :imagesdir: images/
-:title-logo-image: image::ihe-logo.svg[pdfwidth=4in,align=center]
 :docinfo: shared
 
-#WHY DOESN'T TITLE-LOGO-IMAGE SHOW UP AT TOP OF TITLE PAGE?#
+image::ihe-logo.svg[pdfwidth=4in,align=center]
 
 [#supplement_clause_foreword,sdpi_offset=clear]
 == Foreword

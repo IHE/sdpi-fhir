@@ -102,8 +102,9 @@ include::../volume2/dev-37/tf2-dev-37-summary.adoc[]
 .^| [[vol0_transaction_summary_dev_38,DEV-38 Establish Medical Alert Exchange]]
 [[transaction_number_dev_38,DEV-38]] DEV-38
 | [[transaction_name_establish_medical_alert_exchange,Establish Medical Alert Exchange]] Establish Medical Alert Exchange
-| #TBD#
-// include::../volume2/dev-38/tf2-dev-38-summary.adoc[]
+|
+include::../volume2/dev-38/tf2-dev-38-summary.adoc[]
+
 | *_TBD Summary Description from TF-2_*
 .^| [[vol0_transaction_summary_dev_39,DEV-39 Publish Medical Alert Update]]
 [[transaction_number_dev_39,DEV-39]] DEV-39
