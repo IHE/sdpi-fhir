@@ -255,11 +255,11 @@
 | SDC
 
 | [[term_service_oriented_device_poc_interoperability,Service-oriented Device Point of Care Interoperability (SDPi)]] Service-oriented Device Point of Care Interoperability
-| ## Add description from Supplement Introduction or other section ###
+| A set of (4) IHE specifications that profile the <<acronym_sdc>> standards for device-to-device plug-and-play interoperability.
 |
-| SDPi
+| [[acronym_somds,SDPi]] SDPi
 |
-|
+| Profile
 
 | [[term_service_oriented_medical_device_system,Service-oriented Medical Device System (SOMDS)]] Service-oriented Medical Device System
 | A point-of-care system of products that
