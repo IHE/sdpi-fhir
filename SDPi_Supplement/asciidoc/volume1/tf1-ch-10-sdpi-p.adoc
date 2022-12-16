@@ -1,12 +1,10 @@
 = Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
 
-NOTE:  This file contains the core Volume 1 specification for the SDPi-P profile.
-
 // 10.
 [sdpi_offset=10]
 == Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
 
-The SDPi-Plug-and-trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) profile supports foundational seamless connectivity, information exchange and service invocation as defined in the SDPi architecture detailed in section #_2.X Service-oriented Device Point-of-care Interoperability (#SDPi#) – Overview & Framework_# above.
+The SDPi-Plug-and-trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) profile supports foundational seamless connectivity, information exchange and service invocation as defined in the SDPi architecture detailed in section #_2.X Service-oriented Device Point-of-care Interoperability (<<acronym_sdpi>>) – Overview & Framework_# above.
 Whereas the related SDPi profiles for reporting, alerting and external control are explicitly intended to support medical care capabilities, the SDPi-P profile focuses on basic healthcare device interoperability.
 All the capabilities defined in SDPi-P are leveraged by and extended in the medically focused profiles.
 This foundational profile not only supports medical device interoperability ("<<acronym_mdi>>"), providing for “plug-and-play” capabilities, but also with a tightly integrated “trust” framework (see #_Appendix A –  Requirements Management for Plug-and-Trust Interoperability_#).
@@ -24,7 +22,20 @@ For example, Operating Room / Surgery Point-of-Care Integration, ICU Point-of-Ca
 // 10.1
 [sdpi_offset=1]
 === SDPi-P Actors, Transactions, and Content Modules
-This section defines the actors, transactions, and/or content modules in this profile. General definitions of actors are given in the https://profiles.ihe.net/GeneralIntro/ch-A.html[_Technical Frameworks General Introduction Appendix A_].
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*: For SDPi 1.0 some actors and transactions have been deferred to a subsequent version, but are included here for completeness.
+Specifically, actors:  SOMDS FHIR Gateway, SOMDS Sensor Gateway & SOMDS Smart App Platform, have been deferred.
+
+Deferred transactions have been so indicated in the transactions table.
+
+|===
+
+This section defines the actors, transactions, and/or content modules in this profile.
+General definitions of actors are given in the https://profiles.ihe.net/GeneralIntro/ch-A.html[_Technical Frameworks General Introduction Appendix A_].
 IHE Transactions can be found in the https://profiles.ihe.net/GeneralIntro/ch-B.html[_Technical Frameworks General Introduction Appendix B_].
 Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.ihe.net/GeneralIntro_].
 
@@ -34,9 +45,6 @@ Abstract Actors (i.e., those that provide common specifications that are utilize
 Alternatively, in accordance with traditional IHE style, the abstract actor's name can be in italics with "{_abstract_}" (e.g., see _SOMDS Connector_ in #Figure 1# below).
 Actor groupings, including abstract with concrete are detailed in #Section 10.3#.
 
-#TODO:  SEE WORD EDITOR NOTES FOR POSSIBLE INCLUSION HERE#
-
-#TODO:  ADD EDITORS TEXT BOX ABOUT SDPI 1.0 -- DEFERRED ACTORS / TRANSACTIONS -- WHY INCLUDED HERE#
 
 .SDPi-P Actor Diagram
 
@@ -58,7 +66,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 .^|Reference
 
 | <<actor_somds_participant>>
-| #TODO: WHAT TO INCLUDE HERE WHEN THERE ARE NO SPECIFIC TRANSACTIONS???#
+| NOTE:  This abstract actor does not define any specific transactions.
 | ...
 | ...
 | ...
@@ -67,17 +75,17 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 .^| <<transaction_name_announce_network_presence>>
 .^| Initiator
 .^| R
-| #DEV TF-2:3.23# <<vol2_clause_dev_23>>
+| <<vol2_clause_dev_23>>
 
 | <<transaction_name_discover_network_topology>>
 | Responder
 | R
-| #DEV TF-2:3.24# <<vol2_clause_dev_24>>
+| <<vol2_clause_dev_24>>
 
 | <<transaction_name_discover_biceps_services>>
 | Responder
 | R
-| #DEV TF-2:3.25# <<vol2_clause_dev_25>>
+| <<vol2_clause_dev_25>>
 
 | <<transaction_name_discover_system_context_and_capabilities>> (_deferred_)
 | Responder
@@ -88,22 +96,22 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_manage_biceps_subscription>>
 | Responder
 | R
-| #DEV TF-2:3.27# <<vol2_clause_dev_27>>
+| <<vol2_clause_dev_27>>
 
 | <<transaction_name_notify_change_in_system_context_and_capabilities>>
 | Initiator
-| O #^(See Note 1)^#
-| #DEV TF-2:3.28# <<vol2_clause_dev_28>>
+| O (See Note 1)
+| <<vol2_clause_dev_28>>
 
 | <<transaction_name_publish_biceps_update_reports>>
 | Initiator
 | R
-| #DEV TF-2:3.29# <<vol2_clause_dev_29>>
+| <<vol2_clause_dev_29>>
 
-| #TODO fix reference: transaction_name_retrieve_biceps_content#
+| <<transaction_name_retrieve_biceps_content>>
 | Responder
 | O
-| #DEV TF-2:3.30# <<vol2_clause_dev_30>>
+| <<vol2_clause_dev_30>>
 
 | <<transaction_name_set_provider_state>> (_deferred_)
 | Responder
@@ -129,23 +137,23 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_announce_network_departure>>
 | Initiator
 | R
-| #DEV TF-2:3.34# #TODO insert DEV-34 reference here#
+| <<vol2_clause_dev_34>>
 
 .12+| <<actor_somds_consumer>>
 .^| <<transaction_name_announce_network_presence>>
 .^| _Receiver_
 .^| O
-| #DEV TF-2:3.23# <<vol2_clause_dev_23>>
+| <<vol2_clause_dev_23>>
 
 | <<transaction_name_discover_network_topology>>
 | Initiator
 | R
-| #DEV TF-2:3.24# <<vol2_clause_dev_24>>
+| <<vol2_clause_dev_24>>
 
 | <<transaction_name_discover_biceps_services>>
 | Initiator
 | R
-| #DEV TF-2:3.25# <<vol2_clause_dev_25>>
+| <<vol2_clause_dev_25>>
 
 | <<transaction_name_discover_system_context_and_capabilities>> (_deferred_)
 | Initiator
@@ -157,22 +165,22 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_manage_biceps_subscription>>
 | Initiator
 | R
-| #DEV TF-2:3.27# <<vol2_clause_dev_27>>
+| <<vol2_clause_dev_27>>
 
 | <<transaction_name_notify_change_in_system_context_and_capabilities>>
 | Responder
 | O
-| #DEV TF-2:3.28# <<vol2_clause_dev_28>>
+| <<vol2_clause_dev_28>>
 
 | <<transaction_name_publish_biceps_update_reports>>
 | Responder
 | R
-| #DEV TF-2:3.29# <<vol2_clause_dev_29>>
+| <<vol2_clause_dev_29>>
 
-| #TODO fix reference transaction_name_retrieve_biceps_content#
+| <<transaction_name_retrieve_biceps_content>>
 | Initiator
 | O
-| #DEV TF-2:3.30# <<vol2_clause_dev_30>>
+| <<vol2_clause_dev_30>>
 
 | <<transaction_name_set_provider_state>> (_deferred_)
 | Initiator
@@ -198,7 +206,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<transaction_name_announce_network_departure>>
 | _Receiver_
 | O
-| #DEV TF-2:3.34# #TODO insert DEV-34 reference here#
+| <<vol2_clause_dev_34>>
 
 | <<actor_somds_connector>>
 | #TODO: TBD HOW TO REPLICATE TRANSACTIONS; ACTOR SUPPORTS ALL PROVIDER & CONSUMER TRANSACTIONS WITH SAME OPTIONALITY#
@@ -206,8 +214,8 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | ...
 | ...
 
-| <<actor_somds_fhir_gateway>>
-| #TODO: TBD HOW TO REPLICATE TRANSACTIONS#
+| <<actor_somds_fhir_gateway>> (_deferred_)
+| ...
 | ...
 | ...
 | ...
@@ -218,14 +226,14 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | ...
 | ...
 
-| <<actor_somds_sensor_gateway>>
-| #TODO: TBD HOW TO REPLICATE TRANSACTIONS#
+| <<actor_somds_sensor_gateway>> (_deferred_)
+| ...
 | ...
 | ...
 | ...
 
-| <<actor_somds_smart_app_platform>>
-| #TODO: TBD HOW TO REPLICATE TRANSACTIONS#
+| <<actor_somds_smart_app_platform>> (_deferred_)
+| ...
 | ...
 | ...
 | ...
@@ -591,6 +599,15 @@ Given the discussion in Actors above, is this necessary here?  Or should some of
 
 // 10.4.2
 ==== Use Cases
+
+The SDPi-P profile supports requirements from the use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this profile.
+
+===== Synchronized Time Across Devices (STAD)
+This profile fully addresses the requirements from  <<vol1_appendix_c_use_case_stad>>.
+
+#TODO:  Add discussion to HOW and WHERE (with links) that the requirements are met.  Include a Requirements usage block?#
+
+===== <add additional use case links here>
 
 // 10.5
 === SDPi-P Safety, Effectiveness, Security Considerations and Requirements

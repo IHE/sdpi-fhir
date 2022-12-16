@@ -24,8 +24,12 @@ In order to clearly identify the supplement content that is related to <<acronym
 Although this results in a fairly clean supplement document, the flow of the outline is at times non sequitur.
 To address that problem -- again arising from the original volume organization never contemplating additional semantic content standards alignment beyond the Classic DIM -- subsections that are aligned with the Classic DIM have been organized in a subsection with that scope.
 That new content which is based on <<acronym_biceps>> is also contained within a similarly labeled set of subsections -- both at the same outline level.
-{empty} +
-For this version of SDPi 1.0, it isn't clear how best to address a smilar division of the device specialization sections (e.g., infusion pump or ventilator).
+
+For the existing TF-3 content in the <<ref_ihe_pcd_tf_3_2019>>, especially section 3, though this supplement includes editor guidance for which sections are mapped where in the updated outline, the actual content is a mix of general device informatics topics and details that are based on the "classic" <<ref_ieee_11073_10201_2004>> DIM.
+
+*_Updating the existing IHE DEV Technical Framework content will be either deferred to a later version of this SDPi supplement or will be accomplished through a specific Change Proposal (CP) to the published IHE DEV TF-3._*
+
+Additionally, for this version of SDPi 1.0, it isn't clear how best to address a smilar division of the device specialization sections (e.g., infusion pump or ventilator).
 Version note boxes (like this one) have therefore been added to the specializations section and a single BICEPS subsection has been added.
 Subsequent versions of the specification may address this more comprehensively.
 
@@ -95,7 +99,7 @@ a| *SDPi Supplement Version Note*: This is a place holder section for content mo
 [%noheader]
 [cols="1"]
 |===
-| Move IHE PCD 2019 TF-3 section 4 Reserved to this SDPi 1.0 TF-3 section 8.4#
+| Move IHE PCD 2019 TF-3 section 4 Reserved to this SDPi 1.0 TF-3 section 8.4
 |===
 
 === RESERVED
@@ -103,7 +107,7 @@ a| *SDPi Supplement Version Note*: This is a place holder section for content mo
 [%noheader]
 [cols="1"]
 |===
-| Move IHE PCD 2019 TF-3 section 5 Reserved to this SDPi 1.0 TF-3 section 8.5#
+| Move IHE PCD 2019 TF-3 section 5 Reserved to this SDPi 1.0 TF-3 section 8.5
 |===
 
 === RESERVED
@@ -111,7 +115,7 @@ a| *SDPi Supplement Version Note*: This is a place holder section for content mo
 [%noheader]
 [cols="1"]
 |===
-| Move IHE PCD 2019 TF-3 section 6 Reserved to this SDPi 1.0 TF-3 section 8.6#
+| Move IHE PCD 2019 TF-3 section 6 Reserved to this SDPi 1.0 TF-3 section 8.6
 |===
 
 // 8.7

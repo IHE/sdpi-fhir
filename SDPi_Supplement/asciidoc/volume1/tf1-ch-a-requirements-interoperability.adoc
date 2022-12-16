@@ -89,6 +89,7 @@ NOTE:  The moniker *_<<acronym_ses_mdi>>_* is shorthand to refer to the integrat
 
 How does this address the "interoperability trust gap"?  By integrating SES directly into the specifications, especially integrating the ISO/IEC 11073-1070x standards, enabling "plug-and-trust" system product components, the SES implementation and operational requirements and responsibilities are greatly reduced, the "gap" is filled for all stakeholders, and the goals of improved safety, security and clinical effectiveness of technology can be readily realized.
 
+[#vol1_clause_sdpi_requirements_modeling_integration]
 === SDPi Requirements Modeling & Integration
 
 As pointed out above, requirements interoperability (RI) based on robust model-based metadata is a core, innovative aspect of this SDPi profiles specification.

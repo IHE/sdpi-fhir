@@ -1,14 +1,20 @@
 = Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
 
-
-NOTE:  This file contains the core Volume 1 specification for the SDPi-R profile.
-
 // 11.
 [sdpi_offset=11]
 == Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
 
 // 11.1
 === SDPi-R Actors, Transactions, and Content Modules
+
+This section defines the actors, transactions, and/or content modules in this profile.
+General definitions of actors are given in the https://profiles.ihe.net/GeneralIntro/ch-A.html[_Technical Frameworks General Introduction Appendix A_].
+IHE Transactions can be found in the https://profiles.ihe.net/GeneralIntro/ch-B.html[_Technical Frameworks General Introduction Appendix B_].
+Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.ihe.net/GeneralIntro_].
+
+#Figure 11.1-1# shows the actors directly involved in the SDPi-R Profile.
+The relevant transactions between them are detailed in the subsequent #Table 11.1-1#.
+Actor groupings, including abstract with concrete are detailed in #Section 11.3#.
 
 .SDPi-R Actor Diagram
 

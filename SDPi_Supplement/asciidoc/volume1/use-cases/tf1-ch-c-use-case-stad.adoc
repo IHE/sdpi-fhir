@@ -8,6 +8,7 @@
 // [sdpi_transaction#transaction_dev_24,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_24_probe_sequence,messages='message_announce_network_presence']
 
 [sdpi_offset=2]
+[#vol1_appendix_c_use_case_stad]
 === Use Case Feature {var_use_case_id}: Synchronized Time Across Devices (STAD)
 
 ==== Narrative

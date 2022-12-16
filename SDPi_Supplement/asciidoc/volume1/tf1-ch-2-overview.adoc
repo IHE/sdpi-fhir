@@ -1,7 +1,5 @@
 = Devices Integration Profiles
 
-NOTE:  This file contains the Volume 1 / Chapter 2 content, including overviews for SES, SDPi (general profile architecture) and for each of the four SDPi profiles.
-
 // 2.
 [sdpi_offset=2]
 == Devices Integration Profiles
@@ -45,10 +43,20 @@ Generally, requirements from these standards would be mapped to the appropriate 
 // 2.3
 === Integration Profiles Overview
 
-#TODO:  DOES THIS SECTION WITH OPTIONS NEED TO BE DETAILED HERE OR IS IT SUFFICIENT TO HAVE TEMPLATE LANGUAGE POINTING TO THE http://www.ihe.net/Profiles/ PAGE?#
 
-[sdpi_offset=10]
-=== Service-oriented Device Point-of-care Interoperability (SDPi) – Overview & Framework
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*: The template for this section assumes that it will be integrated with the technical framework section that is organized based on TF-1 section headings (e.g., chapter 10 for SDPi- would have a summary here as 2.10.  No provision is made, though, for general introductory sections such as the SDPi Overview & Framework discussion below.
+
+In this version, the content is added as 2.3.1, and then the profiles as 2.3.10 to 2.3.13.  Though the content is valid, it may be repositioned in subsequent versions to better integrate with the IHE DEV TF at a future date.
+
+*_Omitted from this version are  profile-specific option summaries_* (e.g., 3.10.1 ?).  It is unclear where to best place this content, and they are listed explicitly in each profile's detailed specification.
+
+|===
+
+==== Service-oriented Device Point-of-care Interoperability (SDPi) – Overview & Framework
 
 The Service-oriented Device Point-of-care Interoperability (SDPi) profiles are built upon a foundation of standards and profiles from <<acronym_hl7>>, <<acronym_ieee>>, IHE and other organizations.  An overview of the profiles and their relationships is provided in Figure <<figure_sdpi_profiles_foundational_standards>>:
 
@@ -58,5 +66,23 @@ image::../images/vol1-diagram-sdpi-profiles.svg[align=center]
 
 #TODO:  Introduce core concepts such as -- SoA (graphic with distributed registry), D2D, Plug-and-Trust, PKPs, Gateways, rationale for (4) profiles (functionally and "medical" PKP), use context (high acuity point-of-care = "bed"), ... reference the hanging gardens model in Appendix A; include ICS Appendix B references too#
 
-#TODO:  Include brief purpose & scope statement for each of the four profiles#
+[sdpi_offset=10]
+==== Service-oriented Device Point-of-care Interoperability - Plug-and-trust (SPDi-P) Profile
+
+#TODO:  Include brief purpose & scope statement for the SDPi-P; include option summary too?#
+
+[sdpi_offset=11]
+==== Service-oriented Device Point-of-care Interoperability - Reporting (SPDi-R) Profile
+
+#TODO:  Include brief purpose & scope statement for the SDPi-R; include option summary too?#
+
+[sdpi_offset=12]
+==== Service-oriented Device Point-of-care Interoperability - Alerting (SPDi-A) Profile
+
+#TODO:  Include brief purpose & scope statement for the SDPi-A; include option summary too?#
+
+[sdpi_offset=13]
+==== Service-oriented Device Point-of-care Interoperability - External Control (SPDi-xC) Profile
+
+#TODO:  Include brief purpose & scope statement for the SDPi-xC; include option summary too?#
 
