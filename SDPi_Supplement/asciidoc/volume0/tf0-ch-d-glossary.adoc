@@ -257,7 +257,7 @@
 | [[term_service_oriented_device_poc_interoperability,Service-oriented Device Point of Care Interoperability (SDPi)]] Service-oriented Device Point of Care Interoperability
 | A set of (4) IHE specifications that profile the <<acronym_sdc>> standards for device-to-device plug-and-play interoperability.
 |
-| [[acronym_somds,SDPi]] SDPi
+| [[acronym_sdpi,SDPi]] SDPi
 |
 | Profile
 
