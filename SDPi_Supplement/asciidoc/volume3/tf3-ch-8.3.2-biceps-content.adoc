@@ -43,13 +43,13 @@ Consequently, a manufacturer of a <<actor_somds_provider>> should be careful def
 
 There are standardized extensions, like those that are specified in the PKP standards or this profile, which can be considered common knowledge and therefore do not break interoperability between different manufacturers.
 
-include::biceps-content-module/tf3-ch-8.2.2-applicable-productions-specification-type-codes.adoc[]
+include::biceps-content-module/tf3-ch-8.3.2.7-applicable-productions-specification-type-codes.adoc[]
 
-include::biceps-content-module/tf3-ch-8.2.2-applicable-attribute-type-codes.adoc[]
+include::biceps-content-module/tf3-ch-8.3.2.7-applicable-attribute-type-codes.adoc[]
 
-include::biceps-extension-provisions/tf3-ch-8.2.2-extension-coded-attribute.adoc[]
+include::biceps-extension-provisions/tf3-ch-8.3.2.7-extension-coded-attribute.adoc[]
 
 // 8.3.2.8
 ===== BICEPS Sex and Gender Extensions
 // This content will also be referenced from TF-2 Appendix B DEC Gateway
-include::biceps-extension-provisions/tf3-ch-8.2.3-extension-gender.adoc[]
+include::biceps-extension-provisions/tf3-ch-8.3.2.8-extension-gender.adoc[]

@@ -74,9 +74,9 @@ Subsequent versions of the specification may address this more comprehensively.
 [#vol3_clause_sdc_biceps_semantic_content]
 ==== IEEE 11073-10207 BICEPS Content Modules
 
-include::tf3-ch-8.2.8-biceps-content.adoc[]
+include::tf3-ch-8.3.2-biceps-content.adoc[]
 
-include::mdib-report-retrofit/tf3-ch-8.2.8-mdib-report-retrofit.adoc[]
+include::mdib-report-retrofit/tf3-ch-8.3.2.9-mdib-report-retrofit.adoc[]
 
 
 // 8.3.3
@@ -118,12 +118,12 @@ a| *SDPi Supplement Version Note*: This is a place holder section for content mo
 [sdpi_offset=7]
 === Device specialization content modules
 
-include::tf3-ch-8.12.1-infusion-pump.adoc[]
+include::tf3-ch-8.7.1-infusion-pump.adoc[]
 
-include::tf3-ch-8.12.2-ventilator.adoc[]
+include::tf3-ch-8.7.2-ventilator.adoc[]
 
-include::tf3-ch-8.12.3-physiologic-monitor.adoc[]
+include::tf3-ch-8.7.3-physiologic-monitor.adoc[]
 
-include::tf3-ch-8.12.4-surgical.adoc[]
+include::tf3-ch-8.7.4-surgical.adoc[]
 
 include::tf3-ch-a-xml-schemas.adoc[]
