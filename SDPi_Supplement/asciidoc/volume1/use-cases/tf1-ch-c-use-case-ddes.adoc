@@ -3,7 +3,7 @@
 [sdpi_offset=5]
 === Use Case Feature {var_use_case_id}: Device Data to Enterprise Systems (DDES)
 
-==== Narrative:
+==== Narrative
 
 Mercy Hospital is in the middle of a new EHR (Epic, Cerner, etc.) rollout.  Joe Furst is responsible for integrating data from their ICU devices (patient monitors, ventilators, infusion devices, etc.) with the new EHR.  Once they are done, the data from the devices will be reviewed/validated by the ICU clinicians and then automatically entered into the patient’s clinical record.
 
@@ -11,7 +11,7 @@ Mercy Hospital is in the middle of a new EHR (Epic, Cerner, etc.) rollout.  Joe 
 
 .Device Data to Enterprise Systems (DDES) -- Technical View
 
-image::../../images/vol1-diagram-use-case-ddes-tech-view.svg[]
+image::../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 

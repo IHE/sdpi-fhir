@@ -3,7 +3,7 @@
 [sdpi_offset=7]
 === Use Case Feature {var_use_case_id}: Alerts to Alert Recording Systems (AARS)
 
-==== Narrative:
+==== Narrative
 
 Mumbai General is in the process of installing an IT system which will capture alerts from their ICU devices (patient monitors, ventilators, infusion devices, etc.) for the purposes of occasional review by physicians and post-discharge analysis.  (Other related use cases could include EHR capture of alerts or alert analysis).
 
@@ -11,7 +11,7 @@ Mumbai General is in the process of installing an IT system which will capture a
 
 .Alerts to Alert Recording Systems (AARS) -- Technical View
 
-image::../../images/vol1-diagram-use-case-aars-tech-view.svg[]
+image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 
 
 ==== Technical Pre-Conditions

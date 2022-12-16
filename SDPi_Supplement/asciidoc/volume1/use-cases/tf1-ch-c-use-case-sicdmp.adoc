@@ -3,7 +3,7 @@
 [sdpi_offset=4]
 === Use Case Feature {var_use_case_id}: Standalone ICU Dashboard Multiple Patient (SICDmp)
 
-==== Narrative:
+==== Narrative
 
 Dr. Presky is in the ICU evaluating a trauma patient from a remote location in the ICU.  The dashboard allows access to multiple patients, so he first needs to select the patient of interest.  This can be done by location or by patient name (if available).
 
@@ -14,7 +14,7 @@ He can view previous radiology results, electrosurgical equipment settings, pati
 
 .Standalone ICU Dashboard MP (SICDmp) -- Technical View
 
-image::../../images/vol1-diagram-use-case-sicdmp-tech-view.svg[]
+image::../images/vol1-diagram-use-case-sicdmp-tech-view.svg[]
 
 ==== Technical Pre-Conditions
 
