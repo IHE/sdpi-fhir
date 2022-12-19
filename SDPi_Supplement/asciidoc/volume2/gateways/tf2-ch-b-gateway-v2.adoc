@@ -1,10 +1,8 @@
 // = SDPi HL7 V2 Gateway -- General Mapping
 
-NOTE:  This file contains the general HL7 V2 gateway actor (SOMDS_V2_Gateway) logic for mapping from SDC BICEPS MDIB content and interactions with IHE DEV "PCD" V2-based messaging, using HL7 V2 ORU^R01 messages.
+=== SDPi Gateway -- HL7 V2 General Mapping
 
+*REVIEWER NOTE*:  The full specification of the IHE DEC and ACM profile mappings is defined in the *SDPi DEC Gateway — Mapping* and the *SDPi ACM Gateway — Mapping* sections.
+Further content to this section will be editorially added during the review period.
 
-=== Gateway: HL7 V2 General Mapping
-
-
-
-#Issue HL7 Local Time vs. SDC UTC time: SDC requires that all timestamps are in UTC. The time zone is optional. In HL7 V2 all timestamps are local time and the time zone is optional as well. The gateway may have to convert UTC to local time!!#
+*REVIEWER QUESTION*: #Issue HL7 Local Time vs. SDC UTC time: SDC requires that all timestamps are in UTC. The time zone is optional. In HL7 V2 all timestamps are local time and the time zone is optional as well. Do Device Observation Consumer (DOC) and Alarm Manager (AM) expect the gateway to convert UTC to local time?#
