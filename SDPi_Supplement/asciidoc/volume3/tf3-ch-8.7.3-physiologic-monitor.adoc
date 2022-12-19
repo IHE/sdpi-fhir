@@ -11,6 +11,7 @@ NOTE:  This file contains the content that profiles BICEPS semantics for use in 
 [sdpi_offset=17]
 ===== SDC/BICEPS content module
 
+
 The following BICEPS containment tree represents a highly-simplified physiologic monitor example. The represented physiologic monitor's Medical Device System (MDS) comprises a blood pressure Virtual Medical Device (VMD), a Context and an AlertSystem:
 
 .Physiologic Monitor Containment Tree Example
@@ -29,5 +30,3 @@ The following XML snippet profiles BICEPS semantics in line with the containment
 include::../../listings/vol3_clause_sdc_biceps_content_module_physio_monitor_snippet1.xml[]
 ----
 ====
-
-
