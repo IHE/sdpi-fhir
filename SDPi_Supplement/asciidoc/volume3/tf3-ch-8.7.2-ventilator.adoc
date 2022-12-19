@@ -8,6 +8,6 @@ NOTE:  This file contains the content that profiles BICEPS semantics for use in 
 ==== Device:  Ventilator
 
 // 8.3.2.4
-[sdpi_offset=6]
+[#vol3_clause_device_ventilator,sdpi_offset=6]
 ===== SDC/BICEPS content module
 

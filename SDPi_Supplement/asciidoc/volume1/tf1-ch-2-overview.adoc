@@ -86,3 +86,43 @@ image::../images/vol1-diagram-sdpi-profiles.svg[align=center]
 
 #TODO:  Include brief purpose & scope statement for the SDPi-xC; include option summary too?#
 
+[sdpi_offset=5]
+=== Dependencies between Integration Profiles
+
+[%noheader]
+[cols="1"]
+|===
+| Add the following dependencies below to the IHE DEV TF Profile Dependencies table.
+|===
+
+#TODO:  SHOULD ATNA BE ADDED TO THIS TABLE FOR SOMDS_PARTICIPANT?#
+
+[#vol1_table_devices_integration_profile_dependencies]
+.Devices Integration Profile Dependencies
+
+[%autowidth]
+[cols="1,1,1,1"]
+|===
+.^|Integration Profile
+.^|Depends on
+.^|Dependency Type
+.^|Purpose
+
+| <<acronym_sdpi_p>>
+| Consistent Time (CT)
+| Each <<acronym_sdpi_p>> actor implementation (i.e., <<actor_somds_participant>>) shall be grouped with the CT Time Client actor.  Note:  All <<acronym_sdpi>> actors based on the <<actor_somds_participant>> actor.
+| Required for consistent time-stamping of transactions and data.
+
+| <<acronym_sdpi_r>>
+| Device Enterprise Communication (DEC))
+| The <<actor_somds_dec_gateway>> integrates DEC Device Observation Reporter (DOR) actor specifications
+| Required for mapping from <<acronym_sdc>> & <<acronym_biceps>>  to HL7 V2 and DEC transactions.
+
+| <<acronym_sdpi_a>>
+| Alert Communication Management (ACM)
+| The <<actor_somds_acm_gateway>> integrates ACM Alert Reporter (AR) actor specifications
+| Required for mapping from <<acronym_sdc>> & <<acronym_biceps>>  to HL7 V2 and ACM transactions.
+
+|===
+
+#TODO:  DO WE NEED TO ALSO MENTION DOC IN AN SDPI 1.X NOTE?  WHAT ABOUT DEPENDENCY ON THE IHE DEV TF-2 APPENDIX A V2 GENERAL PROVISIONS?#

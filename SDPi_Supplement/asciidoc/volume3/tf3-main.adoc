@@ -64,6 +64,7 @@ Subsequent versions of the specification may address this more comprehensively.
 ===  Protocol-Specific Content Module Considerations
 
 // 8.3.1
+[#vol3_clause_ieee_11073_10201_classic_dim_content_modules]
 ==== IEEE 11073-10201 Classic DIM Content Modules
 
 [%noheader]

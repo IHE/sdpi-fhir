@@ -57,6 +57,8 @@ It is recognized that there are editorial issues that need to be resolved before
 . #TODO:# notes may be included; these will be removed and addressed BEFORE the Public Comment version is published;
 . Technical content in TF-2 Transactions is complete; however, TF-1 and TF-3 though technically complete for 1.0 features, will require additional EDITORIAL content; limited content is provided in this DEV internal review draft, BUT guidance on what needs to be added for the Public Comment version vs. in the 1.x version should be identified;
 . Requirements boxes (e.g., "R1234") have been added especially in TF-2 and some in TF-3; this is an initial approach that will be greatly expanded in future versions of the supplement; a more robust, expanded approach is provided in <<vol1_clause_sdpi_requirements_modeling_integration>>;
+. This supplement is curently rendered as a *"long form"* document -- one single HTML file; however, in subsequent versions the intent is to consider a multi-page / file HTML rendering + addition of a tabbed menu for navigating the sections of the supplement;
+. *FOR THE PUBLIC COMMENT* version of the supplement, it is intended to migrate the current content in the sdpi-fhir Github repository to a new DEV.SDPi repository, in alignment with current IHE conventions; major / minor version tagging, issue and pull-requiest management, etc. will be managed in that new repository. *REVIEWER COMMENTS* for this Devices-Internal review version will be tracked as Issues in the current sdpi-fhir repository.
 
 *"SDPi 1.0 Supplement Note"* boxes are provided throughout the document to help guide reviewers and to ask specific questions for feedback requested by the supplement editors.
 

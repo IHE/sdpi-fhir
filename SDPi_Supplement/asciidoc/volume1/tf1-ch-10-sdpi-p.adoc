@@ -20,7 +20,7 @@ Note that future IHE _workflow profiles_ may be defined that build upon the tran
 For example, Operating Room / Surgery Point-of-Care Integration, ICU Point-of-Care Integration, or more service-focused profiles such as Point-of-Care Identity Management (PCIM) for device-patient association management, or Silent ICU & Quiet Hospital, where the acute point-of-care is integrated with enterprise systems around device alerting and alert distribution to provide an improved environment of care (reduced noise level and improved safety) and clinician interaction.
 
 // 10.1
-[sdpi_offset=1]
+[#vol1_clause_sdpi_p_actors_transactions_content_modules,sdpi_offset=1]
 === SDPi-P Actors, Transactions, and Content Modules
 
 [%noheader]
@@ -39,13 +39,13 @@ General definitions of actors are given in the https://profiles.ihe.net/GeneralI
 IHE Transactions can be found in the https://profiles.ihe.net/GeneralIntro/ch-B.html[_Technical Frameworks General Introduction Appendix B_].
 Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.ihe.net/GeneralIntro_].
 
-#Figure 10.1-1# shows the actors directly involved in the SDPi-P Profile.
+<<vol1_figure_sdpi_p_actor_diatram>> shows the actors directly involved in the SDPi-P Profile.
 The relevant transactions between them are detailed in the subsequent #Table 10.1-1#.
 Abstract Actors (i.e., those that provide common specifications that are utilized in other “concrete” or implementation actors) are indicated by stereotype names in italics (e.g., "<< _SOMDS_Participant_ >>".   The actors that inherit their capabilities include the stereotype at the top of their actor box.
 Alternatively, in accordance with traditional IHE style, the abstract actor's name can be in italics with "{_abstract_}" (e.g., see _SOMDS Connector_ in #Figure 1# below).
 Actor groupings, including abstract with concrete are detailed in #Section 10.3#.
 
-
+[#vol1_figure_sdpi_p_actor_diatram]
 .SDPi-P Actor Diagram
 
 image::../images/vol1-diagram-sdpi-p-actor.svg[]
@@ -57,7 +57,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 {empty} +
 
 [%autowidth]
-[cols="^1,^2,^1,^1,^3"]
+[cols="1,2,1,1,3"]
 |===
 .^|Actors
 .^|Transactions
@@ -100,7 +100,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 
 | <<transaction_name_notify_change_in_system_context_and_capabilities>>
 | Initiator
-| O (See Note 1)
+| O ^(See^ ^Note^ ^1)^
 | <<vol2_clause_dev_28>>
 
 | <<transaction_name_publish_biceps_update_reports>>
@@ -260,12 +260,12 @@ image::../images/vol1-diagram-sdpi-p-content-actor.svg[]
 
 #Table 10.1-2# lists the content module(s) defined in the SDPi-P Profile. To claim support with this profile, an actor shall support all required content modules (labeled “R”) and may support optional content modules (labeled “O”).
 
-#TODO:  ADD LINKS / LABELS TO THE FOLLOWING TABLE#
+
 
 .SDPi-P -- Actors and Content Modules
 
 [%autowidth]
-[cols="^1,^1,^1,^1"]
+[cols="1,1,1,1"]
 |===
 .^|Actors
 .^|Content Modules
@@ -274,61 +274,61 @@ image::../images/vol1-diagram-sdpi-p-content-actor.svg[]
 
 .7+| <<actor_biceps_content_creator>>
 | SDC/BICEPS Content Module
-| R #^See Note 1^#
-| #DEV TF-3: 8.2.8#  <<vol3_clause_sdc_biceps_semantic_content_module>>
+| R ^(See^ ^Note^ ^1)^
+| <<vol3_clause_sdc_biceps_semantic_content_module>>
 
 | Infusion Pump SDC/BICEPS Content Module
 | O
-| #DEV TF-3: 8.3.1.4#
+| <<vol3_clause_device_infusion_pump>>
 
-| Ventilator SDC/BICEP;S Content Module
+| Ventilator SDC/BICEPS Content Module
 | O
-| #DEV TF-3: 8.3.2.4#
+| <<vol3_clause_device_ventilator>>
 
 | Physiologic Monitor SDC/BICEPS Content Module
 | O
-| #DEV TF-3: 8.3.3.4#
+| <<vol3_clause_device_physiological_monitor>>
 
 | Surgery Devices SDC/BICEPS Content Module
 | O
-| #DEV TF-3: 8.3.4#
+| <<vol3_clause_device_surgical>>
 
-| Anesthesia Devices SDC/BICEPS Content Module
+| Anesthesia Devices SDC/BICEPS Content Module (_deferred_)
 | O
-| #DEV TF-3: 8.3.5#
+|
 
-| Dialysis Devices SDC/BICEPS Content Module
+| Dialysis Devices SDC/BICEPS Content Module (_deferred_)
 | O
-| #DEV TF-3: 8.3.6#
+|
 
 .7+| <<actor_biceps_content_consumer>>
 | SDC/BICEPS Content Module
-| R #^See Note 1^#
-| #DEV TF-3: 8.2.8#  <<vol3_clause_sdc_biceps_semantic_content_module>>
+| R ^(See^ ^Note^ ^1)^
+| <<vol3_clause_sdc_biceps_semantic_content_module>>
 
 | Infusion Pump SDC/BICEPS Content Module
 | O
-| #DEV TF-3: 8.3.1.4#
+| <<vol3_clause_device_infusion_pump>>
 
-| Ventilator SDC/BICEP;S Content Module
+| Ventilator SDC/BICEPS Content Module
 | O
-| #DEV TF-3: 8.3.2.4#
+| <<vol3_clause_device_ventilator>>
 
 | Physiologic Monitor SDC/BICEPS Content Module
 | O
-| #DEV TF-3: 8.3.3.4#
+| <<vol3_clause_device_physiological_monitor>>
 
 | Surgery Devices SDC/BICEPS Content Module
 | O
-| #DEV TF-3: 8.3.4#
+| <<vol3_clause_device_surgical>>
 
-| Anesthesia Devices SDC/BICEPS Content Module
+| Anesthesia Devices SDC/BICEPS Content Module (_deferred_)
 | O
-| #DEV TF-3: 8.3.5#
+|
 
-| Dialysis Devices SDC/BICEPS Content Module
+| Dialysis Devices SDC/BICEPS Content Module (_deferred_)
 | O
-| #DEV TF-3: 8.3.6#
+|
 
 4+<|
 Note 1: _All content exchanged on a SOMDS shall conform to the general SDPi “BICEPS Content Module” requirements (see <<vol3_clause_sdc_biceps_semantic_content>>).  <<actor_somds_provider>>-specific content modules (e.g., infusion pumps) may be optionally supported as indicated._
@@ -557,14 +557,59 @@ Dependencies between options, when applicable, are specified in notes.
 // 10.3
 === SDPi-P Required Actor Groupings
 
+#TODO:  ADD CT SOMDS_PARTICIPANT GROUPING + ATNA(?) ADD CONTENT FROM WORD DOCUMENT HERE; DO WE NEED TO ALSO CONSIDER GENERAL V2 AND DEV TF-2 APPENDIX A?#
+
 // 10.4
 === SDPi-P Overview
 
 // 10.4.1
 ==== Concepts
 
+[#vol1_clause_soa_somds_architecture_alignment]
 ===== SOA & SOMDS Architecture Alignment
 #TODO: Link back to SDPi general overview at the top and how leveraged for SDPi-P Actors Model;  SOMDS Participant ABSTRACT actor role#
+
+From a conceptual perspective, <<acronym_sdc>> implements a <<acronym_soa>> architecture for device-to-device <<term_plug_and_trust>> interoperability.  Consider <<figure_general_soa_model>>:
+
+.General Service Oriented Architecture (SOA) Model
+[#figure_general_soa_model]
+image::../images/vol1-diagram-sdc-soa-conceptual-model.svg[align=center]
+
+This generalized model includes (3) system roles:
+
+. *Service Providers* -- indicate the capabilities or services that they support, often published to a centralized registry that all participating systems recognize;
+
+. *Service Registry* -- a <<acronym_soa>> network capability enabling participating systems to *_discover_* services provided by networked systems, as well as information for how a service consumer system can
+
+#TODO: ADD --#
+
+* #why somds#
+* #distributed registry#
+* #somds participant#
+* #somds provider and consumer mappings#
+* #same system can support both roles; all systems mush support participant#
+
+NOTE:  A detailed overview of <<acronym_soa>> concepts is beyond the scope of this specification.  See <<vol1_appendix_b_references>> for additional background materials.
+
+The <<acronym_sdc>> <<acronym_biceps>> standard, which SDPi-P profiles, consists of (3) core components, as illustrated in <<figure_sdc_biceps_components_model>>:
+
+.SDC/BICEPS Components Model
+[#figure_sdc_biceps_components_model]
+image::../images/vol1-diagram-sdc-biceps-component-view.svg[align=center]
+
+The <<term_medical_data_information_base>> component applies to all participating systems and consists of a *_descriptive model_* (e.g., what services and information a <<term_somds_provider>> supports), and a state model.
+The discovery and communications models combine to enable device-to-device messaging and to identify both systems and services available on the network.
+The descriptive model is covered in more detail in <<vol3_clause_sdc_biceps_semantic_content_module>>, but the following <<figure_sdc_biceps_mdib_descriptors_states>> shows how network efficiency is achieved by searating descriptive information from dynamic state information:
+
+.SDC/BICEPS MDIB Descriptors & States
+[#figure_sdc_biceps_mdib_descriptors_states]
+image::../images/vol1-diagram-sdc-biceps-mdib-description-state.svg[align=center]
+
+For every <<actor_somds_provider>> system, there is a descriptive model that includes a detailed specification of every element in the <<acronym_mdib>>.
+For each Descriptor, though, there is a State element (note the inclusion of a State::DescriptorHandle), that can be used to determine the value and change status for the associated descriptor.
+Therefore, though the <<acronym_mdib>> of a <<actor_somds_provider>> system must be retrieved at discovery and connection time, subsequent updates can be made upon state changes, greatly reducing network communication overhead.
+
+An example of how <<acronym_biceps>> components (see <<figure_sdc_biceps_components_model>>) and <<acronym_mdib>> descriptors and states (see <<figure_sdc_biceps_mdib_descriptors_states>>) support <<term_plug_and_trust>> interoperability, see a typical conversation provided in <<vol1_figure_sdpi_p_example_sequence_diagram>>.
 
 ===== General Healthcare vs. Medical Interoperability Purposes
 #TODO: All the transactions here are focused on healthcare information exchange with out any intended medical purpose; relationship to the other SDPi Profiles#
@@ -605,7 +650,7 @@ The SDPi-P profile supports requirements from the use cases detailed in <<vol1_a
 ===== Synchronized Time Across Devices (STAD)
 This profile fully addresses the requirements from  <<vol1_appendix_c_use_case_stad>>.
 
-#TODO:  Add discussion to HOW and WHERE (with links) that the requirements are met.  Include a Requirements usage block?#
+#TODO:  Add discussion to HOW and WHERE (with links) that the requirements are met.  Include a Requirements usage block?  CT DEPENDENCY IN SOMDS_PARTICIPANT MEETS THESE REQUIREMENTS#
 
 ===== <add additional use case links here>
 

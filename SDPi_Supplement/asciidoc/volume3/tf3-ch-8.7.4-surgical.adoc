@@ -8,6 +8,6 @@ NOTE:  This file contains the content that profiles BICEPS semantics for use in 
 ==== Device:  Surgical
 
 // 8.3.4.4
-[sdpi_offset=1]
+[#vol3_clause_device_surgical,sdpi_offset=1]
 ===== SDC/BICEPS content module
 

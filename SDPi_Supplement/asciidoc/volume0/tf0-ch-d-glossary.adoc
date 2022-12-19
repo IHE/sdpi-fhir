@@ -44,6 +44,13 @@
 |
 |
 
+| [[term_classic_dim,Classic DIM]] Classic Domain Information Model (DIM)
+| The foundational domain information model (DIM) that is recognized and implemented in all IEEE 11073 standards and profiles, for both <<acronym_pocd>> and <<acronym_phd>> devices.
+| [[acronym_dim,DIM]] DIM
+|
+| <<<<ref_ieee_11073_10201_2005>>>>
+| SDC
+
 | [[term_clinical_function,Clinical Function]] Clinical Function
 | Function or feature intended to be used for one or more specific medical purposes including but not limited to examination, monitoring, or modification of the structure or function of an individual's body; prediction, prevention, diagnosis, prognosis, treatment, or alleviation of a medical condition.
 |

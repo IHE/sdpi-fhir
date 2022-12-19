@@ -3,22 +3,62 @@
 [#vol3_clause_sdc_biceps_semantic_content_module]
 ===== SDC/BICEPS Content Module
 
-// 8.3.2.2
+#TODO:  NEED TO ADD EXPLICIT REQUIREMENTS TO THIS SECTION#
+
+// 8.3.2.
 ===== BICEPS Descriptive Model
 
-// 8.3.2.3
+As described in <<vol1_clause_soa_somds_architecture_alignment>> (see <<figure_sdc_biceps_mdib_descriptors_states>>), all <<actor_somds_participant>> systems support an <<acronym_mdib>> model that has both medical device description and state components.  <<figure_sdc_participant_model_descriptive_part>> below provides the next level of detail for the descriptive part of the <<acronym_mdib>>:
+
+.SDC/BICEPS MDIB Descriptive Model Components
+[#figure_sdc_participant_model_descriptive_part]
+image::../images/vol3-diagram-sdc-participant-model-descriptive-part.svg[align=center]
+
+This model, detailed in <<ref_ieee_11073_10207_2017>>, provides a basic set of objects and containment relationships for describing the information and services supported by a medical device.
+
+The core Medical Device System (*MDS*), Virtual Medical Device (*VMD*), Channel, and Metric objects are utilized for communicating basic information; whereas, the Alert System objects (not all are included on this diagram) support the specialized information around medical device alerts, alarms, and special events.
+What is unique to this descriptor model, though, is the inclusion of a set of SystemContext objects, as identified in <<figure_sdc_biceps_mdib_system_context_types_model>> below:
+
+.SDC/BICEPS MDIB System Context Types Model
+[#figure_sdc_biceps_mdib_system_context_types_model]
+image::../images/vol3-diagram-sdc-system-context-types.svg[align=center]
+
+These  context types combine to support description of the operational environment for a device.
+Depending on a systems capabilities, they may be configured -- statically or dynamically -- with context information such as location or patient identification, or they may discover a <<actor_somds_provider>> on the network from which they can retrieve the information.
+These context types represent a significant improvement over previous medical device <<acronym_mdib>> description capabilities.
+
+NOTE:  A detailed description of this <<acronym_biceps>> description information model is beyond the scope of this specification.  Detailed information is available in the <<ref_ieee_11073_10207_2017>> standard and other materials identified in <<vol1_appendix_b_references>>.
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*: This version of the supplement does not fully support profiles of all the elements in the descriptive model, including:
+
+* Service Control Object (SCO) and Operations
+* Clock objects
+* Battery objects
+
+Additionally, only limited support for the *_AlertSystem_* (and related objects), and for the *_SystemContext_* types are provided in SDPi 1.0.
+Subsequent versions of the specification will address complete functionality.
+|===
+
+// 8.3.2.
 ===== BICEPS Relationship to Classic DIM
 
-// 8.3.2.4
+As can be seen from <<figure_sdc_participant_model_descriptive_part>> above, the core elements of the <<term_classic_dim>> (as specified in <<ref_ieee_11073_10201_2004>> and described in <<vol3_clause_ieee_11073_10201_classic_dim_content_modules>>), are directly supported by the <<acronym_biceps>> model above in <<figure_sdc_participant_model_descriptive_part>>.
+The basic containment from MDS to VMD to Channel to Metric is maintained within <<acronym_biceps>>, ensuring continuity with the broadly-implemented <<term_classic_dim>>
+
+// 8.3.2.
 ===== Nomenclature Considerations – Private Extensions & External Systems
 
-// 8.3.2.5
+// 8.3.2.
 ===== Safety, Effectiveness, Security Content Requirements & Considerations
 
-// 8.3.2.6
+// 8.3.2.
 ===== BICEPS Conventions for device specialization content modules
 
-// 8.3.2.7
+// 8.3.2.
 ===== BICEPS Extension Model
 
 IEEE 11073-10207 provides a flexible extension model.
