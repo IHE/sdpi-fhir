@@ -597,7 +597,7 @@ The <<acronym_sdc>> <<acronym_biceps>> standard, which SDPi-P profiles, consists
 [#figure_sdc_biceps_components_model]
 image::../images/vol1-diagram-sdc-biceps-component-view.svg[align=center]
 
-The <<term_medical_data_information_base>> component applies to all participating systems and consists of a *_descriptive model_* (e.g., what services and information a <<term_somds_provider>> supports), and a state model.
+The <<term_medical_data_information_base>> component applies to all participating systems and consists of a *_descriptive model_* (e.g., what services and information a <<actor_somds_provider>> supports), and a state model.
 The discovery and communications models combine to enable device-to-device messaging and to identify both systems and services available on the network.
 The descriptive model is covered in more detail in <<vol3_clause_sdc_biceps_semantic_content_module>>, but the following <<figure_sdc_biceps_mdib_descriptors_states>> shows how network efficiency is achieved by searating descriptive information from dynamic state information:
 

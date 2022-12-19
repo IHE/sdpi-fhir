@@ -4,6 +4,8 @@
 [sdpi_offset=11]
 == Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
 
+The SDPi-Reporting ([[acronym_sdpi_r,SDPi-R]] SDPi-R) profile supports #TODO: add general description ...#
+
 // 11.1
 === SDPi-R Actors, Transactions, and Content Modules
 

@@ -4,6 +4,8 @@
 [sdpi_offset=12]
 == Service-oriented Device Point-of-care Interoperability - Alerting (SDPi-A) Profile
 
+The SDPi-Alerting ([[acronym_sdpi_a,SDPi-A]] SDPi-A) profile supports #TODO: add general description ...#
+
 // 12.1
 === SDPi-A Actors, Transactions, and Content Modules
 

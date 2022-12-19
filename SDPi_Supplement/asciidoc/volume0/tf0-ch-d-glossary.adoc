@@ -48,7 +48,7 @@
 | The foundational domain information model (DIM) that is recognized and implemented in all IEEE 11073 standards and profiles, for both <<acronym_pocd>> and <<acronym_phd>> devices.
 | [[acronym_dim,DIM]] DIM
 |
-| <<<<ref_ieee_11073_10201_2005>>>>
+| <<<<ref_ieee_11073_10201_2004>>>>
 | SDC
 
 | [[term_clinical_function,Clinical Function]] Clinical Function
@@ -267,6 +267,13 @@
 | [[acronym_sdpi,SDPi]] SDPi
 |
 | Profile
+
+| [[term_service_oriented_architecture,Service-oriented Architecture (SOA)]] Service-oriented Architecture
+| An architectural style that focuses on discrete services, where provider components supply services (discrete units of functionality) to consumer components across a communications network infrastructure.
+|
+| [[acronym_soa,SOA]] SOA
+|
+| SDC
 
 | [[term_service_oriented_medical_device_system,Service-oriented Medical Device System (SOMDS)]] Service-oriented Medical Device System
 | A point-of-care system of products that

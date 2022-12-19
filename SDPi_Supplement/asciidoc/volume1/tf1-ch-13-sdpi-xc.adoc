@@ -13,6 +13,8 @@ a| *SDPi Supplement Version Note*: This SDPi-xC (External Control) profile secti
 
 |===
 
+The SDPi-External Control ([[acronym_sdpi_xc,SDPi-xC]] SDPi-xC) profile supports #TODO: add general description ...#
+
 // 13.1
 === SDPi-xC Actors, Transactions, and Content Modules
 
