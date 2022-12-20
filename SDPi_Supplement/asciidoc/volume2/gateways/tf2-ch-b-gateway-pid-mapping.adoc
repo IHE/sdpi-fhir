@@ -384,35 +384,3 @@ The field value is determined from the present of a patient-inferred ensemble co
 
 In all other cases, the value is set to "Y".
 ****
-
-====== PID-33 Last Update Date/Time
-.R8110
-[sdpi_requirement#r8110,sdpi_req_level=shall,sdpi_max_occurrence=2]
-****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-33 field to the date & time of last patient context update.
-
-.Notes
-[%collapsible]
-====
-NOTE: <<ref_tbl_pid33_mapping>> defines the mapping of the SDC patient context update information to the data fields of the HL7 data type *DTM* used in the PID-33 field.
-
-NOTE: The <<acronym_mdib>> data model does not support the concept of a last update timestamp. A <<actor_somds_consumer>> could determine context updates from the SDC state report events (receiving timestamp of the state report). However, when the connection between the <<actor_somds_provider>> and <<actor_somds_consumer>> gets lost, the <<actor_somds_consumer>> will not be able to determine the lastest update timestamp.
-====
-****
-
-[#ref_tbl_pid33_mapping]
-.PID-33 Last Update Date/Time Mapping
-|===
-|HL7 Field |HL7 Component Name |SDC Attribute/Element |Comments
-
-|PID-33/DTM-1
-|Date/Time
-|If *pm:PatientContextState
-/pm:Identification
-/@ContextAssociation = Assoc*, the field shall be set to *pm:PatientContextState/@BindingStartTime*.
-
-In all other cases, the field shall be set to *pm:PatientContextState/@BindingEndTime*.
-
-|Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
-
-|===
