@@ -27,7 +27,7 @@ These general concepts will help the technical framework reader understand the b
 |===
 
 // 2.2
-[sdpi_offset=2]
+[#vol1_clause_ses_considerations_requirements,sdpi_offset=2]
 === Safety, Effectiveness & Security Considerations and Requirements
 IHE specifications often include sections for "Security Considerations" and "Safety Considerations", capturing both general and specific guidance and requirements for system implementers.
 This supplement extends these two concepts to include a third:  Effectiveness.

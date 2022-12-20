@@ -173,7 +173,7 @@
 | [[term_medical_device_system,Medical Device System (MDS)]] Medical Device System
 | A core object type in the ISO/IEEE 11073 device communication standards.  It represents the top-level containment of the hierarchy of information objects contained in a device.
 |
-| [[acronym_mdi,MDS]] MDS
+| [[acronym_mds,MDS]] MDS
 | <<ref_ieee_11073_10207_2017>>, <<ref_ieee_11073_10201_2004>>
 |
 

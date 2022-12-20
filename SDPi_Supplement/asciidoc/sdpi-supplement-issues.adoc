@@ -29,8 +29,6 @@ For more detailed information on how the Gemini SES+MDI program manages issues f
 
 * *Issue:* https://confluence.hl7.org/pages/viewpage.action?pageId=104761310[*_MDIB Report Retrofit / Best Practices_*]
 ** https://github.com/IHE/sdpi-fhir/issues/104[Github Issue \#104 _Append TOI: MDIB Report Retrofit / Best Practices_] +
-##ADDED A NOTE TO THE ISSUE THAT THIS IS STILL OPEN IN THE ToI TABLE AND THUS IN THE OPEN LIST THOUGH IT HAS A GITHUB ISSUE NUMBER
-##
 ** MDIB reports are sent out every time descriptors or states of an MDIB containment tree change. Descriptor changes cause corresponding states to also change whereas state changes do not cause descriptors to change. A BICEPS Service Provider is supposed to transmit every change of descriptors and their corresponding states in various of the report and and streams. Unfortunately, BICEPS lacks requirements when it comes to the generation of report messages to the extent that BICEPS Service Consumers cannot appropriately be implemented at reasonable costs. This topic of interest discusses best practices for the transmission of MDIB reports in a way that BICEPS Service Consumers can effectively and efficiently process those reports.
 
 * *Issue:* *_BICEPS Extension Model Use in SDPi?_*
@@ -40,7 +38,9 @@ For more detailed information on how the Gemini SES+MDI program manages issues f
 ** Note: _This issue is targeted for v1.1 but may have some element in v1.0_
 ** ISO/IEEE 11073 SDC provides for both implicit and explicit discovery; however, for some implementations this may result in unwanted message traffic across the network; the use of a "discovery proxy" has been proposed and could be added as an optional SDPi actor.
 
-#PRIORITY-1 -- Add #220 to Open Issues List#
+* *Issue: _SDPi-xC with Mixed Device Safety Classes_*
+** https://github.com/IHE/sdpi-fhir/issues/61[Github Issue #61 _Topic: SDPi-xC with Mixed Device Safety Classes_]
+** FOR SDPi 1.0 -- Basic text was added to the SES template sections to indicate the nature of the issue, but not to indicate its resolution or even if WILL be explcitly resolve (incl. if the safety classification aspect of <<acronym_biceps>> will be maintained).  See <<vol1_clause_ses_considerations_requirements>> for the text being used.
 
 [sdpi_offset=clear]
 === Closed Issues
@@ -67,25 +67,20 @@ https://github.com/IHE/sdpi-fhir/issues/33[Github Issue #33 _Topic: Connect Time
 
 * *Issue: _What is a Central?_*
 ** https://github.com/IHE/sdpi-fhir/issues/123[Github Issue #123 _Append TOI: What is a Central?_]
-** #Identify list of updates to this supplement w/ links#
+** Section added:  <<vol3_clause_system_type_nomenclature_extensions>>
 
 * *Issue: _What is a Smart Alert System?_*
 ** https://github.com/IHE/sdpi-fhir/issues/124[Github Issue #124 _Append TOI: What is a Smart Alert System?_]
-** #Identify list of updates to this supplement w/ links#
+** Section added:  <<vol3_clause_system_type_nomenclature_extensions>>
 
 * *Issue: _SDPi BICEPS Extension Namespace_*
 ** https://github.com/IHE/sdpi-fhir/issues/125[Github Issue #125 _Append TOI: SDPi BICEPS Extension Namespace_]
-** #Identify list of updates to this supplement w/ links#
+** Sections added:  <<vol3_clause_biceps_extension_model>>, <<vol3_appendix_a_xml_schemas>>
 
 * *Issue: _MDIB/MDS Modeling for Device Aggregators_*
 ** https://github.com/IHE/sdpi-fhir/issues/126[Github Issue #126 _Append TOI: MDIB/MDS Modeling for Device Aggregators_]
-** #Identify list of updates to this supplement w/ links#
-
-#PRIORITY-1 -- Move Mixed to Open + add text to be added to SES templawte#
-
-* *Issue: _SDPi-xC with Mixed Device Safety Classes_*
-** https://github.com/IHE/sdpi-fhir/issues/61[Github Issue #61 _Topic: SDPi-xC with Mixed Device Safety Classes_]
-** #Identify list of updates to this supplement w/ links#
+** SDPi 1.0 Note:  This topic will be extended in subsequent revisions; very basic information is provided in this revision.
+** Section added:  <<vol3_clause_system_type_nomenclature_extensions>>
 
 
 

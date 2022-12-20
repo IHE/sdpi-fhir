@@ -126,6 +126,7 @@ In addition to specific device specializations (see <<vol3_clause_device_special
 ===== BICEPS Conventions for device specialization content modules
 
 // 8.3.2.
+[#vol3_clause_biceps_extension_model]
 ===== BICEPS Extension Model
 
 IEEE 11073-10207 provides a flexible extension model.
