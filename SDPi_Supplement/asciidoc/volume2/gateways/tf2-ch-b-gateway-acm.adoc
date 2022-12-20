@@ -13,7 +13,7 @@ The following sections supplement the IHE ACM profile as appropriate. If there a
 This section provides an overview about the referenced standards and profiles used in this chapter:
 
 * <<ref_ihe_pcd_tf_2_2019>>
-* <<ieee_11073_10702_202x>>
+* <<ref_ieee_11073_10702_202x>>
 * <<ref_ieee_11073_10701_2022>>
 * <<ref_ieee_11073_10700_2022>>
 * <<ref_ieee_11073_10207_2017>>

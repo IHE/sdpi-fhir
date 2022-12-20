@@ -39,9 +39,9 @@
 
 | [[term_central_station,Central Station]] Central Station
 | #See description in TF-1 Appendix C or TF-3#
-| Central
+| A system that supports a multi-patient workplace with capabilities similar to a Cockpit.
 |
-|
+| See extended description and discussion in <<vol3_clause_system_type_nomenclature_extensions>>
 |
 
 | [[term_classic_dim,Classic DIM]] Classic Domain Information Model (DIM)
@@ -168,6 +168,13 @@
 | [[acronym_sdc_lan,SDC LAN]] SDC LAN
 | [[acronym_md_lan,MD LAN]] MD LAN
 |
+|
+
+| [[term_medical_device_system,Medical Device System (MDS)]] Medical Device System
+| A core object type in the ISO/IEEE 11073 device communication standards.  It represents the top-level containment of the hierarchy of information objects contained in a device.
+|
+| [[acronym_mdi,MDS]] MDS
+| <<ref_ieee_11073_10207_2017>>, <<ref_ieee_11073_10201_2004>>
 |
 
 | [[term_model_based_systems_engineering,Model-Based Systems Engineering (MBSE)]] Model-Based Systems Engineering

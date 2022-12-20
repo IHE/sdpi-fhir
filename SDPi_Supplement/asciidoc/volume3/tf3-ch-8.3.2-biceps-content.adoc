@@ -9,7 +9,7 @@ The <<acronym_biceps>> standard, <<ref_ieee_11073_10207_2017>>, provides an exte
 .R0701
 [sdpi_requirement#r0701,sdpi_req_level=shall]
 ****
-All <<acronym_somds_participant>> systems shall fully implement the semantic content requirements in the <<ref_ieee_11073_10207_2017>> <<acronym_biceps>> standard.
+All <<actor_somds_participant>> systems shall fully implement the semantic content requirements in the <<ref_ieee_11073_10207_2017>> <<acronym_biceps>> standard.
 
 .Notes
 [%collapsible]
@@ -75,12 +75,12 @@ The <<acronym_biceps>> specification fully supports the private nomenclature ext
 See <<ref_ieee_11073_10207_2017>> for additional details.
 
 // 8.3.2.
-[#vol3_clause_]
+[#vol3_clause_system_type_nomenclature_extensions]
 ===== System Type Nomenclature Extensions
 In addition to specific device specializations (see <<vol3_clause_device_specialization_content_modules>> below), SDPi specifications, especially TF-1 use cases, refer to a number of general classes or types of systems.  These systems provide common services to all other <<actor_somds_participant>>'s; however, in order to be discovered on the network, they must have system type identifiers that can be recognized by these other systems (explicitly / implicitly).
 
 
-[#vol1_table_system_type_nomenclature_extension]
+[#vol1_table_system_type_nomenclature_extensions]
 .<<acronym_mdc>> Nomenclature System Type Extensions
 
 [%autowidth]
