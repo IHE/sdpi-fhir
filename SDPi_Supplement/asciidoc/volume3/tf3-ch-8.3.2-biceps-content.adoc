@@ -3,7 +3,25 @@
 [#vol3_clause_sdc_biceps_semantic_content_module]
 ===== SDC/BICEPS Content Module
 
-#PRIORITY-1:  Add an explicity requirement to this section somewhere that SDPi content SHALL conform to those requirements in BICEPS, including use of the 11073-10101 Nomenclature#
+The <<acronym_biceps>> standard, <<ref_ieee_11073_10207_2017>>, provides an extensive semantic model for all information exchanged between <<actor_somds_participant>> systems.  This section provides a general background for <<acronym_biceps>>-based content, including both what is unique to this standard (e.g., different from the <<term_classic_dim>>), and any extensions that are made by this SDPi supplement.
+
+
+.R0701
+[sdpi_requirement#r0701,sdpi_req_level=shall]
+****
+All <<acronym_somds_participant>> systems shall fully implement the semantic content requirements in the <<ref_ieee_11073_10207_2017>> <<acronym_biceps>> standard.
+
+.Notes
+[%collapsible]
+====
+NOTE: This includes strict implementation of the <<acronym_biceps>> <<acronym_mdib>> specification, as well as use of the <<acronym_mdc>> nomenclature.
+
+#TODO:  ADD SPECIFIC BICEPS REQUIREMENT NUMBERS HERE?  THE ICS TABLE WILL BE ADDED TO TF-1 Appendix B in SDPi 1.x#
+
+====
+****
+
+
 
 // 8.3.2.
 ===== BICEPS Descriptive Model
@@ -52,11 +70,58 @@ The basic containment from MDS to VMD to Channel to Metric is maintained within 
 // 8.3.2.
 ===== Nomenclature Considerations – Private Extensions & External Systems
 
-#PRIORITY-1 -- Add System Types section here per Issue #214; #
+The <<acronym_biceps>> specification fully supports the private nomenclature extensions as defined in <<ref_ieee_11073_10101_2020>>.  Additionally it supports integration of other non-<<acronym_mdc>> terminology systems.
+
+See <<ref_ieee_11073_10207_2017>> for additional details.
+
+// 8.3.2.
+[#vol3_clause_]
+===== System Type Nomenclature Extensions
+In addition to specific device specializations (see <<vol3_clause_device_specialization_content_modules>> below), SDPi specifications, especially TF-1 use cases, refer to a number of general classes or types of systems.  These systems provide common services to all other <<actor_somds_participant>>'s; however, in order to be discovered on the network, they must have system type identifiers that can be recognized by these other systems (explicitly / implicitly).
+
+
+[#vol1_table_system_type_nomenclature_extension]
+.<<acronym_mdc>> Nomenclature System Type Extensions
+
+[%autowidth]
+[cols="1,1,1"]
+|===
+.^| <<acronym_mds>> System Type
+.^|<<acronym_mdc>> Term Identifier
+.^|Description
+
+.^| Central
+.^| (tba)
+.^| A system that supports a multi-patient workplace with capabilities similar to a _Cockpit_.
+
+.^| Cockpit
+.^| (tba)
+.^| Supports information viewing and control of multiple devices and systems associated with a single patient.
+
+.^| Device Aggregator
+.^| (tba)
+.^| Discovering and integrates devices to an SDC network aggregator; systems may be <<actor_somds_participant>>s that support <<acronym_sdc>> connectivity or may be connected to the aggregator system by some other non-standardized means.
+
+.^| Dashboard
+.^| (tba)
+.^| A system that displays information from one or more <<actor_somds_participant>> systems associated with a single patient.  Similar to a _Cockpit_ but without device-external control capabilities.  May include both metric and alert information.
+
+.^| Gateway
+.^| (tba)
+.^| Gateway PARTICIPANT that provides, for example, ADT information or laboratory results (inbound)
+
+.^| Smart Alerting
+.^| (tba)
+.^| Smart Alerting system that provides consolidated alert event (actionable alerts), advisories such as patient deteriorations, etc.
+
+|===
+
+#TODO:  ADD TERM CODE IDENTIFIERS FOR THE SYSTEM TYPES IN THE TABLE ABOVE + SEE ADDITIONAL TYPES AT https://confluence.hl7.org/pages/viewpage.action?pageId=86972238[ToI "What is a Central?"]#
 
 // 8.3.2.
 ===== Safety, Effectiveness, Security Content Requirements & Considerations
 #PRIORITY-1 -- Include mixed safety class language + links to boilerplate SES sections for Semantic Content#
+
 // 8.3.2.
 ===== BICEPS Conventions for device specialization content modules
 

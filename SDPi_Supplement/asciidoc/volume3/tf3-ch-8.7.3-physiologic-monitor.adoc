@@ -1,8 +1,10 @@
-
 // = Device:  Physiologic monitor
 
-NOTE:  This file contains the content that profiles BICEPS semantics for use in the SDPi profiles.
-
+[%noheader]
+[cols="1"]
+|===
+| Add the following BICEPS subsection to the end of the Physiologic monitor specification content.
+|===
 
 // 8.3.3
 ==== Device:  Physiologic monitor
