@@ -65,6 +65,13 @@
 |
 | SDC
 
+| [[term_health_level_seven,Health Level Seven (HL7)]] Health Level Seven
+| An ANSI accredited standards development organization.
+|
+| [[acronym_hl7,HL7]] HL7
+| https://www.hl7.org/about/index.cfm?ref=nav[HL7.org/about/]
+|
+
 | [[term_implementation_conformance_statement,Implementation Conformance Statement (ICS)]] Implementation Conformance Statement
 | A clause in many standards that specifies how conformance claims to that standard should be formalized, including identification of any deviations, extensions and option selection.
 |
@@ -169,6 +176,13 @@
 | [[acronym_pkp,PKP]] PKP
 | <<ref_ieee_11073_10700_2022>>
 | SDC
+
+| [[term_personal_health_device,Personal Health Device (PHD)]] Personal Health Device
+| A device that is intended to be used by an individual to track and manage their own health.
+|
+| [[acronym_phd,PHD]] PHD
+|
+|
 
 | [[term_plug_and_trust,Plug-and-Trust (PnT)]] Plug-and-Trust
 | The integration of an SES framework and MDI  plug-and-play technology to enable the dynamic establishment of trust between participant systems at the point of connection to a <<acronym_somds>> network.
