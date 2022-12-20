@@ -306,7 +306,7 @@ NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
 
 #TODO: special requirements for infusion pumps#
 
-#TODO: Todd owns issue regarding the service ids.#
+#TODO: service ids need to be finalized#
 
 ====== OBR-7 Observation Date/Time
 

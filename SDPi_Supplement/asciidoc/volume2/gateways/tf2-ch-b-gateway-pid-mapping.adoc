@@ -213,13 +213,16 @@ xsd:date: *2001-10-26* -> HL7 DTM: *20011026*
 ====
 
 ====== PID-8 Administrative Sex
-[NOTE]
-====
-#Note for Reviewers and Request for Comment:#
 
-At the moment, there are various opinions on how to map the biological sex vs. the administrative sex (gender) to an IHE PCD profile conform HL7 V2 message.
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*: At the moment, there are various opinions on how to map the biological sex vs. the administrative sex (gender) to an IHE PCD profile conform HL7 V2 message.
 
-The SDC BICEPS standard defines a generic field for the patient's sex (*pm:PatientContextState/pm:CoreData/pm:Sex*). This field shall be set to the biological sex (or sex for clinical use). In addition, there will be a gender extension that shall be set to the administrative gender (or administrative sex).
+The SDC BICEPS standard defines a generic field for the patient's sex (*pm:PatientContextState/pm:CoreData/pm:Sex*).
+This field shall be set to the biological sex (or sex for clinical use).
+In addition, there will be a gender extension that shall be set to the administrative gender (or administrative sex).
 
 The HL7 V2.6 messaging standard only supports a "Administrative Sex" field in the PID segment.
 
@@ -231,7 +234,9 @@ The following list a couple of options and any comments from the reviewers are h
 
 . *Map the "sex for clinical use" in a separate OBX segment (only possible for DEC profile but not for ACM) and the Administrative Sex/Gender to the PID-8 Administrative Sex field*: the administrative sex/gender information is mapped to the correctly named PID-8 "Administrative Sex" field, and the sex for clinical use is provided in a separate OBX segment in the IHE DEC profile conform export. The sex for clinical use information will be not available in the ACM profile conform export. Pros: the information are mapped to the correct fields. Cons: this mapping might not be backward compatible to the existing IHE PCD profile actors (reporter/consumer). Information of the sex for clinical use may get lost in some profiles such as ACM.
 
-====
+*REVIEWER QUESTION*:  Please review the options listed above and provide comments on the mapping of this semantic content.
+
+|===
 
 .R8107
 [sdpi_requirement#r8107,sdpi_req_level=shall,sdpi_max_occurrence=2]

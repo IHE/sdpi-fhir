@@ -247,7 +247,7 @@ NOTE: There might be up to three device-related OBX segments for the MDS, VMD, a
 .R8058
 [sdpi_requirement#r8058,sdpi_req_level=shall]
 ****
-If a private *MDC* code is used for the coding of the SDC device-related element, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC device-related element, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_acm_obx_device_related_mapping]
@@ -409,7 +409,7 @@ The event identification mapping for a physiological alert is defined in table <
 .R8063
 [sdpi_requirement#r8063,sdpi_req_level=shall]
 ****
-If a private *MDC* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_acm_obx_event_phy_mapping]
@@ -436,18 +436,18 @@ If a private *MDC* code is used for the coding of the SDC coded element value, t
 
 |OBX-3/CWE-2
 |Text
-|If *@Code* is an MDC code, this field shall contain the RefId of the MDC code.
+|If *@Code* is an <<acronym_mdc>> code, this field shall contain the RefId of the <<acronym_mdc>> code.
 
 In all other cases, the field shall be set to the pm:AlertConditionDescriptor /pm:Type /@SymbolicCodeName.
-| Note that MDC is the default coding system if no coding system is specified.
+| Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-3/CWE-3
 |Name of Coding System
-|*"MDC"* if no other coding system is specified.
+|*"<<acronym_mdc>>"* if no other coding system is specified.
 
 In all other cases, the field shall be set to pm:AlertConditionDescriptor /pm:Type /@CodingSystem.
 
-|Note that MDC is the default coding system if no coding system is specified.
+|Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-4
 |Observation Sub-ID
@@ -493,7 +493,7 @@ The event identification mapping for a technical alert is defined in table <<ref
 .R8064
 [sdpi_requirement#r8064,sdpi_req_level=shall]
 ****
-If a private *MDC* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_acm_obx_event_tec_mapping]
@@ -514,17 +514,17 @@ If a private *MDC* code is used for the coding of the SDC coded element value, t
 |OBX-3/CWE-1
 |Identifier
 |
-|Set to MDC code *"196616"*.
+|Set to <<acronym_mdc>> code *"196616"*.
 
 |OBX-3/CWE-2
 |Text
 |
-| Set to MDC RefId *"MDC_EVT_ALARM"*.
+| Set to <<acronym_mdc>> RefId *"MDC_EVT_ALARM"*.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |
-|Set to coding system *"MDC"*.
+|Set to coding system *"<<acronym_mdc>>"*.
 
 |OBX-4
 |Observation Sub-ID
@@ -546,18 +546,18 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |OBX-5/CWE-2
 |Text
-|If *@Code* is an MDC code, this field shall contain the RefId of the MDC code.
+|If *@Code* is an <<acronym_mdc>> code, this field shall contain the RefId of the <<acronym_mdc>> code.
 
 In all other cases, the field shall be set to the pm:AlertConditionDescriptor /pm:Type /@SymbolicCodeName.
-| Note that MDC is the default coding system if no coding system is specified.
+| Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-5/CWE-3
 |Name of Coding System
-|*"MDC"* if no other coding system is specified.
+|*"<<acronym_mdc>>"* if no other coding system is specified.
 
 In all other cases, the field shall be set to pm:AlertConditionDescriptor /pm:Type /@CodingSystem.
 
-|Note that MDC is the default coding system if no coding system is specified.
+|Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-5/CWE-9
 |Original Text
@@ -645,7 +645,7 @@ The source identification mapping for a technical alert is defined in table <<re
 .R8069
 [sdpi_requirement#r8069,sdpi_req_level=shall]
 ****
-If a private *MDC* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
+If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded element value, the identifier shall be mapped as described in section <<ref_private_coding_system_note>>.
 ****
 
 [#ref_tbl_acm_obx_source_tec_mapping]
@@ -666,17 +666,17 @@ If a private *MDC* code is used for the coding of the SDC coded element value, t
 |OBX-3/CWE-1
 |Identifier
 |
-|Set to MDC code *"68480"*.
+|Set to <<acronym_mdc>> code *"68480"*.
 
 |OBX-3/CWE-2
 |Text
 |
-| Set to MDC RefId *"MDC_ATTR_ALERT_SOURCE"*.
+| Set to <<acronym_mdc>> RefId *"MDC_ATTR_ALERT_SOURCE"*.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |
-|Set to coding system *"MDC"*.
+|Set to coding system *"<<acronym_mdc>>"*.
 
 |OBX-4
 |Observation Sub-ID
@@ -698,18 +698,18 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |OBX-5/CWE-2
 |Text
-|If *@Code* is an MDC code, this field shall contain the RefId of the MDC code.
+|If *@Code* is an <<acronym_mdc>> code, this field shall contain the RefId of the <<acronym_mdc>> code.
 
 In all other cases, the field shall be set to the pm:Mds or pm:Vmd or pm:Channel or pm:Metric /pm:Type /@SymbolicCodeName.
-| Note that MDC is the default coding system if no coding system is specified.
+| Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-5/CWE-3
 |Name of Coding System
-|*"MDC"* if no other coding system is specified.
+|*"<<acronym_mdc>>"* if no other coding system is specified.
 
 In all other cases, the field shall be set to pm:Mds or pm:Vmd or pm:Channel or pm:Metric /pm:Type /@CodingSystem.
 
-|Note that MDC is the default coding system if no coding system is specified.
+|Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-11
 |Observation Result Status
@@ -765,17 +765,17 @@ OBX|6|ST|68481\^MDC_ATTR_EVENT_PHASE^MDC|1.1.1.1.3|start||||||R
 |OBX-3/CWE-1
 |Identifier
 |
-|Set to MDC code *"68481"*.
+|Set to <<acronym_mdc>> code *"68481"*.
 
 |OBX-3/CWE-2
 |Text
 |
-| Set to MDC RefId *"MDC_ATTR_EVENT_PHASE"*.
+| Set to <<acronym_mdc>> RefId *"MDC_ATTR_EVENT_PHASE"*.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |
-|Set to coding system *"MDC"*.
+|Set to coding system *"<<acronym_mdc>>"*.
 
 |OBX-4
 |Observation Sub-ID
@@ -879,17 +879,17 @@ A <<actor_somds_acm_gateway>> shall only report an inactive alert condition when
 |OBX-3/CWE-1
 |Identifier
 |
-|Set to MDC code *"68482"*.
+|Set to <<acronym_mdc>> code *"68482"*.
 
 |OBX-3/CWE-2
 |Text
 |
-| Set to MDC RefId *"MDC_ATTR_ALARM_STATE"*.
+| Set to <<acronym_mdc>> RefId *"MDC_ATTR_ALARM_STATE"*.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |
-|Set to coding system *"MDC"*.
+|Set to coding system *"<<acronym_mdc>>"*.
 
 |OBX-4
 |Observation Sub-ID
@@ -970,17 +970,17 @@ OBX|8|ST|68483\^MDC_ATTR_ALARM_INACTIVATION_STATE^MDC|1.1.1.1.5|enabled||||||R
 |OBX-3/CWE-1
 |Identifier
 |
-|Set to MDC code *"68483"*.
+|Set to <<acronym_mdc>> code *"68483"*.
 
 |OBX-3/CWE-2
 |Text
 |
-| Set to MDC RefId *"MDC_ATTR_ALARM_INACTIVATION_STATE"*.
+| Set to <<acronym_mdc>> RefId *"MDC_ATTR_ALARM_INACTIVATION_STATE"*.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |
-|Set to coding system *"MDC"*.
+|Set to coding system *"<<acronym_mdc>>"*.
 
 |OBX-4
 |Observation Sub-ID
@@ -1076,17 +1076,17 @@ In this case, the gateway shall send a new alert event message with the updated 
 |OBX-3/CWE-1
 |Identifier
 |
-|Set to MDC code *"68484"*.
+|Set to <<acronym_mdc>> code *"68484"*.
 
 |OBX-3/CWE-2
 |Text
 |
-| Set to MDC RefId *"MDC_ATTR_ALARM_PRIORITY"*.
+| Set to <<acronym_mdc>> RefId *"MDC_ATTR_ALARM_PRIORITY"*.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |
-|Set to coding system *"MDC"*.
+|Set to coding system *"<<acronym_mdc>>"*.
 
 |OBX-4
 |Observation Sub-ID
@@ -1177,17 +1177,17 @@ OBX|10|ST|68485\^MDC_ATTR_ALERT_TYPE^MDC|1.1.1.1.7|ST||||||R
 |OBX-3/CWE-1
 |Identifier
 |
-|Set to MDC code *"68485"*.
+|Set to <<acronym_mdc>> code *"68485"*.
 
 |OBX-3/CWE-2
 |Text
 |
-| Set to MDC RefId *"MDC_ATTR_ALERT_TYPE"*.
+| Set to <<acronym_mdc>> RefId *"MDC_ATTR_ALERT_TYPE"*.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |
-|Set to coding system *"MDC"*.
+|Set to coding system *"<<acronym_mdc>>"*.
 
 |OBX-4
 |Observation Sub-ID
