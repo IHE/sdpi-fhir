@@ -149,6 +149,13 @@
 | <<term_international_medical_device_regulators_forum>>
 |
 
+| [[term_medical_device_communication,Medical Device Communication (MDC)]] Medical Device Communication
+| A general term that refers to all aspects of standards-based exchanges between medical (and health) devices, including <<acronym_pocd>> and <<acronym_phd>>; in some contexts, for example <<acronym_hl7>>, it refers to the ISO/IEEE 11073-10101 Nomenclature or "coding system".
+|
+| [[acronym_mdc,MDC]] MDC
+| <<ref_ieee_11073_10101_2020>>
+|
+
 | [[term_medical_device_interoperability,Medical Device Interoperability (MDI)]] Medical Device Interoperability
 | The application of informatics technology standards to achieve seamless and dynamic connection of #Point of Care Devices#.
 |

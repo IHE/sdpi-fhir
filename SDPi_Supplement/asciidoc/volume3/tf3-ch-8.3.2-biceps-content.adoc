@@ -3,7 +3,7 @@
 [#vol3_clause_sdc_biceps_semantic_content_module]
 ===== SDC/BICEPS Content Module
 
-#TODO:  NEED TO ADD EXPLICIT REQUIREMENTS TO THIS SECTION#
+#PRIORITY-1:  Add an explicity requirement to this section somewhere that SDPi content SHALL conform to those requirements in BICEPS, including use of the 11073-10101 Nomenclature#
 
 // 8.3.2.
 ===== BICEPS Descriptive Model
@@ -52,9 +52,11 @@ The basic containment from MDS to VMD to Channel to Metric is maintained within 
 // 8.3.2.
 ===== Nomenclature Considerations – Private Extensions & External Systems
 
+#PRIORITY-1 -- Add System Types section here per Issue #214; #
+
 // 8.3.2.
 ===== Safety, Effectiveness, Security Content Requirements & Considerations
-
+#PRIORITY-1 -- Include mixed safety class language + links to boilerplate SES sections for Semantic Content#
 // 8.3.2.
 ===== BICEPS Conventions for device specialization content modules
 

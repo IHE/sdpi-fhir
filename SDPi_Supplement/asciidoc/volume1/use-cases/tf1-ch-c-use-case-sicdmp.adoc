@@ -3,6 +3,8 @@
 [sdpi_offset=4]
 === Use Case Feature {var_use_case_id}: Standalone ICU Dashboard Multiple Patient (SICDmp)
 
+#PRIORITY-1:  Usage link from ... SDPi-P?  SDPi-R? SDPi-A? SystemContext/PatientContext/LocationContext#
+
 ==== Narrative
 
 Dr. Presky is in the ICU evaluating a trauma patient from a remote location in the ICU.  The dashboard allows access to multiple patients, so he first needs to select the patient of interest.  This can be done by location or by patient name (if available).

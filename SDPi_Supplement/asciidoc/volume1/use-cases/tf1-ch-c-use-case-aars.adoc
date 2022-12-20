@@ -3,6 +3,8 @@
 [sdpi_offset=7]
 === Use Case Feature {var_use_case_id}: Alerts to Alert Recording Systems (AARS)
 
+#PRIORITY-1:  Usage link from ... SDPi-P?  SDPi-A?#
+
 ==== Narrative
 
 Mumbai General is in the process of installing an IT system which will capture alerts from their ICU devices (patient monitors, ventilators, infusion devices, etc.) for the purposes of occasional review by physicians and post-discharge analysis.  (Other related use cases could include EHR capture of alerts or alert analysis).

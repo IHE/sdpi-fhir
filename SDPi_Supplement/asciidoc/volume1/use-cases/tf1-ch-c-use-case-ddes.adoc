@@ -3,6 +3,8 @@
 [sdpi_offset=5]
 === Use Case Feature {var_use_case_id}: Device Data to Enterprise Systems (DDES)
 
+#PRIORITY-1:  Usage link from ... SDPi-P?  SDPi-R? move tech specs below to profiles + add EHR acronym#
+
 ==== Narrative
 
 Mercy Hospital is in the middle of a new EHR (Epic, Cerner, etc.) rollout.  Joe Furst is responsible for integrating data from their ICU devices (patient monitors, ventilators, infusion devices, etc.) with the new EHR.  Once they are done, the data from the devices will be reviewed/validated by the ICU clinicians and then automatically entered into the patient’s clinical record.
@@ -32,6 +34,8 @@ image::../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 *When* The DGW Service is operational
 
 *Then* The DGW Service will connect to the device and export data to the EHR using the HL7 v2 based IHE DEV DOR actor of the DEV DEC profile
+
+#PRIORITY-1:  REMOVE EXPLICIT REFERENCES; DEFINE EHR acronym; let profiles link to gateway actors & profile roles ... right?#
 
 #TODO:  SHOULD REFERENCE THE DOR ACTOR FROM THE PROFILES AS INDICATED BUT WHERE AND HOW AND WHERE HERE DO WE REFERENCE THE ACRONYMS THAT ARE ALREADY DEFINED IN THE TF-0 APPENDIX A BUT NOT IN OUR GLOSSARY AND NOT WITH ASCIIDOC METADATA - SYNC WITH TF-2 APPENDIX B GATEWAY CONTENT#
 

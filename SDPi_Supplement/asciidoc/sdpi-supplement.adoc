@@ -11,6 +11,8 @@
 :imagesdir: images/
 :docinfo: shared
 
+{empty} +
+
 image::ihe-logo.svg[pdfwidth=4in,align=center]
 
 [#supplement_clause_foreword,sdpi_offset=clear]
@@ -41,10 +43,12 @@ The current version of the IHE DevicesTechnical Framework can be found at http:/
 
 __<Comments may be submitted on IHE Technical Framework templates any time at http://ihe.net/Templates_Public_Comments. Please enter comments/issues as soon as they are found. Do not wait until a future review cycle is announced.>__
 
+#PRIORITY-1 -- search all document for NOTE: WARNING: and similar sections#
+#PRIORITY-1 -- Sync All SES sections to template wording#
+#PRIORITY-1 -- Convert PRIORITY-2 to TODO or Reviewers Note box#
+
 
 // Table of Contents
-
-WARNING: #The ToC should come AFTER the Forward section - but it is on the sidebar ... do we just note this in the source?#
 
 include::sdpi-supplement-intro.adoc[]
 

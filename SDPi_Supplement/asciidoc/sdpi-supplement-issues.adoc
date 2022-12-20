@@ -40,6 +40,8 @@ For more detailed information on how the Gemini SES+MDI program manages issues f
 ** Note: _This issue is targeted for v1.1 but may have some element in v1.0_
 ** ISO/IEEE 11073 SDC provides for both implicit and explicit discovery; however, for some implementations this may result in unwanted message traffic across the network; the use of a "discovery proxy" has been proposed and could be added as an optional SDPi actor.
 
+#PRIORITY-1 -- Add #220 to Open Issues List#
+
 [sdpi_offset=clear]
 === Closed Issues
 
@@ -78,6 +80,8 @@ https://github.com/IHE/sdpi-fhir/issues/33[Github Issue #33 _Topic: Connect Time
 * *Issue: _MDIB/MDS Modeling for Device Aggregators_*
 ** https://github.com/IHE/sdpi-fhir/issues/126[Github Issue #126 _Append TOI: MDIB/MDS Modeling for Device Aggregators_]
 ** #Identify list of updates to this supplement w/ links#
+
+#PRIORITY-1 -- Move Mixed to Open + add text to be added to SES templawte#
 
 * *Issue: _SDPi-xC with Mixed Device Safety Classes_*
 ** https://github.com/IHE/sdpi-fhir/issues/61[Github Issue #61 _Topic: SDPi-xC with Mixed Device Safety Classes_]

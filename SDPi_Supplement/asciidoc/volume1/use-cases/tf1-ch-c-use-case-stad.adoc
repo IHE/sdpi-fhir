@@ -1,6 +1,6 @@
 // = Use Case Feature: Synchronized Time Across Devices (STAD)
 
-#TODO:  Add use case metadata strategy#
+// #TODO:  Add use case metadata strategy#
 
 // [mdi_use_case#use_case_stad,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_24_probe_sequence,messages='message_announce_network_presence']
 
@@ -10,6 +10,8 @@
 [sdpi_offset=2]
 [#vol1_appendix_c_use_case_stad]
 === Use Case Feature {var_use_case_id}: Synchronized Time Across Devices (STAD)
+
+#PRIORITY-1:  Usage link from ... SDPi-P?  What to TF-2?  How to address in SDC world? no time sync service identified in 11073 SDC core; include only in the SDPi-P section ... as a requirement to use NTP; reference resolution of TS Service, MD LAN, in glossary entries + point to SDPi-P + system types in TF3#
 
 ==== Narrative
 Nurse Jean attaches a ventilator to the medical device network in the ICU.  It automatically obtains the correct time.
