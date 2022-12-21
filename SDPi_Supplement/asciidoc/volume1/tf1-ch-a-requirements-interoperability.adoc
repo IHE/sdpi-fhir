@@ -4,6 +4,26 @@
 [appendix#vol1_appendix_a_requirements_management_for_p_n_t_interperability,sdpi_offset=A]
 == Requirements Management for Plug-and-Trust Interoperability
 
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This appendix provides informative (vs. normative) information related to the unique way in which this supplement integrates requirements, both from referenced foundational standards and within this specification.
+*For SDPi 1.0*, given its non-normative nature, full detailing of the concepts and specifications is deferred to a subsequent revision of the specification.
+So, please excuse the incomplete sections and the numerous #TODO:...# notes!
+There is value, though, in giving the existing content a quick review and providing feedback that would inform subsequent revisions of the specification.
+
+*REVIEWER QUESTION*:  Please consider the topics that are included in this section and are either detailed or marked wit #TODO:# notes and provide feedback on:
+
+. What additional topics should be included?
+. What is the priority for the detailing and integration of these topics?
+. Are there any that should be moved elsewhere -- noting that the content of this appendix is intended to be considered for the IHE DEV Technical Framework as Final Text.
+
+|===
+
+
+
 These SDPi specifications include the model-centric integration of requirements from multiple sources -- both within IHE and from other <<acronym_sdo>>s -- enabling a new level of *requirements management* that provides new value to all stakeholders.  Also termed *_<<term_requirements_interoperability>>_*, innovative capabilties include:
 
 . Explicit linking of requirements from their definition to their satisfaction / utilization in defined _capabilities_;
@@ -18,8 +38,6 @@ These combine to establish <<acronym_ri>> as the door to a new generation of tru
 From another perspective, _requirements interoperability_ looks at one standard as having both a set of requirements that must be satisfied for a system to be conformant, and a set of capabilities that it provides that can be utilized to meet the requirements of other standards.  Requirements interoperability essentially looks at each standard as a set of building blocks that can be snapped together and integrated into a coherent and cohesive structure.
 
 The following sections in this appendix provide background on the concepts and rationale behind requirements interoperability and the details for how it is implemented in this specification.
-
-#TODO:  TODD STOPPED DETAILING OUT THE CONTENT IN THIS APPENDIX HERE ON 2022.11.10#
 
 // A.1
 [sdpi_offset=1]
@@ -45,7 +63,7 @@ Last accessed 2022.10.04.], some general observations will help understand the v
 . <profiles navigate from the top to the bottom similar with each layer contributing to those below and converging in a single interface capability bundle>;
 . <physical layers are leveraged / not re-invented!>;
 . <requirements interoperability traces "profile lines" from top to bottom>;
-. <requirements TYPEs are rooted in the layers that they represent and link Defs to Usage, see ##TODO:  ADD LINK HERE to "SDPi Requirements Core Model"" ## section below.>.
+. <requirements TYPEs are rooted in the layers that they represent and link Defs to Usage, see <<vol1_clause_sdpi_requirements_core_model> section below.>.
 
 #TODO:  ADD INTEROPERABILITY PATHS EXAMPLE VIA A TABLE (VS. LINES THROUGH GRAPHIC)#
 
@@ -64,9 +82,6 @@ Also ensuring SES required processes that involve a total product lifecycle, wit
 .ISO/IEC 81001-1 _The Temple Diagram_
 
 image::../images/vol1-diagram-81001-temple.svg[algin=center]
-
-#TODO:  SHOULD THE FOLLOWING SOURCE LINE BE A FOOTNOTE ... HUNG ON WHERE ... IHE CONVENTION?#
-
 [none]
 . Source:  <<ref_iso_81001_temple>>
 
@@ -89,6 +104,26 @@ NOTE:  The moniker *_<<acronym_ses_mdi>>_* is shorthand to refer to the integrat
 
 How does this address the "interoperability trust gap"?  By integrating SES directly into the specifications, especially integrating the ISO/IEC 11073-1070x standards, enabling "plug-and-trust" system product components, the SES implementation and operational requirements and responsibilities are greatly reduced, the "gap" is filled for all stakeholders, and the goals of improved safety, security and clinical effectiveness of technology can be readily realized.
 
+#TODO:  Add detailed SES section specification here?  Reference to / from <<vol1_clause_ses_considerations_requirements>>#
+
+
+=== Use Cases, MBSE Requirements Modeling & SysML 2.0
+
+#TODO:
+- MBSE Reference incl. Requirements Modeling
+- Reference SysML 2.0 7.20 + intro slides on <topics>
+- ALL USE CASE FEATURE are REQUIREMENTS
+- MBSE Requirements Modeling #
+
+<<acronym_omg>>'s Systems Modeling Language 2.0 (see <<ref_omg_sysml_2_0_spec>> and <<ref_omg_sysml_2_0_intro_graphical_model>>), provides extended support for requirements modeling that not only provides the foundation for MBSE's Requirements Modeling, but also a computable specification that enables automated verification (e.g., using "Verification Cases").
+
+#TODO:  Add reference to SysML 2.0 section 7.20 Requirements & 7.23 Verification Cases#
+
+#TODO:  Add reference to Hanging Gardens Framework ... use case requirements are the top level#
+
+#TODO:  Add reference to RI+MC+RR w/ RI supported in modeling via SysML starting constructs + MC = SysML 2.0#
+
+
 [#vol1_clause_sdpi_requirements_modeling_integration]
 === SDPi Requirements Modeling & Integration
 
@@ -99,6 +134,7 @@ Note that SysML 2.0 also better supports model interoperability (tool-independen
 
 It should be further noted that though conformity testing aspects are beyond this revision of the SDPi specification, the modeling constructs used below will also be integrated with <<ref_omg_sysml_2_0_spec>> section 7.23 Verification Cases, to provide for advanced V&V of interoperable system components and entire systems of products.
 
+[#vol1_clause_sdpi_requirements_core_model]
 ==== SDPi Requirements Core Model
 
 To formally integrate requirements in to this specification, the following requirements model provides the starting point:
@@ -144,9 +180,7 @@ Each type is a source of requirements that are explicitly identified and formali
 | SES
 |
 | sdpi_requirement_ses
-| See SES section ...
-
-#TODO: WHERE IS THE SES SECTION GOING TO GO?  ADD LINK HERE#
+| See SES section <<vol1_appendix_a_integrating_ses>>
 
 | Tech Feature
 |
@@ -154,9 +188,9 @@ Each type is a source of requirements that are explicitly identified and formali
 |
 |===
 
-#show core data elements for this abstract SDPi Requirement Definition #
+#TODO: show core data elements for this abstract SDPi Requirement Definition #
 
-#note navigating relationships from usage to requirements supports traceability from capabilities / feature verification back to source requirements and group coverage#
+#TODO: note navigating relationships from usage to requirements supports traceability from capabilities / feature verification back to source requirements and group coverage#
 
 #TODO:  Mention traceability & coverage#
 

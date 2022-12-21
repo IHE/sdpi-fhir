@@ -1,7 +1,8 @@
-// = Use Case Feature: Alerts to Clinician Notification Systems (ACNS)
-
-[sdpi_offset=6]
+[#vol1_clause_appendix_c_use_case_acns,sdpi_offset=6]
 === Use Case Feature {var_use_case_id}: Alerts to Clinician Notification Systems (ACNS)
+
+[[acronym_acns,ACNS]]
+[[use_case_label_acns,Alerts to Clinician Notification Systems]]
 
 #PRIORITY-1:  Usage link from ... SDPi-P?  SDPi-A? acronym for ICU#
 
@@ -15,19 +16,21 @@ Bonjour Hospital is in the process of installing a nurse alert notification syst
 
 image::../images/vol1-diagram-use-case-acns-tech-view.svg[]
 
+[#vol1_clause_appendix_c_use_case_acns_technical_precondition]
 ==== Technical Pre-Conditions
 
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
-*And* At least one Alert Gateway (AGW) Service on the <<acronym_md_lan>> network
+*And* At least one Alert <<system_type_gateway>> (<<acronym_agw>>) Service on the <<acronym_md_lan>> network
 
-*And* At least one Clinical Notification System is connected to the AGW Service.
+*And* At least one <<system_type_clinical_notification_system>> is connected to the <<acronym_agw>> Service.
 
 *And* All devices report either a device label and/or location and/or patient ID
 
-*And* The AGW Service is associated with a specific set of device labels, and/or location(s) (Scope)
+*And* The <<acronym_agw>> Service is associated with a specific set of device labels, and/or location(s) (Scope)
 
 
+[#vol1_clause_appendix_c_use_case_acns_scenarios]
 ==== Scenarios
 
 ===== Scenario: ACNS {var_use_case_id}.1 - New device is connected to network with AGW service

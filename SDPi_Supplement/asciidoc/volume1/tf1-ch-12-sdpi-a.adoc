@@ -44,6 +44,53 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 
 // 12.4.2
 ==== Use Cases
+The SDPi-A profile supports requirements from the use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this profile.
+
+
+===== <<use_case_label_sicdsp>> (<<acronym_sicdsp>>)
+This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdsp>>.
+
+Specific capabilities supporting the <<acronym_sicdsp>> profile include:
+
+* *System Type*:  N/A
+* *Service Type*:  N/A
+* *Technical Pre-Conditions*: N/A
+* *Scenarios*: <<acronym_sicdsp> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> <<system_type_dashboard>>
+
+
+
+===== <<use_case_label_sicdmp>> (<<acronym_sicdmp>>)
+This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdmp>>.
+
+Specific capabilities supporting the <<acronym_sicdmp>> profile include:
+
+* *System Type*:  N/A
+* *System Type*:  N/A
+* *Technical Pre-Conditions*: N/A
+* *Scenarios*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> <<system_type_dashboard>>
+
+
+===== <<use_case_label_acns>> (<<acronym_acns>>)
+This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_acns>>.
+
+Specific capabilities supporting the <<acronym_acns>> profile include:
+
+* *System Type*:  N/A
+* *Service Type*:  N/A
+* *Technical Pre-Conditions*:  N/A
+* *Scenarios*:  <<acronym_acns>> <<vol1_clause_appendix_c_use_case_acns_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> Alert <<system_type_gateway>>
+
+
+===== <<use_case_label_aars>> (<<acronym_aars>>)
+This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_aars>>.
+
+Specific capabilities supporting the <<acronym_aars>> profile include:
+
+* *System Type*:  N/A
+* *Service Type*:  N/A
+* *Technical Pre-Conditions*:  N/A
+* *Scenarios*:  <<acronym_aars>> <<vol1_clause_appendix_c_use_case_aars_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> Alert <<system_type_gateway>>
+
 
 // 12.5
 === SDPi-A Safety, Effectiveness, Security Considerations and Requirements

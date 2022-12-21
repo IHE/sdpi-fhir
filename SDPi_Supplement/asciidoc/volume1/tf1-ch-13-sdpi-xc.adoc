@@ -53,6 +53,16 @@ image::../images/vol1-diagram-sdpi-xc-actor.svg[]
 // 13.4.2
 ==== Use Cases
 
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  For SDPi 1.0, no use cases have been included that provide functional requirements for device external control.  These will be added to a future versoin of the SDPi supplement.
+
+|===
+
+
+
 // 13.5
 === SDPi-xC Safety, Effectiveness, Security Considerations and Requirements
 

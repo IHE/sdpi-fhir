@@ -515,8 +515,6 @@ Note that although this SDPi-P content actor primarily supports information exch
 Options that may be selected for each actor in this profile, if any, are listed in the #Table 10.2-1#.
 Dependencies between options, when applicable, are specified in notes.
 
-#TODO:  TODD STOPPED HERE THURSDAY 10.11.2022#
-
 .SDPi-P – Actors and Options
 
 [%autowidth]
@@ -565,7 +563,7 @@ Dependencies between options, when applicable, are specified in notes.
 // 10.4.1
 ==== Concepts
 
-[#vol1_clause_soa_somds_architecture_alignment]
+[#vol1_clause_sdpi_p_soa_somds_architecture_alignment]
 ===== SOA & SOMDS Architecture Alignment
 #TODO: Link back to SDPi general overview at the top and how leveraged for SDPi-P Actors Model;  SOMDS Participant ABSTRACT actor role#
 
@@ -614,9 +612,12 @@ An example of how <<acronym_biceps>> components (see <<figure_sdc_biceps_compone
 ===== General Healthcare vs. Medical Interoperability Purposes
 #TODO: All the transactions here are focused on healthcare information exchange with out any intended medical purpose; relationship to the other SDPi Profiles#
 
+[#vol1_clause_sdpi_p_ensuring_time_synchronization]
 ===== Ensuring Time Synchronization
 #TODO: This is a key topic for all health information exchange, and especially that of medical data.  A consuming system has to know, for example, that the time stamps provided in the BICEPS content or in the messages is accurate (and to what degree).  Requirements will be included HERE for SOMDS Participant & all other actors including BICEPS Content <xyz>.  Additional requirements may be added to the TF-3 BICEPS Content Module section as well.
-Integration of CT and ATNA (TBD) below in required groupings is assumed.#
+Integration of CT and ATNA (TBD) below in required groupings is assumed but should be detailed here.#
+
+#TODO: No time sync service identified in 11073 SDC core; include only in the SDPi-P section ... as a requirement to use NTP?; reference resolution of *TS Service*, *MD LAN*, in glossary entries#
 
 ===== Waveform Communication
 #TODO:  Explain how waveforms are communicated, both snippets and especially "streaming"; include references to appropriate TF-2 & TF-3 Sections; this is part of the "DO WE NEED A WAVEFORM OPTION?" question to help end users? NO!!!  Could drop a note in TF-2 Appendix A for DEV-xyz and how RTSA/Waves would be transmitted / conveyed over the network#
@@ -644,15 +645,78 @@ Given the discussion in Actors above, is this necessary here?  Or should some of
 
 // 10.4.2
 ==== Use Cases
-
 The SDPi-P profile supports requirements from the use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this profile.
 
-===== Synchronized Time Across Devices (STAD)
-This profile fully addresses the requirements from  <<vol1_appendix_c_use_case_stad>>.
+#TODO:  For each of these, add discussion to HOW and WHERE (with links) that the requirements are met.  Include a Requirements usage block?  CT DEPENDENCY IN SOMDS_PARTICIPANT MEETS THESE REQUIREMENTS#
 
-#TODO:  Add discussion to HOW and WHERE (with links) that the requirements are met.  Include a Requirements usage block?  CT DEPENDENCY IN SOMDS_PARTICIPANT MEETS THESE REQUIREMENTS#
+===== <<use_case_label_stad>> (<<acronym_stad>>)
+This profile fully addresses the requirements from  <<vol1_clause_appendix_c_use_case_stad>>.
 
-===== <add additional use case links here>
+Specific capabilities supporting the <<acronym_stad>> profile include:
+
+* *System Type*:  <<acronym_md_lan>> supported by SDPi-P <<acronym_plug_and_trust>> capabilities (see <<vol1_figure_sdpi_p_example_sequence_diagram>>)
+* *Service Type*:  <<acronym_ts_service>> supported by *Consistent Time* profile binding (see <<vol1_clause_sdpi_p_ensuring_time_synchronization>>)
+* *Technical Pre-Conditions*:  <<acronym_stad>> <<vol1_clause_appendix_c_use_case_stad_technical_precondition>> are fully supported by SDPi-P
+* *Scenarios*:  <<acronym_stad>> <<vol1_clause_appendix_c_use_case_stad_scenarios>> are fully supported by SDPi-P
+
+#TODO:  Should a sequence diagram be included here?  Or in above?  For each of the <<acronym_stad>> Scenarios a sequence diagram should be provided.  This could include transactions and actor linkages as well#
+
+===== <<use_case_label_sicdsp>> (<<acronym_sicdsp>>)
+This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdsp>>.
+
+Specific capabilities supporting the <<acronym_sicdsp>> profile include:
+
+* *System Type*:  <<acronym_md_lan>> supported by SDPi-P <<acronym_plug_and_trust>> capabilities (see <<vol1_figure_sdpi_p_example_sequence_diagram>>)
+* *System Type*:  <<system_type_dashboard>> is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
+* *Technical Pre-Conditions*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_technical_precondition>> are fully supported by SDPi-P
+* *Scenarios*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> basic communication requirements are supported by SDPi-P
+
+#TODO:  Do SystemContext/PatientContext/LocationContext need to be called out here to meet requirements related to "ICU" or "single patient"?#
+
+===== <<use_case_label_sicdmp>> (<<acronym_sicdmp>>)
+This profile provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_sicdmp>>.
+
+Specific capabilities supporting the <<acronym_sicdmp>> profile include:
+
+* *System Type*:  <<acronym_md_lan>> supported by SDPi-P <<acronym_plug_and_trust>> capabilities (see <<vol1_figure_sdpi_p_example_sequence_diagram>>)
+* *System Type*:  <<system_type_dashboard>> is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
+* *Technical Pre-Conditions*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_technical_precondition>> are fully supported by SDPi-P
+* *Scenarios*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> basic communication requirements are supported by SDPi-P
+
+#TODO:  Do SystemContext/PatientContext/LocationContext need to be called out here to meet requirements related to "ICU" or "multiple patient"?#
+
+===== <<use_case_label_ddes>> (<<acronym_ddes>)
+This profile provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_ddes>>.
+
+Specific capabilities supporting the <<acronym_ddes>> profile include:
+
+* *System Type*:  <<system_type_gateway>> is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
+* *Service Type*: Data  <<system_type_gateway>> Service is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
+* *Technical Pre-Conditions*: <<acronym_ddes>> <<vol1_clause_appendix_c_use_case_ddes_technical_precondition>> are fully supported by SDPi-P
+* *Scenarios*: <<acronym_ddes>> <<vol1_clause_appendix_c_use_case_ddes_scenarios>> basic communication requirements are supported by SDPi-P
+
+
+===== <<use_case_label_acns>> (<<acronym_acns>>)
+This profile provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_acns>>.
+
+Specific capabilities supporting the <<acronym_acns>> profile include:
+
+* *System Type*:  Alert <<system_type_gateway>> (<<acronym_agw>>) is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
+* *Service Type*:  Alert <<system_type_gateway>> Service is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
+* *Technical Pre-Conditions*:  <<acronym_acns>> <<vol1_clause_appendix_c_use_case_acns_technical_precondition>> are fully supported by SDPi-P
+* *Scenarios*:  <<acronym_acns>> <<vol1_clause_appendix_c_use_case_acns_scenarios>> basic communication requirements are supported by SDPi-P
+
+
+===== <<use_case_label_aars>> (<<acronym_aars>>)
+This profile provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_aars>>.
+
+Specific capabilities supporting the <<acronym_aars>> profile include:
+
+* *System Type*:  Alert <<system_type_gateway>> (<<acronym_agw>>) is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
+* *Service Type*:  Alert <<system_type_gateway>> Service is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
+* *Technical Pre-Conditions*:  <<acronym_aars>> <<vol1_clause_appendix_c_use_case_aars_technical_precondition>> are fully supported by SDPi-P
+* *Scenarios*:  <<acronym_aars>> <<vol1_clause_appendix_c_use_case_aars_scenarios>> basic communication requirements are supported by SDPi-P
+
 
 // 10.5
 === SDPi-P Safety, Effectiveness, Security Considerations and Requirements

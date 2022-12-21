@@ -43,6 +43,42 @@ image::../images/vol1-diagram-sdpi-r-actor.svg[]
 
 // 11.4.2
 ==== Use Cases
+The SDPi-R profile supports requirements from the use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this profile.
+
+
+===== <<use_case_label_sicdsp>> (<<acronym_sicdsp>>)
+This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdsp>>.
+
+Specific capabilities supporting the <<acronym_sicdsp>> profile include:
+
+* *System Type*:  N/A
+* *Service Type*:  N/A
+* *Technical Pre-Conditions*: N/A
+* *Scenarios*: <<acronym_sicdsp> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_dashboard>>
+
+
+===== <<use_case_label_sicdmp>> (<<acronym_sicdmp>>)
+This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdmp>>.
+
+Specific capabilities supporting the <<acronym_sicdmp>> profile include:
+
+* *System Type*:  N/A
+* *System Type*:  N/A
+* *Technical Pre-Conditions*: N/A
+* *Scenarios*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_dashboard>>
+
+
+===== <<use_case_label_ddes>> (<<acronym_ddes>)
+This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_ddes>>.
+
+Specific capabilities supporting the <<acronym_ddes>> profile include:
+
+* *System Type*:  N/A
+* *Service Type*: N/A
+* *Technical Pre-Conditions*: N/A
+* *Scenarios*: <<acronym_ddes>> <<vol1_clause_appendix_c_use_case_ddes_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_gateway>>
+
+#TODO:  Reference DEC Gateway / DOR actor from generic use case scenario reference#
 
 // 11.5
 === SDPi-R Safety, Effectiveness, Security Considerations and Requirements

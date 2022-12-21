@@ -1,17 +1,8 @@
-// = Use Case Feature: Synchronized Time Across Devices (STAD)
-
-// #TODO:  Add use case metadata strategy#
-
-// [mdi_use_case#use_case_stad,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_24_probe_sequence,messages='message_announce_network_presence']
-
-// FROM TF-2 DEV-24 Transaction document
-// [sdpi_transaction#transaction_dev_24,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_24_probe_sequence,messages='message_announce_network_presence']
-
-[sdpi_offset=2]
-[#vol1_appendix_c_use_case_stad]
+[#vol1_clause_appendix_c_use_case_stad,sdpi_offset=2]
 === Use Case Feature {var_use_case_id}: Synchronized Time Across Devices (STAD)
 
-#PRIORITY-1:  Usage link from ... SDPi-P?  What to TF-2?  How to address in SDC world? no time sync service identified in 11073 SDC core; include only in the SDPi-P section ... as a requirement to use NTP; reference resolution of TS Service, MD LAN, in glossary entries + point to SDPi-P + system types in TF3#
+[[acronym_stad,STAD]]
+[[use_case_label_stad,Synchronized Time Across Devices]]
 
 ==== Narrative
 Nurse Jean attaches a ventilator to the medical device network in the ICU.  It automatically obtains the correct time.
@@ -22,12 +13,14 @@ Nurse Jean attaches a ventilator to the medical device network in the ICU.  It a
 
 image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
+[#vol1_clause_appendix_c_use_case_stad_technical_precondition]
 ==== Technical Pre-Conditions
 
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
 *And* A Time Source (TS) Service is on the <<acronym_md_lan>> network
 
+[#vol1_clause_appendix_c_use_case_stad_scenarios]
 ==== Scenarios
 
 ===== Scenario: STAD {var_use_case_id}.1 - Device is connected to network with a Time Source service

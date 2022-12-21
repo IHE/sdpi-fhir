@@ -1,9 +1,8 @@
-// = Use Case Feature: Alerts to Alert Recording Systems (AARS)
-
-[sdpi_offset=7]
+[#vol1_clause_appendix_c_use_case_aars,sdpi_offset=7]
 === Use Case Feature {var_use_case_id}: Alerts to Alert Recording Systems (AARS)
 
-#PRIORITY-1:  Usage link from ... SDPi-P?  SDPi-A?#
+[[acronym_aars,AARS]]
+[[use_case_label_aars,Alerts to Alert Recording Systems]]
 
 ==== Narrative
 
@@ -16,53 +15,55 @@ Mumbai General is in the process of installing an IT system which will capture a
 image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 
 
+[#vol1_clause_appendix_c_use_case_aars_technical_precondition]
 ==== Technical Pre-Conditions
 
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
-*And* At least one Alert Gateway (AGW) Service on the <<acronym_md_lan>>
+*And* At least one Alert <<system_type_gateway>> (<<acronym_agw>>) Service on the <<acronym_md_lan>>
 
-*And* At least one Alert Recording System is connected to the Alert Gateway (AGW) Service.
+*And* At least one Alert Recording System is connected to the Alert <<system_type_gateway>> (<<acronym_agw>>) Service.
 
 *And* All devices report either a device label and/or location and/or patient ID
 
-*And* The AGW Service is associated with a specific set of device labels, and/or location(s)
+*And* The <<acronym_agw>> Service is associated with a specific set of device labels, and/or location(s)
 .
 
+[#vol1_clause_appendix_c_use_case_aars_scenarios]
 ==== Scenarios
 
 ===== Scenario: ARRS {var_use_case_id}.1 - New device is connected to network with AGW service
 
-*Given* the AGW Service has detected a new device in its scope
+*Given* the <<acronym_agw>> Service has detected a new device in its scope
 
-*When* the AGW Service is operational
+*When* the <<acronym_agw>> Service is operational
 
-*Then* the AGW Service will connect to the device and communicate alerts to the Alert Recording System
+*Then* the AG<<acronym_agw>>W Service will connect to the device and communicate alerts to the Alert Recording System
 
 ===== Scenario: ARRS {var_use_case_id}.2 - The AGW service loses connectivity with the ICU devices
 
-*Given* the AGW Service no longer communicates with ICU devices in its scope
+*Given* the <<acronym_agw>> Service no longer communicates with ICU devices in its scope
 
 *When* There is a communications failure
 
-*Then* the AGW will notify the Alert Recording System of the failure
+*Then* the <<acronym_agw>> will notify the Alert Recording System of the failure
 
-*Then* when the AGW regains communication with the devices it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts
+*Then* when the <<acronym_agw>> regains communication with the devices it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts
 
 ===== Scenario: ARRS {var_use_case_id}.3 - The AGW service fails
 
-*Given* the AGW fails
+*Given* the <<acronym_agw>> fails
 
 *Then* the Alert Recording System will detect a loss of communications with the AGW
 
-*Then* when the AGW Service recovers it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts
+*Then* when the <<acronym_agw>> Service recovers it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts
 
 ===== Scenario: ARRS {var_use_case_id}.4 - The Alert Recording System loses connectivity with the AGW
 
-*Given* the Alert Recording System can no longer communicate with the AGW
+*Given* the Alert Recording System can no longer communicate with the <<acronym_agw>>
 
-*Then* the Alert Recording System will detect a loss of communications with the AGW Service
+*Then* the Alert Recording System will detect a loss of communications with the <<acronym_agw>> Service
 
-*Then*  when the AGW Service regains communication with the Alert Recording System it will resume reporting active alerts to the Alert Recording System and backfill any missing alerts.
+*Then*  when the <<acronym_agw>> Service regains communication with the Alert Recording System it will resume reporting active alerts to the Alert Recording System and backfill any missing alerts.
 
 
