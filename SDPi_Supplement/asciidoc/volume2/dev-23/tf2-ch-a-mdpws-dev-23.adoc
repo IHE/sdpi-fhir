@@ -30,9 +30,38 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-23-hello.xml[]
 `s12:Envelope/s12:Body/wsd:Hello/wsa:EndpointReference/wsa:Address`:: The <<actor_somds_provider>>'s <<payload_dev_23_provider_uid>> as URI.
 `s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes`:: The <<actor_somds_provider>>'s <<payload_dev_23_discovery_scope>> as a list of URIs.
 
+[#vol2_clause_appendix_mdpws_dev_23_hello_message_trigger_events]
+====== Hello Message Trigger Events
+
+The somewhat abstracted Hello message trigger events definition in <<vol2_clause_dev_23_message_announce_network_presence_trigger_events>> is herewith specialized for MDPWS.
+
+This message is sent
+
+1. when a <<actor_somds_provider>> is assigned an IP address after having joined the network,
+2. when a <<actor_somds_provider>> is reassigned an IP address, or
+3. when a <<actor_somds_provider>> changes its <<payload_dev_23_discovery_scope>>.
+
+.Note on trigger event #2
+[%collapsible]
+====
+IP address reassignment may occur because of intended or unintended interruptions in the network connection, network reconfiguration during operation (e.g. by plugging of Ethernet switches), or other causes.
+====
+
+.Note on static / dynamic IP address use
+[%collapsible]
+====
+This trigger events definition assumes the use of dynamic IP addresses managed by a DHCP server. The use of static IP addresses is discouraged as it may lead to IP address conflicts, and hence severe communication disruption, in case of network reconfiguration during operation (e.g. by plugging of Ethernet switches).
+====
+
+.R2000
+[sdpi_requirement#r2000,sdpi_req_level=should]
+****
+<<actor_somds_participant>>s should use a dynamic IP address.
+****
+
 [#vol2_clause_appendix_mdpws_dev_23_recurring_hello]
 ====== Recurring Hello
-In addition to the standard trigger events of Hello messages defined in <<vol2_clause_dev_23_message_announce_network_presence_trigger_events>>, recurring Hello messages are needed to decrease the likelihood of missed discovery messages in case of network topology changes during operation, e.g. when operational networks are extended by plugging switches (together) at runtime.
+In addition to the Hello message trigger events defined in <<vol2_clause_appendix_mdpws_dev_23_hello_message_trigger_events>>, recurring Hello messages are needed to decrease the likelihood of missed discovery messages in case of network topology changes during operation, e.g. when operational networks are extended by plugging switches (together) at runtime.
 
 .R2001
 [sdpi_requirement#r2001,sdpi_req_level=shall]
