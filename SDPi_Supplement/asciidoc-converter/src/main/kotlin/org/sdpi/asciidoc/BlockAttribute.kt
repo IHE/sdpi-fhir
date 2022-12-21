@@ -9,4 +9,5 @@ enum class BlockAttribute(val key: String) {
     ROLE("role"),
     REQUIREMENT_LEVEL("sdpi_req_level"),
     MAX_OCCURRENCE("sdpi_max_occurrence"),
+    VOLUME_CAPTION("sdpi_volume_caption")
 }

@@ -1,10 +1,13 @@
 package org.sdpi.asciidoc.extension
 
 import org.apache.logging.log4j.kotlin.Logging
+import org.asciidoctor.ast.Block
 import org.asciidoctor.ast.Document
 import org.asciidoctor.ast.Section
 import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.extension.Treeprocessor
+import org.sdpi.asciidoc.Attributes
+import org.sdpi.asciidoc.BlockAttribute
 import org.sdpi.asciidoc.isAppendix
 import org.sdpi.asciidoc.model.StructuralNodeWrapper
 import org.sdpi.asciidoc.model.toSealed
@@ -30,6 +33,11 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
     private val startFromLevel = 1
     private var currentAppendix = 'A'
     private var appendixCaption = ""
+    private var currentSection = ""
+    private var figureNumber = 1
+    private var tableNumber = 1
+    private var currentVolumeCaption = ""
+    private var isInAppendix = false
 
     override fun process(document: Document): Document {
         processBlock(document as StructuralNode)
@@ -86,14 +94,25 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
 
                 is StructuralNodeWrapper.Section -> {
                     val level = processLevelOption(node.wrapped)
+
+                    if (node.wrapped.isAppendix()) {
+                        isInAppendix = true
+                    }
+
+                    if (level == 0 && !node.wrapped.isAppendix()) {
+                        currentVolumeCaption = Attributes(node.wrapped.attributes)[BlockAttribute.VOLUME_CAPTION] ?: ""
+                    }
+
                     initSectionNumbers(node.wrapped, level)
                     processOffsetOption(node.wrapped, level)
                     sanitizeAppendix(node.wrapped, level)
 
                     // attach section number to section title
                     createSectionId(numbering, level).let {
+                        currentSection = it
                         // trim leading blanks in case of an empty section id (i.e. appendix)
                         "$it ${node.wrapped.title}".trim()
+
                     }.also {
                         logger.info { "Attach section number: ${node.wrapped.caption ?: ""}$it" }
                         node.wrapped.title = it
@@ -105,10 +124,43 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
                     block.blocks.forEach {
                         processBlock(it)
                     }
+                    isInAppendix = false
                 }
+
+                is StructuralNodeWrapper.Paragraph -> {
+                    println("Source\n======")
+                    println(node.wrapped.source)
+
+                    // node.wrapped.source = "__"
+
+                    block.blocks.forEach {
+                        processBlock(it)
+                    }
+                }
+
+                is StructuralNodeWrapper.Image -> replaceCaption(node.wrapped, "Figure", figureNumber++)
+
+                is StructuralNodeWrapper.Table -> replaceCaption(node.wrapped, "Table", tableNumber++)
 
                 else -> logger.debug { "Ignore block of type '${block.context}'" }
             }
+        }
+    }
+
+    private fun replaceCaption(block: StructuralNode, prefix: String, objectNumber: Int) {
+        val volumeCaption = when (currentVolumeCaption) {
+            "" -> ""
+            else -> "$currentVolumeCaption:"
+        }
+
+        val section = when (currentSection.length) {
+            0 -> if (isInAppendix) currentAppendix.toString() else ""
+            else -> currentSection
+        }
+
+        if (block.title != null) {
+            block.caption = ""
+            block.title = "$prefix $volumeCaption${section}-$objectNumber. ${block.title}"
         }
     }
 

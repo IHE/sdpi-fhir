@@ -323,7 +323,7 @@ The #following sequence diagram# illustrates a typical (not comprehensive) excha
 
 .SDPi-P Example Sequence Diagram
 [[vol1_figure_sdpi_p_example_sequence_diagram]]
-[plantuml, target=puml-sdpi-p-example-sequence-diagram, format=svg, reftext='{figure-caption} {counter:refnum}']
+[plantuml, target=puml-sdpi-p-example-sequence-diagram, format=svg]
 ....
 include::../plantuml/vol1-figure-sdpi-p-example-sequence-diagram.puml[]
 ....

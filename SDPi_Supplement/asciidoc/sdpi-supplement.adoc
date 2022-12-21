@@ -1,6 +1,6 @@
 = Service-oriented Device Point-of-care Interoperability (SDPi) Technical Framework
 :doctype: book
-:xrefstyle: short
+:xrefstyle: basic
 :toc-title: Contents
 :toc: left
 :toclevels: 3

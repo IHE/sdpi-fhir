@@ -29,7 +29,7 @@ For every device or system interface that supports the elements specified in thi
 Some are technology focused, such as the ISO/IEEE 11073 standards for health device communication, and others are more focused on quality and risk management, such as the ISO/IEC 80001-1 and ISO 14971 standards.
 They are all profiled and implemented and tested in a single interface point, and thus need to be integrated in a coherent and cohesive manner.
 
-In order to manage this diversity and wealth of specifications and standards, the <<hanging_gardens_framework>> graphic as specified in Figure <<hanging_gardens_framework>> was created:
+In order to manage this diversity and wealth of specifications and standards, the Hanging Gardens Framework graphic as specified in <<hanging_gardens_framework>> was created:
 
 .Hanging Gardens Framework
 [#hanging_gardens_framework]

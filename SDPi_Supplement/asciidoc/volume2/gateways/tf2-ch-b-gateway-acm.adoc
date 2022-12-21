@@ -354,7 +354,7 @@ A <<actor_somds_acm_gateway>> shall set the OBX-14 field of the Event Identifica
 ====
 NOTE: This either applies to a change of the *pm:AlertConditionState* or the *pm:AlertSignalState* of the signals related to the alert condition.
 
-NOTE: The date/time to be set in the OBX-14 field relates to the alert event phase. Table <<ref_tbl_acm_obx14_alert_phase_mapping>> defines the date/time mapping per alert event phase.
+NOTE: The date/time to be set in the OBX-14 field relates to the alert event phase. <<ref_tbl_acm_obx14_alert_phase_mapping>> defines the date/time mapping per alert event phase.
 
 NOTE: The HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (please refer to <<ref_expl_dt_mapping>> for further information).
 
