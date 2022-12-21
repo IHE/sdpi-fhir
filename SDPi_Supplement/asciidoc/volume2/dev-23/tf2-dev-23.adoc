@@ -55,8 +55,8 @@ The {var_label_dev_23_message_hello} is a broadcast message that is sent from ea
 This message is sent
 
 1. whenever a <<actor_somds_provider>> joins a network,
-2. when it is returning to normal _on-line_ operation after having indicated temporary suspension of message exchanges, or
-3. when any metadata of the <<actor_somds_provider>> changes, e.g. when <<payload_dev_23_discovery_scope>> is updated.
+2. when a <<actor_somds_provider>> returns to normal _on-line_ operation after having indicated temporary suspension of message exchanges, or
+3. when a <<actor_somds_provider>> changes its <<payload_dev_23_discovery_scope>>.
 
 [#vol2_clause_dev_23_message_announce_network_presence_message_semantics]
 ====== Message Semantics

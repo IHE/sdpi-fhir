@@ -1,7 +1,9 @@
-// = Use Case Feature: Alerts to Alert Recording Systems (AARS)
-
-[sdpi_offset=7]
+[#vol1_clause_appendix_c_use_case_aars,sdpi_offset=7]
 === Use Case Feature {var_use_case_id}: Alerts to Alert Recording Systems (AARS)
+
+// ISSUE WITH WHERE TO DECLARE THESE DEFINITIONS (See definitions at end of Glossary file)
+//[[acronym_aars,AARS]]
+//[[use_case_label_aars,Alerts to Alert Recording Systems]]
 
 ==== Narrative
 
@@ -14,19 +16,21 @@ Mumbai General is in the process of installing an IT system which will capture a
 image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 
 
+[#vol1_clause_appendix_c_use_case_aars_technical_precondition]
 ==== Technical Pre-Conditions
 
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
-*And* At least one Alert Gateway (AGW) Service on the <<acronym_md_lan>>
+*And* At least one Alert <<system_type_device_gateway>> (AGW) Service on the <<acronym_md_lan>>
 
-*And* At least one Alert Recording System is connected to the Alert Gateway (AGW) Service.
+*And* At least one Alert Recording System is connected to the Alert <<system_type_device_gateway>> (AGW) Service.
 
 *And* All devices report either a device label and/or location and/or patient ID
 
 *And* The AGW Service is associated with a specific set of device labels, and/or location(s)
 .
 
+[#vol1_clause_appendix_c_use_case_aars_scenarios]
 ==== Scenarios
 
 ===== Scenario: ARRS {var_use_case_id}.1 - New device is connected to network with AGW service
@@ -35,7 +39,7 @@ image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 
 *When* the AGW Service is operational
 
-*Then* the AGW Service will connect to the device and communicate alerts to the Alert Recording System
+*Then* the AGAGWW Service will connect to the device and communicate alerts to the Alert Recording System
 
 ===== Scenario: ARRS {var_use_case_id}.2 - The AGW service loses connectivity with the ICU devices
 

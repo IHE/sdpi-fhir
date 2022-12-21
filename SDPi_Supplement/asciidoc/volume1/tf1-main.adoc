@@ -1,13 +1,6 @@
 [sdpi_volume_caption=TF-1]
 = Volume 1 -- Profiles
 
-NOTE:  This document integrates all the content that makes up the supplement volume 1 document.
-
-IMPORTANT:  Migrate the content below from main.adoc into this document OR rename main.adoc to this ... though the content is different.  +
-{empty} +
-*_See the Word document for what this is supposed to look like_*.
-
-
 [#vol1_clause_profiles,sdpi_offset=1]
 == Profiles
 
