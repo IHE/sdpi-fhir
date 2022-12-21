@@ -1,9 +1,6 @@
 package org.sdpi.asciidoc.model
 
-import org.asciidoctor.ast.Block
-import org.asciidoctor.ast.Document
-import org.asciidoctor.ast.Section
-import org.asciidoctor.ast.StructuralNode
+import org.asciidoctor.ast.*
 import org.sdpi.asciidoc.extension.BLOCK_NAME_SDPI_REQUIREMENT
 
 /**
@@ -15,6 +12,8 @@ fun StructuralNode.toSealed(): StructuralNodeWrapper {
         "section" -> StructuralNodeWrapper.Section(this as Section)
         "document" -> StructuralNodeWrapper.Document(this as Document)
         "paragraph" -> StructuralNodeWrapper.Paragraph(this as Block)
+        "image" -> StructuralNodeWrapper.Image(this as Block)
+        "table" -> StructuralNodeWrapper.Table(this as Table)
         "sidebar" -> this.attributes.entries.find {
             it.key == "1" && it.value == BLOCK_NAME_SDPI_REQUIREMENT
         }?.let {
@@ -33,6 +32,8 @@ sealed class StructuralNodeWrapper {
     data class Sidebar(val wrapped: Block) : StructuralNodeWrapper()
     data class SdpiRequirement(val wrapped: Block) : StructuralNodeWrapper()
     data class Paragraph(val wrapped: Block): StructuralNodeWrapper()
+    data class Image(val wrapped: Block): StructuralNodeWrapper()
+    data class Table(val wrapped: org.asciidoctor.ast.Table): StructuralNodeWrapper()
     object Unknown : StructuralNodeWrapper()
 }
 
