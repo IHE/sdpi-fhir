@@ -19,6 +19,7 @@
 [#vol2_clause_appendix_mdpws_dev_27]
 ==== MDPWS: Manage BICEPS Subscription [DEV-27]
 
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_27>>.
 
 // ---------- SUBSCRIBE ---------
 
