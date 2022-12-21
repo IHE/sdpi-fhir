@@ -54,7 +54,7 @@ Specific capabilities supporting the <<acronym_sicdsp>> profile include:
 * *System Type*:  N/A
 * *Service Type*:  N/A
 * *Technical Pre-Conditions*: N/A
-* *Scenarios*: <<acronym_sicdsp> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_dashboard>>
+* *Scenarios*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_dashboard>>
 
 
 ===== <<use_case_label_sicdmp>> (<<acronym_sicdmp>>)

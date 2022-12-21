@@ -4,8 +4,6 @@
 [[acronym_acns,ACNS]]
 [[use_case_label_acns,Alerts to Clinician Notification Systems]]
 
-#PRIORITY-1:  Usage link from ... SDPi-P?  SDPi-A? acronym for ICU#
-
 ==== Narrative
 
 Bonjour Hospital is in the process of installing a nurse alert notification system which will communicate alerts from the ICU devices (patient monitors, ventilators, infusion devices, etc.) directly to nurse devices such as pagers or smartphones.  Bobby Thornton is responsible for integrating data from their ICU devices with the alert notification system.  Once they are done, the alerts from the devices will be forwarded by the gateway to the nurse devices for viewing in a timely manner.

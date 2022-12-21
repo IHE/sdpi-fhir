@@ -26,7 +26,7 @@ NOTE: This includes strict implementation of the <<acronym_biceps>> <<acronym_md
 // 8.3.2.
 ===== BICEPS Descriptive Model
 
-As described in <<vol1_clause_soa_somds_architecture_alignment>> (see <<figure_sdc_biceps_mdib_descriptors_states>>), all <<actor_somds_participant>> systems support an <<acronym_mdib>> model that has both medical device description and state components.  <<figure_sdc_participant_model_descriptive_part>> below provides the next level of detail for the descriptive part of the <<acronym_mdib>>:
+As described in <<vol1_clause_sdpi_p_soa_somds_architecture_alignment>> (see <<figure_sdc_biceps_mdib_descriptors_states>>), all <<actor_somds_participant>> systems support an <<acronym_mdib>> model that has both medical device description and state components.  <<figure_sdc_participant_model_descriptive_part>> below provides the next level of detail for the descriptive part of the <<acronym_mdib>>:
 
 .SDC/BICEPS MDIB Descriptive Model Components
 [#figure_sdc_participant_model_descriptive_part]
