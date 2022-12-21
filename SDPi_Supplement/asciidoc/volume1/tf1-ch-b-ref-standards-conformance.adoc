@@ -10,8 +10,8 @@
 |===
 | *SDPi Supplement Version Note*: The inclusion of a References appendix is unique for IHE Technical Framework specifications.
 Typically, referenced standards sections are distributed throughout the specifications where appropriate; however, standards from other organizations (e.g., IEEE, ISO, IEC) typically have a "Normative References" clause and when desired a "Bibliography" clause.
-Also, integration of explicit standards' <<term_implementation_conformance_statement>> specifications (e.g., I<<ref_ieee_11073_10207_2017>> <<acronym_ics>> tables) is unique, but needed to support requirements interoperability.
-{empty} +
+Also, integration of explicit standards' <<term_implementation_conformance_statement>> specifications (e.g., <<ref_ieee_11073_10207_2017>> <<acronym_ics>> tables) is unique, but needed to support requirements interoperability.
+
 Ultimately, the content of this appendix may be rearranged and even relocated; however, for early versions of the SDPi supplement, it has proven helpful, and even of critical importance and value.
 |===
 
@@ -33,21 +33,19 @@ Ultimately, the content of this appendix may be rearranged and even relocated; h
 
 * [[[ref_ieee_11073_10201_2004,IEEE 11073-10201:2004]]] IEEE 11073-10201™ International Standard - Health informatics--Device interoperability--Part 10201:Point-of-care medical device communication--Domain information model.  Note this was updated in 2020.  Available at https://standards.ieee.org/ieee/11073-10201/10263/[IEEE online standards store].
 
+* [[[ref_ieee_11073_10207_2017,ISO/IEEE 11073-10207:2017]]] ISO/IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2017-12, available at https://standards.ieee.org/ieee/11073-10207/6032 footnote:ieee_permission[]
+
 * [[[ref_ieee_11073_10700_2022,IEEE 11073-10700:2022]]] IEEE P11073-10700™/D7 Draft Standard for Health Informatics – Device Interoperability – Part 10700: Point-of-Care Medical Device Communication – Standard for Base Requirements for Participants in a Service-Oriented Device Connectivity (SDC) System.
 
 * [[[ref_ieee_11073_10701_2022,IEEE 11073-10701:2022]]] IEEE P11073-10701™/D4 Draft Standard for Health Informatics – Device Interoperability – Part 10701: Point-of-Care Medical Device Communication - Metric Provisioning by Participants in a Service-Oriented Device Connectivity (SDC) System
 
 * [[[ref_ieee_11073_10702_202x,IEEE 11073-10702:202x]]] IEEE P11073-10702™/D1 Draft Standard for Health Informatics – Device Interoperability – Part 10702: Point-of-Care Medical Device Communication – Alert Provisioning by Participants in a Service-Oriented Device Connectivity (SDC) System
 
-* [[[ref_iec_80001_1_2021,ISO/IEC 80001-1:2021]]], IEC 80001-1:2021 Application of risk management for IT-networks incorporating medical devices — Part 1: Safety, effectiveness and security in the implementation and use of connected medical devices or connected health software.  Available at https://webstore.iec.ch/publication/34263[IEC Webstore] and https://www.iso.org/standard/72026.html[ISO standards store].
-
-* [[[ref_ieee_11073_10207_2017,ISO/IEEE 11073-10207:2017]]] ISO/IEEE 11073-10207-2017, Health informatics — Point-of-care medical device communication — Part 10207: Domain Information and Service Model for Service-Oriented Point-of-Care Medical Device Communication, 2017-12, available at https://standards.ieee.org/ieee/11073-10207/6032 footnote:ieee_permission[]
-
 * [[[ref_ieee_11073_20701_2018,ISO/IEEE 11073-20701:2018]]] ISO/IEEE 11073-20701-2018, Health informatics — Point-of-care medical device communication — Part 20701: Service-Oriented Medical Device Exchange Architecture and Protocol Binding, 2018-09, available at https://standards.ieee.org/ieee/11073-20701/6059
 
 * [[[ref_ieee_11073_20702_2016,ISO/IEEE 11073-20702:2016]]] ISO/IEEE 11073-20702-2016, Health informatics — Point-of-care medical device communication — Part 20702: Medical Devices Communication Profile for Web Services, 2016-09, available at https://standards.ieee.org/ieee/11073-20702/6034
 
-* [[[ieee_11073_10702_202x,IEEE 11073-10702:202x]]] P11073-10702™/D1 Draft Standard for Health Informatics – Device Interoperability – Part 10702: Point-of-Care Medical Device Communication – Alert Provisioning by Participants in a Service-Oriented Device Connectivity (SDC) System
+* [[[ref_iec_80001_1_2021,ISO/IEC 80001-1:2021]]], IEC 80001-1:2021 Application of risk management for IT-networks incorporating medical devices — Part 1: Safety, effectiveness and security in the implementation and use of connected medical devices or connected health software.  Available at https://webstore.iec.ch/publication/34263[IEC Webstore] and https://www.iso.org/standard/72026.html[ISO standards store].
 
 * [[[ref_ihe_pcd_tf_1_2019,IHE PCD TF-1:2019]]] IHE Patient Care Device Technical Framework, Vol. 1, available at https://www.ihe.net/uploadedFiles/Documents/PCD/IHE_PCD_TF_Vol1.pdf.
 
@@ -66,6 +64,7 @@ Ultimately, the content of this appendix may be rearranged and even relocated; h
 * [[[ref_wc3_ws_transfer_2006,WC3 Standard, WS-Transfer:2006]]] WC3 Web Services Transfer (WS-Transfer), W3C Standard, 27 September 2006, available at https://www.w3.org/Submission/WS-Transfer/
 
 // Appendix B.x
+[#vol1_appendix_b_referenced_standards_conformance]
 === Referenced Standards Conformance
 
 // Appendix B.x

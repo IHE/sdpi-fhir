@@ -1,6 +1,3 @@
-
-// = TF-0 Appendix D:  Glossary
-
 [appendix#vol0_appendix_d_glossary,sdpi_offset=D]
 == Glossary
 
@@ -39,10 +36,17 @@
 
 | [[term_central_station,Central Station]] Central Station
 | #See description in TF-1 Appendix C or TF-3#
-| Central
+| A system that supports a multi-patient workplace with capabilities similar to a Cockpit.
 |
+| See extended description and discussion in <<vol3_clause_system_type_nomenclature_extensions>>
 |
+
+| [[term_classic_dim,Classic DIM]] Classic Domain Information Model (DIM)
+| The foundational domain information model (DIM) that is recognized and implemented in all IEEE 11073 standards and profiles, for both <<acronym_pocd>> and <<acronym_phd>> devices.
+| [[acronym_dim,DIM]] DIM
 |
+| <<<<ref_ieee_11073_10201_2004>>>>
+| SDC
 
 | [[term_clinical_function,Clinical Function]] Clinical Function
 | Function or feature intended to be used for one or more specific medical purposes including but not limited to examination, monitoring, or modification of the structure or function of an individual's body; prediction, prevention, diagnosis, prognosis, treatment, or alleviation of a medical condition.
@@ -65,12 +69,19 @@
 |
 | SDC
 
-| [[term_health_level_seven,Health Level Seven (HL7)]] Health Level Seven
-| An ANSI accredited standards development organization.
+| [[term_electronic_health_record, Electronic Health Record]] Electronic Health Record
+| An electronic record derived from a computer system that maintains a longitudinal view of a patient’s history. It contains comprehensive information on a patient’s health used primarily for delivering patient care in a clinical setting..
+|
+| [[acronym_ehr,EHR]] EHR
+| https://profiles.ihe.net/GeneralIntro/ch-D.html[IHE TF-0 Appendix D Glossary]
+| IHE
+
+| [[term_health_level_seven_international,Health Level Seven International (HL7)]] Health Level Seven International
+| Organization dedicated to providing a comprehensive framework and related standards for the exchange, integration, sharing, and retrieval of electronic health information that supports clinical practice and the management, delivery and evaluation of health services##.##
 |
 | [[acronym_hl7,HL7]] HL7
-| https://www.hl7.org/about/index.cfm?ref=nav[HL7.org/about/]
-|
+| https://www.hl7.org/about/index.cfm?ref=nav[About -- HL7]
+| Organization
 
 | [[term_implementation_conformance_statement,Implementation Conformance Statement (ICS)]] Implementation Conformance Statement
 | A clause in many standards that specifies how conformance claims to that standard should be formalized, including identification of any deviations, extensions and option selection.
@@ -78,6 +89,13 @@
 | [[acronym_ics,ICS]] ICS
 |
 |
+
+| [[term_institute_of_electrical_and_electronics_engineers,Institute of Electrical and Electronic Engineers (IEEE)]] Institute of Electrical and Electronic Engineers
+| Organization dedicated to advancing innovation and technological excellence for the benefit of humanity, and is the world's largest technical professional society
+|
+| [[acronym_ieee,IEEE]] IEEE
+| https://www.ieee.org/about/ieee-history.html?utm_source=linkslist_text&utm_medium=lp-about&utm_campaign=history[About -- History of IEEE]
+| Organization
 
 | [[term_integratec_clinical_environment,Integrated Clinical Environment (ICE)]] Integrated Clinical Environment
 | Environment that combines interoperable heterogeneous POINT-OF-CARE (PoC) MEDICAL DEVICEs and other equipment integrated to create a medical device system for the care of a single high acuity patient.
@@ -95,9 +113,16 @@
 
 | [[term_international_standards_organization,International Standards Organization (ISO)]] International Standards Organization
 | A globally recognized one-country-one-vote <<acronym_sdo>> that is composed of 100's of technical committees and other groups.
-| ...
+|
 | [[acronym_iso,ISO]] ISO
 | https://www.iso.org/home.html[www.ISO.org]
+| Organization
+
+| [[term_joint_working_group_7,ISO/IEC Joint Working Group 7 (JWG7)]] ISO/IEC Joint Working Group 7
+| A joint standardization group between ISO/TC 215 and IEC/SC 62A focused on the <<term_safe_effective_secure>> health software and health IT systems, including those incorporating medical devices.
+|
+| [[acronym_jwg7,JWG7]] JWG7
+| https://www.iso.org/committee/54960.html[ISO/TC 215 Health Informatics], https://www.iec.ch/dyn/www/f?p=103:29:::::FSP_ORG_ID:1359[IEC SC/62A]
 | Organization
 
 | Local Area Network
@@ -149,6 +174,13 @@
 |
 |
 
+| [[term_medical_device_system,Medical Device System (MDS)]] Medical Device System
+| A core object type in the ISO/IEEE 11073 device communication standards.  It represents the top-level containment of the hierarchy of information objects contained in a device.
+|
+| [[acronym_mds,MDS]] MDS
+| <<ref_ieee_11073_10207_2017>>, <<ref_ieee_11073_10201_2004>>
+|
+
 | [[term_model_based_systems_engineering,Model-Based Systems Engineering (MBSE)]] Model-Based Systems Engineering
 | An approach to systems engineering where a single, highly integrated, executable model is created (often using OMG System's Modeling Language (e.g., <<ref_omg_sysml_2_0_spec>>), to capture all elements, from requirements to system components to Verification & Validation test cases.  This _model-centric_ (*[[acronym_mc,MC]]MC*) specification approach replaces the traditional _document-centric_ approach.
 | [[acronym_ri_mc_rr,RI+MC+RR]] RI+MC+RR
@@ -178,10 +210,10 @@
 | SDC
 
 | [[term_personal_health_device,Personal Health Device (PHD)]] Personal Health Device
-| A device that is intended to be used by an individual to track and manage their own health.
+| A healthcare device that is used by individuals for their own personal health purposes.
 |
 | [[acronym_phd,PHD]] PHD
-|
+| #TODO:  ADD 11073 PHD REFERENCES?#
 |
 
 | [[term_plug_and_trust,Plug-and-Trust (PnT)]] Plug-and-Trust
@@ -248,11 +280,18 @@
 | SDC
 
 | [[term_service_oriented_device_poc_interoperability,Service-oriented Device Point of Care Interoperability (SDPi)]] Service-oriented Device Point of Care Interoperability
-| ## Add description from Supplement Introduction or other section ###
+| A set of (4) IHE specifications that profile the <<acronym_sdc>> standards for device-to-device plug-and-play interoperability.
 |
-| SDPi
+| [[acronym_sdpi,SDPi]] SDPi
 |
+| Profile
+
+| [[term_service_oriented_architecture,Service-oriented Architecture (SOA)]] Service-oriented Architecture
+| An architectural style that focuses on discrete services, where provider components supply services (discrete units of functionality) to consumer components across a communications network infrastructure.
 |
+| [[acronym_soa,SOA]] SOA
+|
+| SDC
 
 | [[term_service_oriented_medical_device_system,Service-oriented Medical Device System (SOMDS)]] Service-oriented Medical Device System
 | A point-of-care system of products that
@@ -324,3 +363,25 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | ...
 
 |===
+
+
+#TODO: HOLDING PLACE FOR DECLARATION OF LABELS BEFORE THEIR USE ...#
+[[acronym_aars,AARS]]
+[[use_case_label_aars,Alerts to Alert Recording Systems]]
+
+[[acronym_acns,ACNS]]
+[[use_case_label_acns,Alerts to Clinician Notification Systems]]
+
+[[acronym_ddes,DDES]]
+[[use_case_label_ddes,Device Data to Enterprise Systems]]
+
+[[acronym_sicdmp,SICDmp]]
+[[use_case_label_sicdmp,Standalone ICU Dashboard Multiple Patient]]
+
+[[acronym_sicdsp,SICDsp]]
+[[use_case_label_sicdsp,Standalone ICU Dashboard Single Patient]]
+
+[[acronym_stad,STAD]]
+[[use_case_label_stad,Synchronized Time Across Devices]]
+
+// ALSO INCLUDE definitions for:  acronym_agw

@@ -1,7 +1,9 @@
-// = Use Case Feature: Standalone ICU Dashboard SP (SICDsp)
-
-[sdpi_offset=3]
+[#vol1_clause_appendix_c_use_case_sicdsp,sdpi_offset=3]
 === Use Case Feature {var_use_case_id}: Standalone ICU Dashboard Single Patient (SICDsp)
+
+// ISSUE WITH WHERE TO DECLARE THESE DEFINITIONS (See definitions at end of Glossary file)
+//[[acronym_sicdsp,SICDsp]]
+//[[use_case_label_sicdsp,Standalone ICU Dashboard Single Patient]]
 
 ==== Narrative
 
@@ -13,14 +15,16 @@ Dr. Reich is in one of her patient’s ICU room checking on their status. She ca
 
 image::../images/vol1-diagram-use-case-sicdsp-tech-view.svg[]
 
+[#vol1_clause_appendix_c_use_case_sicdsp_technical_precondition]
 ==== Technical Pre-Conditions
 
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
-*And* At least one ICU Dashboard display
+*And* At least one ICU <<system_type_dashboard>> display
 
-*And* Devices in the room have already been assigned to the Dashboard
+*And* Devices in the room have already been assigned to the <<system_type_dashboard>>
 
+[#vol1_clause_appendix_c_use_case_sicdsp_scenarios]
 ==== Scenarios
 
 ===== Scenario: SICDsp {var_use_case_id}.1 - Devices are Accessible to the Dashboard
@@ -29,17 +33,17 @@ image::../images/vol1-diagram-use-case-sicdsp-tech-view.svg[]
 
 *When* the ICU devices are communicating on the <<acronym_md_lan>>
 
-*Then* the Dashboard will display parameter, waveform, alarm, setting, imagine, etc. information from all assigned accessible devices
+*Then* the <<system_type_dashboard>> will display parameter, waveform, alarm, setting, imagine, etc. information from all assigned accessible devices
 
 ===== Scenario: SICDsp {var_use_case_id}.2 - ICU Devices are Inaccessible to the Dashboard
 
 *Given* Dashboard cannot detect any assigned accessible ICU devices
 
-*Then* the Dashboard will display an error message
+*Then* the <<system_type_dashboard>> will display an error message
 
 ===== Scenario: SICDsp {var_use_case_id}.3 - One or more ICU devices become Inaccessible to the Dashboard
 
-*Given* Dashboard cannot detect a previously detected assigned ICU device
+*Given* <<system_type_dashboard>> cannot detect a previously detected assigned ICU device
 
-*Then* the Dashboard will display an error message
+*Then* the <<system_type_dashboard>> will display an error message
 

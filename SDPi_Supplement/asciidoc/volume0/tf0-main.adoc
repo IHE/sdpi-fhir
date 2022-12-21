@@ -1,5 +1,4 @@
-
-//= Volume 0 -- IHE Technical Frameworks General Introduction
+= Volume 0 -- General
 
 [#vol0_clause_general,sdpi_offset=clear]
 == IHE Technical Frameworks General Introduction

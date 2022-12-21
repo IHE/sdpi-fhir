@@ -1,7 +1,9 @@
-// = Use Case Feature: Standalone ICU Dashboard MP (SICDmp)
-
-[sdpi_offset=4]
+[#vol1_clause_appendix_c_use_case_sicdmp,sdpi_offset=4]
 === Use Case Feature {var_use_case_id}: Standalone ICU Dashboard Multiple Patient (SICDmp)
+
+// ISSUE WITH WHERE TO DECLARE THESE DEFINITIONS (See definitions at end of Glossary file)
+//[[acronym_sicdmp,SICDmp]]
+//[[use_case_label_sicdmp,Standalone ICU Dashboard Multiple Patient]]
 
 ==== Narrative
 
@@ -16,6 +18,7 @@ He can view previous radiology results, electrosurgical equipment settings, pati
 
 image::../images/vol1-diagram-use-case-sicdmp-tech-view.svg[]
 
+[#vol1_clause_appendix_c_use_case_sicdmp_technical_precondition]
 ==== Technical Pre-Conditions
 
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
@@ -25,6 +28,7 @@ image::../images/vol1-diagram-use-case-sicdmp-tech-view.svg[]
 *And* Devices from specific ICU rooms have been assigned to the Dashboard
 
 
+[#vol1_clause_appendix_c_use_case_sicdmp_scenarios]
 ==== Scenarios
 
 ===== Scenario: SICDmp {var_use_case_id}.1 - ICU Devices are Accessible to the Dashboard

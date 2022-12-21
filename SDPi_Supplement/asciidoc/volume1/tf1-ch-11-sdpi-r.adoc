@@ -1,14 +1,22 @@
 = Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
 
-
-NOTE:  This file contains the core Volume 1 specification for the SDPi-R profile.
-
 // 11.
 [sdpi_offset=11]
 == Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
 
+The SDPi-Reporting ([[acronym_sdpi_r,SDPi-R]] SDPi-R) profile supports #TODO: add general description ...#
+
 // 11.1
 === SDPi-R Actors, Transactions, and Content Modules
+
+This section defines the actors, transactions, and/or content modules in this profile.
+General definitions of actors are given in the https://profiles.ihe.net/GeneralIntro/ch-A.html[_Technical Frameworks General Introduction Appendix A_].
+IHE Transactions can be found in the https://profiles.ihe.net/GeneralIntro/ch-B.html[_Technical Frameworks General Introduction Appendix B_].
+Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.ihe.net/GeneralIntro_].
+
+#Figure 11.1-1# shows the actors directly involved in the SDPi-R Profile.
+The relevant transactions between them are detailed in the subsequent #Table 11.1-1#.
+Actor groupings, including abstract with concrete are detailed in #Section 11.3#.
 
 .SDPi-R Actor Diagram
 
@@ -35,6 +43,42 @@ image::../images/vol1-diagram-sdpi-r-actor.svg[]
 
 // 11.4.2
 ==== Use Cases
+The SDPi-R profile supports requirements from the use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this profile.
+
+
+===== Standalone ICU Dashboard Single Patient (SICDsp)
+This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdsp>>.
+
+Specific capabilities supporting the SICDsp profile include:
+
+* *System Type*:  N/A
+* *Service Type*:  N/A
+* *Technical Pre-Conditions*: N/A
+* *Scenarios*: SICDsp <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_dashboard>>
+
+
+===== Standalone ICU Dashboard Multiple Patient (SICDmp)
+This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdmp>>.
+
+Specific capabilities supporting the SICDmp profile include:
+
+* *System Type*:  N/A
+* *System Type*:  N/A
+* *Technical Pre-Conditions*: N/A
+* *Scenarios*: SICDmp <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_dashboard>>
+
+
+===== Device Data to Enterprise Systems (<<acronym_ddes>)
+This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_ddes>>.
+
+Specific capabilities supporting the DDES profile include:
+
+* *System Type*:  N/A
+* *Service Type*: N/A
+* *Technical Pre-Conditions*: N/A
+* *Scenarios*: DDES <<vol1_clause_appendix_c_use_case_ddes_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_device_gateway>>
+
+#TODO:  Reference DEC Gateway / DOR actor from generic use case scenario reference#
 
 // 11.5
 === SDPi-R Safety, Effectiveness, Security Considerations and Requirements
