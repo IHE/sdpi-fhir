@@ -130,9 +130,36 @@ In addition to specific device specializations (see <<vol3_clause_device_special
 
 #TODO:  ADD TERM CODE IDENTIFIERS FOR THE SYSTEM TYPES IN THE TABLE ABOVE + SEE ADDITIONAL TYPES AT https://confluence.hl7.org/pages/viewpage.action?pageId=86972238[ToI "What is a Central?"]#
 
-// 8.3.2.
+[#vol3_clause_biceps_ses_content_requirements_considerations]
 ===== Safety, Effectiveness, Security Content Requirements & Considerations
-#PRIORITY-1 -- Include mixed safety class language + links to boilerplate SES sections for Semantic Content#
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  The <<acronym_sdc>> standards community is evaluating the use of safety class elements in the BICEPS specification (see <<ref_ieee_11073_10207_2017>>), and the related https://github.com/IHE/sdpi-fhir/issues/61[Github Issue #61 _Topic: SDPi-xC with Mixed Device Safety Classes_].  The result of that discussion will directly impact the BICEPS SES Considerations section below.
+
+For this version of the specification, the following wording has been suggested:
+
+[none]
+. _The purpose of the BICEPS attribute @SafetyClassification is to classify the quality and criticality of data and operations. The usage of this attribute is under discussion in IEEE 11073 PoCD and IHE DEV DPI. Additionally, the value set definition in BICEPS is under discussion. Consequently, this document version does not yet include guidance or requirements on the usage of @SafetyClassification._
+
+|===
+
+
+====== SES General Considerations
+Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
+
+For additional guidance, see section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
+
+====== Safety Requirements & Considerations
+No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+
+====== Effectiveness Requirements & Considerations
+No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
+
+====== Security Requirements & Considerations
+No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile, and those specified in the _<<acronym_ses>> General Considerations_ section above.
 
 // 8.3.2.
 ===== BICEPS Conventions for device specialization content modules
