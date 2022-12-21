@@ -41,6 +41,8 @@ Ultimately, the content of this appendix may be rearranged and even relocated; h
 
 * [[[ref_ieee_11073_10702_202x,IEEE 11073-10702:202x]]] IEEE P11073-10702™/D1 Draft Standard for Health Informatics – Device Interoperability – Part 10702: Point-of-Care Medical Device Communication – Alert Provisioning by Participants in a Service-Oriented Device Connectivity (SDC) System
 
+* [[[ref_ieee_11073_10703_202x,IEEE 11073-10703:202x]]] IEEE P11073-10703™/Draft Standard for Health Informatics – Device Interoperability – Part 10703: Point-of-Care Medical Device Communication – External Control by Participants in a Service-Oriented Device Connectivity (SDC) System, in development.
+
 * [[[ref_ieee_11073_20701_2018,ISO/IEEE 11073-20701:2018]]] ISO/IEEE 11073-20701-2018, Health informatics — Point-of-care medical device communication — Part 20701: Service-Oriented Medical Device Exchange Architecture and Protocol Binding, 2018-09, available at https://standards.ieee.org/ieee/11073-20701/6059
 
 * [[[ref_ieee_11073_20702_2016,ISO/IEEE 11073-20702:2016]]] ISO/IEEE 11073-20702-2016, Health informatics — Point-of-care medical device communication — Part 20702: Medical Devices Communication Profile for Web Services, 2016-09, available at https://standards.ieee.org/ieee/11073-20702/6034

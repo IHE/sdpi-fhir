@@ -649,7 +649,7 @@ The SDPi-P profile supports requirements from the use cases detailed in <<vol1_a
 
 #TODO:  For each of these, add discussion to HOW and WHERE (with links) that the requirements are met.  Include a Requirements usage block?  CT DEPENDENCY IN SOMDS_PARTICIPANT MEETS THESE REQUIREMENTS#
 
-===== <<use_case_label_stad>> (STAD)
+===== Synchronized Time Across Devices (STAD)
 This profile fully addresses the requirements from  <<vol1_clause_appendix_c_use_case_stad>>.
 
 Specific capabilities supporting the STAD profile include:

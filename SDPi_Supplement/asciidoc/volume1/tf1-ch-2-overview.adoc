@@ -64,27 +64,50 @@ The Service-oriented Device Point-of-care Interoperability (SDPi) profiles are b
 [#figure_sdpi_profiles_foundational_standards]
 image::../images/vol1-diagram-sdpi-profiles.svg[align=center]
 
-#TODO:  Introduce core concepts such as -- SoA (graphic with distributed registry), D2D, Plug-and-Trust, PKPs, Gateways, rationale for (4) profiles (functionally and "medical" PKP), use context (high acuity point-of-care = "bed"), ... reference the hanging gardens model in Appendix A; include ICS Appendix B references too#
+#TODO:  Introduce core concepts including -- SoA (graphic with distributed registry), D2D, Plug-and-Trust, PKPs, Gateways, rationale for (4) profiles (functionally and "medical" PKP), use context (high acuity point-of-care = "bed"), ... reference the hanging gardens model in Appendix A; include ICS Appendix B references too#
 
 [sdpi_offset=10]
 ==== Service-oriented Device Point-of-care Interoperability - Plug-and-trust (SPDi-P) Profile
+Within the framework of the SDPi architecture, the Plug-and-Trust profile provides for *_secure plug-and-play connectivity_* between all actors.
+The primary use context is acute care beds (e.g., ICU, operating room, emergency department), though it may be used in other healthcare contexts.
+This profile provides for plug-and-trust (secured) communication for healthcare devices, systems and applications, regardless of whether they are "regulated" medical devices.
+That said, the SDPi-P profile fully supports the safety and security requirements specified in the <<ref_ieee_11073_10700_2022>> Base <<acronym_pkp>> standard.
+Other SDPi profiles provide direct support for _interoperable medical systems_.
+Taking this approach allows non-medical technology to interact with other SDPi-enabled systems but without the added burden of having to support the more rigorous requirements associated with technology intended for a medical purpose (e.g., additional risk control mitigation measures).
 
-#TODO:  Include brief purpose & scope statement for the SDPi-P; include option summary too?#
+The baseline profile supports core functionality needed by all participating systems; whereas, profile options are provided for those additional capabilities that may be added (e.g., "ensemble context" management).
 
 [sdpi_offset=11]
 ==== Service-oriented Device Point-of-care Interoperability - Reporting (SPDi-R) Profile
+The SDPi Reporting profile builds on the basic <<acronym_pnt>> profile, but adds the requirements to fully support *_medical data reporting_*.
+To that end, this profile fully supports the safety and security requirements in the <<ref_ieee_11073_10701_2022>> metric reporting <<acronym_pkp>> standard.
 
-#TODO:  Include brief purpose & scope statement for the SDPi-R; include option summary too?#
+The profile supports core medical data reporting functionality needed by all participating systems; whereas, profile options are provided for those additional capabilities that may be added.
 
 [sdpi_offset=12]
 ==== Service-oriented Device Point-of-care Interoperability - Alerting (SPDi-A) Profile
+The SDPi Alerting profile builds on the basic <<acronym_pnt>> profile, but adds the requirements to fully support *_medical alerting_*.
+To that end, this profile implements the safety and security requirements of the <<ref_ieee_11073_10702_202x>> alert <<acronym_pkp>> standard (expected to be completed in 2023).
 
-#TODO:  Include brief purpose & scope statement for the SDPi-A; include option summary too?#
+The profile supports core medical alerting functionality needed by all participating systems; whereas, profile options are provided for those additional capabilities that may be added (e.g., alert delegation).
+
+#TODO:  Add "alert delegation" to the Glossary and reference here#
 
 [sdpi_offset=13]
 ==== Service-oriented Device Point-of-care Interoperability - External Control (SPDi-xC) Profile
 
-#TODO:  Include brief purpose & scope statement for the SDPi-xC; include option summary too?#
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  For SDPi 1.0, the SDPi-xC profile is provided for completeness and to show the general direction of the family of SDPi profiles.
+It is *_not part of the capabilities specified for 1.0_* and even basic controls will not be added until SDPi 2.0 or later.
+|===
+
+The SDPi External Control profile builds on the basic connectivity provided by the <<acronym_pnt>> profile, but adds support for *_medical device external control capabilities_*.
+For example, the ability to have a system initiate a blood pressure reading, or set a breath rate, or tritrate an infusion pump's delivery rate.
+Given the significant risks associated with allowing device-external control functions in a network of <<acronym_pnt>> systems, this profile implements the safety and security requirements of the <<ref_ieee_11073_10703_202x>> external control <<acronym_pkp>> standard (in development, anticipated in 2023 or later).
+
 
 [sdpi_offset=5]
 === Dependencies between Integration Profiles

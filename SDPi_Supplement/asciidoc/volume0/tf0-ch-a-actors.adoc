@@ -13,8 +13,7 @@
 |Add the following _*new or modified*_ actors to the IHE Technical Frameworks General Introduction Appendix A
 |===
 
-##ADD "summary_" TO THESE DEFINITIONS OR KEEP THEM AS IS; IF WE ADDED summary_ THEN THE MAIN REFERENCE WOULD BE TO THE PROFILE IN WHICH THEY ARE USED BUT AN ACTOR MAY BE USED IN MULTIPLE PROFILES ...
-##
+#TODO: ADD "summary_" TO THESE DEFINITIONS OR KEEP THEM AS IS; IF WE ADDED summary_ THEN THE MAIN REFERENCE WOULD BE TO THE PROFILE IN WHICH THEY ARE USED BUT AN ACTOR MAY BE USED IN MULTIPLE PROFILES ...#
 
 [cols="1,2"]
 |===
@@ -72,8 +71,7 @@
 
 The table below lists _existing_ actors that are utilized in this profile.
 
-##VERIFY THAT THE GATEWAY ACTORS ARE FULLY ACCOUNTED FOR + ANY ADDITIONAL DEPENDENT ACTORS
-##
+#TODO: VERIFY THAT THE GATEWAY ACTORS ARE FULLY ACCOUNTED FOR + ANY ADDITIONAL DEPENDENT ACTORS#
 
 .Complete List of Existing Actors Utilized in this Profile
 [cols="1,2"]
