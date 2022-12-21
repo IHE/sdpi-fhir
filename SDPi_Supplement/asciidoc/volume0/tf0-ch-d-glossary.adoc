@@ -384,3 +384,4 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 [[acronym_stad,STAD]]
 [[use_case_label_stad,Synchronized Time Across Devices]]
 
+// ALSO INCLUDE definitions for:  acronym_agw,

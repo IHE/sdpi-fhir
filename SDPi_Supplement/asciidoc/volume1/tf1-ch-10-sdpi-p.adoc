@@ -688,12 +688,12 @@ Specific capabilities supporting the SICDmp profile include:
 ===== Device Data to Enterprise Systems (<<acronym_ddes>)
 This profile provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_ddes>>.
 
-Specific capabilities supporting the <<acronym_ddes>> profile include:
+Specific capabilities supporting the DDES profile include:
 
 * *System Type*:  <<system_type_device_gateway>> is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
 * *Service Type*: Data  <<system_type_device_gateway>> Service is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
-* *Technical Pre-Conditions*: <<acronym_ddes>> <<vol1_clause_appendix_c_use_case_ddes_technical_precondition>> are fully supported by SDPi-P
-* *Scenarios*: <<acronym_ddes>> <<vol1_clause_appendix_c_use_case_ddes_scenarios>> basic communication requirements are supported by SDPi-P
+* *Technical Pre-Conditions*: DDES <<vol1_clause_appendix_c_use_case_ddes_technical_precondition>> are fully supported by SDPi-P
+* *Scenarios*: DDES <<vol1_clause_appendix_c_use_case_ddes_scenarios>> basic communication requirements are supported by SDPi-P
 
 
 ===== Alerts to Clinician Notification Systems (ACNS)
@@ -701,7 +701,7 @@ This profile provides capabilities for requirements from  <<vol1_clause_appendix
 
 Specific capabilities supporting the ACNS profile include:
 
-* *System Type*:  Alert <<system_type_device_gateway>> (<<acronym_agw>>) is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
+* *System Type*:  Alert <<system_type_device_gateway>> (AGW) is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
 * *Service Type*:  Alert <<system_type_device_gateway>> Service is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
 * *Technical Pre-Conditions*:  ACNS <<vol1_clause_appendix_c_use_case_acns_technical_precondition>> are fully supported by SDPi-P
 * *Scenarios*:  ACNS <<vol1_clause_appendix_c_use_case_acns_scenarios>> basic communication requirements are supported by SDPi-P
@@ -712,7 +712,7 @@ This profile provides capabilities for requirements from  <<vol1_clause_appendix
 
 Specific capabilities supporting the AARS profile include:
 
-* *System Type*:  Alert <<system_type_device_gateway>> (<<acronym_agw>>) is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
+* *System Type*:  Alert <<system_type_device_gateway>> (AGW) is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
 * *Service Type*:  Alert <<system_type_device_gateway>> Service is supported by the BICEPS Content Module Systems Types Nomenclature (see <<vol1_table_system_type_nomenclature_extensions>>)
 * *Technical Pre-Conditions*:  AARS <<vol1_clause_appendix_c_use_case_aars_technical_precondition>> are fully supported by SDPi-P
 * *Scenarios*:  AARS <<vol1_clause_appendix_c_use_case_aars_scenarios>> basic communication requirements are supported by SDPi-P

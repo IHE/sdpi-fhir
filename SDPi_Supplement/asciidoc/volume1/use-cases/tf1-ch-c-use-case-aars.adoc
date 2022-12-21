@@ -21,13 +21,13 @@ image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
-*And* At least one Alert <<system_type_device_gateway>> (<<acronym_agw>>) Service on the <<acronym_md_lan>>
+*And* At least one Alert <<system_type_device_gateway>> (AGW) Service on the <<acronym_md_lan>>
 
-*And* At least one Alert Recording System is connected to the Alert <<system_type_device_gateway>> (<<acronym_agw>>) Service.
+*And* At least one Alert Recording System is connected to the Alert <<system_type_device_gateway>> (AGW) Service.
 
 *And* All devices report either a device label and/or location and/or patient ID
 
-*And* The <<acronym_agw>> Service is associated with a specific set of device labels, and/or location(s)
+*And* The AGW Service is associated with a specific set of device labels, and/or location(s)
 .
 
 [#vol1_clause_appendix_c_use_case_aars_scenarios]
@@ -35,36 +35,36 @@ image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 
 ===== Scenario: ARRS {var_use_case_id}.1 - New device is connected to network with AGW service
 
-*Given* the <<acronym_agw>> Service has detected a new device in its scope
+*Given* the AGW Service has detected a new device in its scope
 
-*When* the <<acronym_agw>> Service is operational
+*When* the AGW Service is operational
 
-*Then* the AG<<acronym_agw>>W Service will connect to the device and communicate alerts to the Alert Recording System
+*Then* the AGAGWW Service will connect to the device and communicate alerts to the Alert Recording System
 
 ===== Scenario: ARRS {var_use_case_id}.2 - The AGW service loses connectivity with the ICU devices
 
-*Given* the <<acronym_agw>> Service no longer communicates with ICU devices in its scope
+*Given* the AGW Service no longer communicates with ICU devices in its scope
 
 *When* There is a communications failure
 
-*Then* the <<acronym_agw>> will notify the Alert Recording System of the failure
+*Then* the AGW will notify the Alert Recording System of the failure
 
-*Then* when the <<acronym_agw>> regains communication with the devices it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts
+*Then* when the AGW regains communication with the devices it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts
 
 ===== Scenario: ARRS {var_use_case_id}.3 - The AGW service fails
 
-*Given* the <<acronym_agw>> fails
+*Given* the AGW fails
 
 *Then* the Alert Recording System will detect a loss of communications with the AGW
 
-*Then* when the <<acronym_agw>> Service recovers it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts
+*Then* when the AGW Service recovers it will resume reporting active alerts to the Alert Recording System and attempt to backfill any missing alerts
 
 ===== Scenario: ARRS {var_use_case_id}.4 - The Alert Recording System loses connectivity with the AGW
 
-*Given* the Alert Recording System can no longer communicate with the <<acronym_agw>>
+*Given* the Alert Recording System can no longer communicate with the AGW
 
-*Then* the Alert Recording System will detect a loss of communications with the <<acronym_agw>> Service
+*Then* the Alert Recording System will detect a loss of communications with the AGW Service
 
-*Then*  when the <<acronym_agw>> Service regains communication with the Alert Recording System it will resume reporting active alerts to the Alert Recording System and backfill any missing alerts.
+*Then*  when the AGW Service regains communication with the Alert Recording System it will resume reporting active alerts to the Alert Recording System and backfill any missing alerts.
 
 

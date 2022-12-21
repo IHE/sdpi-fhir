@@ -71,12 +71,12 @@ Specific capabilities supporting the SICDmp profile include:
 ===== Device Data to Enterprise Systems (<<acronym_ddes>)
 This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_ddes>>.
 
-Specific capabilities supporting the <<acronym_ddes>> profile include:
+Specific capabilities supporting the DDES profile include:
 
 * *System Type*:  N/A
 * *Service Type*: N/A
 * *Technical Pre-Conditions*: N/A
-* *Scenarios*: <<acronym_ddes>> <<vol1_clause_appendix_c_use_case_ddes_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_device_gateway>>
+* *Scenarios*: DDES <<vol1_clause_appendix_c_use_case_ddes_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_device_gateway>>
 
 #TODO:  Reference DEC Gateway / DOR actor from generic use case scenario reference#
 

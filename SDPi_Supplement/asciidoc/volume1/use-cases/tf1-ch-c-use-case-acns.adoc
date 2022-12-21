@@ -20,13 +20,13 @@ image::../images/vol1-diagram-use-case-acns-tech-view.svg[]
 
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
-*And* At least one Alert <<system_type_device_gateway>> (<<acronym_agw>>) Service on the <<acronym_md_lan>> network
+*And* At least one Alert <<system_type_device_gateway>> (AGW) Service on the <<acronym_md_lan>> network
 
-*And* At least one <<system_type_clinical_notification_system>> is connected to the <<acronym_agw>> Service.
+*And* At least one <<system_type_clinical_notification_system>> is connected to the AGW Service.
 
 *And* All devices report either a device label and/or location and/or patient ID
 
-*And* The <<acronym_agw>> Service is associated with a specific set of device labels, and/or location(s) (Scope)
+*And* The AGW Service is associated with a specific set of device labels, and/or location(s) (Scope)
 
 
 [#vol1_clause_appendix_c_use_case_acns_scenarios]

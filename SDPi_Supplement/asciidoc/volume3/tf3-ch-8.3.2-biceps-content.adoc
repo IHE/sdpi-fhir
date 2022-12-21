@@ -119,7 +119,7 @@ In addition to specific device specializations (see <<vol3_clause_device_special
 .^| [[system_type_device_gateway,Gateway]] Gateway
 .^| (tba)
 .^| [[acronym_dgw,DGW]] DGW, [[acronym_agw,AGW]] AGW
-.^| Gateway PARTICIPANT that provides, for example, ADT information or laboratory results (inbound). Note:  <<acronym_agw>> is for an Alert Gateway system.  (For example, see <<vol1_clause_appendix_c_use_case_acns_technical_precondition>>)
+.^| Gateway PARTICIPANT that provides, for example, ADT information or laboratory results (inbound). Note:  AGW is for an Alert Gateway system.  (For example, see <<vol1_clause_appendix_c_use_case_acns_technical_precondition>>)
 
 .^| [[system_type_device_smart_alerting,Smart Alerting]] Smart Alerting
 .^| (tba)
