@@ -4,6 +4,8 @@
 [#vol2_clause_appendix_mdpws_dev_23]
 ==== MDPWS: Announce Network Presence [DEV-23]
 
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_23>>.
+
 ===== {var_label_dev_23_message_hello} Message
 
 The {var_label_dev_23_message_hello} message is encoded by using {var_uri_ws_discovery_hello}[WS-Discovery Hello].

@@ -4,6 +4,7 @@
 [#vol2_clause_appendix_mdpws_dev_28]
 ==== MDPWS: Notify Change in System Context and Capabilities  [DEV-28]
 
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_28>>.
 
 // ---------- EpisodicContextReport ---------
 
