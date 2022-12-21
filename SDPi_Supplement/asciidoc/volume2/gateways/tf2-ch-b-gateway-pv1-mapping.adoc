@@ -98,7 +98,7 @@ NOTE: <<ref_tbl_pv13_mapping>> defines the mapping of the SDC patient location i
 .R8114
 [sdpi_requirement#r8114,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-19 field to the patient's visit identifier (visit number, account number, etc.).
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-19 field to the patient's visit identifier.
 
 If the SDC patient identifier element *pm:PatientContextState/pm:Identification* contains more than one patient identifier, only the unique identifier assigned to the patient's visit is mapped according to the <<ref_tbl_pv119_mapping>> table.
 
@@ -108,6 +108,8 @@ When there is no unique visit identifier assigned to the patient's visit, the fi
 [%collapsible]
 ====
 NOTE: <<ref_tbl_pv119_mapping>> defines the mapping of the SDC patient identifier to the data fields of the HL7 data type *CX* used in the PV1-19 field.
+
+NOTE: A visit identifier could be a visit number, an account number, or any other identifier that relates to the patient's visit.
 ====
 ****
 
