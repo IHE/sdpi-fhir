@@ -1,15 +1,26 @@
-[NOTE]
-====
-#Note for Reviewers and Request for Comment:#
 
-The UDI is not available for all devices and alternatives for uniquely identifying a device shall be defined. The SDC BICEPS standards provides the *pm:ProductionSpecification* on the MDS and VMD level which is a list of coded product specifications such as serial number, model, product number, manufacture, etc.
-Are there any general rules that can be applied to generate a unique deivce id? Or are there any information each device has to provide to generate a unique device id?
 
-Another issue is that the field "Universal ID Type" of the HL7 EI date type is bound to HL7 table 0301 which does not contain a "UDI" id type. Which code should be used in the case of an UDI?
-====
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  The UDI is not available for all devices and alternatives for uniquely identifying a device shall be defined.
+The SDC BICEPS standards provides the *pm:ProductionSpecification* on the MDS and VMD level which is a list of coded product specifications such as serial number, model, product number, manufacture, etc.
+
+Another issue is that the field "Universal ID Type" of the HL7 EI date type is bound to HL7 table 0301 which does not contain a "UDI" id type.
+
+*REVIEWER QUESTION*:  Please provide feedback on the following questions ...
+
+. Are there any general rules that can be applied to generate a unique deivce id? Or are there any information each device has to provide to generate a unique device id?
+
+. Which code should be used in the case of an UDI?
+
+|===
+
+
 
 .R8117
-[sdpi_requirement#r8117,sdpi_req_level=shall]
+[sdpi_requirement#r8117,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-18 field to the equipment (or device) identifier on the MDS level and/or the measurement module identifier of the equipment on the VMD level.
 
@@ -32,26 +43,26 @@ NOTE: <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the <<acronym_mdi
 |OBX-18/EI-1
 |Entity Identifier
 |pm:Mds
-\pm:MetaData
-\pm:Udi
-\pm:DeviceIdentifier
+/pm:MetaData
+/pm:Udi
+/pm:DeviceIdentifier
 |
 
 |OBX-18/EI-2
 |Namespace ID
 |pm:Mds
-\pm:MetaData
-\pm:Udi
-\pm:Issuer
-\@Root
+/pm:MetaData
+/pm:Udi
+/pm:Issuer
+/@Root
 |
 
 |OBX-18/EI-3
 |Universal ID
 |pm:Mds
-\pm:MetaData
-\pm:Udi
-\pm:DeviceIdentifier
+/pm:MetaData
+/pm:Udi
+/pm:DeviceIdentifier
 |
 
 |OBX-18/EI-4
