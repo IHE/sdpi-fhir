@@ -4,6 +4,8 @@
 [#vol2_clause_appendix_mdpws_dev_34]
 ==== MDPWS: Announce Network Departure [DEV-34]
 
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_34>>.
+
 ===== {var_label_dev_34_message_bye} Message
 
 The {var_label_dev_34_message_bye} message is encoded by using {var_uri_ws_discovery_bye}[WS-Discovery Bye].

@@ -8,6 +8,7 @@
 [#vol2_clause_appendix_mdpws_dev_29]
 ==== MDPWS: Publish BICEPS Update Reports  [DEV-29]
 
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_29>>.
 
 // ---------- EpisodicAlertReport ---------
 

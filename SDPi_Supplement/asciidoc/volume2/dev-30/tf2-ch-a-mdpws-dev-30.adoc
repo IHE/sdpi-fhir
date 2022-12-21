@@ -3,6 +3,7 @@
 [#vol2_clause_appendix_mdpws_dev_30]
 ==== MDPWS: Retrieve BICEPS Content [DEV-30]
 
+This section specifies the MDPWS data transmission for messages defined in <<vol2_clause_dev_30>>.
 
 // ---------- Get Mdib ---------
 
