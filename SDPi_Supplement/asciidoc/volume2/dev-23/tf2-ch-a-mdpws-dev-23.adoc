@@ -56,7 +56,7 @@ This trigger events definition assumes the use of dynamic IP addresses managed b
 .R2000
 [sdpi_requirement#r2000,sdpi_req_level=should]
 ****
-<<actor_somds_participant>>s should use a dynamic IP address.
+A <<actor_somds_participant>> should use a dynamic IP address.
 ****
 
 [#vol2_clause_appendix_mdpws_dev_23_recurring_hello]
