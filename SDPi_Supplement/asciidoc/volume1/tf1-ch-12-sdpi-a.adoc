@@ -47,49 +47,49 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 The SDPi-A profile supports requirements from the use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this profile.
 
 
-===== <<use_case_label_sicdsp>> (<<acronym_sicdsp>>)
+===== Standalone ICU Dashboard Single Patient (SICDsp)
 This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdsp>>.
 
-Specific capabilities supporting the <<acronym_sicdsp>> profile include:
+Specific capabilities supporting the SICDsp profile include:
 
 * *System Type*:  N/A
 * *Service Type*:  N/A
 * *Technical Pre-Conditions*: N/A
-* *Scenarios*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> <<system_type_dashboard>>
+* *Scenarios*: SICDsp <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> <<system_type_dashboard>>
 
 
 
-===== <<use_case_label_sicdmp>> (<<acronym_sicdmp>>)
+===== Standalone ICU Dashboard Multiple Patient (SICDmp)
 This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdmp>>.
 
-Specific capabilities supporting the <<acronym_sicdmp>> profile include:
+Specific capabilities supporting the SICDmp profile include:
 
 * *System Type*:  N/A
 * *System Type*:  N/A
 * *Technical Pre-Conditions*: N/A
-* *Scenarios*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> <<system_type_dashboard>>
+* *Scenarios*: SICDmp <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> <<system_type_dashboard>>
 
 
-===== <<use_case_label_acns>> (<<acronym_acns>>)
+===== Alerts to Clinician Notification Systems (ACNS)
 This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_acns>>.
 
-Specific capabilities supporting the <<acronym_acns>> profile include:
+Specific capabilities supporting the ACNS profile include:
 
 * *System Type*:  N/A
 * *Service Type*:  N/A
 * *Technical Pre-Conditions*:  N/A
-* *Scenarios*:  <<acronym_acns>> <<vol1_clause_appendix_c_use_case_acns_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> Alert <<system_type_gateway>>
+* *Scenarios*:  ACNS <<vol1_clause_appendix_c_use_case_acns_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> Alert <<system_type_device_gateway>>
 
 
-===== <<use_case_label_aars>> (<<acronym_aars>>)
+===== Alerts to Alert Recording Systems (AARS)
 This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_aars>>.
 
-Specific capabilities supporting the <<acronym_aars>> profile include:
+Specific capabilities supporting the AARS profile include:
 
 * *System Type*:  N/A
 * *Service Type*:  N/A
 * *Technical Pre-Conditions*:  N/A
-* *Scenarios*:  <<acronym_aars>> <<vol1_clause_appendix_c_use_case_aars_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> Alert <<system_type_gateway>>
+* *Scenarios*:  AARS <<vol1_clause_appendix_c_use_case_aars_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> Alert <<system_type_device_gateway>>
 
 
 // 12.5

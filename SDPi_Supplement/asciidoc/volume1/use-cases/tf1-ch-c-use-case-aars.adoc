@@ -21,9 +21,9 @@ image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 
 *Given* All devices communicate using a common <<acronym_md_lan>> protocol
 
-*And* At least one Alert <<system_type_gateway>> (<<acronym_agw>>) Service on the <<acronym_md_lan>>
+*And* At least one Alert <<system_type_device_gateway>> (<<acronym_agw>>) Service on the <<acronym_md_lan>>
 
-*And* At least one Alert Recording System is connected to the Alert <<system_type_gateway>> (<<acronym_agw>>) Service.
+*And* At least one Alert Recording System is connected to the Alert <<system_type_device_gateway>> (<<acronym_agw>>) Service.
 
 *And* All devices report either a device label and/or location and/or patient ID
 
