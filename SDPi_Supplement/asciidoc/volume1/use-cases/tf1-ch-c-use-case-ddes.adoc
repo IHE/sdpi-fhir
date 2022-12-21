@@ -1,8 +1,9 @@
 [#vol1_clause_appendix_c_use_case_ddes,sdpi_offset=5]
 === Use Case Feature {var_use_case_id}: Device Data to Enterprise Systems (DDES)
 
-[[acronym_ddes,DDES]]
-[[use_case_label_ddes,Device Data to Enterprise Systems]]
+// ISSUE WITH WHERE TO DECLARE THESE DEFINITIONS (See definitions at end of Glossary file)
+//[[acronym_ddes,DDES]]
+//[[use_case_label_ddes,Device Data to Enterprise Systems]]
 
 ==== Narrative
 

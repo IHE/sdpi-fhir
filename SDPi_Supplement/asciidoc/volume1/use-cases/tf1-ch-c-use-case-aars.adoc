@@ -1,8 +1,9 @@
 [#vol1_clause_appendix_c_use_case_aars,sdpi_offset=7]
 === Use Case Feature {var_use_case_id}: Alerts to Alert Recording Systems (AARS)
 
-[[acronym_aars,AARS]]
-[[use_case_label_aars,Alerts to Alert Recording Systems]]
+// ISSUE WITH WHERE TO DECLARE THESE DEFINITIONS (See definitions at end of Glossary file)
+//[[acronym_aars,AARS]]
+//[[use_case_label_aars,Alerts to Alert Recording Systems]]
 
 ==== Narrative
 

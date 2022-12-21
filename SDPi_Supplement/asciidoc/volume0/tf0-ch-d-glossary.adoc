@@ -364,7 +364,8 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 
 |===
 
-#TODO: HOLDING PLACE FOR DECLARATION OF LABELS BEFORE THEIR USE ... SIGH ...#
+
+#TODO: HOLDING PLACE FOR DECLARATION OF LABELS BEFORE THEIR USE ...#
 [[acronym_aars,AARS]]
 [[use_case_label_aars,Alerts to Alert Recording Systems]]
 

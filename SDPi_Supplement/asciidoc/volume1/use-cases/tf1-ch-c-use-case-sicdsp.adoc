@@ -1,8 +1,9 @@
 [#vol1_clause_appendix_c_use_case_sicdsp,sdpi_offset=3]
 === Use Case Feature {var_use_case_id}: Standalone ICU Dashboard Single Patient (SICDsp)
 
-[[acronym_sicdsp,SICDsp]]
-[[use_case_label_sicdsp,Standalone ICU Dashboard Single Patient]]
+// ISSUE WITH WHERE TO DECLARE THESE DEFINITIONS (See definitions at end of Glossary file)
+//[[acronym_sicdsp,SICDsp]]
+//[[use_case_label_sicdsp,Standalone ICU Dashboard Single Patient]]
 
 ==== Narrative
 
