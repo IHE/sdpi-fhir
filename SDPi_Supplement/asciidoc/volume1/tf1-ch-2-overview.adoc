@@ -33,7 +33,7 @@ IHE specifications often include sections for "Security Considerations" and "Saf
 This supplement extends these two concepts to include a third:  Effectiveness.
 The sections are termed: <<term_safe_effective_secure>> Considerations.
 
-The background for <<acronym_ses>> is discussed in detail in <<vol1_appendix_a_integrating_ses>>; however, in general "<<acronym_ses>>" is used as a reference to the standards encompased (directly and indirectly by reference) in <<term_joint_working_group_7>>, including <<ref_iso_81001_1_2021>> and <<ref_iec_80001_1_2021>>.
+The background for <<acronym_ses>> is discussed in detail in <<vol1_appendix_a_integrating_ses>>; however, in general "<<acronym_ses>>" is used as a reference to the standards encompassed (directly and indirectly by reference) in <<term_joint_working_group_7>>, including <<ref_iso_81001_1_2021>> and <<ref_iec_80001_1_2021>>.
 These standards are primarily, though not exclusively, focused on *_risk management of health software_* (including <<acronym_samd>>) *_and medical devices that are deployed on various kinds of infrastructure_*, with a focus to managing three key properties:  *Safety, Effectiveness and Security*.
 Thus the "<<acronym_ses>> Considerations" sections in this supplement are intended to reflect the results of that risk management and to guide those who are tasked with deploying and managing these interoperable solutions during use.
 
@@ -58,7 +58,7 @@ In this version, the content is added as 2.3.1, and then the profiles as 2.3.10 
 
 ==== Service-oriented Device Point-of-care Interoperability (SDPi) – Overview & Framework
 
-The Service-oriented Device Point-of-care Interoperability (SDPi) profiles are built upon a foundation of standards and profiles from <<acronym_hl7>>, <<acronym_ieee>>, IHE and other organizations.  An overview of the profiles and their relationships is provided in Figure <<figure_sdpi_profiles_foundational_standards>>:
+The Service-oriented Device Point-of-care Interoperability (SDPi) profiles are built upon a foundation of standards and profiles from <<acronym_hl7>>, <<acronym_ieee>>, IHE and other organizations.  An overview of the profiles and their relationships is provided in Figure <<figure_sdpi_profiles_foundational_standards>>.
 
 .IHE SDPi Profiles & Foundational Standards
 [#figure_sdpi_profiles_foundational_standards]

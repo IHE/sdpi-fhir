@@ -38,13 +38,6 @@ The FMM levels for FHIR content used in this profile are:
 
 {empty} +
 
-#PRIORITY-1:  Must be completed for SDPi 1.0#
-
-#PRIORITY-2:  Nice to be completed for SDPi 1.0#
-
-#PRIORITY-D:  Document TODO or Reviewers Note for SDPi 1.0#
-
-
 [%noheader]
 [%autowidth]
 [cols="1"]
