@@ -406,7 +406,7 @@ In the case of a connector implementing a <<actor_somds_provider>> actor, servic
 For example, an application that wants to retrieve patient information from an EHR or check the latest patient laboratory results.
 
 Note that the term “connector” is used to allow for SOMDS interaction with other systems that do not require protocol “gateway” adaptation, but do require a consistent interface to the other participants within a SOMDS environment.
-See <<vol1_clause_sdpi_p_somds_sensor_gateway>> and <<ol1_clause_sdpi_p_somds_smart_app_platform>> for examples.
+See <<vol1_clause_sdpi_p_somds_sensor_gateway>> and <<vol1_clause_sdpi_p_somds_smart_app_platform>> for examples.
 
 Each _<<actor_somds_connector>>_ gateway implementation will include the protocol-specific rules for connecting to and interacting with external Non-SOMDS Systems, including semantic mappings, message formats, and interaction sequences.
 See related discussion at #DEV TF-3 SDC/BICEPS Mapping of SOMDS Connector Content Modules#.
