@@ -4,6 +4,17 @@
 [sdpi_offset=11]
 == Service-oriented Device Point-of-care Interoperability - Reporting (SDPi-R) Profile
 
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  For SDPi 1.0 DEV Internal Review Version, this profile section remains fairly incomplete, with significant content needing to be migrated from the Word version of the supplement and then integrated into this AsciiDoc specification.
+This will be completed in early January and *_an updated DEV Internal Review Version published by mid-January_*.
+
+Note that the related transactions are completely defined in <<vol2_clause_transactions>>, and the <<actor_somds_dec_gateway>> is fully specified in <<#vol2_clause_appendix_sdpi_dec_gateway>>.
+|===
+
+
 The SDPi-Reporting ([[acronym_sdpi_r,SDPi-R]] SDPi-R) profile supports #TODO: add general description ...#
 
 // 11.1

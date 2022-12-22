@@ -4,6 +4,17 @@
 [sdpi_offset=12]
 == Service-oriented Device Point-of-care Interoperability - Alerting (SDPi-A) Profile
 
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  For SDPi 1.0 DEV Internal Review Version, this profile section remains fairly incomplete, with significant content needing to be migrated from the Word version of the supplement and then integrated into this AsciiDoc specification.
+This will be completed in early January and *_an updated DEV Internal Review Version published by mid-January_*.
+
+Note that the related transactions are completely defined in <<vol2_clause_transactions>>, and the <<actor_somds_acm_gateway>> is fully specified in <<#vol2_clause_appendix_sdpi_acm_gateway>>.
+|===
+
+
 The SDPi-Alerting ([[acronym_sdpi_a,SDPi-A]] SDPi-A) profile supports #TODO: add general description ...#
 
 // 12.1
@@ -14,10 +25,11 @@ General definitions of actors are given in the https://profiles.ihe.net/GeneralI
 IHE Transactions can be found in the https://profiles.ihe.net/GeneralIntro/ch-B.html[_Technical Frameworks General Introduction Appendix B_].
 Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.ihe.net/GeneralIntro_].
 
-#Figure 12.1-1# shows the actors directly involved in the SDPi-A Profile.
+<<vol1_figure_sdpi_a_actor_diagram>> shows the actors directly involved in the SDPi-A Profile.
 The relevant transactions between them are detailed in the subsequent #Table 12.1-1#.
 Actor groupings, including abstract with concrete are detailed in #Section 12.3#.
 
+[#vol1_figure_sdpi_a_actor_diagram]
 .SDPi-A Actor Diagram
 
 image::../images/vol1-diagram-sdpi-a-actor.svg[]

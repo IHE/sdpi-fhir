@@ -57,11 +57,10 @@ image::../images/vol1-diagram-sdpi-xc-actor.svg[]
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  For SDPi 1.0, no use cases have been included that provide functional requirements for device external control.  These will be added to a future versoin of the SDPi supplement.
-
+a| *SDPi Supplement Version Note*:  _*For SDPi 1.0*_, no use cases have been included that provide functional requirements for device external control.  These will be added to a future version of the SDPi supplement.
+For this SDPi 1.0 DEV Internal Review Version, this profile section remains fairly incomplete, with significant content needing to be migrated from the Word version of the supplement and then integrated into this AsciiDoc specification.
+This will be completed in early January and *_an updated DEV Internal Review Version published by mid-January_*.
 |===
-
-
 
 // 13.5
 === SDPi-xC Safety, Effectiveness, Security Considerations and Requirements
