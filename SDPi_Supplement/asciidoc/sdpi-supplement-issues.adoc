@@ -40,7 +40,7 @@ For more detailed information on how the Gemini SES+MDI program manages issues f
 
 * *Issue: _SDPi-xC with Mixed Device Safety Classes_*
 ** https://github.com/IHE/sdpi-fhir/issues/61[Github Issue #61 _Topic: SDPi-xC with Mixed Device Safety Classes_]
-** FOR SDPi 1.0 -- Basic text was added to the SES template sections to indicate the nature of the issue, but not to indicate its resolution or even if WILL be explcitly resolve (incl. if the safety classification aspect of <<acronym_biceps>> will be maintained).  See <<vol1_clause_ses_considerations_requirements>> for the text being used.
+** FOR SDPi 1.0 -- Basic text was added to the SES template sections to indicate the nature of the issue, but not to indicate its resolution or even if WILL be explcitly resolve (incl. if the safety classification aspect of <<acronym_biceps>> will be maintained).  See <<vol3_clause_biceps_ses_content_requirements_considerations>> Reviewers Note box that presents the issue in SDPi 1.0 and beyond.
 
 [sdpi_offset=clear]
 === Closed Issues

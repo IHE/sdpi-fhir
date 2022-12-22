@@ -81,9 +81,9 @@ Unique Alert Event Identifier:
 ====
 ****
 
-#Todo: there shall be an extension with the id in the future#
+#TODO: there shall be an extension with the id in the future#
 
-#Todo: does this has to be unique globally or only per device?#
+#TODO: does this has to be unique globally or only per device?#
 
 .R8053
 [sdpi_requirement#r8053,sdpi_req_level=shall]

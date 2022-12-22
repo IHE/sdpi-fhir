@@ -35,7 +35,7 @@
 | SDC
 
 | [[term_central_station,Central Station]] Central Station
-| #See description in TF-1 Appendix C or TF-3#
+| #TODO: Add description and link to See TF-3 description language#
 | A system that supports a multi-patient workplace with capabilities similar to a Cockpit.
 |
 | See extended description and discussion in <<vol3_clause_system_type_nomenclature_extensions>>
@@ -77,7 +77,7 @@
 | IHE
 
 | [[term_health_level_seven_international,Health Level Seven International (HL7)]] Health Level Seven International
-| Organization dedicated to providing a comprehensive framework and related standards for the exchange, integration, sharing, and retrieval of electronic health information that supports clinical practice and the management, delivery and evaluation of health services##.##
+| Organization dedicated to providing a comprehensive framework and related standards for the exchange, integration, sharing, and retrieval of electronic health information that supports clinical practice and the management, delivery and evaluation of health services.
 |
 | [[acronym_hl7,HL7]] HL7
 | https://www.hl7.org/about/index.cfm?ref=nav[About -- HL7]
@@ -161,7 +161,7 @@
 |
 
 | [[term_medical_device_interoperability,Medical Device Interoperability (MDI)]] Medical Device Interoperability
-| The application of informatics technology standards to achieve seamless and dynamic connection of #Point of Care Devices#.
+| The application of informatics technology standards to achieve seamless and dynamic connection of <<term_point_of_care_device>>'s.
 |
 | [[acronym_mdi,MDI]] MDI
 |
@@ -224,21 +224,21 @@
 |
 
 | [[term_point_of_care,Point of Care (PoC)]] Point of Care
-| #Where in the IHE DEV TF is this defined?#
+| #TODO: Is there an existing definition, incl. in the IHE DEV TF?#
 |
 | [[acronym_poc,PoC]] PoC
 |
 |
 
 | [[term_poc_cockpit,PoC Cockpit]] Point of Care Cockpit
-| #See TF-1 Appendix C or TF-3 description language#
+| #TODO:  Add description and link to See TF-3 description language#
 | [[term_cockpit,Cockpit]] Cockpit
 |
 |
 |
 
 | [[term_poc_dashboard,PoC Dashboard]] Point of Care Dashboard
-| #See TF-1 Appendix C or TF-3 description language#
+| #TODO:  Add description and link to See TF-3 description language#
 | Dashboard
 |
 |
@@ -302,7 +302,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | SDC
 
 | [[term_smart_alarm_system,Smart Alarm System (SAS)]] Smart Alarm System
-| #See TF-1 Appendix C or TF-3 description language#
+| #TODO:  Add description and link to See TF-3 description language#
 |
 | [[acronym_sas,SAS]] SAS
 |

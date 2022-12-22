@@ -48,44 +48,44 @@ include::dev-39/tf2-dev-39.adoc[]
 //=== Retrieve Medical Alert Status [DEV-40]
 include::dev-40/tf2-dev-40.adoc[]
 
-// todo how does this differ from DEV-30
+// TODO how does this differ from DEV-30
 //
 //[appendix#clause-mdpws-constraints-corrigenda-adjuncts]
 //== MDPWS Constraints, Corrigenda & Adjuncts
 //
 //=== Handling missed discovery messages
 //
-// todo https://confluence.hl7.org/display/GP/Topic%3A+Handling+missed+discovery+messages
+// TODO https://confluence.hl7.org/display/GP/Topic%3A+Handling+missed+discovery+messages
 //
 //=== Compression Option
 //
-// todo https://confluence.hl7.org/display/GP/Topic%3A+SDPi-P+Compression+Option
+// TODO https://confluence.hl7.org/display/GP/Topic%3A+SDPi-P+Compression+Option
 //
 //=== XML Pretty Print
 //
-// todo finding from PAT: no use of XML pretty print; see https://confluence.hl7.org/pages/viewpage.action?pageId=104579763
+// TODO finding from PAT: no use of XML pretty print; see https://confluence.hl7.org/pages/viewpage.action?pageId=104579763
 //
 //
 //=== WS-Eventing
 //
 //=== Subscription / Subscription Manager Identifier
 //
-// todo finding from PAT: no use of wse:identifier, use path dispatching; see https://confluence.hl7.org/pages/viewpage.action?pageId=104579763
+// TODO finding from PAT: no use of wse:identifier, use path dispatching; see https://confluence.hl7.org/pages/viewpage.action?pageId=104579763
 //
 //=== SubscribeResponse Outline and XML Schema Conflict
 //
-// todo finding from PAT: no use of infinite subscriptions; see https://confluence.hl7.org/pages/viewpage.action?pageId=131051997
+// TODO finding from PAT: no use of infinite subscriptions; see https://confluence.hl7.org/pages/viewpage.action?pageId=131051997
 //
 //=== Use of SubscriptionManager Addresses for Renew and Unsubscribe
 //
-// todo finding from PAT: requirement is should, make it mandatory; see https://confluence.hl7.org/pages/viewpage.action?pageId=131051997
+// TODO finding from PAT: requirement is should, make it mandatory; see https://confluence.hl7.org/pages/viewpage.action?pageId=131051997
 //
 //[appendix#clause-biceps-constraints-corrigenda-adjuncts]
 //== BICEPS Constraints, Corrigenda & Adjuncts
 //
 //=== SystemContext Profiling & Use
 //
-// todo https://confluence.hl7.org/pages/viewpage.action?pageId=86970701
+// TODO https://confluence.hl7.org/pages/viewpage.action?pageId=86970701
 //
 //=== Profiling BICEPS Services in SDPi-P
 //
@@ -100,11 +100,11 @@ include::dev-40/tf2-dev-40.adoc[]
 //
 //=== Info exchanged during unsecured discovery
 //
-// todo https://confluence.hl7.org/display/GP/Topic%3A+Info+exchanged+during+unsecured+discovery
+// TODO https://confluence.hl7.org/display/GP/Topic%3A+Info+exchanged+during+unsecured+discovery
 //
 //=== Connect Time Delay Algorithm
 //
-// todo https://confluence.hl7.org/display/GP/Topic%3A+Connect+Time+Delay+Algorithm
+// TODO https://confluence.hl7.org/display/GP/Topic%3A+Connect+Time+Delay+Algorithm
 //
 
 //NOTE:  This document integrates all the content that makes up the supplement volume 2 document.
