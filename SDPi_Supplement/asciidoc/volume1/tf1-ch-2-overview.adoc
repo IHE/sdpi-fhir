@@ -56,6 +56,7 @@ In this version, the content is added as 2.3.1, and then the profiles as 2.3.10 
 
 |===
 
+[#vol1_clause_sdpi_overview_framework]
 ==== Service-oriented Device Point-of-care Interoperability (SDPi) – Overview & Framework
 
 The Service-oriented Device Point-of-care Interoperability (SDPi) profiles are built upon a foundation of standards and profiles from <<acronym_hl7>>, <<acronym_ieee>>, IHE and other organizations.  An overview of the profiles and their relationships is provided in Figure <<figure_sdpi_profiles_foundational_standards>>.

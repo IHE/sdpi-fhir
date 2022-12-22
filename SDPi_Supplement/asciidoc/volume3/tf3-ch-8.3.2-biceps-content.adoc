@@ -61,7 +61,7 @@ Additionally, only limited support for the *_AlertSystem_* (and related objects)
 Subsequent versions of the specification will address complete functionality.
 |===
 
-// 8.3.2.
+[#vol3_clause_biceps_relationship_to_classic_dim]
 ===== BICEPS Relationship to Classic DIM
 
 As can be seen from <<figure_sdc_participant_model_descriptive_part>> above, the core elements of the <<term_classic_dim>> (as specified in <<ref_ieee_11073_10201_2004>> and described in <<vol3_clause_ieee_11073_10201_classic_dim_content_modules>>), are directly supported by the <<acronym_biceps>> model above in <<figure_sdc_participant_model_descriptive_part>>.

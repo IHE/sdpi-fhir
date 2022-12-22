@@ -4,10 +4,10 @@
 [sdpi_offset=10]
 == Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
 
-The SDPi-Plug-and-trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) profile supports foundational seamless connectivity, information exchange and service invocation as defined in the SDPi architecture detailed in section #_2.X Service-oriented Device Point-of-care Interoperability (<<acronym_sdpi>>) – Overview & Framework_# above.
+The SDPi-Plug-and-trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) profile supports foundational seamless connectivity, information exchange and service invocation as defined in the SDPi architecture detailed in section <<vol1_clause_sdpi_overview_framework>> above.
 Whereas the related SDPi profiles for reporting, alerting and external control are explicitly intended to support medical care capabilities, the SDPi-P profile focuses on basic healthcare device interoperability.
 All the capabilities defined in SDPi-P are leveraged by and extended in the medically focused profiles.
-This foundational profile not only supports medical device interoperability ("<<acronym_mdi>>"), providing for “plug-and-play” capabilities, but also with a tightly integrated “trust” framework (see #_Appendix A –  Requirements Management for Plug-and-Trust Interoperability_#).
+This foundational profile not only supports medical device interoperability ("<<acronym_mdi>>"), providing for “plug-and-play” capabilities, but also with a tightly integrated “trust” framework (see <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>>).
 The establishment of a trusted ecosystem of medical and non-medical devices and applications footnote:[Note that SDPi-P supports application interoperability including “Software as a Medical Device” (<<acronym_samd>>).] begins at the start of discovery and a secure connection.  Therefore, the profile's name:  <<term_plug_and_trust>>.
 
 _This_ is primarily an IHE transport profile footnote:[See the IHE Technical Frameworks General Introduction for a more detailed description of IHE profile types, published at https://profiles.ihe.net/GeneralIntro/[profiles.ihe.net/GeneralIntro/].], although it does define several content modules detailed in IHE Devices TF-3.
@@ -39,23 +39,25 @@ General definitions of actors are given in the https://profiles.ihe.net/GeneralI
 IHE Transactions can be found in the https://profiles.ihe.net/GeneralIntro/ch-B.html[_Technical Frameworks General Introduction Appendix B_].
 Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.ihe.net/GeneralIntro_].
 
-<<vol1_figure_sdpi_p_actor_diatram>> shows the actors directly involved in the SDPi-P Profile.
-The relevant transactions between them are detailed in the subsequent #Table 10.1-1#.
+<<vol1_figure_sdpi_p_actor_diagram>> shows the actors directly involved in the SDPi-P Profile.
+The relevant transactions between them are detailed in the subsequent <<vol1_sdpi_table_actors_transactions>>.
 Abstract Actors (i.e., those that provide common specifications that are utilized in other “concrete” or implementation actors) are indicated by stereotype names in italics (e.g., "<< _SOMDS_Participant_ >>".   The actors that inherit their capabilities include the stereotype at the top of their actor box.
-Alternatively, in accordance with traditional IHE style, the abstract actor's name can be in italics with "{_abstract_}" (e.g., see _SOMDS Connector_ in #Figure 1# below).
-Actor groupings, including abstract with concrete are detailed in #Section 10.3#.
+Alternatively, in accordance with traditional IHE style, the abstract actor's name can be in italics with "{_abstract_}" (e.g., see _SOMDS Connector_ in <<vol1_figure_sdpi_p_actor_diagram>>).
+Actor groupings, including abstract with concrete are detailed in <<vol1_clause_sdpi_p_required_actor_groupings>>.
 
-[#vol1_figure_sdpi_p_actor_diatram]
+[#vol1_figure_sdpi_p_actor_diagram]
 .SDPi-P Actor Diagram
 
 image::../images/vol1-diagram-sdpi-p-actor.svg[]
 
-#Table 10.1-1# lists the transactions for each actor directly involved in the SDPi-P Profile.
+<<vol1_sdpi_table_actors_transactions>> lists the transactions for each actor directly involved in the SDPi-P Profile.
 To claim compliance with this profile, an actor shall support all required transactions (labeled “R”) and may support the optional transactions (labeled “O”).
 Note that “Consumer” is indicated for actors that receive but do not directly respond to a specific transaction.
 
 {empty} +
 
+[#vol1_sdpi_table_actors_transactions]
+.SDPi-P Profile - Actors and Transactions
 [%autowidth]
 [cols="1,2,1,1,3"]
 |===
@@ -246,22 +248,23 @@ Note 1: _“Notify Change in System Context and Capabilities”_ is required if 
 {empty} +
 {empty} +
 
-#Figure 10.1-2# shows the content-related actors defined in the SDPi-P Profile and the direction that the content is exchanged.
+<<vol1_figure_sdpi_p_biceps_content_actor_diagram>> shows the content-related actors defined in the SDPi-P Profile and the direction that the content is exchanged.
 In general, a SOMDS Provider<<actor_somds_provider>> actor will create content for consumption by a <<actor_somds_consumer>> actor; however, in the case of external control where a <<actor_somds_consumer>> actor is creating and sending content (e.g., patient demographics information) to a <<actor_somds_provider>> actor, the content module creator / consumer roles will be reversed.
 
 A product implementation using this profile may group actors from this profile with actors from a workflow or transport profile to be functional.
-The grouping of the content module described in this profile to specific actors is described in more detail in #10.3 SDPi-P Required Actor Groupings# or in #10.6 SDPi-P Cross Profile Considerations#.
+The grouping of the content module described in this profile to specific actors is described in more detail in <<vol1_clause_sdpi_p_required_actor_groupings>> or in <<vol1_clause_sdpi_p_cross_profile_considerations>>.
 
 {empty} +
 
+[#vol1_figure_sdpi_p_biceps_content_actor_diagram]
 .SDPi-P BICEPS Content Actor Diagram
 
 image::../images/vol1-diagram-sdpi-p-content-actor.svg[]
 
-#Table 10.1-2# lists the content module(s) defined in the SDPi-P Profile. To claim support with this profile, an actor shall support all required content modules (labeled “R”) and may support optional content modules (labeled “O”).
+<<vol1_table_sdpi_p_actors_content_modules>> lists the content module(s) defined in the SDPi-P Profile. To claim support with this profile, an actor shall support all required content modules (labeled “R”) and may support optional content modules (labeled “O”).
 
 
-
+[#vol1_table_sdpi_p_actors_content_modules]
 .SDPi-P -- Actors and Content Modules
 
 [%autowidth]
@@ -339,13 +342,14 @@ Note 1: _All content exchanged on a SOMDS shall conform to the general SDPi “B
 ==== Actor Descriptions and Actor Profile Requirements
 SDPi-P actor roles and responsibilities are described in the subsections below.
 
-Unless otherwise specified in these sections, specific transaction requirements are specified in in the #DEV TF-2 Transactions# volume, and requirements related to content modules are detailed in #DEV TF-3 DEV Semantic Content Modules#.
+Unless otherwise specified in these sections, specific transaction requirements are specified in in the <<vol2_clause_transactions>> volume, and requirements related to content modules are detailed in <<vol3_clause_content_modules>>.
 This section documents any additional requirements on the profile’s content actors.
 
-The #following sequence diagram# illustrates a typical (not comprehensive) exchange scenarios between SDPi-P actors:
+<<vol1_figure_sdpi_p_example_sequence_diagram>> illustrates a typical (not comprehensive) exchange scenarios between SDPi-P actors:
 
+[#vol1_figure_sdpi_p_example_sequence_diagram]
 .SDPi-P Example Sequence Diagram
-[[vol1_figure_sdpi_p_example_sequence_diagram]]
+
 [plantuml, target=puml-sdpi-p-example-sequence-diagram, format=svg]
 ....
 include::../plantuml/vol1-figure-sdpi-p-example-sequence-diagram.puml[]
@@ -353,6 +357,7 @@ include::../plantuml/vol1-figure-sdpi-p-example-sequence-diagram.puml[]
 
 #TODO:  IN THE FOLLOWING SECTIONS, SHOULD THE LINKS BE TO THE GLOSSARY APPENDIX OR TO THE ACTOR DEFINTION SECTIONS WHICH IN TURN CAN INCLUDE A LINK TO THE ACTORS APPENDIX?#
 
+[#vol1_clause_sdpi_p_somds_participant]
 ===== SOMDS Participant
 Actor Summary Definition:
 [none]
@@ -364,6 +369,7 @@ All SDPi profiles actors are grouped with (inherit from) this actor, including b
 This required grouping ensures that all systems connecting to a SOMDS network support the <<acronym_ses_mdi>>  requirements footnote:[See #TF-0  Appendix A for more detail on <<acronym_ses_mdi>>] necessary for establishing a <<term_plug_and_trust>> ecosystem, including the secure and dynamic provision of an implementation’s system function contribution (SFC).
 See #A.3 Specifying SystemFunctionContribution (SFC) for Plug-and-Trust Interfaces# for more information.
 
+[#vol1_clause_sdpi_p_somds_provider]
 ===== SOMDS Provider
 Actor Summary Definition:
 [none]
@@ -373,6 +379,7 @@ Every <<actor_somds_provider>> is paired with (inherits from) the abstract _<<ac
 
 A system that participates in a SOMDS network instance can include both <<actor_somds_consumer>> and <<actor_somds_provider>> actors.
 
+[#vol1_clause_sdpi_p_somds_consumer]
 ===== SOMDS Consumer
 Actor Summary Definition:
 [none]
@@ -382,6 +389,7 @@ Every <<actor_somds_consumer>> is paired with (inherits from) the abstract _<<ac
 
 A system that participates in a SOMDS network instance can include both <<actor_somds_consumer>> and <<actor_somds_provider>> actors.
 
+[#vol1_clause_sdpi_p_somds_connector]
 ===== SOMDS Connector
 Actor Summary Definition:
 [none]
@@ -398,18 +406,26 @@ In the case of a connector implementing a <<actor_somds_provider>> actor, servic
 For example, an application that wants to retrieve patient information from an EHR or check the latest patient laboratory results.
 
 Note that the term “connector” is used to allow for SOMDS interaction with other systems that do not require protocol “gateway” adaptation, but do require a consistent interface to the other participants within a SOMDS environment.
-See #10.1.1.7 SOMDS Sensor Gateway# and #10.1.1.8 SOMDS Smart App Platform# for examples.
+See <<vol1_clause_sdpi_p_somds_sensor_gateway>> and <<ol1_clause_sdpi_p_somds_smart_app_platform>> for examples.
 
 Each _<<actor_somds_connector>>_ gateway implementation will include the protocol-specific rules for connecting to and interacting with external Non-SOMDS Systems, including semantic mappings, message formats, and interaction sequences.
-See related discussion at #DEV TF-3 8.2.8.7  SDC/BICEPS Mapping of SOMDS Connector Content Modules#.
+See related discussion at #DEV TF-3 SDC/BICEPS Mapping of SOMDS Connector Content Modules#.
 
-Although the SDPi-P profile _<<actor_somds_connector>>_ actor provides for non-SOMDS _protocol-specific_ adaptors, they establish the foundation for specifying system and application-specific interfaces such as for EHR or decision support systems (e.g., sepsis determination). See #10.4.1.3 Ensuring Time Synchronization#, and #10.4.1.3 Aggregators, Proxies, Sensors# for additional perspectives and concepts on how SOMDS Connectors may be implemented.
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*: For SDPi 1.0, the TF-3 SDC/BICEPS Mapping of SOMDS Connector Content Modules section is out-of-scope., but included above for completeness of this actor overview.
+|===
+
+Although the SDPi-P profile _<<actor_somds_connector>>_ actor provides for non-SOMDS _protocol-specific_ adaptors, they establish the foundation for specifying system and application-specific interfaces such as for EHR or decision support systems (e.g., sepsis determination). See <<vol1_clause_sdpi_p_ensuring_time_synchronization>>, and <<vol1_clause_sdpi_p_aggregators_proxies_sensors>> for additional perspectives and concepts on how SOMDS Connectors may be implemented.
 
 _<<actor_somds_connector>>_ system implementations may support multiple protocols where there is one SOMDS-facing participant model or API but with multiple protocols for non-SOMDS system integration.
 For example, a SOMDS “Alert” Gateway would interact with other _<<actor_somds_participant>>s_ in a single consistent way but may support both <<ref_hl7_fhir>> and <<ref_hl7_v2>> protocols for interacting with healthcare enterprise systems.
 
-_<<actor_somds_connector>>_ actors are also utilized in other SDPi profiles for medical device information reporting (#SDPi-R#), alerting (#SDPi-A#) and external control (#SDPi-xC#). See those profile specifications for detailed usage.  In some cases, https://profiles.ihe.net/[IHE profiles] have been defined for supporting integration with Non-SOMDS Systems, such as the V2-based #IHE Devices Device to Enterprise Communication (DEC)# profile, or the #IHE ITI XDS-I# for locating and retrieving images for a specific patient using the #XDS.#b# profile.  In these cases, *_profile-specific_* _<<actor_somds_connector>>_ adaptors may be specified as well.
+_<<actor_somds_connector>>_ actors are also utilized in other SDPi profiles for medical device information reporting (<<acronym_sdpi_r>>), alerting (<<acronym_sdpi_a>>) and external control (<<acronym_sdpi_xc>>). See those profile specifications for detailed usage.  In some cases, https://profiles.ihe.net/[IHE profiles] have been defined for supporting integration with Non-SOMDS Systems, such as the V2-based IHE Devices Device to Enterprise Communication (DEC) profile (See <<ref_ihe_pcd_tf_1_2019>>), or the IHE ITI XDS-I for locating and retrieving images for a specific patient using the XDS.b profile.  In these cases, *_profile-specific_* _<<actor_somds_connector>>_ adaptors may be specified as well.
 
+[#vol1_clause_sdpi_p_somds_fhir_gateway]
 ===== SOMDS FHIR Gateway
 Actor Summary Definition:
 [none]
@@ -427,6 +443,7 @@ Alternatively, the <<actor_somds_fhir_gateway>> could implement a FHIR server an
 
 The <<actor_somds_fhir_gateway>> can also support SOMDS services invoked by FHIR-based systems, such as requesting a snapshot of the latest vital signs measurements for a specific patient and triggering a blood-pressure cuff reading.
 
+[#vol1_clause_sdpi_p_somds_v2_gateway]
 ===== SOMDS V2 Gateway
 
 Actor Summary Definition:
@@ -437,11 +454,12 @@ Actor Summary Definition:
 They shall implement either a <<actor_somds_provider>> and / or <<actor_somds_consumer>> actor.
 
 The <<actor_somds_v2_gateway>> actor identifies and specifies the logic necessary for connecting a SOMDS network environment with Non-SOMDS Systems that utilize <<ref_hl7_v2>> for their interoperability protocol.
-Since V2 is a message-based protocol, the primary implementation guide logic is defined in the #IHE DEV TF-2# appendices for V2 messaging, such as #Appendix B Common Segment Descriptions# and #Appendix C Common Data Types#.
-The logic for semantic content modules is detailed in #IHE DEV TF-3#, including #8.2.8.3  SDC/BICEPS Relationship to Classic DIM#.
+Since V2 is a message-based protocol, the primary implementation guide logic is defined in <<vol2_clause_appendix_sdpi_gateway_hl7_v2_general_mapping>>.
+Additional specifications for semantic content modules is detailed in <<vol3_clause_content_modules>>, including <<vol3_clause_biceps_relationship_to_classic_dim>>.
 
-Generally, the <<actor_somds_v2_gateway>> actor supports messaging from a SOMDS environment to V2-enabled systems, utilizing a <<actor_somds_consumer>> actor to collect information from <<actor_somds_provider>> systems and translate them to V2 messages sent to other Non-SOMDS Systems.  There are cases, though, where information may be sent to a SOMDS-based system such as an alert conformation utilizing a #DEV-05 (i.e., PCD-05)# transaction (see the S#ervice-oriented Device Point-of-care Interoperability - Alerting (SDPi-A) Profile# below).
+Generally, the <<actor_somds_v2_gateway>> actor supports messaging from a SOMDS environment to V2-enabled systems, utilizing a <<actor_somds_consumer>> actor to collect information from <<actor_somds_provider>> systems and translate them to V2 messages sent to other Non-SOMDS Systems.  There are cases, though, where information may be sent to a SOMDS-based system such as an alert conformation utilizing a DEV-05 (i.e., PCD-05) transaction (see the S#ervice-oriented Device Point-of-care Interoperability - Alerting (SDPi-A) Profile# below).
 
+[#vol1_clause_sdpi_p_somds_sensor_gateway]
 ===== SOMDS Sensor Gateway
 [%noheader]
 [%autowidth]
@@ -461,6 +479,7 @@ The <<actor_somds_sensor_gateway>> actor identifies and specifies the logic nece
 This includes integration of both wired and wireless sensor networks (“WSN”).
 This also includes SOMDS integration of IoT (“Internet of Things”) architectures / networks.
 
+[#vol1_clause_sdpi_p_somds_smart_app_platform]
 ===== SOMDS Smart App Platform
 [%noheader]
 [%autowidth]
@@ -484,14 +503,14 @@ Since a single platform actor can support multiple Smart Apps, network traffic m
 
 The platform must support both non-smart app critical functions (such as network topology discovery and maintenance) but also aggregate app requirements (e.g., quality of service necessary to support an application’s algorithms).
 
-See #10.4.1.5 Smart App Platforms# for additional discussion.
+See <<vol1_clause_smart_app_platforms>> for additional discussion.
 
 ===== BICEPS Content Creator
 Actor Summary Definition:
 [none]
 . Provides <<acronym_mdib>> content conformant to <<ref_ieee_11073_10207_2017>> BICEPS specification and for consumption by other <<actor_biceps_content_consumer>> systems.
 
-All content created and provided by a <<actor_biceps_content_creator>> shall be conformant to the BICEPS content module specifications in #DEV TF-3 8.2.8.1  SDC/BICEPS Content Module# and related sections.
+All content created and provided by a <<actor_biceps_content_creator>> shall be conformant to the BICEPS content module specifications in <<vol3_clause_sdc_biceps_semantic_content_module>> and related sections.
 
 Note that although this SDPi-P content actor primarily supports information exchange between systems participating in a SOMDS network environment, they may also be utilized by other non-SDPi profiles that support non-SOMDS exchange architectures, transactions and technologies.
 
@@ -503,8 +522,8 @@ Actor Summary Definition:
 [none]
 . Processes <<acronym_mdib>> information conformant to <<ref_ieee_11073_10207_2017>> BICEPS specifications provided by <<actor_biceps_content_creator>> systems.
 
-A <<actor_biceps_content_consumer>> actor shall be capable of processing information provided by a <<actor_biceps_content_creator>>, in accordance to the BICEPS content module specifications in #DEV TF-3 8.2.8.1  SDC/BICEPS Content Module# and related sections.
-The supported BICEPS content processing shall include one or more of the options identified for this actor in #Table 10.2-1: SDPi-P – Actors and Options# below.
+A <<actor_biceps_content_consumer>> actor shall be capable of processing information provided by a <<actor_biceps_content_creator>>, in accordance to the BICEPS content module specifications in <<vol3_clause_sdc_biceps_semantic_content_module>> and related sections.
+The supported BICEPS content processing shall include one or more of the options identified for this actor in <<vol1_table_sdpi_p_actors_options>> below.
 
 For robustness, a <<actor_biceps_content_consumer>> need only process the content that is necessary to support its capabilities, but shall also be able to accept and ignore any additional content that may be provided but is out-of-scope for its internal requirements. footnote:[Apply Postel’s Law:  Send conservatively, Accept liberally.]
 
@@ -512,9 +531,21 @@ Note that although this SDPi-P content actor primarily supports information exch
 
 // 10.2
 === SDPi-P Actor Options
-Options that may be selected for each actor in this profile, if any, are listed in the #Table 10.2-1#.
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  For SDPi 1.0, n**__one of the options below are detailed __**and some options may never be added to the profile (e.g., compact representation may not be needed).
+They are provided here to indicate potential additions to the SDPi-P profile in subsequent versions.
+|===
+
+Options that may be selected for each actor in this profile, if any, are listed in  <<vol1_table_sdpi_p_actors_options>>.
 Dependencies between options, when applicable, are specified in notes.
 
+#TODO:  Complete migration of the Word table contents to the table below#
+
+[#vol1_table_sdpi_p_actors_options]
 .SDPi-P – Actors and Options
 
 [%autowidth]
@@ -529,30 +560,37 @@ Dependencies between options, when applicable, are specified in notes.
 |
 |===
 
-// 10.2.1
+[#vol1_table_sdpi_p_option_streaming]
 ==== Streaming Option
+#TODO:  Add description and detail specification in a subsequent SDPi Version#
 
-// 10.2.2
+[#vol1_table_sdpi_p_option_safe_data_transmission]
 ==== Safe Data Transmission Option
+#TODO:  Add description and detail specification in a subsequent SDPi Version#
 
-// 10.2.3
+[#vol1_table_sdpi_p_option_compact_representation]
 ==== Compact Representation Option
+#TODO:  Add description and detail specification in a subsequent SDPi Version#
 
-// 10.2.4
+[#vol1_table_sdpi_p_option_patient_context_management]
 ==== Patient Context Management Option
+#TODO:  Add description and detail specification in a subsequent SDPi Version#
 
-// 10.2.5
+[#vol1_table_sdpi_p_option_archive_service]
 ==== Archive Service Option
+#TODO:  Add description and detail specification in a subsequent SDPi Version#
 
-// 10.2.6
+[#vol1_table_sdpi_p_option_localization_service]
 ==== Localization Service Option
+#TODO:  Add description and detail specification in a subsequent SDPi Version#
 
-// 10.2.7
+[#vol1_table_sdpi_p_option_ensemble_participatioon]
 ==== Ensemble Participation Option
+#TODO:  Add description and detail specification in a subsequent SDPi Version#
 
 
 
-// 10.3
+[#vol1_clause_sdpi_p_required_actor_groupings]
 === SDPi-P Required Actor Groupings
 
 #TODO:  ADD CT SOMDS_PARTICIPANT GROUPING + ATNA(?) ADD CONTENT FROM WORD DOCUMENT HERE; DO WE NEED TO ALSO CONSIDER GENERAL V2 AND DEV TF-2 APPENDIX A?#
@@ -622,6 +660,7 @@ Integration of CT and ATNA (TBD) below in required groupings is assumed but shou
 ===== Waveform Communication
 #TODO:  Explain how waveforms are communicated, both snippets and especially "streaming"; include references to appropriate TF-2 & TF-3 Sections; this is part of the "DO WE NEED A WAVEFORM OPTION?" question to help end users? NO!!!  Could drop a note in TF-2 Appendix A for DEV-xyz and how RTSA/Waves would be transmitted / conveyed over the network#
 
+[#vol1_clause_sdpi_p_aggregators_proxies_sensors]
 ===== Aggregators, Proxies, Sensors
 ##TODO: :  Include single / multiple patient variations.  See Topic on confluence; ultimately probably in TF-1 & -2 & -3.  NOTE added a section in TF-3 as well.
 Mention SENSORS and WSN referencing SOMDS Sensor Gateways w/ rationale.
@@ -634,6 +673,7 @@ See Gateways in the actors discussion above … and below?
 #TODO: :  External interfaces “gateways” defined in the abstract and in the protocol-specific.  These actors are leveraged in other profiles such as SDPi-Reporting for a DEC Gateway or in SDPi-Alerting for an ACM gateway.  Include proprietary protocols as well.
 Given the discussion in Actors above, is this necessary here?  Or should some of that content be moved here?  YES … show examples for how the Actors might be grouped into a real-world gateway to … for example … an EHR etc.]#
 
+[#vol1_clause_smart_app_platforms]
 ===== Smart App Platforms
 #TODO: 1.	This section enhances the short actor description above to describe in more detail the various aspects of an application “platform”; see Word draft section 10.4.1.5 for additional content#
 
@@ -739,6 +779,6 @@ No additional effectiveness requirements or considerations are identified for th
 ==== Security Requirements & Considerations
 No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile, and those specified in the _<<acronym_ses>> General Considerations_ section above.
 
-// 10.6
+[#vol1_clause_sdpi_p_cross_profile_considerations]
 === SDPi-P Cross Profile Considerations
 #TODO:  See the template instructions + PCD 2019 and other TF's to see if any content should go in this section for SDPi-P.#
