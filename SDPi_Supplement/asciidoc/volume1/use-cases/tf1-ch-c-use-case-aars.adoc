@@ -39,7 +39,7 @@ image::../images/vol1-diagram-use-case-aars-tech-view.svg[]
 
 *When* the AGW Service is operational
 
-*Then* the AGAGWW Service will connect to the device and communicate alerts to the Alert Recording System
+*Then* the AGW Service will connect to the device and communicate alerts to the Alert Recording System
 
 ===== Scenario: ARRS {var_use_case_id}.2 - The AGW service loses connectivity with the ICU devices
 
