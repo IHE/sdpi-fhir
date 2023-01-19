@@ -34,10 +34,9 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
     private var currentAppendix = 'A'
     private var appendixCaption = ""
     private var currentSection = ""
-    private var figureNumber = 1
-    private var tableNumber = 1
     private var currentVolumeCaption = ""
     private var isInAppendix = false
+    private val localFigureTableNumbers = mutableMapOf<String, Int>()
 
     override fun process(document: Document): Document {
         processBlock(document as StructuralNode)
@@ -138,16 +137,16 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
                     }
                 }
 
-                is StructuralNodeWrapper.Image -> replaceCaption(node.wrapped, "Figure", figureNumber++)
+                is StructuralNodeWrapper.Image -> replaceCaption(node.wrapped, "Figure")
 
-                is StructuralNodeWrapper.Table -> replaceCaption(node.wrapped, "Table", tableNumber++)
+                is StructuralNodeWrapper.Table -> replaceCaption(node.wrapped, "Table")
 
                 else -> logger.debug { "Ignore block of type '${block.context}'" }
             }
         }
     }
 
-    private fun replaceCaption(block: StructuralNode, prefix: String, objectNumber: Int) {
+    private fun replaceCaption(block: StructuralNode, prefix: String) {
         val volumeCaption = when (currentVolumeCaption) {
             "" -> ""
             else -> "$currentVolumeCaption:"
@@ -159,8 +158,18 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
         }
 
         if (block.title != null) {
+            val sectionNumber = "$prefix $volumeCaption${section}"
+            val objectNumber = localFigureTableNumbers[sectionNumber].let {
+                if (it == null) {
+                    localFigureTableNumbers[sectionNumber] = 1
+                    1
+                } else {
+                    localFigureTableNumbers[sectionNumber] = it + 1
+                    it + 1
+                }
+            }
             block.caption = ""
-            block.title = "$prefix $volumeCaption${section}-$objectNumber. ${block.title}"
+            block.title = "$sectionNumber-$objectNumber. ${block.title}"
         }
     }
 
