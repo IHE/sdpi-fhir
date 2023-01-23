@@ -67,7 +67,7 @@ This should not make any visible difference to the rendered HTML document, and i
 *"SDPi 1.0 Supplement Note"* boxes are provided throughout the document to help guide reviewers and to ask specific questions for feedback requested by the supplement editors.
 
 *REVIEWER FOCUS*:  Please review the document especially with a technical and general organizational focus.
-Does the information flow logically and sufficiently for adoptors and implementers?
+Does the information flow logically and sufficiently for adopters and implementers?
 Is the text clear and sufficient or do specific subject areas need to be expanded or reworked.
 Do the links work and lead to the right "best" destinations?  Focus on *_what must be addressed BEFORE Public Comment publication_*, recognizing that supplement development with 1.x and beyond will begin January 1st.
 
@@ -103,7 +103,7 @@ To that end, the supplement includes updates to all (3) IHE DEV TF volumes, incl
 
 === Joint IHE-HL7 Gemini SES+MDI Project Development
 This supplement is the result of a joint https://confluence.hl7.org/x/Xzf9Aw[IHE-HL7 Gemini Device Interoperability program] which began early 2020.
-Extensive notes and discussion materials are provided on the project's HL7 Confluence sight, including a https://confluence.hl7.org/pages/viewpage.action?pageId=113674346#LibrarywithEVERYTHINGyoueverwantedtoknow...-GeneralUpdate&BriefingPresentations[Library with extensive presentations and other materials].
+Extensive notes and discussion materials are provided on the project's HL7 Confluence site, including a https://confluence.hl7.org/pages/viewpage.action?pageId=113674346#LibrarywithEVERYTHINGyoueverwantedtoknow...-GeneralUpdate&BriefingPresentations[Library with extensive presentations and other materials].
 This Library also includes *_briefings (slides and recordings) to provide background for those reviewing the specification_*.
 
 The joint IHE-HL7 devices team leveraged tools from both organizations, as well as participated jointly throughout the project's multi-year efforts.
@@ -112,7 +112,7 @@ The methods currently employed are provided in the wiki article:  https://github
 
 
 === Supplement Support for RI+MC+RR using AsciiDoc
-In addition to the supplement's technical specification content, a development approach has been advance that represents added value to adoptors and implementers over the traditional document oriented approach.
+In addition to the supplement's technical specification content, a development approach has been advanced that represents added value to adopters and implementers over the traditional document oriented approach.
 These are referred to as:
 
 [none]
