@@ -115,7 +115,7 @@ The corresponding message to seek <<actor_somds_provider>>s based on a unique id
 Note that the {var_label_dev_24_message_resolve} message described in this clause is a generic/abstract concept that can be implemented differently.
 It should not be confused with actual transport message specifications like, e.g. the WS-Discovery Resolve message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
 
-If a specific <<term_somds_provider_uid>> is known to a <<actor_somds_consumer>>, the <<actor_somds_consumer>> can send a {var_label_dev_24_message_resolve} message to all listening <<actor_somds_provider>>s. Limited but sufficient information is provided with the message to enable <<actor_somds_provider>>s to determine if they match the <<term_somds_provider_uid>> requested by the <<actor_somds_consumer>>.
+If a specific <<term_somds_provider_uid>> is known to a <<actor_somds_consumer>>, the <<actor_somds_consumer>> can send a {var_label_dev_24_message_resolve} multicast message to all listening <<actor_somds_provider>>s. Limited but sufficient information is provided with the message to enable <<actor_somds_provider>>s to determine if they match the <<term_somds_provider_uid>> requested by the <<actor_somds_consumer>>.
 
 [#vol2_clause_dev_24_message_resolve_trigger_events]
 ====== Trigger Events
