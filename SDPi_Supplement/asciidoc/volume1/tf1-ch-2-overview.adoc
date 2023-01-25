@@ -1,8 +1,8 @@
-= Devices Integration Profiles
+//= Devices Integration Profiles
 
 // 2.
 [sdpi_offset=2]
-== Devices Integration Profiles
+=== Devices Integration Profiles
 
 [%noheader]
 [%autowidth]
@@ -28,7 +28,7 @@ These general concepts will help the technical framework reader understand the b
 
 // 2.2
 [#vol1_clause_ses_considerations_requirements,sdpi_offset=2]
-=== Safety, Effectiveness & Security Considerations and Requirements
+==== Safety, Effectiveness & Security Considerations and Requirements
 IHE specifications often include sections for "Security Considerations" and "Safety Considerations", capturing both general and specific guidance and requirements for system implementers.
 This supplement extends these two concepts to include a third:  Effectiveness.
 The sections are termed: <<term_safe_effective_secure>> Considerations.
@@ -41,7 +41,7 @@ Note that specific requirements from the above mentioned standards, may also be 
 Generally, requirements from these standards would be mapped to the appropriate <<acronym_ses>> Considerations sections throughout the specification.
 
 // 2.3
-=== Integration Profiles Overview
+==== Integration Profiles Overview
 
 
 [%noheader]
@@ -57,7 +57,7 @@ In this version, the content is added as 2.3.1, and then the profiles as 2.3.10 
 |===
 
 [#vol1_clause_sdpi_overview_framework]
-==== Service-oriented Device Point-of-care Interoperability (SDPi) – Overview & Framework
+===== Service-oriented Device Point-of-care Interoperability (SDPi) – Overview & Framework
 
 The Service-oriented Device Point-of-care Interoperability (SDPi) profiles are built upon a foundation of standards and profiles from <<acronym_hl7>>, <<acronym_ieee>>, IHE and other organizations.  An overview of the profiles and their relationships is provided in Figure <<figure_sdpi_profiles_foundational_standards>>.
 
@@ -68,7 +68,7 @@ image::../images/vol1-diagram-sdpi-profiles.svg[align=center]
 #TODO:  Introduce core concepts including -- SoA (graphic with distributed registry), D2D, Plug-and-Trust, PKPs, Gateways, rationale for (4) profiles (functionally and "medical" PKP), use context (high acuity point-of-care = "bed"), ... reference the hanging gardens model in Appendix A; include ICS Appendix B references too#
 
 [sdpi_offset=10]
-==== Service-oriented Device Point-of-care Interoperability - Plug-and-trust (SPDi-P) Profile
+===== Service-oriented Device Point-of-care Interoperability - Plug-and-trust (SPDi-P) Profile
 Within the framework of the SDPi architecture, the Plug-and-Trust profile provides for *_secure plug-and-play connectivity_* between all actors.
 The primary use context is acute care beds (e.g., ICU, operating room, emergency department), though it may be used in other healthcare contexts.
 This profile provides for plug-and-trust (secured) communication for healthcare devices, systems and applications, regardless of whether they are "regulated" medical devices.
@@ -79,14 +79,14 @@ Taking this approach allows non-medical technology to interact with other SDPi-e
 The baseline profile supports core functionality needed by all participating systems; whereas, profile options are provided for those additional capabilities that may be added (e.g., "ensemble context" management).
 
 [sdpi_offset=11]
-==== Service-oriented Device Point-of-care Interoperability - Reporting (SPDi-R) Profile
+===== Service-oriented Device Point-of-care Interoperability - Reporting (SPDi-R) Profile
 The SDPi Reporting profile builds on the basic <<acronym_pnt>> profile, but adds the requirements to fully support *_medical data reporting_*.
 To that end, this profile fully supports the safety and security requirements in the <<ref_ieee_11073_10701_2022>> metric reporting <<acronym_pkp>> standard.
 
 The profile supports core medical data reporting functionality needed by all participating systems; whereas, profile options are provided for those additional capabilities that may be added.
 
 [sdpi_offset=12]
-==== Service-oriented Device Point-of-care Interoperability - Alerting (SPDi-A) Profile
+===== Service-oriented Device Point-of-care Interoperability - Alerting (SPDi-A) Profile
 The SDPi Alerting profile builds on the basic <<acronym_pnt>> profile, but adds the requirements to fully support *_medical alerting_*.
 To that end, this profile implements the safety and security requirements of the <<ref_ieee_11073_10702_202x>> alert <<acronym_pkp>> standard (expected to be completed in 2023).
 
@@ -95,7 +95,7 @@ The profile supports core medical alerting functionality needed by all participa
 #TODO:  Add "alert delegation" to the Glossary and reference here#
 
 [sdpi_offset=13]
-==== Service-oriented Device Point-of-care Interoperability - External Control (SPDi-xC) Profile
+===== Service-oriented Device Point-of-care Interoperability - External Control (SPDi-xC) Profile
 
 [%noheader]
 [%autowidth]
@@ -111,7 +111,7 @@ Given the significant risks associated with allowing device-external control fun
 
 
 [sdpi_offset=5]
-=== Dependencies between Integration Profiles
+==== Dependencies between Integration Profiles
 
 [%noheader]
 [cols="1"]

@@ -1,7 +1,7 @@
 [sdpi_volume_caption=TF-1]
 = Volume 1 -- Profiles
 
-[#vol1_clause_profiles,sdpi_offset=1]
+[#vol1_clause_profiles,sdpi_offset=3]
 == Profiles
 
 // 2.
