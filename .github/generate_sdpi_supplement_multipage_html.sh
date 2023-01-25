@@ -9,3 +9,4 @@ cp -R images ../sdpi-supplement/multipage/images
 rm -rf ../sdpi-supplement/multipage/.asciidoctor
 cp -R images ../sdpi-supplement/singlepage/images
 rm -rf ../sdpi-supplement/singlepage/.asciidoctor
+cp -R js ../sdpi-supplement/singlepage/js
