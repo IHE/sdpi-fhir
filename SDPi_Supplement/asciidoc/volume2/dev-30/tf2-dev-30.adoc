@@ -81,8 +81,8 @@ The {var_label_dev_30_message_getmdibresponse} message is sent whenever a <<acto
 [#vol2_clause_dev_30_message_getmdibresponse_semantics]
 ====== Message Semantics
 
-[[payload_dev_30_getmdibresponse_mddescription]]Md Description:: The descriptive part of an MDIB.
-[[payload_dev_30_getmdibresponse_mdstate]]Md State:: The state part of an MDIB.
+[[payload_dev_30_getmdibresponse_mddescription]]MdDescription:: The descriptive part of an MDIB.
+[[payload_dev_30_getmdibresponse_mdstate]]MdState:: The state part of an MDIB.
 
 [#vol2_clause_dev_30_message_getmdibresponse_expected_actions]
 ====== Expected Actions
