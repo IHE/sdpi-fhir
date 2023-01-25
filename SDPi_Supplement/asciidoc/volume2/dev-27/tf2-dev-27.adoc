@@ -16,8 +16,6 @@
 
 ==== Scope
 
-// [sdpi_transaction#transaction_dev_27,actors='actor_somds_provider actor_somds_consumer',figure=vol2_figure_dev_27_probe_sequence,messages='message_announce_network_presence']
-
 include::tf2-dev-27-summary.adoc[]
 
 ==== Actor Roles

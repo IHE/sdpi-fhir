@@ -27,7 +27,7 @@ include::tf2-dev-24-summary.adoc[]
 |Initiates communication by sending <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> or <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> messages to <<actor_somds_provider>>s. Then listens for <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> and <<vol2_clause_dev_24_message_resolve_match, {var_label_dev_24_message_resolve_match}>> messages to discover those <<actor_somds_provider>>s that it intends to exchange messages with and further retrieves the <<actor_somds_provider>>'s service capabilities.
 
 |<<actor_somds_provider>>
-|Listens for <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> and <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> messages, which it responds to with <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> or <<vol2_clause_dev_24_message_resolve_match, {var_label_dev_24_message_resolve_match}>> messages respectively.
+|Listens for <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> and <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> messages, which it responds to with <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> or <<vol2_clause_dev_24_message_resolve_match, {var_label_dev_24_message_resolve_match}>> messages, respectively.
 
 |===
 
@@ -50,14 +50,18 @@ include::../../plantuml/vol2-figure-dev-24-sequence.puml[]
 [#vol2_clause_dev_24_message_probe]
 ===== {var_label_dev_24_message_probe} Message
 
-The {var_label_dev_24_message_probe} message is sent as part of the BICEPS _explicit discovery_ protocol for allowing <<actor_somds_consumer>>s to discover all <<actor_somds_provider>>s that are ready to exchange messages with <<actor_somds_consumer>>s.
+<<acronym_biceps>> specifies an explicit discovery protocol for allowing <<actor_somds_consumer>>s to discover all <<actor_somds_provider>>s that are ready to exchange messages with <<actor_somds_consumer>>s.
+The corresponding message to seek <<actor_somds_provider>> based on filter criteria is called _{var_label_dev_24_message_probe}_.
+
+Note that the {var_label_dev_24_message_probe} message described in this clause is a generic/abstract concept that can be implemented differently.
+It should not be confused with actual transport message specifications like, e.g. the WS-Discovery Probe message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
 
 If a specific <<term_somds_provider_uid>> is unknown to a <<actor_somds_consumer>>, the <<actor_somds_consumer>> can send a {var_label_dev_24_message_probe} message to all listening <<actor_somds_provider>>s. Limited but sufficient information is provided with the message to enable <<actor_somds_provider>>s to determine if they match the <<term_discovery_scope>> requested by the <<actor_somds_consumer>>.
 
 [#vol2_clause_dev_24_message_probe_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_24_message_probe} message is sent whenever a <<actor_somds_consumer>> joins a network and is ready to exchange messages with <<actor_somds_provider>>s.
+The {var_label_dev_24_message_probe} message is sent whenever a <<actor_somds_consumer>> joins an <<term_medical_device_lan>> and is ready to exchange messages with <<actor_somds_provider>>s.
 
 [#vol2_clause_dev_24_message_probe_semantics]
 ====== Message Semantics
@@ -75,6 +79,9 @@ When a <<actor_somds_consumer>> sends this message, every receiving <<actor_somd
 ===== {var_label_dev_24_message_probe_match} Message
 
 The {var_label_dev_24_message_probe_match} message is sent as part of the BICEPS _explicit discovery_ protocol in response to an incoming <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> message.
+
+Note that the {var_label_dev_24_message_probe_match} message described in this clause is a generic/abstract concept that can be implemented differently.
+It should not be confused with actual transport message specifications like, e.g. the WS-Discovery ProbeMatch message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
 
 The {var_label_dev_24_message_probe_match} message is a uni-cast message that is sent by a <<actor_somds_provider>> when an incoming <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> message contains a <<payload_dev_24_probe_discovery_scope>> that matches the <<actor_somds_provider>>'s <<term_discovery_scope>>. Limited but sufficient information is provided with the message to enable <<actor_somds_consumer>>s to determine a matching <<actor_somds_provider>>'s <<payload_dev_24_probe_match_provider_uid>> and <<payload_dev_24_probe_match_physical_address>>.
 
@@ -101,7 +108,11 @@ The <<actor_somds_consumer>> that receives a {var_label_dev_24_message_probe_mat
 [#vol2_clause_dev_24_message_resolve]
 ===== {var_label_dev_24_message_resolve} Message
 
-The {var_label_dev_24_message_resolve} message is sent as part of the BICEPS _explicit discovery_ protocol for allowing <<actor_somds_consumer>>s to discover all <<actor_somds_provider>>s that are ready to exchange messages with <<actor_somds_consumer>>s.
+<<acronym_biceps>> specifies an explicit discovery protocol for allowing <<actor_somds_consumer>>s to discover all <<actor_somds_provider>>s that are ready to exchange messages with <<actor_somds_consumer>>s.
+The corresponding message to seek <<actor_somds_provider>>s based on a unique identifier is called _{var_label_dev_24_message_resolve}_.
+
+Note that the {var_label_dev_24_message_resolve} message described in this clause is a generic/abstract concept that can be implemented differently.
+It should not be confused with actual transport message specifications like, e.g. the WS-Discovery Resolve message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
 
 If a specific <<term_somds_provider_uid>> is known to a <<actor_somds_consumer>>, the <<actor_somds_consumer>> can send a {var_label_dev_24_message_resolve} message to all listening <<actor_somds_provider>>s. Limited but sufficient information is provided with the message to enable <<actor_somds_provider>>s to determine if they match the <<term_somds_provider_uid>> requested by the <<actor_somds_consumer>>.
 
@@ -110,7 +121,7 @@ If a specific <<term_somds_provider_uid>> is known to a <<actor_somds_consumer>>
 
 The {var_label_dev_24_message_resolve} message is sent
 
-1. whenever a <<actor_somds_consumer>> joins a network and is ready to exchange messages with <<actor_somds_provider>>s or
+1. whenever a <<actor_somds_consumer>> joins an <<term_medical_device_lan>> and is ready to exchange messages with <<actor_somds_provider>>s or
 2. when a <<actor_somds_consumer>> runs in a mode where it periodically checks for availability of <<actor_somds_provider>>s matching a specific <<term_somds_provider_uid>>.
 
 [#vol2_clause_dev_24_message_resolve_semantics]
@@ -131,6 +142,9 @@ When a <<actor_somds_consumer>> sends this message, every receiving <<actor_somd
 ===== {var_label_dev_24_message_resolve_match} Message
 
 The {var_label_dev_24_message_resolve_match} message is sent as part of the BICEPS _explicit discovery_ protocol in response to an incoming <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message.
+
+Note that the {var_label_dev_24_message_resolve_match} message described in this clause is a generic/abstract concept that can be implemented differently.
+It should not be confused with actual transport message specifications like, e.g. the WS-Discovery ResolveMatch message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
 
 The {var_label_dev_24_message_resolve_match} message is a uni-cast message that is sent by a <<actor_somds_provider>> when an incoming <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message contains a <<payload_dev_24_provider_uid>> that matches the <<actor_somds_provider>>'s <<term_somds_provider_uid>>. Limited but sufficient information is provided with the message to enable <<actor_somds_consumer>>s to determine a matching <<actor_somds_provider>>'s <<payload_dev_24_probe_match_physical_address>>.
 
