@@ -1,8 +1,8 @@
 
 // = Introduction to this Supplement
 
-[sdpi_offset=clear]
-== Introduction to this Supplement
+[#supplement_clause_introduction_to_supplement,sdpi_offset=clear]
+= Introduction to this Supplement
 
 [%noheader]
 [%autowidth]
@@ -73,7 +73,8 @@ Do the links work and lead to the right "best" destinations?  Focus on *_what mu
 
 |===
 
-=== SDPi Supplement Overview
+[#supplement_clause_sdpi_supplement_overview]
+== SDPi Supplement Overview
 
 This IHE Devices Technical Framework supplement introduces a new _family of interoperability profiles_, Service-oriented Device Point-of-care Interoperability (SDPi), that comprise (4) separate profiles:
 
@@ -101,7 +102,8 @@ To that end, the supplement includes updates to all (3) IHE DEV TF volumes, incl
 
 {empty} +
 
-=== Joint IHE-HL7 Gemini SES+MDI Project Development
+[#supplement_clause_joint_ihe_hl7_gemini_ses_mdi_project_development]
+== Joint IHE-HL7 Gemini SES+MDI Project Development
 This supplement is the result of a joint https://confluence.hl7.org/x/Xzf9Aw[IHE-HL7 Gemini Device Interoperability program] which began early 2020.
 Extensive notes and discussion materials are provided on the project's HL7 Confluence site, including a https://confluence.hl7.org/pages/viewpage.action?pageId=113674346#LibrarywithEVERYTHINGyoueverwantedtoknow...-GeneralUpdate&BriefingPresentations[Library with extensive presentations and other materials].
 This Library also includes *_briefings (slides and recordings) to provide background for those reviewing the specification_*.
@@ -110,8 +112,8 @@ The joint IHE-HL7 devices team leveraged tools from both organizations, as well 
 
 The methods currently employed are provided in the wiki article:  https://github.com/IHE/sdpi-fhir/wiki/Program-Coordination-Co-Working-Spaces#program-coordination--co-working-spaces[Program Coordination & Co-Working Spaces].
 
-
-=== Supplement Support for RI+MC+RR using AsciiDoc
+[#supplement_clause_supplement_support_for_ri_mc_rr_using_asciidoc]
+== Supplement Support for RI+MC+RR using AsciiDoc
 In addition to the supplement's technical specification content, a development approach has been advanced that represents added value to adopters and implementers over the traditional document oriented approach.
 These are referred to as:
 
