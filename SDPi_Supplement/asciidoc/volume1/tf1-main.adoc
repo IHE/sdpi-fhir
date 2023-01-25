@@ -1,8 +1,8 @@
 [sdpi_volume_caption=TF-1]
+[#vol1_clause_profiles]
 = Volume 1 -- Profiles
 
-[#vol1_clause_profiles,sdpi_offset=3]
-== Profiles
+// == Profiles
 
 // 2.
 include::tf1-ch-2-overview.adoc[]

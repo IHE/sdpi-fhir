@@ -1,4 +1,4 @@
-= Device Point-of-care Interoperability (DPI) Use Cases
+// = Device Point-of-care Interoperability (DPI) Use Cases
 
 [appendix#vol1_appendix_c_dpi_use_cases,sdpi_offset=C]
 == Device Point-of-care Interoperability (DPI) Use Cases

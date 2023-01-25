@@ -1,8 +1,8 @@
 // = Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
 
 // 10.
-[sdpi_offset=10]
-=== Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
+[#vol1_clause_sdpi_p_profile,sdpi_offset=10]
+== Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
 
 The SDPi-Plug-and-trust ([[acronym_sdpi_p,SDPi-P]] SDPi-P) profile supports foundational seamless connectivity, information exchange and service invocation as defined in the SDPi architecture detailed in section <<vol1_clause_sdpi_overview_framework>> above.
 Whereas the related SDPi profiles for reporting, alerting and external control are explicitly intended to support medical care capabilities, the SDPi-P profile focuses on basic healthcare device interoperability.
@@ -21,7 +21,7 @@ For example, Operating Room / Surgery Point-of-Care Integration, ICU Point-of-Ca
 
 // 10.1
 [#vol1_clause_sdpi_p_actors_transactions_content_modules,sdpi_offset=1]
-==== SDPi-P Actors, Transactions, and Content Modules
+=== SDPi-P Actors, Transactions, and Content Modules
 
 [%noheader]
 [%autowidth]
@@ -339,7 +339,7 @@ Note 1: _All content exchanged on a SOMDS shall conform to the general SDPi “B
 |===
 
 // 10.1.1
-===== Actor Descriptions and Actor Profile Requirements
+==== Actor Descriptions and Actor Profile Requirements
 SDPi-P actor roles and responsibilities are described in the subsections below.
 
 Unless otherwise specified in these sections, specific transaction requirements are specified in in the <<vol2_clause_transactions>> volume, and requirements related to content modules are detailed in <<vol3_clause_content_modules>>.
@@ -358,7 +358,7 @@ include::../plantuml/vol1-figure-sdpi-p-example-sequence-diagram.puml[]
 #TODO:  IN THE FOLLOWING SECTIONS, SHOULD THE LINKS BE TO THE GLOSSARY APPENDIX OR TO THE ACTOR DEFINTION SECTIONS WHICH IN TURN CAN INCLUDE A LINK TO THE ACTORS APPENDIX?#
 
 [#vol1_clause_sdpi_p_somds_participant]
-====== SOMDS Participant
+===== SOMDS Participant
 Actor Summary Definition:
 [none]
 . A foundational abstract actor that provides the SOA architectural constructs for interoperating in a Service-Oriented Medical Device System (SOMDS) network instance, including information, messaging and dynamic behavior models.   (See <<ref_ieee_11073_10207_2017>>  “PARTICIPANT” definition)
@@ -370,7 +370,7 @@ This required grouping ensures that all systems connecting to a SOMDS network su
 See #A.3 Specifying SystemFunctionContribution (SFC) for Plug-and-Trust Interfaces# for more information.
 
 [#vol1_clause_sdpi_p_somds_provider]
-====== SOMDS Provider
+===== SOMDS Provider
 Actor Summary Definition:
 [none]
 . A <<actor_somds_participant>> that provides at least one service to the other participant systems.  (See <<ref_ieee_11073_10207_2017>>  “SERVICE PROVIDER” definition)
@@ -380,7 +380,7 @@ Every <<actor_somds_provider>> is paired with (inherits from) the abstract _<<ac
 A system that participates in a SOMDS network instance can include both <<actor_somds_consumer>> and <<actor_somds_provider>> actors.
 
 [#vol1_clause_sdpi_p_somds_consumer]
-====== SOMDS Consumer
+===== SOMDS Consumer
 Actor Summary Definition:
 [none]
 . A <<actor_somds_participant>> that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a <<actor_somds_provider>>. (See <<ref_ieee_11073_10207_2017>>  “SERVICE CONSUMER” and “SERVICE” definitions.)
@@ -390,7 +390,7 @@ Every <<actor_somds_consumer>> is paired with (inherits from) the abstract _<<ac
 A system that participates in a SOMDS network instance can include both <<actor_somds_consumer>> and <<actor_somds_provider>> actors.
 
 [#vol1_clause_sdpi_p_somds_connector]
-====== SOMDS Connector
+===== SOMDS Connector
 Actor Summary Definition:
 [none]
 . A _<<actor_somds_participant>>_ that enables seamless interaction with systems and software applications that are outside the scope of the SOMDS network instance.  This abstract actor provides a consistent method for interacting, as a <<actor_somds_consumer>> and / or <<actor_somds_provider>>, with a specific SOMDS instance, as the foundation for protocol-specific gateway and platform actors.
@@ -426,7 +426,7 @@ For example, a SOMDS “Alert” Gateway would interact with other _<<actor_somd
 _<<actor_somds_connector>>_ actors are also utilized in other SDPi profiles for medical device information reporting (<<acronym_sdpi_r>>), alerting (<<acronym_sdpi_a>>) and external control (<<acronym_sdpi_xc>>). See those profile specifications for detailed usage.  In some cases, https://profiles.ihe.net/[IHE profiles] have been defined for supporting integration with Non-SOMDS Systems, such as the V2-based IHE Devices Device to Enterprise Communication (DEC) profile (See <<ref_ihe_pcd_tf_1_2019>>), or the IHE ITI XDS-I for locating and retrieving images for a specific patient using the XDS.b profile.  In these cases, *_profile-specific_* _<<actor_somds_connector>>_ adaptors may be specified as well.
 
 [#vol1_clause_sdpi_p_somds_fhir_gateway]
-====== SOMDS FHIR Gateway
+===== SOMDS FHIR Gateway
 Actor Summary Definition:
 [none]
 . A _<<actor_somds_connector>>_ that supports use of <<ref_hl7_fhir>> for interoperating with Non-SOMDS Systems.
@@ -444,7 +444,7 @@ Alternatively, the <<actor_somds_fhir_gateway>> could implement a FHIR server an
 The <<actor_somds_fhir_gateway>> can also support SOMDS services invoked by FHIR-based systems, such as requesting a snapshot of the latest vital signs measurements for a specific patient and triggering a blood-pressure cuff reading.
 
 [#vol1_clause_sdpi_p_somds_v2_gateway]
-====== SOMDS V2 Gateway
+===== SOMDS V2 Gateway
 
 Actor Summary Definition:
 [none]
@@ -460,7 +460,7 @@ Additional specifications for semantic content modules is detailed in <<vol3_cla
 Generally, the <<actor_somds_v2_gateway>> actor supports messaging from a SOMDS environment to V2-enabled systems, utilizing a <<actor_somds_consumer>> actor to collect information from <<actor_somds_provider>> systems and translate them to V2 messages sent to other Non-SOMDS Systems.  There are cases, though, where information may be sent to a SOMDS-based system such as an alert conformation utilizing a DEV-05 (i.e., PCD-05) transaction (see the S#ervice-oriented Device Point-of-care Interoperability - Alerting (SDPi-A) Profile# below).
 
 [#vol1_clause_sdpi_p_somds_sensor_gateway]
-====== SOMDS Sensor Gateway
+===== SOMDS Sensor Gateway
 [%noheader]
 [%autowidth]
 [cols="1"]
@@ -480,7 +480,7 @@ This includes integration of both wired and wireless sensor networks (“WSN”)
 This also includes SOMDS integration of IoT (“Internet of Things”) architectures / networks.
 
 [#vol1_clause_sdpi_p_somds_smart_app_platform]
-====== SOMDS Smart App Platform
+===== SOMDS Smart App Platform
 [%noheader]
 [%autowidth]
 [cols="1"]
@@ -505,7 +505,7 @@ The platform must support both non-smart app critical functions (such as network
 
 See <<vol1_clause_smart_app_platforms>> for additional discussion.
 
-====== BICEPS Content Creator
+===== BICEPS Content Creator
 Actor Summary Definition:
 [none]
 . Provides <<acronym_mdib>> content conformant to <<ref_ieee_11073_10207_2017>> BICEPS specification and for consumption by other <<actor_biceps_content_consumer>> systems.
@@ -517,7 +517,7 @@ Note that although this SDPi-P content actor primarily supports information exch
 Content is provided by one _<<actor_somds_participant>>_ to another.
 Typically, this will be a <<actor_somds_provider>> system to a <<actor_somds_consumer>> system; however, as noted previously, in some cases such as changing configuration settings within a <<actor_somds_provider>> (e.g., Patient Context), content creation and provision is from a <<actor_somds_consumer>> (initiating the configuration change request) to a <<actor_somds_provider>> system.
 
-====== BICEPS Content Consumer
+===== BICEPS Content Consumer
 Actor Summary Definition:
 [none]
 . Processes <<acronym_mdib>> information conformant to <<ref_ieee_11073_10207_2017>> BICEPS specifications provided by <<actor_biceps_content_creator>> systems.
@@ -530,7 +530,7 @@ For robustness, a <<actor_biceps_content_consumer>> need only process the conten
 Note that although this SDPi-P content actor primarily supports information exchange between systems participating in a SOMDS network environment, they may be referenced by other non-SDPi profiles that utilize other non-SOMDS exchange architectures, transactions and technologies.
 
 // 10.2
-==== SDPi-P Actor Options
+=== SDPi-P Actor Options
 
 [%noheader]
 [%autowidth]
@@ -561,48 +561,48 @@ Dependencies between options, when applicable, are specified in notes.
 |===
 
 [#vol1_table_sdpi_p_option_streaming]
-===== Streaming Option
+==== Streaming Option
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
 
 [#vol1_table_sdpi_p_option_safe_data_transmission]
-===== Safe Data Transmission Option
+==== Safe Data Transmission Option
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
 
 [#vol1_table_sdpi_p_option_compact_representation]
-===== Compact Representation Option
+==== Compact Representation Option
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
 
 [#vol1_table_sdpi_p_option_patient_context_management]
-===== Patient Context Management Option
+==== Patient Context Management Option
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
 
 [#vol1_table_sdpi_p_option_archive_service]
-===== Archive Service Option
+==== Archive Service Option
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
 
 [#vol1_table_sdpi_p_option_localization_service]
-===== Localization Service Option
+==== Localization Service Option
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
 
 [#vol1_table_sdpi_p_option_ensemble_participatioon]
-===== Ensemble Participation Option
+==== Ensemble Participation Option
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
 
 
 
 [#vol1_clause_sdpi_p_required_actor_groupings]
-==== SDPi-P Required Actor Groupings
+=== SDPi-P Required Actor Groupings
 
 #TODO:  ADD CT SOMDS_PARTICIPANT GROUPING + ATNA(?) ADD CONTENT FROM WORD DOCUMENT HERE; DO WE NEED TO ALSO CONSIDER GENERAL V2 AND DEV TF-2 APPENDIX A?#
 
 // 10.4
-==== SDPi-P Overview
+=== SDPi-P Overview
 
 // 10.4.1
-===== Concepts
+==== Concepts
 
 [#vol1_clause_sdpi_p_soa_somds_architecture_alignment]
-====== SOA & SOMDS Architecture Alignment
+===== SOA & SOMDS Architecture Alignment
 #TODO: Link back to SDPi general overview at the top and how leveraged for SDPi-P Actors Model;  SOMDS Participant ABSTRACT actor role#
 
 From a conceptual perspective, <<acronym_sdc>> implements a <<acronym_soa>> architecture for device-to-device <<term_plug_and_trust>> interoperability.  Consider <<figure_general_soa_model>>:
@@ -647,21 +647,21 @@ Therefore, though the <<acronym_mdib>> of a <<actor_somds_provider>> system must
 
 An example of how <<acronym_biceps>> components (see <<figure_sdc_biceps_components_model>>) and <<acronym_mdib>> descriptors and states (see <<figure_sdc_biceps_mdib_descriptors_states>>) support <<term_plug_and_trust>> interoperability, see a typical conversation provided in <<vol1_figure_sdpi_p_example_sequence_diagram>>.
 
-====== General Healthcare vs. Medical Interoperability Purposes
+===== General Healthcare vs. Medical Interoperability Purposes
 #TODO: All the transactions here are focused on healthcare information exchange with out any intended medical purpose; relationship to the other SDPi Profiles#
 
 [#vol1_clause_sdpi_p_ensuring_time_synchronization]
-====== Ensuring Time Synchronization
+===== Ensuring Time Synchronization
 #TODO: This is a key topic for all health information exchange, and especially that of medical data.  A consuming system has to know, for example, that the time stamps provided in the BICEPS content or in the messages is accurate (and to what degree).  Requirements will be included HERE for SOMDS Participant & all other actors including BICEPS Content <xyz>.  Additional requirements may be added to the TF-3 BICEPS Content Module section as well.
 Integration of CT and ATNA (TBD) below in required groupings is assumed but should be detailed here.#
 
 #TODO: No time sync service identified in 11073 SDC core; include only in the SDPi-P section ... as a requirement to use NTP?; reference resolution of *TS Service*, *MD LAN*, in glossary entries#
 
-====== Waveform Communication
+===== Waveform Communication
 #TODO:  Explain how waveforms are communicated, both snippets and especially "streaming"; include references to appropriate TF-2 & TF-3 Sections; this is part of the "DO WE NEED A WAVEFORM OPTION?" question to help end users? NO!!!  Could drop a note in TF-2 Appendix A for DEV-xyz and how RTSA/Waves would be transmitted / conveyed over the network#
 
 [#vol1_clause_sdpi_p_aggregators_proxies_sensors]
-====== Aggregators, Proxies, Sensors
+===== Aggregators, Proxies, Sensors
 ##TODO: :  Include single / multiple patient variations.  See Topic on confluence; ultimately probably in TF-1 & -2 & -3.  NOTE added a section in TF-3 as well.
 Mention SENSORS and WSN referencing SOMDS Sensor Gateways w/ rationale.
 Include CLINICAL WORKPLACE SOMDS PROXY SERVICE …
@@ -669,27 +669,27 @@ NOTE:  This is not defined in 11073-20701 beyond clause 3. Definitions
 See Gateways in the actors discussion above … and below?
 ##
 
-====== Protocol-Specific Gateways
+===== Protocol-Specific Gateways
 #TODO: :  External interfaces “gateways” defined in the abstract and in the protocol-specific.  These actors are leveraged in other profiles such as SDPi-Reporting for a DEC Gateway or in SDPi-Alerting for an ACM gateway.  Include proprietary protocols as well.
 Given the discussion in Actors above, is this necessary here?  Or should some of that content be moved here?  YES … show examples for how the Actors might be grouped into a real-world gateway to … for example … an EHR etc.]#
 
 [#vol1_clause_smart_app_platforms]
-====== Smart App Platforms
+===== Smart App Platforms
 #TODO: 1.	This section enhances the short actor description above to describe in more detail the various aspects of an application “platform”; see Word draft section 10.4.1.5 for additional content#
 
-====== Workflow vs. Transport Actors and Interactions
+===== Workflow vs. Transport Actors and Interactions
 #TODO: discuss the challenges of drawing a line between transport profile actors in SDPi and applications of those actors in more care context / workflow applications, such as Smart Alarming or MDIRA/ICE or ICU Integration etc.  Reference TF-0 profile "types" - workflow vs. transport vs. content (???) ]#
 
-====== SDC / BICEPS MDIB Versioning Management
+===== SDC / BICEPS MDIB Versioning Management
 #TODO: Where do we address profiling of MDIB versioning?  TF-1, TF-2 (e.g., in Appendix), TF-3 in MDIB content module?  Mix of all three?!#
 
 // 10.4.2
-===== Use Cases
+==== Use Cases
 The SDPi-P profile supports requirements from the use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this profile.
 
 #TODO:  For each of these, add discussion to HOW and WHERE (with links) that the requirements are met.  Include a Requirements usage block?  CT DEPENDENCY IN SOMDS_PARTICIPANT MEETS THESE REQUIREMENTS#
 
-====== Synchronized Time Across Devices (STAD)
+===== Synchronized Time Across Devices (STAD)
 This profile fully addresses the requirements from  <<vol1_clause_appendix_c_use_case_stad>>.
 
 Specific capabilities supporting the STAD profile include:
@@ -701,7 +701,7 @@ Specific capabilities supporting the STAD profile include:
 
 #TODO:  Should a sequence diagram be included here?  Or in above?  For each of the STAD Scenarios a sequence diagram should be provided.  This could include transactions and actor linkages as well#
 
-====== Standalone ICU Dashboard Single Patient (SICDsp)
+===== Standalone ICU Dashboard Single Patient (SICDsp)
 This profile provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdsp>>.
 
 Specific capabilities supporting the SICDsp profile include:
@@ -713,7 +713,7 @@ Specific capabilities supporting the SICDsp profile include:
 
 #TODO:  Do SystemContext/PatientContext/LocationContext need to be called out here to meet requirements related to "ICU" or "single patient"?#
 
-====== Standalone ICU Dashboard Multiple Patient (SICDmp)
+===== Standalone ICU Dashboard Multiple Patient (SICDmp)
 This profile provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_sicdmp>>.
 
 Specific capabilities supporting the SICDmp profile include:
@@ -725,7 +725,7 @@ Specific capabilities supporting the SICDmp profile include:
 
 #TODO:  Do SystemContext/PatientContext/LocationContext need to be called out here to meet requirements related to "ICU" or "multiple patient"?#
 
-====== Device Data to Enterprise Systems (<<acronym_ddes>)
+===== Device Data to Enterprise Systems (<<acronym_ddes>)
 This profile provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_ddes>>.
 
 Specific capabilities supporting the DDES profile include:
@@ -736,7 +736,7 @@ Specific capabilities supporting the DDES profile include:
 * *Scenarios*: DDES <<vol1_clause_appendix_c_use_case_ddes_scenarios>> basic communication requirements are supported by SDPi-P
 
 
-====== Alerts to Clinician Notification Systems (ACNS)
+===== Alerts to Clinician Notification Systems (ACNS)
 This profile provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_acns>>.
 
 Specific capabilities supporting the ACNS profile include:
@@ -747,7 +747,7 @@ Specific capabilities supporting the ACNS profile include:
 * *Scenarios*:  ACNS <<vol1_clause_appendix_c_use_case_acns_scenarios>> basic communication requirements are supported by SDPi-P
 
 
-====== Alerts to Alert Recording Systems (AARS)
+===== Alerts to Alert Recording Systems (AARS)
 This profile provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_aars>>.
 
 Specific capabilities supporting the AARS profile include:
@@ -759,26 +759,26 @@ Specific capabilities supporting the AARS profile include:
 
 
 // 10.5
-==== SDPi-P Safety, Effectiveness, Security Considerations and Requirements
+=== SDPi-P Safety, Effectiveness, Security Considerations and Requirements
 
 // 10.5.1
-===== SES General Considerations
+==== SES General Considerations
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
 
 For additional guidance, see section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
 
 // 10.5.2
-===== Safety Requirements & Considerations
+==== Safety Requirements & Considerations
 No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
 
 // 10.5.3
-===== Effectiveness Requirements & Considerations
+==== Effectiveness Requirements & Considerations
 No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
 
 // 10.5.4
-===== Security Requirements & Considerations
+==== Security Requirements & Considerations
 No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile, and those specified in the _<<acronym_ses>> General Considerations_ section above.
 
 [#vol1_clause_sdpi_p_cross_profile_considerations]
-==== SDPi-P Cross Profile Considerations
+=== SDPi-P Cross Profile Considerations
 #TODO:  See the template instructions + PCD 2019 and other TF's to see if any content should go in this section for SDPi-P.#
