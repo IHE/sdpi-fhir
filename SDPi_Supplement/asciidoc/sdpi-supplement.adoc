@@ -11,12 +11,15 @@
 :imagesdir: images/
 :docinfo: shared
 
+[#supplement_clause_cover,sdpi_offset=clear]
+= Cover
+
 {empty} +
 
 image::ihe-logo.svg[pdfwidth=4in,align=center]
 
 [#supplement_clause_foreword,sdpi_offset=clear]
-== Foreword
+= Foreword
 
 This is a supplement to the IHE Devices Technical Framework Revision 10.0. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
 

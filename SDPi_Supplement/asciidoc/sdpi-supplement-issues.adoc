@@ -1,9 +1,10 @@
 
-// = Open Issues and Questions
+[sdpi_offset=clear]
+== SDPi Issue Management
 
 
 [sdpi_offset=clear]
-== SDPi "Topic of Interest" Issue Management
+=== SDPi "Topic of Interest" Issue Management
 
 All SDPi supplement issues are tracked in the https://github.com/IHE/sdpi-fhir/issues[IHE Github sdpi-fhir repository Issues section]. Filter the issues on "SDPi Topic of Interest" to see a full list.  +
 
@@ -13,7 +14,7 @@ All SDPi supplement issues are tracked in the https://github.com/IHE/sdpi-fhir/i
 For more detailed information on how the Gemini SES+MDI program manages issues from identification to resolution to incorporation into this supplement, see the wiki article https://github.com/IHE/sdpi-fhir/wiki/Program-Coordination-Co-Working-Spaces#overview-from-discussion-to-planning-to-development[_Overview: From Discussion to Planning to Development_] and the confluence article https://confluence.hl7.org/pages/viewpage.action?pageId=82912211#TopicsofInterest-TopicResolutionWorkflow[_Topics of Interest -- Topic Resolution Workflow_].
 
 [sdpi_offset=clear]
-== Open Issues and Questions
+=== Open Issues and Questions
 
 * *Issue:* https://confluence.hl7.org/pages/viewpage.action?pageId=86970701[*SystemContext Profiling & Use*]
 ** How should SDPi profile(s) use the SDC SystemContext (Location, Patient, Ensemble, Workflow) capabilities?  Including device pairing / coupling.  Which SystemContext component?  Is this an option on the SDPi-P profile?  Other profiles?  IEEE 11073-1070x PKP requirements?
@@ -43,7 +44,7 @@ For more detailed information on how the Gemini SES+MDI program manages issues f
 ** FOR SDPi 1.0 -- Basic text was added to the SES template sections to indicate the nature of the issue, but not to indicate its resolution or even if WILL be explcitly resolve (incl. if the safety classification aspect of <<acronym_biceps>> will be maintained).  See <<vol3_clause_biceps_ses_content_requirements_considerations>> Reviewers Note box that presents the issue in SDPi 1.0 and beyond.
 
 [sdpi_offset=clear]
-== Closed Issues
+=== Closed Issues
 
 * *Issue: _Connect Time Delay Algorithm_*
 ** https://github.com/IHE/sdpi-fhir/issues/103[Github Issue #103 _Append TOI: Connect Time Delay Algorithm_] +
