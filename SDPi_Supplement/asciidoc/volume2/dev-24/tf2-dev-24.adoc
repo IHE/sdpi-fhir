@@ -56,7 +56,8 @@ The corresponding message to seek <<actor_somds_provider>> based on filter crite
 Note that the {var_label_dev_24_message_probe} message described in this clause is a generic/abstract concept that can be implemented differently.
 It should not be confused with actual transport message specifications like, e.g. the WS-Discovery Probe message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
 
-If a specific <<term_somds_provider_uid>> is unknown to a <<actor_somds_consumer>>, the <<actor_somds_consumer>> can send a {var_label_dev_24_message_probe} message to all listening <<actor_somds_provider>>s. Limited but sufficient information is provided with the message to enable <<actor_somds_provider>>s to determine if they match the <<term_discovery_scope>> requested by the <<actor_somds_consumer>>.
+If a specific <<term_somds_provider_uid>> is unknown to a <<actor_somds_consumer>>, the <<actor_somds_consumer>> can send a {var_label_dev_24_message_probe} multicast message to all listening <<actor_somds_provider>>s.
+Limited but sufficient information is provided with the message to enable <<actor_somds_provider>>s to determine if they match the <<term_discovery_scope>> requested by the <<actor_somds_consumer>>.
 
 [#vol2_clause_dev_24_message_probe_trigger_events]
 ====== Trigger Events
@@ -83,7 +84,7 @@ The {var_label_dev_24_message_probe_match} message is sent as part of the BICEPS
 Note that the {var_label_dev_24_message_probe_match} message described in this clause is a generic/abstract concept that can be implemented differently.
 It should not be confused with actual transport message specifications like, e.g. the WS-Discovery ProbeMatch message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
 
-The {var_label_dev_24_message_probe_match} message is a uni-cast message that is sent by a <<actor_somds_provider>> when an incoming <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> message contains a <<payload_dev_24_probe_discovery_scope>> that matches the <<actor_somds_provider>>'s <<term_discovery_scope>>. Limited but sufficient information is provided with the message to enable <<actor_somds_consumer>>s to determine a matching <<actor_somds_provider>>'s <<payload_dev_24_probe_match_provider_uid>> and <<payload_dev_24_probe_match_physical_address>>.
+The {var_label_dev_24_message_probe_match} message is a uni-cast message that is sent by a <<actor_somds_provider>> when an incoming <<vol2_clause_dev_24_message_probe, {var_label_dev_24_message_probe}>> message contains a <<payload_dev_24_probe_discovery_scope>> that matches the <<actor_somds_provider>>'s <<term_discovery_scope>>. Limited but sufficient information is provided with the message to enable <<actor_somds_consumer>>s to determine a matching <<actor_somds_provider>>'s <<payload_dev_24_probe_match_provider_uid>> and <<payload_dev_24_probe_match_transport_address>>.
 
 [#vol2_clause_dev_24_message_probe_match_trigger_events]
 ====== Trigger Events
@@ -94,12 +95,12 @@ The {var_label_dev_24_message_probe_match} message is sent whenever a <<actor_so
 ====== Message Semantics
 
 [[payload_dev_24_probe_match_provider_uid]]Provider UID:: The <<term_somds_provider_uid>>.
-[[payload_dev_24_probe_match_physical_address]]Physical Address:: The <<term_transport_address>> under which the <<actor_somds_provider>> can receive secured messages.
+[[payload_dev_24_probe_match_transport_address]]Transport Address:: The <<term_transport_address>> under which the <<actor_somds_provider>> can receive secured messages.
 
 [#vol2_clause_dev_24_message_probe_match_expected_actions]
 ====== Expected Actions
 
-The <<actor_somds_consumer>> that receives a {var_label_dev_24_message_probe_match} message can use the <<payload_dev_24_probe_match_physical_address>> to exchange secured messages with the <<actor_somds_provider>> from which it received the <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> message.
+The <<actor_somds_consumer>> that receives a {var_label_dev_24_message_probe_match} message can use the <<payload_dev_24_probe_match_transport_address>> to exchange secured messages with the <<actor_somds_provider>> from which it received the <<vol2_clause_dev_24_message_probe_match, {var_label_dev_24_message_probe_match}>> message.
 
 
 // ---------- RESOLVE ---------
@@ -146,7 +147,7 @@ The {var_label_dev_24_message_resolve_match} message is sent as part of the BICE
 Note that the {var_label_dev_24_message_resolve_match} message described in this clause is a generic/abstract concept that can be implemented differently.
 It should not be confused with actual transport message specifications like, e.g. the WS-Discovery ResolveMatch message as described in <<vol2_clause_appendix_mdpws_dev_24>>.
 
-The {var_label_dev_24_message_resolve_match} message is a uni-cast message that is sent by a <<actor_somds_provider>> when an incoming <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message contains a <<payload_dev_24_provider_uid>> that matches the <<actor_somds_provider>>'s <<term_somds_provider_uid>>. Limited but sufficient information is provided with the message to enable <<actor_somds_consumer>>s to determine a matching <<actor_somds_provider>>'s <<payload_dev_24_probe_match_physical_address>>.
+The {var_label_dev_24_message_resolve_match} message is a uni-cast message that is sent by a <<actor_somds_provider>> when an incoming <<vol2_clause_dev_24_message_resolve, {var_label_dev_24_message_resolve}>> message contains a <<payload_dev_24_provider_uid>> that matches the <<actor_somds_provider>>'s <<term_somds_provider_uid>>. Limited but sufficient information is provided with the message to enable <<actor_somds_consumer>>s to determine a matching <<actor_somds_provider>>'s <<payload_dev_24_probe_match_transport_address>>.
 
 [#vol2_clause_dev_24_message_resolve_match_trigger_events]
 ====== Trigger Events
@@ -157,10 +158,10 @@ The {var_label_dev_24_message_resolve_match} message is sent whenever a <<actor_
 ====== Message Semantics
 
 [[payload_dev_24_provider_uid]]Provider UID:: The <<term_somds_provider_uid>>.
-[[payload_dev_24_physical_address]]Physical Address:: The <<term_transport_address>> under which the <<actor_somds_provider>> can receive secured messages.
+[[payload_dev_24_transport_address]]Transport Address:: The <<term_transport_address>> under which the <<actor_somds_provider>> can receive secured messages.
 
 [#vol2_clause_dev_24_message_resolve_match_expected_actions]
 ====== Expected Actions
 
-The <<actor_somds_consumer>> that receives a {var_label_dev_24_message_resolve_match} message can use the <<payload_dev_24_probe_match_physical_address>> to exchange secured messages with the <<actor_somds_provider>> from which it received the <<vol2_clause_dev_24_message_resolve_match, {var_label_dev_24_message_resolve_match}>> message.
+The <<actor_somds_consumer>> that receives a {var_label_dev_24_message_resolve_match} message can use the <<payload_dev_24_probe_match_transport_address>> to exchange secured messages with the <<actor_somds_provider>> from which it received the <<vol2_clause_dev_24_message_resolve_match, {var_label_dev_24_message_resolve_match}>> message.
 
