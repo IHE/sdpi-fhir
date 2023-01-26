@@ -1,3 +1,3 @@
 // DEV-37 Transaction Summary
 
-This transaction is used to for a <<actor_somds_consumer>> to retrieve medical data from a<<actor_somds_provider>>.
+This transaction is used to for a <<actor_somds_consumer>> to retrieve medical data from a <<actor_somds_provider>>.
