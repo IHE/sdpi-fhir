@@ -43,7 +43,7 @@ include::../../plantuml/vol2-figure-dev-34-sequence.puml[]
 
 The {var_label_dev_34_message_bye} message is part of the BICEPS _implicit discovery_ protocol for allowing <<actor_somds_consumer>>s to receive a notification when a <<actor_somds_provider>> is leaving the network.
 
-The {var_label_dev_34_message_bye} is a broadcast message that is sent from each <<actor_somds_provider>> to all listening <<actor_somds_consumer>>s (zero to many).
+The {var_label_dev_34_message_bye} is a multicast message that is sent from each <<actor_somds_provider>> to all listening <<actor_somds_consumer>>s (zero to many).
 
 [#vol2_clause_dev_34_message_announce_network_departure_trigger_events]
 ====== Trigger Events
