@@ -40,7 +40,7 @@ From another perspective, _requirements interoperability_ looks at one standard 
 The following sections in this appendix provide background on the concepts and rationale behind requirements interoperability and the details for how it is implemented in this specification.
 
 // A.1
-[sdpi_offset=1]
+[#vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces,sdpi_offset=1]
 === Requirements:  From Narratives to Plug-and-Trust Interfaces
 
 For every device or system interface that supports the elements specified in this technical framework, requirements and capabilities are derived from many different standards, types of standards, and standards development organizations (SDO).

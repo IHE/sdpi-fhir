@@ -28,10 +28,6 @@ For more detailed information on how the Gemini SES+MDI program manages issues f
 * *Issue:* https://confluence.hl7.org/pages/viewpage.action?pageId=91994093[*_Security Certificate Provisioning_*]
 ** ISO/IEEE 11073-20702 MDPWS defines how WS-Security w/ X.509 certificates and Extended Key Use (EKU) provisions should be adapted for SDC; however, SDPi profiles will not only add specificity, but also address operationalization challenges including security certificate provisioning.  What should be added to the SDPi supplement to support this operationalization?  What should be added to the Gemini SDPi+FHIR program, including tooling and testing, to support SDPi security?
 
-* *Issue:* https://confluence.hl7.org/pages/viewpage.action?pageId=104761310[*_MDIB Report Retrofit / Best Practices_*]
-** https://github.com/IHE/sdpi-fhir/issues/104[Github Issue \#104 _Append TOI: MDIB Report Retrofit / Best Practices_] +
-** MDIB reports are sent out every time descriptors or states of an MDIB containment tree change. Descriptor changes cause corresponding states to also change whereas state changes do not cause descriptors to change. A BICEPS Service Provider is supposed to transmit every change of descriptors and their corresponding states in various of the report and and streams. Unfortunately, BICEPS lacks requirements when it comes to the generation of report messages to the extent that BICEPS Service Consumers cannot appropriately be implemented at reasonable costs. This topic of interest discusses best practices for the transmission of MDIB reports in a way that BICEPS Service Consumers can effectively and efficiently process those reports.
-
 * *Issue:* *_BICEPS Extension Model Use in SDPi?_*
 ** SDC provides for extensions, especially in BICEPS.  How should these be included and utilized in SDPi?  A key issue to avoid is the infamous HL7 V2 "Z" segment, which was over used and negatively impacted interoperability.
 
@@ -41,7 +37,7 @@ For more detailed information on how the Gemini SES+MDI program manages issues f
 
 * *Issue: _SDPi-xC with Mixed Device Safety Classes_*
 ** https://github.com/IHE/sdpi-fhir/issues/61[Github Issue #61 _Topic: SDPi-xC with Mixed Device Safety Classes_]
-** FOR SDPi 1.0 -- Basic text was added to the SES template sections to indicate the nature of the issue, but not to indicate its resolution or even if WILL be explcitly resolve (incl. if the safety classification aspect of <<acronym_biceps>> will be maintained).  See <<vol3_clause_biceps_ses_content_requirements_considerations>> Reviewers Note box that presents the issue in SDPi 1.0 and beyond.
+** FOR SDPi 1.0 -- Basic text was added to the SES template sections to indicate the nature of the issue, but not to indicate its resolution or even if WILL be explicitly resolved (incl. if the safety classification aspect of <<acronym_biceps>> will be maintained).  See <<vol3_clause_biceps_ses_content_requirements_considerations>> Reviewers Note box that presents the issue in SDPi 1.0 and beyond.
 
 [sdpi_offset=clear]
 === Closed Issues
@@ -83,7 +79,7 @@ https://github.com/IHE/sdpi-fhir/issues/33[Github Issue #33 _Topic: Connect Time
 ** SDPi 1.0 Note:  This topic will be extended in subsequent revisions; very basic information is provided in this revision.
 ** Section added:  <<vol3_clause_system_type_nomenclature_extensions>>
 
-
-
-
+* *Issue:* https://confluence.hl7.org/pages/viewpage.action?pageId=104761310[*_MDIB Report Retrofit / Best Practices_*]
+** https://github.com/IHE/sdpi-fhir/issues/104[Github Issue \#104 _Append TOI: MDIB Report Retrofit / Best Practices_] +
+** Sections added:  <<vol2_clause_appendix_a_mdib_report_retrofit>> & <<vol3_clause_mdib_report_retrofit>>
 

@@ -1,3 +1,4 @@
+[#vol2_clause_appendix_a_mdib_report_retrofit]
 ==== MDIB Report Retrofit
 
 In addition to <<vol3_clause_mdib_report_retrofit>>, this section specifies requirements to an MDPWS transport binding. The requirements aim to verify that <<acronym_mdib>> versions received by a <<actor_somds_consumer>> are not decremented and present no gap.

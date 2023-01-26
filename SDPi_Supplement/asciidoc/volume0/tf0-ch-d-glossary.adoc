@@ -1,5 +1,5 @@
 [appendix#vol0_appendix_d_glossary,sdpi_offset=D]
-== Glossary
+=== Glossary
 
 [%noheader]
 [%autowidth]

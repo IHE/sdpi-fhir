@@ -143,7 +143,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 
 .12+| <<actor_somds_consumer>>
 .^| <<transaction_name_announce_network_presence>>
-.^| _Receiver_
+.^| _Receiver_  ^(See^ ^Note^ ^2)^
 .^| O
 | <<vol2_clause_dev_23>>
 
@@ -206,7 +206,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 
 
 | <<transaction_name_announce_network_departure>>
-| _Receiver_
+| _Receiver_  ^(See^ ^Note^ ^2)^
 | O
 | <<vol2_clause_dev_34>>
 
@@ -242,6 +242,7 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 
 5+<|
 Note 1: _“Notify Change in System Context and Capabilities”_ is required if there are dynamic changes that may need to be sent to subscribing systems.
+Note 2: _“Receiver”_ is included in this column, in _italics_, to indicate that though a <<actor_somds_consumer>> may "receive" the transaction, there is no response communicated to the message initiator.
 
 |===
 
@@ -249,7 +250,7 @@ Note 1: _“Notify Change in System Context and Capabilities”_ is required if 
 {empty} +
 
 <<vol1_figure_sdpi_p_biceps_content_actor_diagram>> shows the content-related actors defined in the SDPi-P Profile and the direction that the content is exchanged.
-In general, a SOMDS Provider<<actor_somds_provider>> actor will create content for consumption by a <<actor_somds_consumer>> actor; however, in the case of external control where a <<actor_somds_consumer>> actor is creating and sending content (e.g., patient demographics information) to a <<actor_somds_provider>> actor, the content module creator / consumer roles will be reversed.
+In general, a <<actor_somds_provider>> actor will create content for consumption by a <<actor_somds_consumer>> actor; however, in the case of external control where a <<actor_somds_consumer>> actor is creating and sending content (e.g., patient demographics information) to a <<actor_somds_provider>> actor, the content module creator / consumer roles will be reversed.
 
 A product implementation using this profile may group actors from this profile with actors from a workflow or transport profile to be functional.
 The grouping of the content module described in this profile to specific actors is described in more detail in <<vol1_clause_sdpi_p_required_actor_groupings>> or in <<vol1_clause_sdpi_p_cross_profile_considerations>>.
@@ -366,8 +367,8 @@ Actor Summary Definition:
 All systems participating in a SOMDS network instance must implement this abstract actor.
 
 All SDPi profiles actors are grouped with (inherit from) this actor, including both transport / transaction actors and content module actors.
-This required grouping ensures that all systems connecting to a SOMDS network support the <<acronym_ses_mdi>>  requirements footnote:[See #TF-0  Appendix A for more detail on <<acronym_ses_mdi>>] necessary for establishing a <<term_plug_and_trust>> ecosystem, including the secure and dynamic provision of an implementation’s system function contribution (SFC).
-See #A.3 Specifying SystemFunctionContribution (SFC) for Plug-and-Trust Interfaces# for more information.
+This required grouping ensures that all systems connecting to a SOMDS network support the <<acronym_ses_mdi>>  requirements footnote:[See #TF-0  Appendix A for more detail on <<acronym_ses_mdi>>] necessary for establishing a <<term_plug_and_trust>> ecosystem, including the secure and dynamic provision of an implementation’s <<term_system_function_contribution>>.
+See <<vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces>> for additional discussion.
 
 [#vol1_clause_sdpi_p_somds_provider]
 ===== SOMDS Provider
@@ -457,7 +458,7 @@ The <<actor_somds_v2_gateway>> actor identifies and specifies the logic necessar
 Since V2 is a message-based protocol, the primary implementation guide logic is defined in <<vol2_clause_appendix_sdpi_gateway_hl7_v2_general_mapping>>.
 Additional specifications for semantic content modules is detailed in <<vol3_clause_content_modules>>, including <<vol3_clause_biceps_relationship_to_classic_dim>>.
 
-Generally, the <<actor_somds_v2_gateway>> actor supports messaging from a SOMDS environment to V2-enabled systems, utilizing a <<actor_somds_consumer>> actor to collect information from <<actor_somds_provider>> systems and translate them to V2 messages sent to other Non-SOMDS Systems.  There are cases, though, where information may be sent to a SOMDS-based system such as an alert conformation utilizing a DEV-05 (i.e., PCD-05) transaction (see the S#ervice-oriented Device Point-of-care Interoperability - Alerting (SDPi-A) Profile# below).
+Generally, the <<actor_somds_v2_gateway>> actor supports messaging from a SOMDS environment to V2-enabled systems, utilizing a <<actor_somds_consumer>> actor to collect information from <<actor_somds_provider>> systems and translate them to V2 messages sent to other Non-SOMDS Systems.  There are cases, though, where information may be sent to a SOMDS-based system such as an alert conformation utilizing a DEV-05 (i.e., PCD-05) transaction (see the <<vol1_clause_sdpi_a_profile>> below).
 
 [#vol1_clause_sdpi_p_somds_sensor_gateway]
 ===== SOMDS Sensor Gateway
@@ -645,7 +646,7 @@ For every <<actor_somds_provider>> system, there is a descriptive model that inc
 For each Descriptor, though, there is a State element (note the inclusion of a State::DescriptorHandle), that can be used to determine the value and change status for the associated descriptor.
 Therefore, though the <<acronym_mdib>> of a <<actor_somds_provider>> system must be retrieved at discovery and connection time, subsequent updates can be made upon state changes, greatly reducing network communication overhead.
 
-An example of how <<acronym_biceps>> components (see <<figure_sdc_biceps_components_model>>) and <<acronym_mdib>> descriptors and states (see <<figure_sdc_biceps_mdib_descriptors_states>>) support <<term_plug_and_trust>> interoperability, see a typical conversation provided in <<vol1_figure_sdpi_p_example_sequence_diagram>>.
+For an example of how <<acronym_biceps>> components (see <<figure_sdc_biceps_components_model>>) and <<acronym_mdib>> descriptors and states (see <<figure_sdc_biceps_mdib_descriptors_states>>) support <<term_plug_and_trust>> interoperability, a typical conversation is provided in <<vol1_figure_sdpi_p_example_sequence_diagram>>.
 
 ===== General Healthcare vs. Medical Interoperability Purposes
 #TODO: All the transactions here are focused on healthcare information exchange with out any intended medical purpose; relationship to the other SDPi Profiles#

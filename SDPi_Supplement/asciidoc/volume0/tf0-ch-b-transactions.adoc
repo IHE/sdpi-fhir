@@ -1,8 +1,6 @@
 
-// = TF-0 Appendix B:  Transaction Summary Definitions
-
 [appendix#vol0_appendix_b_transadtion_summary_definitions,sdpi_offset=B]
-== Transaction Summary Definitions
+=== Transaction Summary Definitions
 
 [%noheader]
 [%autowidth]
