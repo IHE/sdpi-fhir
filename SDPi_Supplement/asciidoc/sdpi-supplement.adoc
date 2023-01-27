@@ -21,32 +21,18 @@ image::ihe-logo.svg[pdfwidth=4in,align=center]
 
 {empty} +
 
-[%noheader]
-[cols="1"]
-[frame=none]
-|===
-^|
+[subs=attributes]
 ++++
-<p style="font-size: 30pt"><strong>IHE Devices</strong></p>
+<p style="font-size: 2.75em; text-align: center"><strong>IHE Devices</strong></p>
 
-<p style="font-size: 30pt"><strong>Technical Framework Supplement</strong></p>
+<p style="font-size: 2.75em; text-align: center"><strong>Technical Framework Supplement</strong></p>
 
-// {empty} +
-// {empty} +
+<p style="font-size: 2.75em; text-align: center"><strong>Service-oriented Device Point-of-care</strong></p>
 
-<p style="font-size: 30pt"><strong>Service-oriented Device Point-of-care</strong></p>
+<p style="font-size: 2.75em; text-align: center"><strong>Interoperability (SDPi)</strong></p>
 
-<p style="font-size: 30pt"><strong>Interoperability (SDPi)</strong></p>
-
-// {empty} +
-
+<p style="text-align: center">Revision {ihe_supplement_sdpi_revision} &mdash; {ihe_supplement_sdpi_revision_label}</p>
 ++++
-
-Revision {ihe_supplement_sdpi_revision} -- {ihe_supplement_sdpi_revision_label}
-
-
-
-|===
 
 {empty} +
 
