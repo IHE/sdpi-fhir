@@ -1,10 +1,6 @@
 
-// = TF-0 Appendix A:  Actor Summary Definitions
-
-
-
 [appendix#vol0_appendix_a_actor_summary_definitions,sdpi_offset=A]
-== Actor Summary Definitions
+=== Actor Summary Definitions
 
 [%noheader]
 [%autowidth]

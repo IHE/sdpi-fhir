@@ -39,3 +39,7 @@ include::tf2-dev-35-summary.adoc[]
 ....
 include::../../plantuml/vol2-figure-dev-35-sequence.puml[]
 ....
+
+:var_duplicated_transaction: {var_transaction_id}
+:var_dupicates_list: DEV-27 (<<vol2_clause_dev_27>>) and DEV-38 (<<vol2_clause_dev_38>>)
+include::../dev_duplicate_disclaimer.adoc[]
