@@ -39,9 +39,37 @@ a {
     color: #7a2518;
     background-color: rgba(0, 0, 0, 0.1);
 }
+
+/* Bottom navigation bar */
+.bottom_bar {
+    background-color: #212529;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.bottom_bar a {
+    float: right;
+    display: block;
+    color: #dee2e6;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.0625rem;
+}
+
+/* Change the color of links on hover */
+.bottom_bar a:hover {
+    background-color: #dee2e6;
+    color: #212529;
+}
+
 </style>
 
 <script type="text/javascript">
+    // enable collapsible toc
     $(function () {
         // Add a new container for the tocify toc into the existing toc so we can re-use its
         // styling
@@ -84,5 +112,13 @@ a {
 
         $(window).resize(handleTocOnResize);
         handleTocOnResize();
+    });
+
+    // append bottom navigation bar once document is loaded
+    $(document).ready(function() {
+        var elemDiv = document.createElement('div');
+        elemDiv.innerHTML = '<div class="bottom_bar"><a href="#top">Top</a><a href="#vol3">Volume 3</a><a href="#vol2">Volume 2</a><a href="#vol1">Volume 1</a><a href="#vol0">Volume 0</a></div>';
+        elemDiv.className = 'bottom_bar';
+        document.body.appendChild(elemDiv);
     });
 </script>

@@ -1,4 +1,4 @@
-[sdpi_volume_caption=TF-1]
+[#vol1, sdpi_volume_caption=TF-1]
 = Volume 1 -- Profiles
 
 [#vol1_clause_profiles,sdpi_offset=1]

@@ -1,4 +1,4 @@
-[sdpi_volume_caption=TF-0]
+[#vol0, sdpi_volume_caption=TF-0]
 = Volume 0 -- IHE Technical Frameworks General Introduction
 
 [#vol0_clause_general,sdpi_offset=clear]

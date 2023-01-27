@@ -1,4 +1,4 @@
-[sdpi_volume_caption=TF-3]
+[#vol3, sdpi_volume_caption=TF-3]
 = Volume 3 -- Content Modules
 
 [#clause-content-modules]
