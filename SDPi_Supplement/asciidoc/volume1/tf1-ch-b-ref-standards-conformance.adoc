@@ -1,6 +1,4 @@
-= References
 
-// Appendix B
 [appendix#vol1_appendix_b_references,sdpi_offset=B]
 == References
 

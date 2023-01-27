@@ -4,7 +4,7 @@ When a <<actor_somds_provider>> joins a network and sends out a <<vol2_clause_de
 
 ===== Provider-controlled Delay
 
-<<ref_ieee_11073_20701_2018>> normatively references <<ref_oasis_dpws_2009>> which in turn leverages <<ref_oasis_ws_discovery_2009>>> to provide distributed (ad-hoc) or centralized (managed) service registries. WS-Discovery decomposes into two message sequences, <<vol2_clause_appendix_mdpws_dev_23, implicit discovery>> and <<vol2_clause_appendix_mdpws_dev_24, explicit discovery>> of which implicit discovery can lead to loss of performance for <<actor_somds_provider>>s when multiple <<actor_somds_consumer>>s attempt to connect at the same time.
+<<ref_ieee_11073_20701_2018>> normatively references <<ref_oasis_dpws_2009>> which in turn leverages <<ref_oasis_ws_discovery_2009>> to provide distributed (ad-hoc) or centralized (managed) service registries. WS-Discovery decomposes into two message sequences, <<vol2_clause_appendix_mdpws_dev_23, implicit discovery>> and <<vol2_clause_appendix_mdpws_dev_24, explicit discovery>> of which implicit discovery can lead to loss of performance for <<actor_somds_provider>>s when multiple <<actor_somds_consumer>>s attempt to connect at the same time.
 
 
 In order to suppress concurrent connection attempts, in the ad-hoc mode a <<actor_somds_provider>> can omit the <<term_transport_address>> from the {var_label_dev_23_message_hello} message. Subsequently, a <<actor_somds_consumer>> needs to send a {var_label_dev_24_message_resolve} message to resolve the <<actor_somds_provider>>'s <<term_transport_address>>.

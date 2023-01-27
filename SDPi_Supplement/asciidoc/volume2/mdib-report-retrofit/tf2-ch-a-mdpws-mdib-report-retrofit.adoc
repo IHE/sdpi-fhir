@@ -1,3 +1,4 @@
+[#vol2_clause_appendix_a_mdib_report_retrofit]
 ==== MDIB Report Retrofit
 
 In addition to <<vol3_clause_mdib_report_retrofit>>, this section specifies requirements to an MDPWS transport binding. The requirements aim to verify that <<acronym_mdib>> versions received by a <<actor_somds_consumer>> are not decremented and present no gap.
@@ -16,7 +17,7 @@ A <<actor_somds_participant>> shall utilize TCP to exchange messages with other 
 .Notes
 [%collapsible]
 ====
-NOTE: The WS-Discovery Ad-hoc mode utilizes UDP to exchange messages, see <<ref_oasis_ws_discovery_2009>>>.
+NOTE: The WS-Discovery Ad-hoc mode utilizes UDP to exchange messages, see <<ref_oasis_ws_discovery_2009>>.
 ====
 ****
 

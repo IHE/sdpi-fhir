@@ -12,7 +12,7 @@ The {var_label_dev_34_message_bye} message is encoded by using {var_uri_ws_disco
 
 ===== Referenced Standards
 
-* <<ref_oasis_ws_discovery_2009>>> {var_uri_ws_discovery_hello}[Section 4.2 Bye]
+* <<ref_oasis_ws_discovery_2009>> {var_uri_ws_discovery_hello}[Section 4.2 Bye]
 * <<ref_oasis_dpws_2009>> {var_uri_dpws_discovery}[Section 3 Discovery]
 * <<ref_ieee_11073_20702_2016>>
 * <<ref_ieee_11073_20701_2018>>

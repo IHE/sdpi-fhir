@@ -11,12 +11,65 @@
 :imagesdir: images/
 :docinfo: shared
 
+:ihe_supplement_sdpi_revision: 1.0.2
+:ihe_supplement_sdpi_revision_date: 26 January 2023
+:ihe_supplement_sdpi_revision_label: Draft in Preparation for Public Comment
+
 {empty} +
 
 image::ihe-logo.svg[pdfwidth=4in,align=center]
 
+{empty} +
+
+[subs=attributes]
+++++
+<p style="font-size: 2.75em; text-align: center"><strong>IHE Devices</strong></p>
+
+<p style="font-size: 2.75em; text-align: center"><strong>Technical Framework Supplement</strong></p>
+
+<p style="font-size: 2.75em; text-align: center"><strong>Service-oriented Device Point-of-care</strong></p>
+
+<p style="font-size: 2.75em; text-align: center"><strong>Interoperability (SDPi)</strong></p>
+
+<p style="text-align: center">Revision {ihe_supplement_sdpi_revision} &mdash; {ihe_supplement_sdpi_revision_label}</p>
+++++
+
+{empty} +
+
+[%noheader]
+[cols="1,4"]
+[frame=none,grid=none]
+|===
+| *Date:*
+| {ihe_supplement_sdpi_revision_date}
+
+| *Author:*
+| Devices Technical Committee / DPI Program
+
+| *Email:*
+| DEV@ihe.net
+|===
+
+{empty} +
+
+*Please verify you have the most recent version of this document.*
+See https://profiles.ihe.net/DEV/[*HERE*] for Trial Implementation and Final Text versions and https://profiles.ihe.net/DEV/#1.2[*HERE*] for Public Comment versions.
+
+{empty} +
+
+[%noheader]
+[cols="1"]
+[frame=none]
+|===
+^|
+*Copyright &#169; 2023: IHE International, Inc.*
+|===
+
+{empty} +
+{empty} +
+
 [#supplement_clause_foreword,sdpi_offset=clear]
-== Foreword
+= Foreword
 
 This is a supplement to the IHE Devices Technical Framework Revision 10.0. Each supplement undergoes a process of public comment and trial implementation before being incorporated into the volumes of the Technical Frameworks.
 
