@@ -365,23 +365,3 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 |===
 
 
-#TODO: HOLDING PLACE FOR DECLARATION OF LABELS BEFORE THEIR USE ...#
-[[acronym_aars,AARS]]
-[[use_case_label_aars,Alerts to Alert Recording Systems]]
-
-[[acronym_acns,ACNS]]
-[[use_case_label_acns,Alerts to Clinician Notification Systems]]
-
-[[acronym_ddes,DDES]]
-[[use_case_label_ddes,Device Data to Enterprise Systems]]
-
-[[acronym_sicdmp,SICDmp]]
-[[use_case_label_sicdmp,Standalone ICU Dashboard Multiple Patient]]
-
-[[acronym_sicdsp,SICDsp]]
-[[use_case_label_sicdsp,Standalone ICU Dashboard Single Patient]]
-
-[[acronym_stad,STAD]]
-[[use_case_label_stad,Synchronized Time Across Devices]]
-
-// ALSO INCLUDE definitions for:  acronym_agw
