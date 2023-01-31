@@ -57,17 +57,6 @@ See https://profiles.ihe.net/DEV/[*HERE*] for Trial Implementation and Final Tex
 
 {empty} +
 
-[%noheader]
-[cols="1"]
-[frame=none]
-|===
-^|
-*Copyright &#169; 2023: IHE International, Inc.*
-|===
-
-{empty} +
-{empty} +
-
 [#supplement_clause_foreword,sdpi_offset=clear]
 = Foreword
 

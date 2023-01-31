@@ -66,6 +66,18 @@ a {
     color: #212529;
 }
 
+.bottom_bar div.copyright_note  {
+    float: left;
+    margin-left: 30%;
+    display: block;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.0625rem;
+    color: #dee2e6;
+}
+
+
 </style>
 
 <script type="text/javascript">
@@ -117,7 +129,7 @@ a {
     // append bottom navigation bar once document is loaded
     $(document).ready(function() {
         var elemDiv = document.createElement('div');
-        elemDiv.innerHTML = '<div class="bottom_bar"><a href="#top">Top</a><a href="#vol3">Volume 3</a><a href="#vol2">Volume 2</a><a href="#vol1_clause_profiles">Volume 1</a><a href="#vol0_clause_ihe_technical_frameworks_general_introduction">Volume 0</a></div>';
+        elemDiv.innerHTML = '<div class="bottom_bar"><div class="copyright_note">Copyright &#169; 2023: IHE International, Inc.</div><a href="#top">Top</a><a href="#vol3">Volume 3</a><a href="#vol2">Volume 2</a><a href="#vol1_clause_profiles">Volume 1</a><a href="#vol0_clause_ihe_technical_frameworks_general_introduction">Volume 0</a></div>';
         elemDiv.className = 'bottom_bar';
         document.body.appendChild(elemDiv);
     });
