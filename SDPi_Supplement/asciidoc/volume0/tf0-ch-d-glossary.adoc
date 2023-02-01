@@ -35,16 +35,16 @@
 | SDC
 
 | [[term_central_station,Central Station]] Central Station
-| #TODO: Add description and link to See TF-3 description language#
 | A system that supports a multi-patient workplace with capabilities similar to a Cockpit.
+|
 |
 | See extended description and discussion in <<vol3_clause_system_type_nomenclature_extensions>>
 |
 
 | [[term_classic_dim,Classic DIM]] Classic Domain Information Model (DIM)
 | The foundational domain information model (DIM) that is recognized and implemented in all IEEE 11073 standards and profiles, for both <<acronym_pocd>> and <<acronym_phd>> devices.
-| [[acronym_dim,DIM]] DIM
 |
+| [[acronym_dim,DIM]] DIM
 | <<<<ref_ieee_11073_10201_2004>>>>
 | SDC
 
@@ -59,8 +59,15 @@
 | A BICEPS participant model extension that allows for a <<actor_somds_provider>> to provide attributes from the first partition of the IEEE 11073-10101 nomenclature. Specified in <<vol3_clause_coded_attribute>>.
 |
 |
-|
+| See https://www.nist.gov/conformity-assessment[NIST CA resources page]
 | SDC
+
+| [[term_conformity_assessment, Conformity Assessment]] Conformity Assessment
+| The activity of verifying that a standard or technical specification was applied in the design, manufacturing, installation, maintenance or repair of a device or system.  "Product CA" is often mentioned to clarify its use in the context of this document.
+|
+|[[acronym_ca,CA]] CA
+|
+| SES
 
 | [[term_discovery_scope, Discovery Scope]] Discovery Scope
 | A set of zero to many identifiers that allows for organizing <<actor_somds_provider>>s into logical groups.
@@ -182,11 +189,19 @@
 |
 
 | [[term_model_based_systems_engineering,Model-Based Systems Engineering (MBSE)]] Model-Based Systems Engineering
-| An approach to systems engineering where a single, highly integrated, executable model is created (often using OMG System's Modeling Language (e.g., <<ref_omg_sysml_2_0_spec>>), to capture all elements, from requirements to system components to Verification & Validation test cases.  This _model-centric_ (*[[acronym_mc,MC]]MC*) specification approach replaces the traditional _document-centric_ approach.
-| [[acronym_ri_mc_rr,RI+MC+RR]] RI+MC+RR
+| An approach to systems engineering where a single, highly integrated, executable model is created (often using OMG System's Modeling Language (e.g., <<ref_omg_sysml_2_0_spec>>), to capture all elements, from requirements to system components to Verification & Validation test cases.
+|
 | [[acronym_mbse,MBSE]] MBSE
-|
-|
+| See also <<acronym_ri>>, <<acronym_mc>> and <<acronym_rr>>
+| SES
+
+| [[term_model_centric,Model-Centric (MC)]] Model-Centric
+| An approach to systems specification that captures all information in a single model (e.g., using <<acronym_mbse>>), and from which "views" are generated to support all specification stakeholders and usages.
+elements, from requirements to system components to Verification & Validation test cases.  Note: The _model-centric_ approach replaces the traditional _document-centric_ approach.
+| [[acronym_ri_mc_rr,RI+MC+RR]] RI+MC+RR
+| [[acronym_mc,MC]] MC
+| See also <<acronym_ri>> and <<acronym_rr>>
+| SES
 
 | [[term_network_time_protocol,Network Time Protocol (NTP)]] Network Time Protocol
 | A networking protocol for clock synchronization between computer systems over packet-switched, variable-latency data networks.
@@ -255,14 +270,14 @@
 | For regulated medical device technology, integrating <<acronym_ses>> and <<acronym_ri>> content such that conformity assessment test reports may be directly included as supporting evidence in pre-market submissions to regulatory agencies.  It is part of the Requirements Interoperability + Model Centric + Regulatory Ready (<<acronym_ri_mc_rr>>) focus of the IHE Devices Technical Framework.
 | <<acronym_ri_mc_rr>>
 | [[acronym_rr,RR]] RR
-|
+| See also <<acronym_ri>> and <<acronym_mc>>
 |
 
 | [[term_requirements_interoperability,Requirements Interoperability (RI)]] Requirements Interoperability
 | The ability to specify the requirements of one specification in such a way that they can be connected with capabilities of other specifications.  It is part of the Requirements Interoperability + Model Centric + Regulatory Ready (RI+MC+RR) focus of the IHE Devices Technical Framework.
 | RI+MC+RR
 | [[acronym_ri,RI]] RI
-|
+| See also <<acronym_mc>> and <<acronym_rr>>
 |
 
 | [[term_safe_effective_secure,Safe Effective & Secure (SES)]] Safe, Effective & Secure
