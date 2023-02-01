@@ -25,7 +25,7 @@
 
 |[[actor_somds_acm_gateway,SOMDS ACM Gateway]] SOMDS ACM Gateway
 
-|A SOMDS network participant that supports the bi-directional exchange of medical alert information with non-SOMDS systems and applications using IHE Alert Communication Management (ACM) transactions.
+|A <<actor_somds_v2_gateway>> grouped actor that supports the bi-directional exchange of medical alert information with non-SOMDS systems and applications using IHE Alert Communication Management (ACM) transactions.
 
 |[[actor_somds_connector,SOMDS Connector]] SOMDS Connector
 
@@ -37,7 +37,7 @@
 
 |[[actor_somds_dec_gateway,SOMDS DEC Gateway]] SOMDS DEC Gateway
 
-|A SOMDS network participant that supports the bi-directional exchange of medical data using IHE Device Enterprise Communication (DEC) messages with non-SOMDS systems and applications.
+|A <<actor_somds_v2_gateway>> grouped actor that supports the bi-directional exchange of medical data using IHE Device Enterprise Communication (DEC) messages with non-SOMDS systems and applications.
 
 |[[actor_somds_fhir_gateway,SOMDS FHIR Gateway]] SOMDS FHIR Gateway
 

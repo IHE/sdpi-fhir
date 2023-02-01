@@ -23,13 +23,33 @@ General definitions of actors are given in the https://profiles.ihe.net/GeneralI
 IHE Transactions can be found in the https://profiles.ihe.net/GeneralIntro/ch-B.html[_Technical Frameworks General Introduction Appendix B_].
 Both appendices are located at https://profiles.ihe.net/GeneralIntro/[_profiles.ihe.net/GeneralIntro_].
 
-#Figure 13.1-1# shows the actors directly involved in the SDPi-R Profile.
-The relevant transactions between them are detailed in the subsequent #Table 13.1-1#.
-Actor groupings, including abstract with concrete are detailed in #Section 13.3#.
+<<vol1_figure_sdpi_xc_actor_diagram>> shows the actors directly involved in the SDPi-xC profile.
+The relevant transactions between them are detailed in the subsequent <<vol1_table_sdpi_xc_actors_transactions>>.
+Actor groupings, including abstract with concrete are detailed in <<vol1_clause_sdpi_xc_required_actor_groupings>>.
 
+[#vol1_figure_sdpi_xc_actor_diagram]
 .SDPi-xC Actor Diagram
 
 image::../images/vol1-diagram-sdpi-xc-actor.svg[]
+
+[#vol1_table_sdpi_xc_actors_transactions]
+.SDPi-xC Profile - Actors and Transactions
+[%autowidth]
+[cols="1,2,1,1,3"]
+|===
+.^|Actors
+.^|Transactions
+.^|Initiator or Responder
+.^|Optionality
+.^|Reference
+
+| ...
+| #TABLE TO BE EXPANDED#
+| ...
+| ...
+| ...
+
+|===
 
 // 13.1.1
 ==== Actor Descriptions and Actor Profile Requirements
@@ -42,7 +62,8 @@ image::../images/vol1-diagram-sdpi-xc-actor.svg[]
 // NOTE:  These options are TBD for SDPi 1.0
 
 // 13.3
-=== SDPi-xD Required Actor Groupings
+[#vol1_clause_sdpi_xc_required_actor_groupings]
+=== SDPi-xC Required Actor Groupings
 
 // 13.4
 === SDPi-xC Overview
@@ -58,8 +79,8 @@ image::../images/vol1-diagram-sdpi-xc-actor.svg[]
 [cols="1"]
 |===
 a| *SDPi Supplement Version Note*:  _*For SDPi 1.0*_, no use cases have been included that provide functional requirements for device external control.  These will be added to a future version of the SDPi supplement.
-For this SDPi 1.0 DEV Internal Review Version, this profile section remains fairly incomplete, with significant content needing to be migrated from the Word version of the supplement and then integrated into this AsciiDoc specification.
-This will be completed in early January and *_an updated DEV Internal Review Version published by mid-January_*.
+For this SDPi 1.0 DEV Internal Review Version, this profile section remains incomplete, with significant content needing to be migrated from the Word version of the supplement and then integrated into this AsciiDoc specification.
+This will be completed in January and *_an updated DEV Internal Review Version published by mid-January_*.
 |===
 
 // 13.5
