@@ -54,7 +54,6 @@ NOTE:  A detailed description of this <<acronym_biceps>> description information
 a| *SDPi Supplement Version Note*: This version of the supplement does not fully support profiles of all the elements in the descriptive model, including:
 
 * Service Control Object (SCO) and Operations
-* Clock objects
 * Battery objects
 
 Additionally, only limited support for the *_AlertSystem_* (and related objects), and for the *_SystemContext_* types are provided in SDPi 1.0.
