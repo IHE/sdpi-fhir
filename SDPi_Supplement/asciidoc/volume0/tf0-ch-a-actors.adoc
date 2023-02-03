@@ -34,6 +34,7 @@
 |[[actor_somds_consumer,SOMDS Consumer]] SOMDS Consumer
 
 |A <<actor_somds_participant>> that discovers and utilizes at least one service, functional capability, exposed to a network communications backbone by a <<actor_somds_provider>>. (See <<ref_ieee_11073_10207_2017>>  “SERVICE CONSUMER” and “SERVICE” definitions.)
+Note:  A <<actor_somds_consumer>> is the primary actor providing communication for the <<actor_biceps_content_consumer>>.
 
 |[[actor_somds_dec_gateway,SOMDS DEC Gateway]] SOMDS DEC Gateway
 
@@ -50,6 +51,8 @@
 |[[actor_somds_provider,SOMDS Provider]] SOMDS Provider
 
 |A <<actor_somds_participant>> that provides at least one service to the other participant systems.  (See <<ref_ieee_11073_10207_2017>>  “SERVICE PROVIDER” definition)
+Note:  A <<actor_somds_provider>> is the primary actor providing communication for the <<actor_biceps_content_creator>>.
+
 
 |[[actor_somds_sensor_gateway,SOMDS Sensor Gateway]] SOMDS Sensor Gateway
 
