@@ -345,7 +345,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | Organization
 
 | [[term_system_function_contribution,System Function Contribution (SFC)]] System Function Contribution
-| Function of a BICEPS PARTICIPANT that contributes to a <<term_clinical_function>> executed by two or more BICEPS PARTICIPANTs that are part of an SDC SYSTEM.
+| Function of a <<actor_somds_participant>> that contributes to a <<term_clinical_function>> provided by a <<term_service_oriented_medical_device_system>>.
 |
 | [[acronym_sfc,SFC]] SFC
 | Adapted from <<ref_ieee_11073_10700_2022>>.
