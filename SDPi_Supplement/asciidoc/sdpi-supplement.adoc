@@ -12,7 +12,7 @@
 :docinfo: shared
 
 :ihe_supplement_sdpi_revision: 1.0.2
-:ihe_supplement_sdpi_revision_date: 26 January 2023
+:ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Draft in Preparation for Public Comment
 
 include::document-declarations.adoc[]
