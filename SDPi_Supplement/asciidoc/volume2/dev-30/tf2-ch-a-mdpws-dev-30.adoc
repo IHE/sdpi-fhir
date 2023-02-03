@@ -87,7 +87,7 @@ Since contexts might include privacy-related information, a SERVICE PROVIDER MAY
 the MDS contexts empty.
 ____
 
-Since transmission of GetMdibResponse messages is required to be secured, there is no need for omitting context states to meet confidentiality.
+Since transmission of GetMdibResponse messages is required to be secured, there is no need for omitting context states to meet confidentiality; R0121 in <<ref_ieee_11073_10207_2017>> is still met.
 
 --
 ====

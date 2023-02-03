@@ -135,8 +135,8 @@ include::../dev-a-default-expected-actions.adoc[]
 [sdpi_level=+1]
 ====== Path dispatching
 
-.R7002
-[sdpi_requirement#r7002,sdpi_req_level=shall]
+.R7003
+[sdpi_requirement#r7003,sdpi_req_level=shall]
 ****
 A <<actor_somds_participant>> shall leverage HTTP path dispatching to identify subscription managers and notification/end-to sinks.
 
