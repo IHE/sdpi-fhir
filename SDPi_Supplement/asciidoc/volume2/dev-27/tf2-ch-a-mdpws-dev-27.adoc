@@ -41,6 +41,9 @@ The <<vol2_clause_dev_27_message_subscribe, {var_label_dev_27_message_subscribe}
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-subscribe.xml[]
 ----
 
+:var_trigger_events_ref: <<vol2_clause_dev_27_message_subscribe>>
+include::../dev-a-default-trigger-events.adoc[]
+
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/wse:Subscribe/wse:EndTo/wsa:Address`:: HTTPS server address at which <<vol2_clause_dev_27_message_subscription_end, {var_label_dev_27_message_subscription_end}>> messages are supposed to be delivered.
@@ -93,6 +96,9 @@ As `{var_uri_rfc3986}` subsumes `{var_uri_strcmp0}`, a fallback to case-sensitiv
 ====
 ****
 
+:var_expected_actions_ref: <<vol2_clause_dev_27_message_subscribe>>
+include::../dev-a-default-expected-actions.adoc[]
+
 // ---------- SUBSCRIBE RESPONSE ---------
 
 
@@ -113,20 +119,41 @@ The <<vol2_clause_dev_27_message_subscribe_response, {var_label_dev_27_message_s
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-subscribe-response.xml[]
 ----
 
-====== Message Semantics
+:var_trigger_events_ref: <<vol2_clause_dev_27_message_subscribe_response>>
+include::../dev-a-default-trigger-events.adoc[]
 
-#Requirement that stipulates path dispatching (linkage somewhere here)#
+====== Message Semantics
 
 `s12:Envelope/s12:Body/wse:SubscribeResponse/wse:SubscriptionManager/wsa:Address`:: URI that serves as an access point to manage the subscription, which satisfies <<payload_dev_27_subscribe_response_subscription_manager>>.
 `s12:Envelope/s12:Body/wse:SubscribeResponse/wse:Expires`:: <<payload_dev_27_subscribe_response_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`).
 
+:var_expected_actions_ref: <<vol2_clause_dev_27_message_subscribe_response>>
+include::../dev-a-default-expected-actions.adoc[]
+
+====== Additional Consideration
+
+[sdpi_level=+1]
+====== Path dispatching
+
+.R7002
+[sdpi_requirement#r7002,sdpi_req_level=shall]
+****
+A <<actor_somds_participant>> shall leverage HTTP path dispatching to identify subscription managers and notification/end-to sinks.
+
+
+.Notes
+[%collapsible]
+====
+NOTE: WS-Eventing allows for an event source or sink to make use of WS-Addressing endpoint reference parameters in order to identify endpoints, which is discouraged because of additional unnecessary complexity in processing complex XML elements.
+====
+****
 
 // ---------- NOTIFICATION ---------
 
 
 ===== {var_label_dev_27_message_notification} Message
 
-<<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages are not constrained in general because, depending on the subscription filter, any message may be a notification.
+Production of <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages is not constrained herein as - depending on the subscription filter - any message can be a notification.
 
 ====== Referenced Standards
 
@@ -154,9 +181,15 @@ The <<vol2_clause_dev_27_message_renew, {var_label_dev_27_message_renew}>> messa
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-renew.xml[]
 ----
 
+:var_trigger_events_ref: <<vol2_clause_dev_27_message_renew>>
+include::../dev-a-default-trigger-events.adoc[]
+
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/wse:Renew/wse:Expires`:: <<payload_dev_27_renew_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`)
+
+:var_expected_actions_ref: <<vol2_clause_dev_27_message_renew>>
+include::../dev-a-default-expected-actions.adoc[]
 
 
 // ---------- RENEW RESPONSE ---------
@@ -179,10 +212,15 @@ The <<vol2_clause_dev_27_message_renew_response, {var_label_dev_27_message_renew
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-renew-response.xml[]
 ----
 
+:var_trigger_events_ref: <<vol2_clause_dev_27_message_renew_response>>
+include::../dev-a-default-trigger-events.adoc[]
+
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/wse:RenewResponse/wse:Expires`:: <<payload_dev_27_renew_response_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`).
 
+:var_expected_actions_ref: <<vol2_clause_dev_27_message_renew_response>>
+include::../dev-a-default-expected-actions.adoc[]
 
 // ---------- UNSUBSCRIBE ---------
 
@@ -204,10 +242,15 @@ The <<vol2_clause_dev_27_message_unsubscribe, {var_label_dev_27_message_unsubscr
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-unsubscribe.xml[]
 ----
 
+:var_trigger_events_ref: <<vol2_clause_dev_27_message_unsubscribe>>
+include::../dev-a-default-trigger-events.adoc[]
+
 ====== Message Semantics
 
 The WS-Eventing RenewResponse message does not contain any further semantics.
 
+:var_expected_actions_ref: <<vol2_clause_dev_27_message_unsubscribe>>
+include::../dev-a-default-expected-actions.adoc[]
 
 // ---------- UNSUBSCRIBE RESPONSE ---------
 
@@ -229,10 +272,15 @@ The <<vol2_clause_dev_27_message_unsubscribe_response, {var_label_dev_27_message
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-unsubscribe-response.xml[]
 ----
 
+:var_trigger_events_ref: <<vol2_clause_dev_27_message_unsubscribe_response>>
+include::../dev-a-default-trigger-events.adoc[]
+
 ====== Message Semantics
 
 The WS-Eventing UnsubscribeResponse message does not contain any further semantics.
 
+:var_expected_actions_ref: <<vol2_clause_dev_27_message_unsubscribe_response>>
+include::../dev-a-default-expected-actions.adoc[]
 
 // ---------- SUBSCRIPTION END ---------
 
@@ -256,10 +304,16 @@ The <<vol2_clause_dev_27_message_subscription_end, {var_label_dev_27_message_sub
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-27-subscription-end.xml[]
 ----
 
+:var_trigger_events_ref: <<vol2_clause_dev_27_message_subscription_end>>
+include::../dev-a-default-trigger-events.adoc[]
+
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/wse:SubscriptionEnd/wse:SubscriptionManager/wsa:Address`:: <<payload_dev_27_renew_response_expiration_time>> as an {var_uri_xsd_duration}[XML Schema duration], constrained to hours, minutes and seconds (regular expression: `{var_xsd_duration_regex}`).
 `s12:Envelope/s12:Body/wse:SubscriptionEnd/wse:Status`:: <<payload_dev_27_subscription_end_status>> which is encoded in accordance with WS-Eventing to one of {var_status_delivery_failure}, {var_status_shutdown} or {var_status_cancel}.
+
+:var_expected_actions_ref: <<vol2_clause_dev_27_message_subscription_end>>
+include::../dev-a-default-expected-actions.adoc[]
 
 // cleanup of variables where the likelihood of ambiguity is increased
 :!var_status_delivery_failure:
