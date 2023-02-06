@@ -170,12 +170,12 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | <<vol2_clause_dev_27>>
 
 | <<transaction_name_notify_change_in_system_context_and_capabilities>>
-| Responder
+| _Receiver_  ^(See^ ^Note^ ^2)^
 | O
 | <<vol2_clause_dev_28>>
 
 | <<transaction_name_publish_biceps_update_reports>>
-| Responder
+| _Receiver_  ^(See^ ^Note^ ^2)^
 | R
 | <<vol2_clause_dev_29>>
 
