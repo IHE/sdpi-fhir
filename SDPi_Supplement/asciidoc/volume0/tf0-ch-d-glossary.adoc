@@ -28,7 +28,7 @@
 | Organization
 
 |[[term_basic_ice_protocol_specification,Basic ICE Protocol Specification (BICEPS)]] Basic ICE Protocol Specification
-| General reference to the abstract, implementation technology independent SDC components defined in the ISO/IEEE 11073-10207 standard.  (See <<ref_ieee_11073_10207_2017>>7)
+| General reference to the abstract, implementation technology independent SDC components defined in the ISO/IEEE 11073-10207 standard.  (See <<ref_ieee_11073_10207_2017>>)
 |
 | [[acronym_biceps,BICEPS]] BICEPS
 |
