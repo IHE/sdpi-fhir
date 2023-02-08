@@ -218,7 +218,7 @@ elements, from requirements to system components to Verification & Validation te
 | Organization
 
 | [[term_participant_key_purposes,Participant Key Purposes (PKP)]] Participant Key Purposes
-| These generally refer to the ISO/IEEE 11073-1070x standards that provide a consensus set of risk control measures aligned with the four core <<acronym_mdi>> functions:  <<term_plug_and_trust>>, reporting, alerting & external control.
+| These generally refer to the ISO/IEEE 11073-1070x standards that provide a consensus set of risk control measures aligned with the four core <<acronym_mdi>> functions:  <<term_plug_and_trust>>, reporting, alerting and external control.
 |
 | [[acronym_pkp,PKP]] PKP
 | <<ref_ieee_11073_10700_2022>>
