@@ -1,0 +1,33 @@
+
+////
+            FORWARD DECLARATIONS FOR THE DOCUMENT
+
+NOTES:
+     1) The items defined below are forward declarations to define labels for the entire document
+     2) VARIABLES are used not because the content may vary (such as transaction #'s) but
+     3) They can get expanded anywhere including in section headings
+
+////
+
+// USE CASE DEFINITIONS
+:var_label_use_case_acronym_aars: AARS
+:var_label_use_case_name_aars: Alerts to Alert Recording Systems
+
+:var_label_use_case_acronym_acns: ACNS
+:var_label_use_case_name_acns: Alerts to Clinician Notification Systems
+
+:var_label_use_case_acronym_ddes: DDES
+:var_label_use_case_name_ddes: Device Data to Enterprise Systems
+
+:var_label_use_case_acronym_sicdmp: SICDmp
+:var_label_use_case_name_sicdmp: Standalone ICU Dashboard Multiple Patient
+
+:var_label_use_case_acronym_sicdsp: SICDsp
+:var_label_use_case_name_sicdsp: Standalone ICU Dashboard Single Patient
+
+:var_label_use_case_acronym_stad: STAD
+:var_label_use_case_name_stad: Synchronized Time Across Devices
+
+// SYSTEM TYPE DEFINITIONS
+:var_label_system_type_acronym_agw: AGW
+:var_label_system_type_name: Alert Gateway

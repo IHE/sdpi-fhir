@@ -120,16 +120,16 @@ In addition to the supplement's technical specification content, a development a
 These are referred to as:
 
 [none]
-. *_Requirements Interoperability + Model Centric + Regulatory_* (submission) *_Ready_*
+. *_Requirements Interoperability + Model Centric + Regulatory Ready_*
 
 Or *RI+MC+RR* for short.
 
-These three initiative objectives may be summarized as follows:
+These three objectives may be summarized as follows:
 
 [none]
 * *Requirements Interoperability (RI)*
 [none]
-** Ability to integrate & automate requirements and capabilities from component specifications & standards to enable traceability & coverage at CA of the component product interface
+** Ability to integrate & automate requirements and capabilities from component specifications & standards to enable traceability & coverage at <<term_conformity_assessment>> (<<acronym_ca>>) of the component product interface
 * *Model Centric (MC)*
 [none]
 ** Transition from a document-centric to a _computable model-based "single source of truth"_ specification from which the Technical Framework becomes a view of the model
@@ -137,8 +137,11 @@ These three initiative objectives may be summarized as follows:
 [none]
 ** Enable CA test reports that are genuinely _"regulatory submission ready"_ (e.g., inclusion in a U.S. FDA 510(k) submission package)
 
-The initial SDPi 1.0 version of the supplement has begun to move in support of these objectives, especially Requirements Interoperability, as well as the use of AsciiDoc metadata to annotate the document sources for post-processing.
+The initial SDPi 1.0 version of the supplement has *_begun to take small steps_* toward support of these objectives, especially Requirements Interoperability, as well as the use of AsciiDoc metadata to annotate the document sources for post-processing.
+Clearly, moving toward <<term_model_centric>> specifications and full integration of <<term_model_based_systems_engineering>> (<<acronym_mbse>>) will take considerable effort and time; however, this supplement represents a humble start in that direction.
 Subsequent supplement versions will build upon these objectives and support a new level of rigor for connectathon and product conformity assessment testing and ultimately test reports that directly impact the challenges around medical product regulatory submissions.
 
 Additional discussion is provided in <<vol1_appendix_a_requirements_management_for_p_n_t_interperability>>, and on the https://confluence.hl7.org/pages/viewpage.action?pageId=82906664#ConformityAssessment&Tooling-RI+MC+RRforMedTechSpecificationsInitiative[Gemini project's confluence pages].
 See also related discussions on the Gemini Project's https://confluence.hl7.org/x/XhPUB[Pathway to an Ecosystem of Plug-and-Trust Products].
+
+
