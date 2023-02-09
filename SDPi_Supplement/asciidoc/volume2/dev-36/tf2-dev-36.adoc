@@ -38,4 +38,4 @@ include::../../plantuml/vol2-figure-dev-36-sequence.puml[]
 
 :var_duplicated_transaction: {var_transaction_id}
 :var_dupicates_list: DEV-29 (<<vol2_clause_dev_29>>) and DEV-39 (<<vol2_clause_dev_39>>)
-include::../dev_duplicate_disclaimer.adoc[]
+include::../dev-duplicate-disclaimer.adoc[]

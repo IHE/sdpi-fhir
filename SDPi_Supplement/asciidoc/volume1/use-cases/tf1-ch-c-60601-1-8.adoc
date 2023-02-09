@@ -156,7 +156,7 @@ NOTE: An xDIS can be either a DIS or CDIS.  Similarly an xDAS can be either a DA
 The following content is extracted directly from the <<ref_iec_60601_1_8_2020>> standard for reference purposes.
 Please consult that standard for comprehensive discussion and complete normative requirements, as well as the "rationale" section, which includes many of the concepts identified in this section.
 
-#TODO: REVIEW THE CONTENT OF THIS SECTION FOR ANY COPYRIGHT REQUIREMENTS - PERHAPS ENGAGE HAE ...#
+#TODO: REVIEW THE CONTENT OF THIS SECTION FOR ANY COPYRIGHT REQUIREMENTS - PERHAPS ENGAGE HAE CHOE/AAMI... ALSO NEED TO ADD DEFINITIONS FOR TERMS SUCH AS ME SYSTEM, ME EQUIPMENT, ETC.#
 
 ====== DIS - DISTRIBUTED INFORMATION SYSTEM ABOUT ALARM CONDITIONS
 system that involves more than one item of equipment in a ME SYSTEM intended to provide information about ALARM CONDITIONS but does not guarantee delivery of that information

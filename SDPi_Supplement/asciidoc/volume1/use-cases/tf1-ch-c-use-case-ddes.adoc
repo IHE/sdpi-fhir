@@ -1,9 +1,7 @@
 [#vol1_clause_appendix_c_use_case_ddes,sdpi_offset=5]
 === Use Case Feature {var_use_case_id}: Device Data to Enterprise Systems (DDES)
 
-// ISSUE WITH WHERE TO DECLARE THESE DEFINITIONS (See definitions at end of Glossary file)
-//[[acronym_ddes,DDES]]
-//[[use_case_label_ddes,Device Data to Enterprise Systems]]
+// NOTE:  See use case labels in document-declarations.adoc
 
 ==== Narrative
 
@@ -32,7 +30,7 @@ image::../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 [#vol1_clause_appendix_c_use_case_ddes_scenarios]
 ==== Scenarios
 
-===== Scenario: DDES {var_use_case_id}.1 - New in scope device is connected to network with MGW service
+===== Scenario: DDES {var_use_case_id}.1 - New in scope device is connected to network with DGW service
 
 *Given* The DGW Service has detected a new in scope device
 

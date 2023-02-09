@@ -1,9 +1,7 @@
 [#vol1_clause_appendix_c_use_case_stad,sdpi_offset=2]
 === Use Case Feature {var_use_case_id}: Synchronized Time Across Devices (STAD)
 
-// ISSUE WITH WHERE TO DECLARE THESE DEFINITIONS (See definitions at end of Glossary file)
-//[[acronym_stad,STAD]]
-//[[use_case_label_stad,Synchronized Time Across Devices]]
+// NOTE:  See use case labels in document-declarations.adoc
 
 ==== Narrative
 Nurse Jean attaches a ventilator to the medical device network in the ICU.  It automatically obtains the correct time.

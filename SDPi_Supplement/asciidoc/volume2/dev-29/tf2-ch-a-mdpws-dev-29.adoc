@@ -29,9 +29,15 @@ The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_alertre
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-alertreport.xml[]
 ----
 
+:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
+include::../dev-a-default-trigger-events.adoc[]
+
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/msg:EpisodicAlertReport`:: Updated alert information of a <<actor_somds_provider>>.
+
+:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
+include::../dev-a-default-expected-actions.adoc[]
 
 // ---------- EpisodicMetricReport ---------
 
@@ -51,9 +57,16 @@ The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_metricr
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-metricreport.xml[]
 ----
 
+:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
+include::../dev-a-default-trigger-events.adoc[]
+
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/msg:EpisodicMetricReport`:: Updated metric information of a <<actor_somds_provider>>.
+
+:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
+include::../dev-a-default-expected-actions.adoc[]
+
 
 // ---------- EpisodicComponentReport ---------
 
@@ -73,9 +86,15 @@ The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_compone
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-componentreport.xml[]
 ----
 
+:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
+include::../dev-a-default-trigger-events.adoc[]
+
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/msg:EpisodicComponentReport`:: Updated component information of a <<actor_somds_provider>>.
+
+:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
+include::../dev-a-default-expected-actions.adoc[]
 
 // ---------- WaveformStream ---------
 
@@ -95,6 +114,12 @@ The <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_wavefor
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-29-waveformstream.xml[]
 ----
 
+:var_trigger_events_ref: <<vol2_clause_dev_29_message_notification>>
+include::../dev-a-default-trigger-events.adoc[]
+
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/msg:WaveformStream`:: Waveform stream of a <<actor_somds_provider>>.
+
+:var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
+include::../dev-a-default-expected-actions.adoc[]

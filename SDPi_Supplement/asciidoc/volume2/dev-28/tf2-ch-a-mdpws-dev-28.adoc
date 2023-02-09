@@ -25,6 +25,12 @@ The <<vol2_clause_dev_28_message_notification, {var_label_dev_28_message_context
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-28-contextreport.xml[]
 ----
 
+:var_trigger_events_ref: <<vol2_clause_dev_28_message_notification>>
+include::../dev-a-default-trigger-events.adoc[]
+
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/msg:EpisodicContextReport`:: Updated context information of a <<actor_somds_provider>>.
+
+:var_expected_actions_ref: <<vol2_clause_dev_28_message_notification>>
+include::../dev-a-default-expected-actions.adoc[]

@@ -54,7 +54,6 @@ NOTE:  A detailed description of this <<acronym_biceps>> description information
 a| *SDPi Supplement Version Note*: This version of the supplement does not fully support profiles of all the elements in the descriptive model, including:
 
 * Service Control Object (SCO) and Operations
-* Clock objects
 * Battery objects
 
 Additionally, only limited support for the *_AlertSystem_* (and related objects), and for the *_SystemContext_* types are provided in SDPi 1.0.
@@ -81,7 +80,7 @@ In addition to specific device specializations (see <<vol3_clause_device_special
 
 
 [#vol1_table_system_type_nomenclature_extensions]
-.<<acronym_mdc>> Nomenclature System Type Extensions
+.MDC Nomenclature System Type Extensions
 
 [%autowidth]
 [cols="1,1,1,1"]
@@ -109,7 +108,7 @@ In addition to specific device specializations (see <<vol3_clause_device_special
 .^| [[system_type_device_aggregator,Device Aggregator]] Device Aggregator
 .^| (tba)
 .^|
-.^| Discovering and integrates devices to an SDC network aggregator; systems may be <<actor_somds_participant>>s that support <<acronym_sdc>> connectivity or may be connected to the aggregator system by some other non-standardized means.
+.^| A system that discovers and integrates or "aggregates" information from one or more devices and makes them accessible from a single <<actor_somds_provider>> <<acronym_mdib>>. Aggregated devices may be <<actor_somds_participant>>s that support <<acronym_sdc>> connectivity or may be interfaced to the aggregator system by some other non-standardized means (e.g., analog sensors or proprietary protocols).
 
 .^| [[system_type_dashboard,Dashboard]] Dashboard
 .^| (tba)
@@ -118,8 +117,8 @@ In addition to specific device specializations (see <<vol3_clause_device_special
 
 .^| [[system_type_device_gateway,Gateway]] Gateway
 .^| (tba)
-.^| [[acronym_dgw,DGW]] DGW, [[acronym_agw,AGW]] AGW
-.^| Gateway PARTICIPANT that provides, for example, ADT information or laboratory results (inbound). Note:  AGW is for an Alert Gateway system.  (For example, see <<vol1_clause_appendix_c_use_case_acns_technical_precondition>>)
+.^| [[acronym_dgw,DGW]] DGW, {var_label_system_type_acronym_agw}
+.^| Gateway PARTICIPANT that provides, for example, ADT information or laboratory results (inbound). Note:  {var_label_system_type_acronym_agw} is for an Alert Gateway system.  (For example, see <<vol1_clause_appendix_c_use_case_acns_technical_precondition>>)
 
 .^| [[system_type_device_smart_alerting,Smart Alerting]] Smart Alerting
 .^| (tba)

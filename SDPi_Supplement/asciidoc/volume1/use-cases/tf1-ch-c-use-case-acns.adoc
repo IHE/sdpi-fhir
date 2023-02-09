@@ -1,9 +1,7 @@
 [#vol1_clause_appendix_c_use_case_acns,sdpi_offset=6]
 === Use Case Feature {var_use_case_id}: Alerts to Clinician Notification Systems (ACNS)
 
-// ISSUE WITH WHERE TO DECLARE THESE DEFINITIONS (See definitions at end of Glossary file)
-//[[acronym_acns,ACNS]]
-//[[use_case_label_acns,Alerts to Clinician Notification Systems]]
+// NOTE:  See use case labels in document-declarations.adoc
 
 ==== Narrative
 
