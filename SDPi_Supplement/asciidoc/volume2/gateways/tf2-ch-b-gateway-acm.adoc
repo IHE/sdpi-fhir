@@ -160,7 +160,7 @@ NOTE: Please refer to the *Appendix B  B.7.1 OBR Observation Request Segment in 
 .R8056
 [sdpi_requirement#r8056,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall set the OBR-29 field to the unique alert event identifier of the initial alert event message as defined for the OBR-7 field.
+A <<actor_somds_acm_gateway>> shall set the OBR-29 field to the unique alert event identifier of the initial alert event message as defined for the OBR-3 field.
 
 .Notes
 [%collapsible]
