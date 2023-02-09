@@ -8,6 +8,10 @@
 ==== Narrative
 Nurse Jean attaches a ventilator to the medical device network in the ICU.  It automatically obtains the correct time.
 
+==== Benefits
+Automatically acquiring the time saves the user from spending time entering the time into the device.  It also guarantees that the correct time will be entered.
+It is also important for all devices to have a consistent time since the data being exported to consuming devices and systems will use the time stamps from the device to mark the time that the clinical data was acquired.  Since this is part of the clinical record, accuracy is very important.
+
 ==== Technical View
 
 .Synchronized Time Across Devices (STAD) -- Technical View
@@ -24,7 +28,7 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 [#vol1_clause_appendix_c_use_case_stad_scenarios]
 ==== Scenarios
 
-===== Scenario: STAD {var_use_case_id}.1 - Device is connected to network with a Time Source service
+===== Scenario: STAD {var_use_case_id}.1 - Device is connected to the <<acronym_md_lan>> network with a Time Source service
 
 *Given* Device has detected at least one <<acronym_ts_service>>
 
@@ -32,17 +36,17 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
 *Then* The device will synchronize its time with the <<acronym_ts_service>>
 
-===== Scenario: STAD {var_use_case_id}.2 - Device is connected to network with a <<acronym_ts_service>> and a second device’s time setting is changed manually
+===== Scenario: STAD {var_use_case_id}.2 - Device is connected to the <<acronym_md_lan>> network with a <<acronym_ts_service>> and a user wants to change the device's time
 
 *Given* Device has detected at least one <<acronym_ts_service>>
 
 *When* The <<acronym_ts_service>> is operational
 
-*And* The time at another device is changed manually
+*And* The user attempts to change the time on the device manually
 
-*Then* The device will continue to synchronize its time with the <<acronym_ts_service>>
+*Then* The device will disable the ability to change its time manually
 
-===== Scenario: STAD {var_use_case_id}.3 - Device is connected to network and cannot connect to a <<acronym_ts_service>>
+===== Scenario: STAD {var_use_case_id}.3 - Device is connected to the <<acronym_md_lan>> network and cannot connect to a <<acronym_ts_service>>
 
 [%noheader]
 [%autowidth]
@@ -51,13 +55,13 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 | *SDPi Supplement Version Note*:  This scenario is currently out of scope
 |===
 
-*Given* Device has just connected to the network and has not detected any <<acronym_ts_service>>s
+*Given* Device has just connected to the <<acronym_md_lan>> network and has not detected any <<acronym_ts_service>>s
 
 *When* The <<acronym_ts_service>> is not operational or inaccessible
 
-*Then* The device will synchronize its time with another  device on the network
+*Then* The device will not participate on the <<acronym_md_lan>> network until it detects and connects to a <<acronym_ts_service>>
 
-===== Scenario: STAD {var_use_case_id}.4 - Device is connected to network but cannot connect to a Time Source server and a second device’s time setting is changed manually
+===== Scenario: STAD {var_use_case_id}.4 - Devices are connected to the <<acronym_md_lan>> network but cannot connect to a <<acronym_ts_service>> and a device’s time setting is changed manually
 
 [%noheader]
 [%autowidth]
@@ -70,7 +74,9 @@ image::../images/vol1-diagram-use-case-stad-tech-view.svg[align=center]
 
 *When* The <<acronym_ts_service>> is not operational or inaccessible
 
-*And* The time at another device is changed manually
+*And* The time at the device is changed manually
 
-*Then* The devices on the network will synchronize their time with the time from the device that had its time changed
+*Then* The device will resync its clock when the <<acronym_ts_service>> is operational or accessible
+
+*And* The devices on the network will maintain their own clocks until the <<acronym_ts_service>> is operational or accessible.
 
