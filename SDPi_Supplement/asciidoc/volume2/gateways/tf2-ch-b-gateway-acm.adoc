@@ -332,7 +332,7 @@ OBX|3||69855\^MDC_DEV_METER_PRESS_BLD_CHAN^MDC|1.1.1.0|||||||X
 .R8061
 [sdpi_requirement#r8061,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall export a Event Identification OBX segment which identifies the alert event.
+A <<actor_somds_acm_gateway>> shall export an Event Identification OBX segment which identifies the alert event.
 
 .Notes
 [%collapsible]
