@@ -883,14 +883,14 @@ If a private *MDC* code is used for the coding of a body site, a <<actor_somds_d
 |Text
 |If *@Code* is an MDC code, this field contains the RefId of the MDC code.
 
-In all other cases, the field is set to the pm:AbstractMetricState /pm:Unit /@SymbolicCodeName.
+In all other cases, the field is set to the pm:AbstractMetricState /pm:BodySite /@SymbolicCodeName.
 | Note that MDC is the default coding system if no coding system is specified.
 
 |OBX-20/CWE-3
 |Name of Coding System
 |*"MDC"* if no other coding system is specified.
 
-In all other cases, the field is set to pm:AbstractMetricState /pm:Unit /@CodingSystem.
+In all other cases, the field is set to pm:AbstractMetricState /pm:BodySite /@CodingSystem.
 
 |Note that MDC is the default coding system if no coding system is specified.
 

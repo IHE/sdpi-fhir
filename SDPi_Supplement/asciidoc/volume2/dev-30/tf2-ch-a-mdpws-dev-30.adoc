@@ -24,9 +24,15 @@ The <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> m
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-30-getmdib.xml[]
 ----
 
+:var_trigger_events_ref: <<vol2_clause_dev_30_message_getmdib>>
+include::../dev-a-default-trigger-events.adoc[]
+
 ====== Message Semantics
 
 The <<vol2_clause_dev_30_message_getmdib, {var_label_dev_30_message_getmdib}>> message does not contain any further semantics.
+
+:var_expected_actions_ref: <<vol2_clause_dev_30_message_getmdib>>
+include::../dev-a-default-expected-actions.adoc[]
 
 // ---------- Get Mdib Response ---------
 
@@ -46,12 +52,21 @@ The <<vol2_clause_dev_30_message_getmdibresponse, {var_label_dev_30_message_getm
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-30-getmdibresponse.xml[]
 ----
 
+:var_trigger_events_ref: <<vol2_clause_dev_30_message_getmdibresponse>>
+include::../dev-a-default-trigger-events.adoc[]
+
 ====== Message Semantics
 
 `s12:Envelope/s12:Body/msg:GetMdibResponse/msg:Mdib/pm:MdDescription`:: The <<actor_somds_provider>>'s descriptive part of the MDIB.
 
 `s12:Envelope/s12:Body/msg:GetMdibResponse/msg:Mdib/pm:MdState`:: The <<actor_somds_provider>>'s state part of the MDIB.
 
+:var_expected_actions_ref: <<vol2_clause_dev_30_message_getmdibresponse>>
+include::../dev-a-default-expected-actions.adoc[]
+
+====== Additional Consideration
+
+[sdpi_level=+1]
 ====== Context States
 
 .R7002
@@ -72,7 +87,7 @@ Since contexts might include privacy-related information, a SERVICE PROVIDER MAY
 the MDS contexts empty.
 ____
 
-Since transmission of GetMdibResponse messages is required to be secured, there is no need for omitting context states to meet confidentiality.
+Since transmission of GetMdibResponse messages is required to be secured, there is no need for omitting context states to meet confidentiality; R0121 in <<ref_ieee_11073_10207_2017>> is still met.
 
 --
 ====

@@ -28,7 +28,7 @@
 | Organization
 
 |[[term_basic_ice_protocol_specification,Basic ICE Protocol Specification (BICEPS)]] Basic ICE Protocol Specification
-| General reference to the abstract, implementation technology independent SDC components defined in the ISO/IEEE 11073-10207 standard.  (See <<ref_ieee_11073_10207_2017>>7)
+| General reference to the abstract, implementation technology independent SDC components defined in the ISO/IEEE 11073-10207 standard.  (See <<ref_ieee_11073_10207_2017>>)
 |
 | [[acronym_biceps,BICEPS]] BICEPS
 |
@@ -175,7 +175,7 @@
 |
 
 | [[term_medical_device_lan,Medical Device LAN (MD LAN)]] Medical Device LAN
-| A local area network that integrates <<term_medical_device>>s often around a single bedside or care area (e.g., Emergency Department).  For the purposes of the SDPi specifications, <<acronym_md_lan>> refers to an integrated set of devices around a high-acuity point-of-care such as an Operating Room Table or ICU bed.
+| A local area network that integrates <<term_medical_device>>s often around a single bedside <<term_point_of_care>> or care area (e.g., operating room, ICU or Emergency Department).
 | [[acronym_sdc_lan,SDC LAN]] SDC LAN
 | [[acronym_md_lan,MD LAN]] MD LAN
 |
@@ -218,7 +218,7 @@ elements, from requirements to system components to Verification & Validation te
 | Organization
 
 | [[term_participant_key_purposes,Participant Key Purposes (PKP)]] Participant Key Purposes
-| These generally refer to the ISO/IEEE 11073-1070x standards that provide a consensus set of risk control measures aligned with the four core <<acronym_mdi>> functions:  <<term_plug_and_trust>>, reporting, alerting & external control.
+| These generally refer to the ISO/IEEE 11073-1070x standards that provide a consensus set of risk control measures aligned with the four core <<acronym_mdi>> functions:  <<term_plug_and_trust>>, reporting, alerting and external control.
 |
 | [[acronym_pkp,PKP]] PKP
 | <<ref_ieee_11073_10700_2022>>
@@ -239,28 +239,28 @@ elements, from requirements to system components to Verification & Validation te
 |
 
 | [[term_point_of_care,Point of Care (PoC)]] Point of Care
-| #TODO: Is there an existing definition, incl. in the IHE DEV TF?#
+| Typically where the patient is, such as their clinical bedside; although, it may also be used to include mobile patients (e.g., that are connected to telemetry monitoring).
 |
 | [[acronym_poc,PoC]] PoC
 |
 |
 
 | [[term_poc_cockpit,PoC Cockpit]] Point of Care Cockpit
-| #TODO:  Add description and link to See TF-3 description language#
+| A system that supports information viewing and control of multiple devices and systems associated with a single patient <<term_point_of_care>>.
 | [[term_cockpit,Cockpit]] Cockpit
 |
 |
 |
 
 | [[term_poc_dashboard,PoC Dashboard]] Point of Care Dashboard
-| #TODO:  Add description and link to See TF-3 description language#
+| A system that displays information from one or more <<actor_somds_participant>> systems associated with a single patient. Similar to a <<term_cockpit>> but without device-external control capabilities. May include both metric and alert information.
 | Dashboard
 |
 |
 |
 
 | [[term_point_of_care_device,Point of Care Device (PoCD)]] Point of Care Device
-| A healthcare device that is used at a point of care, typically at a patient’s clinical bedside.  May include patient-connected mobile devices, such as telemetry monitors.
+| A healthcare device that is used at a <<term_point_of_care>>, typically at a patient’s clinical bedside.  May include patient-connected mobile devices, such as telemetry monitors.
 |
 | [[acronym_pocd,PoCD]] PoCD
 |
@@ -317,10 +317,10 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | SDC
 
 | [[term_smart_alarm_system,Smart Alarm System (SAS)]] Smart Alarm System
-| #TODO:  Add description and link to See TF-3 description language#
+| A system that provides consolidated alarm and alert events (actionable alerts), and advisories (e.g., patient deterioration alerts).
 |
 | [[acronym_sas,SAS]] SAS
-|
+| Note:  This is based on the initial description in <<vol1_table_system_type_nomenclature_extensions>>.  SDPi 2.0 will more fully define the term.
 |
 
 | [[term_software_as_a_medical_device,Software as a Medical Device (SaMD)]] Software as a Medical Device
@@ -345,7 +345,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 | Organization
 
 | [[term_system_function_contribution,System Function Contribution (SFC)]] System Function Contribution
-| Function of a BICEPS PARTICIPANT that contributes to a <<term_clinical_function>> executed by two or more BICEPS PARTICIPANTs that are part of an SDC SYSTEM.
+| Function of a <<actor_somds_participant>> that contributes to a <<term_clinical_function>> provided by a <<term_service_oriented_medical_device_system>>.
 |
 | [[acronym_sfc,SFC]] SFC
 | Adapted from <<ref_ieee_11073_10700_2022>>.
@@ -353,7 +353,7 @@ implements a service-oriented <<acronym_sdc>> architecture composed of service p
 
 | [[term_time_synchronization_service,Time Synchronization Service (TS Service)]] Time Synchronization Service
 | A general network service capability that enables systems to obtain and synchronize to a common and accurate time source.  For example, <<term_network_time_protocol>>.
-| ...
+|
 | [[acronym_ts_service,TS Service]] TS Service
 |
 |

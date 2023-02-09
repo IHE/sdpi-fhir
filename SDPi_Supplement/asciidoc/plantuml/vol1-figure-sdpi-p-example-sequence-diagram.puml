@@ -13,20 +13,20 @@ participant "$str_sdpi_p_somds_cons" as sdpi_somds_consumer
 |||
 group unsecured
     sdpi_somds_provider ->> sdpi_somds_consumer: Announce Network Presence
+
+    sdpi_somds_consumer -> sdpi_somds_provider: Discover Network Topology
+    sdpi_somds_provider -->> sdpi_somds_consumer
 end
 
 group secured
-    sdpi_somds_consumer ->> sdpi_somds_provider: Discover Network Topology
+    sdpi_somds_consumer -> sdpi_somds_provider: Discover BICEPS Services
     sdpi_somds_provider -->> sdpi_somds_consumer
 
-    sdpi_somds_consumer ->> sdpi_somds_provider: Discover BICEPS Services
-    sdpi_somds_provider -->> sdpi_somds_consumer
-
-    sdpi_somds_consumer ->> sdpi_somds_provider: Discover System Context & Capabilities
+    sdpi_somds_consumer -> sdpi_somds_provider: Discover System Context & Capabilities
     sdpi_somds_provider -->> sdpi_somds_consumer
 
     group pub/sub
-        sdpi_somds_consumer ->> sdpi_somds_provider: Manage BICEPS Subscription
+        sdpi_somds_consumer -> sdpi_somds_provider: Manage BICEPS Subscription
         sdpi_somds_provider -->> sdpi_somds_consumer
 
         loop
@@ -38,7 +38,7 @@ group secured
         end
      end
 
-    sdpi_somds_consumer ->> sdpi_somds_provider: Retrieve BICEPS Content
+    sdpi_somds_consumer -> sdpi_somds_provider: Retrieve BICEPS Content
     sdpi_somds_provider -->> sdpi_somds_consumer
 end
 

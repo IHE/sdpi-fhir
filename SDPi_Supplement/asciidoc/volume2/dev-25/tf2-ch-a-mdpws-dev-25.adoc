@@ -26,8 +26,14 @@ The GetMetadata message is encoded by using {var_uri_ws_discovery_transfer}[WS-G
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-25-transfer-get.xml[]
 ----
 
+:var_trigger_events_ref: <<vol2_clause_dev_25_message_get_metadata>>
+include::../dev-a-default-trigger-events.adoc[]
+
 ====== Message Semantics
 The GetMetadata message does not contain any further semantics.
+
+:var_expected_actions_ref: <<vol2_clause_dev_25_message_get_metadata>>
+include::../dev-a-default-expected-actions.adoc[]
 
 ===== GetMetadataResponse Message
 
@@ -44,6 +50,9 @@ The GetMetadataResponse message is encoded by using {var_uri_ws_discovery_transf
 ----
 include::../../listings/vol2-clause-appendix-a-mdpws-dev-25-transfer-response.xml[]
 ----
+
+:var_trigger_events_ref: <<vol2_clause_dev_25_message_get_metadata_response>>
+include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
@@ -76,3 +85,6 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-25-transfer-response.xm
 |WAVEFORM SERVICE as specified in {var_ref_biceps_service_model}
 |{{var_uri_namespace_sdc}}WaveformService
 |===
+
+:var_expected_actions_ref: <<vol2_clause_dev_25_message_get_metadata_response>>
+include::../dev-a-default-expected-actions.adoc[]
