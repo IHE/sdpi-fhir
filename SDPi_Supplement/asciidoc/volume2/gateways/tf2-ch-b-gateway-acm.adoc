@@ -843,7 +843,7 @@ A <<actor_somds_acm_gateway>> shall export an Alert State OBX segment which defi
 ====
 NOTE: The actual value of the IHE ACM Alert State attribute depends on a combination of SDC alert condition/signal states. The mapping is defined in table <<ref_tbl_acm_obx_alert_state_mapping>>.
 
-NOTE: All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_phase_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
+NOTE: All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_state_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
 
 NOTE: Unless the *pm:AlertConditionState/@ActivationState* is set to *"On"*, the *pm:AlertConditionState/@Presence* is always set to *"false"*; that is, the gateway will not export any IHE ACM alert event messages.
 ====
@@ -940,7 +940,7 @@ NOTE: The actual value of the IHE ACM Alert Inactivation State attribute depends
 
 NOTE: The OBX-5 field can contain multiple inactivation states separated by the HL7 message 'repeating field' character (usually '~'). Example: *"audio-off~alert-acknowledged"*
 
-NOTE: All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_phase_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
+NOTE: All *pm:AlertSignalState* attributes, which are referred in table <<ref_tbl_alert_inactivation_state_mapping>> and needed to determine the actual alert phase, relate to *pm:AlertSignalState* elements with the *@Location* set to *"Loc"*.
 
 NOTE: Unless the *pm:AlertConditionState/@ActivationState* is set to *"On"*, the *pm:AlertConditionState/@Presence* is always set to *"false"*; that is, the gateway will not export any IHE ACM alert event messages.
 ====
