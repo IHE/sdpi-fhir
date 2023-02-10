@@ -50,7 +50,7 @@ NOTE: If the <<acronym_mdib>> patient identification element *pm:PatientContextS
 |/@Root
 |The @Root contains the unique identification of the HDO.
 
-*Note that if the HDO identifer is not defined the CX-4 field shall be left empty.*
+*Note that if the HDO identifier is not defined the CX-4 field shall be left empty.*
 
 |PID-3/CX-5
 |Identifier Type Code
@@ -58,7 +58,7 @@ NOTE: If the <<acronym_mdib>> patient identification element *pm:PatientContextS
 /pm:Identification
 /pm:Type
 /@Code
-|The type of the patient identifier set in the @Code attribute shall be set to a value from HL7 V2 table 0203. The @CodingSystem shall be set to `urn:oid:2.16.840.1.113883.18.108`.
+|The type of the patient identifier set in the @Code attribute is set to a value from HL7 V2 table 0203. The @CodingSystem is set to `urn:oid:2.16.840.1.113883.18.108`.
 
 |===
 
