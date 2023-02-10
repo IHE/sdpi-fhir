@@ -6,7 +6,7 @@ The HL7 Patient Visit (PV1) segment requires a mapping from the SDC patient and 
 .R8111
 [sdpi_requirement#r8111,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-The SDC patient and location context information shall only be mapped to the corresponding fields in the HL7 PV1 segment when the requirements (e. g. inferred patient and/or location ensemble context, associated patient and/or location context, etc.) as defined in the <<ref_ieee_11073_10700_2022>> are fulfilled.
+The SDC patient and location context information shall only be mapped to the corresponding fields in the HL7 PV1 segment when the requirements (e.g. inferred patient and/or location ensemble context, associated patient and/or location context, etc.) as defined in the <<ref_ieee_11073_10700_2022>> are fulfilled.
 
 If the SDC patient and/or location context information is not be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2019>> on how to populate the fields of the PV1 segment in this case.
 ****
@@ -158,7 +158,7 @@ Valid *"Identifier Type Code"* values for a visit number are, for example, *"VN"
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-44 field to the patient's admission date/time.
 
-The SDC data model does not support the concept of an admission date/time. There are also different types of admissions; e. g. hospital admission, care unit admission, etc.
+The SDC data model does not support the concept of an admission date/time. There are also different types of admissions; e.g. hospital admission, care unit admission, etc.
 
 This said, it is up to the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> to figure out the admission date/time to be set in the PV1-44 field. If the gateway is not able to determine the admission date/time, the field is left empty.
 ****
