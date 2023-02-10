@@ -98,10 +98,7 @@ See <<ref_dec_obx4>> for further information.
 
 |OBX-5
 |Observation Value
-|pm:PatientContextState
-/pm:CoreData
-/pm:Height
-/@MeasuredValue
+|pm:PatientContextState/pm:CoreData/pm:Height/@MeasuredValue
 |Note that the decimal number needs to be formatted according to the HL7 numeric value formatting rules.
 
 |OBX-6
@@ -111,33 +108,21 @@ See <<ref_dec_obx4>> for further information.
 
 |OBX-6/CWE-1
 |Identifier
-|pm:PatientContextState
-/pm:CoreData
-/pm:Height
-/pm:MeasurementUnit
-/@Code
+|pm:PatientContextState/pm:CoreData/pm:Height/pm:MeasurementUnit/@Code
 |
 
 |OBX-6/CWE-2
 |Text
 |If @Code is an MDC code, this field contains the RefId of the MDC code.
 
-In all other cases, the field is set to the pm:PatientContextState
-/pm:CoreData
-/pm:Height
-/pm:MeasurementUnit
-/@SymbolicCodeName.
+In all other cases, the field is set to the pm:PatientContextState/pm:CoreData/pm:Height/pm:MeasurementUnit/@SymbolicCodeName.
 |Note that MDC is the default coding system if no coding system is specified.
 
 |OBX-6/CWE-3
 |Name of Coding System
 |*"MDC"* if no other coding system is specified.
 
-In all other cases, the field is set to pm:PatientContextState
-/pm:CoreData
-/pm:Height
-/pm:MeasurementUnit
-/@CodingSystem.
+In all other cases, the field is set to pm:PatientContextState/pm:CoreData/pm:Height/pm:MeasurementUnit/@CodingSystem.
 |Note that MDC is the default coding system if no coding system is specified.
 
 |OBX-11
@@ -149,8 +134,7 @@ When there are further updates of the height value after the association of the 
 
 |OBX-14
 |Date/Time of the Observation
-|pm:PatientContextState
-/@BindingStartTime
+|pm:PatientContextState/@BindingStartTime
 |Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
 
 |===
@@ -180,7 +164,7 @@ When there are further updates of the height value after the association of the 
 |OBX-3/CWE-2
 |Text
 |
-| Set to MDC RefId *"MDC_ATTR_PT_WEIGHT"*.
+|Set to MDC RefId *"MDC_ATTR_PT_WEIGHT"*.
 
 |OBX-3/CWE-3
 |Name of Coding System
@@ -195,10 +179,7 @@ See <<ref_dec_obx4>> for further information.
 
 |OBX-5
 |Observation Value
-|pm:PatientContextState
-/pm:CoreData
-/pm:Weight
-/@MeasuredValue
+|pm:PatientContextState/pm:CoreData/pm:Weight/@MeasuredValue
 |Note that the decimal number needs to be formatted according to the HL7 numeric value formatting rules.
 
 |OBX-6
@@ -208,33 +189,21 @@ See <<ref_dec_obx4>> for further information.
 
 |OBX-6/CWE-1
 |Identifier
-|pm:PatientContextState
-/pm:CoreData
-/pm:Weight
-/pm:MeasurementUnit
-/@Code
+|pm:PatientContextState/pm:CoreData/pm:Weight/pm:MeasurementUnit/@Code
 |
 
 |OBX-6/CWE-2
 |Text
 |If @Code is an MDC code, this field contains the RefId of the MDC code.
 
-In all other cases, the field is set to the pm:PatientContextState
-/pm:CoreData
-/pm:Weight
-/pm:MeasurementUnit
-/@SymbolicCodeName.
+In all other cases, the field is set to the pm:PatientContextState/pm:CoreData/pm:Weight/pm:MeasurementUnit/@SymbolicCodeName.
 |Note that MDC is the default coding system if no coding system is specified.
 
 |OBX-6/CWE-3
 |Name of Coding System
 |*"MDC"* if no other coding system is specified.
 
-In all other cases, the field is set to pm:PatientContextState
-/pm:CoreData
-/pm:Weight
-/pm:MeasurementUnit
-/@CodingSystem.
+In all other cases, the field is set to pm:PatientContextState/pm:CoreData/pm:Weight/pm:MeasurementUnit/@CodingSystem.
 |Note that MDC is the default coding system if no coding system is specified.
 
 |OBX-11
@@ -246,8 +215,7 @@ When there are further updates of the weight value after the association of the 
 
 |OBX-14
 |Date/Time of the Observation
-|pm:PatientContextState
-/@BindingStartTime
+|pm:PatientContextState/@BindingStartTime
 |Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
 
 |===
@@ -255,7 +223,7 @@ When there are further updates of the weight value after the association of the 
 include::tf2-ch-b-gateway-pv1-mapping.adoc[]
 
 ===== OBR - Observation Request Segment
-The the HL7 Obervation Request (OBR) segment requires a mapping from the SDC containment tree and metric data to the OBR segment fields.
+The HL7 Observation Request (OBR) segment requires a mapping from the SDC containment tree and metric data to the OBR segment fields.
 
 ====== OBR-2 Placer Order Number
 
@@ -346,20 +314,14 @@ Only metrics that fulfil certain criteria are exported by the <<actor_somds_dec_
 
 |OBR-7/DTM-1
 |Date/Time
-|pm:EnumStringMetricState
-/pm:MetricValue
-/@DeterminationTime
+|pm:EnumStringMetricState/pm:MetricValue/@DeterminationTime
 
-pm:NumericMetricState
-/pm:MetricValue
-/@DeterminationTime
+pm:NumericMetricState/pm:MetricValue/@DeterminationTime
 
-pm:StringMetricState
-/pm:MetricValue
-/@DeterminationTime
-|If *pm:AbstractMetricDescriptor /@MetricAvailability* is set to "*Cont*", the field is set to the *@DeterminationTime* of the continuously measured metrics to be exported in the same HL7 message with the same *@DeterminationTime*. Episodic metrics are exported in the same HL7 message, when their *@DeterminationTime* is equal or older than the *@DeterminationTime* of the continuously measured metrics.
+pm:StringMetricState/pm:MetricValue/@DeterminationTime
+|If *pm:AbstractMetricDescriptor/@MetricAvailability* is set to "*Cont*", the field is set to the *@DeterminationTime* of the continuously measured metrics to be exported in the same HL7 message with the same *@DeterminationTime*. Episodic metrics are exported in the same HL7 message, when their *@DeterminationTime* is equal or older than the *@DeterminationTime* of the continuously measured metrics.
 
-If *pm:AbstractMetricDescriptor /@MetricAvailability* is set to "*Intr*" and if there are no continuously measured metrics to be exported, the field is set to the oldest *@DeterminationTime* of the episodic metrics to be exported in the same HL7 message.
+If *pm:AbstractMetricDescriptor/@MetricAvailability* is set to "*Intr*" and if there are no continuously measured metrics to be exported, the field is set to the oldest *@DeterminationTime* of the episodic metrics to be exported in the same HL7 message.
 
 Note that the HL7 date and time format differs from the XML Schema date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
 
@@ -399,17 +361,14 @@ NOTE: The SDC operator context is only valid when the *pm:OperatorContextState/@
 
 |OBR-10/XCN-1
 |ID Number
-|pm:OperatorContextState
-/pm:Identification
-/@Extension
+|pm:OperatorContextState/pm:Identification/@Extension
 |The @Extension attribute contains the unique operator identifier.
 
 *Note that the field may contain a null value indicating that the identifier is missing.*
 
 |OBR-10/XCN-2
 |Family Name
-|pm:OperatorContextState
-/pm:OperatorDetails
+|pm:OperatorContextState/pm:OperatorDetails
 |HL7 data type *FN*
 
 |OBR-10/XCN-2.1
@@ -419,29 +378,22 @@ NOTE: The SDC operator context is only valid when the *pm:OperatorContextState/@
 
 |OBR-10/XCN-3
 |Given Name
-|pm:OperatorContextState
-/pm:OperatorDetails
-/pm:Givenname
+|pm:OperatorContextState/pm:OperatorDetails/pm:Givenname
 |
 
 |OBR-10/XCN-4
 |Second and Further Given Names or Initials
-|pm:OperatorContextState
-/pm:OperatorDetails
-/pm:Middlename
+|pm:OperatorContextState/pm:OperatorDetails/pm:Middlename
 |
 
 |OBR-10/XCN-6
 |Prefix (e.g. DR)
-|pm:OperatorContextState
-/pm:OperatorDetails
-/pm:Title
+|pm:OperatorContextState/pm:OperatorDetails/pm:Title
 |
 
 |OBR-10/XCN-9
 |Assigning Authority
-|pm:OperatorContextState
-/pm:Identification
+|pm:OperatorContextState/pm:Identification
 | HL7 data type *HD*
 
 |OBR-10/XCN-9.1
@@ -608,24 +560,21 @@ If a private *MDC* code is used for the coding of the SDC coded element value in
 
 |OBX-5/CWE-1
 |Identifier
-|pm:EnumStringMetricDescriptor
-/pm:AllowedValue
-/pm:Type
-/@Code
+|pm:EnumStringMetricDescriptor/pm:AllowedValue/pm:Type/@Code
 |
 
 |OBX-5/CWE-2
 |Text
 |If *@Code* is an MDC code, this field contains the RefId of the MDC code.
 
-In all other cases, the field is set to the pm:EnumStringMetricDescriptor /pm:AllowedValue /pm:Type /@SymbolicCodeName.
+In all other cases, the field is set to the pm:EnumStringMetricDescriptor/pm:AllowedValue/pm:Type/@SymbolicCodeName.
 | Note that MDC is the default coding system if no coding system is specified.
 
 |OBX-5/CWE-3
 |Name of Coding System
 |*"MDC"* if no other coding system is specified.
 
-In all other cases, the field is set to pm:EnumStringMetricDescriptor /pm:AllowedValue /pm:Type /@CodingSystem.
+In all other cases, the field is set to pm:EnumStringMetricDescriptor/pm:AllowedValue/pm:Type/@CodingSystem.
 
 |Note that MDC is the default coding system if no coding system is specified.
 
@@ -660,23 +609,21 @@ If a private *MDC* code is used for the coding of the SDC measurement unit of a 
 
 |OBX-6/CWE-1
 |Identifier
-|pm:NumericMetricDescriptor
-/pm:Unit
-/@Code
+|pm:NumericMetricDescriptor/pm:Unit/@Code
 |
 
 |OBX-6/CWE-2
 |Text
 |If *@Code* is an MDC code, this field contains the RefId of the MDC code.
 
-In all other cases, the field is set to the pm:NumericMetricDescriptor /pm:Unit /@SymbolicCodeName.
+In all other cases, the field is set to the pm:NumericMetricDescriptor/pm:Unit/@SymbolicCodeName.
 | Note that MDC is the default coding system if no coding system is specified.
 
 |OBX-6/CWE-3
 |Name of Coding System
 |*"MDC"* if no other coding system is specified.
 
-In all other cases, the field is set to pm:NumericMetricDescriptor /pm:Unit /@CodingSystem.
+In all other cases, the field is set to pm:NumericMetricDescriptor/pm:Unit/@CodingSystem.
 
 |Note that MDC is the default coding system if no coding system is specified.
 
@@ -770,17 +717,11 @@ NOTE: <<ref_tbl_dec_obx14_mapping>> defines the mapping of the SDC metric measur
 
 |OBR-14/DTM-1
 |Date/Time
-|pm:EnumStringMetricState
-/pm:MetricValue
-/@DeterminationTime
+|pm:EnumStringMetricState/pm:MetricValue/@DeterminationTime
 
-pm:NumericMetricState
-/pm:MetricValue
-/@DeterminationTime
+pm:NumericMetricState/pm:MetricValue/@DeterminationTime
 
-pm:StringMetricState
-/pm:MetricValue
-/@DeterminationTime
+pm:StringMetricState/pm:MetricValue/@DeterminationTime
 |Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
 
 |===
@@ -874,23 +815,21 @@ If a private *MDC* code is used for the coding of a body site, a <<actor_somds_d
 
 |OBX-20/CWE-1
 |Identifier
-|pm:AbstractMetricState
-/pm:BodySite
-/@Code
+|pm:AbstractMetricState/pm:BodySite/@Code
 |
 
 |OBX-20/CWE-2
 |Text
 |If *@Code* is an MDC code, this field contains the RefId of the MDC code.
 
-In all other cases, the field is set to the pm:AbstractMetricState /pm:BodySite /@SymbolicCodeName.
+In all other cases, the field is set to the pm:AbstractMetricState/pm:BodySite/@SymbolicCodeName.
 | Note that MDC is the default coding system if no coding system is specified.
 
 |OBX-20/CWE-3
 |Name of Coding System
 |*"MDC"* if no other coding system is specified.
 
-In all other cases, the field is set to pm:AbstractMetricState /pm:BodySite /@CodingSystem.
+In all other cases, the field is set to pm:AbstractMetricState/pm:BodySite/@CodingSystem.
 
 |Note that MDC is the default coding system if no coding system is specified.
 

@@ -24,23 +24,21 @@ If a private *MDC* code is used for the coding of the SDC containment tree eleme
 
 |OBX-3/CWE-1
 |Identifier
-|pm:Mds
-/pm:Type
-/@Code
+|pm:Mds/pm:Type/@Code
 |
 
 |OBX-3/CWE-2
 |Text
 |If *@Code* is an MDC code, this field contains the RefId of the MDC code.
 
-In all other cases, the field is set to the pm:Mds /pm:Type /@SymbolicCodeName.
+In all other cases, the field is set to the pm:Mds/pm:Type/@SymbolicCodeName.
 | Note that MDC is the default coding system if no coding system is specified.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |*"MDC"* if no other coding system is specified.
 
-In all other cases, the field is set to pm:Mds /pm:Type /@CodingSystem.
+In all other cases, the field is set to pm:Mds/pm:Type/@CodingSystem.
 
 |Note that MDC is the default coding system if no coding system is specified.
 
@@ -53,23 +51,21 @@ In all other cases, the field is set to pm:Mds /pm:Type /@CodingSystem.
 
 |OBX-3/CWE-1
 |Identifier
-|pm:Vmd
-/pm:Type
-/@Code
+|pm:Vmd/pm:Type/@Code
 |
 
 |OBX-3/CWE-2
 |Text
 |If *@Code* is an MDC code, this field contains the RefId of the MDC code.
 
-In all other cases, the field is set to the pm:Vmd /pm:Type /@SymbolicCodeName.
+In all other cases, the field is set to the pm:Vmd/pm:Type/@SymbolicCodeName.
 | Note that MDC is the default coding system if no coding system is specified.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |*"MDC"* if no other coding system is specified.
 
-In all other cases, the field is set to pm:Vmd /pm:Type /@CodingSystem.
+In all other cases, the field is set to pm:Vmd/pm:Type/@CodingSystem.
 
 |Note that MDC is the default coding system if no coding system is specified.
 
@@ -82,23 +78,21 @@ In all other cases, the field is set to pm:Vmd /pm:Type /@CodingSystem.
 
 |OBX-3/CWE-1
 |Identifier
-|pm:Channel
-/pm:Type
-/@Code
+|pm:Channel/pm:Type/@Code
 |
 
 |OBX-3/CWE-2
 |Text
 |If *@Code* is an MDC code, this field contains the RefId of the MDC code.
 
-In all other cases, the field is set to the pm:Channel /pm:Type /@SymbolicCodeName.
+In all other cases, the field is set to the pm:Channel/pm:Type/@SymbolicCodeName.
 | Note that MDC is the default coding system if no coding system is specified.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |*"MDC"* if no other coding system is specified.
 
-In all other cases, the field is set to pm:Channel /pm:Type /@CodingSystem.
+In all other cases, the field is set to pm:Channel/pm:Type/@CodingSystem.
 
 |Note that MDC is the default coding system if no coding system is specified.
 
@@ -111,31 +105,25 @@ In all other cases, the field is set to pm:Channel /pm:Type /@CodingSystem.
 
 |OBX-3/CWE-1
 |Identifier
-|pm:NumericMetricDescriptor
-/pm:Type
-/@Code
+|pm:NumericMetricDescriptor/pm:Type/@Code
 
-pm:StringMetricDescriptor
-/pm:Type
-/@Code
+pm:StringMetricDescriptor/pm:Type/@Code
 
-pm:EnumStringMetricDescriptor
-/pm:Type
-/@Code
+pm:EnumStringMetricDescriptor/pm:Type/@Code
 |
 
 |OBX-3/CWE-2
 |Text
 |If *@Code* is an MDC code, this field contains the RefId of the MDC code.
 
-In all other cases, the field is be set to the pm:xxxMetricDescriptor /pm:Type /@SymbolicCodeName.
+In all other cases, the field is be set to the pm:xxxMetricDescriptor/pm:Type/@SymbolicCodeName.
 |Note that MDC is the default coding system if no coding system is specified.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |*"MDC"* if no other coding system is specified.
 
-In all other cases, the field is set to pm:xxxMetricDescriptor /pm:Type /@CodingSystem.
+In all other cases, the field is set to pm:xxxMetricDescriptor/pm:Type/@CodingSystem.
 
 |Note that MDC is the default coding system if no coding system is specified.
 

@@ -267,9 +267,7 @@ If a private *<<acronym_mdc>>* code is used for the coding of the SDC device-rel
 
 |OBX-3
 |Observation Identifier
-|pm:Mds or pm:Vmd or pm:Channel
-/pm:Type
-/@Code
+|pm:Mds or pm:Vmd or pm:Channel/pm:Type/@Code
 |Please refer to <<ref_acm_obs_id_mapping>> for further information.
 
 |OBX-4
@@ -367,7 +365,7 @@ NOTE: The HL7 date & time format differs from the xsd date/time formats and requ
 |IHE ACM Alert Event Phase |SDC Alert Condition/Signal State
 
 |start
-|*pm:AlertConditionState /pm:DeterminationTime* which shall represent the alert onset date/time.
+|*pm:AlertConditionState/pm:DeterminationTime* which shall represent the alert onset date/time.
 
 |continue
 |The gateway may resend the unchanged alert event information, for example, on a regular basis in order to mitigate the risk of an alert message loss, or after a reconnection to the Alert Manager or Alert Consumer in order to synchronize the current alert status. In this case, the date/time is determined by the gateway for this message.
@@ -375,29 +373,29 @@ NOTE: The HL7 date & time format differs from the xsd date/time formats and requ
 
 
 |end
-|*pm:AlertConditionState /pm:DeterminationTime* which shall represent the end of the alert condition without latching.
+|*pm:AlertConditionState/pm:DeterminationTime* which shall represent the end of the alert condition without latching.
 
 |update
-|*pm:AlertConditionState /pm:DeterminationTime* or *pm:AlertSignalState /pm:DeterminationTime* for any updates/changes to be reported but does not match any other Alert Event Phase mapping criteria.
+|*pm:AlertConditionState/pm:DeterminationTime* or *pm:AlertSignalState/pm:DeterminationTime* for any updates/changes to be reported but does not match any other Alert Event Phase mapping criteria.
 
-Note that the *pm:AlertConditionState /pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
+Note that the *pm:AlertConditionState/pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
 
 |escalate
-|*pm:AlertConditionState /pm:DeterminationTime* which shall represent the change of the alert priority.
+|*pm:AlertConditionState/pm:DeterminationTime* which shall represent the change of the alert priority.
 
 Note that when there are more changes than just the Alert Priority, the Alert Event Phase shall be reported as *"update"*.
 
-Note that the *pm:AlertConditionState /pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
+Note that the *pm:AlertConditionState/pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
 
 |deescalate
-|*pm:AlertConditionState /pm:DeterminationTime* which shall represent the change of the alert priority.
+|*pm:AlertConditionState/pm:DeterminationTime* which shall represent the change of the alert priority.
 
 Note that when there are more changes than just the Alert Priority, the Alert Event Phase shall be reported as *"update"*.
 
-Note that the *pm:AlertConditionState /pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
+Note that the *pm:AlertConditionState/pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
 
 |reset
-|*pm:AlertSignalState /pm:DeterminationTime* which shall represent the end of a latched alert event state.
+|*pm:AlertSignalState/pm:DeterminationTime* which shall represent the end of a latched alert event state.
 
 |===
 
@@ -429,23 +427,21 @@ If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded elem
 
 |OBX-3/CWE-1
 |Identifier
-|pm:AlertConditionDescriptor
-/pm:Type
-/@Code
+|pm:AlertConditionDescriptor/pm:Type/@Code
 |
 
 |OBX-3/CWE-2
 |Text
 |If *@Code* is an <<acronym_mdc>> code, this field shall contain the RefId of the <<acronym_mdc>> code.
 
-In all other cases, the field shall be set to the pm:AlertConditionDescriptor /pm:Type /@SymbolicCodeName.
+In all other cases, the field shall be set to the pm:AlertConditionDescriptor/pm:Type/@SymbolicCodeName.
 | Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |*"<<acronym_mdc>>"* if no other coding system is specified.
 
-In all other cases, the field shall be set to pm:AlertConditionDescriptor /pm:Type /@CodingSystem.
+In all other cases, the field shall be set to pm:AlertConditionDescriptor/pm:Type/@CodingSystem.
 
 |Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
@@ -457,9 +453,7 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |OBX-5
 |Observation Value
-|pm:AlertConditionDescriptor
-/pm:Type
-/pm:ConceptDescription
+|pm:AlertConditionDescriptor/pm:Type/pm:ConceptDescription
 |
 
 |OBX-11
@@ -539,31 +533,27 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |OBX-5/CWE-1
 |Identifier
-|pm:AlertConditionDescriptor
-/pm:Type
-/@Code
+|pm:AlertConditionDescriptor/pm:Type/@Code
 |
 
 |OBX-5/CWE-2
 |Text
 |If *@Code* is an <<acronym_mdc>> code, this field shall contain the RefId of the <<acronym_mdc>> code.
 
-In all other cases, the field shall be set to the pm:AlertConditionDescriptor /pm:Type /@SymbolicCodeName.
+In all other cases, the field shall be set to the pm:AlertConditionDescriptor/pm:Type/@SymbolicCodeName.
 | Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-5/CWE-3
 |Name of Coding System
 |*"<<acronym_mdc>>"* if no other coding system is specified.
 
-In all other cases, the field shall be set to pm:AlertConditionDescriptor /pm:Type /@CodingSystem.
+In all other cases, the field shall be set to pm:AlertConditionDescriptor/pm:Type/@CodingSystem.
 
 |Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-5/CWE-9
 |Original Text
-|pm:AlertConditionDescriptor
-/pm:Type
-/pm:ConceptDescription
+|pm:AlertConditionDescriptor/pm:Type/pm:ConceptDescription
 |
 
 |OBX-14
@@ -671,7 +661,7 @@ If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded elem
 |OBX-3/CWE-2
 |Text
 |
-| Set to <<acronym_mdc>> RefId *"MDC_ATTR_ALERT_SOURCE"*.
+|Set to <<acronym_mdc>> RefId *"MDC_ATTR_ALERT_SOURCE"*.
 
 |OBX-3/CWE-3
 |Name of Coding System
@@ -691,23 +681,21 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |OBX-5/CWE-1
 |Identifier
-|pm:Mds or pm:Vmd or pm:Channel or pm:Metric
-/pm:Type
-/@Code
+|pm:Mds or pm:Vmd or pm:Channel or pm:Metric/pm:Type/@Code
 |
 
 |OBX-5/CWE-2
 |Text
 |If *@Code* is an <<acronym_mdc>> code, this field shall contain the RefId of the <<acronym_mdc>> code.
 
-In all other cases, the field shall be set to the pm:Mds or pm:Vmd or pm:Channel or pm:Metric /pm:Type /@SymbolicCodeName.
+In all other cases, the field shall be set to the pm:Mds or pm:Vmd or pm:Channel or pm:Metric/pm:Type/@SymbolicCodeName.
 | Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-5/CWE-3
 |Name of Coding System
 |*"<<acronym_mdc>>"* if no other coding system is specified.
 
-In all other cases, the field shall be set to pm:Mds or pm:Vmd or pm:Channel or pm:Metric /pm:Type /@CodingSystem.
+In all other cases, the field shall be set to pm:Mds or pm:Vmd or pm:Channel or pm:Metric/pm:Type/@CodingSystem.
 
 |Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
@@ -1017,12 +1005,10 @@ only the *pm:AlertSignalState* element with the *pm:AlertSignalDescriptor/@Manif
 only the *pm:AlertSignalState* element with the *pm:AlertSignalDescriptor/@Manifestation* set to *"Aud"* has its  *@ActivationState* set to *"Off"* OR *@ActivationState* set to *"On"* and *@Presence* set to *"Off"* or *"Ack"*
 
 |alarm-paused
-|*pm:AlertConditionState/@Presence* set to  *"true"* AND
-all *pm:AlertSignalState* elements have their *@ActivationState* set to *"Psd"*
+|*pm:AlertConditionState/@Presence* set to  *"true"* AND all *pm:AlertSignalState* elements have their *@ActivationState* set to *"Psd"*
 
 |alarm-off
-|*pm:AlertConditionState/@Presence* set to  *"true"* AND
-all *pm:AlertSignalState* elements have their *@ActivationState* set to *"Off"* OR have their *@ActivationState* set to *"On"* and *@Presence* set to *"Off"*
+|*pm:AlertConditionState/@Presence* set to  *"true"* AND all *pm:AlertSignalState* elements have their *@ActivationState* set to *"Off"* OR have their *@ActivationState* set to *"On"* and *@Presence* set to *"Off"*
 
 |alert-acknowledged
 |At least one of the *pm:AlertSignalState* elements has its *@Presence* set to *"Ack"*
@@ -1096,14 +1082,9 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |OBX-5
 |Observation Value
-|if *pm:AlertConditionState
-/@ActualPriority* is available, use
-pm:AlertConditionState
-/@ActualPriority
+|if *pm:AlertConditionState/@ActualPriority* is available, use pm:AlertConditionState/@ActualPriority
 
-Otherwise, use
-pm:AlertConditionDescriptor
-/@Priority
+Otherwise, use pm:AlertConditionDescriptor/@Priority
 |Note that the IHE ACM value set for the Alert Priorities differs from the SDC *pm:AlertConditionPriority* value set and requires a mapping accordingly. Please refer to table <<ref_tbl_alert_priorities_mapping>>.
 
 |OBX-11
@@ -1197,8 +1178,7 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |OBX-5
 |Observation Value
-|pm:AlertConditionDescriptor
-/@Kind
+|pm:AlertConditionDescriptor/@Kind
 |Note that the IHE ACM value set for the Alert Types differs from the SDC *pm:AlertConditionKind* value set and requires a mapping accordingly. Please refer to table <<ref_tbl_alert_types_mapping>>.
 
 |OBX-11

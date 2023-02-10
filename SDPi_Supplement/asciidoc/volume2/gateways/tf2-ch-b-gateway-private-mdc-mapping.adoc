@@ -17,9 +17,8 @@ The following example uses the SDC *pm:Type* to demonstrate the mapping of priva
 
 |CWE-1
 |Identifier
-|pm:Type
-/@Code
-| This attribute contains the private *MDC* code.
+|pm:Type/@Code
+|This attribute contains the private *MDC* code.
 
 |CWE-2
 |Text
@@ -33,29 +32,22 @@ The following example uses the SDC *pm:Type* to demonstrate the mapping of priva
 
 |CWE-4
 |Alternate Identifier
-|pm:Type
-/pm:Translation
-/@Code
+|pm:Type/pm:Translation/@Code
 |This code shall be identical with the *pm:Type/@Code* attribute.
 
 |CWE-6
 |Name of Alternate Coding System
-|pm:Type
-/pm:Translation
-/@CodingSystem
+|pm:Type/pm:Translation/@CodingSystem
 |This attribute specifies the vendor-specific or local coding system that has defined the private *MDC* code.
 
 |CWE-7
 |Coding System Version ID
-|pm:Type
-/@CodingSystemVersion
+|pm:Type/@CodingSystemVersion
 |
 
 |CWE-8
 |Alternate Coding System Version ID
-|pm:Type
-/pm:Translation
-/@CodingSystemVersion
+|pm:Type/pm:Translation/@CodingSystemVersion
 |
 
 |===
