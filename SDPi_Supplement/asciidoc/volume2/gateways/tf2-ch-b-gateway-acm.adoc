@@ -234,7 +234,7 @@ include::tf2-ch-b-gateway-obx18-mapping.adoc[]
 .R8057
 [sdpi_requirement#r8057,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall export device-related OBX segments which define the hierarchical relationship of the alert event in the device's containment tree.
+A <<actor_somds_acm_gateway>> shall export device-related OBX segments, which define the hierarchical relationship of the alert event in the device's containment tree.
 
 .Notes
 [%collapsible]
@@ -306,17 +306,7 @@ include::tf2-ch-b-gateway-obx3-mapping.adoc[]
 The Observation Identifier Mapping on metric level is only used for the Source Identification OBX segment (please refer to <<ref_acm_obx_source_id_mapping>> for further information).
 ====
 
-.R8059
-[sdpi_requirement#r8059,sdpi_req_level=shall]
-****
-For a physiological alert event, a <<actor_somds_acm_gateway>> shall set the OBX-3 field in the <<ref_acm_obx_source_id_mapping>> to the source identifier.
-****
 
-.R8060
-[sdpi_requirement#r8060,sdpi_req_level=shall]
-****
-For a technical or advisory alert event, a <<actor_somds_acm_gateway>> shall set the OBX-5 field in the <<ref_acm_obx_source_id_mapping>> to the source identifier.
-****
 
 .OBX Device-related Elements Mapping
 ====
@@ -332,7 +322,7 @@ OBX|3||69855\^MDC_DEV_METER_PRESS_BLD_CHAN^MDC|1.1.1.0|||||||X
 .R8061
 [sdpi_requirement#r8061,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall export a Event Identification OBX segment which identifies the alert event.
+A <<actor_somds_acm_gateway>> shall export a Event Identification OBX segment, which identifies the alert event.
 
 .Notes
 [%collapsible]
@@ -594,7 +584,7 @@ OBX|4|CWE|196616\^MDC_EVT_ALARM^MDC|1.1.1.1.1|196882\^MDC_EVT_LEADS_OFF^MDC^^^^^
 .R8065
 [sdpi_requirement#r8065,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall export a Source Identification OBX segment which identifies the source that led to the alert event.
+A <<actor_somds_acm_gateway>> shall export a Source Identification OBX segment, which identifies the source that led to the alert event.
 
 .Notes
 [%collapsible]
@@ -605,6 +595,18 @@ NOTE: For physiological alert conditions, the alert event usually relates to a m
 
 NOTE: For technical alert conditions, the alert event usually relates to a device-related element such as the MDS, a VMD, a CHANNEL, or METRIC. The *pm:AlertConditionDescriptor/pm:Source* element usually contains the handle to the device-related element. If *pm:Source* is empty, the alert condition relates to the device-related element which is the parent of the alert system to which the alert condition is assigned to.
 ====
+****
+
+.R8059
+[sdpi_requirement#r8059,sdpi_req_level=shall]
+****
+For a physiological alert event, a <<actor_somds_acm_gateway>> shall set the OBX-3 field in the <<ref_acm_obx_source_id_mapping>> to the source identifier.
+****
+
+.R8060
+[sdpi_requirement#r8060,sdpi_req_level=shall]
+****
+For a technical or advisory alert event, a <<actor_somds_acm_gateway>> shall set the OBX-5 field in the <<ref_acm_obx_source_id_mapping>> to the source identifier.
 ****
 
 [sdpi_level=+1]
@@ -728,7 +730,7 @@ OBX|5|CWE|68480\^MDC_ATTR_ALERT_SOURCE^MDC|1.1.1.1.2|131328\^MDC_ECG_ELEC_POTL^M
 .R8070
 [sdpi_requirement#r8070,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall export an Event Phase OBX segment which identifies the alert event phase.
+A <<actor_somds_acm_gateway>> shall export an Event Phase OBX segment, which identifies the alert event phase.
 
 .Notes
 [%collapsible]
@@ -836,7 +838,7 @@ all the *pm:AlertSignalState* elements with *@ActivationState* set to *"On"* tra
 .R8071
 [sdpi_requirement#r8071,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall export an Alert State OBX segment which defines the current state of the alert event.
+A <<actor_somds_acm_gateway>> shall export an Alert State OBX segment, which defines the current state of the alert event.
 
 .Notes
 [%collapsible]
@@ -931,7 +933,7 @@ at least one of the *pm:AlertSignalState* elements with *@ActivationState* set t
 .R8073
 [sdpi_requirement#r8073,sdpi_req_level=shall]
 ****
-A <<actor_somds_acm_gateway>> shall export an Inactivation State OBX segment which defines the current inactivation state of the alert event.
+A <<actor_somds_acm_gateway>> shall export an Inactivation State OBX segment, which defines the current inactivation state of the alert event.
 
 .Notes
 [%collapsible]
