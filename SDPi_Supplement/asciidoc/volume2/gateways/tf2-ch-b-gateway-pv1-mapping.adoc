@@ -24,9 +24,9 @@ NOTE: The *HL7 table 0004 - Patient Class* defines a set of recommended codes to
 ====
 ****
 
-Usually, a PoC device is used for patients admitted to a care unit in the hospital, and therefore, the field shall be set to *"I"* (Inpatient). If the patient class is unknown, the field shall be set to *"U"* (Unknown).
+Usually, a PoC device is used for patients admitted to a care unit in the hospital, and therefore, the field is set to *"I"* (Inpatient). If the patient class is unknown, the field is set to *"U"* (Unknown).
 
-The SDC data model does not support the concept of a patient class. Therefore, the field shall either be set to *"U"* (Unknown) by default, or set to a configurable value by the gateway.
+The SDC data model does not support the concept of a patient class. Therefore, the field is either set to *"U"* (Unknown) by default, or set to a configurable value by the gateway.
 
 ====== PV1-3 Assigned Patient Location
 .R8113
