@@ -167,9 +167,9 @@ A <<actor_somds_acm_gateway>> shall set the OBR-29 field to the unique alert eve
 ====
 NOTE: Please refer to <<ref_tbl_acm_obr3_mapping>> for further information.
 
-NOTE: The field is left empty for the initial alert event announcement message which contains the unique alert event identifier in the OBR-7 field.
+NOTE: The field is left empty for the initial alert event announcement message which contains the unique alert event identifier in the OBR-3 field.
 
-NOTE: In all subsequent alert event messages, the OBR-29 field is set to the initial unique alert event identifier from the OBR-7 field.
+NOTE: In all subsequent alert event messages, the OBR-29 field is set to the initial unique alert event identifier from the OBR-3 field.
 
 NOTE: The table <<ref_tbl_acm_obr29_mapping>> defines the mapping of the Alert Event Identifier to the data fields of the HL7 data type *EIP* used in the OBR-29 field.
 ====
