@@ -2,7 +2,7 @@
 .R8014
 [sdpi_requirement#r8014,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-4 field to a flattened representation of the SDC element in the hierarchical containment tree.
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the OBX-4 field to a hierarchical representation of the SDC element in the hierarchical containment tree.
 
 .Notes
 [%collapsible]
