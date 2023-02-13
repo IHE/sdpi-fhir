@@ -690,7 +690,7 @@ In all other cases, the field is set to pm:NumericMetricDescriptor /pm:Unit /@Co
 A <<actor_somds_dec_gateway>> shall define the range of the alert limits on the metric level, if the *@Handle* of the metric is referenced by a *pm:LimitAlertConditionDescriptor* in the *pm:LimitAlertConditionDescriptor/pm:Source* list, by the format `<Lower Limit> - <Upper Limit>` where
 
 * `<Lower Limit>` is set to *pm:LimitAlertConditionDescriptor/pm:MaxLimits/@Lower* and
-* `<Upper Limit>` is set to *pm:LimitAlertConditionDescriptor/pm:MaxLimits/@Upper*
+* `<Upper Limit>` is set to *pm:LimitAlertConditionDescriptor/pm:MaxLimits/@Upper*.
 
 .Notes
 [%collapsible]
