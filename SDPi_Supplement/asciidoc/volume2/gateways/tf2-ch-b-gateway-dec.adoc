@@ -281,16 +281,24 @@ NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
 #TODO: service ids need to be finalized#
 
 ====== OBR-7 Observation Date/Time
+The OBR-7 field specifies the time point or start of time interval for all OBX segments within the scope of this OBR segment, that is, OBX segments that are part of the ORDER_OBSERVATION segment group, that do not specify an overriding time point in the OBX-14 field.
+
+The presence of an overriding time point in OBX-14 indicates an episodic measurement such as non-invasive blood pressure.
+
+The absence of an overriding time point in the OBX-14 field implies that this is an instance of a periodically sampled observation with a time stamp given by OBR-7 field.
+
 
 .R8006
 [sdpi_requirement#r8006,sdpi_req_level=shall]
 ****
 
-A <<actor_somds_dec_gateway>> shall set the OBR-7 field to the date and time of the continuously measured metrics to be exported with the same metric measurement timestamp.
+A <<actor_somds_dec_gateway>> shall set the OBR-7 field to the date and time of all continuously (periodically) measured metrics reported by a *msg:PeriodicMetricReport* to be exported within the same *msg:RetrievabilityInfo/@UpdatePeriod*.
 
 .Notes
 [%collapsible]
 ====
+NOTE: If, for example, the *@UpdatePeriod* is set to one second, a *msg:PeriodicMetricReport* is expected every second with new periodic metric states to be exported within this one second interval. The OBR-7 field is set to the start time of the interval. The individual periodic metric *@DeterminationTime* is basically ignored, but has to be within the time boundaries of the current export interval.
+
 NOTE: <<ref_tbl_dec_obr7_mapping>> defines the mapping of the SDC metric measurement timestamp to the data fields of the HL7 data type *DTM* used in the OBR-7 field.
 ====
 ****
@@ -299,11 +307,13 @@ NOTE: <<ref_tbl_dec_obr7_mapping>> defines the mapping of the SDC metric measure
 [sdpi_requirement#r8007,sdpi_req_level=shall]
 ****
 
-For episodic measurements and the absence of any continuously measured metrics for this export interval, a <<actor_somds_dec_gateway>> shall set the OBR-7 field to the oldest measurement timestamp of the episodic metrics to be exported in this interval.
+For episodic measurements and the absence of any continuously measured metrics for this export interval, a <<actor_somds_dec_gateway>> shall set the OBR-7 field to the oldest measurement timestamp of the episodic metrics to be exported in the current export interval.
 
 .Notes
 [%collapsible]
 ====
+NOTE: Episodic metric measurements are usually exported along with the periodic metric measurements in the same export intervals triggered by *msg:PeriodicMetricReport* events. However, if a device does not provide periodic metric measurements, or if the *@UpdatePeriod* is too long, episodic metric measurements are exported independently of the periodic metric measurements in separate HL7 data export messages.
+
 NOTE: <<ref_tbl_dec_obr7_mapping>> defines the mapping of the SDC metric measurement timestamp to the data fields of the HL7 data type *DTM* used in the OBR-7 field.
 ====
 ****
@@ -318,15 +328,14 @@ Only metrics that fulfil certain criteria are exported by the <<actor_somds_dec_
 
 |OBR-7/DTM-1
 |Date/Time
-|pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue
-/@DeterminationTime
+|pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime
 
-pm:NumericMetricState+++<wbr/>+++/pm:MetricValue
-/@DeterminationTime
+pm:NumericMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime
 
-pm:StringMetricState+++<wbr/>+++/pm:MetricValue
-/@DeterminationTime
-|If *pm:AbstractMetricDescriptor+++<wbr/>+++/@MetricAvailability* is set to "*Cont*", the field is set to the *@DeterminationTime* of the continuously measured metrics to be exported in the same HL7 message with the same *@DeterminationTime*. Episodic metrics are exported in the same HL7 message, when their *@DeterminationTime* is equal or older than the *@DeterminationTime* of the continuously measured metrics.
+pm:StringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime
+
+|If *pm:AbstractMetricDescriptor+++<wbr/>+++/@MetricAvailability* is set to "*Cont*", the field is set to start time of the *msg:PeriodicMetricReport* event. The *@DeterminationTime* of the continuously measured metrics to be exported in the same export interval has to be within the start time of the *msg:PeriodicMetricReport* event and the *msg:RetrievabilityInfo+++<wbr/>+++/@UpdatePeriod*. Episodic metrics are exported in the same HL7 message, when their *@DeterminationTime* is equal or newer than the start time defined in the OBX-7 field.
+
 
 If *pm:AbstractMetricDescriptor+++<wbr/>+++/@MetricAvailability* is set to "*Intr*" and if there are no continuously measured metrics to be exported, the field is set to the oldest *@DeterminationTime* of the episodic metrics to be exported in the same HL7 message.
 
