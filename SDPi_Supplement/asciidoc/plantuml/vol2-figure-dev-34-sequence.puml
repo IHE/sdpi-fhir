@@ -12,7 +12,7 @@ participant "$str_somds_provider" as provider
 ==SDPi [DEV-34] Announce Network Departure==
 |||
 group unsecured
-    provider -> consumer: Bye(Provider UID)
+    provider ->> consumer: Bye(Provider UID)
 end
 |||
 

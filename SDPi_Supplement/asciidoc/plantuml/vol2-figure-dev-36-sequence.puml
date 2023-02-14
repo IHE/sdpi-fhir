@@ -12,6 +12,6 @@ participant "$str_somds_provider" as provider
 == SDPi [DEV-36] Publish Medical Data  ==
 
 
-consumer <-- provider: Notification(EpisodicMetricReport)
-consumer <-- provider: Notification(WaveformStream)
+consumer <<- provider: Notification(EpisodicMetricReport)
+consumer <<- provider: Notification(WaveformStream)
 @enduml
