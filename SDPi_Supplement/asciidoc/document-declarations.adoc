@@ -13,6 +13,12 @@ NOTES:
 :var_label_use_case_acronym_aars: AARS
 :var_label_use_case_name_aars: Alerts to Alert Recording Systems
 
+[[acronym_aars,AARS]]
+[[label_use_case_name_aars,Alerts to Alert Recording Systems]]
+
+<<acronym_aars>>
+<<label_use_case_name_aars>>
+
 :var_label_use_case_acronym_acns: ACNS
 :var_label_use_case_name_acns: Alerts to Clinician Notification Systems
 

@@ -1,5 +1,5 @@
 [#vol1_clause_appendix_c_use_case_aars,sdpi_offset=7]
-=== Use Case Feature {var_use_case_id}: Alerts to Alert Recording Systems (AARS)
+=== Use Case Feature {var_use_case_id}: <<label_use_case_name_aars>> (<<acronym_aars>>)
 
 // NOTE:  See use case labels in document-declarations.adoc
 
@@ -8,7 +8,7 @@
 Mumbai General is in the process of installing an IT system which will capture alerts from their ICU devices (patient monitors, ventilators, infusion devices, etc.) for the purposes of occasional review by physicians and post-discharge analysis.  (Other related use cases could include EHR capture of alerts or alert analysis).
 
 ==== Benefits
-The ability to review alerts allows clinicians to track the condition of a patient over a longer time span.  For example to see whether a medication is reducing the occurence of specific events such as ventricular beats or tachycardiac events.
+The ability to review alerts allows clinicians to track the condition of a patient over a longer time span.  For example to see whether a medication is reducing the occurrence of specific events such as ventricular beats or tachycardia events.
 
 ==== Technical View
 
