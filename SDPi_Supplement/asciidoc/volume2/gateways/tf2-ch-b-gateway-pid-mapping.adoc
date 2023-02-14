@@ -5,12 +5,12 @@ The HL7 Patient Identification (PID) segment requires a mapping from the <<acron
 .R8102
 [sdpi_requirement#r8102,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-The SDC patient context information shall only be mapped to the corresponding fields in the HL7 PID segment when the requirements as defined in <<ref_ieee_11073_10700_2022>> are fulfilled.
+The SDC patient context information shall only be mapped to the corresponding fields in the HL7 PID segment when the requirements for a valid SDC patient context as defined in <<ref_ieee_11073_10700_2022>> are fulfilled.
 
 .Notes
 [%collapsible]
 ====
-NOTE: This affects, e.g. inferred patient ensemble context, associated patient context and others.
+NOTE: For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>.
 
 NOTE: If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2019>> on how to populate the fields of the PID segment in this case.
 ====
