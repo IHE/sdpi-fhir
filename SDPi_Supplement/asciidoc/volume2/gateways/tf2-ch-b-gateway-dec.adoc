@@ -367,7 +367,9 @@ pm:NumericMetricState
 pm:StringMetricState
 /pm:MetricValue
 /@DeterminationTime
-|If *pm:AbstractMetricDescriptor /@MetricAvailability* is set to "*Cont*", the field is set to start time of the *msg:PeriodicMetricReport* event. The *@DeterminationTime* of the continuously measured metrics to be exported in the same export interval has to be within the start time of the *msg:PeriodicMetricReport* event and the *msg:RetrievabilityInfo /@UpdatePeriod*. Episodic metrics are exported in the same HL7 message, when their *@DeterminationTime* is equal or newer than the start time defined in the OBX-7 field.
+|If *pm:AbstractMetricDescriptor /@MetricAvailability* is set to "*Cont*", the field is set to the start time of the *msg:PeriodicMetricReport* event. The *@DeterminationTime* of the *pm:AbstractMetricState* of continuously measured metrics to be exported in the same export interval has to be within the start time of the *msg:PeriodicMetricReport* event and the *msg:RetrievabilityInfo /@UpdatePeriod*.
+
+New *pm:AbstractMetricState* elements of episodically measured metrics are exported in the same HL7 message with the *@DeterminationTime* set in HL7 OBX-14 field overriding the time point in the OBR-7 field.
 
 If *pm:AbstractMetricDescriptor /@MetricAvailability* is set to "*Intr*" and if there are no continuously measured metrics to be exported, the field is set to the oldest *@DeterminationTime* of the episodic metrics to be exported in the same HL7 message.
 
