@@ -7,6 +7,9 @@
 
 Mumbai General is in the process of installing an IT system which will capture alerts from their ICU devices (patient monitors, ventilators, infusion devices, etc.) for the purposes of occasional review by physicians and post-discharge analysis.  (Other related use cases could include EHR capture of alerts or alert analysis).
 
+==== Benefits
+The ability to review alerts allows clinicians to track the condition of a patient over a longer time span.  For example to see whether a medication is reducing the occurence of specific events such as ventricular beats or tachycardiac events.
+
 ==== Technical View
 
 .Alerts to Alert Recording Systems (AARS) -- Technical View

@@ -110,7 +110,8 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
                     createSectionId(numbering, level).let {
                         currentSection = it
                         // trim leading blanks in case of an empty section id (i.e. appendix)
-                        "$it ${node.wrapped.title}".trim()
+                        // simple replacement of HTML tags
+                        "$it ${node.wrapped.title}".trim().replace("""<.+?>""".toRegex(), "");
 
                     }.also {
                         logger.info { "Attach section number: ${node.wrapped.caption ?: ""}$it" }

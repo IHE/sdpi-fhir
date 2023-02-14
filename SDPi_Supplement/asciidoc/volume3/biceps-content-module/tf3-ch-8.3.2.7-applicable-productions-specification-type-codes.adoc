@@ -16,7 +16,7 @@ NOTE: Other production specifications may be used for types that are not listed 
 ====
 ****
 
-.Production specification provisions by <<actor_somds_provider>>s
+.Production specification provisions by SOMDS Providers
 [#vol3_table_production_specifications,cols="2,3,1,1"]
 |===
 |RefId |Description| IEEE 11073-10101 <Partition>::<Code>| Context-free Code

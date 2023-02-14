@@ -14,7 +14,7 @@ NOTE: Other attributes may be used for types that are not listed in <<vol3_table
 ====
 ****
 
-.Attribute provisions by <<actor_somds_provider>>s in MDS descriptors
+.Attribute provisions by SOMDS Providers in MDS descriptors
 [#vol3_table_attributes,cols="2,3,1,1"]
 |===
 |RefId |Description| IEEE 11073-10101 <Partition>::<Code>| Context-free Code
@@ -31,7 +31,7 @@ Example values:
 - TMC Vent 42
 - PatMon03
 
-|8::7682
-|531970
+|1::2350
+|67886
 
 |===
