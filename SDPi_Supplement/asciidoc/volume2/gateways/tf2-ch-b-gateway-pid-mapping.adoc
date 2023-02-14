@@ -5,20 +5,28 @@ The HL7 Patient Identification (PID) segment requires a mapping from the <<acron
 .R8102
 [sdpi_requirement#r8102,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-The SDC patient context information shall only be mapped to the corresponding fields in the HL7 PID segment when the requirements (e. g. inferred patient ensemble context, associated patient context, etc.) as defined in the <<ref_ieee_11073_10700_2022>> are fulfilled.
+The SDC patient context information shall only be mapped to the corresponding fields in the HL7 PID segment when the requirements for a valid SDC patient context as defined in <<ref_ieee_11073_10700_2022>> are fulfilled.
 
-If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2019>> on how to populate the fields of the PID segment in this case.
+.Notes
+[%collapsible]
+====
+NOTE: For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>.
+
+NOTE: If the SDC patient context information is not intended to be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2019>> on how to populate the fields of the PID segment in this case.
+====
 ****
 
 ====== PID-3 Patient Identifier List
 .R8103
 [sdpi_requirement#r8103,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map the patient identifier to the PID-3 field which is a list of patient identifiers (e. g. medical record number, socal security number, visit number, account number, etc.).
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map the patient identifier to the PID-3 field.
 
 .Notes
 [%collapsible]
 ====
+NOTE: The PID-3 is a list of patient identifiers (e.g. medical record number, socal security number, visit number, account number, etc.)
+
 NOTE: <<ref_tbl_pid3_mapping>> defines the mapping of the <<acronym_mdib>> patient identification to the data fields of the HL7 data type *CX* used in the PID-3 field.
 
 NOTE: If the <<acronym_mdib>> patient identification element *pm:PatientContextState/pm:Identification* contains more than one patient identifier, each SDC patient identifier shall be mapped according to the <<ref_tbl_pid3_mapping>> table and added to the PID-3 patient identifier list.
@@ -385,7 +393,13 @@ NOTE: <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race in
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PID-31 field to an indicator whether the patient's identity is known.
 
-The field value is determined from the presence of a patient-inferred ensemble context (*pm:EnsembleContextDescriptor/pm:Type/@Code = MDC_IDT_ENSEMBLE_PATIENT_INFERRED*) with an associated context association state (*pm:EnsembleContextState/@ContextAssociation = Assoc*). In this case, the value is set to "N".
+.Notes
+[%collapsible]
+====
+NOTE: For a valid *pm:PatientContextState*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. In this case, the value is set to "N".
 
-In all other cases, the value is set to "Y".
+NOTE: In all other cases, the value is set to "Y".
+
+NOTE: A corresponding inferred patient ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> in order to determine a valid *pm:PatientContextState*.
+====
 ****

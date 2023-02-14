@@ -6,9 +6,15 @@ The HL7 Patient Visit (PV1) segment requires a mapping from the SDC patient and 
 .R8111
 [sdpi_requirement#r8111,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-The SDC patient and location context information shall only be mapped to the corresponding fields in the HL7 PV1 segment when the requirements (e. g. inferred patient and/or location ensemble context, associated patient and/or location context, etc.) as defined in the <<ref_ieee_11073_10700_2022>> are fulfilled.
+The SDC patient and location context information shall only be mapped to the corresponding fields in the HL7 PV1 segment when the requirements for a valid SDC patient and location context as defined in the <<ref_ieee_11073_10700_2022>> are fulfilled.
 
-If the SDC patient and/or location context information is not be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2019>> on how to populate the fields of the PV1 segment in this case.
+.Notes
+[%collapsible]
+====
+NOTE: For a valid *pm:PatientContextState* or *pm:LocationContextSate*, the *pm:AbstractContextState/@ContextAssociation* attribute is set to *"Assoc"* and the *pm:AbstractContextState/pm:Validator* is set to a valid validator. A corresponding inferred patient or location ensemble context is not required for the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>>.
+
+NOTE: If the SDC patient and/or location context information is not be used for the mapping, please refer to the <<ref_ihe_pcd_tf_2_2019>> on how to populate the fields of the PV1 segment in this case.
+====
 ****
 
 ====== PV1-2 Patient Class
@@ -24,9 +30,9 @@ NOTE: The *HL7 table 0004 - Patient Class* defines a set of recommended codes to
 ====
 ****
 
-Usually, a PoC device is used for patients admitted to a care unit in the hospital, and therefore, the field shall be set to *"I"* (Inpatient). If the patient class is unknown, the field shall be set to *"U"* (Unknown).
+Usually, a PoC device is used for patients admitted to a care unit in the hospital, and therefore, the field is set to *"I"* (Inpatient). If the patient class is unknown, the field is set to *"U"* (Unknown).
 
-The SDC data model does not support the concept of a patient class. Therefore, the field shall either be set to *"U"* (Unknown) by default, or set to a configurable value by the gateway.
+The SDC data model does not support the concept of a patient class. Therefore, the field is either set to *"U"* (Unknown) by default, or set to a configurable value by the gateway.
 
 ====== PV1-3 Assigned Patient Location
 .R8113
@@ -158,7 +164,7 @@ Valid *"Identifier Type Code"* values for a visit number are, for example, *"VN"
 ****
 A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall set the PV1-44 field to the patient's admission date/time.
 
-The SDC data model does not support the concept of an admission date/time. There are also different types of admissions; e. g. hospital admission, care unit admission, etc.
+The SDC data model does not support the concept of an admission date/time. There are also different types of admissions; e.g. hospital admission, care unit admission, etc.
 
 This said, it is up to the <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> to figure out the admission date/time to be set in the PV1-44 field. If the gateway is not able to determine the admission date/time, the field is left empty.
 ****
