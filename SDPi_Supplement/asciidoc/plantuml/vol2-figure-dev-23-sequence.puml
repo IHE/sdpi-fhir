@@ -12,7 +12,7 @@ participant "$str_somds_provider" as provider
 ==SDPi [DEV-23] Announce Network Presence==
 |||
 group unsecured
-    provider -> consumer: Hello(Provider UID, Discovery Scope)
+    provider ->> consumer: Hello(Provider UID, Discovery Scope)
 end
 |||
 

@@ -12,5 +12,5 @@ participant "$str_somds_provider" as provider
 == SDPi [DEV-28] Notify Change in System Context and Capabilities  ==
 
 
-consumer <-- provider: Notification(EpisodicContextReport)
+consumer <<- provider: Notification(EpisodicContextReport)
 @enduml

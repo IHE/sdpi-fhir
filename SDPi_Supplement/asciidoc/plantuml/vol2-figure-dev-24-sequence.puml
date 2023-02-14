@@ -13,9 +13,9 @@ participant "$str_somds_provider" as provider
 
 alt
     consumer ->> provider: Probe(Discovery Scope)
-    consumer <- provider: ProbeMatch(Provider UID, Transport Address)
+    consumer <<-- provider: ProbeMatch(Provider UID, Transport Address)
 else
     consumer ->> provider: Resolve(Provider UID)
-    consumer <- provider: ResolveMatch(Transport Address)
+    consumer <<-- provider: ResolveMatch(Transport Address)
 end
 @enduml
