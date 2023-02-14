@@ -43,26 +43,17 @@ NOTE: <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the <<acronym_mdi
 |OBX-18/EI-1
 |Entity Identifier
 |pm:Mds
-/pm:MetaData
-/pm:Udi
-/pm:DeviceIdentifier
+/pm:MetaData+++<wbr/>+++/pm:Udi+++<wbr/>+++/pm:DeviceIdentifier
 |
 
 |OBX-18/EI-2
 |Namespace ID
-|pm:Mds
-/pm:MetaData
-/pm:Udi
-/pm:Issuer
-/@Root
+|pm:Mds+++<wbr/>+++/pm:MetaData+++<wbr/>+++/pm:Udi+++<wbr/>+++/pm:Issuer+++<wbr/>+++/@Root
 |
 
 |OBX-18/EI-3
 |Universal ID
-|pm:Mds
-/pm:MetaData
-/pm:Udi
-/pm:DeviceIdentifier
+|pm:Mds+++<wbr/>+++/pm:MetaData+++<wbr/>+++/pm:Udi+++<wbr/>+++/pm:DeviceIdentifier
 |
 
 |OBX-18/EI-4
