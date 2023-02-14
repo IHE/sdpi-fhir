@@ -1,5 +1,5 @@
 [#vol1_clause_appendix_c_use_case_sicdmp,sdpi_offset=4]
-=== Use Case Feature {var_use_case_id}: Standalone ICU Dashboard Multiple Patient (SICDmp)
+=== Use Case Feature {var_use_case_id}: <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
 
 // NOTE:  See use case labels in document-declarations.adoc
 
@@ -14,7 +14,7 @@ The concept of a 'dashboard display' supports the display of data in various loc
 
 ==== Technical View
 
-.Standalone ICU Dashboard MP (SICDmp) -- Technical View
+.<<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>) -- Technical View
 
 image::../images/vol1-diagram-use-case-sicdmp-tech-view.svg[]
 
@@ -31,7 +31,7 @@ image::../images/vol1-diagram-use-case-sicdmp-tech-view.svg[]
 [#vol1_clause_appendix_c_use_case_sicdmp_scenarios]
 ==== Scenarios
 
-===== Scenario: SICDmp {var_use_case_id}.1 - ICU Devices are Accessible to the Dashboard
+===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.1 - ICU Devices are Accessible to the Dashboard
 
 *Given* Dashboard has detected at least one assigned accessible ICU device
 
@@ -39,13 +39,13 @@ image::../images/vol1-diagram-use-case-sicdmp-tech-view.svg[]
 
 *Then* the Dashboard will display parameter, waveform, setting, alarm, imaging, etc. information from those devices (based on configuration)
 
-===== Scenario: SICDmp {var_use_case_id}.2 - ICU Devices are Inccessible to the Dashboard
+===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.2 - ICU Devices are Inccessible to the Dashboard
 
 *Given* Dashboard cannot detect any assigned accessible ICU devices
 
 *Then* the Dashboard will display an error message
 
-===== Scenario: SICDmp {var_use_case_id}.3 - One or more ICU Devices are Inccessible to the Dashboard
+===== Scenario: <<acronym_sicdmp>> {var_use_case_id}.3 - One or more ICU Devices are Inccessible to the Dashboard
 
 *Given* Dashboard cannot detect any previously assigned accessible ICU devices
 
