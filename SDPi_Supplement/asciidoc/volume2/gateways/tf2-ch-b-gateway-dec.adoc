@@ -694,30 +694,13 @@ In all other cases, the field is set to pm:NumericMetricDescriptor /pm:Unit /@Co
 
 ====== OBX-7 Reference Range
 
-.R8025
-[sdpi_requirement#r8025,sdpi_req_level=shall]
-****
-A <<actor_somds_dec_gateway>> shall define the measurement range of the numeric metric measurement channel by the format `<Lower Limit> - <Upper Limit>` where
-
-* `<Lower Limit>` is set to *pm:NumericMetricDescriptor/pm:TechnicalRange/@Lower* and
-* `<Upper Limit>` is set to *pm:NumericMetricDescriptor/pm:TechnicalRange/@Upper*.
-
-.Notes
-[%collapsible]
-====
-NOTE: Note that this refers to the numeric metric measurement channel, not the metric!
-
-NOTE: Note that the decimal number needs to be formatted according to the HL7 numeric value formatting rules.
-====
-****
-
 .R8026
 [sdpi_requirement#r8026,sdpi_req_level=shall]
 ****
 A <<actor_somds_dec_gateway>> shall define the range of the alert limits on the metric level, if the *@Handle* of the metric is referenced by a *pm:LimitAlertConditionDescriptor* in the *pm:LimitAlertConditionDescriptor/pm:Source* list, by the format `<Lower Limit> - <Upper Limit>` where
 
 * `<Lower Limit>` is set to *pm:LimitAlertConditionDescriptor/pm:MaxLimits/@Lower* and
-* `<Upper Limit>` is set to *pm:LimitAlertConditionDescriptor/pm:MaxLimits/@Upper*
+* `<Upper Limit>` is set to *pm:LimitAlertConditionDescriptor/pm:MaxLimits/@Upper*.
 
 .Notes
 [%collapsible]
@@ -726,6 +709,17 @@ NOTE: Note that the decimal number needs to be formatted according to the HL7 nu
 ====
 ****
 
+.R8025
+[sdpi_requirement#r8025,sdpi_req_level=shall]
+****
+A <<actor_somds_dec_gateway>> shall not set this field to the device measurement range capability for device related segments.
+
+.Notes
+[%collapsible]
+====
+NOTE: As stated in <<ref_ihe_pcd_tf_2_2019>> the reference range can only be set for device related segments (e.g. Channel). Within SDC the device measurement range refers to each metric and cannot be populated on higher levels in the containment tree.
+====
+****
 
 ====== OBX-8 Abnormal Flags
 
