@@ -15,8 +15,6 @@
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Draft in Preparation for Public Comment
 
-include::document-declarations.adoc[]
-
 {empty} +
 
 image::ihe-logo.svg[pdfwidth=4in,align=center]
@@ -58,6 +56,10 @@ image::ihe-logo.svg[pdfwidth=4in,align=center]
 See https://profiles.ihe.net/DEV/[*HERE*] for Trial Implementation and Final Text versions and https://profiles.ihe.net/DEV/#1.2[*HERE*] for Public Comment versions.
 
 {empty} +
+
+// Forward declarations of common labels & acronyms & variables
+include::document-declarations.adoc[]
+
 
 [#supplement_clause_foreword,sdpi_offset=clear]
 = Foreword
