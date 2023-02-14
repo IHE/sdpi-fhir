@@ -88,7 +88,7 @@ Unique Alert Event Identifier:
 .R8053
 [sdpi_requirement#r8053,sdpi_req_level=shall]
 ****
-For the *subsequent alert event messages for the same alert event*, a <<actor_somds_acm_gateway>> shall set the OBR-3/EI-1 field to the unique identifier for the alert event message that relates to the same alert event as announced in the initial alert event message.
+For the *subsequent alert event messages for the same alert event*, a <<actor_somds_acm_gateway>> shall set the OBR-3/EI-1 field to the unique identifier of the alert event message that relates to the same alert event as announced in the initial alert event message.
 
 .Notes
 [%collapsible]
