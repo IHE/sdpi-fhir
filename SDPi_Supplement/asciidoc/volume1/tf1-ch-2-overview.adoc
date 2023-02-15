@@ -123,7 +123,9 @@ To that end, this profile implements the safety and security requirements of the
 
 The profile supports core medical alerting functionality needed by all participating systems; whereas, profile options are provided for those additional capabilities that may be added (e.g., alert delegation).
 
+////
 #TODO:  Add "alert delegation" to the Glossary and reference here#
+////
 
 [sdpi_offset=13]
 ==== Service-oriented Device Point-of-care Interoperability - External Control (SPDi-xC) Profile
@@ -150,7 +152,9 @@ Given the significant risks associated with allowing device-external control fun
 | Add the following dependencies below to the IHE DEV TF Profile Dependencies table.
 |===
 
+////
 #TODO:  SHOULD ATNA BE ADDED TO THIS TABLE FOR SOMDS_PARTICIPANT?#
+////
 
 [#vol1_table_devices_integration_profile_dependencies]
 .Devices Integration Profile Dependencies
@@ -180,4 +184,6 @@ Given the significant risks associated with allowing device-external control fun
 
 |===
 
+////
 #TODO:  DO WE NEED TO ALSO MENTION DOC IN AN SDPI 1.X NOTE?  WHAT ABOUT DEPENDENCY ON THE IHE DEV TF-2 APPENDIX A V2 GENERAL PROVISIONS?#
+////

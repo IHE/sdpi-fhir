@@ -120,11 +120,14 @@ Note:  When the <<acronym_pkp>> standards are integrated into this specifiction,
 Given the forgoing discussion in section <<vol1_clause_ses_considerations_requirements>>, a standardized template is defined for addressing <<acronym_ses>> requirements as appropriate, including within the scope of profiles, actors, transactions, and content modules.
 The content in the following sections should be included and then specialized as appropriate for the associated technical framework element.
 
+////
 #TODO:  Should we and where should we add references to the IHE DEV MEM security white papers + and the ITI security cookbook etc.?#
 
 #TODO:  Should "mixed safety class" discussions / issue be mentioned in the template or in this section?  Note:  it is mentioned in the TF-3 BICEPS section.#
 
 #TODO:  Should the following be provided in a special AsciiDoc text box or just left as is?#
+
+////
 
 [#vol1_clause_appendix_a_ses_considerations_and_requirements]
 === Safety, Effectiveness, Security Considerations and Requirements
@@ -147,7 +150,8 @@ NOTE: This section includes guidance and requirements that are focused on unique
 No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
 
 ==== Security Requirements & Considerations
-NOTE: This section includes guidance and requirements that are focused on unique *_Security_* requirements associated with associated technical framework element.  Note: in the context of risk management key properties, security is a state where information and systems are protected from unauthorized activities to a degree that the related risks to confidentiality, intgrity, and avaiability are maintained at an acceptable level throughout the lifecycle (see https://81001.org/concept/security[81001.org/security])
+NOTE: This section includes guidance and requirements that are focused on unique *_Security_* requirements associated with associated technical framework element.
+Note: in the context of risk management key properties, security is a state where information and systems are protected from unauthorized activities to a degree that the related risks to confidentiality, intgrity, and avaiability are maintained at an acceptable level throughout the lifecycle (see https://81001.org/concept/security[81001.org/security])
 
 No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile, and those specified in the _<<acronym_ses>> General Considerations_ section above.
 
