@@ -40,17 +40,14 @@ NOTE: If the <<acronym_mdib>> patient identification element *pm:PatientContextS
 
 |PID-3/CX-1
 |ID Number
-|pm:PatientContextState
-/pm:Identification
-/@Extension
+|pm:PatientContextState+++<wbr/>+++/pm:Identification+++<wbr/>+++/@Extension
 |The @Extension attribute contains the unique patient identifer.
 
 *Note that the field may contain a null value indicating that the identifier is missing.*
 
 |PID-3/CX-4
 |Assigning Authority
-|pm:PatientContextState
-/pm:Identification
+|pm:PatientContextState+++<wbr/>+++/pm:Identification
 | HL7 data type *HD*
 
 |PID-3/CX-4.1
@@ -62,10 +59,7 @@ NOTE: If the <<acronym_mdib>> patient identification element *pm:PatientContextS
 
 |PID-3/CX-5
 |Identifier Type Code
-|pm:PatientContextState
-/pm:Identification
-/pm:Type
-/@Code
+|pm:PatientContextState+++<wbr/>+++/pm:Identification+++<wbr/>+++/pm:Type+++<wbr/>+++/@Code
 |The type of the patient identifier set in the @Code attribute is set to a value from HL7 V2 table 0203. The @CodingSystem is set to `urn:oid:2.16.840.1.113883.18.108`.
 
 |===
@@ -114,8 +108,7 @@ NOTE: <<ref_tbl_pid5_mapping>> defines the mapping of the SDC patient name infor
 
 |PID-5/XPN-1
 |Family Name
-|pm:PatientContextState
-/pm:CoreData
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData
 |HL7 data type *FN*
 
 |PID-5/XPN-1.1
@@ -125,29 +118,22 @@ NOTE: <<ref_tbl_pid5_mapping>> defines the mapping of the SDC patient name infor
 
 |PID-5/XPN-2
 |Given Name
-|pm:PatientContextState
-/pm:CoreData
-/pm:Givenname
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Givenname
 |
 
 |PID-5/XPN-3
 |Second and Further Given Names or Initials
-|pm:PatientContextState
-/pm:CoreData
-/pm:Middlename
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Middlename
 |
 
 |PID-5/XPN-5
 |Prefix (e.g. DR)
-|pm:PatientContextState
-/pm:CoreData
-/pm:Title
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Title
 |
 
 |PID-5/XPN-7
 |Name Type Code
-|pm:PatientContextState
-/pm:CoreData
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData
 |This field shall be set to "L" when a patient name is available, or "U" when the patient name is not set.
 
 Please refer also to the corresponding section in the <<ref_ihe_pcd_tf_2_2019>>.
@@ -174,8 +160,7 @@ NOTE: <<ref_tbl_pid6_mapping>> defines the mapping of the SDC patient name infor
 
 |PID-6/XPN-1
 |Family Name
-|pm:PatientContextState
-/pm:CoreData
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData
 |HL7 data type *FN*
 
 |PID-6/XPN-1.1
@@ -205,9 +190,7 @@ NOTE: <<ref_tbl_pid7_mapping>> defines the mapping of the SDC patient's date of 
 
 |PID-6/DTM-1
 |Date/Time
-|pm:PatientContextState
-/pm:CoreData
-/pm:DateOfBirth
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:DateOfBirth
 |Note that the HL7 date & time format differs from the xsd date/time formats and requires a mapping accordingly (see also <<ref_expl_dt_mapping>>).
 
 |===
@@ -272,9 +255,7 @@ The sex and gender of a patient (or a newborn) cannot exactly be mapped from ISO
 
 |PID-8/IS-1
 |Administrative Sex
-|pm:PatientContextState
-/pm:CoreData
-/pm:Sex
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Sex
 |Note that the HL7 Administrative Sex value set (HL7 table 0001) differs from the SDC pm:Sex value set and requires a mapping accordingly (see also <<ref_tbl_sex_mapping>>).
 
 |===
@@ -328,60 +309,43 @@ NOTE: <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race in
 
 |PID-10/CWE-1
 |Identifier
-|pm:PatientContextState
-/pm:CoreData
-/pm:Race
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race
 /@Code
 |
 
 |PID-10/CWE-2
 |Text
-|pm:PatientContextState
-/pm:CoreData
-/pm:Race
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race
 /@SymbolicCodeName
 |
 
 |PID-10/CWE-3
 |Name of Coding System
-|pm:PatientContextState
-/pm:CoreData
-/pm:Race
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race
 /@CodingSystem
 |
 
 |PID-10/CWE-4
 |Alternate Identifier
-|pm:PatientContextState
-/pm:CoreData
-/pm:Race
-/pm:Translation
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race+++<wbr/>+++/pm:Translation
 /@Code
 |Note that only the first entry of the *pm:Translation* element list shall be mapped.
 
 |PID-10/CWE-6
 |Name of Alternate Coding System
-|pm:PatientContextState
-/pm:CoreData
-/pm:Race
-/pm:Translation
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race+++<wbr/>+++/pm:Translation
 /@CodingSystem
 |Note that only the first entry of the *pm:Translation* element list shall be mapped.
 
 |PID-10/CWE-7
 |Coding System Version ID
-|pm:PatientContextState
-/pm:CoreData
-/pm:Race
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race
 /@CodingSystemVersion
 |
 
 |PID-10/CWE-8
 |Alternate Coding System Version ID
-|pm:PatientContextState
-/pm:CoreData
-/pm:Race
-/pm:Translation
+|pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race+++<wbr/>+++/pm:Translation
 /@CodingSystemVersion
 |Note that only the first entry of the *pm:Translation* element list shall be mapped.
 

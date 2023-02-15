@@ -12,5 +12,5 @@ participant "$str_somds_provider" as provider
 == SDPi [DEV-40] Medical Alert Status  ==
 
 consumer -> provider: GetMdib()
-consumer <-- provider: GetMdibResponse(MdDescription, MdState [incl. ContextStates])
+consumer <<-- provider: GetMdibResponse(MdDescription, MdState [incl. ContextStates])
 @enduml

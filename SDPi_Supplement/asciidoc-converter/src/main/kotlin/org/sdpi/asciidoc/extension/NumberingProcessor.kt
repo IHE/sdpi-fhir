@@ -1,18 +1,20 @@
 package org.sdpi.asciidoc.extension
 
 import org.apache.logging.log4j.kotlin.Logging
-import org.asciidoctor.ast.Block
 import org.asciidoctor.ast.Document
 import org.asciidoctor.ast.Section
 import org.asciidoctor.ast.StructuralNode
 import org.asciidoctor.extension.Treeprocessor
 import org.sdpi.asciidoc.Attributes
 import org.sdpi.asciidoc.BlockAttribute
+import org.sdpi.asciidoc.extension.NumberingProcessor.Companion.MAX_HEADING_DEPTH
 import org.sdpi.asciidoc.isAppendix
 import org.sdpi.asciidoc.model.StructuralNodeWrapper
 import org.sdpi.asciidoc.model.toSealed
 import org.sdpi.asciidoc.validate
 import java.io.OutputStream
+
+fun String.replaceHtmlTags() = this.replace("""<.+?>""".toRegex(), "")
 
 /**
  * Takes care of section numbering.
@@ -27,7 +29,10 @@ import java.io.OutputStream
  *
  * Option name: sdpi_level
  */
-class NumberingProcessor(private val structureDump: OutputStream? = null) : Treeprocessor() {
+class NumberingProcessor(
+    private val structureDump: OutputStream? = null,
+    private val anchorReplacements: MutableMap<String, LabelInfo>
+) : Treeprocessor() {
     private var numbering = mutableListOf<Number>()
     private var currentAdditionalLevel = 0
     private val startFromLevel = 1
@@ -35,7 +40,7 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
     private var appendixCaption = ""
     private var currentSection = ""
     private var currentVolumeCaption = ""
-    private var isInAppendix = false
+    private var isInAppendix = mutableListOf<Boolean>()
     private val localFigureTableNumbers = mutableMapOf<String, Int>()
 
     override fun process(document: Document): Document {
@@ -94,9 +99,7 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
                 is StructuralNodeWrapper.Section -> {
                     val level = processLevelOption(node.wrapped)
 
-                    if (node.wrapped.isAppendix()) {
-                        isInAppendix = true
-                    }
+                    isInAppendix.add(node.wrapped.isAppendix())
 
                     if (level == 0 && !node.wrapped.isAppendix()) {
                         currentVolumeCaption = Attributes(node.wrapped.attributes)[BlockAttribute.VOLUME_CAPTION] ?: ""
@@ -109,9 +112,19 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
                     // attach section number to section title
                     createSectionId(numbering, level).let {
                         currentSection = it
+                        anchorReplacements[node.wrapped.id] = if (isInAppendix()) {
+                            if (node.wrapped.isAppendix()) {
+                                LabelInfo((currentAppendix - 1).toString(), LabelSource.APPENDIX, currentVolumeCaption)
+                            } else {
+                                LabelInfo(it, LabelSource.APPENDIX, currentVolumeCaption)
+                            }
+                        } else {
+                            LabelInfo(it, LabelSource.SECTION)
+                        }
+
                         // trim leading blanks in case of an empty section id (i.e. appendix)
                         // simple replacement of HTML tags
-                        "$it ${node.wrapped.title}".trim().replace("""<.+?>""".toRegex(), "");
+                        "$it ${node.wrapped.title}".trim().replaceHtmlTags()
 
                     }.also {
                         logger.info { "Attach section number: ${node.wrapped.caption ?: ""}$it" }
@@ -124,15 +137,10 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
                     block.blocks.forEach {
                         processBlock(it)
                     }
-                    isInAppendix = false
+                    isInAppendix.removeLast()
                 }
 
                 is StructuralNodeWrapper.Paragraph -> {
-                    println("Source\n======")
-                    println(node.wrapped.source)
-
-                    // node.wrapped.source = "__"
-
                     block.blocks.forEach {
                         processBlock(it)
                     }
@@ -154,7 +162,7 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
         }
 
         val section = when (currentSection.length) {
-            0 -> if (isInAppendix) currentAppendix.toString() else ""
+            0 -> if (isInAppendix()) currentAppendix.toString() else ""
             else -> currentSection
         }
 
@@ -170,7 +178,11 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
                 }
             }
             block.caption = ""
-            block.title = "$sectionNumber-$objectNumber. ${block.title}"
+            block.title = "$sectionNumber-$objectNumber. ${block.title.replaceHtmlTags()}"
+            block.id?.let {
+                anchorReplacements[block.id] =
+                    LabelInfo("$sectionNumber-$objectNumber", LabelSource.TABLE_OR_FIGURE)
+            }
         }
     }
 
@@ -292,6 +304,9 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
 
         logger.debug { "Update number at level $level for ${section.id}: ${numbering[level]}" }
     }
+
+
+    private fun isInAppendix() = isInAppendix.any { it }
 
     private data class Number(
         val title: String, // for debug purposes

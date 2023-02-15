@@ -80,49 +80,49 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 The SDPi-A profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this profile.
 
 
-===== {var_label_use_case_name_sicdsp} ({var_label_use_case_acronym_sicdsp})
+===== <<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdsp>>.
 
-Specific capabilities supporting the {var_label_use_case_acronym_sicdsp} use case include:
+Specific capabilities supporting the <<acronym_sicdsp>> use case include:
 
 * *System Type*:  N/A
 * *Service Type*:  N/A
 * *Technical Pre-Conditions*: N/A
-* *Scenarios*: {var_label_use_case_acronym_sicdsp} <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> <<system_type_dashboard>>
+* *Scenarios*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> <<system_type_dashboard>>
 
 
 
-===== {var_label_use_case_name_sicdmp} ({var_label_use_case_acronym_sicdmp})
+===== <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdmp>>.
 
-Specific capabilities supporting the {var_label_use_case_acronym_sicdmp} use case include:
+Specific capabilities supporting the <<acronym_sicdmp>> use case include:
 
 * *System Type*:  N/A
 * *System Type*:  N/A
 * *Technical Pre-Conditions*: N/A
-* *Scenarios*: {var_label_use_case_acronym_sicdmp} <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> <<system_type_dashboard>>
+* *Scenarios*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> <<system_type_dashboard>>
 
 
-===== {var_label_use_case_name_acns} ({var_label_use_case_acronym_acns})
+===== <<label_use_case_name_acns>> (<<acronym_acns>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_acns>>.
 
-Specific capabilities supporting the {var_label_use_case_acronym_acns} use case include:
+Specific capabilities supporting the <<acronym_acns>> use case include:
 
 * *System Type*:  N/A
 * *Service Type*:  N/A
 * *Technical Pre-Conditions*:  N/A
-* *Scenarios*:  {var_label_use_case_acronym_acns} <<vol1_clause_appendix_c_use_case_acns_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> Alert <<system_type_device_gateway>>
+* *Scenarios*:  <<acronym_acns>> <<vol1_clause_appendix_c_use_case_acns_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> Alert <<system_type_device_gateway>>
 
 
-===== {var_label_use_case_name_aars} ({var_label_use_case_acronym_aars})
+===== <<label_use_case_name_aars>> (<<acronym_aars>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_aars>>.
 
-Specific capabilities supporting the {var_label_use_case_acronym_aars} use case include:
+Specific capabilities supporting the <<acronym_aars>> use case include:
 
 * *System Type*:  N/A
 * *Service Type*:  N/A
 * *Technical Pre-Conditions*:  N/A
-* *Scenarios*:  {var_label_use_case_acronym_aars} <<vol1_clause_appendix_c_use_case_aars_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> Alert <<system_type_device_gateway>>
+* *Scenarios*:  <<acronym_aars>> <<vol1_clause_appendix_c_use_case_aars_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> Alert <<system_type_device_gateway>>
 
 
 // 12.5

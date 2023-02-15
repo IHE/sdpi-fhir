@@ -12,6 +12,6 @@ participant "$str_somds_provider" as provider
 == SDPi [DEV-39] Publish Medical Alert Update  ==
 
 
-consumer <-- provider: Notification(EpisodicAlertReport)
+consumer <<- provider: Notification(EpisodicAlertReport)
 
 @enduml

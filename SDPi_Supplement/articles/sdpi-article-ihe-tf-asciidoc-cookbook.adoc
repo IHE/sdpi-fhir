@@ -10,7 +10,7 @@
 :imagesoutdir: images/
 :imagesdir: images/
 
-WARNING: This is a straw-man article. Content hackers welcomed!  Add content requests to section <<Topics Parking Lot>> below.
+WARNING: This is a straw-man article. Content hackers welcomed!  Add content requests to section ++<<Topics Parking Lot>>++ below.
 
 == Cookbook Overview
 This article provides a *_handy_* reference place for the conventions and templates that editors will apply in creating content for the SDPi specification.  It is organized so as to help with specific editorial tasks (e.g., references, images, tables, metadata, etc.).

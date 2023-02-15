@@ -12,5 +12,5 @@ participant "$str_somds_provider" as provider
 == SDPi [DEV-30] Discover BICEPS Content  ==
 
 consumer -> provider: GetMdib()
-consumer <-- provider: GetMdibResponse(MdDescription, MdState [incl. ContextStates])
+consumer <<-- provider: GetMdibResponse(MdDescription, MdState [incl. ContextStates])
 @enduml

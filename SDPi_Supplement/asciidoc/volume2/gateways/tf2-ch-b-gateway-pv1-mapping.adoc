@@ -54,29 +54,22 @@ NOTE: <<ref_tbl_pv13_mapping>> defines the mapping of the SDC patient location i
 
 |PV1-3/PL-1
 |Point of Care
-|pm:LocationContextState
-/pm:LocationDetail
-/@PoC
+|pm:LocationContextState+++<wbr/>+++/pm:LocationDetail+++<wbr/>+++/@PoC
 |Aka. clinical care unit
 
 |PV1-3/PL-2
 |Room
-|pm:LocationContextState
-/pm:LocationDetail
-/@Room
+|pm:LocationContextState+++<wbr/>+++/pm:LocationDetail+++<wbr/>+++/@Room
 |
 
 |PV1-3/PL-3
 |Bed
-|pm:LocationContextState
-/pm:LocationDetail
-/@Bed
+|pm:LocationContextState+++<wbr/>+++/pm:LocationDetail+++<wbr/>+++/@Bed
 |
 
 |PV1-3/PL-4
 |Facility
-|pm:LocationContextState
-/pm:LocationDetail
+|pm:LocationContextState+++<wbr/>+++/pm:LocationDetail
 |HL7 data type *HD*
 
 |PV1-3/PL-4.1
@@ -86,16 +79,12 @@ NOTE: <<ref_tbl_pv13_mapping>> defines the mapping of the SDC patient location i
 
 |PV1-3/PL-7
 |Building
-|pm:LocationContextState
-/pm:LocationDetail
-/@Building
+|pm:LocationContextState+++<wbr/>+++/pm:LocationDetail+++<wbr/>+++/@Building
 |
 
 |PV1-3/PL-8
 |Floor
-|pm:LocationContextState
-/pm:LocationDetail
-/@Floor
+|pm:LocationContextState+++<wbr/>+++/pm:LocationDetail+++<wbr/>+++/@Floor
 |
 
 |===
@@ -126,17 +115,14 @@ NOTE: A visit identifier could be a visit number, an account number, or any othe
 
 |PV1-19/CX-1
 |ID Number
-|pm:PatientContextState
-/pm:Identification
-/@Extension
+|pm:PatientContextState+++<wbr/>+++/pm:Identification+++<wbr/>+++/@Extension
 |The @Extension attribute contains the unique visit identifier if available.
 
 *Note that the field may contain a null value indicating that the identifier is missing.*
 
 |PV1-19/CX-4
 |Assigning Authority
-|pm:PatientContextState
-/pm:Identification
+|pm:PatientContextState+++<wbr/>+++/pm:Identification
 | HL7 data type *HD*
 
 |PV1-19/CX-4.1
@@ -148,10 +134,7 @@ NOTE: A visit identifier could be a visit number, an account number, or any othe
 
 |PV1-19/CX-5
 |Identifier Type Code
-|pm:PatientContextState
-/pm:Identification
-/pm:Type
-/@Code
+|pm:PatientContextState+++<wbr/>+++/pm:Identification+++<wbr/>+++/pm:Type+++<wbr/>+++/@Code
 |The type of the patient identifier set in the @Code attribute shall be set to a value from HL7 V2 table 0203. The @CodingSystem shall be set to *"urn:oid:2.16.840.1.113883.18.108"*.
 
 Valid *"Identifier Type Code"* values for a visit number are, for example, *"VN"* (Visit Number), *"AN"* (Account Number), etc.

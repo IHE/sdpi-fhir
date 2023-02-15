@@ -10,6 +10,8 @@
 :imagesoutdir: images/
 :imagesdir: images/
 :docinfo: shared
+:sdpi_ref_section_prefix: Section
+:sdpi_ref_appendix_prefix: Appendix
 
 :ihe_supplement_sdpi_revision: 1.0.2
 :ihe_supplement_sdpi_revision_date: {localdatetime}

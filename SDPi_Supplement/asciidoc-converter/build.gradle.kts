@@ -29,6 +29,8 @@ dependencies {
     implementation("org.asciidoctor:asciidoctorj-diagram:2.2.3")
     implementation("org.asciidoctor:asciidoctorj-diagram-plantuml:1.2022.5")
 
+    implementation("org.jsoup:jsoup:1.15.3")
+
     // logging
     // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
     implementation("org.apache.logging.log4j:log4j-core:2.17.2")
