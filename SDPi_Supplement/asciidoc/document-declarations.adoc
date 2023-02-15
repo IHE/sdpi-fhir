@@ -9,6 +9,8 @@ NOTES:
 
 ////
 
+[#supplement_clause_forward_declarations,sdpi_offset=clear]
+== Supplement Forward Declarations -- Acronyms & Labels
 
 [%noheader]
 [%autowidth]
@@ -37,47 +39,47 @@ NOTE:  Forward Declarations in the following table are being added "on demand" o
 
 | [[acronym_aars,AARS]] AARS
 | [[label_use_case_name_aars,Alerts to Alert Recording Systems]] Alerts to Alert Recording Systems
-| <<vol1_clause_appendix_c_use_case_aars>>TF-1C
+| <<vol1_clause_appendix_c_use_case_aars>>
 | Use Case
 
 | [[acronym_acns,ACNS]] ACNS
 | [[label_use_case_name_acns,Alerts to Clinician Notification Systems]] Alerts to Clinician Notification Systems
-| TF-1C
+| <<vol1_clause_appendix_c_use_case_acns>>
 | Use Case
 
 | [[acronym_agw,AGW]] AGW
 | [[label_system_type_name_agw,Alert Gateway]] Alert Gateway
-| TF-3
+| <<vol3_clause_system_type_nomenclature_extensions>>
 | System Type
 
 | [[acronym_cs,CS]] CS
 | [[label_system_type_name_cs,Central Station]] Central Station
-| TF-3
+| <<vol3_clause_system_type_nomenclature_extensions>>
 | System Type
 
 | [[acronym_dgw,DGW]] DGW
 | [[label_system_type_name_dgw,Data Gateway]] Data Gateway
-| TF-3
+| <<vol3_clause_system_type_nomenclature_extensions>>
 | System Type
 
 | [[acronym_ddes,DDES]] DDES
 | [[label_use_case_name_ddes,Device Data to Enterprise Systems]] Device Data to Enterprise Systems
-| TF-1C
+| <<vol1_clause_appendix_c_use_case_ddes>>
 | Use Case
 
 | [[acronym_sicdmp,SICDmp]] SICDmp
 | [[label_use_case_name_sicdmp,Standalone ICU Dashboard Multiple Patient]] Standalone ICU Dashboard Multiple Patient
-| TF-1C
+| <<vol1_clause_appendix_c_use_case_sicdmp>>
 | Use Case
 
 | [[acronym_sicdsp,SICDsp]] SICDsp
 | [[label_use_case_name_sicdsp,Standalone ICU Dashboard Single Patient]] Standalone ICU Dashboard Single Patient
-| TF-1C
+| <<vol1_clause_appendix_c_use_case_sicdsp>>
 | Use Case
 
 | [[acronym_stad,STAD]] STAD
 | [[label_use_case_name_stad,Synchronized Time Across Devices]] Synchronized Time Across Devices
-| TF-1C
+| <<vol1_clause_appendix_c_use_case_stad>>
 | Use Case
 
 |===
