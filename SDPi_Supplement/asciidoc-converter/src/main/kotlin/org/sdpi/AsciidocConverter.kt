@@ -3,10 +3,7 @@ package org.sdpi
 import org.asciidoctor.Asciidoctor
 import org.asciidoctor.Options
 import org.asciidoctor.SafeMode
-import org.sdpi.asciidoc.extension.DisableSectNumsProcessor
-import org.sdpi.asciidoc.extension.NumberingProcessor
-import org.sdpi.asciidoc.extension.RequirementLevelProcessor
-import org.sdpi.asciidoc.extension.RequirementsBlockProcessor
+import org.sdpi.asciidoc.extension.*
 import java.io.File
 import java.io.OutputStream
 
@@ -24,15 +21,21 @@ class AsciidocConverter(
 
         val asciidoctor = Asciidoctor.Factory.create()
 
+        val anchorReplacements = mutableMapOf<String, LabelInfo>()
+        val referenceSanitizer = ReferenceSanitizer(anchorReplacements)
         asciidoctor.javaExtensionRegistry().block(RequirementsBlockProcessor())
-        asciidoctor.javaExtensionRegistry().treeprocessor(NumberingProcessor(
-            when(mode) {
-                is Mode.Test -> mode.structureDump
-                else -> null
-            }
-        ))
+        asciidoctor.javaExtensionRegistry().treeprocessor(
+            NumberingProcessor(
+                when (mode) {
+                    is Mode.Test -> mode.structureDump
+                    else -> null
+                },
+                anchorReplacements
+            )
+        )
         asciidoctor.javaExtensionRegistry().treeprocessor(RequirementLevelProcessor())
         asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
+        asciidoctor.javaExtensionRegistry().postprocessor(referenceSanitizer)
 
         asciidoctor.requireLibrary("asciidoctor-diagram") // enables plantuml
         when (inputType) {
@@ -53,7 +56,7 @@ class AsciidocConverter(
     }
 
     sealed interface Mode {
-        object Productive: Mode
-        data class Test(val structureDump: OutputStream): Mode
+        object Productive : Mode
+        data class Test(val structureDump: OutputStream) : Mode
     }
 }
