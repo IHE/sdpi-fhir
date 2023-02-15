@@ -12,6 +12,6 @@ participant "$str_somds_provider" as provider
 ==SDPi [DEV-35] Establish Medical Data Exchange==
 
 consumer -> provider: Subscribe(Filter)
-consumer <-- provider: SubscribeResponse(Subscription Manager, Expiration Time)
+consumer <<-- provider: SubscribeResponse(Subscription Manager, Expiration Time)
 
 @enduml
