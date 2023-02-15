@@ -66,7 +66,37 @@ The Service-oriented Device Point-of-care Interoperability (SDPi) profiles are b
 [#figure_sdpi_profiles_foundational_standards]
 image::../images/vol1-diagram-sdpi-profiles.svg[align=center]
 
-#TODO:  Introduce core concepts including -- SoA (graphic with distributed registry), D2D, Plug-and-Trust, PKPs, Gateways, rationale for (4) profiles (functionally and "medical" PKP), use context (high acuity point-of-care = "bed"), ... reference the hanging gardens model in Appendix A; include ICS Appendix B references too#
+A particular challenge with the SDPi profiles is what resulted in (4) profile**S** and not one:
+
+[none]
+. *__How to represent a <<acronym_soa>>-based architecture supporting an interactive <<term_plug_and_trust>> device-to-device (multi-way, M:N) interoperability specification using established IHE technical framework constructs? __*
+
+The above figure illustrates how this balance was achieved, including:
+
+[none]
+. *4 Profiles* --
+[none]
+.. By separating SDPi into four separate but integrated profiles, the complexity
+. *Gateway Actors*
+[none]
+.. #sdf#
+.. #Reference the hanging gardens model in Appendix A; include ICS Appendix B references too#
+. *PKPs for Medical Purposes*
+[none]
+.. A unique aspect of the IEEE 11073 <<acronym_sdc>> family of standards are the inclusion of the <<term_participant_key_purposes>> standards that advance <<term_safe_effective_secure>> "medical" interoperability.
+.. These standards ... #osudf#
+
+"**PRAC**tical" Device Interoperability may be a bit "cute"; however, it does map to the (4) profiles, which together provide a practical, pragmatic way toward genuine <<acronym_pnt>> interoperability:
+
+[none]
+. P -> SDPi-Plug-and-trust
+. R -> SDPi-Reporting
+. A -> SDPi-Alerting
+. C -> SDPi-xControl
+
+It should be noted that the _primary use context_ for SDPi-enabled technologies is high acuity points of care, namely Operating Rooms, ICU beds, emergency beds, etc.  The intent is <<acronym_d2d>> #sldkfj#
+
+See section <<vol1_clause_sdpi_p_soa_somds_architecture_alignment>> below for additional conceptual overview information on the conceptual foundations of the <<acronym_sdc>> standards.
 
 [sdpi_offset=10]
 ==== Service-oriented Device Point-of-care Interoperability - Plug-and-trust (SPDi-P) Profile

@@ -71,6 +71,9 @@ Do the links work and lead to the right "best" destinations?  Focus on *_what mu
 
 |===
 
+// Forward declarations of common labels & acronyms & variables
+include::document-declarations.adoc[]
+
 
 [#supplement_clause_sdpi_supplement_overview]
 == SDPi Supplement Overview

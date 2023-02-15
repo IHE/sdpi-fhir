@@ -141,11 +141,6 @@ class NumberingProcessor(
                 }
 
                 is StructuralNodeWrapper.Paragraph -> {
-                    println("Source\n======")
-                    println(node.wrapped.source)
-
-                    // node.wrapped.source = "__"
-
                     block.blocks.forEach {
                         processBlock(it)
                     }
@@ -184,7 +179,6 @@ class NumberingProcessor(
             }
             block.caption = ""
             block.title = "$sectionNumber-$objectNumber. ${block.title.replaceHtmlTags()}"
-
             block.id?.let {
                 anchorReplacements[block.id] =
                     LabelInfo("$sectionNumber-$objectNumber", LabelSource.TABLE_OR_FIGURE)

@@ -69,6 +69,13 @@
 |
 | SES
 
+| [[term_device_to_device, Device-to-Device]] Device-to-Device
+| Direct communication between two devices across a communications infrastructure.  It is used here to differentiate between "device gateway-to-gateway" or intermediary-based communication.
+| peer-to-peer, machine to machine
+| [[acronym_d2d,D2D]] D2D
+| https://en.wikipedia.org/wiki/Device-to-device[Device-to-device wikipedia article with references]
+| SDC
+
 | [[term_discovery_scope, Discovery Scope]] Discovery Scope
 | A set of zero to many identifiers that allows for organizing <<actor_somds_provider>>s into logical groups.
 |

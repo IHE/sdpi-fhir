@@ -82,37 +82,37 @@ image::../images/vol1-diagram-sdpi-r-actor.svg[]
 The SDPi-R profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this profile.
 
 
-===== {var_label_use_case_name_sicdsp} ({var_label_use_case_acronym_sicdsp})
+===== <<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdsp>>.
 
-Specific capabilities supporting the {var_label_use_case_acronym_sicdsp} use case include:
+Specific capabilities supporting the <<acronym_sicdsp>> use case include:
 
 * *System Type*:  N/A
 * *Service Type*:  N/A
 * *Technical Pre-Conditions*: N/A
-* *Scenarios*: {var_label_use_case_acronym_sicdsp} <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_dashboard>>
+* *Scenarios*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_dashboard>>
 
 
-===== {var_label_use_case_name_sicdmp} ({var_label_use_case_acronym_sicdmp})
+===== <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdmp>>.
 
-Specific capabilities supporting the {var_label_use_case_acronym_sicdmp} use case include:
+Specific capabilities supporting the <<acronym_sicdmp>> use case include:
 
 * *System Type*:  N/A
 * *System Type*:  N/A
 * *Technical Pre-Conditions*: N/A
-* *Scenarios*: {var_label_use_case_acronym_sicdmp} <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_dashboard>>
+* *Scenarios*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_dashboard>>
 
 
-===== {var_label_use_case_name_ddes} ({var_label_use_case_acronym_ddes})
+===== <<label_use_case_name_ddes>> (<<acronym_ddes>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_ddes>>.
 
-Specific capabilities supporting the {var_label_use_case_acronym_ddes} use case include:
+Specific capabilities supporting the <<acronym_ddes>> use case include:
 
 * *System Type*:  N/A
 * *Service Type*: N/A
 * *Technical Pre-Conditions*: N/A
-* *Scenarios*: {var_label_use_case_acronym_ddes} <<vol1_clause_appendix_c_use_case_ddes_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_device_gateway>>
+* *Scenarios*: <<acronym_ddes>> <<vol1_clause_appendix_c_use_case_ddes_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_device_gateway>>
 
 #TODO:  Reference DEC Gateway / DOR actor from generic use case scenario reference#
 
