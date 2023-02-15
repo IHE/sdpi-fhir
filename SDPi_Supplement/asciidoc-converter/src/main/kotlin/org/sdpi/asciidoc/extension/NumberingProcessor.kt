@@ -14,6 +14,8 @@ import org.sdpi.asciidoc.model.toSealed
 import org.sdpi.asciidoc.validate
 import java.io.OutputStream
 
+fun String.replaceHtmlTags() = this.replace("""<.+?>""".toRegex(), "")
+
 /**
  * Takes care of section numbering.
  *
@@ -111,7 +113,7 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
                         currentSection = it
                         // trim leading blanks in case of an empty section id (i.e. appendix)
                         // simple replacement of HTML tags
-                        "$it ${node.wrapped.title}".trim().replace("""<.+?>""".toRegex(), "");
+                        "$it ${node.wrapped.title}".trim().replaceHtmlTags()
 
                     }.also {
                         logger.info { "Attach section number: ${node.wrapped.caption ?: ""}$it" }
@@ -128,11 +130,6 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
                 }
 
                 is StructuralNodeWrapper.Paragraph -> {
-                    println("Source\n======")
-                    println(node.wrapped.source)
-
-                    // node.wrapped.source = "__"
-
                     block.blocks.forEach {
                         processBlock(it)
                     }
@@ -170,7 +167,7 @@ class NumberingProcessor(private val structureDump: OutputStream? = null) : Tree
                 }
             }
             block.caption = ""
-            block.title = "$sectionNumber-$objectNumber. ${block.title}"
+            block.title = "$sectionNumber-$objectNumber. ${block.title.replaceHtmlTags()}"
         }
     }
 
