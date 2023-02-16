@@ -1,6 +1,7 @@
 package org.sdpi.asciidoc
 
 import org.apache.logging.log4j.kotlin.Logging
+import org.sdpi.asciidoc.extension.ReferenceSanitizerPreprocessor
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
 
@@ -18,15 +19,25 @@ class AsciidocErrorChecker {
      * Runs the check on the latest captured error stream.
      */
     fun run() {
+        val actualIgnored = ignored.toMutableList().also {
+            it.add(ReferenceSanitizerPreprocessor.refSeparator)
+        }
         val errors = errorStream.toByteArray().decodeToString()
             .split("\n").count { line ->
                 when (val errorPrefix = errorHints.firstOrNull { line.startsWith(it, true) }) {
                     null -> false
-                    else -> logger.error {
-                        "Asciidoc issue detected: ${line.substring(errorPrefix.length)}"
-                    }.let { true }
+                    else -> if (actualIgnored.any { line.contains(it) }) {
+                        logger.info {
+                            "Asciidoc issue ignored: ${line.substring(errorPrefix.length)}"
+                        }.let { false }
+                    } else {
+                        logger.error {
+                            "Asciidoc issue detected: ${line.substring(errorPrefix.length)}"
+                        }.let { true }
+                    }
                 }
             }
+
         if (errors > 0) {
             throw Exception("Found $errors Asciidoc error(s) that need to be fixed (see previous output)")
         }
@@ -34,5 +45,6 @@ class AsciidocErrorChecker {
 
     private companion object : Logging {
         val errorHints = listOf("information: ", "info: ")
+        val ignored = listOf<String>()
     }
 }
