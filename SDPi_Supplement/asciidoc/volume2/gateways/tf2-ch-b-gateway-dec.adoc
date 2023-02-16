@@ -273,11 +273,19 @@ NOTE: For further information, please refer to the <<ref_ihe_pcd_tf_2_2019>>.
 ====
 ****
 
-#TODO: how can we map the device type to the proposed SNOMED code from the SDC information? Should we use MDC codes instead? What about the licensing issue with SNOMED code?#
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  For SDPi 1.0 DEV Internal Review Version, this profile section needs to be updated in order to be compliant with the <<ref_ihe_pcd_tf_2_2019>>. The following issues need more investigations and discussions:
 
-#TODO: special requirements for infusion pumps#
+* Mapping of the <<acronym_mdib>>-provided device types to SNOMED codes
+* Licensing requirements for utilizing SNOMED codes
+* Utilizing MDC codes instead of SNOMED which requires a change in the <<ref_ihe_pcd_tf_2_2019>>
+* Defining the special requirements for infusion pumps
+* Finalization of service ids
 
-#TODO: service ids need to be finalized#
+|===
 
 ====== OBR-7 Observation Date/Time
 The OBR-7 field specifies the time point or start of time interval for all OBX segments within the scope of this OBR segment, that is, OBX segments that are part of the ORDER_OBSERVATION segment group, that do not specify an overriding time point in the OBX-14 field.
