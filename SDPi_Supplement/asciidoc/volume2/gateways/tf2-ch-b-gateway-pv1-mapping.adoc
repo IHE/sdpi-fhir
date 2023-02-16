@@ -130,12 +130,12 @@ NOTE: A visit identifier could be a visit number, an account number, or any othe
 |/@Root
 |The @Root contains the unique identification of the HDO.
 
-*Note that if the HDO identifer is not defined the CX-4 field shall be left empty.*
+*Note that if the HDO identifer is not defined the CX-4 field is required to be left empty.*
 
 |PV1-19/CX-5
 |Identifier Type Code
 |pm:PatientContextState+++<wbr/>+++/pm:Identification+++<wbr/>+++/pm:Type+++<wbr/>+++/@Code
-|The type of the patient identifier set in the @Code attribute shall be set to a value from HL7 V2 table 0203. The @CodingSystem shall be set to *"urn:oid:2.16.840.1.113883.18.108"*.
+|The type of the patient identifier set in the @Code attribute is required to be set to a value from HL7 V2 table 0203. The @CodingSystem is required be set to *"urn:oid:2.16.840.1.113883.18.108"*.
 
 Valid *"Identifier Type Code"* values for a visit number are, for example, *"VN"* (Visit Number), *"AN"* (Account Number), etc.
 

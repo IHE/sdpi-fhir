@@ -20,7 +20,7 @@ NOTE: If the SDC patient context information is not intended to be used for the 
 .R8103
 [sdpi_requirement#r8103,sdpi_req_level=shall,sdpi_max_occurrence=2]
 ****
-A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map the patient identifier to the PID-3 field.
+A <<actor_somds_dec_gateway>> / <<actor_somds_acm_gateway>> shall map the patient identifiers to the PID-3 field.
 
 .Notes
 [%collapsible]
@@ -29,7 +29,7 @@ NOTE: The PID-3 is a list of patient identifiers (e.g. medical record number, so
 
 NOTE: <<ref_tbl_pid3_mapping>> defines the mapping of the <<acronym_mdib>> patient identification to the data fields of the HL7 data type *CX* used in the PID-3 field.
 
-NOTE: If the <<acronym_mdib>> patient identification element *pm:PatientContextState/pm:Identification* contains more than one patient identifier, each SDC patient identifier shall be mapped according to the <<ref_tbl_pid3_mapping>> table and added to the PID-3 patient identifier list.
+NOTE: If the <<acronym_mdib>> patient identification element *pm:PatientContextState/pm:Identification* contains more than one patient identifier, each SDC patient identifier is mapped according to the <<ref_tbl_pid3_mapping>> table and added to the PID-3 patient identifier list.
 ====
 ****
 
@@ -55,7 +55,7 @@ NOTE: If the <<acronym_mdib>> patient identification element *pm:PatientContextS
 |/@Root
 |The @Root contains the unique identification of the HDO.
 
-*Note that if the HDO identifier is not defined the CX-4 field shall be left empty.*
+*Note that if the HDO identifier is not defined the CX-4 field is left empty.*
 
 |PID-3/CX-5
 |Identifier Type Code
@@ -134,7 +134,7 @@ NOTE: <<ref_tbl_pid5_mapping>> defines the mapping of the SDC patient name infor
 |PID-5/XPN-7
 |Name Type Code
 |pm:PatientContextState+++<wbr/>+++/pm:CoreData
-|This field shall be set to "L" when a patient name is available, or "U" when the patient name is not set.
+|This field is set to "L" when a patient name is available, or "U" when the patient name is not set.
 
 Please refer also to the corresponding section in the <<ref_ihe_pcd_tf_2_2019>>.
 
@@ -245,7 +245,7 @@ NOTE: <<ref_tbl_pid8_mapping>> defines the mapping of the SDC patient's sex info
 
 [NOTE]
 ====
-The sex and gender of a patient (or a newborn) cannot exactly be mapped from ISO/IEEE 11073-10207 to HL7 V2. The domain information and service model only contains an attribute for sex as defined by biological and physiological characteristics. HL7 V2, on the other hand, only provides a field for the administrative sex as defined by the socially constructed roles, behaviours, activities, and attributes that a given society considers appropriate. The biological sex, however, does not necessarily match a person’s administrative gender. Mapping from one to the other would therefore introduce errors. However, in the clinical context of a point of care device the biological sex, or sex at birth is important for various algorithms, and therefore, shall be mapped to the PID-8 field.
+The sex and gender of a patient (or a newborn) cannot exactly be mapped from ISO/IEEE 11073-10207 to HL7 V2. The domain information and service model only contains an attribute for sex as defined by biological and physiological characteristics. HL7 V2, on the other hand, only provides a field for the administrative sex as defined by the socially constructed roles, behaviours, activities, and attributes that a given society considers appropriate. The biological sex, however, does not necessarily match a person’s administrative gender. Mapping from one to the other would therefore introduce errors. However, in the clinical context of a point of care device the biological sex, or sex at birth is important for various algorithms, and therefore, is required to be mapped to the PID-8 field.
 ====
 
 [#ref_tbl_pid8_mapping]
@@ -329,13 +329,13 @@ NOTE: <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race in
 |Alternate Identifier
 |pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race+++<wbr/>+++/pm:Translation
 /@Code
-|Note that only the first entry of the *pm:Translation* element list shall be mapped.
+|Note that only the first entry of the *pm:Translation* element list is to be mapped.
 
 |PID-10/CWE-6
 |Name of Alternate Coding System
 |pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race+++<wbr/>+++/pm:Translation
 /@CodingSystem
-|Note that only the first entry of the *pm:Translation* element list shall be mapped.
+|Note that only the first entry of the *pm:Translation* element list is to be mapped.
 
 |PID-10/CWE-7
 |Coding System Version ID
@@ -347,7 +347,7 @@ NOTE: <<ref_tbl_pid10_mapping>> defines the mapping of the SDC patient's race in
 |Alternate Coding System Version ID
 |pm:PatientContextState+++<wbr/>+++/pm:CoreData+++<wbr/>+++/pm:Race+++<wbr/>+++/pm:Translation
 /@CodingSystemVersion
-|Note that only the first entry of the *pm:Translation* element list shall be mapped.
+|Note that only the first entry of the *pm:Translation* element list is to be mapped.
 
 |===
 
