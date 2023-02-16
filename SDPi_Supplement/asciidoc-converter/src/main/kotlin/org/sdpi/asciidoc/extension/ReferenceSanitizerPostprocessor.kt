@@ -46,7 +46,12 @@ class ReferenceSanitizerPostprocessor(
                 continue
             }
 
-            val fragment = URI.create(anchor.attr("href") ?: "").fragment
+            val href = anchor.attr("href") ?: ""
+            if (!href.startsWith("#")) {
+                continue
+            }
+
+            val fragment = URI.create(href).fragment
             if (fragment.isNullOrEmpty()) {
                 continue
             }
@@ -61,15 +66,13 @@ class ReferenceSanitizerPostprocessor(
                 Pair(fragment, null)
             }
 
+            anchor.attr("href", "#$id")
             anchorLabels[id]?.also {
                 when (it.source) {
                     LabelSource.SECTION -> anchor.text(label ?: "$sectionSig${it.label}")
                     LabelSource.TABLE_OR_FIGURE -> anchor.text(label ?: it.label)
                     LabelSource.APPENDIX -> anchor.text(label ?: "$appendixSig${it.prefix}:${it.label}")
                 }
-            } ?: {
-                logger.info { "Fix fragment without custom replacement: $fragment => $id"}
-                anchor.text("#$id")
             }
         }
 
