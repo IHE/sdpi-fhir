@@ -814,12 +814,16 @@ include::tf2-ch-b-gateway-obx18-mapping.adoc[]
 .R8034
 [sdpi_requirement#r8034,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall set the OBX-20 field to body site if available for the metric.
+If available for the metric, a <<actor_somds_dec_gateway>> shall set the OBX-20 field to body site.
 
 .Notes
 [%collapsible]
 ====
-NOTE: <<ref_tbl_dec_obx20_mapping>> defines the mapping of the SDC body site element to the data fields of the HL7 data type *CWE* used in the OBX-6 field.
+NOTE: If the *pm:AbstractMetricState/pm:BodySite* element and the *pm:AbstractMetricDescriptor/pm:BodySite* element are available, the body site defined in the *pm:AbstractMetricState* is the preferred *pm:BodySite* element to be mapped.
+
+NOTE: If *pm:BodySite* element list contains more than one *pm:BodySite* element, only the first entry of the list is used for the mapping.
+
+NOTE: <<ref_tbl_dec_obx20_mapping>> defines the mapping of the SDC body site element to the data fields of the HL7 data type *CWE* used in the OBX-20 field.
 
 NOTE: For a device-releted element such as MDS, VMD, or CHANNEL, the OBX-20 field is left empty.
 ====
@@ -839,21 +843,37 @@ If a private *MDC* code is used for the coding of a body site, a <<actor_somds_d
 |OBX-20/CWE-1
 |Identifier
 |pm:AbstractMetricState+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@Code
-|
+
+or
+
+pm:AbstractMetricDescriptor+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@Code, if pm:BodySite is not available in pm:AbstractMetricState
+|Note that only the first pm:BodySite element from the list is required to be mapped.
 
 |OBX-20/CWE-2
 |Text
 |If *@Code* is an MDC code, this field contains the RefId of the MDC code.
 
-In all other cases, the field is set to the pm:AbstractMetricState+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@SymbolicCodeName.
+In all other cases, the field is set to the pm:AbstractMetricState+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@SymbolicCodeName
+
+or
+
+pm:AbstractMetricDescriptor+++<wbr/>+++/pm:BodySite+++<wbr/>+++@SymbolicCodeName, if pm:BodySite is not available in pm:AbstractMetricState
 | Note that MDC is the default coding system if no coding system is specified.
+
+Note that only the first pm:BodySite element from the list is required to be mapped.
 
 |OBX-20/CWE-3
 |Name of Coding System
 |*"MDC"* if no other coding system is specified.
 
-In all other cases, the field is set to pm:AbstractMetricState+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@CodingSystem.
+In all other cases, the field is set to pm:AbstractMetricState+++<wbr/>+++/pm:BodySite+++<wbr/>+++/@CodingSystem
+
+or
+
+pm:AbstractMetricDescriptor+++<wbr/>+++/pm:BodySite+++<wbr/>+++@CodingSystem, if pm:BodySite is not available in pm:AbstractMetricState
 
 |Note that MDC is the default coding system if no coding system is specified.
+
+Note that only the first pm:BodySite element from the list is required to be mapped.
 
 |===
