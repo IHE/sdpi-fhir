@@ -125,7 +125,6 @@ class NumberingProcessor(
                         // trim leading blanks in case of an empty section id (i.e. appendix)
                         // simple replacement of HTML tags
                         "$it ${node.wrapped.title}".trim().replaceHtmlTags()
-
                     }.also {
                         logger.info { "Attach section number: ${node.wrapped.caption ?: ""}$it" }
                         node.wrapped.title = it
