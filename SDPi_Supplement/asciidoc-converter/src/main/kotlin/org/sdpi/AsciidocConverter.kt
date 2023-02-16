@@ -36,7 +36,7 @@ class AsciidocConverter(
         )
         asciidoctor.javaExtensionRegistry().treeprocessor(RequirementLevelProcessor())
         asciidoctor.javaExtensionRegistry().preprocessor(DisableSectNumsProcessor())
-        asciidoctor.javaExtensionRegistry().preprocessor(ReferenceSanitizerPreprocessor(customReferences))
+        asciidoctor.javaExtensionRegistry().preprocessor(ReferenceSanitizerPreprocessor())
         asciidoctor.javaExtensionRegistry()
             .postprocessor(ReferenceSanitizerPostprocessor(anchorReplacements, customReferences))
 

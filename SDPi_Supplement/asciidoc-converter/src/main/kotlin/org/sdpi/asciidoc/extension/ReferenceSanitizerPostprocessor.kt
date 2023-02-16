@@ -1,10 +1,14 @@
 package org.sdpi.asciidoc.extension
 
+import org.apache.logging.log4j.kotlin.Logging
 import org.asciidoctor.ast.Document
 import org.asciidoctor.extension.Postprocessor
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
 import java.net.URI
+import java.net.URLDecoder
+import java.nio.charset.Charset
+import java.util.*
 
 enum class LabelSource {
     SECTION,
@@ -36,22 +40,36 @@ class ReferenceSanitizerPostprocessor(
         val doc = Jsoup.parse(output, "UTF-8")
 
         val anchors = doc.getElementsByTag("a")
+
         for (anchor in anchors) {
             if (isInToc(anchor)) {
                 continue
             }
 
-            val href = anchor.attr("href") ?: ""
-            if (href.isEmpty() || customReferences.contains(href.substring(1))) {
+            val fragment = URI.create(anchor.attr("href") ?: "").fragment
+            if (fragment.isNullOrEmpty()) {
                 continue
             }
 
-            anchorLabels[URI.create(href).fragment]?.let {
-                when (it.source) {
-                    LabelSource.SECTION -> anchor.text("$sectionSig${it.label}")
-                    LabelSource.TABLE_OR_FIGURE -> anchor.text(it.label)
-                    LabelSource.APPENDIX -> anchor.text("$appendixSig${it.prefix}:${it.label}")
+            val (id, label) = if (fragment.contains(ReferenceSanitizerPreprocessor.refSeparator)) {
+                val parts = fragment.split(ReferenceSanitizerPreprocessor.refSeparator)
+                Pair(parts[0], URLDecoder.decode(parts[1], Charsets.UTF_8).trim()).also { (id, label) ->
+                    logger.info { "Found custom reference: $id => $label"}
                 }
+            } else {
+                logger.info { "Found regular reference: $fragment"}
+                Pair(fragment, null)
+            }
+
+            anchorLabels[id]?.also {
+                when (it.source) {
+                    LabelSource.SECTION -> anchor.text(label ?: "$sectionSig${it.label}")
+                    LabelSource.TABLE_OR_FIGURE -> anchor.text(label ?: it.label)
+                    LabelSource.APPENDIX -> anchor.text(label ?: "$appendixSig${it.prefix}:${it.label}")
+                }
+            } ?: {
+                logger.info { "Fix fragment without custom replacement: $fragment => $id"}
+                anchor.text("#$id")
             }
         }
 
@@ -65,7 +83,7 @@ class ReferenceSanitizerPostprocessor(
 
     private fun isInToc(element: Element) = element.parents().firstOrNull { it.id() == "toc" } != null
 
-    private companion object {
+    private companion object : Logging {
         const val OPTION_ASCIIDOC_SECTION_REFSIG = "section-refsig"
         const val OPTION_ASCIIDOC_APPENDIX_REFSIG = "appendix-refsig"
         const val OPTION_XREFSTYLE = "xrefstyle"
