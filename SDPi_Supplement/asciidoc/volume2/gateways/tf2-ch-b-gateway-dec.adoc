@@ -226,7 +226,7 @@ When there are further updates of the weight value after the association of the 
 include::tf2-ch-b-gateway-pv1-mapping.adoc[]
 
 ===== OBR - Observation Request Segment
-The the HL7 Obervation Request (OBR) segment requires a mapping from the SDC containment tree and metric data to the OBR segment fields.
+The HL7 Obervation Request (OBR) segment requires a mapping from the SDC containment tree and metric data to the OBR segment fields.
 
 ====== OBR-2 Placer Order Number
 
@@ -657,8 +657,8 @@ In all other cases, the field is set to pm:NumericMetricDescriptor+++<wbr/>+++/p
 ****
 A <<actor_somds_dec_gateway>> shall define the range of the alert limits on the metric level, if the *@Handle* of the metric is referenced by a *pm:LimitAlertConditionDescriptor* in the *pm:LimitAlertConditionDescriptor/pm:Source* list, by the format `<Lower Limit> - <Upper Limit>` where
 
-* `<Lower Limit>` is set to *pm:LimitAlertConditionDescriptor/pm:MaxLimits/@Lower* and
-* `<Upper Limit>` is set to *pm:LimitAlertConditionDescriptor/pm:MaxLimits/@Upper*.
+* `<Lower Limit>` is set to *pm:LimitAlertConditionState/pm:Limits/@Lower* and
+* `<Upper Limit>` is set to *pm:LimitAlertConditionState/pm:Limits/@Upper*.
 
 .Notes
 [%collapsible]
@@ -681,12 +681,12 @@ NOTE: As stated in <<ref_ihe_pcd_tf_2_2019>> the reference range can only be set
 
 ====== OBX-8 Abnormal Flags
 
-The OBX-8 field is not required to be set if the gateway exports valid and validated metric data only - this is highly recommended.
+The OBX-8 field is not required to be set since the gateway exports valid and validated metric data only.
 
 .R8027
 [sdpi_requirement#r8027,sdpi_req_level=shall]
 ****
-If a <<actor_somds_dec_gateway>> is intended to export metrics with a different validity state (*pm:AbstractMetricValue/pm:MetricQuality/@Validity*) than valid or validated, the measurement status shall be set in this field as specified in the <<ref_ihe_pcd_tf_2_2019>>.
+A <<actor_somds_dec_gateway>> shall leave the OBX-8 field empty as specified in the <<ref_ihe_pcd_tf_2_2019>> for valid and validated metric values.
 ****
 
 ====== OBX-11 Observation Result Status
@@ -746,7 +746,7 @@ pm:StringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@DeterminationTime
 .R8032
 [sdpi_requirement#r8032,sdpi_req_level=shall]
 ****
-A <<actor_somds_dec_gateway>> shall set the OBX-16 field to the operator.
+If available, a <<actor_somds_dec_gateway>> shall set the OBX-16 field to the operator.
 
 .Notes
 [%collapsible]
