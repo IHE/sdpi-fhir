@@ -38,8 +38,9 @@ image::../images/vol1-diagram-use-case-ddes-tech-view.svg[]
 
 *Then* The <<acronym_dgw>> Service will connect to the device and export data to the EHR using the HL7 v2 based IHE DEV DOR actor of the DEV DEC profile
 
+////
 #TODO:  REMOVE EXPLICIT PROFILE REFERENCES; let profiles link to gateway actors & profile roles#
-
+////
 
 ===== Scenario: <<acronym_ddes>> {var_use_case_id}.2 - <<label_system_type_name_dgw>> Service is connected to the EHR
 

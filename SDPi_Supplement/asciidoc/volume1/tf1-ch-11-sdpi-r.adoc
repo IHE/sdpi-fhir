@@ -15,7 +15,10 @@ Note that the related transactions are completely defined in <<vol2_clause_trans
 |===
 
 
-The SDPi-Reporting ([[acronym_sdpi_r,SDPi-R]] SDPi-R) profile supports #TODO: add general description ...#
+The SDPi-Reporting ([[acronym_sdpi_r,SDPi-R]] SDPi-R) profile supports ...
+////
+#TODO: add general description ...#
+////
 
 // 11.1
 === SDPi-R Actors, Transactions, and Content Modules
@@ -114,7 +117,9 @@ Specific capabilities supporting the <<acronym_ddes>> use case include:
 * *Technical Pre-Conditions*: N/A
 * *Scenarios*: <<acronym_ddes>> <<vol1_clause_appendix_c_use_case_ddes_scenarios>> communication of medical data to a <<actor_somds_consumer>> <<system_type_device_gateway>>
 
+////
 #TODO:  Reference DEC Gateway / DOR actor from generic use case scenario reference#
+////
 
 [#vol1_clause_sdpi_r_ses_considerations]
 === SDPi-R Safety, Effectiveness, Security Considerations and Requirements
@@ -134,8 +139,7 @@ No additional effectiveness requirements or considerations are identified for th
 No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ section above.
 
 === SDPi-R Cross Profile Considerations
-
-No cross profile considerations have been identified.
+No additional cross profile considerations have been identified.
 
 ////
 #TODO:  See the template instructions + PCD 2019 and other TF's to see if any content should go in this section for SDPi-R.#

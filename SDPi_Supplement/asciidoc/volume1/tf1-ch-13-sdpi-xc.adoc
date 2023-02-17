@@ -13,7 +13,10 @@ a| *SDPi Supplement Version Note*: This SDPi-xC (External Control) profile secti
 
 |===
 
-The SDPi-External Control ([[acronym_sdpi_xc,SDPi-xC]] SDPi-xC) profile supports #TODO: add general description ...#
+The SDPi-External Control ([[acronym_sdpi_xc,SDPi-xC]] SDPi-xC) profile supports ...
+////
+#TODO: add general description ...#
+////
 
 // 13.1
 === SDPi-xC Actors, Transactions, and Content Modules
@@ -101,8 +104,7 @@ No additional effectiveness requirements or considerations are identified for th
 No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ section above.
 
 === SDPi-xC Cross Profile Considerations
-
-No cross profile considerations have been identified.
+No additional cross profile considerations have been identified.
 
 ////
 #TODO:  See the template instructions + PCD 2019 and other TF's to see if any content should go in this section for SDPi-xC.#

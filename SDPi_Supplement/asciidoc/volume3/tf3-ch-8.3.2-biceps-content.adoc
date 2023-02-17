@@ -16,7 +16,9 @@ All <<actor_somds_participant>> systems shall fully implement the semantic conte
 ====
 NOTE: This includes strict implementation of the <<acronym_biceps>> <<acronym_mdib>> specification, as well as use of the <<acronym_mdc>> nomenclature.
 
+////
 #TODO:  ADD SPECIFIC BICEPS REQUIREMENT NUMBERS HERE?  THE ICS TABLE WILL BE ADDED TO TF-1 Appendix B in SDPi 1.x#
+////
 
 ====
 ****
@@ -127,7 +129,9 @@ In addition to specific device specializations (see <<vol3_clause_device_special
 
 |===
 
+////
 #TODO:  ADD TERM CODE IDENTIFIERS FOR THE SYSTEM TYPES IN THE TABLE ABOVE + SEE ADDITIONAL TYPES AT https://confluence.hl7.org/pages/viewpage.action?pageId=86972238[ToI "What is a Central?"]#
+////
 
 [#vol3_clause_biceps_ses_content_requirements_considerations]
 ===== Safety, Effectiveness, Security Content Requirements & Considerations
