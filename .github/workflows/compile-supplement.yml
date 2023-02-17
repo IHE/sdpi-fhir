@@ -30,9 +30,6 @@ jobs:
       with:
         ruby-version: '3.0' # Not needed with a .ruby-version file
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    
-    - name: Generate PlantUML diagrams and copy images
-      run: ./.github/copy_images.sh
       
     - name: Create HTML with Gradle
       uses: gradle/gradle-build-action@v2
@@ -40,6 +37,9 @@ jobs:
         arguments: run --args="--input-file ../asciidoc/sdpi-supplement.adoc --output-folder ../sdpi-supplement --backend html"
         build-root-directory: SDPi_Supplement/asciidoc-converter
 
+    - name: Generate PlantUML diagrams and copy images
+      run: ./.github/copy_images.sh
+      
     - name: Extract branch name
       shell: bash
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
