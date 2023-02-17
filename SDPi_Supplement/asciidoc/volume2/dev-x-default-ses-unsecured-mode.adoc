@@ -1,17 +1,17 @@
-=== {var_transaction_id} Safety, Effectiveness, Security Considerations and Requirements
+==== Safety, Effectiveness, Security Considerations and Requirements
 
-==== SES General Considerations
+===== SES General Considerations
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
 
 For additional guidance, see section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
 
-==== Safety Requirements & Considerations
+===== Safety Requirements & Considerations
 No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
 
-==== Effectiveness Requirements & Considerations
+===== Effectiveness Requirements & Considerations
 No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
 
-==== Security Requirements & Considerations
+===== Security Requirements & Considerations
 This transaction is intended to execute over *_UNSECURED_* transmission channels.
 
 Protocol-specific security requirements for this transaction are detailed in the related TF-2 messaging technology appendix.

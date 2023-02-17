@@ -264,3 +264,7 @@ A {var_label_dev_27_message_subscription_end} message is sent whenever a <<actor
 ====== Expected Actions
 
 Once received, the <<actor_somds_consumer>> cannot expect any further incoming <<vol2_clause_dev_27_message_notification, {var_label_dev_27_message_notification}>> messages.
+
+[#vol2_clause_dev_27_manage_biceps_subscription_ses]
+include::../dev-x-default-ses-secured-mode.adoc[]
+

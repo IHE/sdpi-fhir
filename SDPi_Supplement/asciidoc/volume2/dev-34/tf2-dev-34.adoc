@@ -60,3 +60,7 @@ This message is sent whenever a <<actor_somds_provider>> leaves a network.
 ====== Expected Actions
 
 When a <<actor_somds_provider>> sends this message, there is no expected or required response.
+
+
+[#vol2_clause_dev_34_message_announce_network_departure_ses]
+include::../dev-x-default-ses-unsecured-mode.adoc[]

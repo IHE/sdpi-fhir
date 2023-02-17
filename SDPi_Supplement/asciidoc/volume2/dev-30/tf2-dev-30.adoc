@@ -90,3 +90,6 @@ The {var_label_dev_30_message_getmdibresponse} message is sent whenever a <<acto
 
 When a <<actor_somds_provider>> sends this message, there is no expected or required response.
 
+[#vol2_clause_dev_30_retrieve_biceps_content_ses]
+include::../dev-x-default-ses-secured-mode.adoc[]
+
