@@ -116,14 +116,14 @@ pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@Code
 |Text
 |If *@Code* is an MDC code, this field contains the RefId of the MDC code.
 
-In all other cases, the field is set to the pm:xxxMetricDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
+In all other cases, the field is set to the pm:AbstractMetricDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
 |Note that MDC is the default coding system if no coding system is specified.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |*"MDC"* if no other coding system is specified.
 
-In all other cases, the field is set to pm:xxxMetricDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
+In all other cases, the field is set to pm:AbstractMetricDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
 
 |Note that MDC is the default coding system if no coding system is specified.
 

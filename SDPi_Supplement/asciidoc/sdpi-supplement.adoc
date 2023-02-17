@@ -1,6 +1,7 @@
 = Service-oriented Device Point-of-care Interoperability (SDPi) Technical Framework
 :doctype: book
-:xrefstyle: basic
+// CAUTION: do not change the xrefstyle attribute as otherwise numbering will be broken
+:xrefstyle: short
 :toc-title: Contents
 :toc: left
 :toclevels: 3
@@ -10,8 +11,6 @@
 :imagesoutdir: images/
 :imagesdir: images/
 :docinfo: shared
-:sdpi_ref_section_prefix: Section
-:sdpi_ref_appendix_prefix: Appendix
 
 :ihe_supplement_sdpi_revision: 1.0.2
 :ihe_supplement_sdpi_revision_date: {localdatetime}
@@ -58,6 +57,10 @@ image::ihe-logo.svg[pdfwidth=4in,align=center]
 See https://profiles.ihe.net/DEV/[*HERE*] for Trial Implementation and Final Text versions and https://profiles.ihe.net/DEV/#1.2[*HERE*] for Public Comment versions.
 
 {empty} +
+
+// Forward declarations of common labels & acronyms & variables
+include::document-declarations.adoc[]
+
 
 [#supplement_clause_foreword,sdpi_offset=clear]
 = Foreword

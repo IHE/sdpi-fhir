@@ -13,6 +13,8 @@ Another issue is that the field "Universal ID Type" of the HL7 EI date type is b
 
 . Are there any general rules that can be applied to generate a unique deivce id? Or are there any information each device has to provide to generate a unique device id?
 
+. Which unique VMD identifier are provided by devices?
+
 . Which code should be used in the case of an UDI?
 
 |===
@@ -89,5 +91,3 @@ NOTE: <<ref_tbl_dec_obx18_vmd_mapping>> defines the mapping of the <<acronym_mdi
 |
 
 |===
-
-#TODO: which identifer to use on VMD level?#
