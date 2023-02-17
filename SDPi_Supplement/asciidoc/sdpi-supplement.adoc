@@ -19,6 +19,8 @@
 image::ihe-logo.svg[pdfwidth=4in,align=center]
 image::HL7_International_tucked-inR.svg[pdfwidth=4in,align=center]
 
+*A Joint HL7-IHE Gemini Device Interoperability Project*
+
 {empty} +
 
 [subs=attributes]
