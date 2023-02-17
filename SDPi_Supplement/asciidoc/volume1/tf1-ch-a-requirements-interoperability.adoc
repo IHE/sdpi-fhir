@@ -114,7 +114,7 @@ How does this address the "interoperability trust gap"?  By integrating SES dire
 a| *SDPi Supplement Version Note*:  For SDPi 1.0, the inclusion of SES Considerations sections is early and will be significantly extended in subsequent versions of the specification.
 Especially when requirements from the <<acronym_pkp>> standards are included in SDPi 1.1 and following.
 
-Note:  When the <<acronym_pkp>> standards are integrated into this specifiction, then specific requirements will be directly linked to these <<acronym_ses>> Considerations sections.
+Note:  When the <<acronym_pkp>> standards are integrated into this specification, then specific requirements will be directly linked to these <<acronym_ses>> Considerations sections.
 |===
 
 Given the forgoing discussion in section <<vol1_clause_ses_considerations_requirements>>, a standardized template is defined for addressing <<acronym_ses>> requirements as appropriate, including within the scope of profiles, actors, transactions, and content modules.
@@ -151,7 +151,7 @@ No additional effectiveness requirements or considerations are identified for th
 
 ==== Security Requirements & Considerations
 NOTE: This section includes guidance and requirements that are focused on unique *_Security_* requirements associated with associated technical framework element.
-In the context of risk management key properties, security is a state where information and systems are protected from unauthorized activities to a degree that the related risks to confidentiality, intgrity, and avaiability are maintained at an acceptable level throughout the lifecycle (see https://81001.org/concept/security[81001.org/security])
+In the context of risk management key properties, security is a state where information and systems are protected from unauthorized activities to a degree that the related risks to confidentiality, integrity, and availability are maintained at an acceptable level throughout the lifecycle (see https://81001.org/concept/security[81001.org/security])
 
 No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile, and those specified in the _<<acronym_ses>> General Considerations_ section above.
 
