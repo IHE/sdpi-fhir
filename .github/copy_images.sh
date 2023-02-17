@@ -7,5 +7,6 @@ cd SDPi_Supplement/asciidoc
 asciidoctor -r asciidoctor-diagram -r asciidoctor-multipage -b multipage_html5 -D ../ sdpi-supplement.adoc
 cp -R images ../sdpi-supplement/images
 rm -rf ../sdpi-supplement/.asciidoctor
-find ../ -name '.asciidoctor' -exec rm -rf {} \; 
+ls
+find . -name '.asciidoctor' -exec rm -rf {} \; 
 cp -R js ../sdpi-supplement/js
