@@ -331,6 +331,14 @@ NOTE: The mapping differs for physiological alert events and technical/advisory 
 ====
 ****
 
+.R8077
+[sdpi_requirement#r8077,sdpi_req_level=shall]
+****
+
+A <<actor_somds_acm_gateway>> shall report the Alert Event Phase as "update", when there are more updates than just the Alert Priority as specified in <<ref_tbl_acm_obx14_alert_phase_mapping>>  for the "update" Alert Event Phase.
+
+****
+
 [#ref_acm_obx14_event_id_mapping,sdpi_level=+1]
 ====== Date/Time Mapping
 .R8062
@@ -374,14 +382,14 @@ Note that the *pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* changes 
 |escalate
 |*pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* which represents the change of the alert priority.
 
-Note that when there are more changes than just the Alert Priority, the Alert Event Phase is required to be reported as *"update"*.
+Please refer to <<r8077>>.
 
 Note that the *pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
 
 |deescalate
 |*pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* which represents the change of the alert priority.
 
-Note that when there are more changes than just the Alert Priority, the Alert Event Phase is required to be reported as *"update"*.
+Please refer to <<r8077>>.
 
 Note that the *pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
 
@@ -742,6 +750,14 @@ OBX|6|ST|68481\^MDC_ATTR_EVENT_PHASE^MDC|1.1.1.1.3|start||||||R
 ====
 ****
 
+.R8078
+[sdpi_requirement#r8078,sdpi_req_level=shall]
+****
+
+A <<actor_somds_acm_gateway>> shall report the Alert Event Phase as "update", when there are more updates than just the Alert Priority as specified in <<ref_tbl_alert_phase_mapping>> for the "update" Alert Event Phase.
+
+****
+
 [#ref_tbl_acm_obx_alert_phase_mapping]
 .OBX Alert Event Phase Mapping
 |===
@@ -814,12 +830,12 @@ Note that for latching alert signals, the Alert State (see also <<ref_tbl_alert_
 |escalate
 |Alert Priority (see also <<ref_acm_alert_priority_obx_mapping>>) changed to a higher priority; e.g. from *"PM"* to *"PH"*.
 
-Note that when there are more changes than just the Alert Priority, the Alert Event Phase is required to be reported as *"update"*.
+Please refer to <<r8078>>.
 
 |deescalate
 |Alert Priority (see also <<ref_acm_alert_priority_obx_mapping>>) changed to a lower priority; e.g. from *"PH"* to *"PM"*.
 
-Note that when there are more changes than just the Alert Priority, the Alert Event Phase is required to be reported as *"update"*.
+Please refer to <<r8078>>.
 
 |reset
 |*pm:AlertConditionState/@Presence* is set to *"false"* AND
