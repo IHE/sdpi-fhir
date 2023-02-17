@@ -40,9 +40,14 @@ jobs:
         arguments: run --args="--input-file ../asciidoc/sdpi-supplement.adoc --output-folder ../sdpi-supplement --backend html"
         build-root-directory: SDPi_Supplement/asciidoc-converter
 
+    - name: Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+      
     - name: Upload artifact
       # if: success() && github.ref == 'refs/heads/master'
       uses: actions/upload-artifact@v3
       with:
-        name: sdpi-supplement
+        name: sdpi-supplement-${{ steps.extract_branch.outputs.branch }}
         path: SDPi_Supplement/sdpi-supplement
