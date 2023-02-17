@@ -8,128 +8,163 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="468.00052"
-   height="170.0002"
-   overflow="hidden"
+   width="193.8425"
+   height="96.906548"
+   viewBox="0 0 193.8425 96.906548"
    version="1.1"
-   id="svg57"
+   id="svg5655"
    sodipodi:docname="ihe-logo.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   style="overflow:hidden">
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <metadata
-     id="metadata4636">
+     id="metadata5659">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title>IHE International</dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     id="namedview59"
      pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
+     inkscape:window-width="1957"
+     inkscape:window-height="1095"
+     id="namedview5657"
      showgrid="false"
+     inkscape:zoom="2.3556402"
+     inkscape:cx="67.117697"
+     inkscape:cy="138.83488"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="ihe-international"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:zoom="0.68515625"
-     inkscape:cx="199.3541"
-     inkscape:cy="-68.463396"
-     inkscape:window-width="1571"
-     inkscape:window-height="1282"
-     inkscape:window-x="26"
-     inkscape:window-y="17"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="g55">
-    <inkscape:grid
-       type="xygrid"
-       id="grid5312"
-       originx="-20"
-       originy="-9.9997972" />
-  </sodipodi:namedview>
+     fit-margin-bottom="0" />
+  <!-- Created by Xeno Media, Inc. -->
+  <title
+     id="title5583">IHE International</title>
+  <desc
+     id="desc5585">Integrating the Healthcare Enterprise</desc>
   <defs
-     id="defs45">
-    <clipPath
-       id="clip0">
-      <rect
-         x="0"
-         y="0"
-         width="1280"
-         height="720"
-         id="rect35" />
-    </clipPath>
-    <clipPath
-       id="clip1">
-      <rect
-         x="0"
-         y="0"
-         width="4457700"
-         height="1619250"
-         id="rect38" />
-    </clipPath>
-    <image
-       width="351"
-       height="127"
-       xlink:href="data:image/png;base64,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"
-       preserveAspectRatio="none"
-       id="img2" />
-    <clipPath
-       id="clip3">
-      <rect
-         x="0"
-         y="0"
-         width="4457700"
-         height="1612900"
-         id="rect42" />
-    </clipPath>
-    <clipPath
-       id="clip1-7">
-      <rect
-         x="0"
-         y="0"
-         width="4457700"
-         height="1619250"
-         id="rect38-7" />
-    </clipPath>
-    <clipPath
-       id="clip3-0">
-      <rect
-         x="0"
-         y="0"
-         width="4457700"
-         height="1612900"
-         id="rect42-0" />
-    </clipPath>
+     id="defs5592">
+    <linearGradient
+       id="purple-gradient"
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="1">
+      <stop
+         offset="0%"
+         style="stop-color:rgb(80, 57, 139);stop-opacity:1"
+         id="stop5587" />
+      <stop
+         offset="100%"
+         style="stop-color:rgb(62, 44, 114);stop-opacity:1"
+         id="stop5589" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#purple-gradient"
+       id="linearGradient6285"
+       x1="125.17869"
+       y1="0.8072623"
+       x2="125.17869"
+       y2="66.482033"
+       gradientTransform="scale(0.83051676,1.2040696)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#purple-gradient"
+       id="linearGradient6287"
+       x1="28.635975"
+       y1="1.822559"
+       x2="28.635975"
+       y2="75.491158"
+       gradientTransform="scale(0.95421935,1.0479771)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#purple-gradient"
+       id="linearGradient6289"
+       x1="0.63986963"
+       y1="0.98205948"
+       x2="0.63986963"
+       y2="40.677315"
+       gradientTransform="scale(0.51416725,1.9448924)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#purple-gradient"
+       id="linearGradient6291"
+       x1="0.23262048"
+       y1="1.3747199"
+       x2="0.23262048"
+       y2="113.21497"
+       gradientTransform="scale(1.4143209,0.70705314)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#purple-gradient"
+       id="linearGradient6293"
+       x1="0.23262048"
+       y1="1.3747199"
+       x2="0.23262048"
+       y2="113.21497"
+       gradientTransform="scale(1.4143209,0.70705314)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#purple-gradient"
+       id="linearGradient6295"
+       x1="0.23262048"
+       y1="9.8606453"
+       x2="0.23262048"
+       y2="121.7009"
+       gradientTransform="scale(1.4143209,0.70705314)"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <g
-     clip-path="url(#clip0)"
-     id="g55"
-     transform="translate(-411,-280.0002)">
+     id="ihe-international"
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
+     transform="translate(-72.490808,-7.8210259)">
     <g
-       clip-path="url(#clip1-7)"
-       transform="matrix(1.04987e-4,0,0,1.04987e-4,411,280.0002)"
-       id="g53">
+       id="ihe-logo"
+       style="fill:url(#linearGradient6295)"
+       transform="matrix(1.2254707,0,0,1.2254707,72.087628,-0.7229558)">
       <g
-         clip-path="url(#clip3-0)"
-         transform="matrix(1,0,0,1.00394,-0.25,-0.25)"
-         id="g51">
-        <use
-           width="100%"
-           height="100%"
-           xlink:href="#img2"
-           transform="scale(12700)"
-           id="use49"
-           x="0"
-           y="0" />
+         id="logo"
+         transform="translate(0,6)"
+         style="fill:url(#linearGradient6293)">
+        <g
+           id="ihe"
+           style="fill:url(#linearGradient6291)">
+          <path
+             d="m 156.121,2.325 c -4.182,-0.521 -10.147,-1.353 -23.032,-1.353 -15.392,0 -29.126,3.33 -29.126,22.24 v 34.504 c 0,18.906 13.606,22.333 29.006,22.333 12.889,0 18.97,-0.83 23.152,-1.347 1.679,-0.209 2.386,-0.838 2.386,-2.183 v -9.666 c 0,-1.149 -1.076,-2.071 -2.386,-2.071 h -24.235 c -5.597,0 -7.634,-1.669 -7.634,-7.066 v -11.02 h 30.92 c 1.309,0 2.38,-0.942 2.38,-2.085 V 34.74 c 0,-1.144 -1.071,-2.066 -2.38,-2.066 h -30.92 v -9.462 c 0,-5.397 2.037,-7.069 7.634,-7.069 h 24.235 c 1.31,0 2.386,-0.928 2.386,-2.071 V 4.407 c 0,-1.354 -0.707,-1.881 -2.386,-2.082"
+             id="ihe-e"
+             style="fill:url(#linearGradient6285)"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 29.705,79.113 h 15.637 c 1.307,0 2.384,-0.93 2.384,-2.069 V 47.003 h 29.482 v 30.041 c 0,1.139 1.079,2.069 2.393,2.069 h 15.637 c 1.304,0 2.383,-0.93 2.383,-2.069 V 3.88 c 0,-1.141 -1.079,-1.97 -2.383,-1.97 H 79.601 c -1.314,0 -2.393,0.829 -2.393,1.97 V 31.525 H 47.726 V 3.88 c 0,-1.141 -1.077,-1.97 -2.384,-1.97 H 29.705 c -1.312,0 -2.38,0.829 -2.38,1.97 v 73.164 c 0,1.139 1.068,2.069 2.38,2.069"
+             id="ihe-h"
+             style="fill:url(#linearGradient6287)"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 20.739,3.88 c 0,-1.141 -0.952,-1.97 -2.271,-1.97 H 2.473 c -1.311,0 -2.144,0.829 -2.144,1.97 v 73.164 c 0,1.139 0.833,2.069 2.144,2.069 h 15.995 c 1.319,0 2.271,-0.93 2.271,-2.069 V 3.88"
+             id="ihe-i"
+             style="fill:url(#linearGradient6289)"
+             inkscape:connector-curvature="0" />
+        </g>
       </g>
     </g>
   </g>
