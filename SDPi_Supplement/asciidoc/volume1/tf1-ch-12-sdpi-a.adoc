@@ -15,7 +15,10 @@ Note that the related transactions are completely defined in <<vol2_clause_trans
 |===
 
 
-The SDPi-Alerting ([[acronym_sdpi_a,SDPi-A]] SDPi-A) profile supports #TODO: add general description ...#
+The SDPi-Alerting ([[acronym_sdpi_a,SDPi-A]] SDPi-A) profile supports ...
+////
+#TODO: add general description ...#
+////
 
 // 12.1
 === SDPi-A Actors, Transactions, and Content Modules
@@ -148,5 +151,9 @@ No additional security requirements and considerations are identified for this t
 
 // 12.6
 === SDPi-A Cross Profile Considerations
+No additional cross profile considerations have been identified.
+
+////
 #TODO:  See the template instructions + PCD 2019 and other TF's to see if any content should go in this section for SDPi-A.#
+////
 

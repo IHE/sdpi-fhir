@@ -11,10 +11,10 @@
 |===
 a| *SDPi Supplement Version Note*:  This appendix provides informative (vs. normative) information related to the unique way in which this supplement integrates requirements, both from referenced foundational standards and within this specification.
 *For SDPi 1.0*, given its non-normative nature, full detailing of the concepts and specifications is deferred to a subsequent revision of the specification.
-So, please excuse the incomplete sections and the numerous #TODO:...# notes!
+So, please excuse the incomplete sections with "placeholder" version notes!
 There is value, though, in giving the existing content a quick review and providing feedback that would inform subsequent revisions of the specification.
 
-*REVIEWER QUESTION*:  Please consider the topics that are included in this section and are either detailed or marked wit #TODO:# notes and provide feedback on:
+*REVIEWER QUESTION*:  Please consider the topics that are included in this section and are either detailed or have version notes and provide feedback on:
 
 . What additional topics should be included?
 . What is the priority for the detailing and integration of these topics?
@@ -65,7 +65,9 @@ Last accessed 2022.10.04.], some general observations will help understand the v
 . <requirements interoperability traces "profile lines" from top to bottom>;
 . <requirements TYPEs are rooted in the layers that they represent and link Defs to Usage, see <<vol1_clause_sdpi_requirements_core_model> section below.>.
 
+////
 #TODO:  ADD INTEROPERABILITY PATHS EXAMPLE VIA A TABLE (VS. LINES THROUGH GRAPHIC)#
+////
 
 NOTE:  The implementation of this framework will be extended as the specifications and tooling mature.
 
@@ -120,11 +122,13 @@ Note:  When the <<acronym_pkp>> standards are integrated into this specifiction,
 Given the forgoing discussion in section <<vol1_clause_ses_considerations_requirements>>, a standardized template is defined for addressing <<acronym_ses>> requirements as appropriate, including within the scope of profiles, actors, transactions, and content modules.
 The content in the following sections should be included and then specialized as appropriate for the associated technical framework element.
 
+////
 #TODO:  Should we and where should we add references to the IHE DEV MEM security white papers + and the ITI security cookbook etc.?#
 
 #TODO:  Should "mixed safety class" discussions / issue be mentioned in the template or in this section?  Note:  it is mentioned in the TF-3 BICEPS section.#
 
 #TODO:  Should the following be provided in a special AsciiDoc text box or just left as is?#
+////
 
 [#vol1_clause_appendix_a_ses_considerations_and_requirements]
 === Safety, Effectiveness, Security Considerations and Requirements
@@ -153,20 +157,30 @@ No additional security requirements and considerations are identified for this t
 
 === Use Cases, MBSE Requirements Modeling & SysML 2.0
 
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
 #TODO:
 - MBSE Reference incl. Requirements Modeling
 - Reference SysML 2.0 7.20 + intro slides on <topics>
 - ALL USE CASE FEATURE are REQUIREMENTS
 - MBSE Requirements Modeling #
+////
 
 <<acronym_omg>>'s Systems Modeling Language 2.0 (see <<ref_omg_sysml_2_0_spec>> and <<ref_omg_sysml_2_0_intro_graphical_model>>), provides extended support for requirements modeling that not only provides the foundation for MBSE's Requirements Modeling, but also a computable specification that enables automated verification (e.g., using "Verification Cases").
 
+////
 #TODO:  Add reference to SysML 2.0 section 7.20 Requirements & 7.23 Verification Cases#
 
 #TODO:  Add reference to Hanging Gardens Framework ... use case requirements are the top level#
 
 #TODO:  Add reference to RI+MC+RR w/ RI supported in modeling via SysML starting constructs + MC = SysML 2.0#
-
+////
 
 [#vol1_clause_sdpi_requirements_modeling_integration]
 === SDPi Requirements Modeling & Integration
@@ -232,11 +246,13 @@ Each type is a source of requirements that are explicitly identified and formali
 |
 |===
 
+////
 #TODO: show core data elements for this abstract SDPi Requirement Definition #
 
 #TODO: note navigating relationships from usage to requirements supports traceability from capabilities / feature verification back to source requirements and group coverage#
 
 #TODO:  Mention traceability & coverage#
+////
 
 ==== Requirements Binding Strategies
 Although <<vol1_figure_appendix_a_sdpi_requirements_core_model>> generally indicates bi-directional navigation (arrows on both ends of Requirement-Usage pairs, supporting *_bi-directional bindings_* and navigation is not always helpful.
@@ -257,6 +273,15 @@ Application of this rule would also hold true in other places such as backward r
 In some cases, it may be necessary to provide bi-directional bindings; however, that would be the exception and not the rule.
 
 ==== Alignment with SysML 2.0 Requirements Modeling
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
 #TODO:  THIS WHOLE SECTION#
 
 . Include UML Model for requirements type
@@ -277,8 +302,18 @@ In some cases, it may be necessary to provide bi-directional bindings; however, 
 *** containment / reference list
 
 NOTE: Verification Cases will be used to perform verification of "satisfy" usage of defined requirements
+////
 
 ==== Relationship to Gazelle Master Model + Assertion Tool Model
 
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
 #TODO:  ADD UML MODELS FROM GMM AIPO + ASSERTION MODEL; show in VERY SIMPLE TERMS how the above supports these.#
+////
 

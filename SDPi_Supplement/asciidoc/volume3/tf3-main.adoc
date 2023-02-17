@@ -48,7 +48,9 @@ Subsequent versions of the specification may address this more comprehensively.
 | Move IHE PCD 2019 TF-3 section 3 (text immediately after the section header) to this SDPi 1.0 TF-3 section 8.1
 |===
 
+////
 #TODO:  Update the IHE PCD 2019 TF-3 section 3 content to be model/format independent#
+////
 
 // 8.2
 === General device content considerations
