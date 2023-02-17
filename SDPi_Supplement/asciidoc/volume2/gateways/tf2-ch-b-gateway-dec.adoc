@@ -537,12 +537,14 @@ NOTE: Metrics with a different *@MetricCategory* are skipped/ignored.
 .R8019
 [sdpi_requirement#r8019,sdpi_req_level=shall]
 ****
-For each numeric metric, a <<actor_somds_dec_gateway>> shall set the OBX-5 field to the *pm:NumericMetricState/pm:MetricValue/@Value*.
+For each numeric metric that complies with <<r8017>> and <<r8018>>, a <<actor_somds_dec_gateway>> shall set the OBX-5 field to the *pm:NumericMetricState/pm:MetricValue/@Value*.
 
 .Notes
 [%collapsible]
 ====
 NOTE: Note that the decimal number needs to be formatted according to the HL7 numeric value formatting rules.
+
+NOTE: Note that sample array metrics are not supported by the <<actor_somds_dec_gateway>>.
 ====
 ****
 
@@ -551,7 +553,7 @@ NOTE: Note that the decimal number needs to be formatted according to the HL7 nu
 .R8020
 [sdpi_requirement#r8020,sdpi_req_level=shall]
 ****
-For each string metric, a <<actor_somds_dec_gateway>> shall set the OBX-5 field to the *pm:StringMetricState/pm:MetricValue/@Value*.
+For each string metric that complies with R8017 and R8018, a <<actor_somds_dec_gateway>> shall set the OBX-5 field to the *pm:StringMetricState/pm:MetricValue/@Value*.
 ****
 
 [sdpi_level=+1]
@@ -560,19 +562,20 @@ For each string metric, a <<actor_somds_dec_gateway>> shall set the OBX-5 field 
 .R8021
 [sdpi_requirement#r8021,sdpi_req_level=shall]
 ****
-For each enumeration string metric, a <<actor_somds_dec_gateway>> shall set the OBX-5 field to a coded element value.
+For each enumeration string metric that complies with R8017 and R8018, a <<actor_somds_dec_gateway>> shall set the OBX-5 field to a coded element value.
 
 .Notes
 [%collapsible]
 ====
 NOTE: <<ref_tbl_dec_obx5_enum_mapping>> defines the mapping of the SDC coded element value to the data fields of the HL7 data type *CWE* used in the OBX-5 field.
 
-NOTE: The *pm:EnumStringMetricState/pm:MetricValue/@Value* contains the string of the selected enumerated element.
-The actual coded element value can be retrieved from the *pm:EnumStringMetricDescriptor/pm:AllowedValue* list by comparing the *pm:EnumStringMetricState/pm:MetricValue/@Value* with the *pm:EnumStringMetricDescriptor/pm:AllowedValue/pm:Value*.
+NOTE: The *pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@Value* contains the string of the selected enumerated element.
+The actual coded element value can be retrieved from the *pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue* list by comparing the *pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@Value* with the *pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Value*.
 
-NOTE: If a match has been found, the *pm:EnumStringMetricDescriptor/pm:AllowedValue/pm:Type* can be mapped as defined in <<ref_tbl_dec_obx5_enum_mapping>>.
-If no matching value has been found, the *pm:EnumStringMetricState/pm:MetricValue/@Value* can be set in the OBX-5 field.
-The OBX-2 can be set to *"ST"* (see also <<ref_tbl_dec_obx2_mapping>>).
+NOTE: If a match has been found, the *pm:EnumStringMetricDescriptor+++<wbr/>+++/pm:AllowedValue+++<wbr/>+++/pm:Type* is required to be mapped as defined in <<ref_tbl_dec_obx5_enum_mapping>>.
+
+NOTE: If no matching value has been found, the enumeration is treated as a string metric and the *pm:EnumStringMetricState+++<wbr/>+++/pm:MetricValue+++<wbr/>+++/@Value* is required to be set in the OBX-5 field, and
+the OBX-2 is required to be set to *"ST"* (see also <<ref_tbl_dec_obx2_mapping>> and <<r8020>>).
 ====
 ****
 
