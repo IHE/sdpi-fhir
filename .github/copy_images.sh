@@ -8,3 +8,4 @@ asciidoctor -r asciidoctor-diagram -r asciidoctor-multipage -b multipage_html5 -
 cp -R images ../sdpi-supplement/images
 cp -R js ../sdpi-supplement/js
 rm -rf ../sdpi-supplement/.asciidoctor
+rm -rf ../sdpi-supplement/readme.md
