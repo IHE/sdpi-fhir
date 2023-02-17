@@ -210,8 +210,10 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | O
 | <<vol2_clause_dev_34>>
 
+// FOR THE NEXT ROW:
+//     #TODO: TBD HOW TO REPLICATE TRANSACTIONS; ACTOR SUPPORTS ALL PROVIDER & CONSUMER TRANSACTIONS WITH SAME OPTIONALITY#
 | <<actor_somds_connector>>
-| #TODO: TBD HOW TO REPLICATE TRANSACTIONS; ACTOR SUPPORTS ALL PROVIDER & CONSUMER TRANSACTIONS WITH SAME OPTIONALITY#
+| See Note 3
 | ...
 | ...
 | ...
@@ -222,8 +224,10 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 | ...
 | ...
 
+// FOR THE NEXT ROW:
+//     #TODO: TBD HOW TO REPLICATE TRANSACTIONS#
 | <<actor_somds_v2_gateway>>
-| #TODO: TBD HOW TO REPLICATE TRANSACTIONS#
+| See Note 3
 | ...
 | ...
 | ...
@@ -244,6 +248,8 @@ Note that “Consumer” is indicated for actors that receive but do not directl
 Note 1: _“Notify Change in System Context and Capabilities”_ is required if there are dynamic changes that may need to be sent to subscribing systems.
 
 Note 2: _“Receiver”_ is included in this column, in _italics_, to indicate that though a <<actor_somds_consumer>> may "receive" the transaction, there is no response communicated to the message initiator.
+
+Note 3: *_SDPi Version Note:_*  -- Full detailing of the transactions related to this actor will be addressed in a subsequent version of this specification.
 
 |===
 
@@ -364,7 +370,9 @@ This section documents any additional requirements on the profile’s content ac
 include::../plantuml/vol1-figure-sdpi-p-example-sequence-diagram.puml[]
 ....
 
+////
 #TODO:  IN THE FOLLOWING SECTIONS, SHOULD THE LINKS BE TO THE GLOSSARY APPENDIX OR TO THE ACTOR DEFINTION SECTIONS WHICH IN TURN CAN INCLUDE A LINK TO THE ACTORS APPENDIX?#
+////
 
 [#vol1_clause_sdpi_p_somds_participant]
 ===== SOMDS Participant
@@ -552,8 +560,6 @@ They are provided here to indicate potential additions to the SDPi-P profile in 
 Options that may be selected for each actor in this profile, if any, are listed in  <<vol1_table_sdpi_p_actors_options>>.
 Dependencies between options, when applicable, are specified in notes.
 
-#TODO:  Complete migration of the Word table contents to the table below#
-
 [#vol1_table_sdpi_p_actors_options]
 .SDPi-P – Actors and Options
 
@@ -571,6 +577,25 @@ Dependencies between options, when applicable, are specified in notes.
 
 [#vol1_table_sdpi_p_option_streaming]
 ==== Streaming Option
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  Profile options are out-of-scope for this version of the supplement.
+Future versions will include options such as the following:
+
+* Safe Data Transmission
+* Compact Representation
+* Patient Context Management
+* Archive Service
+* Localization Service
+* Ensemble Participation
+* Mobile Health / Cloud Connected
+
+|===
+
+////
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
 
 [#vol1_table_sdpi_p_option_safe_data_transmission]
@@ -596,13 +621,18 @@ Dependencies between options, when applicable, are specified in notes.
 [#vol1_table_sdpi_p_option_ensemble_participatioon]
 ==== Ensemble Participation Option
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
-
+////
 
 
 [#vol1_clause_sdpi_p_required_actor_groupings]
 === SDPi-P Required Actor Groupings
 
+No required actor groupings have been identified.
+
+////
 #TODO:  ADD CT SOMDS_PARTICIPANT GROUPING + ATNA(?) ADD CONTENT FROM WORD DOCUMENT HERE; DO WE NEED TO ALSO CONSIDER GENERAL V2 AND DEV TF-2 APPENDIX A?#
+ALSO what about abstract actors ... Participant and Connector ... do we indicate that the specialized actors are "grouped" with these?  Assume not but a question to be asked.
+////
 
 // 10.4
 === SDPi-P Overview
@@ -612,7 +642,9 @@ Dependencies between options, when applicable, are specified in notes.
 
 [#vol1_clause_sdpi_p_soa_somds_architecture_alignment]
 ===== SOA & SOMDS Architecture Alignment
+////
 #TODO: Link back to SDPi general overview at the top and how leveraged for SDPi-P Actors Model;  SOMDS Participant ABSTRACT actor role#
+////
 
 From a conceptual perspective, <<acronym_sdc>> implements a <<acronym_soa>> architecture for device-to-device <<term_plug_and_trust>> interoperability.  Consider <<figure_general_soa_model>>:
 
@@ -626,6 +658,7 @@ This generalized model includes (3) system roles:
 
 . *Service Registry* -- a <<acronym_soa>> network capability enabling participating systems to *_discover_* services provided by networked systems, as well as information for how a service consumer system can
 
+////
 #TODO: ADD --#
 
 * #why somds#
@@ -633,6 +666,7 @@ This generalized model includes (3) system roles:
 * #somds participant#
 * #somds provider and consumer mappings#
 * #same system can support both roles; all systems mush support participant#
+////
 
 NOTE:  A detailed overview of <<acronym_soa>> concepts is beyond the scope of this specification.  See <<vol1_appendix_b_references>> for additional background materials.
 
@@ -657,46 +691,128 @@ Therefore, though the <<acronym_mdib>> of a <<actor_somds_provider>> system must
 For an example of how <<acronym_biceps>> components (see <<figure_sdc_biceps_components_model>>) and <<acronym_mdib>> descriptors and states (see <<figure_sdc_biceps_mdib_descriptors_states>>) support <<term_plug_and_trust>> interoperability, a typical conversation is provided in <<vol1_figure_sdpi_p_example_sequence_diagram>>.
 
 ===== General Healthcare vs. Medical Interoperability Purposes
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
 #TODO: All the transactions here are focused on healthcare information exchange with out any intended medical purpose; relationship to the other SDPi Profiles#
+////
 
 [#vol1_clause_sdpi_p_ensuring_time_synchronization]
 ===== Ensuring Time Synchronization
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
 #TODO: This is a key topic for all health information exchange, and especially that of medical data.  A consuming system has to know, for example, that the time stamps provided in the BICEPS content or in the messages is accurate (and to what degree).  Requirements will be included HERE for SOMDS Participant & all other actors including BICEPS Content <xyz>.  Additional requirements may be added to the TF-3 BICEPS Content Module section as well.
 Integration of CT and ATNA (TBD) below in required groupings is assumed but should be detailed here.#
 
 #TODO: No time sync service identified in 11073 SDC core; include only in the SDPi-P section ... as a requirement to use NTP?; reference resolution of *TS Service*, *MD LAN*, in glossary entries#
+////
 
 ===== Waveform Communication
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
 #TODO:  Explain how waveforms are communicated, both snippets and especially "streaming"; include references to appropriate TF-2 & TF-3 Sections; this is part of the "DO WE NEED A WAVEFORM OPTION?" question to help end users? NO!!!  Could drop a note in TF-2 Appendix A for DEV-xyz and how RTSA/Waves would be transmitted / conveyed over the network#
+////
 
 [#vol1_clause_sdpi_p_aggregators_proxies_sensors]
 ===== Aggregators, Proxies, Sensors
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
 ##TODO: :  Include single / multiple patient variations.  See Topic on confluence; ultimately probably in TF-1 & -2 & -3.  NOTE added a section in TF-3 as well.
 Mention SENSORS and WSN referencing SOMDS Sensor Gateways w/ rationale.
 Include CLINICAL WORKPLACE SOMDS PROXY SERVICE …
 NOTE:  This is not defined in 11073-20701 beyond clause 3. Definitions
 See Gateways in the actors discussion above … and below?
 ##
+////
 
 ===== Protocol-Specific Gateways
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
 #TODO: :  External interfaces “gateways” defined in the abstract and in the protocol-specific.  These actors are leveraged in other profiles such as SDPi-Reporting for a DEC Gateway or in SDPi-Alerting for an ACM gateway.  Include proprietary protocols as well.
 Given the discussion in Actors above, is this necessary here?  Or should some of that content be moved here?  YES … show examples for how the Actors might be grouped into a real-world gateway to … for example … an EHR etc.]#
+////
 
 [#vol1_clause_smart_app_platforms]
 ===== Smart App Platforms
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
 #TODO: 1.	This section enhances the short actor description above to describe in more detail the various aspects of an application “platform”; see Word draft section 10.4.1.5 for additional content#
+////
 
 ===== Workflow vs. Transport Actors and Interactions
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
 #TODO: discuss the challenges of drawing a line between transport profile actors in SDPi and applications of those actors in more care context / workflow applications, such as Smart Alarming or MDIRA/ICE or ICU Integration etc.  Reference TF-0 profile "types" - workflow vs. transport vs. content (???) ]#
+////
 
 ===== SDC / BICEPS MDIB Versioning Management
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
 #TODO: Where do we address profiling of MDIB versioning?  TF-1, TF-2 (e.g., in Appendix), TF-3 in MDIB content module?  Mix of all three?!#
+////
 
 // 10.4.2
 ==== Use Cases
 The SDPi-P profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this profile.
 
+////
 #TODO:  For each of these, add discussion to HOW and WHERE (with links) that the requirements are met.  Include a Requirements usage block?  CT DEPENDENCY IN SOMDS_PARTICIPANT MEETS THESE REQUIREMENTS#
+////
 
 ===== <<label_use_case_name_stad>> (<<acronym_stad>>)
 This use case fully addresses the requirements from  <<vol1_clause_appendix_c_use_case_stad>>.
@@ -708,7 +824,9 @@ Specific capabilities supporting the <<acronym_stad>> use case include:
 * *Technical Pre-Conditions*:  <<acronym_stad>> <<vol1_clause_appendix_c_use_case_stad_technical_precondition>> are fully supported by SDPi-P
 * *Scenarios*:  <<acronym_stad>> <<vol1_clause_appendix_c_use_case_stad_scenarios>> are fully supported by SDPi-P
 
+////
 #TODO:  Should a sequence diagram be included here?  Or in above?  For each of the STAD Scenarios a sequence diagram should be provided.  This could include transactions and actor linkages as well#
+////
 
 ===== <<label_use_case_name_sicdsp>> (<<acronym_sicdsp>>)
 This use case provides capabilities for requirements from <<vol1_clause_appendix_c_use_case_sicdsp>>.
@@ -720,7 +838,9 @@ Specific capabilities supporting the <<acronym_sicdsp>> use case include:
 * *Technical Pre-Conditions*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_technical_precondition>> are fully supported by SDPi-P
 * *Scenarios*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> basic communication requirements are supported by SDPi-P
 
+////
 #TODO:  Do SystemContext/PatientContext/LocationContext need to be called out here to meet requirements related to "ICU" or "single patient"?#
+////
 
 ===== <<label_use_case_name_sicdmp>> (<<acronym_sicdmp>>)
 This use case provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_sicdmp>>.
@@ -732,7 +852,9 @@ Specific capabilities supporting the <<acronym_sicdmp>> use case include:
 * *Technical Pre-Conditions*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_technical_precondition>> are fully supported by SDPi-P
 * *Scenarios*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> basic communication requirements are supported by SDPi-P
 
+////
 #TODO:  Do SystemContext/PatientContext/LocationContext need to be called out here to meet requirements related to "ICU" or "multiple patient"?#
+////
 
 ===== <<label_use_case_name_ddes>> (<<acronym_ddes>>)
 This use case provides capabilities for requirements from  <<vol1_clause_appendix_c_use_case_ddes>>.
@@ -790,4 +912,8 @@ No additional security requirements and considerations are identified for this t
 
 [#vol1_clause_sdpi_p_cross_profile_considerations]
 === SDPi-P Cross Profile Considerations
+No cross profile considerations have been identified.
+
+////
 #TODO:  See the template instructions + PCD 2019 and other TF's to see if any content should go in this section for SDPi-P.#
+////

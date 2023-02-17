@@ -72,12 +72,31 @@ Ultimately, the content of this appendix may be rearranged and even relocated; h
 // Appendix B.x
 [sdpi_offset=1]
 ==== Mapping Foundational Standard Requirements to SDPi Constructs
-#TODO:  Add RI overview & spec / styleguide for how requirements from ICS tables and similar are mapped to where they are satisfied + a link / reference to the general discussion in TF-1 Appendix A and the Referenced Standards model for RI#
 
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
+#TODO:  Add RI overview & spec / styleguide for how requirements from ICS tables and similar are mapped to where they are satisfied + a link / reference to the general discussion in TF-1 Appendix A and the Referenced Standards model for RI#
+////
 
 // Appendix B.x
 ==== Overview of Standards Conformity Statements
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  This section intentionally left blank for the current version, but is a placeholder for content that will be added in the future.
+|===
+
+////
 #TODO:  Provide a general overview of the topic, including some standards that provide Conformity statements, ICS tables, etc., and those that are moot on the topic - and how all of this is handled in this appendix and TF specification#
+////
 
 // ISO/IEEE 11073-10207:2017 ICS
 
