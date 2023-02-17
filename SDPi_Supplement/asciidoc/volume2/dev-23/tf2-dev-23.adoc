@@ -92,7 +92,7 @@ This transaction is intended to execute over *_UNSECURED_* transmission channels
 Protocol-specific security requirements for this transaction are detailed in the related TF-2 messaging technology appendix.
 For example, <<vol2_appendix_a_mdpws_messages>> for <<acronym_mdpws>>-based communication.
 
-Appropriate security risk management shall be performed to ensure that no unintended information is disclosed during *_UNSECURED_* exchange.
+Appropriate security risk management shall be performed to ensure that no unintended information is disclosed during *_UNSECURED_* message exchange.
 
 
 
