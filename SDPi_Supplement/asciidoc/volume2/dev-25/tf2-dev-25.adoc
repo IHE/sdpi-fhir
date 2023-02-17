@@ -92,7 +92,7 @@ No additional safety requirements or considerations are identified for this tech
 No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
 
 ==== Security Requirements & Considerations
-This transaction is intended to execute over *_SECURED_* connections.
+This transaction is intended to execute over *_SECURED_* transmission channels.
 
 Protocol-specific security requirements for this transaction are detailed in the related TF-2 messaging technology appendix.
 For example, <<vol2_appendix_a_mdpws_messages>> for <<acronym_mdpws>>-based communication.
