@@ -25,12 +25,6 @@
     </div>
     <div><strong>A Joint HL7-IHE Gemini Device Interoperability Project</strong></div>
 </div>
-++++
-
-{empty}+
-
-[subs=attributes]
-++++
 <p style="font-size: 2.75em; text-align: center"><strong>IHE Devices</strong></p>
 
 <p style="font-size: 2.75em; text-align: center"><strong>Technical Framework Supplement</strong></p>
