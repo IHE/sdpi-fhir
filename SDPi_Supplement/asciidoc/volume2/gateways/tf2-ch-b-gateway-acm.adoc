@@ -121,17 +121,17 @@ The table <<ref_tbl_acm_obr3_mapping>> defines the mapping of the Alert Event Id
 |OBR-3/EI-2
 |Namespace ID
 |
-|Shall be set to the EI-2 field as defined in table <<ref_acm_equipment_id_mapping>>.
+|Field is required to be set to the EI-2 field as defined in table <<ref_acm_equipment_id_mapping>>.
 
 |OBR-3/EI-3
 |Universal ID
 |
-|Shall be set to the EI-3 field as defined in table <<ref_acm_equipment_id_mapping>>.
+|Field is required to be set to the EI-3 field as defined in table <<ref_acm_equipment_id_mapping>>.
 
 |OBR-3/EI-4
 |Universal ID Type
 |
-|Shall be set to the EI-4 field as defined in table <<ref_acm_equipment_id_mapping>>.
+|Field is required to be set to the EI-4 field as defined in table <<ref_acm_equipment_id_mapping>>.
 
 |===
 
@@ -194,17 +194,17 @@ NOTE: The table <<ref_tbl_acm_obr29_mapping>> defines the mapping of the Alert E
 |OBR-29/EIP-2/EI-2
 |Namespace ID
 |
-|Shall be set to the EI-2 field as defined in table <<ref_acm_equipment_id_mapping>>.
+|Field is required to be set to the EI-2 field as defined in table <<ref_acm_equipment_id_mapping>>.
 
 |OBR-29/EIP-2/EI-3
 |Universal ID
 |
-|Shall be set to the EI-3 field as defined in table <<ref_acm_equipment_id_mapping>>.
+|Field is required to be set to the EI-3 field as defined in table <<ref_acm_equipment_id_mapping>>.
 
 |OBR-29/EIP-2/EI-4
 |Universal ID Type
 |
-|Shall be set to the EI-4 field as defined in table <<ref_acm_equipment_id_mapping>>.
+|Field is required to be set to the EI-4 field as defined in table <<ref_acm_equipment_id_mapping>>.
 
 |===
 
@@ -263,7 +263,7 @@ If a private *<<acronym_mdc>>* code is used for the coding of the SDC device-rel
 |OBX-2
 |Value Type
 |
-|Shall be left empty.
+|Field is required to be left empty.
 
 |OBX-3
 |Observation Identifier
@@ -291,7 +291,7 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 |
 |Please refer to <<ref_acm_equipment_id_mapping>> for further information.
 
-Note that this field shall only be set for the MDS and/or the VMD element if applicable. Otherwise, this field shall be left empty or omitted.
+Note that this field is only required to be set for the MDS and/or the VMD element if applicable. Otherwise, this field is required to be left empty or omitted.
 
 |===
 
@@ -356,7 +356,7 @@ NOTE: The HL7 date & time format differs from the xsd date/time formats and requ
 |IHE ACM Alert Event Phase |SDC Alert Condition/Signal State
 
 |start
-|*pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* which shall represent the alert onset date/time.
+|*pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* which represents the alert onset date/time.
 
 |continue
 |The gateway may resend the unchanged alert event information, for example, on a regular basis in order to mitigate the risk of an alert message loss, or after a reconnection to the Alert Manager or Alert Consumer in order to synchronize the current alert status. In this case, the date/time is determined by the gateway for this message.
@@ -364,7 +364,7 @@ NOTE: The HL7 date & time format differs from the xsd date/time formats and requ
 
 
 |end
-|*pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* which shall represent the end of the alert condition without latching.
+|*pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* which represents the end of the alert condition without latching.
 
 |update
 |*pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* or *pm:AlertSignalState+++<wbr/>+++/pm:DeterminationTime* for any updates/changes to be reported but does not match any other Alert Event Phase mapping criteria.
@@ -372,21 +372,21 @@ NOTE: The HL7 date & time format differs from the xsd date/time formats and requ
 Note that the *pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
 
 |escalate
-|*pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* which shall represent the change of the alert priority.
+|*pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* which represents the change of the alert priority.
 
-Note that when there are more changes than just the Alert Priority, the Alert Event Phase shall be reported as *"update"*.
+Note that when there are more changes than just the Alert Priority, the Alert Event Phase is required to be reported as *"update"*.
 
 Note that the *pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
 
 |deescalate
-|*pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* which shall represent the change of the alert priority.
+|*pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* which represents the change of the alert priority.
 
-Note that when there are more changes than just the Alert Priority, the Alert Event Phase shall be reported as *"update"*.
+Note that when there are more changes than just the Alert Priority, the Alert Event Phase is required to be reported as *"update"*.
 
 Note that the *pm:AlertConditionState+++<wbr/>+++/pm:DeterminationTime* changes only when the *@Presence* attribute is updated. The gateway has to determine the date/time by itself when other attributes have changed (e.g. alert priority).
 
 |reset
-|*pm:AlertSignalState+++<wbr/>+++/pm:DeterminationTime* which shall represent the end of a latched alert event state.
+|*pm:AlertSignalState+++<wbr/>+++/pm:DeterminationTime* which represents the end of a latched alert event state.
 
 |===
 
@@ -423,16 +423,16 @@ If a private *<<acronym_mdc>>* code is used for the coding of the SDC coded elem
 
 |OBX-3/CWE-2
 |Text
-|If *@Code* is an <<acronym_mdc>> code, this field shall contain the RefId of the <<acronym_mdc>> code.
+|If *@Code* is an <<acronym_mdc>> code, this field is required to contain the RefId of the <<acronym_mdc>> code.
 
-In all other cases, the field shall be set to the pm:AlertConditionDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
+In all other cases, the field is required to be set to the pm:AlertConditionDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
 | Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-3/CWE-3
 |Name of Coding System
 |*"<<acronym_mdc>>"* if no other coding system is specified.
 
-In all other cases, the field shall be set to pm:AlertConditionDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
+In all other cases, the field is required to be set to pm:AlertConditionDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
 
 |Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
@@ -530,16 +530,16 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |OBX-5/CWE-2
 |Text
-|If *@Code* is an <<acronym_mdc>> code, this field shall contain the RefId of the <<acronym_mdc>> code.
+|If *@Code* is an <<acronym_mdc>> code, this field is required to contain the RefId of the <<acronym_mdc>> code.
 
-In all other cases, the field shall be set to the pm:AlertConditionDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
+In all other cases, the field is required to be set to the pm:AlertConditionDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
 | Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-5/CWE-3
 |Name of Coding System
 |*"<<acronym_mdc>>"* if no other coding system is specified.
 
-In all other cases, the field shall be set to pm:AlertConditionDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
+In all other cases, the field is required to be set to pm:AlertConditionDescriptor+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
 
 |Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
@@ -693,16 +693,16 @@ Please refer to <<ref_acm_containment_tree_mapping>> for further information.
 
 |OBX-5/CWE-2
 |Text
-|If *@Code* is an <<acronym_mdc>> code, this field shall contain the RefId of the <<acronym_mdc>> code.
+|If *@Code* is an <<acronym_mdc>> code, this field is required to contain the RefId of the <<acronym_mdc>> code.
 
-In all other cases, the field shall be set to the pm:Mds or pm:Vmd or pm:Channel or pm:Metric+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
+In all other cases, the field is required to be set to the pm:Mds or pm:Vmd or pm:Channel or pm:Metric+++<wbr/>+++/pm:Type+++<wbr/>+++/@SymbolicCodeName.
 | Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
 |OBX-5/CWE-3
 |Name of Coding System
 |*"<<acronym_mdc>>"* if no other coding system is specified.
 
-In all other cases, the field shall be set to pm:Mds or pm:Vmd or pm:Channel or pm:Metric+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
+In all other cases, the field is required to be set to pm:Mds or pm:Vmd or pm:Channel or pm:Metric+++<wbr/>+++/pm:Type+++<wbr/>+++/@CodingSystem.
 
 |Note that <<acronym_mdc>> is the default coding system if no coding system is specified.
 
@@ -806,7 +806,7 @@ Note that the <<ref_acm_obr3_mapping>> has to be updated with a new identificati
 |end
 |*pm:AlertConditionState/@Presence* transitioned from *"true"* to *"false"* AND none of the *pm:AlertSignalState* elements with *@ActivationState* set to *"On"* have *@Presence* set to *"Latch"*. This state ends the current alert event for this condition.
 
-Note that for latching alert signals, the Alert State (see also <<ref_tbl_alert_state_mapping>>) transitioned from *"Active"* to *"Latched"*. In this case, the Alert Event Phase shall be reported as *"update"*.
+Note that for latching alert signals, the Alert State (see also <<ref_tbl_alert_state_mapping>>) transitioned from *"Active"* to *"Latched"*. In this case, the Alert Event Phase is required to be reported as *"update"*.
 
 |update
 |Any updates/changes to be reported but does not match any other Alert Event Phase mapping criteria.
@@ -814,12 +814,12 @@ Note that for latching alert signals, the Alert State (see also <<ref_tbl_alert_
 |escalate
 |Alert Priority (see also <<ref_acm_alert_priority_obx_mapping>>) changed to a higher priority; e.g. from *"PM"* to *"PH"*.
 
-Note that when there are more changes than just the Alert Priority, the Alert Event Phase shall be reported as *"update"*.
+Note that when there are more changes than just the Alert Priority, the Alert Event Phase is required to be reported as *"update"*.
 
 |deescalate
 |Alert Priority (see also <<ref_acm_alert_priority_obx_mapping>>) changed to a lower priority; e.g. from *"PH"* to *"PM"*.
 
-Note that when there are more changes than just the Alert Priority, the Alert Event Phase shall be reported as *"update"*.
+Note that when there are more changes than just the Alert Priority, the Alert Event Phase is required to be reported as *"update"*.
 
 |reset
 |*pm:AlertConditionState/@Presence* is set to *"false"* AND

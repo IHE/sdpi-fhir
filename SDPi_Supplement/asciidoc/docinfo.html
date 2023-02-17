@@ -9,19 +9,34 @@
 /* increase width of the table of contents bar (default is 15em) */
 /* change to responsive design: 30% TOC, 6% padding, 64% content */
 
-body.toc2 {
-    padding-left: 0;
+@media screen {
+    body.toc2 {
+        padding-left: 0;
+    }
+
+    #toc.toc2 {
+        width: 30%;
+    }
+
+    #header, #content, #footnotes, #footer {
+        max-width: 100%;
+        margin: 0;
+        padding-left: 33%;
+        padding-right: 3%;
+    }
 }
 
-#toc.toc2 {
-    width: 30%;
-}
+@media print {
+    #toc {
+        visibility: hidden;
+    }
 
-#header, #content, #footnotes, #footer {
-    max-width: 100%;
-    margin: 0;
-    padding-left: 33%;
-    padding-right: 3%;
+    #header, #content, #footnotes, #footer {
+        max-width: 100%;
+        margin: 0;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
 }
 
 /* align sidebar titles to the left (default is centered) */
@@ -40,14 +55,24 @@ a {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Bottom navigation bar */
-.bottom_bar {
-    background-color: #212529;
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+@media screen {
+    /* Bottom navigation bar */
+    .bottom_bar {
+        background-color: #212529;
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
 }
+
+@media print {
+    /* Bottom navigation bar */
+    .bottom_bar {
+        visibility: hidden;
+    }
+}
+
 
 /* Style the links inside the navigation bar */
 .bottom_bar a {
@@ -132,4 +157,28 @@ a {
         elemDiv.className = 'bottom_bar';
         document.body.appendChild(elemDiv);
     });
+
+    // Set up before/after handlers
+    var beforePrint = function() {
+        $("details").attr('open', '');
+    };
+    var afterPrint = function() {
+        $("details").removeAttr('open');
+    };
+
+    // Webkit
+    if (window.matchMedia) {
+        var mediaQueryList = window.matchMedia('print');
+        mediaQueryList.addListener(function(mql) {
+            if (mql.matches) {
+                beforePrint();
+            } else {
+                afterPrint();
+            }
+        });
+    }
+
+    // IE, Firefox
+    window.onbeforeprint = beforePrint;
+    window.onafterprint = afterPrint;
 </script>
