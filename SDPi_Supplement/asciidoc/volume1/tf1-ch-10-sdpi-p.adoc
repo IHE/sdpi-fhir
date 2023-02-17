@@ -1,6 +1,5 @@
 // = Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
 
-// 10.
 [#vol1_clause_sdpi_p_profile,sdpi_offset=10]
 == Service-oriented Device Point-of-care Interoperability – Plug-and-trust (SDPi-P) Profile
 
@@ -351,10 +350,10 @@ Note 1: _All content exchanged on a SOMDS shall conform to the general SDPi “B
 ==== Actor Descriptions and Actor Profile Requirements
 SDPi-P actor roles and responsibilities are described in the subsections below.
 
-Unless otherwise specified in these sections, specific transaction requirements are specified in in the <<vol2_clause_transactions>> volume, and requirements related to content modules are detailed in <<vol3_clause_content_modules>>.
+Unless otherwise specified below, individual transaction requirements are specified in TF-2   <<vol2_clause_transactions>>, and requirements related to content modules are detailed in TF-3 <<vol3_clause_content_modules>>.
 This section documents any additional requirements on the profile’s content actors.
 
-<<vol1_figure_sdpi_p_example_sequence_diagram>> illustrates a typical (not comprehensive) exchange scenarios between SDPi-P actors:
+<<vol1_figure_sdpi_p_example_sequence_diagram>> illustrates a typical (not comprehensive) exchange scenario between SDPi-P actors:
 
 [#vol1_figure_sdpi_p_example_sequence_diagram]
 .SDPi-P Example Sequence Diagram
