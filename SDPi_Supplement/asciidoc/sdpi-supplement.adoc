@@ -16,12 +16,18 @@
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Draft in Preparation for Public Comment
 
-image::ihe-logo.svg[pdfwidth=4in,align=center]
-image::HL7_International_tucked-inR.svg[pdfwidth=4in,align=center]
+[subs=attributes]
+++++
+<div class="logos">
+    <div>
+        <img src="{imagesdir}ihe-logo.svg"/>
+        <img src="{imagesdir}hl7-intl-logo.svg"/>
+    </div>
+    <div><strong>A Joint HL7-IHE Gemini Device Interoperability Project</strong></div>
+</div>
+++++
 
-*A Joint HL7-IHE Gemini Device Interoperability Project*
-
-{empty} +
+{empty}+
 
 [subs=attributes]
 ++++
