@@ -130,8 +130,6 @@ The content in the following sections should be included and then specialized as
 #TODO:  Should the following be provided in a special AsciiDoc text box or just left as is?#
 ////
 
-////
-
 [#vol1_clause_appendix_a_ses_considerations_and_requirements]
 === Safety, Effectiveness, Security Considerations and Requirements
 
@@ -214,7 +212,7 @@ Each type is a source of requirements that are explicitly identified and formali
 |Model Element |Description |AsciiDoc Attribute |Further Specified
 
 | SDPi Requirement
-| A defined stakeholder-imposed constraint that must be satisfied for a design solution to be valid.  This is an {abstract} class model element.
+| A defined stakeholder-imposed constraint that must be satisfied for a design solution to be valid.  This is an \{abstract} class model element.
 | sdpi_requirement
 | See subtypes
 
@@ -255,6 +253,7 @@ Each type is a source of requirements that are explicitly identified and formali
 #TODO: note navigating relationships from usage to requirements supports traceability from capabilities / feature verification back to source requirements and group coverage#
 
 #TODO:  Mention traceability & coverage#
+
 ////
 
 ==== Requirements Binding Strategies

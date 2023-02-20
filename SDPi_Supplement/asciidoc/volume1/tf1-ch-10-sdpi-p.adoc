@@ -854,6 +854,7 @@ Specific capabilities supporting the <<acronym_sicdmp>> use case include:
 
 ////
 #TODO:  Do SystemContext/PatientContext/LocationContext need to be called out here to meet requirements related to "ICU" or "multiple patient"?#
+
 ////
 
 ===== <<label_use_case_name_ddes>> (<<acronym_ddes>>)
