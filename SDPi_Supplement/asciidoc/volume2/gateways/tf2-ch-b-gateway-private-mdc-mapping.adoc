@@ -22,8 +22,9 @@ The following example uses the SDC *pm:Type* to demonstrate the mapping of priva
 
 |CWE-2
 |Text
-|"*MDC_PRIVATE_*<CWE-1>"
-|Since this is a private code, a MDC RefId does not exist for the code. The field is required to be set to a private RefId that consists of the prefix *"MDC_PRIVATE_"* plus the private code defined in CWE-1.
+|If available: pm:Type+++<wbr/>+++/@SymbolicCodeName, 
+otherwise: "*MDC_PRIVATE_*<CWE-1>"
+|If pm:Type+++<wbr/>+++/@SymbolicCodeName is available for a private code, this value is used. Otherwise, the field is required to be set to a private RefId that consists of the prefix *"MDC_PRIVATE_"* plus the private code defined in CWE-1.
 
 |CWE-3
 |Name of Coding System
