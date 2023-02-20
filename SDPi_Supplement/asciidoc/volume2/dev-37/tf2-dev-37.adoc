@@ -36,3 +36,7 @@ include::tf2-dev-37-summary.adoc[]
 ....
 include::../../plantuml/vol2-figure-dev-37-sequence.puml[]
 ....
+
+[#vol2_clause_dev_37_retrieve_medical_data_ses]
+include::../dev-x-default-ses-secured-mode.adoc[]
+

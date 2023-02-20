@@ -165,3 +165,6 @@ The {var_label_dev_24_message_resolve_match} message is sent whenever a <<actor_
 
 The <<actor_somds_consumer>> that receives a {var_label_dev_24_message_resolve_match} message can use the <<payload_dev_24_probe_match_transport_address>> to exchange secured messages with the <<actor_somds_provider>> from which it received the <<vol2_clause_dev_24_message_resolve_match, {var_label_dev_24_message_resolve_match}>> message.
 
+[#vol2_clause_dev_24_message_probe_ses]
+include::../dev-x-default-ses-unsecured-mode.adoc[]
+

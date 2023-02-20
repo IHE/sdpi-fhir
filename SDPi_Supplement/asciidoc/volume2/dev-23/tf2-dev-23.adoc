@@ -72,3 +72,6 @@ This message is sent
 
 When a <<actor_somds_provider>> sends this message, there is no expected or required responses. This is due to the fact that either there are no <<actor_somds_consumer>>s listening for announcement messages, or the information in the message (e.g., Discovery Type) is not of interest to any receiving <<actor_somds_consumer>>s.
 
+[#vol2_clause_dev_23_message_announce_network_presence_ses]
+include::../dev-x-default-ses-unsecured-mode.adoc[]
+
