@@ -162,7 +162,10 @@ No additional safety requirements or considerations are identified for this tech
 No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
 
 ====== Security Requirements & Considerations
-No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile, and those specified in the _<<acronym_ses>> General Considerations_ section above.
+Secure exchange of content between medical devices is a foundational requirement for all system-to-system interactions.
+Though management of secure connections is generally a technical issue and not one specific to semantic content, close consideration should be made to ensure that information exchanged in potentially unsecured contexts does not pose an unacceptable risk.
+
+Additional security requirements and considerations may be identified in the  <<acronym_sdpi_p>> profile, and those specified in the _<<acronym_ses>> General Considerations_ section above.
 
 // 8.3.2.
 ===== BICEPS Conventions for device specialization content modules

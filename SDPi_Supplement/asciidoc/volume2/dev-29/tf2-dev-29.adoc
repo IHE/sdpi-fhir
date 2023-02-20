@@ -65,3 +65,7 @@ The {var_label_dev_29_message_notification} message is sent whenever a report of
 ====== Expected Actions
 
 When a <<actor_somds_provider>> sends this message, there is no expected action or required responses.
+
+[#vol2_clause_dev_29_publish_biceps_update_reports_ses]
+include::../dev-x-default-ses-secured-mode.adoc[]
+

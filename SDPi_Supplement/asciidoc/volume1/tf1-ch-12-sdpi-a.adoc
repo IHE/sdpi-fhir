@@ -128,26 +128,22 @@ Specific capabilities supporting the <<acronym_aars>> use case include:
 * *Scenarios*:  <<acronym_aars>> <<vol1_clause_appendix_c_use_case_aars_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> Alert <<system_type_device_gateway>>
 
 
-// 12.5
+[#vol1_clause_sdpi_a_ses_considerations]
 === SDPi-A Safety, Effectiveness, Security Considerations and Requirements
 
-// 12.5.1
 ==== SES General Considerations
 Requirements from the <<ref_iso_81001_1_2021>>, <<ref_iec_80001_1_2021>>, and related standards should be fully applied to this technical framework element.
 
 For additional guidance, see section <<vol1_clause_appendix_a_ses_considerations_and_requirements>>.
 
-// 12.5.2
 ==== Safety Requirements & Considerations
 No additional safety requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
 
-// 12.5.3
 ==== Effectiveness Requirements & Considerations
 No additional effectiveness requirements or considerations are identified for this technical framework element beyond those specified in the _<<acronym_ses>> General Considerations_ section above.
 
-// 12.5.4
 ==== Security Requirements & Considerations
-No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile, and those specified in the _<<acronym_ses>> General Considerations_ section above.
+No additional security requirements and considerations are identified for this technical framework element beyond those provided by the  SDPi-P profile (see <<vol1_clause_appendix_a_ses_considerations_section_template>>), and those specified in the _<<acronym_ses>> General Considerations_ section above.
 
 // 12.6
 === SDPi-A Cross Profile Considerations
