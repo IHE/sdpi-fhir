@@ -110,16 +110,18 @@ class NumberingProcessor(
                     sanitizeAppendix(node.wrapped, level)
 
                     // attach section number to section title
+                    val refText = node.wrapped.attributes["reftext"]?.toString()
+
                     createSectionId(numbering, level).let {
                         currentSection = it
                         anchorReplacements[node.wrapped.id] = if (isInAppendix()) {
                             if (node.wrapped.isAppendix()) {
-                                LabelInfo((currentAppendix - 1).toString(), LabelSource.APPENDIX, currentVolumeCaption)
+                                LabelInfo((currentAppendix - 1).toString(), LabelSource.APPENDIX, currentVolumeCaption, refText)
                             } else {
-                                LabelInfo(it, LabelSource.APPENDIX, currentVolumeCaption)
+                                LabelInfo(it, LabelSource.APPENDIX, currentVolumeCaption, refText)
                             }
                         } else {
-                            LabelInfo(it, LabelSource.SECTION)
+                            LabelInfo(it, LabelSource.SECTION, "", refText)
                         }
 
                         // trim leading blanks in case of an empty section id (i.e. appendix)
