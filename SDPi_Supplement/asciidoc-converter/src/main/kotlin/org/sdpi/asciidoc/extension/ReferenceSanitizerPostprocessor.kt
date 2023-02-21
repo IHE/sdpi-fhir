@@ -19,7 +19,8 @@ enum class LabelSource {
 data class LabelInfo(
     val label: String,
     val source: LabelSource,
-    val prefix: String = ""
+    val prefix: String = "",
+    val refText: String? = null
 )
 
 class ReferenceSanitizerPostprocessor(
@@ -68,10 +69,11 @@ class ReferenceSanitizerPostprocessor(
 
             anchor.attr("href", "#$id")
             anchorLabels[id]?.also {
+                val anchorText = it.refText ?: label
                 when (it.source) {
-                    LabelSource.SECTION -> anchor.text(label ?: "$sectionSig${it.label}")
-                    LabelSource.TABLE_OR_FIGURE -> anchor.text(label ?: it.label)
-                    LabelSource.APPENDIX -> anchor.text(label ?: "$appendixSig${it.prefix}:${it.label}")
+                    LabelSource.SECTION -> anchor.text(anchorText ?: "$sectionSig${it.label}")
+                    LabelSource.TABLE_OR_FIGURE -> anchor.text(anchorText ?: it.label)
+                    LabelSource.APPENDIX -> anchor.text(anchorText ?: "$appendixSig${it.prefix}:${it.label}")
                 }
             }
         }
