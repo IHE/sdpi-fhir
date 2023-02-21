@@ -20,7 +20,7 @@ The SDPi-Alerting ([[acronym_sdpi_a,SDPi-A]] SDPi-A) profile supports ...
 #TODO: add general description ...#
 ////
 
-// 12.1
+[#vol1_clause_sdpi_a_actors_transactions_content_modules]
 === SDPi-A Actors, Transactions, and Content Modules
 
 This section defines the actors, transactions, and/or content modules in this profile.
@@ -39,6 +39,14 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 
 {empty} +
 
+////
+
+#TODO:  In the table below, are any of these Receiver vs. Responder?  If so, then we may need to add a note like in SDPi-P
+
+////
+
+#TODO: Do we need to add an option note for Alert Delegation?#
+
 [#vol1_table_sdpi_a_actors_transactions]
 .SDPi-A Profile - Actors and Transactions
 [%autowidth]
@@ -50,33 +58,160 @@ image::../images/vol1-diagram-sdpi-a-actor.svg[]
 .^|Optionality
 .^|Reference
 
-| ...
-| #TABLE TO BE EXPANDED#
-| ...
-| ...
-| ...
+.6+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>
+.^| <<transaction_name_establish_medical_alert_exchange>>
+.^| Initiator
+.^| R
+| <<vol2_clause_dev_38>>
+
+| <<transaction_name_publish_medical_alert_update>>
+| Responder
+| R
+| <<vol2_clause_dev_39>>
+
+| <<transaction_name_retrieve_medical_alert_status>>
+| Initiator
+| R
+| <<vol2_clause_dev_40>>
+
+| <<transaction_name_manage_medical_alert_delegation>> (_deferred_)
+| Responder
+| R
+| Deferred to SDPi 2.0
+// <<vol2_clause_dev_41>>
+
+| <<transaction_name_delegate_medical_alert>> (_deferred_)
+| Initiator
+| R
+| Deferred to SDPi 2.0
+// <<vol2_clause_dev_42>>
+
+| <<transaction_name_update_alert_acknowledgement_status>> (_deferred_)
+| Initiator
+| R
+| Deferred to SDPi 2.0
+// <<vol2_clause_dev_43>>
+
+.6+| <<vol1_spec_sdpi_a_actor_somds_medical_alert_consumer>>
+.^| <<transaction_name_establish_medical_alert_exchange>>
+.^| Responder
+.^| R
+| <<vol2_clause_dev_38>>
+
+| <<transaction_name_publish_medical_alert_update>>
+| Initiator
+| R
+| <<vol2_clause_dev_39>>
+
+| <<transaction_name_retrieve_medical_alert_status>>
+| Responder
+| O
+| <<vol2_clause_dev_40>>
+
+| <<transaction_name_manage_medical_alert_delegation>> (_deferred_)
+| Responder
+| R
+| Deferred to SDPi 2.0
+// <<vol2_clause_dev_41>>
+
+| <<transaction_name_delegate_medical_alert>> (_deferred_)
+| Initiator
+| R
+| Deferred to SDPi 2.0
+// <<vol2_clause_dev_42>>
+
+| <<transaction_name_update_alert_acknowledgement_status>> (_deferred_)
+| Initiator
+| R
+| Deferred to SDPi 2.0
+// <<vol2_clause_dev_43>>
+
+.4+| <<vol1_spec_sdpi_a_actor_somds_acm_gateway>>
+.^| <<transaction_name_establish_medical_alert_exchange>>
+.^| Initiator
+.^| R
+| <<vol2_clause_dev_38>>
+
+| <<transaction_name_publish_medical_alert_update>>
+| Responder
+| R
+| <<vol2_clause_dev_39>>
+
+| <<transaction_name_retrieve_medical_alert_status>>
+| Initiator
+| O
+| <<vol2_clause_dev_40>>
+
+| <<transaction_name_update_alert_acknowledgement_status>> (_deferred_)
+| Initiator
+| O
+| Deferred to SDPi 2.0
+// <<vol2_clause_dev_43>>
+
+5+<|
+Note 1: If the <<vol1_spec_sdpi_a_actor_somds_acm_gateway>> supports  <<vol1_clause_sdpi_a_actor_option_remote_alert_signaling>>, then bidirectional exchange is supported and the roles are expanded to "Initiator & Responder".
 
 |===
 
-// 12.1.1
+[#vol1_clause_sdpi_a_actor_descriptions_actor_profile_requirements]
 ==== Actor Descriptions and Actor Profile Requirements
 
-// 12.2
+[#vol1_clause_sdpi_a_somds_medical_alert_consumer]
+===== SOMDS Medical Alert Consumer
+[#vol1_spec_sdpi_a_actor_somds_medical_alert_consumer, reftext='SOMDS Medical Alert Consumer']
+Actor Summary Definition:
+[none]
+. A <<vol1_spec_sdpi_p_actor_somds_consumer>> grouped actor that receives medical alert information from a <<vol1_spec_sdpi_a_actor_somds_medical_alert_provider>>.
+
+#TODO:  SEE LOGIC FROM SDPi-P SPECS + GROUPING WITH CONSUMER + OPTIONS#
+
+[#vol1_clause_sdpi_a_somds_medical_alert_provider]
+===== SOMDS Medical Alert Provider
+[#vol1_spec_sdpi_a_actor_somds_medical_alert_provider, reftext='SOMDS Medical Alert Provider']
+Actor Summary Definition:
+[none]
+. A <<vol1_spec_sdpi_p_actor_somds_provider>> grouped actor that sends medical alert information to a <<actor_somds_medical_alert_consumer>>.
+
+#TODO:  SEE LOGIC FROM SDPi-P SPECS + GROUPING WITH PROVIDER + OPTIONS#
+
+[#vol1_clause_sdpi_a_somds_acm_gateway]
+===== SOMDS ACM Gateway
+[#vol1_spec_sdpi_a_actor_somds_acm_gateway, reftext='SOMDS ACM Gateway']
+Actor Summary Definition:
+[none]
+. A <<vol1_spec_sdpi_p_actor_somds_v2_gateway>> grouped actor that supports the bi-directional exchange of medical alert information with non-SOMDS systems and applications using IHE Alert Communication Management (ACM) transactions.
+
+#TODO:  SEE LOGIC FROM SDPi-P SPECS + GROUPING WITH V2 GATEWAY + OPTION FOR REMOTE ALERTS#
+
+[#vol1_clause_sdpi_a_actor_options]
 === SDPi-A Actor Options
 
-// 12.2.1
-==== tbd Option
-// NOTE:  These options are TBD for SDPi 1.0
+[#vol1_clause_sdpi_a_actor_option_alert_delegation]
+==== Alert Delegation Option
 
-// 12.3
+#TODO:  ADD VERSION NOTE AND SDPI 2.0#
+
+[#vol1_clause_sdpi_a_actor_option_alert_user_acknowledgement]
+==== Alert User Acknowledgement Option
+
+#TODO:  ADD VERSION NOTE AND SDPI 2.0#
+
+[#vol1_clause_sdpi_a_actor_option_remote_alert_signaling]
+==== Remote Alert Signaling
+#TODO:  OPTION FOR RECEIVING FROM EXTERNAL#
+
 [#vol1_clause_sdpi_a_required_actor_groupings]
 === SDPi-A Required Actor Groupings
+
+#TODO:  SOMDS_Provider, SOMDS_Consumer, SOMDS_V2_Gateway#
 
 // 12.4
 === SDPi-A Overview
 
+
 // 12.4.1
 ==== Concepts
+#TODO:  Include version note + PUML from CONFLUENCE FOR BASIC ACTORS#
 
 // 12.4.2
 ==== Use Cases
@@ -91,7 +226,7 @@ Specific capabilities supporting the <<acronym_sicdsp>> use case include:
 * *System Type*:  N/A
 * *Service Type*:  N/A
 * *Technical Pre-Conditions*: N/A
-* *Scenarios*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> <<system_type_dashboard>>
+* *Scenarios*: <<acronym_sicdsp>> <<vol1_clause_appendix_c_use_case_sicdsp_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> <<system_type_dashboard>>
 
 
 
@@ -103,7 +238,7 @@ Specific capabilities supporting the <<acronym_sicdmp>> use case include:
 * *System Type*:  N/A
 * *System Type*:  N/A
 * *Technical Pre-Conditions*: N/A
-* *Scenarios*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> <<system_type_dashboard>>
+* *Scenarios*: <<acronym_sicdmp>> <<vol1_clause_appendix_c_use_case_sicdmp_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> <<system_type_dashboard>>
 
 
 ===== <<label_use_case_name_acns>> (<<acronym_acns>>)
@@ -114,7 +249,7 @@ Specific capabilities supporting the <<acronym_acns>> use case include:
 * *System Type*:  N/A
 * *Service Type*:  N/A
 * *Technical Pre-Conditions*:  N/A
-* *Scenarios*:  <<acronym_acns>> <<vol1_clause_appendix_c_use_case_acns_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> Alert <<system_type_device_gateway>>
+* *Scenarios*:  <<acronym_acns>> <<vol1_clause_appendix_c_use_case_acns_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> Alert <<system_type_device_gateway>>
 
 
 ===== <<label_use_case_name_aars>> (<<acronym_aars>>)
@@ -125,7 +260,7 @@ Specific capabilities supporting the <<acronym_aars>> use case include:
 * *System Type*:  N/A
 * *Service Type*:  N/A
 * *Technical Pre-Conditions*:  N/A
-* *Scenarios*:  <<acronym_aars>> <<vol1_clause_appendix_c_use_case_aars_scenarios>> communication of medical alert information to a <<actor_somds_consumer>> Alert <<system_type_device_gateway>>
+* *Scenarios*:  <<acronym_aars>> <<vol1_clause_appendix_c_use_case_aars_scenarios>> communication of medical alert information to a <<vol1_spec_sdpi_p_actor_somds_consumer>> Alert <<system_type_device_gateway>>
 
 
 [#vol1_clause_sdpi_a_ses_considerations]

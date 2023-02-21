@@ -16,6 +16,8 @@
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Draft in Preparation for Public Comment
 
+{empty} +
+
 [subs=attributes]
 ++++
 <div class="logos">

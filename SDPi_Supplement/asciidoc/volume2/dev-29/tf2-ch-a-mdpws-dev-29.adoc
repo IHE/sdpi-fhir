@@ -34,7 +34,7 @@ include::../dev-a-default-trigger-events.adoc[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/msg:EpisodicAlertReport`:: Updated alert information of a <<actor_somds_provider>>.
+`s12:Envelope/s12:Body/msg:EpisodicAlertReport`:: Updated alert information of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
 
 :var_expected_actions_ref: <<vol2_clause_dev_29_message_notification>>
 include::../dev-a-default-expected-actions.adoc[]

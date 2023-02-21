@@ -18,7 +18,7 @@ The SDPi-External Control ([[acronym_sdpi_xc,SDPi-xC]] SDPi-xC) profile supports
 #TODO: add general description ...#
 ////
 
-// 13.1
+[#vol1_clause_sdpi_xc_actors_transactions_content_modules]
 === SDPi-xC Actors, Transactions, and Content Modules
 
 This section defines the actors, transactions, and/or content modules in this profile.
@@ -51,6 +51,13 @@ image::../images/vol1-diagram-sdpi-xc-actor.svg[]
 | ...
 | ...
 | ...
+
+5+<|
+Note 1: _“Notify Change in System Context and Capabilities”_ is required if there are dynamic changes that may need to be sent to subscribing systems.
+
+Note 2: _“Receiver”_ is included in this column, in _italics_, to indicate that though a <<vol1_spec_sdpi_p_actor_somds_consumer>> may "receive" the transaction, there is no response communicated to the message initiator.
+
+Note 3: *_SDPi Version Note:_*  -- Full detailing of the transactions related to this Actor will be addressed in a subsequent version of this specification.
 
 |===
 
