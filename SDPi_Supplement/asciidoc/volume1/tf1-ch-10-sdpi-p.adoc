@@ -50,7 +50,7 @@ Actor groupings, including abstract with concrete are detailed in <<vol1_clause_
 image::../images/vol1-diagram-sdpi-p-actor.svg[]
 
 <<vol1_table_sdpi_p_actors_transactions>> lists the transactions for each Actor directly involved in the SDPi-P Profile.
-To claim compliance with this profile, an Actor shall support all required transactions (labeled “R”) and may support the optional transactions (labeled “O”).
+To claim conformity with this profile, an Actor shall support all required transactions (labeled “R”) and may support the optional transactions (labeled “O”).
 Note that “Consumer” is indicated for Actors that receive but do not directly respond to a specific transaction.
 
 {empty} +
