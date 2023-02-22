@@ -21,7 +21,7 @@ include::tf2-dev-23-summary.adoc[]
 |===
 |Actor |Roles
 
-|<<actor_somds_provider>>
+|<<vol1_spec_sdpi_p_actor_somds_provider>>
 |Announces its presence by multicasting <<vol2_clause_dev_23_message_hello, {var_label_dev_23_message_hello}>> messages to all listening systems.
 
 |<<actor_somds_consumer>>

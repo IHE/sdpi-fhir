@@ -72,6 +72,11 @@ NOTE:  Forward Declarations in the following table are being added "on demand" o
 | <<ref_ieee_11073_20702_2016>>
 | Standard
 
+| [[acronym_sas,SAS]] SAS
+| [[label_system_type_name_sas,Smart Alerting System]] Smart Alerting System
+| <<vol3_clause_system_type_nomenclature_extensions>>
+| System Type
+
 | [[acronym_sicdmp,SICDmp]] SICDmp
 | [[label_use_case_name_sicdmp,Standalone ICU Dashboard Multiple Patient]] Standalone ICU Dashboard Multiple Patient
 | <<vol1_clause_appendix_c_use_case_sicdmp>>

@@ -19,11 +19,11 @@ include::tf2-dev-29-summary.adoc[]
 |===
 |Actor |Roles
 
-|<<actor_somds_consumer>>
+|<<vol1_spec_sdpi_p_actor_somds_consumer>>
 |Listens for a <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_notification}>> message to retrieve update reports.
 
-|<<actor_somds_provider>>
-|While a subscription is running, the <<actor_somds_provider>> delivers <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_notification}>> messages.
+|<<vol1_spec_sdpi_p_actor_somds_provider>>
+|While a subscription is running, the <<vol1_spec_sdpi_p_actor_somds_provider>> delivers <<vol2_clause_dev_29_message_notification, {var_label_dev_29_message_notification}>> messages.
 
 |===
 
@@ -46,12 +46,12 @@ include::../../plantuml/vol2-figure-dev-29-sequence.puml[]
 [#vol2_clause_dev_29_message_notification]
 ===== {var_label_dev_29_message_notification} Message
 
-The {var_label_dev_29_message_notification} messages contain updated reports and is delivered by a <<actor_somds_provider>> to subscribed <<actor_somds_consumer>>s.
+The {var_label_dev_29_message_notification} messages contain updated reports and is delivered by a <<vol1_spec_sdpi_p_actor_somds_provider>> to subscribed <<vol1_spec_sdpi_p_actor_somds_consumer>>s.
 
 [#vol2_clause_dev_29_message_notification_trigger_events]
 ====== Trigger Events
 
-The {var_label_dev_29_message_notification} message is sent whenever a report of a <<actor_somds_provider>> is updated and a <<actor_somds_consumer>> is subscribed to reports of a <<actor_somds_provider>>.
+The {var_label_dev_29_message_notification} message is sent whenever a report of a <<vol1_spec_sdpi_p_actor_somds_provider>> is updated and a <<vol1_spec_sdpi_p_actor_somds_consumer>> is subscribed to reports of a <<vol1_spec_sdpi_p_actor_somds_provider>>.
 
 [#vol2_clause_dev_29_message_notification_semantics]
 ====== Message Semantics
@@ -64,7 +64,7 @@ The {var_label_dev_29_message_notification} message is sent whenever a report of
 [#vol2_clause_dev_29_message_contextreport_expected_actions]
 ====== Expected Actions
 
-When a <<actor_somds_provider>> sends this message, there is no expected action or required responses.
+When a <<vol1_spec_sdpi_p_actor_somds_provider>> sends this message, there is no expected action or required responses.
 
 [#vol2_clause_dev_29_publish_biceps_update_reports_ses]
 include::../dev-x-default-ses-secured-mode.adoc[]

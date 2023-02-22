@@ -19,10 +19,10 @@ include::tf2-dev-28-summary.adoc[]
 |===
 |Actor |Roles
 
-|<<actor_somds_consumer>>
+|<<vol1_spec_sdpi_p_actor_somds_consumer>>
 |Listens for a <<vol2_clause_dev_28_message_notification, {var_label_dev_28_message_contextreport}>> message to retrieve context updates.
 
-|<<actor_somds_provider>>
+|<<vol1_spec_sdpi_p_actor_somds_provider>>
 |While a subscription is running, the <<actor_somds_provider>> delivers <<vol2_clause_dev_28_message_notification, {var_label_dev_28_message_contextreport}>> messages.
 
 |===

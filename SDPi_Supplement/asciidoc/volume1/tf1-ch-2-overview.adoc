@@ -180,7 +180,7 @@ Given the significant risks associated with allowing device-external control fun
 
 | <<acronym_sdpi_p>>
 | Consistent Time (CT)
-| Each <<acronym_sdpi_p>> actor implementation (i.e., <<actor_somds_participant>>) shall be grouped with the CT Time Client actor.  Note:  All <<acronym_sdpi>> actors based on the <<actor_somds_participant>> actor.
+| Each <<acronym_sdpi_p>> actor implementation (i.e., <<vol1_spec_sdpi_p_actor_somds_participant>>) shall be grouped with the CT Time Client actor.  Note:  All <<acronym_sdpi>> actors based on the <<vol1_spec_sdpi_p_actor_somds_participant>> actor.
 | Required for consistent time-stamping of transactions and data.
 
 | <<acronym_sdpi_r>>
