@@ -137,7 +137,7 @@ In addition to specific device specializations (see <<vol3_clause_device_special
 
 .^| [[system_type_device_smart_alerting,Smart Alerting]] Smart Alerting
 .^| (tba)
-.^|
+.^| [[acronuym_sas,SAS]] SAS
 .^| Smart Alerting system that provides consolidated alert event (actionable alerts), advisories such as patient deteriorations, etc.
 
 |===

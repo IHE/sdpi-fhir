@@ -263,8 +263,6 @@ However, the content might also be formalized in a document as opposed to a mess
 
 Note that in the case of external control, where a <<vol1_spec_sdpi_p_actor_somds_consumer>> actor is creating and sending content (e.g., patient demographics information) to a <<vol1_spec_sdpi_p_actor_somds_provider>> actor, the content module creator / consumer roles will be reversed.
 
-
-
 A product implementation using this profile may group Actors from this profile with Actors from a workflow or transport profile to be functional.
 The grouping of the content module described in this profile to specific Actors is described in more detail in <<vol1_clause_sdpi_p_required_actor_groupings>> or in <<vol1_clause_sdpi_p_cross_profile_considerations>>.
 
@@ -387,6 +385,12 @@ All systems participating in a SOMDS network instance must implement this Abstra
 All SDPi profiles Actors are grouped with (inherit from) this Actor, including both transport / transaction Actors and content module Actors.
 This required grouping ensures that all systems connecting to a SOMDS network support the <<acronym_ses_mdi>>  requirements footnote:[See #TF-0  Appendix A for more detail on <<acronym_ses_mdi>>] necessary for establishing a <<term_plug_and_trust>> ecosystem, including the secure and dynamic provision of an implementation’s <<term_system_function_contribution>>.
 See <<vol1_clause_appendix_a_requirements_from_narratives_to_pnt_interfaces>> for additional discussion.
+
+////
+
+#TODO: Do we need to add additional requirements for this actor?  They seem VERY slim.#
+
+////
 
 [#vol1_clause_sdpi_p_somds_provider]
 ===== SOMDS Provider
@@ -550,51 +554,31 @@ Actor Summary Definition:
 . Processes <<acronym_mdib>> information conformant to <<ref_ieee_11073_10207_2017>> BICEPS specifications provided by <<vol1_spec_sdpi_p_actor_biceps_content_creator>> systems.
 
 A <<vol1_spec_sdpi_p_actor_biceps_content_consumer>> actor shall be capable of processing information provided by a <<actor_biceps_content_creator>>, in accordance to the BICEPS content module specifications in <<vol3_clause_sdc_biceps_semantic_content_module>> and related sections.
-The supported BICEPS content processing shall include one or more of the options identified for this actor in <<vol1_table_sdpi_p_actors_options>> below.
+
+////
+
+#TODO:  Removed the following line from the paragraph above ... BUT may want to add it in at some point in the future when multiple ways of processing "consumed" content is supported:
+
+The supported BICEPS content processing shall include one or more of the options identified for this actor in <<vol1_table_sdpi_p_actor_options>> below.
+
+////
 
 For robustness, a <<actor_biceps_content_consumer>> need only process the content that is necessary to support its capabilities, but shall also be able to accept and ignore any additional content that may be provided but is out-of-scope for its internal requirements. footnote:[Apply Postel’s Law:  Send conservatively, Accept liberally.]
 
 Note that although this SDPi-P content actor primarily supports information exchange between systems participating in a SOMDS network environment, they may be referenced by other non-SDPi profiles that utilize other non-SOMDS exchange architectures, transactions and technologies.
 
-// 10.2
+[#vol1_clause_sdpi_p_actor_options]
 === SDPi-P Actor Options
 
 [%noheader]
 [%autowidth]
 [cols="1"]
 |===
-a| *SDPi Supplement Version Note*:  For SDPi 1.0, n**__one of the options below are detailed __**and some options may never be added to the profile (e.g., compact representation may not be needed).
-They are provided here to indicate potential additions to the SDPi-P profile in subsequent versions.
-|===
-
-Options that may be selected for each actor in this profile, if any, are listed in  <<vol1_table_sdpi_p_actors_options>>.
-Dependencies between options, when applicable, are specified in notes.
-
-[#vol1_table_sdpi_p_actors_options]
-.SDPi-P – Actors and Options
-
-[%autowidth]
-[cols="^1,^1,^1"]
-|===
-.^|Actor
-.^|Option Name
-.^|Reference
-
-| <<vol1_spec_sdpi_p_actor_somds_participant>>
-| No options defined
-|
-|===
-
-[#vol1_table_sdpi_p_option_streaming]
-==== Streaming Option
-
-[%noheader]
-[%autowidth]
-[cols="1"]
-|===
 a| *SDPi Supplement Version Note*:  Profile options are out-of-scope for this version of the supplement.
-Future versions will include options such as the following:
+Future versions *_MAY_* include options such as the following (not in priority order):
 
+* Retrieve Remote Data
+* Streaming / Waveforms
 * Safe Data Transmission
 * Compact Representation
 * Patient Context Management
@@ -608,40 +592,55 @@ Future versions will include options such as the following:
 ////
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
 
-[#vol1_table_sdpi_p_option_safe_data_transmission]
+[#vol1_clause_sdpi_p_option_streaming]
+==== Streaming Option
+#TODO:  Add description and detail specification in a subsequent SDPi Version#
+
+[#vol1_clause_sdpi_p_option_safe_data_transmission]
 ==== Safe Data Transmission Option
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
 
-[#vol1_table_sdpi_p_option_compact_representation]
+[#vol1_clause_sdpi_p_option_compact_representation]
 ==== Compact Representation Option
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
 
-[#vol1_table_sdpi_p_option_patient_context_management]
+[#vol1_clause_sdpi_p_option_patient_context_management]
 ==== Patient Context Management Option
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
 
-[#vol1_table_sdpi_p_option_archive_service]
+[#vol1_clause_sdpi_p_option_archive_service]
 ==== Archive Service Option
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
 
-[#vol1_table_sdpi_p_option_localization_service]
+[#vol1_clause_sdpi_p_option_localization_service]
 ==== Localization Service Option
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
 
-[#vol1_table_sdpi_p_option_ensemble_participatioon]
+[#vol1_clause_sdpi_p_option_ensemble_participatioon]
 ==== Ensemble Participation Option
 #TODO:  Add description and detail specification in a subsequent SDPi Version#
+
 ////
 
 
 [#vol1_clause_sdpi_p_required_actor_groupings]
 === SDPi-P Required Actor Groupings
 
-No required actor groupings have been identified.
+
+[%noheader]
+[%autowidth]
+[cols="1"]
+|===
+a| *SDPi Supplement Version Note*:  As indicated in <<vol1_figure_sdpi_p_actor_diagram>> above, there are no explicit grouped actors in this profile; however, there are abstract Actors (<<vol1_spec_sdpi_p_actor_somds_participant>> and <<vol1_spec_sdpi_p_actor_somds_connector>>), and the <<vol1_spec_sdpi_p_actor_somds_connector>> may implement interfaces to <<vol1_spec_sdpi_p_actor_somds_provider>> or <<vol1_spec_sdpi_p_actor_somds_consumer>> to provide bidirectional exchanges with non-<<acronym_somds>> systems.
+These actor relationships do not represent typical IHE grouped actors, but should be represented in more explicit detail.
+The best approach for achieving that clarity and specificity will be addressed in a future version after further review and discussion by the supplement development team.
+
+|===
 
 ////
 #TODO:  ADD CT SOMDS_PARTICIPANT GROUPING + ATNA(?) ADD CONTENT FROM WORD DOCUMENT HERE; DO WE NEED TO ALSO CONSIDER GENERAL V2 AND DEV TF-2 APPENDIX A?#
-ALSO what about abstract actors ... Participant and Connector ... do we indicate that the specialized actors are "grouped" with these?  Assume not but a question to be asked.
+ALSO what about abstract actors ... Participant and Connector ... do we indicate that the specialized actors are "grouped" with these?  AND WHAT ABOUT THE BIDIRECTIONAL ASPECT OF THE SOMDS CONNECTOR .. WHERE IT MIGHT BE "GROUPED"??? WITH A CONSUMER OR PROVIDER
+  WHAT IS THE ROLE OF INHERITANCE OR FRIEND CLASSES VS. GROUPED ACTORS???
 ////
 
 // 10.4
@@ -699,6 +698,11 @@ For each Descriptor, though, there is a State element (note the inclusion of a S
 Therefore, though the <<acronym_mdib>> of a <<actor_somds_provider>> system must be retrieved at discovery and connection time, subsequent updates can be made upon state changes, greatly reducing network communication overhead.
 
 For an example of how <<acronym_biceps>> components (see <<figure_sdc_biceps_components_model>>) and <<acronym_mdib>> descriptors and states (see <<figure_sdc_biceps_mdib_descriptors_states>>) support <<term_plug_and_trust>> interoperability, a typical conversation is provided in <<vol1_figure_sdpi_p_example_sequence_diagram>>.
+
+===== Medical Device Profile for Web Services (MDPWS)
+To support the <<acronym_soa>>-based connectivity described above, the *_default transport technology_* for this <<vol1_clause_sdpi_p_profile_reftext>> is the XML-based Web Services as specified in <<ref_ieee_11073_20702_2016>>.
+Additional "glue" constraints for this <<acronym_mdpws>> specification are provided in the companion standard: <<ref_ieee_11073_20701_2018>>.
+Specific <<vol1_clause_sdpi_p_profile_reftext>> transaction message bindings and examples are provided in <<vol2_appendix_a_mdpws_messages>>.
 
 ===== General Healthcare vs. Medical Interoperability Purposes
 
@@ -816,8 +820,9 @@ a| *SDPi Supplement Version Note*:  This section intentionally left blank for th
 #TODO: Where do we address profiling of MDIB versioning?  TF-1, TF-2 (e.g., in Appendix), TF-3 in MDIB content module?  Mix of all three?!#
 ////
 
-// 10.4.2
+[#vol1_clause_sdpi_p_use_cases]
 ==== Use Cases
+[#vol1_clause_sdpi_p_use_cases_reftext, reftext='SDPi-P Use Cases']
 The SDPi-P profile supports requirements from use cases detailed in <<vol1_appendix_c_dpi_use_cases>>.  The following subsections identify the specific use case requirements that are fulfilled with capabilities provided by this profile.
 
 ////
