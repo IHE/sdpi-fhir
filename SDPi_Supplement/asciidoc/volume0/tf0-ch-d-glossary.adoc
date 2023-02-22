@@ -91,7 +91,7 @@
 | IHE
 
 | [[term_fast_healthcare_interoperability_resources,Fast Healthcare Interoperability Resources (FHIR)]] Fast Healthcare Interoperability Resources
-| An <<acronym_hl7>> standard for health care data exchange, built on RESTful technology that utilizes "resources" to enable rapid creation of interoperable healthcare applications.
+| An <<acronym_hl7>> standard for health care data exchange, built on RESTful technology that utilizes _resources_ to enable rapid creation of interoperable healthcare applications.
 |
 | [[acronym_fhir,FHIR]] FHIR
 | https://hl7.org/fhir/[HL7 FHIR home]
