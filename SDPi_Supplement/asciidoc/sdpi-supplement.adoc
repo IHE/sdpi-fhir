@@ -16,6 +16,14 @@
 :ihe_supplement_sdpi_revision_date: {localdatetime}
 :ihe_supplement_sdpi_revision_label: Draft in Preparation for Public Comment
 
+////
+
+#TODO:  David G. says "use CSS style ober blank lines"#
+
+////
+
+{empty} +
+
 [subs=attributes]
 ++++
 <div class="logos">

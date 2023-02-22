@@ -27,7 +27,7 @@ include::../../listings/vol2-clause-appendix-a-mdpws-dev-23-hello.xml[]
 
 ====== Message Semantics
 
-`s12:Envelope/s12:Body/wsd:Hello/wsa:EndpointReference/wsa:Address`:: The <<actor_somds_provider>>'s <<payload_dev_23_provider_uid>> as URI.
+`s12:Envelope/s12:Body/wsd:Hello/wsa:EndpointReference/wsa:Address`:: The <<vol1_spec_sdpi_p_actor_somds_provider>>'s <<payload_dev_23_provider_uid>> as URI.
 `s12:Envelope/s12:Body/wsd:Hello/wsd:Scopes`:: The <<actor_somds_provider>>'s <<payload_dev_23_discovery_scope>> as a list of URIs.
 
 [#vol2_clause_appendix_mdpws_dev_23_hello_message_trigger_events]
