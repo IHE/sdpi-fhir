@@ -1,4 +1,4 @@
-[#vol1_clause_profiles, sdpi_volume_caption=TF-1]
+[#vol1_clause_profiles, sdpi_volume_caption=1]
 = Volume 1 -- Profiles
 
 // == Profiles

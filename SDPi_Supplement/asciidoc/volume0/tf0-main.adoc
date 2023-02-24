@@ -1,4 +1,4 @@
-[#vol0_clause_ihe_technical_frameworks_general_introduction, sdpi_volume_caption=TF-0]
+[#vol0_clause_ihe_technical_frameworks_general_introduction, sdpi_volume_caption=0]
 = IHE Technical Frameworks General Introduction
 
 [#vol0_clause_general,sdpi_offset=clear]

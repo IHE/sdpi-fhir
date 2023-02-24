@@ -13,7 +13,8 @@ import java.util.*
 enum class LabelSource {
     SECTION,
     TABLE_OR_FIGURE,
-    APPENDIX
+    APPENDIX,
+    VOLUME
 }
 
 data class LabelInfo(
@@ -37,6 +38,14 @@ class ReferenceSanitizerPostprocessor(
             sanitizeSig(document.attributes[OPTION_ASCIIDOC_SECTION_REFSIG]?.toString()?.trim() ?: "Section")
         val appendixSig =
             sanitizeSig(document.attributes[OPTION_ASCIIDOC_APPENDIX_REFSIG]?.toString()?.trim() ?: "Appendix")
+        val chapterSig =
+            sanitizeSig(document.attributes[OPTION_ASCIIDOC_CHAPTER_REFSIG]?.toString()?.trim().let {
+                if (it == "Chapter") {
+                    "Volume"
+                } else {
+                    it
+                }
+            } ?: "Volume")
 
         val doc = Jsoup.parse(output, "UTF-8")
 
@@ -74,6 +83,7 @@ class ReferenceSanitizerPostprocessor(
                     LabelSource.SECTION -> anchor.text(anchorText ?: "$sectionSig${it.label}")
                     LabelSource.TABLE_OR_FIGURE -> anchor.text(anchorText ?: it.label)
                     LabelSource.APPENDIX -> anchor.text(anchorText ?: "$appendixSig${it.prefix}:${it.label}")
+                    LabelSource.VOLUME -> anchor.text(anchorText ?: "$chapterSig${it.prefix}")
                 }
             }
         }
@@ -90,6 +100,7 @@ class ReferenceSanitizerPostprocessor(
 
     private companion object : Logging {
         const val OPTION_ASCIIDOC_SECTION_REFSIG = "section-refsig"
+        const val OPTION_ASCIIDOC_CHAPTER_REFSIG = "chapter-refsig"
         const val OPTION_ASCIIDOC_APPENDIX_REFSIG = "appendix-refsig"
         const val OPTION_XREFSTYLE = "xrefstyle"
         const val DEFAULT_XREF = "short"
