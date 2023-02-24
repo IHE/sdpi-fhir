@@ -130,10 +130,14 @@ class NumberingProcessor(
                             }
                         }
 
-
+                        val volPrefix = if (!node.wrapped.isAppendix()) {
+                            volumePrefix(level)
+                        } else {
+                            ""
+                        }
                         // trim leading blanks in case of an empty section id (i.e. appendix)
                         // simple replacement of HTML tags
-                        "${volumePrefix(level)}$it ${node.wrapped.title}".trim().replaceHtmlTags()
+                        "$volPrefix$it ${node.wrapped.title}".trim().replaceHtmlTags()
                     }.also {
                         logger.info { "Attach section number: ${node.wrapped.caption ?: ""}$it" }
                         node.wrapped.title = it
@@ -298,7 +302,7 @@ class NumberingProcessor(
                 validate(currentAppendix <= 'Z', section) {
                     "Maximum number of appendices exceeded (26, A to Z)."
                 }
-                section.caption = "$appendixCaption$currentAppendix: "
+                section.caption = "$appendixCaption${volumePrefix()}$currentAppendix "
                 (currentAppendix++).toString()
             } else {
                 null
