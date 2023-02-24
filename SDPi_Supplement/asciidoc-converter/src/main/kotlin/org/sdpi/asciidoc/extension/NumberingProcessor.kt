@@ -66,10 +66,7 @@ class NumberingProcessor(
             return ""
         }
 
-        return when (cutFrom) {
-            -1 -> numbers.subList(0, level + 1)
-            else -> numbers.subList(cutFrom, level + 1)
-        }.joinToString(separator = ".") {
+        return numbers.subList(cutFrom, level + 1).joinToString(separator = ".") {
             when (it.appendix) {
                 null -> (it.offset ?: it.current).toString()
                 else -> it.appendix
@@ -116,17 +113,31 @@ class NumberingProcessor(
                         currentSection = it
                         anchorReplacements[node.wrapped.id] = if (isInAppendix()) {
                             if (node.wrapped.isAppendix()) {
-                                LabelInfo((currentAppendix - 1).toString(), LabelSource.APPENDIX, currentVolumeCaption, refText)
+                                LabelInfo(
+                                    (currentAppendix - 1).toString(),
+                                    LabelSource.APPENDIX,
+                                    currentVolumeCaption,
+                                    refText
+                                )
                             } else {
                                 LabelInfo(it, LabelSource.APPENDIX, currentVolumeCaption, refText)
                             }
                         } else {
-                            LabelInfo(it, LabelSource.SECTION, "", refText)
+                            if (level == 0) {
+                                LabelInfo(it, LabelSource.VOLUME, currentVolumeCaption, refText)
+                            } else {
+                                LabelInfo(it, LabelSource.SECTION, currentVolumeCaption, refText)
+                            }
                         }
 
+                        val volPrefix = if (!node.wrapped.isAppendix()) {
+                            volumePrefix(level)
+                        } else {
+                            ""
+                        }
                         // trim leading blanks in case of an empty section id (i.e. appendix)
                         // simple replacement of HTML tags
-                        "$it ${node.wrapped.title}".trim().replaceHtmlTags()
+                        "$volPrefix$it ${node.wrapped.title}".trim().replaceHtmlTags()
                     }.also {
                         logger.info { "Attach section number: ${node.wrapped.caption ?: ""}$it" }
                         node.wrapped.title = it
@@ -157,18 +168,13 @@ class NumberingProcessor(
     }
 
     private fun replaceCaption(block: StructuralNode, prefix: String) {
-        val volumeCaption = when (currentVolumeCaption) {
-            "" -> ""
-            else -> "$currentVolumeCaption:"
-        }
-
         val section = when (currentSection.length) {
             0 -> if (isInAppendix()) currentAppendix.toString() else ""
             else -> currentSection
         }
 
         if (block.title != null) {
-            val sectionNumber = "$prefix $volumeCaption${section}"
+            val sectionNumber = "$prefix ${volumePrefix()}${section}"
             val objectNumber = localFigureTableNumbers[sectionNumber].let {
                 if (it == null) {
                     localFigureTableNumbers[sectionNumber] = 1
@@ -296,7 +302,7 @@ class NumberingProcessor(
                 validate(currentAppendix <= 'Z', section) {
                     "Maximum number of appendices exceeded (26, A to Z)."
                 }
-                section.caption = "$appendixCaption$currentAppendix: "
+                section.caption = "$appendixCaption${volumePrefix()}$currentAppendix "
                 (currentAppendix++).toString()
             } else {
                 null
@@ -306,6 +312,15 @@ class NumberingProcessor(
         logger.debug { "Update number at level $level for ${section.id}: ${numbering[level]}" }
     }
 
+    private fun volumePrefix(level: Int? = null) = if (currentVolumeCaption.isEmpty()) {
+        ""
+    } else {
+        if (level != null && level == 0) {
+            ""
+        } else {
+            "$currentVolumeCaption:"
+        }
+    }
 
     private fun isInAppendix() = isInAppendix.any { it }
 
