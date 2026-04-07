@@ -1,0 +1,1 @@
+The workflows in this file are not longer executable and therefore have been deactivated. In order to get the workflows running again, rename the parent directory to ".github". However, builds won't succeed without updating the workflow dependencies.
