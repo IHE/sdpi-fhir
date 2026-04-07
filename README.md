@@ -1,5 +1,9 @@
-# sdpi-fhir
-REPOSITORY DISCONTINUED (kept for the record). Please visit https://github.com/IHE/DEV.SDPi for the current IHE SDPi repository. 
+# ⛔ sdpi-fhir discontinued ⛔
+
+> [!WARNING]  
+> REPOSITORY DISCONTINUED (kept for the record). Please visit https://github.com/IHE/DEV.SDPi for the current IHE SDPi repository. 
+
+## Project scope
 
 Joint IHE-HL7 Gemini Project "Device Interoperability using SDPi+FHIR" artifacts.  This includes IHE Devices (DEV) Service-oriented Device Point-of-care Interoperability (SDPi) profiles and their "gateway" actor integration with HL7 FHIR, as well as associated white papers, educational materials (presentations, tutorials, etc.), test tooling, etc..  
 
